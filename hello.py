@@ -1,5 +1,4 @@
-from sys import exit
-
 print('hello world!')
+print("taco")
 
 exit()

@@ -1,0 +1,8 @@
+Given a search string S, print a list of books whose titles contain S
+* books -title [S] : 
+Given a search string S, print a list of authors whose names contain S
+For each such author, print a list of the author's books
+* books -authors [S] :
+Given a range of years A to B, print a list of books published between years A and B, inclusive
+* books -published [A] [B] :
+

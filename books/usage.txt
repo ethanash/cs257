@@ -1,9 +1,11 @@
 python3 books.txt 
---book bookNameContains (takes one argument after book)
---author authorNameContains (takes one argument after author)
---years year1 year1 (takes 2 preceding arguments after years)
+--book (-b) bookNameContains (takes one argument after book)
+--author (-a) authorNameContains (takes one argument after author)
+--years (-y) year1 year1 (takes 2 preceding arguments after years)
+fileName
 
 Guide:
 In order to print a list of all books whose titles contain a certain string S, use python3 books.txt --book S
 In order to print a list of all athors whose names contain a certain string S, and for each of those authors print a list of their books, use python3 books.txt --author S
 In order to print a list of book published between years A and B (inclusive) use python3 books.txt --years A B
+

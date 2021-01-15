@@ -52,10 +52,6 @@ def years(books, year1, year2):
   return booksToReturn
 
 
-
-
-
-
 def main():
   arguments = get_parsed_arguments()
   returnArray = []

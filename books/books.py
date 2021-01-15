@@ -1,7 +1,7 @@
 import argparse
 import csv
 from datetime import datetime
-
+##Made by Ethan Ash and Samuel Gloss
 
 #parses arguments into an array of names, publish dates, and authors
 def get_parsed_arguments():

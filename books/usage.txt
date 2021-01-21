@@ -1,5 +1,5 @@
 python3 books.txt 
---book (-b) bookNameContains (takes one argument after book)
+--title (-t) bookNameContainsSubstring (takes one argument after title)
 --author (-a) authorNameContains (takes one argument after author)
 --year1 (-y1) year1 (takes one argument after start year)
 --year2 (-y2) year2 (takes one argument after end year)

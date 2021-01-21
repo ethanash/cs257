@@ -7,7 +7,7 @@ python3 books.txt
 fileName
 
 Guide:
-In order to print a list of all books whose titles contain a certain string S, use python3 books.txt --book S or -b S
+In order to print a list of all books whose titles contain a certain string S, use python3 books.txt --title S or -t S
 In order to print a list of all authors whose names contain a certain string S, and for each of those authors print a list of their books, use python3 books.txt --author S or -a S
 In order to print a list of book published between years A and B (inclusive) use python3 books.txt --year1 A --year2 B or -y1 A -y2 B
 If several tags are the program will print a list that meet the requirements of one of the tags conditions. It will print each list one at a time. So single argument only will effect it only. (think of it as an "Or" instead of an "And"). 

@@ -4,7 +4,7 @@ import argparse
 import csv
 import sys
 from datetime import datetime
-##Made by Ethan Ash and Samuel Gloss
+
 
 
 def get_parsed_arguments():

@@ -1,3 +1,5 @@
+--Ethan Ash, Matthew Smith-Erb
+
 CREATE TABLE nocs (
 id integer,
 noc text,

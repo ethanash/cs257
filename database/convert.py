@@ -7,6 +7,7 @@ import sys
 
 
 def main():
+    print("Warning: this program could take close to 20 minutes to execute")
     #opens the files with a csv reader
     try:
         event_file = open("athlete_events.csv", newline='')
@@ -174,7 +175,7 @@ def main():
             games_dict[(year, seasons_dict[season], cities_dict[city])],
             event_dict[event], medals_dict[athlete_medal]
         ])
-        print(len(event_performances_data))
+
 
     #generates all the csvs
     generate_csv(athletes_data, "athletes")

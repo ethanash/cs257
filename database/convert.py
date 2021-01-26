@@ -51,7 +51,7 @@ def main():
     #adds NOC data noce_regions.csv
     noc_reader = csv.reader(noc_file)
     noc_data = []
-    serial_id = 0
+    serial_id = 1
     for row in noc_reader:
         row.insert(0, serial_id)
         noc_data.append(row)
@@ -90,17 +90,23 @@ def main():
         if athlete_medal == 'NA':
             athlete_medal = None
 
-        #add to teams_data
-        if not (athlete_team in teams_dict):
-            team_id = len(teams_data) + 1
-            teams_dict[athlete_team] = team_id
-            teams_data.append([team_id, athlete_team, noc_dict[athlete_noc]])
+        #make sure athlete_noc is in the table
+        if not(athlete_noc in noc_dict):
+            noc_dict[athlete_noc] = len(noc_data) + 1
+            noc_data.append([len(noc_data) + 1, athlete_noc, athlete_team, ""])
+
 
         #add to athletes_data
         if not (athlete_id in athlete_id_dict):
             serial_id = len(athletes_data) + 1
             athlete_id_dict[athlete_id] = serial_id
             athletes_data.append([serial_id, athlete_name])
+
+        #add to teams_data
+        if not (athlete_team in teams_dict):
+            team_id = len(teams_data) + 1
+            teams_dict[athlete_team] = team_id
+            teams_data.append([team_id, athlete_team, noc_dict[athlete_noc]])
 
         #add to athletes_teams
         to_add = True
@@ -168,6 +174,7 @@ def main():
             games_dict[(year, seasons_dict[season], cities_dict[city])],
             event_dict[event], medals_dict[athlete_medal]
         ])
+        print(len(event_performances_data))
 
     #generates all the csvs
     generate_csv(athletes_data, "athletes")

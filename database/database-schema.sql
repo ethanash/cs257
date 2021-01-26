@@ -19,7 +19,7 @@ athlete text
 CREATE TABLE athletes_teams (
 id integer,
 athlete_id integer,
-Team_id integer
+team_id integer
 );
 
 CREATE TABLE sports (

@@ -1,67 +1,67 @@
 CREATE TABLE nocs (
-id SERIAL,
+id integer,
 noc text,
 region text,
 notes text
 );
 
 CREATE TABLE teams (
-id SERIAL,
-team text, 
+id integer,
+team text,
 noc_id integer
 );
 
 CREATE TABLE athletes (
-id SERIAL, 
+id integer,
 athlete text
 );
 
 CREATE TABLE athletes_teams (
-id SERIAL, 
+id integer,
 athlete_id integer,
 Team_id integer
 );
 
 CREATE TABLE sports (
-id SERIAL, 
+id integer,
 sports text
 );
 
 CREATE TABLE events (
-id SERIAL, 
-sport_id integer, 
+id integer,
+sport_id integer,
 event text
 );
 
 CREATE TABLE games (
-id SERIAL, 
-year integer, 
-season_id integer, 
+id integer,
+year integer,
+season_id integer,
 city_id integer
 );
 
 CREATE TABLE seasons (
-id SERIAL,
+id integer,
 season text
 );
 
 CREATE TABLE cities (
-id SERIAL,
+id integer,
 city text
 );
 
 CREATE TABLE sexes (
-id SERIAL,
+id integer,
 sex text
 );
 
 CREATE TABLE medals(
-id SERIAL,
+id integer,
 medal text
 );
 
 CREATE TABLE event_performances (
-id SERIAL,
+id integer,
 athlete_id integer,
 sex_id integer,
 age integer,
@@ -72,4 +72,3 @@ game_id integer,
 event_id integer,
 medal_id integer
 );
-

@@ -8,14 +8,15 @@ ORDER BY noc;
 --List the names of all the athletes from Kenya. If your database design allows it, sort the athletes by last name.
 SELECT athletes.athlete
 FROM athletes, athletes_teams, teams
-WHERE athletes_teams.athlete_id = athletes.id 
+WHERE athletes_teams.athlete_id = athletes.id
 AND athletes_teams.team_id = teams.id AND teams.team = 'Kenya';
 
 --List all the medals won by Greg Louganis, sorted by year. Include whatever fields in this output that you think appropriate.
-SELECT event_performances, medals.medal
-FROM medals, event_performances, athletes, games
-WHERE athletes.athlete = 'Gregory Efthimios "Greg" Louganis'
+SELECT events.event, games.year, medals.medal
+FROM medals, event_performances, athletes, games, events
+WHERE athletes.athlete LIKE '%Louganis%'
 AND medals.id = event_performances.medal_id
+AND events.id = event_performances.event_id
 AND event_performances.athlete_id = athletes.id
 AND games.id = event_performances.game_id
 ORDER BY games.year;

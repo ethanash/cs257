@@ -1,0 +1,10 @@
+Ethan Ash & Riaz Kelly
+
+REQUEST: /players?nationality={nationality}&club={club}&league={league}&weakfootlow={weakfootlow}&weakfoothigh={weakfoothigh}&skillmoves={skillmoves}&preferredfoot={preferredfoot}&shooting={shooting}&pace={pace}&dribbling={dribbling}&passing={passing}&defense={defense}&physicality={physicality}&overallrating={overallrating}&position={position}&age={age}&name={name}
+RESPONSE: a JSON list of players names along with their 6 attributes (pace, shooting, dribbling, physciality, passing, defense)
+
+REQUEST: /draft
+RESPONSE: the base html for our webpage to draft a team
+
+REQUEST: /sandbox
+RESPONSE: the base html for our webpage for browsing players and creating your own team

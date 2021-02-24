@@ -1,22 +1,16 @@
 /*
  * webapp.js
- * Jeff Ondich
- * 6 November 2020
+ * Ethan Ash and Riaz Kelly
  *
- * A little bit of Javascript for the tiny web app sample for CS257.
+ * Preliminary Javascript to get 6 drafted players
  */
 
 window.onload = initialize;
 
 function initialize() {
-    var element = document.getElementById('cats_button');
+    var element = document.getElementById('draft_button');
     if (element) {
-        element.onclick = onCatsButton;
-    }
-
-    var element = document.getElementById('dogs_button');
-    if (element) {
-        element.onclick = onDogsButton;
+        element.onclick = onDraftButton;
     }
 }
 
@@ -25,56 +19,31 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-function onCatsButton() {
-    var url = getAPIBaseURL() + '/cats/';
-
+function onDraftButton() {
+    var url = getAPIBaseURL() + '/players';
+    console.log(url)
     fetch(url, {method: 'get'})
 
     .then((response) => response.json())
 
-    .then(function(cats) {
+    .then(function(players) {
         var listBody = '';
-        for (var k = 0; k < cats.length; k++) {
-            var cat = cats[k];
-            listBody += '<li>' + cat['name']
-                      + ', ' + cat['birth_year']
-                      + '-' + cat['death_year']
-                      + ', ' + cat['description'];
+        for (var i = 0; i < 6; i++) {
+            var player = players[i];
+            listBody += '<li>' + player['name']
+                      + ', shooting: ' + player['shooting']
+                      + ', dribbling: ' + player['dribbling']
+                      + ', pace: ' + player['pace']
+                      + ', defense: ' + player['defense']
+                      + ', passing: ' + player['passing']
+                      + ', nationality: ' + player['nationality']
+                      + ', club: ' + player['club'];
                       + '</li>\n';
         }
 
-        var animalListElement = document.getElementById('animal_list');
-        if (animalListElement) {
-            animalListElement.innerHTML = listBody;
-        }
-    })
-
-    .catch(function(error) {
-        console.log(error);
-    });
-}
-
-function onDogsButton() {
-    var url = getAPIBaseURL() + '/dogs/';
-
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(dogs) {
-        var listBody = '';
-        for (var k = 0; k < dogs.length; k++) {
-            var dog = dogs[k];
-            listBody += '<li>' + dog['name']
-                      + ', ' + dog['birth_year']
-                      + '-' + dog['death_year']
-                      + ', ' + dog['description'];
-                      + '</li>\n';
-        }
-
-        var animalListElement = document.getElementById('animal_list');
-        if (animalListElement) {
-            animalListElement.innerHTML = listBody;
+        var playerListElement = document.getElementById('players_list');
+        if (playerListElement) {
+            playerListElement.innerHTML = listBody;
         }
     })
 

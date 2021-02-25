@@ -1,6 +1,6 @@
 --Ethan Ash and Riaz Kelly--
 
-CREATE TABLE public.player {
+CREATE TABLE public.player (
 	id integer,
 	short_name text,
 	long_name text,
@@ -14,14 +14,14 @@ CREATE TABLE public.player {
 	defense integer,
 	physicality integer,
 	skill_moves integer,
-	weak_foot integer,
+	weak_foot text,
 	league_id integer,
 	club_id integer,
 	nationality_id integer,	
-	preferred_foot_id integer
-}
+	preferred_foot text
+);
 
-CREATE TABLE public.goalie {
+CREATE TABLE public.goalie (
 	id integer,
 	short_name text,
 	long_name text,
@@ -33,29 +33,24 @@ CREATE TABLE public.goalie {
 	kicking integer,
 	speed integer,
 	positioning integer,
-	weak_foot integer,
+	weak_foot text,
 	league_id integer,
 	club_id integer,
 	nationality_id integer,	
-	preferred_foot_id integer
-}
+	preferred_foot text
+);
 
-CREATE TABLE public.leagues {
+CREATE TABLE public.league (
 	id integer,
 	league text
-}
+);
 
-CREATE TABLE public.clubs {
+CREATE TABLE public.club (
 	id integer,
 	club text
-}
+);
 
-CREATE TABLE public.nationalities {
+CREATE TABLE public.nationality (
 	id integer,
 	nationality text
-}
-
-CREATE TABLE public.preferred_feet {
-	id integer,
-	preferred_foot text
-}
+);

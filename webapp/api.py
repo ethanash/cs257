@@ -49,14 +49,14 @@ def get_players():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationalities.nationality, leagues.league, clubs.club
-        FROM players, nationalities, clubs, leagues
-        WHERE players.nationality_id = nationalities.id
-        AND players.league_id = leagues.id
-        AND players.club_id = clubs.id'''
+    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating
+        FROM player, nationality, club, league
+        WHERE player.nationality_id = nationality.id
+        AND player.league_id = league.id
+        AND player.club_id = club.id'''
 
     try:
-        database_cursor.execute(query, (year,))
+        database_cursor.execute(query)
     except Exception as e:
         print(e)
         exit()
@@ -73,6 +73,7 @@ def get_players():
         player_nationality = row[7]
         player_league = row[8]
         player_club = row[9]
+        player_overall = row[10]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -83,11 +84,12 @@ def get_players():
         player['nationality'] = player_nationality
         player['league'] = player_league
         player['club'] = player_club
+        player['overall'] = player_overall
         players.append(player)
     
     random.shuffle(players)
-    players = [{'name':'Leonel Messi', 'shooting':90, 'dribbling':85, 'pace':98, 'passing':'86', 'defense':74, 'nationality':'Argentina', 'club':'Barcelona'},
-            {'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
+    #players = [{'name':'Leonel Messi', 'shooting':90, 'dribbling':85, 'pace':98, 'passing':'86', 'defense':74, 'nationality':'Argentina', 'club':'Barcelona'},
+            #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
     
     return json.dumps(players)
 

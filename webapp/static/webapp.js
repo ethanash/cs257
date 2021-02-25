@@ -30,7 +30,9 @@ function onDraftButton() {
         var listBody = '';
         for (var i = 0; i < 6; i++) {
             var player = players[i];
-            listBody += '<li>' + player['name']
+            listBody += '<li><b>' + player['name']
+                      + '</b>: position: (' + player['position']
+                      + '), overall: ' + player['overall']
                       + ', shooting: ' + player['shooting']
                       + ', dribbling: ' + player['dribbling']
                       + ', pace: ' + player['pace']

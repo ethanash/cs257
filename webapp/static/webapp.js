@@ -19,6 +19,10 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
+function changeFormation(){
+    //do stuff
+}
+
 function onDraftButton() {
     var url = getAPIBaseURL() + '/players';
     console.log(url)

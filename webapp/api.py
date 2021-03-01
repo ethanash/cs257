@@ -92,14 +92,3 @@ def get_players():
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
     
     return json.dumps(players)
-
-def connect_to_database():
-    '''
-    Connect to the database and return a connection object
-    '''
-    try:
-        connection = psycopg2.connect(database=database, user=user, password=password)
-    except Exception as e:
-        print(e)
-        exit()
-    return connection

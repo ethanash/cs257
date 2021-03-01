@@ -5,14 +5,278 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='webapp.css') }}" />
     <script type="text/javascript" src="{{ url_for('static', filename='webapp.js') }}"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-    <title>Fifa Draft Simulator</title>
+    <title> Draft Simulator</title>
 </head>
 
 <body>
-    <h3>FIFA Squad Builder</h3>
+    <div class="top-title-bar">
+        <div class="user-info">
+            <div class="welcome">
+                Welcome,
+                <br>
+                {{user_first_name}}
+            </div>
+            <a class="logout" href="/logout">Log Out</a>
+        </div>
+        <div class="title-text">
+            FIFA Squad Builder
+        </div>
+    </div>
+    <div class="site-contents">
+        <div class="left-side">
+            <div class="menu-bar">
+                <div class="team-name">Ethan's Team</div>
+                <div class="stats">
+                    <div class="team-stat">
+                        <div class="stat-name">Average Rating: </div>
+                        <div class="stat-value">82</div>
+                    </div>
+                    <div class="team-stat">
+                        <div class="stat-name">Chemistry: </div>
+                        <div class="stat-value">82</div>
+                    </div>
+                </div>
+                <label for="formations">Change the Formation:</label>
+                <select onchange="changeFormation()" name="formations" id="formations">
+                    <option value="4-3-3">4-3-3</option>
+                    <option value="4-4-2">4-4-2</option>
+                    <option value="4-1-4-1">4-1-4-1</option>
+                </select>
+                <button>Switch To Sandbox Mode</button>
+            </div>
 
-    <p><button id="draft_button">Draft</button></p>
+            <div class="player-field">
+                <div></div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating">89</div>
+                    <div class="player-position">LW</div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name">Ronaldo</div>
+                    <div class="player-pace">89</div>
+                    <div class="player-shooting">90</div>
+                    <div class="player-passing">83</div>
+                    <div class="player-dribbling">89</div>
+                    <div class="player-defense">64</div>
+                    <div class="player-physical">79</div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div></div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
 
-    <ul id="players_list"></ul>
+        <div class="player-info">
+            <div class="category-title">Player Selection</div>
+            <p><button id="draft_button">Draft</button></p>
+            <div class="player-list-selection">
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+                <div class="active-card">
+                    <div class="player-overall-rating"></div>
+                    <div class="player-position"></div>
+                    <div class="player-nationality"></div>
+                    <div class="player-club"></div>
+                    <div class="player-name"></div>
+                    <div class="player-pace"></div>
+                    <div class="player-shooting"></div>
+                    <div class="player-passing"></div>
+                    <div class="player-dribbling"></div>
+                    <div class="player-defense"></div>
+                    <div class="player-physical"></div>
+                    <div class="player-league"></div>
+                </div>
+            </div>
+        <!-- <ul id="players_list"></ul> -->
+        </div>
+    </div>
 </body>
 </html>

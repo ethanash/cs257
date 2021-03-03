@@ -2,6 +2,7 @@
 
 CREATE TABLE public.player (
 	id integer,
+	sofifa_id integer,
 	short_name text,
 	long_name text,
 	age integer,
@@ -23,6 +24,7 @@ CREATE TABLE public.player (
 
 CREATE TABLE public.goalie (
 	id integer,
+	sofifa_id integer,
 	short_name text,
 	long_name text,
 	age integer,

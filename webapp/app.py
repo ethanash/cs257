@@ -134,17 +134,6 @@ def logOut():
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
 
-def connect_to_database():
-    '''
-    Connect to the database and return a connection object
-    '''
-    try:
-        connection = psycopg2.connect(database=database, user=user, password=password)
-    except Exception as e:
-        print(e)
-        exit()
-    return connection
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('FIFA Draft Website')
     parser.add_argument('host', help='the host on which this application is running')

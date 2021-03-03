@@ -49,14 +49,15 @@ def get_players():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating
+    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
         FROM player, nationality, club, league
         WHERE player.nationality_id = nationality.id
         AND player.league_id = league.id
-        AND player.club_id = club.id'''
+        AND player.club_id = club.id
+        AND player.position = %s'''
 
     try:
-        database_cursor.execute(query)
+        database_cursor.execute(query, (position,))
     except Exception as e:
         print(e)
         exit()
@@ -74,6 +75,8 @@ def get_players():
         player_league = row[8]
         player_club = row[9]
         player_overall = row[10]
+        player_sofifa_id = row[11]
+        player_physicality = row[12]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -85,6 +88,8 @@ def get_players():
         player['league'] = player_league
         player['club'] = player_club
         player['overall'] = player_overall
+        player['sofifa_id'] = player_sofifa_id
+        player['physicality'] = player_physicality
         players.append(player)
     
     random.shuffle(players)
@@ -92,3 +97,14 @@ def get_players():
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
     
     return json.dumps(players)
+
+def connect_to_database():
+    '''
+    Connect to the database and return a connection object
+    '''
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
+    return connection

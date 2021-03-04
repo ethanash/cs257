@@ -17,6 +17,86 @@ from config import user
 
 api = flask.Blueprint('api', __name__)
 
+'''diving integer,
+handling integer,
+reflexes integer,
+kicking integer,
+speed integer,
+positioning integer,'''
+
+@api.route('/goalies')
+def get_goalies():
+    nationality=request.args.get('nationality')
+    club=request.args.get('club')
+    league=request.args.get('league')
+    weakFootLow=request.args.get('weakfootlow')
+    weakFootHigh=request.args.get('weakfoothigh')
+    preferredFoot=request.args.get('preferredfoot')
+    divingLow=request.args.get('divingLow')
+    divingHigh=request.args.get('divingHigh')
+    handlingLow=request.args.get('handlingLow')
+    handlingHigh=request.args.get('handlingHigh')
+    reflexesLow=request.args.get('reflexesLow')
+    reflexesHigh=request.args.get('reflexesHigh')
+    kickingLow=request.args.get('kickingLow')
+    kickingHigh=request.args.get('kickingHigh')
+    speedLow=request.args.get('speedLow')
+    speedHigh=request.args.get('speedHigh')
+    positioningLow=request.args.get('positioningLow')
+    positioningHigh=request.args.get('positioningHigh')
+    overallRatingLow=request.args.get('overallRatingLow')
+    overallRatingHigh=request.args.get('overallRatingHigh')
+    ageLow=request.args.get('ageLow')
+    ageHigh=request.args.get('ageHigh')
+    name=request.args.get('name')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
+    		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
+    		   league.league, club.club, player.overall_rating
+               FROM goalie, nationality, club, league
+               WHERE player.nationality_id = nationality.id
+               AND player.league_id = league.id
+               AND player.club_id = club.id'''
+
+    try:
+        database_cursor.execute(query)
+    except Exception as e:
+        print(e)
+        exit()
+    goalies = []
+    for row in database_cursor:
+        goalie = {}
+        goalie_name = row[0]
+        goalie_diving = row[1]
+        goalie_handling = row[2]
+        goalie_reflexes = row[3]
+        goalie_kicking = row[4]
+        goalie_speed = row[5]
+        goalie_positioning = row[6]
+        goalie_nationality = row[7]
+        goalie_league = row[8]
+        goalie_club = row[9]
+        goalie_overall = row[10]
+        goalie['name'] = goalie_name
+        goalie['diving'] = goalie_diving
+        goalie['handling'] = goalie_handling
+        goalie['reflexes'] = goalie_reflexes
+        goalie['kicking'] = goalie_kicking
+        goalie['speed'] = goalie_speed
+        goalie['positioning'] = goalie_positioning
+        goalie['nationality'] = goalie_nationality
+        goalie['league'] = goalie_league
+        goalie['club'] = goalie_club
+        goalie['overall'] = goalie_overall
+        goalies.append(goalie)
+
+    random.shuffle(goalies)
+
+    return json.dumps(goalies)
+
 @api.route('/players')
 def get_players():
     nationality=request.args.get('nationality')
@@ -104,11 +184,11 @@ def get_players():
         player['sofifa_id'] = player_sofifa_id
         player['physicality'] = player_physicality
         players.append(player)
-    
+
     random.shuffle(players)
     #players = [{'name':'Leonel Messi', 'shooting':90, 'dribbling':85, 'pace':98, 'passing':'86', 'defense':74, 'nationality':'Argentina', 'club':'Barcelona'},
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
-    
+
     return json.dumps(players)
 
 def connect_to_database():

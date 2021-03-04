@@ -72,6 +72,10 @@ body {
     width: 16%;
 }
 
+#draft-selections .active-card {
+    cursor:pointer;
+}
+
 .active-card {
     background-image: url(/static/fifa_card_2.jpg);
     background-repeat: no-repeat;
@@ -82,7 +86,7 @@ body {
     background-image: url(/static/fifa_card_2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    cursor:pointer
+    cursor:pointer;
 }
 
 .inactive-card img {

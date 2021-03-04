@@ -8,11 +8,7 @@
 window.onload = initialize;
 
 function initialize() {
-    var element = document.getElementById('draft_button');
-    if (element) {
-        element.onclick = draft;
-    }
-    changeFormation("4-3-3");
+    setFormation("4-3-3");
     makeClickable();
 }
 
@@ -23,15 +19,26 @@ function makeClickable() {
     }
 }
 
+function makeNotClickable() {
+    var inactiveCards = document.getElementsByClassName("inactive-card");
+    for (var card of inactiveCards) {
+        card.removeAttribute("onclick");
+    }
+}
+
+function makeActiveNotClickable() {
+    var playerField = document.getElementsByClassName("player-field")[0];
+    for (var card of playerField.children) {
+        if (card.getAttribute("class") == "active-card") {
+            card.removeAttribute("onclick")
+        }
+    }
+}
+
 function onPositionDraft(obj) {
-    if (obj){
-        var position = obj.getAttribute("position");
-        draft(position);
-    }
-    else {
-        console.log("error");
-    }
-    
+    var position = obj.getAttribute("position");
+    var positionIndex = obj.getAttribute("positionindex")
+    draft(position, positionIndex);
 }
 
 function getAPIBaseURL() {
@@ -39,7 +46,7 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-function setInactiveCard(card){
+function setInactiveCardField(card){
     card.setAttribute("class", "inactive-card");
     htmlContents = "<div class='player-overall-rating'></div>" + 
                     "<div class='player-position'></div>" +
@@ -57,7 +64,25 @@ function setInactiveCard(card){
     card.innerHTML = htmlContents;
 }
 
-function changeFormation(newFormation){
+function setInactiveCardSelection(card){
+    card.setAttribute("class", "inactive-card");
+    htmlContents = "<div class='player-overall-rating'></div>" + 
+                    "<div class='player-position'></div>" +
+                    "<div class='player-nationality'></div>" +
+                    "<div class='player-club'></div>" +
+                    "<div class='player-name'></div>" +
+                    "<div class='player-pace'></div>" +
+                    "<div class='player-shooting'></div>" +
+                    "<div class='player-passing'></div>" +
+                    "<div class='player-dribbling'></div>" +
+                    "<div class='player-defense'></div>" +
+                    "<div class='player-physical'></div>" +
+                    "<div class='player-league'></div>" +
+                    "<img class='player-image' src=''>";
+    card.innerHTML = htmlContents;
+}
+
+function setFormation(newFormation){
     console.log(newFormation)
     var playerField = document.getElementsByClassName("player-field")[0];
     var positions = playerField.children;
@@ -70,7 +95,7 @@ function changeFormation(newFormation){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
                 position.innerHTML = "";
-                setInactiveCard(position);
+                setInactiveCardField(position);
             }
             else {
                 position.removeAttribute("onclick");
@@ -87,7 +112,7 @@ function changeFormation(newFormation){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
                 position.innerHTML = "";
-                setInactiveCard(position);
+                setInactiveCardField(position);
             }
             else {
                 position.removeAttribute("onclick")
@@ -104,7 +129,7 @@ function changeFormation(newFormation){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
                 position.innerHTML = "";
-                setInactiveCard(position);
+                setInactiveCardField(position);
             }
             else {
                 position.removeAttribute("onclick")
@@ -116,7 +141,19 @@ function changeFormation(newFormation){
     makeClickable();
 }
 
-function draft(position) {
+function createDraftCards(){
+    var draftSelections = document.getElementById("draft-selections");
+    if (!(draftSelections.firstChild.firstChild)) {
+        var cardSlots = draftSelections.children;
+        for (card of cardSlots){
+            setInactiveCardSelection(card);
+        }
+    }
+}
+
+function draft(position, positionIndex) {
+    createDraftCards();
+
     var url = getAPIBaseURL() + '/players?position=' + position;
     console.log(url);
     fetch(url, {method: 'get'})
@@ -124,11 +161,11 @@ function draft(position) {
     .then((response) => response.json())
 
     .then(function(players) {
-        var playerListElement = document.getElementById('draft_selections');
+        var playerListElement = document.getElementById('draft-selections');
         if(playerListElement){
             for (var i = 0; i < 6; i++) {
                 var card = playerListElement.children[i];
-                card.class = "active-card";
+                card.setAttribute("class", "active-card");
                 var player = players[i];
 
                 var positionDiv = card.getElementsByClassName("player-position")[0];
@@ -145,7 +182,14 @@ function draft(position) {
                 var playerImage = card.getElementsByClassName("player-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                positionDiv.innerHTML = player['position'].split(",")[0];
+                positionsPlayed = player['position'].split(",");
+                relevantPosition = positionsPlayed[0];
+                for (pos of positionsPlayed) {
+                    if (pos == position) {
+                        relevantPosition = pos;
+                    }
+                }
+                positionDiv.innerHTML = relevantPosition;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
                 paceDiv.innerHTML = player['pace'];
@@ -162,7 +206,13 @@ function draft(position) {
                 var idFirstHalf = sofifa_id.substring(0,3);
                 var idSecondHalf = sofifa_id.substring(3,6);
                 playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
-                playerImage.onerror = "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';"
+                playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                card.setAttribute("playerid", sofifa_id);
+                card.setAttribute("positionindex", positionIndex);
+
+                makeNotClickable();
+                makeSelectionsClickable();
             }
         }  
     })
@@ -172,3 +222,78 @@ function draft(position) {
     });
 }
 
+function makeSelectionsClickable() {
+    var playerListElement = document.getElementById('draft-selections');
+    selections = playerListElement.children;
+    for (selection of selections) {
+        selection.setAttribute("onclick", "onDraftSelection(this)");
+    }
+}
+
+function onDraftSelection(obj) {
+    var sofifa_id = obj.getAttribute("playerid");
+    var positionIndex = obj.getAttribute("positionindex");
+
+    var playerField = document.getElementsByClassName("player-field")[0];
+    var query = '[positionindex="' + positionIndex + '"]'
+    var fieldLocation = playerField.querySelectorAll(query)[0];
+
+    var url = getAPIBaseURL() + '/players?sofifa_id=' + sofifa_id;
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(players) {
+        player = players[0];
+        fieldLocation.setAttribute("class", "active-card");
+        var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
+        var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
+        // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
+        // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
+        var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+        var paceDiv = fieldLocation.getElementsByClassName("player-pace")[0];
+        var shootingDiv = fieldLocation.getElementsByClassName("player-shooting")[0];
+        var passingDiv = fieldLocation.getElementsByClassName("player-passing")[0];
+        var dribblingDiv = fieldLocation.getElementsByClassName("player-dribbling")[0];
+        var defenseDiv = fieldLocation.getElementsByClassName("player-defense")[0];
+        var physicalDiv = fieldLocation.getElementsByClassName("player-physical")[0];
+        var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
+        // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
+
+        positionsPlayed = player['position'].split(",");
+        relevantPosition = positionsPlayed[0];
+        for (pos of positionsPlayed) {
+            if (pos == fieldLocation.getAttribute("position")) {
+                relevantPosition = pos;
+            }
+        }
+        positionDiv.innerHTML = relevantPosition;
+        overallRatingDiv.innerHTML = player['overall'];
+        nameDiv.innerHTML = player['name'];
+        paceDiv.innerHTML = player['pace'];
+        shootingDiv.innerHTML = player['shooting'];
+        passingDiv.innerHTML = player['passing'];
+        dribblingDiv.innerHTML = player['dribbling'];
+        defenseDiv.innerHTML = player['defense'];
+        physicalDiv.innerHTML = player['physicality'];
+        
+        var sofifa_id = player["sofifa_id"].toString();
+        while (sofifa_id.length < 6) {
+            sofifa_id = "0" + sofifa_id;
+        }
+        var idFirstHalf = sofifa_id.substring(0,3);
+        var idSecondHalf = sofifa_id.substring(3,6);
+        playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+        playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+        fieldLocation.setAttribute("playerid", sofifa_id);
+
+        var playerListElement = document.getElementById('draft-selections');
+        playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
+
+        makeActiveNotClickable();
+        makeClickable();
+    })
+
+}

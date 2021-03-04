@@ -45,22 +45,35 @@ def get_players():
     ageLow=request.args.get('age')
     ageHigh=request.args.get('age')
     name=request.args.get('name')
+    sofifa_id = request.args.get('sofifa_id')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
-        FROM player, nationality, club, league
-        WHERE player.nationality_id = nationality.id
-        AND player.league_id = league.id
-        AND player.club_id = club.id
-        AND player.position = %s'''
-
-    try:
-        database_cursor.execute(query, (position,))
-    except Exception as e:
-        print(e)
-        exit()
+    if sofifa_id:
+        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
+            FROM player, nationality, club, league
+            WHERE player.nationality_id = nationality.id
+            AND player.league_id = league.id
+            AND player.club_id = club.id
+            AND player.sofifa_id = %s'''
+        try:
+            database_cursor.execute(query, (sofifa_id,))
+        except Exception as e:
+            print(e)
+            exit()
+    else:
+        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
+            FROM player, nationality, club, league
+            WHERE player.nationality_id = nationality.id
+            AND player.league_id = league.id
+            AND player.club_id = club.id
+            AND player.position LIKE %s'''
+        try:
+            database_cursor.execute(query, (("%" + position + "%"),))
+        except Exception as f:
+            print(f)
+            exit()
     players = []
     for row in database_cursor:
         player = {}

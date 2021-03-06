@@ -90,7 +90,7 @@ CREATE TABLE public.player (
     short_name text,
     long_name text,
     age integer,
-    "position" text,
+    position text,
     overall_rating integer,
     pace integer,
     shooting integer,

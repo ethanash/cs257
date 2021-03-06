@@ -217,8 +217,8 @@ function draft(position, positionIndex) {
                 var playerImage = card.getElementsByClassName("player-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                positionsPlayed = player['position'].split(",");
-                relevantPosition = positionsPlayed[0];
+                var positionsPlayed = player['position'].split(",");
+                var relevantPosition = positionsPlayed[0];
                 for (pos of positionsPlayed) {
                     if (pos == position) {
                         relevantPosition = pos;
@@ -350,7 +350,7 @@ function playerSearch(event){
     .then(function(players) {
         var playerListElement = document.getElementById('searched-players');
         if(playerListElement){
-            for (var i = 0; i < 6; i++) {
+            for (var i = 0; i < players.length; i++) {
                 var card = playerListElement.children[i];
                 card.setAttribute("class", "active-card");
                 var player = players[i];
@@ -369,13 +369,16 @@ function playerSearch(event){
                 var playerImage = card.getElementsByClassName("player-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                positionsPlayed = player['position'].split(",");
-                relevantPosition = positionsPlayed[0];
+                var positionsPlayed = player['position'].split(",");
+                var relevantPosition = positionsPlayed[0];
                 for (pos of positionsPlayed) {
-                    if (pos == position) {
+                    console.log(pos);
+                    console.log(position);
+                    if (pos.replace(/\s/g, '') == position.replace(/\s/g, '')) {
                         relevantPosition = pos;
                     }
                 }
+                console.log("---")
                 positionDiv.innerHTML = relevantPosition;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
@@ -396,10 +399,6 @@ function playerSearch(event){
                 playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
                 card.setAttribute("playerid", sofifa_id);
-                card.setAttribute("positionindex", positionIndex);
-
-                makeNotClickable();
-                makeSelectionsClickable();
             }
         }  
     })

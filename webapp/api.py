@@ -150,12 +150,12 @@ def get_players():
                player.sofifa_id, player.physicality, player.id
                FROM player, nationality, club, league
                WHERE player.nationality_id = nationality.id
-               AND nationality.nationality LIKE %s
+               AND UPPER(nationality.nationality) LIKE UPPER(%s)
                AND player.league_id = league.id
-               AND league.league LIKE %s
+               AND UPPER(league.league) LIKE UPPER(%s)
                AND player.club_id = club.id
-               AND club.club LIKE %s
-               AND player.position LIKE %s
+               AND UPPER(club.club) LIKE UPPER(%s)
+               AND player.position LIKE UPPER(%s)
                AND player.shooting > %s AND player.shooting < %s
                AND player.dribbling > %s AND player.dribbling < %s
                AND player.pace > %s AND player.pace < %s
@@ -165,7 +165,7 @@ def get_players():
                AND player.age > %s AND player.age < %s
                AND player.overall_rating > %s AND player.overall_rating < %s
                AND (player.sofifa_id = %s OR %s < 0)
-               AND player.long_name LIKE %s'''
+               AND UPPER(player.long_name) LIKE UPPER(%s)'''
 
     try:
         database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), ('%'+position+'%'), shootingLow, shootingHigh, dribblingLow, dribblingHigh, paceLow, paceHigh, passingLow, passingHigh, defenseLow, defenseHigh, physicalityLow, physicalityHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))

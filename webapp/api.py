@@ -73,7 +73,7 @@ def get_goalies():
     except Exception as e:
         print(e)
         exit()
-        
+
     goalies = []
     for row in database_cursor:
         goalie = {}
@@ -132,7 +132,7 @@ def get_players():
     defenseHigh = flask.request.args.get('defensehigh', default = 99)
     physicalityLow = flask.request.args.get('physicalitylow', default = 0)
     physicalityHigh = flask.request.args.get('physicalityhigh', default = 99)
-    overallRatingLow = flask.request.args.get('overallratinglow', default = 80)
+    overallRatingLow = flask.request.args.get('overallratinglow', default = 0)
     overallRatingHigh = flask.request.args.get('overallratinghigh', default = 99)
     position = flask.request.args.get('position', default = '')
     ageLow = flask.request.args.get('agelow', default = 0)

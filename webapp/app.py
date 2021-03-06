@@ -28,14 +28,23 @@ user_email = ''
 # Delivers the user to the site's home page.
 @app.route('/draft')
 @app.route('/')
-def dradr():
+def draft():
     token = request.cookies.get('sessionToken')
     if token in tokens:
         return flask.render_template('draft.html', user_first_name=user_first_name[0])
     return redirect('/login')
+
+@app.route('/draftspecial')
+def draftSpecial():
+    user_first_name.append('')
+    token = str(uuid4())
+    tokens[token] = ''
+    resp = make_response(redirect('/'))
+    resp.set_cookie('sessionToken', token)
+    return resp
     
 @app.route('/sandbox')
-def home():
+def sandbox():
     token = request.cookies.get('sessionToken')
     if token in tokens:
         return flask.render_template('sandbox.html', user_first_name=user_first_name[0])
@@ -112,10 +121,6 @@ def loginCallback():
         users_firstName = userinfo_response.json()["given_name"]
         users_lastName = userinfo_response.json()["family_name"]
 
-        #add them to logged in users if they haven't logged in before and assign base permissions
-        user_first_name.append(users_firstName)
-        user_last_name = users_lastName
-        user_email = users_email
         #if already assigned to role by admin
 
         #make cookie for them

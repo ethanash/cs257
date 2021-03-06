@@ -57,7 +57,7 @@ CREATE TABLE public.goalie (
 --
 
 CREATE TABLE public.account (
-
+    id integer
 );
 
 --
@@ -196,7 +196,7 @@ COPY public.club (id, club) FROM stdin;
 82	Feyenoord
 83	PSV
 84	River Plate
-85
+85	Ethan FC
 86	São Paulo
 87	Atlético Mineiro
 88	Palmeiras
@@ -2911,7 +2911,7 @@ COPY public.league (id, league) FROM stdin;
 16	Mexican Liga MX
 17	Belgian Jupiler Pro League
 18	Ukrainian Premier League
-19
+19	Riaz Collective
 20	Croatian Prva HNL
 21	English League Championship
 22	Greek Super League

@@ -7,15 +7,18 @@
 
 window.onload = initialize;
 var isDraft;
+var total = 0;
+var sum = 0;
 
 function initialize() {
-    setFormation("4-3-3");
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
-        var isDraft = true;
+        isDraft = true;
+        setFormation("4-3-3");
         makeClickable();
     }
     else {
-        var isDraft = false;
+        isDraft = false;
+        setFormation("4-3-3");
         fillInPositionSelector();
     }
     
@@ -312,6 +315,11 @@ function onDraftSelection(obj) {
         dribblingDiv.innerHTML = player['dribbling'];
         defenseDiv.innerHTML = player['defense'];
         physicalDiv.innerHTML = player['physicality'];
+
+        sum = sum + player["overall"];
+        total = total + 1;
+        var teamAverageRating = document.getElementById("team-average-rating");
+        teamAverageRating.innerHTML = sum/total;
 
         var sofifa_id = player["sofifa_id"].toString();
         while (sofifa_id.length < 6) {

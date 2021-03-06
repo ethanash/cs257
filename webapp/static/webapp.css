@@ -39,6 +39,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 4rem;
+    flex-direction: column;
 }
 
 .menu-bar {

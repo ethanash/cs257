@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 13.2
--- Dumped by pg_dump version 13.2
+-- Dumped from database version 11.10
+-- Dumped by pg_dump version 13.1
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,8 +17,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 SET default_tablespace = '';
-
-SET default_table_access_method = heap;
 
 --
 -- Name: club; Type: TABLE; Schema: public; Owner: -
@@ -85,7 +83,7 @@ CREATE TABLE public.player (
     short_name text,
     long_name text,
     age integer,
-    position text,
+    "position" text,
     overall_rating integer,
     pace integer,
     shooting integer,
@@ -797,2089 +795,2089 @@ COPY public.club (id, club) FROM stdin;
 --
 
 COPY public.goalie (id, sofifa_id, short_name, long_name, age, overall_rating, diving, handling, reflexes, kicking, speed, positioning, weak_foot, league_id, club_id, nationality_id, preferred_foot) FROM stdin;
-3	\N	J. Oblak	Jan Oblak	27	91	87	92	90	78	52	90	3	1	3	3	Right
-8	\N	M. ter Stegen	Marc-André ter Stegen	28	90	88	85	90	88	45	88	4	1	1	8	Right
-10	\N	Alisson	Alisson Ramsés Becker	27	90	86	88	89	85	51	91	3	5	7	5	Right
-13	\N	T. Courtois	Thibaut Courtois	28	89	84	89	88	74	48	85	3	1	8	6	Left
-17	\N	M. Neuer	Manuel Neuer	34	89	87	87	89	91	57	86	4	3	4	8	Right
-19	\N	Ederson	Ederson Santana de Moraes	26	88	86	82	88	93	63	86	3	5	6	5	Left
-24	\N	S. Handanovič	Samir Handanovič	35	88	88	85	89	73	53	89	3	2	10	3	Right
-37	\N	H. Lloris	Hugo Lloris	33	87	89	82	90	68	63	84	1	5	9	7	Left
-41	\N	W. Szczęsny	Wojciech Szczęsny	30	87	86	82	88	73	49	87	3	2	2	4	Right
-45	\N	K. Navas	Keylor Navas Gamboa	33	87	90	81	90	75	53	82	3	4	5	19	Right
-55	\N	Y. Sommer	Yann Sommer	31	86	80	86	85	85	51	87	4	3	19	21	Right
-60	\N	De Gea	David De Gea Quintana	29	86	88	81	89	78	58	82	3	5	14	12	Right
-64	\N	G. Donnarumma	Gianluigi Donnarumma	21	85	89	81	89	76	50	83	3	2	21	15	Right
-76	\N	B. Leno	Bernd Leno	28	85	85	83	86	80	56	84	3	5	15	8	Right
-90	\N	P. Gulácsi	Péter Gulácsi	30	85	84	85	86	82	43	84	2	3	23	26	Right
-111	\N	A. Onana	André Onana	24	84	84	80	86	87	63	82	3	7	26	30	Right
-114	\N	R. Bürki	Roman Bürki	29	84	85	82	88	72	47	82	2	3	13	21	Right
-123	\N	K. Schmeichel	Kasper Schmeichel	33	84	82	77	89	83	54	79	3	5	20	27	Right
-124	\N	S. Sirigu	Salvatore Sirigu	33	84	84	80	82	76	51	84	2	2	30	15	Right
-127	\N	Rui Patrício	Rui Pedro dos Santos Patrício	32	84	84	80	83	77	55	82	2	5	31	2	Left
-145	\N	T. Strakosha	Thomas Strakosha	25	83	86	79	88	75	44	81	2	2	16	35	Right
-146	\N	Pau López	Pau López Sabata	25	83	82	83	84	79	49	82	3	2	35	12	Left
-161	\N	K. Casteels	Koen Casteels	28	83	83	80	84	80	45	83	2	3	36	6	Left
-162	\N	A. Lopes	Anthony Lopes	29	83	85	80	86	74	64	80	2	4	22	2	Left
-171	\N	S. Mandanda	Steve Mandanda	35	83	81	81	84	78	48	81	3	4	38	7	Right
-189	\N	K. Trapp	Kevin Trapp	29	83	82	78	85	79	49	83	4	3	46	8	Right
-192	\N	L. Hrádecký	Lukáš Hrádecký	30	83	85	78	87	69	41	83	3	3	47	40	Right
-194	\N	Aitor	Aitor Fernández Abarisketa	29	83	84	78	86	74	55	81	2	1	48	12	Right
-210	\N	M. Dúbravka	Martin Dúbravka	31	83	79	80	86	81	46	82	2	5	51	23	Right
-218	\N	A. Areola	Alphonse Areola	27	82	85	79	84	80	55	78	3	5	53	7	Right
-219	\N	Kepa	Kepa Arrizabalaga Revuelta	25	82	81	82	82	85	33	79	4	5	12	12	Right
-220	\N	M. Maignan	Mike Maignan	24	82	80	80	83	82	46	82	3	4	54	7	Right
-226	\N	G. Rulli	Gerónimo Rulli	28	82	85	78	88	77	54	78	3	1	24	1	Right
-229	\N	M. Perin	Mattia Perin	27	82	82	82	87	71	56	79	3	2	55	15	Right
-231	\N	Pacheco	Fernando Pacheco Flores	28	82	81	79	84	71	45	83	2	1	56	12	Left
-232	\N	David Soria	David Soria Solís	27	82	83	81	84	72	41	81	3	1	57	12	Right
-235	\N	N. Pope	Nick Pope	28	82	79	81	84	75	48	83	3	5	58	13	Right
-239	\N	J. Pavlenka	Jiří Pavlenka	28	82	84	76	87	68	36	76	3	3	59	44	Right
-240	\N	G. Buffon	Gianluigi Buffon	42	82	77	76	78	74	33	91	2	2	2	15	Right
-246	\N	Sergio Asenjo	Sergio Asenjo Andrés	31	82	84	82	82	77	56	80	3	1	24	12	Right
-249	\N	F. Muslera	Néstor Fernando Muslera Micol	34	82	84	76	83	75	61	82	2	11	60	16	Right
-257	\N	O. Baumann	Oliver Baumann	30	82	81	80	82	79	49	79	1	3	62	8	Right
-258	\N	Neto	Norberto Murara Neto	30	82	84	79	80	78	54	79	2	1	1	5	Right
-262	\N	A. Marchesín	Agustín Federico Marchesín	32	82	82	78	86	76	53	81	3	6	28	1	Right
-264	\N	T. Vaclík	Tomáš Vaclík	31	82	82	76	85	76	37	81	3	1	29	44	Right
-271	\N	Raphaelito Anjos	Raphael William Anjos Rochedo	32	82	79	84	78	77	42	83	2	12	52	5	Right
-284	\N	O. Vlachodimos	Odisseas Vlachodimos	26	81	84	76	86	67	43	77	3	6	25	36	Right
-287	\N	A. Cragno	Alessio Cragno	26	81	84	78	88	69	39	76	3	2	65	15	Right
-299	\N	J. Pickford	Jordan Pickford	26	81	81	77	85	87	48	77	5	5	27	13	Left
-302	\N	W. Benítez	Walter Daniel Benítez	27	81	80	79	83	77	48	80	2	4	67	1	Right
-312	\N	E. Andrada	Esteban Maximiliano Andrada	29	81	77	79	83	82	44	82	2	14	68	1	Right
-315	\N	M. Dmitrović	Marko Dmitrović	28	81	78	80	82	79	37	81	2	1	70	22	Left
-322	\N	A. Consigli	Andrea Consigli	33	81	81	82	83	72	40	80	3	2	74	15	Right
-323	\N	L. Fabiański	Łukasz Fabiański	35	81	80	82	82	70	48	81	2	5	64	4	Right
-324	\N	S. Ruffier	Stéphane Ruffier	33	81	80	81	81	74	48	82	3	4	75	7	Right
-326	\N	S. Mignolet	Simon Luc Hildebert Mignolet	32	81	80	75	82	76	51	84	3	17	77	6	Right
-343	\N	Jordi Masip	Jordi Masip López	31	81	82	82	84	72	65	77	4	1	81	12	Right
-344	\N	J. Cillessen	Jasper Cillessen	31	81	81	80	79	77	53	80	3	1	34	9	Right
-371	\N	D. Henderson	Dean Henderson	23	80	80	80	83	70	49	77	3	5	14	13	Right
-378	\N	Unai Simón	Unai Simón Mendibil	23	80	81	77	80	68	47	83	2	1	43	12	Right
-381	\N	D. Livaković	Dominik Livaković	25	80	80	78	82	74	55	79	3	20	90	17	Right
-397	\N	Álex Remiro	Alejandro Remiro Gargallo	25	80	83	72	81	78	43	81	4	1	18	12	Right
-406	\N	J. Musso	Juan Agustín Musso	26	80	82	77	84	74	44	80	3	2	93	1	Right
-413	\N	M. Ryan	Mathew Ryan	28	80	81	75	82	82	52	78	4	5	94	56	Right
-419	\N	B. Lecomte	Benjamin Lecomte	29	80	80	78	81	77	42	80	3	4	33	7	Left
-434	\N	I. Akinfeev	Igor Akinfeev	34	80	77	72	84	78	50	82	3	13	61	45	Right
-444	\N	S. Romero	Sergio Germán Romero	33	80	78	76	83	81	45	79	3	5	14	1	Right
-447	\N	Adán	Antonio Adán Garrido	33	80	77	80	80	78	55	79	2	6	80	12	Left
-462	\N	Guaita	Vicente Guaita Panadero	33	80	81	80	82	77	52	78	3	5	49	12	Right
-488	\N	F. Armani	Franco Armani	33	80	78	76	86	67	43	81	3	14	84	1	Right
-492	\N	Héniton Pires	Héniton Enaldo Pires Tramontino	24	80	81	75	79	78	41	81	3	12	89	5	Right
-495	\N	J. Serendero	Jorge Ezequiel Serendero	32	80	78	81	77	77	42	80	2	19	85	16	Right
-539	\N	P. Rajković	Predrag Rajković	24	79	78	77	81	74	23	79	2	4	112	22	Right
-543	\N	Rui Silva	Rui Tiago Dantas da Silva	26	79	78	74	84	75	30	80	3	1	113	2	Right
-546	\N	P. Gollini	Pierluigi Gollini	25	79	81	75	81	69	47	79	2	2	17	15	Right
-553	\N	Matheus	Matheus Lima Magalhães	27	79	82	75	83	72	46	77	3	6	114	5	Right
-565	\N	M. Sels	Matz Sels	28	79	81	76	80	76	36	79	2	4	117	6	Right
-571	\N	E. Mendy	Édouard Mendy	28	79	80	77	79	75	34	79	2	4	66	10	Right
-574	\N	M. Bizot	Marco Bizot	29	79	82	76	79	67	46	76	2	7	118	9	Right
-579	\N	A. Schwolow	Alexander Schwolow	28	79	78	76	81	71	37	78	3	3	119	8	Right
-594	\N	Pepe Reina	José Manuel Reina Páez	37	79	77	79	78	80	46	80	3	2	16	12	Right
-595	\N	G. Ochoa	Francisco Guillermo Ochoa Magaña	34	79	77	69	83	75	49	79	3	16	122	33	Right
-597	\N	B. Costil	Benoît Costil	32	79	78	77	80	77	49	78	3	4	124	7	Right
-598	\N	B. Foster	Ben Foster	37	79	80	77	80	73	49	79	3	21	95	13	Left
-605	\N	D. Ospina	David Ospina Ramírez	31	79	82	72	84	77	34	77	3	2	11	42	Right
-607	\N	N. Guzmán	Nahuel Ignacio Guzmán	34	79	78	77	79	72	52	81	3	16	72	1	Right
-625	\N	S. Ulreich	Sven Ulreich	31	79	79	71	84	68	40	79	2	3	4	8	Right
-677	\N	Gabri Prestão	Bernard Gabriel Prestão Chaves	28	79	81	75	82	71	60	77	3	12	133	5	Right
-683	\N	L. Sáreda	Leandro Miguel Sáreda	28	79	81	75	82	71	60	77	3	19	85	16	Right
-686	\N	Luís Maximiano	Luís Manuel Arantes Maximiano	21	78	79	76	79	65	55	76	2	6	80	2	Right
-690	\N	A. Meret	Alex Meret	23	78	79	74	82	70	45	77	3	2	11	15	Left
-709	\N	P. Bernardoni	Paul Bernardoni	23	78	78	74	84	73	29	77	2	4	135	7	Left
-713	\N	A. Lafont	Alban Lafont	21	78	79	76	82	70	46	75	3	4	136	7	Right
-733	\N	O. Kolář	Ondřej Kolář	25	78	75	73	80	81	58	79	3	24	138	44	Right
-743	\N	E. Martínez	Damián Emiliano Martínez	27	78	78	80	77	78	58	77	3	5	92	1	Right
-744	\N	L. Karius	Loris Karius	27	78	82	72	81	78	54	76	3	5	7	8	Right
-759	\N	José Sá	José Pedro Malheiro de Sá	27	78	79	76	80	64	45	76	2	22	125	2	Right
-784	\N	Moyá	Miguel Ángel Moyá Rumbo	36	78	82	72	78	80	39	79	2	1	18	12	Right
-786	\N	A. Mirante	Antonio Mirante	36	78	79	78	77	65	43	79	2	2	35	15	Right
-790	\N	Andrés Fernández	Andrés Eduardo Fernández Moreno	33	78	80	75	79	68	56	76	3	1	142	12	Right
-793	\N	T. Heaton	Tom Heaton	34	78	78	77	79	74	55	78	3	5	92	13	Right
-810	\N	Guilherme	Guilherme Alvim Marinato	34	78	82	73	80	72	39	78	2	13	108	45	Right
-821	\N	M. Hitz	Marwin Hitz	32	78	79	77	80	63	44	79	3	3	13	21	Right
-828	\N	Herrerín	Iago Herrerín Buisán	32	78	80	78	74	83	43	77	3	1	43	12	Right
-849	\N	C. Tătărușanu	Anton Ciprian Tătărușanu	34	78	79	76	80	75	44	77	3	2	21	70	Right
-862	\N	R. Olsen	Robin Olsen	30	78	78	77	78	76	36	78	2	2	35	37	Right
-904	\N	E. Audero	Emil Audero Mulyadi	23	77	80	73	80	73	52	74	2	2	99	15	Right
-941	\N	J. Omlin	Jonas Omlin	26	77	77	75	79	73	50	75	4	4	130	21	Right
-946	\N	G. Larsonneur	Gautier Larsonneur	23	77	79	78	78	72	52	74	2	4	155	7	Right
-959	\N	U. Çakır	Uğurcan Çakır	24	77	75	73	80	70	55	76	3	11	153	55	Right
-964	\N	Cláudio Ramos	Cláudio Pires de Morais Ramos	28	77	81	75	79	65	54	73	3	6	28	2	Right
-965	\N	T. Horn	Timo Horn	27	77	78	78	79	60	48	73	2	3	156	8	Left
-966	\N	P. Gazzaniga	Paulo Dino Gazzaniga	28	77	80	76	80	84	64	77	3	5	9	1	Right
-985	\N	H. Van Crombrugge	Hendrik Van Crombrugge	27	77	79	74	79	76	37	77	2	17	159	6	Left
-987	\N	Sergio Rico	Sergio Rico González	26	77	77	74	80	77	47	74	3	4	5	12	Right
-999	\N	L. Unnerstall	Lars Unnerstall	29	77	77	76	78	73	33	75	1	7	83	8	Right
-1020	\N	Jaume	Jaume Doménech Sánchez	29	77	77	76	79	75	58	76	3	1	34	12	Right
-1024	\N	R. Jarstein	Rune Almenning Jarstein	35	77	80	73	77	71	43	80	4	3	119	29	Right
-1025	\N	Iván Cuéllar	Iván Cuéllar Sacristán	36	77	74	76	79	78	50	73	2	23	162	12	Left
-1034	\N	J. Orozco	Jonathan Emmanuel Orozco Domínguez	34	77	76	72	76	84	59	77	3	16	165	33	Right
-1039	\N	C. Bravo	Claudio Andrés Bravo Muñoz	37	77	77	76	77	84	56	75	3	1	37	39	Right
-1041	\N	R. Gurtner	Régis Gurtner	33	77	77	75	78	75	43	77	2	27	167	7	Right
-1046	\N	R. Fährmann	Ralf Fährmann	31	77	79	78	78	44	43	77	1	3	120	8	Right
-1076	\N	A. McCarthy	Alex McCarthy	30	77	77	75	81	64	57	75	2	5	107	13	Right
-1083	\N	M. Günok	Fehmi Mert Günok	31	77	73	72	82	81	56	80	2	11	50	55	Right
-1087	\N	M. Silvestri	Marco Silvestri	29	77	79	75	79	65	60	77	3	2	168	15	Right
-1090	\N	L. Sepe	Luigi Sepe	29	77	79	75	80	71	47	75	2	2	143	15	Left
-1102	\N	R. Gikiewicz	Rafał Gikiewicz	32	77	78	73	80	64	28	74	2	3	150	4	Right
-1146	\N	C. Vargas	Camilo Andrés Vargas Gil	31	77	77	72	79	69	45	76	3	16	175	42	Left
-1155	\N	G. Arias	Gabriel Arias Arroyo	32	77	79	70	81	73	37	79	3	14	127	39	Right
-1161	\N	Lucas Mantela	Lucas Luciano Mantela Patrício	20	77	79	77	71	75	34	77	3	12	88	5	Right
-1193	\N	J. Bijlow	Justin Bijlow	22	76	78	72	77	75	50	73	2	7	82	9	Right
-1209	\N	F. Müller	Florian Müller	22	76	75	73	80	71	43	73	3	3	115	8	Left
-1214	\N	Rubén Blanco	Rubén Blanco Veiga	24	76	79	75	74	73	53	76	3	1	32	12	Right
-1218	\N	A. Rossi	Agustín Daniel Rossi	24	76	75	73	76	72	41	79	2	14	68	1	Right
-1226	\N	Z. Steffen	Zack Steffen	25	76	77	72	83	73	53	71	3	5	6	47	Right
-1229	\N	Y. Mvogo	Yvon Landry Mvogo Nganoma	26	76	80	74	79	71	42	72	3	7	83	21	Right
-1256	\N	Gabriel	Gabriel Vasconelos Ferreira	27	76	78	73	79	68	36	75	2	30	183	5	Right
-1281	\N	A. Selikhov	Aleksandr Selikhov	26	76	76	79	75	76	41	75	4	13	139	45	Right
-1294	\N	L. Skorupski	Łukasz Skorupski	29	76	80	75	81	54	51	75	2	2	172	4	Right
-1297	\N	F. Rønnow	Frederik Rønnow	27	76	77	72	78	67	46	76	2	3	46	27	Right
-1298	\N	A. Gomis	Alfred Benjamin Gomis	26	76	77	77	75	70	42	75	3	4	187	10	Right
-1299	\N	L. Mejía	Luis Ricardo Mejía Cajar	29	76	77	72	78	65	54	75	3	31	188	80	Left
-1306	\N	Sergio Herrera	Sergio Herrera Pirón	27	76	77	76	76	73	47	73	3	1	116	12	Right
-1310	\N	K. Johnsson	Karl-Johan Anton Johnsson	30	76	75	73	77	73	49	77	2	32	190	37	Right
-1312	\N	G. Makaridze	Giorgi Makaridze	30	76	79	73	76	63	44	73	2	23	191	81	Right
-1313	\N	J. Zoet	Jeroen Zoet	29	76	76	74	78	76	50	76	4	2	192	9	Right
-1327	\N	Y. Bounou	Yassine Bounou	29	76	75	76	76	74	35	75	2	1	29	24	Left
-1345	\N	A. Pyatov	Andriy Pyatov	36	76	75	69	78	78	44	80	3	18	79	51	Right
-1348	\N	Diego López	Diego López Rodríguez	38	76	71	76	73	72	44	78	3	23	137	12	Right
-1362	\N	F. Forster	Fraser Forster	32	76	76	72	80	65	31	75	5	5	107	13	Right
-1369	\N	A. Oukidja	Alexandre Oukidja	31	76	76	71	81	65	46	76	3	4	185	28	Right
-1383	\N	O. Karnezis	Orestis Karnezis	34	76	76	75	77	71	39	76	3	4	54	36	Right
-1406	\N	E. Berisha	Etrit Berisha	31	76	76	76	78	67	28	75	2	30	212	35	Left
-1414	\N	L. Chichizola	Leandro Chichizola	30	76	76	75	78	69	52	74	3	1	57	1	Right
-1424	\N	Adrián	Adrián San Miguel del Castillo	33	76	79	72	80	68	45	72	2	5	7	12	Right
-1428	\N	Joel Robles	Joel Robles Blázquez	30	76	78	73	80	72	53	73	2	1	37	12	Right
-1474	\N	M. Sportiello	Marco Sportiello	28	76	76	74	78	68	43	76	2	2	17	15	Right
-1486	\N	Fred Aníbão	Fred Marcos Aníbal Dias	28	76	71	77	77	76	32	72	2	12	223	5	Right
-1487	\N	Nelsildo Reis	Nelson Arturo Reis Lopes	20	76	76	77	74	77	52	76	3	12	224	5	Right
-1488	\N	Pierrino Faria	Pierre Tomás Torres De Faria	36	76	77	71	79	65	49	77	2	12	134	5	Right
-1504	\N	A. Lunin	Andriy Lunin	21	75	72	71	77	74	37	75	3	1	8	51	Right
-1514	\N	A. Nübel	Alexander Nübel	23	75	75	65	85	71	47	76	5	3	4	8	Right
-1516	\N	W. Faríñez	Wuilker Fariñez Aray	22	75	73	70	78	69	53	74	3	4	184	50	Right
-1517	\N	I. Radu	Ionuț Andrei Radu	23	75	79	69	80	72	40	75	2	2	10	70	Right
-1546	\N	A. Ramsdale	Aaron Ramsdale	22	75	76	73	77	69	49	73	2	5	110	13	Right
-1563	\N	B. Drągowski	Bartłomiej Drągowski	22	75	76	72	78	70	44	74	2	2	73	4	Right
-1575	\N	G. Kobel	Gregor Kobel	22	75	75	71	78	75	26	73	2	3	229	21	Right
-1587	\N	D. von Ballmoos	David von Ballmoos	25	75	76	74	76	73	52	73	3	25	140	21	Right
-1624	\N	H. Koffi	Hervé Kouakou Koffi	23	75	73	78	74	68	55	72	3	17	236	68	Right
-1631	\N	B. Samba	Brice Samba	26	75	77	69	79	73	55	71	3	21	237	86	Left
-1633	\N	S. Johnstone	Sam Johnstone	27	75	79	74	77	70	41	73	3	5	102	13	Right
-1635	\N	M. Müller	Marius Müller	26	75	74	74	79	68	32	75	2	25	238	8	Right
-1639	\N	A. Schlager	Alexander Schlager	24	75	75	72	79	66	35	73	3	29	240	34	Right
-1645	\N	R. Zentner	Robin Zentner	25	75	74	72	79	64	65	74	3	3	181	8	Right
-1659	\N	S. Ortega	Stefan Ortega Moreno	27	75	72	70	78	80	52	75	4	3	214	8	Right
-1705	\N	V. Barkas	Vasilios Barkas	26	75	71	75	75	74	34	77	2	26	160	36	Left
-1707	\N	B. Hamid	Bilal Abdul Hamid	29	75	76	70	76	70	41	76	3	8	248	47	Right
-1708	\N	J. Joronen	Jesse Joronen	27	75	76	74	75	68	46	73	3	30	249	40	Right
-1710	\N	M. Flekken	Mark Flekken	27	75	76	69	77	75	32	73	4	3	115	9	Right
-1712	\N	Jo Hyeon Woo	조현우 崔永宇	28	75	75	71	81	59	50	73	3	39	250	20	Right
-1713	\N	Helton Leite	Helton Brant Aleixo Leite	29	75	77	72	75	68	31	73	2	6	25	5	Right
-1715	\N	G. Herrera	Guido Herrera	28	75	75	73	77	69	58	75	2	11	251	1	Left
-1716	\N	A. Blake	Andre Blake	29	75	75	68	80	68	46	75	2	8	252	54	Right
-1725	\N	H. González	Hugo Alfonso González Durán	29	75	76	74	73	70	33	76	4	16	148	33	Right
-1767	\N	S. Proto	Silvio Proto	37	75	74	71	75	73	47	76	2	2	16	6	Right
-1769	\N	J. Hansen	Jesper Hansen	35	75	75	72	75	77	42	76	4	32	193	27	Right
-1773	\N	W. Caballero	Wilfredo Daniel Caballero	38	75	74	72	74	71	45	76	3	5	12	1	Right
-1775	\N	S. Kırıntılı	Serkan Kırıntılı	35	75	75	72	78	68	49	75	2	11	257	55	Right
-1777	\N	P. Kieszek	Paweł Kieszek	36	75	74	72	77	68	50	76	2	6	186	4	Right
-1780	\N	J. Hart	Joe Hart	33	75	72	75	77	65	58	74	3	5	9	13	Right
-1786	\N	J. Corona	José de Jesús Corona Rodríguez	39	75	72	77	73	68	39	78	3	16	141	33	Right
-1792	\N	S. Bolat	Sinan Bolat	31	75	71	78	75	79	43	74	4	17	205	55	Right
-1803	\N	K. Vermeer	Kenneth Vermeer	34	75	75	68	81	66	57	76	4	8	41	9	Right
-1805	\N	D. Randolph	Darren Randolph	33	75	77	72	76	67	43	73	3	5	64	52	Right
-1806	\N	W. Hennessey	Wayne Hennessey	33	75	76	74	71	79	41	75	3	5	49	38	Right
-1807	\N	T. Krul	Tim Krul	32	75	76	74	77	66	39	74	2	21	154	9	Left
-1816	\N	A. Begović	Asmir Begović	33	75	75	74	75	72	48	74	2	21	157	25	Right
-1844	\N	Roberto	Roberto Jiménez Gago	34	75	78	67	79	73	47	73	2	1	81	12	Right
-1851	\N	Yoel	Yoel Rodríguez Oterino	31	75	75	73	75	74	39	72	5	1	70	12	Right
-1852	\N	R. Cota	Rodolfo Cota Robles	32	75	75	70	78	67	57	79	2	16	152	33	Right
-1865	\N	C. Álvarez	Cristian Darío Álvarez	34	75	75	73	78	71	48	76	3	23	213	1	Right
-1867	\N	E. Room	Eloy Victor Room	31	75	76	75	76	69	45	72	3	8	221	93	Right
-1877	\N	S. Frei	Stefan Frei	34	75	75	71	78	67	44	77	2	8	147	47	Right
-1890	\N	S. Padt	Sergio Padt	30	75	76	72	77	68	38	73	3	7	96	9	Right
-1944	\N	B. Reynet	Baptiste Reynet	29	75	74	72	77	74	45	75	3	4	232	7	Right
-1948	\N	M. Borjan	Milan Borjan	32	75	76	74	72	72	43	74	2	19	85	46	Right
-1951	\N	S. Lung	Silviu Lung	31	75	74	71	76	67	36	75	3	11	271	70	Right
-1956	\N	M. Dituro	Matías Ezequiel Dituro	33	75	72	72	77	75	41	77	3	28	173	1	Right
-1968	\N	N. Vikonis	Nicolás Vikonis Mureau	36	75	76	72	77	68	42	74	3	16	288	16	Left
-1993	\N	L. Kalinić	Lovre Kalinić	30	75	78	74	76	48	35	76	2	5	92	17	Left
-2000	\N	L. Hoyos	Lucas Adrián Hoyos	31	75	79	71	79	70	60	70	3	14	174	1	Right
-2009	\N	Alexio Sanctos	Alexandre Jonas Santos Fernandes	28	75	74	71	76	69	36	75	3	12	86	5	Right
-2018	\N	Kaíquão Castro	Kaíque Osvaldo Castro Rodrigues	24	75	77	76	73	61	36	72	2	12	109	5	Right
-2030	\N	D. Boyko	Denys Boyko	32	75	76	67	75	68	48	76	3	18	91	51	Right
-2035	\N	P. Dárenas	Pablo Nicolás Dárenas	36	75	77	76	73	61	36	72	2	19	85	16	Right
-2041	\N	K. Dawson	Kevin Emiliano Dawson Blanco	28	75	77	73	74	70	32	69	2	31	298	16	Right
-2089	\N	M. Rodák	Marek Rodák	23	74	76	71	75	72	46	70	3	5	53	23	Right
-2111	\N	E. Unsain	Luis Ezequiel Unsain	25	74	77	69	79	76	56	68	3	14	242	1	Right
-2130	\N	David Raya	David Raya Martin	24	74	73	73	74	66	51	72	2	21	158	12	Right
-2145	\N	J. Butland	Jack Butland	27	74	74	68	76	66	56	76	4	21	305	13	Right
-2151	\N	A. Gunn	Angus Gunn	24	74	76	72	78	70	49	72	3	5	107	13	Right
-2179	\N	C. Stanković	Cican Stanković	27	74	77	71	79	62	44	70	4	29	180	34	Right
-2182	\N	J. Ledesma	Jeremías Ledesma	27	74	75	71	75	64	45	73	2	1	201	1	Right
-2194	\N	M. Turner	Matt Turner	26	74	74	71	75	66	39	79	2	8	211	47	Right
-2199	\N	M. Heča	Milan Heča	29	74	75	72	77	71	44	74	3	24	270	44	Right
-2202	\N	S. Dioudis	Sokratis Dioudis	27	74	77	71	78	67	43	73	2	22	293	36	Right
-2216	\N	A. Hansen	André Hansen	30	74	76	68	78	70	36	75	2	37	204	29	Right
-2219	\N	Diego Mariño	Diego Mariño Villar	30	74	74	72	77	69	50	72	3	23	312	12	Right
-2226	\N	D. Ward	Danny Ward	27	74	75	72	75	66	45	73	3	5	20	38	Right
-2237	\N	A. Aguerre	Alan Aguerre	29	74	75	72	76	63	46	72	2	14	265	1	Right
-2257	\N	A. McGregor	Allan James McGregor	38	74	74	71	79	66	37	73	3	26	231	14	Right
-2262	\N	Rubén	Rubén Iván Martínez Andrade	36	74	73	72	75	73	45	74	2	1	116	12	Right
-2273	\N	Sergio	Sergio Álvarez Conde	33	74	75	62	81	75	43	73	2	1	32	12	Right
-2278	\N	Cássio	Cássio Albuquerque dos Anjos	39	74	76	74	75	68	37	69	2	10	281	5	Right
-2280	\N	Marcelo Grohe	Marcelo Grohe	33	74	74	72	77	66	37	75	2	10	318	5	Right
-2281	\N	E. Viviano	Emiliano Viviano	34	74	73	74	73	70	32	77	2	11	163	15	Left
-2292	\N	Kiko Casilla	Francisco Casilla Cortés	33	74	74	72	75	72	47	72	2	5	63	12	Right
-2293	\N	Fabricio	Fabricio Martín Agosto Ramírez	32	74	73	75	74	71	56	71	4	5	53	12	Right
-2303	\N	D. Vukovic	Daniel Vuković	35	74	73	70	76	63	50	78	2	17	182	56	Right
-2307	\N	A. Hruška	Aleš Hruška	34	74	72	72	72	70	32	75	2	24	304	44	Right
-2308	\N	Oier	Oier Olazábal Paredes	30	74	74	71	73	70	44	77	3	23	137	12	Left
-2320	\N	R. Zieler	Ron-Robert Zieler	31	74	73	69	75	70	48	74	3	3	156	8	Right
-2336	\N	M. Samassa	Mamadou Samassa	30	74	75	68	78	69	52	71	1	11	151	67	Right
-2345	\N	G. Arlauskis	Giedrius Arlauskis	32	74	77	68	79	68	34	72	3	10	42	100	Right
-2346	\N	Rafael	Rafael Cabral Barbosa	30	74	74	73	75	64	54	72	2	21	306	5	Right
-2351	\N	A. Luthe	Andreas Luthe	33	74	74	69	77	61	39	75	3	3	78	8	Right
-2357	\N	Renan Ribeiro	Renan Ribeiro	30	74	78	65	79	65	51	72	2	6	80	5	Right
-2372	\N	H. Tekin	Harun Tekin	31	74	73	70	79	72	38	73	1	11	104	55	Right
-2379	\N	P. Pervan	Pavao Pervan	32	74	72	74	75	69	29	72	4	3	36	34	Right
-2380	\N	M. Esser	Michael Esser	32	74	73	72	78	64	41	71	3	35	327	8	Right
-2450	\N	Enzo Marteiro	Enzo Wellington Marteiro Santoso	28	74	82	73	69	73	39	74	3	12	89	5	Right
-2459	\N	Victorino Magela	Victorino M. Magela Sá	20	74	71	72	76	73	42	75	2	12	296	5	Right
-2460	\N	Adrianiscito	Adriano Leandro Soares Taffarel	28	74	68	76	73	74	18	77	3	12	52	5	Right
-2483	\N	F. Niță	Florin Constantin Niţă	32	74	75	72	76	69	28	76	2	24	270	70	Right
-2488	\N	J. Santigaro	Juan José Santigaro	34	74	71	79	69	81	30	75	3	19	85	61	Right
-2504	\N	A. Maksimenko	Aleksandr Maksimenko	22	73	74	70	77	67	48	71	3	13	139	45	Left
-2509	\N	B. Kamara	Bingourou Kamara	23	73	77	71	76	67	39	71	3	4	117	7	Right
-2535	\N	C. Acevedo	Carlos Acevedo López	24	73	73	72	74	69	23	72	3	16	200	33	Right
-2540	\N	I. Arboleda	Iván Mauricio Arboleda	24	73	75	69	75	66	59	71	2	14	336	42	Right
-2554	\N	I. Pettersson	Isak Pettersson	23	73	77	64	79	79	38	68	3	41	339	37	Left
-2560	\N	A. Bayındır	Altay Bayındır	22	73	77	69	80	68	21	69	2	11	104	55	Right
-2568	\N	L. Cháves	Lucas Abraham Chávez	24	73	76	69	74	66	48	74	2	14	285	1	Right
-2591	\N	P. Nardi	Paul Nardi	26	73	78	67	78	68	48	69	3	4	256	7	Right
-2615	\N	Tiago Sá	Tiago Magalhães de Sá	25	73	74	71	75	67	44	72	3	6	114	2	Right
-2617	\N	S. Kapino	Stefanos Kapino	26	73	74	67	79	66	42	72	2	3	59	36	Right
-2626	\N	T. Didillon	Thomas Didillon	24	73	74	71	74	66	55	74	2	17	345	7	Left
-2642	\N	J. Rodríguez	José Antonio Rodríguez Romero	27	73	74	70	73	66	57	73	3	16	226	33	Right
-2644	\N	Edgar Badía	Edgar Badía Guardiola	28	73	76	69	75	67	33	73	3	1	284	12	Right
-2654	\N	R. Strebinger	Richard Strebinger	27	73	74	64	79	63	38	74	2	29	347	34	Right
-2656	\N	A. Brignoli	Alberto Brignoli	28	73	72	72	73	75	32	73	3	30	349	15	Left
-2667	\N	J. Rinne	Jacob Rinne	27	73	73	72	75	70	47	71	3	32	194	37	Left
-2681	\N	K. Darlow	Karl Darlow	29	73	75	70	76	64	55	71	2	5	51	13	Right
-2684	\N	J. Blaswich	Janis Blaswich	29	73	71	71	78	68	41	71	3	7	354	8	Right
-2695	\N	Bruno Varela	Bruno Miguel Semedo Varela	25	73	77	70	76	63	40	72	3	6	121	2	Right
-2697	\N	Yan Junling	颜骏凌	29	73	72	70	74	67	48	72	3	9	45	58	Right
-2703	\N	A. Abedzadeh	Amir Abedzadeh	27	73	72	70	74	70	27	72	2	6	291	78	Right
-2704	\N	A. Beiranvand	Alireza Safar Beiranvand	27	73	78	67	73	66	41	71	3	17	145	78	Right
-2708	\N	N. Etheridge	Neil Leonard Dula Etheridge	30	73	74	67	75	61	52	75	3	21	170	105	Right
-2742	\N	J. Pinos	Jorge Bladimir Pinos Haiman	30	73	71	72	70	73	22	75	2	42	286	61	Right
-2743	\N	N. Penneteau	Nicolas Penneteau	39	73	70	76	66	66	27	81	3	17	302	7	Left
-2746	\N	L. Butelle	Ludovic Butelle	37	73	74	69	75	62	32	74	3	4	135	7	Left
-2748	\N	A. Boruc	Artur Boruc	40	73	73	72	71	66	32	75	3	40	361	4	Right
-2749	\N	Cifuentes	Alberto Cifuentes Martínez	41	73	67	74	71	65	46	82	3	1	201	12	Right
-2754	\N	Rafael	Rafael de Andrade Bittencourt Pinheiro	38	73	75	71	73	63	36	74	3	2	192	5	Right
-2758	\N	J. Leca	Jean-Louis Leca	34	73	72	69	75	69	45	74	3	4	184	7	Right
-2760	\N	A. Talavera	Alfredo Talavera Díaz	37	73	74	74	68	70	58	75	4	16	234	33	Right
-2761	\N	P. Pentke	Philipp Pentke	35	73	74	69	77	66	37	73	2	3	62	8	Right
-2767	\N	S. Viera	Mario Sebastián Viera Galain	37	73	71	70	75	72	39	73	3	34	198	16	Right
-2769	\N	D. Padelli	Daniele Padelli	34	73	72	72	70	63	44	76	2	2	10	15	Left
-2770	\N	R. Pasveer	Remko Pasveer	36	73	73	70	72	83	45	74	4	7	313	9	Right
-2778	\N	I. Khune	Itumeleng Khune	33	73	70	71	73	90	35	74	5	43	292	89	Right
-2782	\N	A. Shunin	Anton Shunin	33	73	72	72	75	70	41	72	3	19	85	45	Left
-2792	\N	J. Lössl	Jonas Lössl	31	73	73	74	75	68	32	71	2	5	27	27	Right
-2797	\N	M. Andújar	Mariano Gonzalo Andújar	36	73	72	71	75	62	45	75	3	14	123	1	Right
-2805	\N	A. Gabbarini	Adrián José Gabbarini	34	73	71	72	77	65	46	71	2	42	368	1	Right
-2806	\N	T. Sippel	Tobias Sippel	32	73	74	69	77	76	46	69	2	3	19	8	Right
-2811	\N	L. Robles	Luis Robles	36	73	74	71	76	70	41	71	3	8	39	47	Right
-2876	\N	H. Lindner	Heinz Lindner	29	73	78	69	76	65	42	70	3	25	197	34	Right
-2894	\N	S. Clark	Steve Clark	34	73	72	69	73	65	48	75	4	8	126	47	Right
-2898	\N	M. Silva	Martín Andrés Silva Leites	37	73	75	70	77	72	31	72	2	33	314	16	Right
-2908	\N	T. Melia	Tim Melia	34	73	73	68	73	73	37	74	2	8	266	47	Right
-2912	\N	Marafona	José Carlos Coentrão Marafona	33	73	73	73	74	66	37	74	2	11	179	2	Right
-2918	\N	Kim Jin Hyeon	김진현 金镇铉	32	73	73	67	76	61	47	73	3	15	374	20	Right
-2921	\N	K. Müller	Kevin Müller	29	73	72	70	75	66	47	72	3	35	357	8	Right
-2937	\N	S. Sosa	Carlos Sebastián Sosa Silva	33	73	73	68	75	66	41	74	3	16	363	16	Right
-2987	\N	J. Broun	Jorge Emanuel Broun	34	73	71	68	77	69	43	75	3	14	378	1	Right
-2989	\N	S. Torrico	Sebastián Alberto Torrico	40	73	71	69	73	68	45	75	2	14	144	1	Right
-2993	\N	D. Dibusz	Dénes Dibusz	29	73	74	72	75	70	23	72	3	19	85	26	Right
-3000	\N	P. Gallese	Pedro David Gallese Quiróz	30	73	74	67	74	69	47	70	3	8	97	66	Right
-3002	\N	M. El Shenawy	Mohamed El Shenawy	31	73	73	71	73	70	47	69	3	19	85	11	Right
-3005	\N	Jaim Abra	Jaime Tomás Abravanel Mestres	28	73	77	71	74	68	54	73	3	12	132	5	Right
-3006	\N	Freder Cabral	Frederico Peter Cabral Bardini	28	73	73	77	66	69	48	76	2	12	87	5	Right
-3051	\N	A. Paschalakis	Alexandros Paschalakis	30	73	81	62	82	65	50	70	2	22	260	36	Right
-3052	\N	D. Akpeyi	Daniel Akpeyi	34	73	74	72	75	68	24	75	2	43	292	31	Right
-3057	\N	Z. Živković	Živko Živković	31	73	73	68	75	68	29	75	2	22	260	22	Right
-3090	\N	F. Woodman	Freddie Woodman	23	72	72	68	73	69	45	71	2	21	206	13	Right
-3129	\N	C. Walton	Christian Walton	24	72	72	72	74	70	35	66	2	5	94	13	Left
-3150	\N	L. Montipò	Lorenzo Montipò	24	72	72	70	76	69	41	69	1	2	273	15	Right
-3151	\N	S. Scuffet	Simone Scuffet	24	72	72	68	80	60	50	70	2	2	93	15	Right
-3157	\N	R. Gudiño	Raúl Manolo Gudiño Vega	24	72	72	72	74	62	47	69	1	16	226	33	Right
-3159	\N	J. Drommel	Joël Drommel	23	72	73	69	73	70	51	70	3	7	387	9	Right
-3184	\N	J. Prior	Jérôme Prior	24	72	70	69	78	68	52	71	3	27	388	7	Left
-3185	\N	Sivera	Antonio Sivera Salvá	23	72	72	70	72	68	56	73	3	1	56	12	Right
-3187	\N	Léo Jardim	Leonardo César Jardim	25	72	75	72	73	67	42	66	2	6	233	5	Right
-3240	\N	G. Bushchan	Georgiy Bushchan	26	72	72	65	74	73	28	69	3	18	91	51	Right
-3266	\N	D. Roef	Davy Roef	26	72	75	70	75	64	50	70	3	17	205	6	Right
-3283	\N	A. Martín Arias	Alexis Martín Arias	27	72	73	67	75	73	50	70	3	28	393	1	Right
-3299	\N	G. Akkan	Gökhan Akkan	25	72	69	68	80	68	48	70	2	11	207	55	Right
-3317	\N	T. Kaminski	Thomas Kaminski	27	72	72	75	74	67	46	67	3	21	309	6	Right
-3319	\N	S. Bain	Scott Bain	28	72	70	72	74	72	60	67	3	26	160	14	Right
-3321	\N	T. Koubek	Tomáš Koubek	27	72	77	62	76	67	41	69	2	3	150	44	Right
-3333	\N	C. Mathenia	Christian Mathenia	28	72	74	68	76	62	45	71	1	35	301	8	Right
-3340	\N	L. Zingerle	Leopold Zingerle	26	72	70	69	75	67	43	72	3	35	389	8	Right
-3347	\N	A. Smithies	Alex Smithies	30	72	72	69	72	66	59	72	2	21	371	13	Right
-3349	\N	V. Belec	Vid Belec	30	72	73	72	74	60	48	71	3	2	99	3	Right
-3360	\N	A. El Shenawy	Ahmed Naser Mahmoud Al Shenawy	29	72	72	68	74	70	34	73	4	19	85	11	Right
-3385	\N	R. Rey	Rodrigo Francisco Jesús Rey	29	72	74	71	73	69	48	72	3	22	260	1	Right
-3417	\N	M. Stekelenburg	Maarten Stekelenburg	37	72	69	71	70	72	33	73	4	7	26	9	Right
-3420	\N	Y. Pelé	Yohann Pelé	37	72	71	72	73	67	39	71	3	4	38	7	Right
-3423	\N	G. Lux	Germán Darío Lux	38	72	70	70	72	74	38	70	2	14	84	1	Right
-3426	\N	D. Marshall	David Marshall	35	72	71	69	73	66	49	72	3	21	161	14	Right
-3427	\N	S. Bossut	Sammy Bossut	34	72	72	70	71	65	45	73	3	17	402	6	Right
-3429	\N	A. Cordaz	Alex Cordaz	37	72	68	71	74	62	26	72	1	2	355	15	Right
-3430	\N	R. Salin	Romain Jules Salin	35	72	76	64	75	68	31	72	2	4	66	7	Left
-3432	\N	B. Białkowski	Bartosz Białkowski	32	72	66	71	73	67	41	75	3	21	254	4	Right
-3433	\N	J. Lewis	Joe Lewis	32	72	75	68	75	67	56	72	3	26	403	13	Right
-3437	\N	P. Tschauner	Philipp Tschauner	34	72	71	70	73	66	42	71	3	3	23	8	Right
-3439	\N	J. Dahlin	Johan Dahlin	33	72	66	72	69	67	37	79	3	41	267	37	Right
-3440	\N	B. Guzan	Bradley Guzan	35	72	72	68	74	72	37	72	2	8	69	47	Left
-3441	\N	B. Jones	Brad Scott Jones	38	72	71	69	70	68	54	74	3	10	103	56	Left
-3452	\N	K. Westwood	Keiren Westwood	35	72	72	71	73	70	47	72	4	21	370	52	Left
-3455	\N	L. Burián	Leonardo Fabián Burián Castro	36	72	71	70	71	68	41	72	3	14	277	16	Right
-3457	\N	Marco Pereira	Marco André Rocha Pereira	33	72	71	67	74	65	56	71	2	6	390	2	Right
-3469	\N	Bracali	Rafael Wihby Bracali	39	72	73	72	71	60	40	71	2	6	233	5	Right
-3481	\N	Denis	Denis César de Matos	33	72	73	72	76	70	54	64	2	6	335	5	Right
-3483	\N	S. Grytebust	Sten Michael Grytebust	30	72	73	70	75	64	44	73	2	32	190	29	Right
-3493	\N	O. Nyland	Ørjan Håskjold Nyland	29	72	72	67	73	77	48	73	4	5	92	29	Right
-3497	\N	Alberto	Alberto García Cabrera	35	72	72	71	73	71	63	70	3	23	321	12	Right
-3500	\N	S. Dzhanaev	Soslan Dzhanaev	33	72	74	67	73	69	46	71	2	19	85	45	Right
-3506	\N	V. Babacan	Volkan Babacan	31	72	73	70	72	68	56	76	2	11	50	55	Right
-3508	\N	S. Burchert	Sascha Burchert	30	72	72	70	73	68	45	73	3	35	411	8	Right
-3514	\N	C. Pinsoglio	Carlo Pinsoglio	30	72	74	70	76	58	42	74	2	2	2	15	Left
-3520	\N	Da Costa	Angelo Esmael da Costa Júnior	36	72	71	71	72	64	39	75	2	2	172	5	Right
-3526	\N	Tomeu Nadal	Bartolomé Nadal Mesquida	31	72	69	70	75	68	39	72	3	23	412	12	Right
-3533	\N	S. Johnson	Sean Johnson	31	72	73	67	76	70	43	70	2	8	247	47	Right
-3541	\N	K. Nordfeldt	Kristoffer Nordfeldt	31	72	71	66	74	69	50	74	3	11	319	37	Right
-3556	\N	Juan Carlos	Juan Carlos Martín Corral	32	72	71	72	73	74	60	71	3	23	128	12	Right
-3557	\N	Dani Jiménez	Daniel Jiménez López	30	72	73	69	75	65	52	69	3	23	351	12	Right
-3564	\N	B. Leroy	Benjamin Leroy	31	72	71	71	72	70	39	72	3	27	418	7	Right
-3566	\N	A. Hayashi	林 昭大	33	72	72	68	74	63	48	71	3	15	375	72	Right
-3580	\N	A. Domínguez	Alexander Domínguez Carabalí	33	72	69	70	72	71	31	73	3	14	174	61	Right
-3587	\N	M. Riemann	Manuel Riemann	31	72	72	68	74	71	50	70	5	35	290	8	Right
-3645	\N	C. Bălgrădean	Cristian Emanuel Bălgrădean	32	72	72	71	72	70	50	71	3	44	369	70	Right
-3690	\N	M. Ibáñez	Matías Alejandro Ibáñez Basualdo	33	72	72	72	71	65	42	73	2	14	127	1	Right
-3694	\N	S. Moyano	Sebastián Emanuel Moyano	29	72	72	68	74	68	51	72	2	14	334	1	Right
-3722	\N	Munir	Munir Mohand Mohamedi	31	72	70	72	72	66	45	73	3	11	253	24	Right
-3734	\N	A. Aguilar	Alfredo Ariel Aguilar	31	72	76	69	73	69	46	68	3	33	196	69	Right
-3740	\N	Sacramentinho	Luiz Santiago Sacramento Cruz	36	72	74	68	71	72	46	74	2	12	86	5	Right
-3741	\N	Túlio Changas	Túlio Sebastião Changas Tramontino	24	72	72	71	73	75	43	68	3	12	88	5	Right
-3752	\N	André Milazisco	André Mikael Milazar Santoso	24	72	77	64	77	62	34	66	1	12	223	5	Left
-3774	\N	João Bruinheira	João Fabrício Bruinheira Salvador	32	72	71	63	75	77	33	74	1	12	132	5	Right
-3887	\N	T. Cardozo	Thiago Gastón Cardozo Brugman	23	71	65	70	72	68	38	73	2	31	298	16	Right
-3905	\N	A. Bodart	Arnaud Bodart	22	71	73	72	74	65	21	68	2	17	303	6	Right
-3917	\N	B. Cortés	Brayan Josué Cortés Fernández	25	71	70	71	72	67	48	71	3	28	220	39	Right
-3956	\N	D. Phillips	Dillon Phillips	25	71	72	67	72	62	45	70	3	48	440	13	Right
-3978	\N	M. Pigliacelli	Mirko Pigliacelli	27	71	71	69	71	83	48	66	3	44	377	15	Right
-3980	\N	S. Dimitrievski	Stole Dimitrievski	26	71	72	70	70	68	37	74	2	23	321	63	Right
-3982	\N	M. Crépeau	Maxime Crépeau	26	71	70	69	74	65	50	71	2	8	255	46	Right
-3986	\N	G. Lajud	Manuel Gibran Lajud Bojalil	26	71	71	66	74	63	45	74	1	16	200	33	Right
-3989	\N	E. Horvath	Ethan Shea Horvath	25	71	78	66	76	57	49	62	3	17	77	47	Right
-3997	\N	T. Wellenreuther	Timon Wellenreuther	24	71	74	67	72	66	53	68	4	17	159	8	Right
-4001	\N	J. Pollersbeck	Julian Pollersbeck	25	71	73	66	73	72	28	70	3	4	22	8	Right
-4003	\N	J. Butez	Jean Butez	25	71	73	67	72	73	44	68	3	17	145	7	Right
-4016	\N	M. Gillespie	Mark Gillespie	28	71	74	68	73	66	35	72	3	5	51	13	Right
-4020	\N	Adrián Ortolá	Adrián Ortolá Vañó	26	71	70	68	73	74	51	70	5	23	392	12	Left
-4024	\N	A. Linde	Andreas Christopher Linde	26	71	73	67	74	65	49	69	2	37	259	37	Right
-4026	\N	M. Schuhen	Marcel Schuhen	27	71	73	68	75	68	52	67	3	35	415	8	Right
-4030	\N	D. Heuer Fernandes	Daniel Heuer Fernandes	27	71	72	69	74	70	43	69	4	35	199	2	Right
-4050	\N	G. Alcalá	Gil Esaul Alcalá Barba	27	71	71	70	72	62	59	73	2	16	397	33	Right
-4053	\N	Charles	Charles Marcelo da Silva	26	71	72	66	74	60	30	70	2	6	291	5	Right
-4060	\N	P. Tsintotas	Panagiotis Tsintotas	26	71	73	70	75	70	30	63	2	22	195	36	Right
-4072	\N	M. Bettinelli	Marcus Bettinelli	28	71	71	69	73	73	29	73	3	21	344	13	Right
-4073	\N	M. Dupé	Maxime Dupé	27	71	73	70	75	62	45	67	2	27	241	7	Right
-4094	\N	M. Fraisl	Martin Fraisl	27	71	73	68	73	64	41	69	2	35	272	34	Right
-4095	\N	S. Marinović	Stefan Marinović	28	71	73	66	77	60	51	65	2	36	414	71	Right
-4124	\N	P. Terracciano	Pietro Terracciano	30	71	72	67	75	64	41	69	2	2	73	15	Right
-4128	\N	P. Kühn	Philipp Kühn	27	71	72	64	78	69	49	75	3	35	450	8	Right
-4131	\N	M. Al Owais	Mohammed Al Owais	28	71	71	72	70	67	47	71	3	10	177	101	Left
-4151	\N	Jhonatan	Jhonatan Luiz da Siqueira	29	71	75	70	74	70	33	67	2	6	121	5	Right
-4165	\N	Riesgo	Asier Riesgo Unamuno	36	71	71	73	69	67	55	71	3	23	162	12	Right
-4168	\N	A. Walke	Alexander Walke	37	71	71	70	72	75	35	69	3	29	180	8	Right
-4170	\N	F. Marchetti	Federico Marchetti	37	71	68	70	70	64	52	70	3	2	55	15	Left
-4177	\N	L. Pocrnjic	Luciano Darío Pocrnjic	38	71	71	68	70	64	27	72	3	14	331	1	Right
-4182	\N	C. Lucchetti	Cristian David Lucchetti	42	71	72	69	70	76	43	69	3	14	410	1	Right
-4194	\N	R. M'Bolhi	Raïs M'Bolhi Ouhab	34	71	71	67	77	65	48	67	3	10	329	28	Right
-4199	\N	Manolo Reina	Manuel Reina Rodríguez	35	71	68	68	72	67	57	74	3	23	209	12	Right
-4210	\N	F. Rodríguez	Carlos Felipe Rodríguez Rangel	31	71	68	68	73	71	52	72	3	16	283	33	Right
-4222	\N	Zeng Cheng	曾诚	33	71	70	66	74	69	33	71	4	9	129	58	Right
-4223	\N	Wang Dalei	王大雷	31	71	70	69	72	70	59	68	3	9	262	58	Right
-4226	\N	M. Männel	Martin Männel	32	71	73	71	74	60	48	69	3	35	420	8	Right
-4228	\N	D. González	David González Giraldo	37	71	69	70	73	66	37	72	2	34	289	42	Right
-4245	\N	D. Kuciak	Dušan Kuciak	35	71	74	64	76	64	36	71	2	40	458	23	Right
-4252	\N	A. Saldívar	Alfredo Saldívar Medina	30	71	71	72	68	70	43	70	3	16	203	33	Right
-4266	\N	C. Toselli	Cristopher Benjamín Toselli Ríos	32	71	69	69	72	70	49	70	3	28	173	39	Right
-4277	\N	E. Lamanna	Eugenio Lamanna	30	71	68	70	73	66	31	70	2	30	372	15	Right
-4286	\N	C. Pantilimon	Costel Fane Pantilimon	33	71	67	71	72	72	37	70	2	11	264	70	Right
-4289	\N	O. Jiménez	Óscar Francisco Jiménez Fabela	31	71	73	69	72	68	33	71	3	16	122	33	Right
-4292	\N	W. Foderingham	Wesley Foderingham	29	71	71	69	72	68	43	70	2	5	110	13	Left
-4294	\N	J. Siebenhandl	Jörg Siebenhandl	30	71	69	68	74	75	47	69	3	29	444	34	Left
-4309	\N	F. Wiedwald	Felix Wiedwald	30	71	73	64	73	68	40	67	2	3	46	8	Right
-4358	\N	R. Fernández	Raúl Omar Fernández Valverde	34	71	71	69	75	60	50	68	2	46	428	66	Left
-4411	\N	A. Silva	Antony Domingo Silva Cano	36	71	70	67	71	64	39	70	3	19	85	69	Right
-4416	\N	Daniel Guimarães	Daniel Martins Guimarães	33	71	75	65	74	60	40	68	1	6	401	5	Right
-4419	\N	F. Monetti	Fernando Monetti	31	71	70	68	71	72	57	69	3	14	144	1	Right
-4446	\N	Rafael Defendi	Rafael Garcia Tonioli Defendi	36	71	68	70	71	69	34	73	2	6	394	5	Right
-4448	\N	B. Medina	Bernardo David Medina	32	71	76	66	75	60	47	66	2	46	470	69	Right
-4467	\N	Ailton Cardenhas	Ailton Nuno Cardenhas Macedo	20	71	71	72	72	72	24	76	3	12	134	5	Right
-4468	\N	Wiliam Santinho	Wiliam Carlos Santoso Sampaio	24	71	61	77	73	76	35	70	2	12	109	5	Right
-4481	\N	M. Higashiguchi	東口 順昭	34	71	68	70	69	75	33	73	3	15	358	72	Right
-4487	\N	Eduardo Fonseira	Eduardo Flávio Fonseira Meire	20	71	71	70	69	74	35	72	3	12	224	5	Right
-4490	\N	C. Cáceda	Carlos Alberto Cáceda Oyaguez	28	71	69	69	72	65	29	71	2	46	471	66	Right
-4507	\N	K. Eissa	Khalid Eisa Mohamed Bilal Saeed	30	71	70	65	77	59	48	72	3	38	218	109	Right
-4511	\N	Mateus Pasinato	Mateus Pasinato	28	71	71	72	67	71	21	71	3	6	246	5	Right
-4536	\N	Diogo Costa	Diogo Meireles Costa	20	70	69	66	73	59	33	71	3	6	28	2	Right
-4569	\N	M. Schubert	Markus Schubert	22	70	73	67	75	62	37	65	3	3	120	8	Right
-4571	\N	I. Zlobin	Ivan Zlobin	23	70	68	66	71	61	29	72	2	6	227	45	Right
-4572	\N	M. Paes	Maarten Paes	22	70	69	66	71	65	32	69	3	7	189	9	Right
-4574	\N	Dani Martín	Daniel Martín Fernández	21	70	70	67	73	67	47	69	3	1	37	12	Right
-4620	\N	Koke Vegas	Jorge Ruiz Ojeda	24	70	72	70	68	60	52	67	3	1	48	12	Right
-4628	\N	N. Baumann	Noam Baumann	24	70	69	68	74	68	23	69	2	25	473	21	Right
-4630	\N	A. Šemper	Adrian Šemper	22	70	73	69	71	63	19	69	2	30	416	17	Right
-4638	\N	A. Werner	Axel Wilfredo Werner	24	70	74	72	70	75	44	68	2	16	283	1	Right
-4652	\N	Juan Soriano	Juan Soriano Oropesa	22	70	72	67	73	66	37	67	2	1	29	12	Left
-4679	\N	P. Pentz	Patrick Pentz	23	70	68	65	73	73	54	68	4	29	365	34	Left
-4681	\N	O. Linnér	Oscar Linnér	23	70	73	67	70	66	35	72	3	3	214	37	Right
-4690	\N	K. Broll	Kevin Broll	24	70	72	65	73	44	15	70	2	45	464	8	Right
-4691	\N	F. Manojlović	Filip Manojlović	24	70	72	69	71	70	19	66	3	1	57	22	Right
-4696	\N	S. Rojas	Santiago Gerardo Rojas López	24	70	68	67	71	70	25	72	3	33	479	69	Right
-4714	\N	R. Rúnarsson	Rúnar Alex Rúnarsson	25	70	71	68	71	72	46	70	2	4	187	65	Right
-4746	\N	F. Kastenmeier	Florian Kastenmeier	23	70	72	65	71	68	25	66	3	35	269	8	Right
-4747	\N	N. Guirin	Nicolás Guirin Chialvo	25	70	67	67	70	67	46	70	2	31	481	16	Right
-4751	\N	D. Bentley	Daniel Bentley	26	70	75	64	72	66	44	69	3	21	384	13	Right
-4752	\N	S. McDermott	Sean McDermott	27	70	70	67	73	57	44	68	2	37	483	52	Right
-4753	\N	B. Uphoff	Benjamin Uphoff	26	70	69	69	71	68	38	69	2	3	115	8	Right
-4756	\N	L. García	Luis Manuel García Palomera	27	70	71	71	70	67	48	70	3	16	203	33	Right
-4759	\N	Jordi	Jordi Martins Almeida	26	70	69	68	72	70	45	69	3	6	340	5	Right
-4761	\N	G. Gallon	Gauthier Gallon	27	70	72	67	72	66	40	70	2	27	324	7	Right
-4764	\N	L. Cárdenas	Luis Alberto Cárdenas López	26	70	68	70	73	68	40	68	3	16	148	33	Right
-4765	\N	S. Allagbé	Owalabi Franck Saturnin Allagbé Kassifa	26	70	69	71	73	67	29	69	2	27	478	99	Right
-4767	\N	Kang Hyeon Mu	강현무 姜贤茂	25	70	71	64	74	63	45	69	3	39	484	20	Right
-4775	\N	J. Huth	Jannik Huth	26	70	70	66	73	74	60	67	4	35	389	8	Right
-4777	\N	Caro	José Antonio Caro Díaz	26	70	68	68	70	68	35	71	3	23	437	12	Right
-4785	\N	A. Davies	Adam Davies	27	70	70	68	71	67	40	68	3	21	305	38	Right
-4820	\N	Gu Sung Yun	구성윤 具圣润	26	70	70	64	74	61	22	67	2	39	295	20	Right
-4838	\N	O. Shevchenko	Oleksiy Shevchenko	28	70	69	66	71	73	23	71	3	18	79	51	Right
-4842	\N	J. Steer	Jed Steer	27	70	68	69	71	70	50	70	2	5	92	13	Left
-4843	\N	F. Kurto	Filip Kurto	29	70	71	65	73	61	60	67	2	36	261	4	Right
-4845	\N	A. Ahamada	Ali Nadhoim Ahamada	28	70	78	62	75	58	40	63	2	37	487	110	Right
-4848	\N	Caio Secco	Caio Gobbo Secco	29	70	67	69	69	62	42	71	2	6	291	5	Right
-4852	\N	M. Michel	Mathieu Michel	28	70	70	68	72	66	49	69	2	27	419	7	Right
-4858	\N	G. Güvenç	Günay Güvenç	28	70	70	69	74	67	56	69	2	11	381	55	Right
-4861	\N	E. Chaux	Eder Aleixo Chaux Ospina	28	70	69	65	74	60	46	70	3	34	343	42	Right
-4879	\N	D. Schmidt	シュミット・ダニエル	28	70	71	68	73	71	17	68	4	17	337	72	Right
-4880	\N	G. Anestis	Giannis Anestis	29	70	70	65	71	68	23	73	2	41	408	36	Right
-4882	\N	M. Awad	Mohamed Hussein Awad	27	70	70	66	72	67	49	67	2	19	85	11	Right
-4883	\N	F. Plach	František Plach	28	70	69	68	71	66	27	69	2	40	426	23	Left
-4887	\N	D. Lazar	David Beniamin Lazar	28	70	70	65	74	62	39	69	3	44	294	70	Right
-4888	\N	D. Stipica	Dante Stipica	29	70	72	67	75	64	29	73	2	40	490	17	Right
-4890	\N	Kim Seung Gyu	김승규 金承奎	29	70	70	66	72	69	36	70	2	15	311	20	Right
-4897	\N	A. Seculin	Andrea Seculin	29	70	73	67	79	57	30	63	3	30	416	15	Right
-4909	\N	L. Thomas	Lawrence Andrew Kingsley Thomas	28	70	71	67	73	62	38	66	2	32	491	56	Right
-4914	\N	Fernando	Fernando Martínez Rubio	30	70	71	68	72	63	48	65	2	23	191	12	Right
-4966	\N	L. Grant	Lee Grant	37	70	70	70	69	72	41	67	4	5	14	13	Right
-4967	\N	G. Pegolo	Gianluca Pegolo	39	70	70	68	70	60	43	70	2	2	74	15	Left
-4973	\N	E. Bologna	Enrique Alberto Bologna Gómez	38	70	70	67	71	70	42	69	3	14	84	1	Right
-4975	\N	A. Rebrov	Artem Rebrov	36	70	69	66	69	64	34	74	3	13	139	45	Right
-4978	\N	S. Carson	Scott Carson	34	70	69	70	68	69	35	71	3	5	6	13	Right
-4983	\N	J. Ruddy	John Ruddy	33	70	70	66	71	72	41	70	3	5	31	13	Right
-4988	\N	A. Federici	Adam Federici	35	70	70	67	67	76	42	70	2	36	497	56	Right
-4990	\N	N. Navarro	Nicolás Gastón Navarro	35	70	71	70	70	68	44	67	2	50	493	1	Left
-4992	\N	O. Ustari	Óscar Alfredo Ustari	33	70	66	70	72	69	35	70	2	16	216	1	Right
-4995	\N	R. Riou	Rémy Riou	32	70	70	68	68	66	49	71	1	27	217	7	Right
-4997	\N	M. Fraga	Miguel Ángel Fraga Licona	32	70	70	70	69	74	51	69	3	16	363	33	Right
-4999	\N	J. Moulin	Jessy Moulin	34	70	72	70	71	65	52	68	2	4	75	7	Right
-5016	\N	V. Mannone	Vito Mannone	32	70	68	67	71	66	55	70	3	4	33	15	Right
-5024	\N	M. Langerak	Mitchell James Langerak	31	70	71	68	72	53	27	70	3	15	424	56	Right
-5033	\N	E. Mulder	Erwin Mulder	31	70	71	70	71	73	33	66	3	7	230	9	Right
-5050	\N	René	René Román Hinojo	36	70	71	68	69	63	54	70	2	44	413	12	Right
-5055	\N	Raúl Fernández	Raúl Fernández-Cavada Mateos	32	70	70	69	70	62	42	71	2	23	449	12	Right
-5056	\N	K. Kronholm	Kenneth Kronholm	34	70	74	64	74	65	36	64	3	8	287	47	Right
-5058	\N	P. Šteinbors	Pāvels Šteinbors	34	70	72	66	74	65	37	72	2	40	469	124	Right
-5072	\N	S. Colombi	Simone Colombi	29	70	71	67	76	53	40	69	2	2	143	15	Right
-5077	\N	R. Ruiter	Robbin Ruiter	33	70	70	66	69	67	55	71	2	7	315	9	Right
-5105	\N	F. Giefer	Fabian Giefer	30	70	73	64	72	58	37	71	1	35	504	8	Right
-5127	\N	F. Farnolle	Fabien Farnolle	35	70	70	69	69	65	42	72	2	11	404	99	Right
-5149	\N	M. Gorgelin	Mathieu Gorgelin	29	70	73	64	71	70	48	67	2	27	500	7	Left
-5175	\N	D. Bingham	David Bingham	30	70	74	64	72	72	39	67	2	8	111	47	Right
-5219	\N	R. Himmelmann	Robin Himmelmann	31	70	71	65	75	62	34	67	2	35	443	8	Right
-5226	\N	A. Al Mayoof	Abdullah Ibrahim Al Maiouf	33	70	69	68	70	70	47	70	3	10	98	101	Right
-5234	\N	M. Goicoechea	Mauro Daniel Goicoechea Furia	32	70	71	68	70	71	51	68	2	27	241	16	Right
-5274	\N	A. Kofler	Alexander Kofler	33	70	68	71	69	62	47	73	3	29	362	34	Right
-5276	\N	S. Gonda	権田 修一	31	70	69	68	71	63	48	70	2	6	228	72	Right
-5300	\N	D. Frascarelli	Damián Andrés Frascarelli Gutiérrez	35	70	67	68	69	69	41	70	2	42	516	16	Right
-5323	\N	Vítor Angulho	Vítor Martín Angulho Fancini	24	70	69	73	74	58	38	63	2	12	380	5	Right
-5324	\N	Adrizinho Bastos	Adriano Well. Bastos Oliveira	32	70	72	64	68	72	46	70	3	12	222	5	Right
-5360	\N	Jairo Farnias	Jairo Ralph Farnias Almeida	20	70	64	68	75	69	55	68	3	12	133	5	Left
-5397	\N	M. Sotillo	Michael Anthony Sotillo Cañari	35	70	72	75	65	68	49	70	2	46	428	66	Right
-5408	\N	J. Markovič	Jakub Markovič	18	69	71	71	72	76	60	69	3	24	138	44	Right
-5412	\N	N. Mantl	Nico Mantl	20	69	70	69	70	64	32	69	3	45	519	8	Right
-5432	\N	I. Meslier	Illan Meslier	20	69	70	67	73	70	28	67	2	5	63	7	Left
-5520	\N	B. Peacock-Farrell	Bailey Peacock-Farrell	23	69	72	65	73	72	52	64	2	5	58	57	Left
-5545	\N	I. Grbić	Ivo Grbić	24	69	66	69	70	67	26	68	3	1	3	17	Right
-5548	\N	S. Rossbach	Sondre Løvseth Rossbach	24	69	70	66	72	66	44	67	3	37	526	29	Right
-5560	\N	M. Verrips	Michael Verrips	23	69	71	68	72	71	16	65	3	5	110	9	Right
-5581	\N	I. Pandur	Ivor Pandur	20	69	67	65	71	58	39	67	3	2	168	17	Right
-5586	\N	Cantero	Ander Cantero Armendáriz	25	69	65	74	67	69	57	68	3	23	457	12	Left
-5587	\N	N. Körber	Nils-Jonathan Körber	23	69	71	64	75	59	35	67	3	3	119	8	Right
-5588	\N	L. Acosta	Lucas Mauricio Acosta	25	69	68	70	72	67	63	66	3	14	146	1	Right
-5620	\N	A. Jakubech	Adam Jakubech	23	69	72	64	69	64	40	67	3	17	391	23	Right
-5638	\N	D. Bachmann	Daniel Bachmann	25	69	68	67	69	68	43	65	3	21	95	34	Right
-5656	\N	M. Zetterer	Michael Zetterer	24	69	68	66	73	71	42	64	4	7	494	8	Right
-5671	\N	D. Sappa	Daniel Sappa	25	69	63	72	69	68	34	71	3	14	431	1	Right
-5695	\N	J. Frick	Jérémy Frick	27	69	68	67	69	69	45	66	2	25	376	21	Left
-5697	\N	P. Bråtveit	Per Kristian Worre Bråtveit	24	69	70	65	67	72	46	70	3	41	417	29	Right
-5705	\N	F. Bredlow	Fabian Bredlow	25	69	71	68	71	62	38	64	4	3	229	8	Left
-5706	\N	I. Provedel	Ivan Provedel	26	69	69	66	71	61	42	68	2	30	349	15	Right
-5710	\N	Bernabé	Bernabé Barragán Maestre	27	69	67	70	67	66	46	68	3	23	412	12	Right
-5730	\N	J. Blackman	Jamal Blackman	26	69	70	69	73	63	27	65	2	21	533	13	Right
-5742	\N	M. Caillard	Marc-Aurèle Caillard	26	69	73	64	72	59	43	70	3	4	185	7	Right
-5755	\N	No Dong Geon	노동건 卢东件	28	69	69	67	71	65	42	69	3	39	485	20	Right
-5794	\N	G. Athanasiadis	Giorgos Athanasiadis	27	69	69	67	75	65	32	66	2	22	195	36	Right
-5799	\N	D. Rudd	Declan Rudd	29	69	72	62	73	64	50	65	3	21	239	13	Right
-5800	\N	D. Jensen	David Jensen	28	69	66	68	68	74	40	69	3	8	245	27	Right
-5802	\N	M. Sandberg	Marcus Sandberg	29	69	69	67	70	66	33	69	2	37	524	37	Right
-5804	\N	C. Coosemans	Colin Coosemans	27	69	70	63	72	70	45	68	4	17	205	6	Right
-5805	\N	Yang Han Been	양한빈 梁韩彬	28	69	70	63	73	60	44	69	3	39	278	20	Right
-5806	\N	Z. Clark	Zander Clark	28	69	66	65	75	70	31	70	2	26	535	14	Right
-5818	\N	R. Williams	Ronwen Williams	28	69	71	64	71	65	57	67	3	19	85	89	Right
-6553	\N	G. Vicario	Guglielmo Vicario	23	68	66	68	69	62	26	70	1	2	65	15	Right
-5822	\N	P. Carlgren	Patrik Ulf Anders Carlgren	28	69	70	66	67	64	33	69	2	32	536	37	Right
-5826	\N	A. Koselev	Alexei Koşelev	26	69	68	66	72	58	29	69	2	7	502	92	Right
-5842	\N	M. Vanhamel	Mike Vanhamel	30	69	69	68	70	75	41	68	2	17	448	6	Right
-5846	\N	A. Kovácsik	Ádám Gergely Kovácsik	29	69	68	64	75	63	48	70	2	19	85	26	Right
-5859	\N	B. van Leer	Benjamin van Leer	28	69	67	71	69	63	43	68	2	7	530	9	Right
-5876	\N	M. Kolke	Markus Kolke	29	69	70	65	74	59	44	67	2	45	539	8	Right
-5896	\N	V. Vasić	Vaso Vasić	30	69	74	59	72	67	44	71	3	17	236	22	Right
-5920	\N	M. Zeghba	Moustapha Zeghba	29	69	67	67	71	63	49	69	3	10	427	28	Left
-5921	\N	J. Borgueray	José Borgueray	30	69	65	63	73	61	50	69	2	19	85	61	Right
-5935	\N	R. Pleșca	Răzvan Neculaie Pleșca	37	69	69	70	65	70	35	68	3	44	542	70	Left
-5937	\N	A. Rosati	Antonio Rosati	37	69	68	69	68	46	31	70	1	2	30	15	Right
-5941	\N	I. Vázquez	Edmundo Iván Vázquez Mellado Pérez	37	69	66	67	70	71	43	69	3	16	328	33	Right
-5945	\N	Q. Westberg	Quentin Westberg	34	69	68	65	69	65	45	70	3	8	131	47	Right
-5959	\N	F. Fielding	Frank Fielding	32	69	67	67	74	60	40	66	3	21	254	13	Right
-5964	\N	Santamaría	Roberto Santamaría Ciprián	35	69	68	71	69	64	47	66	3	23	527	12	Right
-5975	\N	S. Ujkani	Samir Ujkani	31	69	69	68	69	62	50	71	2	2	30	62	Right
-5976	\N	K. Steppe	Kenny Steppe	31	69	69	68	70	64	44	68	2	17	337	6	Right
-5978	\N	Jung Sung Ryong	정성룡 郑俊玄	35	69	70	66	70	77	44	68	3	15	373	20	Right
-5989	\N	R. Boffin	Ruud Boffin	32	69	68	67	71	73	57	68	2	11	258	6	Right
-6003	\N	W. Sandilands	Wayne Sandilands	36	69	69	70	71	68	53	68	3	43	332	89	Right
-6013	\N	A. Blanco	Alfonso Blanco Antúnez	32	69	66	69	71	65	55	68	3	16	152	33	Left
-6014	\N	Ricardo Ferreira	Ricardo Abel Barbosa Ferreira	30	69	71	69	69	62	46	67	3	6	228	2	Right
-6021	\N	D. Petrić	Denis Petrić	32	69	69	63	72	61	43	71	2	4	136	22	Right
-6028	\N	M. Vigorito	Mauro Vigorito	30	69	70	67	73	63	44	66	2	30	183	15	Right
-6031	\N	R. Wolf	Raphael Wolf	32	69	70	67	69	65	33	67	2	35	269	8	Right
-6052	\N	P. Abrahamsson	Peter Abrahamsson	31	69	69	70	68	68	42	68	3	41	510	37	Right
-6073	\N	C. Lampe	Carlos Emilio Lampe Porras	33	69	66	71	70	62	32	68	3	51	552	122	Right
-6091	\N	B. Megyeri	Balázs Megyeri	30	69	65	63	73	68	38	72	2	11	322	26	Right
-6093	\N	K. Lamprou	Konstantinos Lamprou	28	69	71	62	75	74	44	63	3	7	554	36	Left
-6119	\N	E. Özbir	Ertaç Özbir	30	69	70	69	70	61	30	69	2	11	319	55	Right
-6126	\N	I. Šehić	Ibrahim Šehić	31	69	65	70	69	66	33	71	1	11	257	25	Right
-6134	\N	Nicolas	David Nicolas Andrade	32	69	71	69	71	64	43	67	5	2	93	5	Right
-6152	\N	Dani Barrio	Daniel Barrio Álvarez	33	69	70	69	73	63	49	66	3	23	451	12	Left
-6178	\N	J. Cuadrado	José Fernando Cuadrado Romero	35	69	70	67	67	73	46	66	3	34	235	42	Right
-6191	\N	D. Rodríguez	Diego Matías Rodríguez	31	69	70	64	73	71	45	65	2	14	242	1	Left
-6192	\N	J. Burrai	Javier Nicolás Burrai	29	69	67	68	71	70	43	69	2	42	474	1	Right
-6206	\N	S. Nishikawa	西川 周作	34	69	68	66	72	73	42	69	3	15	482	72	Left
-6211	\N	S. Gbohouo	Sylvain Gbohouo	31	69	69	67	66	67	41	71	2	19	85	41	Right
-6252	\N	Luciano Cacheira	Luciano Renato Cacheira Sá	24	69	76	62	76	77	31	55	2	12	225	5	Right
-6259	\N	Kaíque Mutto	Miguel Kaíque Acuna Mutto	28	69	79	55	83	66	42	55	3	12	87	5	Right
-6289	\N	S. Takagi	髙木 骏	31	69	70	67	71	73	47	68	2	15	489	72	Left
-6290	\N	Caio Padricio	Caio Rodrigo Padricio Resende	28	69	69	71	73	46	24	70	2	12	297	5	Right
-6317	\N	Limones	Jesús Reguillos Moya	33	69	67	69	70	64	32	71	2	23	385	12	Right
-6320	\N	M. Asselah	Malik Asselah	33	69	70	68	72	62	43	66	3	10	430	28	Right
-6324	\N	Park Il Gyu	박일규 朴一圭	30	69	73	54	74	61	38	73	4	15	330	20	Right
-6342	\N	M. Vandevoordt	Maarten Vandevoordt	18	68	72	67	71	64	15	59	2	17	182	6	Right
-6384	\N	R. Majecki	Radosław Majecki	20	68	69	65	67	62	29	70	3	4	33	4	Right
-6385	\N	Álvaro	Álvaro Fernández Llorente	22	68	72	65	70	63	46	66	2	1	142	12	Left
-6386	\N	L. Grill	Lennart Grill	21	68	68	65	73	62	41	64	3	3	47	8	Right
-6402	\N	A. Muric	Arijanet Murić	21	68	70	65	71	76	45	66	2	23	128	62	Right
-6435	\N	Josep Martínez	Josep Martínez Riera	22	68	70	68	69	64	27	67	3	3	23	12	Right
-6451	\N	M. Prévot	Maxence André Prévôt	23	68	67	66	69	67	34	68	3	27	541	7	Right
-6456	\N	M. Di Gregorio	Michele Di Gregorio	22	68	70	69	71	63	28	69	3	30	372	15	Right
-6470	\N	K. Osako	大迫 圭介	20	68	68	67	70	65	30	64	2	15	441	72	Right
-6491	\N	B. Radunović	Boris Radunović	24	68	69	68	71	64	41	69	2	2	17	22	Right
-6496	\N	S. Jurado	Sebastián Jurado Roca	22	68	72	64	72	65	51	68	2	16	141	33	Right
-6514	\N	Álvaro Vallés	Álvaro Vallés Rosa	22	68	70	67	66	64	30	68	2	23	449	12	Right
-6515	\N	R. Cordano	Ruben Cordano Justiniano	21	68	71	67	72	65	29	70	3	51	565	122	Right
-6527	\N	Iván Villar	Iván Villar Martínez	22	68	69	63	70	65	33	66	2	1	32	12	Right
-6531	\N	L. Kelly	Liam Kelly	24	68	70	65	69	72	39	68	3	21	386	14	Right
-6540	\N	Y. Urra	Yerko Andrés Urra Cortés	23	68	68	66	68	67	25	69	3	28	566	39	Right
-6546	\N	Alex Craninx	Alexandro Marco Craninx Joostens	24	68	69	65	70	62	36	66	4	37	259	6	Right
-6573	\N	J. Lumley	Joe Lumley	25	68	69	67	68	69	45	64	3	21	386	13	Right
-6583	\N	V. Milinković-Savić	Vanja Milinković-Savić	23	68	67	66	68	78	43	67	3	2	30	22	Right
-6585	\N	J. Devecchi	José Antonio Devecchi	24	68	67	65	70	59	48	68	2	28	534	1	Right
-6606	\N	O. De Wolf	Ortwin De Wolf	23	68	67	68	70	74	35	67	3	17	320	6	Left
-6618	\N	C. Căbuz	Cătălin Vasile Căbuz	24	68	66	67	68	66	34	68	2	44	453	70	Right
-6626	\N	F. Ondoa	Joseph Fabrice Ondoa Ebogo	24	68	71	62	75	61	53	68	2	17	525	30	Right
-6628	\N	M. Gersbeck	Marius Gersbeck	25	68	67	69	70	58	42	65	3	35	461	8	Left
-6632	\N	C. Dawson	Cameron Dawson	24	68	66	66	72	68	56	63	3	21	370	13	Right
-6643	\N	M. Schwäbe	Marvin Schwäbe	25	68	71	68	69	77	46	63	3	32	442	8	Right
-6661	\N	F. Buntić	Fabijan Buntić	23	68	69	68	69	66	25	68	2	45	438	17	Left
-6664	\N	R. Piscitelli	Riccardo Piscitelli	26	68	68	69	70	60	42	66	3	6	401	15	Left
-6678	\N	J. Brinkies	Johannes Brinkies	27	68	67	64	74	65	52	69	5	45	571	8	Right
-6679	\N	Y. Brecher	Yanick Brecher	27	68	70	63	71	65	40	66	3	25	462	21	Right
-6680	\N	D. Stojanović	Dejan Stojanović	26	68	69	63	70	59	38	66	2	21	344	63	Left
-6681	\N	M. van der Hart	Mickey van der Hart	26	68	70	64	72	70	42	64	3	40	400	9	Left
-6682	\N	N. Lomb	Niklas Lomb	26	68	70	64	71	66	39	65	3	3	47	8	Right
-6700	\N	T. Miller	Tyler Miller	27	68	69	65	68	66	32	67	2	8	274	47	Right
-6705	\N	Ratón	Álvaro López Ratón	27	68	64	69	68	68	50	67	2	23	213	12	Left
-6725	\N	G. Long	George Long	26	68	68	68	71	72	32	69	3	48	446	13	Left
-6736	\N	F. Bednarek	Filip Bednarek	27	68	66	65	70	64	43	68	2	40	400	4	Right
-6739	\N	K. Roos	Kelle Roos	28	68	72	60	70	71	41	68	4	21	161	9	Right
-6747	\N	C. Bonilla	Cristian Harson Bonilla Garzón	27	68	70	67	71	65	55	64	2	34	360	42	Right
-6757	\N	C. MacGillivray	Craig MacGillivray	27	68	68	65	70	64	50	66	3	48	529	14	Right
-6772	\N	K. Nakamura	中村 航輔	25	68	71	62	71	69	39	64	3	15	311	72	Right
-6791	\N	J. Padilla	Johan David Padilla Quiñónez	27	68	70	68	68	65	39	64	4	42	423	61	Right
-6797	\N	S. Şahin-Radlinger	Samuel Şahin-Radlinger	27	68	70	62	71	59	39	68	2	29	575	34	Right
-6798	\N	Raúl Lizoain	Raúl Lizoáin Cruz	29	68	67	69	67	63	51	67	2	23	385	12	Left
-6799	\N	N. Larsen	Nicolai Oppen Larsen	29	68	67	66	71	69	44	69	3	27	164	27	Right
-6814	\N	G. Castellón	Gabriel Jesús Castellón Velazquez	26	68	66	63	72	57	41	66	2	28	566	39	Right
-6816	\N	Y. Cardinale	Yoan Cardinale	26	68	69	67	71	69	46	66	3	4	67	7	Right
-6822	\N	B. Allain	Bobby Allain	28	68	70	65	69	68	38	65	2	22	125	7	Right
-6823	\N	A. Desmas	Arthur Desmas	26	68	68	67	70	66	29	67	2	27	452	7	Right
-6827	\N	C. Riegler	Christoph Riegler	28	68	68	66	72	61	30	65	2	29	576	34	Right
-6832	\N	Y. Thoelen	Yannick Thoelen	29	68	67	70	68	64	39	69	2	17	395	6	Right
-6833	\N	O. Jansson	Oscar Jansson	29	68	70	64	69	64	30	68	2	41	577	37	Right
-6835	\N	J. Delle	Joris Delle	30	68	68	67	68	64	49	67	2	43	332	7	Left
-6851	\N	Cristiano	Cristiano Pereira Figueiredo	29	68	67	64	70	61	30	70	2	44	564	2	Right
-6871	\N	J. Chunga	José Luis Chunga Vega	28	68	74	62	69	68	42	63	3	34	198	42	Right
-6910	\N	A. Meyer	Alexander Meyer	29	68	70	65	69	69	26	63	3	35	506	8	Right
-6915	\N	P. Ortiz	Pedro Alfredo Ortíz Angulo	30	68	72	64	70	68	25	69	2	42	445	61	Right
-6920	\N	Kim Young Kwang	김영광 Young Kwang Kim	37	68	62	71	68	60	56	68	3	39	570	20	Right
-6926	\N	V. Demarconnay	Vincent Demarconnay	37	68	67	65	65	69	45	72	3	27	279	7	Right
-6934	\N	J. Young	Jamie Young	34	68	66	66	70	63	47	64	2	36	582	13	Left
-6939	\N	F. Öztürk	Fatih Öztürk	33	68	71	63	71	62	56	69	2	11	60	55	Right
-6940	\N	T. Carson	Trevor Carson	32	68	69	68	66	63	52	68	2	26	522	57	Right
-6948	\N	D. Button	David Button	31	68	70	67	68	65	53	65	3	5	102	13	Right
-6957	\N	P. Tytoń	Przemysław Tytoń	33	68	67	64	70	66	50	66	2	8	243	4	Right
-6958	\N	Kwoun Sun Tae	권순태 权纯泰	35	68	68	66	68	64	43	68	2	15	429	20	Right
-6960	\N	M. Pinto	Miguel Ángel Pinto Jérez	36	68	70	63	68	68	53	65	2	28	220	39	Right
-6972	\N	E. Kawashima	川島 永嗣	37	68	67	65	72	64	42	65	3	4	117	72	Right
-6978	\N	Wu Yan	吴龑	31	68	71	64	69	61	48	66	2	9	268	58	Right
-7000	\N	W. Yarbrough	William Paul Yarbrough Story	31	68	67	62	68	70	57	68	3	8	352	47	Right
-7006	\N	M. Peškovič	Michal Peškovič	38	68	68	64	66	65	31	70	3	40	518	23	Left
-7008	\N	J. McLaughlin	Jonathan Peter McLaughlin	32	68	68	68	68	69	55	67	3	26	231	14	Right
-7018	\N	M. Banguera	Máximo Orlando Banguera Valdivieso	34	68	68	66	68	65	38	67	3	42	423	61	Right
-7022	\N	T. Vaiho	Tommi Vaiho	31	68	72	65	67	63	32	66	2	41	417	37	Right
-7024	\N	D. Hernández	Daniel Hernández Santos	34	68	70	67	68	59	32	67	1	23	392	50	Right
-7032	\N	K. Çelikay	Korcan Çelikay	32	68	68	66	73	61	31	67	2	11	280	55	Right
-7058	\N	Pedro Trigueira	Pedro José da Silva Trigueira	32	68	64	66	70	70	45	69	3	6	342	2	Right
-7061	\N	Rubén Miño	Rubén Miño Peralta	31	68	65	69	71	63	58	68	2	23	527	12	Right
-7092	\N	N. Marsman	Nick Marsman	29	68	69	60	72	68	39	65	3	7	82	9	Right
-7111	\N	A. Kochenkov	Anton Kochenkov	33	68	65	66	71	67	47	67	3	13	108	45	Right
-7121	\N	D. Keet	Darren Keet	30	68	69	66	68	65	44	69	2	17	488	89	Left
-7137	\N	F. Kaplan	Ferhat Kaplan	31	68	63	68	67	70	46	71	1	11	258	55	Right
-7140	\N	M. Putnocký	Matúš Putnocký	35	68	69	70	68	64	44	70	2	40	509	23	Right
-7189	\N	N. Ibáñez	Nelson Martín Ibáñez	38	68	71	65	70	73	45	68	2	14	219	1	Right
-7202	\N	S. Makani	Sosha Makani	33	68	69	66	73	60	45	68	2	37	595	78	Right
-7204	\N	Hugo Marques	Hugo Miguel Barreto Henriques Marques	34	68	72	63	67	64	26	66	2	6	394	75	Right
-7206	\N	O. Cabral	Osvaldo Ramón Cabral	35	68	68	70	71	63	42	65	3	33	366	1	Right
-7207	\N	O. Marciano	Ofir Meir Marciano	30	68	69	67	70	60	42	66	3	26	555	53	Right
-7228	\N	Liu Dianzuo	刘殿座	30	68	66	67	70	64	50	69	3	9	44	58	Right
-7236	\N	L. Azcona	Librado Daniel Azcona Salinas	36	68	68	63	70	67	47	71	2	33	196	61	Right
-7301	\N	M. Gagliardo	Maximiliano José Gagliardo	37	68	67	62	70	63	36	69	3	14	456	1	Right
-7338	\N	K. Scherpen	Kjell Scherpen	20	67	67	66	69	64	42	66	5	7	26	9	Right
-7352	\N	E. Destanoğlu	Ersin Destanoğlu	19	67	67	70	74	58	22	66	1	11	105	55	Right
-7362	\N	G. Poussin	Gaëtan Poussin	21	67	68	66	66	64	21	67	2	4	124	7	Right
-7381	\N	M. Svilar	Mile Svilar	20	67	70	64	68	63	57	64	3	6	25	6	Right
-7404	\N	L. Zigi	Lawrence Ati Zigi	23	67	68	64	69	61	38	65	3	25	308	32	Right
-7450	\N	G. Coucke	Gaëtan Coucke	21	67	68	65	68	66	38	63	3	17	395	6	Right
-7456	\N	O. Christensen	Oliver Christensen	21	67	68	65	68	66	38	66	2	32	523	27	Right
-7462	\N	Cristian Rivero	Cristian Rivero Sabater	22	67	71	60	73	62	27	62	3	1	34	12	Right
-7485	\N	R. Ramírez	Roberto Ramírez	23	67	67	66	71	59	49	64	2	14	219	1	Right
-7503	\N	M. Peano	Marcos Hernán Peano	21	67	69	65	69	65	43	67	3	14	334	1	Right
-7506	\N	P. Dahlberg	Pontus Dahlberg	21	67	67	64	68	65	28	65	3	41	510	37	Right
-7521	\N	Zubiaurre	Andoni Zubiaurre Dorronsoro	23	67	65	66	68	67	29	63	3	1	18	12	Left
-7522	\N	M. Hiller	Marco Hiller	23	67	69	67	71	51	31	67	3	45	592	8	Right
-7556	\N	Miquel Parera	Miquel Parera Pizá	24	67	72	64	72	62	37	61	3	23	209	12	Right
-7573	\N	E. Bansen	Eike Bansen	22	67	70	67	65	60	22	64	3	17	402	8	Right
-7588	\N	M. Ilic	Marko Ilić	22	67	71	63	69	59	39	61	2	17	391	22	Right
-7597	\N	Aarón	Aarón Escandell Banacloche	24	67	65	69	66	63	36	65	3	1	113	12	Right
-7600	\N	N. Jackers	Nordin Jackers	22	67	68	65	70	61	44	65	2	17	573	6	Right
-7603	\N	X. Mous	Xavier Mous	24	67	69	66	65	65	39	63	2	7	494	9	Right
-7607	\N	D. Iversen	Daniel Iversen	22	67	69	65	68	69	42	67	2	17	488	27	Right
-7631	\N	K. Eisele	Kai Eisele	25	67	70	66	72	63	19	66	5	45	572	8	Right
-7642	\N	A. Araque	Alejandro José Araque Peña	24	67	72	55	73	62	46	64	2	52	599	50	Right
-7671	\N	A. Olliero	Alexandre Olliero	24	67	69	64	69	65	46	64	2	27	580	7	Right
-7676	\N	R. Descamps	Rémy Descamps	24	67	70	65	68	61	42	66	3	17	302	7	Left
-7679	\N	V. Cojocaru	Valentin Alexandru Cojocaru	24	67	66	67	69	66	33	65	2	44	453	70	Right
-7711	\N	J. Busk	Jakob Busk Jensen	26	67	69	62	70	65	43	65	2	3	78	27	Right
-7712	\N	L. Hägg Johansson	Lucas Hägg Johansson	25	67	71	63	68	65	39	65	3	41	585	37	Right
-7713	\N	Andrés Prieto	Andrés Tomás Prieto Albert	26	67	65	67	68	66	40	69	2	21	170	12	Right
-7714	\N	J. Fabri	Julien Fabri	26	67	66	67	68	62	52	66	3	27	507	7	Right
-7715	\N	P. Klewin	Philipp Mickel Klewin	26	67	67	63	66	60	41	69	2	35	420	8	Right
-7724	\N	M. Maroši	Marko Maroši	26	67	68	64	68	68	41	66	3	21	475	23	Right
-7727	\N	S. Rochet	Sergio Ramón Rochet Álvarez	27	67	71	62	72	63	48	60	3	31	188	16	Right
-7732	\N	H. Jurjus	Hidde Jurjus	26	67	70	61	71	62	44	62	3	45	606	9	Right
-7737	\N	B. Bvuma	Bruce Bvuma	25	67	69	71	65	62	33	65	3	43	292	89	Right
-7746	\N	G. Olveira	Gastón Hernán Olveira Echeverría	27	67	67	68	66	65	20	64	2	31	544	16	Right
-7754	\N	R. Matthews	Remi Matthews	26	67	67	66	68	65	46	66	3	48	496	13	Right
-7756	\N	I. Gelios	Ioannis Gelios	28	67	69	70	68	62	45	64	3	35	333	36	Right
-7757	\N	G. Hubert	Guillaume Hubert	26	67	70	65	66	64	43	65	2	17	525	6	Right
-7763	\N	M. Kuster	Markus Kuster	26	67	66	69	67	62	30	66	3	35	461	34	Right
-7768	\N	J. Wallens	Johan Wallens Otálvaro	27	67	65	67	69	62	41	72	2	34	289	42	Right
-7803	\N	S. Richey	Spencer Richey	28	67	66	65	69	66	56	65	2	8	243	47	Right
-7833	\N	L. Henkinet	Laurent Henkinet	27	67	68	67	66	62	58	65	3	17	303	6	Right
-7834	\N	J. Słowik	Jakub Słowik	28	67	70	59	69	54	38	71	2	15	537	4	Right
-7835	\N	L. Koopmans	Luuk Koopmans	26	67	68	65	67	66	36	65	3	7	422	9	Right
-7836	\N	D. Mitov Nilsson	David Mitov Nilsson	29	67	71	59	74	70	31	61	2	37	586	63	Right
-7840	\N	P. Izzo	Paul Izzo	25	67	68	63	69	63	56	66	3	36	436	56	Right
-7844	\N	N. Bertrams	Nigel Bertrams	27	67	67	66	67	63	51	65	2	7	96	9	Right
-7845	\N	Neto Volpi	Alvino Volpi Neto	27	67	67	65	67	69	48	65	2	15	465	5	Right
-7862	\N	J. Smith	Jordan Smith	25	67	65	63	73	55	34	64	4	21	237	13	Left
-7866	\N	A. Bono	Alexander Bono	26	67	67	66	68	66	41	64	2	8	131	47	Right
-7869	\N	Traeira Lopes	Filipe Vicente Traeira Lopes	28	67	61	60	67	40	37	77	1	12	178	5	Left
-7887	\N	Manu García	Manuel García Humanes	29	67	69	65	71	53	36	64	3	23	437	12	Right
-7889	\N	P. Álvarez	Patricio Leonel Álvarez Noguera	26	67	70	69	71	61	19	68	3	19	85	66	Right
-7891	\N	A. M'hamdi	Abdelali M'hamdi	28	67	67	65	69	62	55	66	4	10	486	24	Right
-7894	\N	M. Jiménez	Miguel Jiménez Ponce	30	67	65	67	71	66	43	65	3	16	226	33	Right
-7896	\N	A. Diallo	Abdoulaye Diallo	28	67	68	66	66	65	41	64	2	21	237	10	Right
-7904	\N	V. Hladký	Václav Hladký	29	67	67	63	71	59	57	65	3	53	611	44	Right
-7910	\N	B. Valette	Baptiste Valette	27	67	69	66	67	64	41	67	3	27	553	7	Right
-7922	\N	K. Kamiński	Krzysztof Kamiński	29	67	67	66	64	65	38	68	3	40	597	4	Right
-7947	\N	R. Swete	René Swete	30	67	70	58	72	66	46	67	3	29	556	34	Left
-7948	\N	Y. Kajikawa	梶川 裕嗣	28	67	67	64	68	63	32	66	3	15	330	72	Right
-7964	\N	J. Gillet	Jean-François Gillet	41	67	64	70	64	69	39	74	2	17	303	6	Left
-7965	\N	B. Castro	Bram Castro	37	67	68	68	63	52	35	74	2	17	525	6	Right
-7966	\N	A. Lindegaard	Anders Lindegaard	36	67	69	68	67	68	50	64	2	41	405	27	Right
-7968	\N	D. Lopar	Daniel Lopar	35	67	67	65	67	61	40	65	2	36	323	21	Right
-7976	\N	A. Jaakkola	Anssi Jaakkola	33	67	68	64	70	59	59	68	1	48	608	40	Right
-7981	\N	D. Ousted	David Ousted	35	67	66	67	65	66	37	68	3	41	348	27	Right
-7983	\N	M. Caranta	Mauricio Ariel Caranta	41	67	65	67	63	67	48	65	3	14	299	1	Right
-7984	\N	M. McGovern	Michael McGovern	35	67	68	65	68	64	33	68	3	21	154	57	Right
-7996	\N	B. Hamer	Ben Hamer	32	67	68	62	68	66	45	66	3	21	338	13	Right
-8000	\N	S. Aresti	Simone Aresti	34	67	66	65	65	61	38	69	2	2	65	15	Right
-8004	\N	N. Ravaglia	Nicola Ravaglia	31	67	64	65	69	60	30	66	2	2	99	15	Right
-8007	\N	B. Amos	Ben Amos	30	67	65	67	69	70	47	65	2	48	440	13	Right
-8031	\N	D. Stockdale	David Stockdale	34	67	66	64	69	73	31	66	3	21	550	13	Right
-8033	\N	J. Jones	Jamie Jones	31	67	69	66	68	64	34	65	2	48	532	13	Right
-8038	\N	T. Kirschbaum	Thorsten Kirschbaum	33	67	70	66	69	67	27	61	2	7	480	8	Left
-8042	\N	A. Redmayne	Andrew James Redmayne	31	67	67	66	67	63	45	67	2	36	325	56	Right
-8047	\N	M. Dreyer	Matthieu Dreyer	31	67	66	68	69	65	50	65	3	4	256	7	Right
-8053	\N	L. Daniels	Luke Daniels	32	67	67	63	75	65	50	62	3	21	158	13	Right
-8069	\N	M. Birighitti	Mark Birighitti	29	67	67	67	68	64	48	65	4	36	615	56	Right
-8075	\N	J. Steele	Jason Steele	29	67	68	66	67	70	35	67	3	5	94	13	Right
-8078	\N	G. Marinelli	Gonzalo Marinelli	30	67	65	65	69	62	35	70	3	50	493	1	Right
-8085	\N	R. Köse	Ramazan Köse	32	67	70	60	71	56	34	70	3	11	399	55	Right
-8115	\N	P. Kovář	Přemysl Kovář	34	67	68	62	69	69	34	66	2	24	138	44	Right
-8119	\N	S. Mielitz	Sebastian Mielitz	30	67	67	64	68	65	42	67	4	45	459	8	Right
-8121	\N	K. Fickentscher	Kevin Fickentscher	31	67	65	64	71	61	50	66	3	25	317	21	Right
-8127	\N	K. Thamsatchanan	Kawin Thamsatchanan	30	67	69	66	70	61	34	68	4	15	396	113	Right
-8130	\N	M. Grün	Max Grün	33	67	68	66	65	64	50	67	3	3	19	8	Right
-8131	\N	S. Moore	Simon Moore	30	67	66	68	67	71	49	64	3	5	110	13	Right
-8138	\N	B. Maubleu	Brice Maubleu	30	67	69	66	66	58	41	66	3	27	501	7	Right
-8142	\N	Y. Al Mosailem	Yasser Abdullah Nasser Al Mosailem	36	67	64	70	64	63	38	71	2	10	177	101	Right
-8166	\N	V. Eicher	Vitus Eicher	29	67	67	66	69	61	45	67	2	35	357	8	Left
-8167	\N	Marc Martínez	Marc Martínez Aranda	30	67	69	63	69	74	50	66	2	23	406	12	Right
-8173	\N	J. Attinella	Jeff Attinella	31	67	69	61	69	66	44	65	3	8	126	47	Right
-8221	\N	C. Maxwell	Christopher Maxwell	29	67	67	65	69	68	42	65	3	48	603	38	Right
-8243	\N	B. Sangaré	Badra Ali Sangaré	34	67	69	65	68	63	42	67	3	19	85	41	Right
-8246	\N	A. Sánchez	Alejandro Miguel Sánchez	33	67	66	63	69	66	21	67	2	14	409	1	Left
-8253	\N	C. Vargas	Christian Vargas Cortés	30	67	68	65	67	58	43	68	2	34	360	42	Right
-8271	\N	A. Doukha	Azzeddine Doukha	33	67	67	58	75	62	38	64	2	10	472	28	Right
-8289	\N	Gu Chao	顾超	30	67	68	64	69	62	49	63	1	9	101	58	Right
-8326	\N	Fepe Avedo	Felipe Melvin Azevedo Lima	32	67	65	63	77	61	44	64	3	12	296	5	Right
-8327	\N	Mateus Tangil	Mateus Bernardo Tangil Melo	36	67	66	68	72	63	54	64	3	12	433	5	Right
-8336	\N	Rafael de Aseiro	Rafael Simão de Aseiro Vieira	28	67	67	59	71	58	43	68	1	12	297	5	Left
-8399	\N	D. Zagorac	Danijel Zagorac	33	67	70	67	68	66	42	63	3	20	90	17	Right
-8405	\N	M. Chudý	Martin Chudý	31	67	66	68	69	65	23	65	3	40	495	23	Right
-8416	\N	H. Galíndez	Hernán Ismael Galíndez	33	67	66	69	62	61	31	71	2	42	521	1	Right
-8432	\N	C. Früchtl	Christian Früchtl	20	66	69	66	69	67	24	65	2	35	301	8	Left
-8445	\N	M. Carnesecchi	Marco Carnesecchi	20	66	65	66	70	58	32	66	3	2	17	15	Right
-8473	\N	M. Travers	Mark Travers	21	66	67	66	66	64	39	65	2	21	157	52	Right
-8482	\N	A. Bass	Alex Bass	22	66	67	60	67	65	55	65	3	48	529	13	Right
-8496	\N	Gabriel Brazão	Gabriel Nascimento Resende Brazão	19	66	65	63	70	59	28	66	3	23	341	5	Right
-8501	\N	D. Kotarski	Dominik Kotarski	20	66	65	62	67	62	29	68	2	7	26	17	Right
-8516	\N	Song Bum Keun	송범근 Bum Keun Song	22	66	67	64	66	65	26	65	2	39	326	20	Right
-8523	\N	L. Moser	Lennart Moser	20	66	71	63	68	58	26	61	3	3	78	8	Left
-8530	\N	A. Vlad	Andrei Daniel Vlad	21	66	68	63	67	66	35	63	3	44	300	70	Right
-8573	\N	F. Cambeses	Facundo Nicolás Cambeses	23	66	66	63	67	63	46	64	2	14	383	1	Right
-8574	\N	L. Malagón	Luis Ángel Malagón Velázquez	23	66	67	64	70	63	24	67	2	16	382	33	Right
-8601	\N	San Román	Miguel San Román Ferrándiz	22	66	65	67	66	68	24	64	3	1	3	12	Right
-8618	\N	Joel Pereira	Joel Castro Pereira	24	66	66	65	67	65	43	64	2	21	338	2	Right
-8619	\N	M. O'Leary	Max O’Leary	23	66	71	65	72	63	44	64	3	21	384	13	Right
-8620	\N	J. Staněk	Jindřich Staněk	24	66	62	66	67	69	42	65	3	24	304	44	Right
-8622	\N	André Moreira	André Campos Moreira	24	66	66	67	67	66	52	63	2	6	367	2	Right
-8623	\N	F. Altamirano	Facundo Altamirano	24	66	67	66	67	66	45	63	3	14	336	1	Right
-8637	\N	G. Gómez	Gastón Gómez	24	66	68	60	69	68	23	66	2	14	127	1	Right
-8682	\N	José Suárez	José Aurelio Suárez García	24	66	67	63	68	69	47	66	3	23	128	12	Right
-8697	\N	B. Niasse	Babacar Niasse Mbaye	23	66	74	65	69	60	31	56	3	6	342	10	Right
-8714	\N	L. Weinkauf	Leo Weinkauf	23	66	68	66	69	57	19	68	3	45	543	8	Right
-8722	\N	Daniel Fuzato	Daniel Cerântula Fuzato	22	66	63	65	65	60	25	70	3	6	335	5	Right
-8742	\N	W. Eskelinen	Karl William Eskelinen	23	66	67	61	69	67	33	65	2	32	447	37	Right
-8766	\N	R. Niczuly	Roland Csaba Niczuly	24	66	65	63	67	69	29	66	2	44	531	70	Right
-8769	\N	Carlos Miguel	Carlos Miguel Coronel	23	66	68	59	70	62	27	64	3	29	180	5	Right
-8778	\N	Gabriel Souza	Gabriel Eugénio Souza	23	66	64	62	67	72	37	65	2	6	227	5	Right
-8789	\N	Michael	Michael Matias Fracaro	25	66	70	65	72	67	26	70	2	6	340	5	Left
-8804	\N	D. Cuero	Darwin Patricio Cuero Anangonó	25	66	64	69	67	63	45	61	2	42	521	61	Right
-8805	\N	Rubén Yáñez	Orlando Rubén Yáñez Alabart	26	66	65	64	68	60	43	64	3	1	57	12	Right
-8806	\N	D. Hładun	Dominik Hładun	24	66	66	65	67	63	34	64	3	40	513	4	Right
-8845	\N	M. Behrens	Morten Jens Behrens	23	66	68	68	68	65	27	65	3	45	634	8	Right
-8849	\N	E. Vaessen	Etienne Vaessen	24	66	67	65	69	59	36	63	2	7	554	9	Right
-8858	\N	S. Amorín	Santiago Amorín Barrientos	25	66	65	69	61	64	39	65	2	31	512	16	Right
-8862	\N	C. Ripley	Connor Ripley	27	66	67	66	69	65	35	65	3	21	239	13	Right
-8865	\N	A. Leitner	Andreas Leitner	26	66	67	66	67	59	24	62	4	29	626	34	Right
-8866	\N	J. Smits	Joshua Gerardus Petrus Wilhelmus Smits	27	66	67	65	65	67	56	64	1	37	350	9	Right
-8867	\N	S. Sluga	Simon Sluga	27	66	66	65	70	67	54	62	3	21	505	17	Right
-8882	\N	David Gil	David Gil Mohedano	26	66	68	70	65	69	47	61	2	1	201	12	Left
-8892	\N	T. Boss	Tim Boss	27	66	70	64	67	60	50	63	3	45	528	8	Right
-8908	\N	J. Szumski	Jakub Szumski	28	66	68	63	68	64	22	66	3	40	398	4	Right
-8909	\N	L. Bostyn	Louis Bostyn	26	66	69	65	66	58	36	67	3	17	402	6	Right
-8910	\N	A. Cairns	Alex Cairns	27	66	66	61	68	58	48	68	3	48	589	13	Left
-8912	\N	J. Alnwick	Jak Alnwick	27	66	66	63	66	65	48	66	2	26	588	13	Left
-8917	\N	J. Haugaard	Jakob Haugaard	28	66	65	63	66	72	43	66	3	41	364	27	Left
-8936	\N	A. Maraval	Axel Maraval	26	66	71	59	70	57	41	69	2	27	618	7	Right
-8944	\N	J. Brondeel	Jorn Brondeel	26	66	68	64	70	60	44	62	2	7	315	6	Right
-8949	\N	L. Pirard	Lucas Pirard	25	66	66	63	69	62	34	62	2	17	573	6	Right
-8982	\N	E. Kardeşler	Erce Kardeşler	26	66	66	63	67	62	41	67	2	11	153	55	Right
-8990	\N	D. Holec	Dominik Holec	25	66	69	68	68	67	22	69	3	24	270	23	Right
-8992	\N	A. Østbø	Arild Østbø	29	66	66	64	67	62	25	61	2	37	538	29	Right
-8999	\N	D. Léon	Donovan Léon	27	66	64	64	70	62	47	64	2	27	419	7	Right
-9002	\N	M. Koval	Maksym Koval	27	66	67	63	69	63	44	65	2	10	421	51	Right
-9003	\N	Z. Alomerović	Zlatan Alomerović	29	66	66	66	68	63	37	63	3	40	458	22	Right
-9019	\N	L. Andrenacci	Lorenzo Andrenacci	25	66	67	68	69	59	49	66	3	30	249	15	Right
-9029	\N	E. Pap	Eduard Adrian Pap	26	66	64	67	69	58	30	66	2	44	561	70	Right
-9036	\N	T. Coremans	Tim Coremans	29	66	68	65	66	63	35	64	2	7	530	9	Right
-9037	\N	M. Delač	Matej Delač	27	66	68	66	67	62	32	66	2	32	609	17	Right
-9041	\N	R. Allsop	Ryan Allsop	28	66	66	63	67	66	42	64	3	21	550	13	Right
-9058	\N	F. Al Qarni	Fawaz Al Qarni	28	66	66	63	70	61	44	66	3	10	318	101	Right
-9063	\N	L. Ojeda	Luis Alberto Ojeda	30	66	63	63	69	60	45	65	3	51	560	1	Right
-9082	\N	A. Vural	Ali Şaşal Vural	29	66	68	62	72	59	45	66	2	11	151	55	Right
-9098	\N	T. Morita	守田 達弥	29	66	66	63	65	63	28	67	3	15	591	72	Right
-9112	\N	F. Oswald	Ferdinand Oswald	29	66	68	64	64	62	23	66	4	29	581	8	Right
-9128	\N	E. Jakupović	Eldin Jakupović	35	66	66	66	65	64	30	66	2	5	20	21	Right
-9131	\N	A. Mannus	Alan Mannus	38	66	64	68	64	62	38	67	3	47	439	57	Right
-9132	\N	D. Martin	David Edward Martin	34	66	66	62	65	66	39	66	2	5	64	13	Right
-9139	\N	I. Austbø	Iven Austbø	35	66	64	63	65	65	27	67	2	37	538	29	Right
-9161	\N	J. Fejzić	Jasmin Fejzić	34	66	66	63	70	59	27	66	2	35	477	25	Right
-9166	\N	J. McKeown	James McKeown	30	66	66	61	68	58	45	65	3	53	640	52	Right
-9170	\N	M. Andersen	Mikkel Andersen	31	66	67	63	66	59	36	67	3	32	193	27	Right
-9176	\N	S. Eastwood	Simon Eastwood	31	66	64	61	68	61	50	66	3	48	549	13	Right
-9180	\N	P. Klandt	Patric Klandt	36	66	66	67	64	63	41	66	3	35	301	8	Right
-9181	\N	Mackay	Juan Mackay Abad	33	66	72	61	70	60	58	59	2	23	568	12	Right
-9187	\N	N. Mihaylov	Nikolay Borislavov Mihaylov	32	66	63	65	67	64	59	65	2	19	85	103	Right
-9189	\N	C. Seitz	Christopher Seitz	33	66	67	61	66	71	52	69	3	8	248	47	Right
-9192	\N	B. Knighton	Bradley Burton Knighton	35	66	67	64	64	65	54	65	2	8	211	47	Right
-9195	\N	Guan Zhen	关震	35	66	74	64	59	65	49	65	1	9	307	58	Right
-9203	\N	J. Grahl	Jens Grahl	31	66	70	60	70	58	45	63	2	3	229	8	Right
-9205	\N	L. Königshofer	Lukas Königshofer	31	66	68	64	68	58	52	62	2	45	606	34	Right
-9206	\N	M. Kobras	Martin Kobras	34	66	68	62	71	56	52	65	3	29	546	34	Right
-9211	\N	M. Hansen	Martin Hansen	30	66	65	64	66	64	49	65	3	35	327	27	Right
-9253	\N	D. Telgenkamp	Dennis Telgenkamp	33	66	68	63	65	60	33	64	2	7	346	9	Right
-9263	\N	R. Pillot	Rémi Pillot	29	66	66	66	65	58	39	65	2	27	507	7	Right
-9279	\N	B. Shuttleworth	Bobby Shuttleworth	33	66	65	66	66	64	43	66	2	8	287	47	Right
-9280	\N	R. Romo	Rafael Enrique Romo Pérez	30	66	63	65	68	61	37	65	2	17	488	50	Right
-9316	\N	A. Donnarumma	Antonio Donnarumma	29	66	70	62	74	51	18	59	2	2	21	15	Right
-9323	\N	Z. MacMath	Zac MacMath	28	66	66	64	67	54	36	67	2	8	244	47	Right
-9329	\N	J. Willis	Joe Willis	31	66	68	65	65	60	46	68	3	8	356	47	Left
-9339	\N	Yu Sang Hun	유상훈 柳相勋	31	66	65	62	67	62	38	67	3	39	278	20	Right
-9357	\N	H. Halldórsson	Hannes Þór Halldórsson	36	66	67	61	65	62	38	68	2	19	85	65	Right
-9361	\N	E. Bush	Evan Bush	34	66	68	63	69	63	32	64	2	8	210	47	Right
-9366	\N	R. Meara	Ryan Meara	29	66	65	64	70	61	46	66	3	8	245	47	Right
-9372	\N	N. Manfredini	Niccolò Manfredini	32	66	69	64	69	63	44	63	2	2	273	15	Right
-9377	\N	M. Malaeka	Mustafa Reda Malayekah	34	66	65	64	67	66	47	65	4	10	353	101	Right
-9390	\N	B. Rowe	Brian Rowe	31	66	65	66	68	63	50	65	2	8	97	47	Right
-9405	\N	A. Giménez	Arnaldo Andrés Giménez Dos Santos	33	66	62	65	69	67	46	62	2	51	560	69	Left
-9420	\N	A. Baroja	Alain Baroja Méndez	30	66	65	64	67	62	42	66	3	42	558	50	Right
-9422	\N	C. Servín	Carlos María Servín Caballero	33	66	64	61	70	69	38	67	2	33	314	69	Right
-9442	\N	M. Yıldırım	Muammer Zülfikar Yıldırım	29	66	68	66	66	60	25	65	2	11	151	55	Left
-9456	\N	D. Martínez	Diego Alejandro Martínez Marín	30	66	64	63	68	69	44	67	3	34	557	42	Right
-9475	\N	A. Keita	Aly Keita	33	66	69	61	68	79	22	60	2	41	651	48	Right
-9500	\N	M. Cano	Matías Nicolás Cano	34	66	71	64	67	73	27	57	3	28	455	1	Left
-9529	\N	M. Álvarez	Milton David Álvarez	31	66	68	62	68	57	23	76	3	14	176	1	Left
-9539	\N	J. Doriado	Jhonathan Doriado	30	66	65	66	66	59	42	66	3	19	85	61	Right
-9549	\N	C. Flores	Cristhian Jesús Flores Ramírez	29	66	69	64	64	66	57	66	2	52	622	50	Right
-9604	\N	C. Sánchez	Christian Joel Sánchez Leal	20	65	66	64	67	58	36	65	2	23	312	94	Left
-9609	\N	K. Klaesson	Kristoffer Klaesson	19	65	66	61	68	63	31	64	2	37	468	29	Left
-9624	\N	L. Morales	Lautaro Alberto Morales	20	65	66	65	68	69	51	62	3	14	146	1	Right
-9627	\N	D. Bertaud	Dimitry Bertaud	22	65	67	62	71	58	52	61	3	4	130	7	Right
-9643	\N	F. Alastra	Fabrizio Alastra	22	65	65	63	69	66	52	62	2	2	143	15	Right
-9657	\N	A. Pears	Aynsley Pears	22	65	63	61	69	61	16	63	2	21	344	13	Right
-9670	\N	V. Müller	Vincent Müller	19	65	67	64	70	64	31	66	2	35	504	8	Right
-9680	\N	J. Talbot	James Talbot	23	65	64	63	67	59	42	62	2	47	655	52	Left
-9682	\N	J. Lund	Julian Faye Lund	21	65	64	63	68	62	44	65	2	37	204	29	Right
-9687	\N	D. Nikolić	Đorđe Nikolić	23	65	65	68	67	62	24	65	5	25	197	22	Right
-9689	\N	Javi Díaz	Javier Díaz Sánchez	23	65	67	61	68	65	57	63	3	1	29	12	Right
-9709	\N	M. Aioani	Mihai Marian Aioani	20	65	66	62	67	62	24	64	2	44	621	70	Right
-9726	\N	P. Jensen	Peter Vindahl Jensen	22	65	65	63	66	67	21	65	3	32	460	27	Right
-9750	\N	T. Rönning	Tim Rönning	21	65	65	67	69	63	18	65	3	41	463	37	Right
-9785	\N	J. Wildsmith	Joe Wildsmith	24	65	70	59	69	62	42	65	3	21	370	13	Right
-9786	\N	A. Palmer	Alex Palmer	23	65	66	65	66	64	32	64	3	48	547	13	Right
-9788	\N	Ezkieta	Jokin Ezkieta Mendiburu	23	65	63	64	63	63	45	67	3	1	43	12	Right
-9789	\N	B. Collins	Bradley Collins	23	65	66	60	67	63	43	63	2	21	434	13	Right
-9794	\N	A. Maisonnial	Anthony Maisonnial	22	65	63	63	69	63	63	63	3	27	279	7	Right
-9796	\N	R. Macagno	Ramiro Jesús Macagno	23	65	66	64	68	58	28	64	2	14	265	1	Right
-9797	\N	Andorinha	João Paulo Santos da Costa	24	65	67	63	66	56	26	63	1	1	113	2	Right
-9816	\N	S. Cibois	Sébastien Cibois	22	65	65	62	69	66	33	61	3	4	155	7	Right
-9818	\N	André Ferreira	André Filipe Magalhães Ribeiro Ferreira	24	65	66	65	68	55	39	63	2	6	390	2	Right
-9821	\N	Samu Pérez	Samuel Pérez Fariña	23	65	66	66	74	63	25	62	3	1	81	12	Left
-9828	\N	Joan Femenías	Joan Femenías del Salto	23	65	65	66	67	59	20	60	2	23	341	12	Right
-9834	\N	I. Cartés	Luis Iván Cartés Maidana	22	65	63	62	67	67	39	58	2	31	481	16	Right
-9840	\N	M. Marić	Marko Marić	24	65	65	64	68	65	42	66	3	8	275	17	Left
-9855	\N	C. Trueman	Connal Trueman	24	65	66	64	68	61	45	63	3	48	657	13	Right
-9875	\N	Ahn Joon Soo	안준수 安俊洙	22	65	64	63	66	62	27	64	2	15	374	20	Right
-9916	\N	O. Kocuk	Okan Kocuk	24	65	66	68	68	61	34	62	2	11	60	55	Right
-9955	\N	J. Graterol	Joel David Graterol Nader	23	65	67	71	65	63	22	67	3	34	343	50	Right
-9958	\N	J. Rojas	Javier Rojas Iguaro	24	65	63	65	64	68	26	62	2	51	511	122	Right
-9963	\N	C. Pym	Christy Pym	25	65	66	63	69	65	46	64	4	48	578	13	Right
-9969	\N	M. Macey	Matt Macey	25	65	63	65	66	65	39	64	2	5	15	13	Right
-9971	\N	D. Melo	Dario Esteban Melo Pulgar	26	65	63	65	68	63	48	60	1	28	220	39	Right
-9975	\N	Óscar Whalley	Óscar Alexander Whalley Guardado	26	65	66	65	66	68	43	63	3	23	551	12	Left
-9991	\N	J. Vachoux	Jérémy Vachoux	25	65	66	62	66	62	44	63	2	27	618	7	Right
-9997	\N	E. Reséndez	Edson Alan Reséndez Sánchez	24	65	64	63	67	64	32	64	3	16	148	33	Right
-10005	\N	P. Sisniega	Pablo Eduardo Sisniega Fink	24	65	63	68	63	64	45	65	2	8	41	33	Right
-10018	\N	Guilherme Oliveira	Guilherme Mata Oliveira	25	65	64	65	64	54	29	68	2	6	367	2	Right
-10019	\N	Y. Takaoka	髙丘 陽平	24	65	66	64	68	58	24	59	2	15	591	72	Right
-10027	\N	Matheus Kayser	Matheus Alberto Kayser	25	65	61	66	60	69	27	70	2	6	233	5	Right
-10029	\N	J. Espínola	Juan Ángel Espínola González	25	65	63	68	66	66	29	65	2	33	479	69	Right
-10035	\N	H. Verhulst	Hobie Verhulst	27	65	66	61	68	64	49	63	3	7	118	9	Left
-10037	\N	M. Ingram	Matt Ingram	26	65	69	64	68	62	37	63	3	48	446	13	Left
-10038	\N	Dani Sotres	Daniel Sotres Castañeda	27	65	72	62	73	67	59	51	4	1	201	12	Right
-10041	\N	M. Kuttin	Manuel Kuttin	26	65	67	62	66	68	35	63	3	29	362	34	Right
-10042	\N	T. Castella	Thomas Castella	27	65	66	63	70	62	44	65	2	25	590	21	Right
-10043	\N	P. Drewes	Patrick Drewes	27	65	68	63	62	60	29	64	2	35	290	8	Right
-10051	\N	F. Dornebusch	Felix Dornebusch	25	65	67	60	66	54	41	64	2	35	477	8	Right
-10055	\N	Zou Dehai	邹德海	27	65	62	64	67	60	45	65	3	9	40	58	Right
-10060	\N	Varo	Alberto Varó Lara	27	65	61	62	68	63	40	64	2	23	457	12	Right
-10083	\N	V. Mendoza	Víctor Eduardo Mendoza Izurieta	25	65	66	69	68	67	29	62	3	42	474	61	Right
-10085	\N	L. Nicholls	Lee Nicholls	27	65	67	62	69	63	41	61	3	48	545	13	Right
-10086	\N	K. Forenc	Konrad Forenc	27	65	66	66	66	64	43	63	2	40	513	4	Left
-10089	\N	C. Diop	Clément Diop Degoud	26	65	68	63	67	60	43	63	2	8	210	10	Right
-10098	\N	G. Servio	Gaspar Andrés Servio	28	65	65	64	67	65	47	61	2	33	316	1	Right
-10102	\N	Yun Pyeong Gook	윤평국 尹平国	28	65	64	65	65	63	47	63	3	39	454	20	Right
-10105	\N	Miguel Oliveira	Miguel Aires Fernandes de Oliveira	26	65	64	65	65	62	28	67	2	6	246	2	Left
-10130	\N	H. Piedra	Hamilton Emanuel Piedra Ordóñez	27	65	63	66	64	67	41	63	3	42	286	61	Right
-10146	\N	D. Petković	Danijel Petković	27	65	66	63	67	63	42	66	3	4	135	49	Right
-10172	\N	T. Holý	Tomáš Holý	28	65	68	60	69	56	28	65	3	48	583	44	Right
-10173	\N	S. Walker	Sam Walker	28	65	66	66	63	62	43	65	2	21	306	13	Right
-10175	\N	B. Siegrist	Benjamin Kevin Siegrist	28	65	65	65	64	64	36	64	3	26	633	21	Right
-10186	\N	T. Defourny	Théo Defourny	28	65	63	64	64	65	36	66	2	17	320	6	Right
-10206	\N	W. Norris	Will Norris	26	65	67	62	67	60	45	63	3	5	58	13	Left
-10216	\N	Ricardo Friedrich	Ricardo Henrique Schuck Friedrich	27	65	66	62	66	64	28	64	1	11	280	5	Right
-10219	\N	H. Hankić	Hidajet Hankić	26	65	64	68	65	69	35	60	4	44	561	34	Right
-10222	\N	Y. Yustiz	Yhonatann Alexander Yustiz Linarez	28	65	61	63	65	62	38	65	2	52	654	50	Left
-10225	\N	A. Lis	Adrian Lis	28	65	67	63	68	56	41	62	3	40	612	4	Right
-10228	\N	J. Shea	James Shea	29	65	64	63	66	58	27	66	2	21	505	13	Right
-10252	\N	Pol Freixanet	Pol Freixanet Viejo	28	65	64	69	66	59	48	60	2	23	435	12	Right
-10259	\N	P. Wiegers	Patrick Wiegers	30	65	65	66	68	61	45	59	2	45	464	8	Right
-10261	\N	R. Vollath	René Vollath	30	65	64	62	67	60	39	66	3	45	637	8	Right
-10281	\N	J. McCarthy	John McCarthy	27	65	66	64	68	58	34	63	2	8	39	47	Right
-10321	\N	J. Ichimori	一森 純	28	65	66	61	67	58	31	65	3	15	358	72	Right
-10323	\N	G. Morris	Glenn Morris	36	65	67	63	66	62	33	64	3	53	663	13	Right
-10325	\N	H. Opdal	Håkon Eikemo Opdal	38	65	62	63	65	64	41	66	2	37	487	29	Right
-10327	\N	M. Langer	Michael Langer	35	65	64	62	65	60	32	67	2	3	120	34	Right
-10330	\N	U. Ceylan	Ufuk Ceylan	34	65	66	65	62	62	55	67	2	11	179	55	Left
-10335	\N	H. Sogahata	曾端 准	40	65	64	66	65	64	18	72	3	15	429	72	Right
-10342	\N	S. Henderson	Stephen Henderson	32	65	66	62	62	70	39	64	3	5	49	52	Right
-10344	\N	T. Černý	Tomáš Černý	35	65	63	63	64	60	42	65	2	26	403	44	Left
-10350	\N	R. Cierzniak	Radosław Cierzniak	37	65	64	64	63	61	39	66	2	40	361	4	Right
-10352	\N	C. Doyle	Colin Doyle	35	65	66	67	63	63	32	64	3	26	498	52	Right
-10375	\N	Z. Zlámal	Zdeněk Zlámal	34	65	67	62	75	67	60	60	3	26	588	44	Right
-10379	\N	R. Zwinkels	Robert Zwinkels	37	65	61	63	65	64	39	70	2	7	422	9	Right
-10380	\N	S. Pontdemé	Simon Pontdemé	32	65	65	66	65	65	34	64	2	27	562	7	Right
-10385	\N	A. Lukse	Andreas Lukse	32	65	66	62	68	60	40	64	3	35	301	34	Right
-10388	\N	R. O'Donnell	Richard O'Donnell	31	65	62	64	65	62	52	64	3	53	630	13	Left
-10389	\N	Cheng Yuelei	程月磊	32	65	65	65	64	59	38	62	2	9	100	58	Right
-10394	\N	J. Deumeland	Jonas Deumeland	32	65	65	65	66	66	49	62	2	37	584	8	Right
-10400	\N	D. Vega	Mario Daniel Vega	36	65	66	62	64	64	25	62	2	8	310	1	Left
-10402	\N	M. Gliwa	Michał Gliwa	32	65	64	62	67	62	29	68	2	40	594	4	Right
-10408	\N	Kim Ho Jun	김호준 金浩军	36	65	64	63	64	66	52	65	3	39	593	20	Right
-10414	\N	M. Buchalik	Michał Buchalik	31	65	65	63	66	62	33	67	3	40	263	4	Right
-10447	\N	E. Taşkıran	Mahmut Ertuğrul Taşkıran	30	65	62	63	65	58	54	68	2	11	399	55	Right
-10450	\N	H. Suárez	Hugo Suárez Vaca	38	65	63	63	69	62	34	60	3	51	560	122	Right
-10462	\N	Campos	Álvaro Campos Estellés	33	65	69	66	64	61	31	62	3	23	551	12	Right
-10470	\N	D. Batz	Daniel Batz	29	65	66	63	67	66	34	59	3	45	650	8	Right
-10482	\N	A. Özer	Aykut Özer	27	65	66	64	64	62	49	63	3	11	163	55	Right
-10489	\N	J. Bendik	Joe Bendik	31	65	67	62	65	63	35	63	3	8	252	47	Left
-10495	\N	J. Maurer	Jimmy Maurer	31	65	67	64	69	65	40	67	3	8	282	47	Left
-10499	\N	J. Day	Joe Day	29	65	68	59	70	58	55	66	2	21	371	13	Left
-10508	\N	P. Delecroix	Paul Delecroix	31	65	64	65	65	62	27	66	4	4	185	7	Right
-10523	\N	A. Weis	André Weis	30	65	67	64	70	63	39	56	2	45	459	8	Right
-10551	\N	Lee Chang Geun	이창근 李灿东	26	65	66	64	66	63	46	62	3	39	432	20	Right
-10573	\N	C. Irwin	Clinton Robert Irwin	31	65	66	64	64	64	46	63	1	8	352	47	Right
-10582	\N	T. Mikkelsen	Thomas Korsgaard Mikkelsen	36	65	66	65	63	67	40	66	3	32	548	27	Right
-10612	\N	Dong Chunyu	董春雨	29	65	65	64	65	66	46	65	3	9	149	58	Left
-10621	\N	S. Mpontshane	Siyabonga Mpontshane	34	65	66	63	71	62	46	65	3	43	332	89	Left
-10646	\N	Y. Rokutan	六反 勇治	33	65	64	64	63	58	33	63	1	15	602	72	Right
-10647	\N	T. Hayashi	林 卓人	37	65	60	67	61	60	28	70	2	15	441	72	Right
-10651	\N	H. Iikura	饭仓 大樹	34	65	65	64	64	58	25	65	2	15	71	72	Right
-10674	\N	T. Okubo	大久保 択生	30	65	65	57	69	58	28	65	1	15	465	72	Right
-10746	\N	L. Plogmann	Luca Bastian Plogmann	20	64	66	61	67	61	40	58	4	45	598	8	Right
-10758	\N	M. Roffo	Manuel Roffo	20	64	65	64	66	61	26	62	4	14	68	1	Right
-10761	\N	M. Kovář	Matěj Kovář	20	64	62	63	63	65	29	62	4	48	639	44	Right
-10806	\N	S. Benda	Steven Benda	21	64	64	63	67	59	37	64	3	21	206	8	Right
-10809	\N	A. Racioppi	Anthony Racioppi	21	64	63	64	66	62	29	60	2	4	22	21	Right
-10835	\N	M. Bułka	Marcin Bułka	20	64	65	61	69	62	26	60	2	4	5	4	Right
-10839	\N	R. Hoffmann	Ron-Thorben Hoffmann	21	64	61	62	67	66	25	64	3	45	623	8	Right
-10871	\N	Aritz Castro	Aritz Castro Pérez	22	64	60	62	66	62	38	68	3	1	56	12	Right
-10874	\N	M. Nicolas	Moritz Nicolas	22	64	68	65	65	62	22	59	2	35	450	8	Right
-10883	\N	O. Mandanda	Over Mandanda	21	64	67	63	66	59	26	63	2	4	124	60	Right
-10903	\N	U. Adıyaman	Übeyd Adıyaman	22	64	67	58	68	57	48	60	3	11	319	55	Right
-10904	\N	Robert Sanchez	Robert Lynch Sanchez	22	64	64	62	66	64	43	63	4	5	94	12	Right
-10920	\N	T. Umeda	梅田 透吾	19	64	66	58	70	56	30	57	2	15	465	72	Right
-10933	\N	J. Hernández	José Santiago Hernández García	23	64	64	67	64	62	26	65	2	16	175	33	Right
-10936	\N	A. Zaccagno	Andrea Zaccagno	23	64	64	61	69	48	25	64	3	2	30	15	Right
-10957	\N	Brian Araújo	Brian Rocha Araújo	20	64	59	63	69	58	21	63	3	6	335	2	Right
-10962	\N	M. Okoye	Maduka Emilio Okoye	20	64	64	57	71	58	24	61	3	7	530	31	Right
-10969	\N	J. Walton	Jack Walton	22	64	64	62	63	60	34	65	2	21	434	13	Right
-11016	\N	A. Tordai	Árpád Ors György Tordai	23	64	61	61	63	65	20	64	2	44	453	70	Right
-11027	\N	S. Lentinelly	Carlos Sebastián Lentinelly Villavicencio	22	64	62	60	62	61	25	63	2	31	512	16	Right
-11030	\N	Belman	José Javier Belman Calvo	21	64	64	61	65	67	29	62	5	1	8	12	Right
-11034	\N	Jesús Ruiz	Jesús Ruiz Suárez	23	64	70	54	75	59	50	55	3	23	351	12	Right
-11039	\N	N. Contini	Nikita Contini Baranovsky	24	64	64	63	65	57	48	61	1	2	11	51	Right
-11041	\N	S. Kroll	Steve Kroll	23	64	64	62	65	59	37	62	3	45	519	8	Right
-11044	\N	Samu Casado	Samuel Casado Conde	23	64	66	62	67	59	45	57	3	23	351	12	Right
-11052	\N	Q. Braat	Quentin Braat	22	64	68	66	67	62	27	59	2	27	478	7	Right
-11053	\N	M. Lis	Mateusz Lis	23	64	68	58	70	55	27	63	2	40	263	4	Right
-11060	\N	L. Dias	Lucas Lionel Dias	21	64	65	63	64	59	18	63	2	4	232	7	Right
-11076	\N	C. Hazard	Conor Hazard	22	64	64	65	66	64	25	66	3	26	160	57	Right
-11078	\N	A. Spahić	Avdo Spahić	23	64	63	62	66	60	29	69	3	45	407	25	Right
-11084	\N	O. Vâlceanu	Octavian Gabriel Vâlceanu	23	64	66	65	63	60	27	66	2	44	653	70	Right
-11088	\N	Raphael Aflalo	Raphael Aflalo Lopes Martins	23	64	61	64	66	66	25	65	3	6	228	5	Right
-11092	\N	D. Rosić	Dragan Rosić	23	64	60	62	66	68	31	65	2	23	435	22	Left
-11098	\N	M. Dyngeland	Mathias Lønne Dyngeland	24	64	65	63	65	58	41	60	3	41	463	29	Right
-11104	\N	T. Königsmann	Timo Königsmann	23	64	66	65	69	57	47	59	3	45	567	8	Right
-11118	\N	N. Kocik	Nicolas Kocik	21	64	62	62	64	63	39	65	3	27	388	7	Right
-11124	\N	M. Şengezer	Muhammed Şengezer	23	64	67	62	66	57	35	61	2	11	50	55	Right
-11162	\N	F. López	Felipe López Gutiérrez	24	64	60	62	68	61	28	65	2	16	328	33	Right
-11167	\N	J. Mitchell	Jonathan Mitchell	25	64	63	61	65	63	51	62	2	48	613	13	Right
-11172	\N	N. Haikin	Nikita Haikin	24	64	67	62	67	60	42	60	2	37	350	45	Right
-11177	\N	L. McGee	Luke McGee	24	64	69	59	70	53	39	59	3	53	632	13	Right
-11191	\N	T. Nijhuis	Thijmen Joel Sander Nijhuis	21	64	66	60	63	62	18	62	3	7	189	9	Right
-11192	\N	I. Groothuizen	Indy Groothuizen	23	64	62	63	67	66	24	62	4	32	579	9	Right
-11199	\N	M. Ortega	Miguel René Ortega Rodríguez	25	64	66	59	68	60	29	63	2	16	72	33	Left
-11222	\N	T. Çetin	Tarık Çetin	23	64	64	65	73	60	19	62	2	11	207	55	Right
-11241	\N	A. Mehring	Andrés Ulises Mehring	26	64	60	61	64	63	47	65	2	31	512	1	Right
-11245	\N	A. Brunst	Alexander Brunst-Zöllner	24	64	66	63	66	60	41	61	3	32	579	8	Right
-11256	\N	G. Gazzaniga	Gianfranco Gazzaniga Farías	26	64	66	64	61	63	51	62	4	23	437	1	Right
-11268	\N	R. Jendrusch	Robert Jendrusch	24	64	67	60	70	59	34	60	3	45	438	8	Right
-11297	\N	J. Bonham	Jack Bonham	26	64	65	63	65	67	44	66	3	48	628	52	Right
-11308	\N	D. Węglarz	Damian Węglarz	24	64	66	62	66	61	33	60	2	40	469	4	Right
-11319	\N	I. Çipe	İsmail Çipe	25	64	63	66	64	64	45	64	2	11	271	55	Right
-11321	\N	L. Jonsson	Lukas Jonsson	27	64	63	62	65	62	37	64	2	41	574	37	Right
-11327	\N	D. Maekawa	前川 黛也	25	64	64	57	67	56	26	66	3	15	71	72	Right
-11338	\N	J. Bond	Jonathan Bond	27	64	65	61	64	61	47	62	2	5	102	13	Right
-11340	\N	R. Sánchez	Richard Sánchez Alcaraz	26	64	70	61	68	64	43	60	2	8	266	33	Right
-11343	\N	L. Zima	Lukáš Zima	26	64	66	61	62	61	43	63	2	2	55	44	Right
-11360	\N	A. Buzbuchi	Alexandru Buzbuchi	26	64	67	62	63	60	36	61	2	44	542	70	Right
-11397	\N	J. Young	Jeremías Young Romanutti	22	64	64	62	63	63	41	62	2	31	596	1	Right
-11402	\N	A. Campos	Ángelo Ademir Campos Turriarte	27	64	56	63	63	61	37	64	2	46	471	66	Right
-11408	\N	E. Johansen	Eirik Holmen Johansen	27	64	60	63	69	65	28	61	3	37	483	29	Right
-11412	\N	C. Cropper	Cody Cropper	27	64	67	62	66	61	36	61	3	8	275	47	Right
-11430	\N	R. Quiñonez	Romel Javier Quiñónez Suárez	28	64	66	63	66	66	44	62	1	51	520	122	Right
-11441	\N	K. Kunz	Kevin Kunz	28	64	67	63	64	51	30	64	3	35	506	8	Right
-11451	\N	O. Söderberg	Ole Söderberg	29	64	64	63	64	62	30	64	3	41	585	37	Left
-11460	\N	J. Kempin	Jonathan Kempin	27	64	63	63	66	64	57	64	2	8	221	47	Right
-11481	\N	A. Al Jadani	Abdullah Al Jadani	29	64	65	60	65	57	50	62	3	10	98	101	Right
-11486	\N	A. Mosquera	Andrés Felipe Mosquera Marmolejo	28	64	69	57	67	64	43	62	2	34	379	42	Left
-11498	\N	H. Sandvik	Helge Valvatne Sandvik	30	64	62	64	62	63	41	62	2	37	605	29	Right
-11505	\N	D. van Crooij	Delano van Crooij	29	64	66	65	63	60	22	65	4	7	480	9	Right
-11509	\N	F. Torgnascioli	Franco Luis Torgnascioli Lagreca	29	64	64	61	71	63	28	60	3	16	216	16	Left
-11512	\N	S. Rénot	Sébastien Rénot	30	64	61	63	65	62	33	65	3	27	324	7	Right
-11520	\N	M. Gilks	Matt Gilks	38	64	63	64	62	63	35	64	2	53	645	14	Right
-11522	\N	D. Gerken	Dean Gerken	35	64	64	62	63	64	49	64	3	53	644	13	Right
-11524	\N	Reguero	Antonio Reguero Chapinal	37	64	62	61	63	60	36	66	3	49	467	12	Right
-11528	\N	S. Brown	Scott Brown	35	64	64	62	64	60	51	63	1	53	642	13	Right
-11532	\N	J. Szmatuła	Jakub Szmatuła	39	64	60	62	63	61	32	66	3	40	426	4	Right
-11534	\N	T. Gebauer	Thomas Gebauer	38	64	63	65	60	61	36	66	3	29	240	34	Right
-11551	\N	L. Butrón	Leao Butrón Gotuzzo	43	64	63	60	62	61	23	67	3	46	514	66	Right
-11552	\N	E. Hernández	Edgar Adolfo Hernández Tellez	37	64	71	54	66	60	57	63	3	16	175	33	Right
-11558	\N	E. Palos	Enrique Eduardo Palos Reyes	34	64	65	51	67	54	43	68	2	16	328	33	Left
-11562	\N	J. Bava	Jorge Rodrigo Bava	38	64	64	64	68	63	40	62	1	33	316	16	Right
-11565	\N	F. Assmann	Walter Fabián Assmann	34	64	70	53	66	65	52	64	3	14	331	1	Right
-11569	\N	C. Gönen	Cenk Gönen	32	64	67	60	67	64	46	63	1	11	264	55	Right
-11577	\N	Deng Xiaofei	邓小飞	37	64	60	61	66	59	37	66	2	9	208	58	Right
-11582	\N	J. Leutwiler	Jayson Leutwiler	31	64	63	61	66	62	46	65	2	48	589	46	Right
-11587	\N	E. Domaschke	Erik Domaschke	34	64	65	64	63	64	38	61	2	45	598	8	Right
-11593	\N	J. Ayala	Josué Daniel Ayala	32	64	66	65	66	65	35	58	2	14	276	1	Left
-11597	\N	Y. Thuram	Yohann Thuram-Ulien	31	64	65	60	66	55	39	62	2	27	167	7	Right
-11617	\N	T. Mickel	Tom Mickel	31	64	64	62	65	64	47	61	2	35	199	8	Right
-11647	\N	S. Fox	Scott Fox	33	64	64	62	65	62	33	63	3	26	522	14	Right
-11691	\N	M. Jeannin	Mehdi Jeannin	29	64	66	62	66	65	50	61	2	27	541	28	Right
-11697	\N	M. Lampson	Matthew Tyler Lampson	30	64	62	65	65	65	45	65	2	8	221	47	Right
-11719	\N	A. Bone	Adrián Javier Bone Sánchez	31	64	64	66	59	60	32	67	2	42	445	61	Right
-11723	\N	B. Stuver	Brad Stuver	29	64	67	64	62	62	46	62	1	8	247	47	Right
-11726	\N	A. Kann	Alec Kann	29	64	64	62	62	62	43	66	3	8	69	47	Left
-11729	\N	L. Delgado	Luis Enrique Delgado Mantilla	39	64	58	62	64	64	48	69	3	34	557	42	Right
-11739	\N	O. Kristinsson	Ögmundur Kristinsson	31	64	61	66	68	57	45	59	2	22	125	65	Right
-11767	\N	M. Polaček	Martin Polaček	30	64	67	60	61	72	38	64	2	40	671	23	Right
-11790	\N	Nelson Freitosa	Nelson Arturo Freitosa Ruiz	24	64	59	47	74	66	49	72	3	12	380	5	Right
-11822	\N	T. Sugeno	菅野 孝宪	36	64	65	62	63	57	33	64	2	15	396	72	Right
-11826	\N	C. Straton	Cătălin George Straton	30	64	64	59	66	60	32	64	2	44	300	70	Right
-11837	\N	G. Chatterjee	Gajodara Chatterjee	34	64	64	68	60	69	30	61	3	19	85	150	Right
-11855	\N	G. Georgiev	Georgi Nikolaev Georgiev	31	64	66	65	65	66	36	61	2	19	85	103	Right
-11859	\N	Y. Minami	Yuta Minami	40	64	62	64	62	63	28	66	2	15	602	72	Right
-11884	\N	J. Olschowsky	Jan Jakob Olschowsky	18	63	64	63	64	64	19	65	3	3	19	8	Right
-11887	\N	J. Blázquez	Joaquín Blázquez	19	63	63	59	64	63	23	63	3	14	299	1	Right
-11896	\N	Altube	Diego Altube Suárez	20	63	63	58	65	63	16	59	3	1	8	12	Right
-11900	\N	A. Trubin	Anatoliy Trubin	18	63	55	67	63	57	29	69	2	18	79	51	Right
-11923	\N	Y. Diouf	Yehvann Diouf	20	63	64	64	63	60	44	62	3	4	112	7	Right
-11926	\N	A. Akbulut	Arda Akbulut	19	63	65	61	68	59	34	64	3	11	153	55	Left
-11927	\N	C. Higuera	Carlos Alberto Higuera de los Ríos	19	63	64	61	64	53	47	61	3	16	165	33	Right
-11950	\N	Leo Román	Leonardo Román Riquelme	20	63	64	62	63	66	50	60	2	23	209	12	Right
-11961	\N	Daniel Rebollo	Daniel Rebollo Franco	20	63	61	63	64	64	27	62	3	1	37	12	Right
-11972	\N	Berto Hórreo	Alberto Hórreo Taveras	20	63	62	64	63	59	33	61	3	23	341	12	Right
-11981	\N	Diego Conde	Diego José Conde Alcolado	21	63	58	56	67	61	42	65	3	23	162	12	Right
-11984	\N	João Virgínia	João Manuel Neves Virgínia	20	63	62	60	65	63	52	59	3	5	27	2	Left
-12004	\N	P. Bonet	Pépé Bonet Kapambu	17	63	65	60	61	58	17	64	2	4	66	60	Right
-12005	\N	Z. Görgen	Zafer Görgen	20	63	66	60	69	60	25	64	3	11	207	55	Right
-12011	\N	R. McCrorie	Robby McCrorie	22	63	62	64	67	63	32	62	3	26	587	14	Right
-12012	\N	L. Southwood	Luke Southwood	22	63	65	64	62	66	56	62	3	21	306	13	Right
-12025	\N	Álex Domínguez	Alejandro Domínguez Romero	21	63	61	62	64	63	43	60	2	23	449	12	Right
-12033	\N	M. Mbaye	Mouhamed Mbaye	22	63	67	58	68	56	22	55	3	6	28	10	Right
-12052	\N	U. Yuvakuran	Utku Yuvakuran	22	63	64	60	64	59	35	60	3	11	105	55	Right
-12053	\N	M. Woud	Michael Cornelis Woud	21	63	63	56	66	58	22	60	2	19	85	71	Left
-12055	\N	A. Whiteman	Alfie Whiteman	21	63	66	61	66	59	31	62	2	5	9	13	Right
-12090	\N	F. de Keijzer	Fabian de Keijzer	20	63	62	63	66	60	29	61	2	7	189	9	Right
-12102	\N	N. Rehnen	Nikolai Rehnen	23	63	65	59	64	60	36	63	3	3	214	8	Right
-12103	\N	W. Jääskeläinen	William Jääskeläinen	21	63	63	62	64	63	37	62	2	48	601	40	Right
-12112	\N	Dani Cárdenas	Daniel Cárdenas Líndez	23	63	60	62	69	58	36	55	3	1	48	12	Right
-12117	\N	T. Müller	Tom Müller	22	63	65	59	67	59	32	61	2	45	572	8	Right
-12129	\N	F. Dahmen	Finn Gilbert Dahmen	22	63	65	60	65	59	42	60	3	3	181	8	Right
-12140	\N	João Gonçalves	João Pedro Oliveira Gonçalves	19	63	62	64	56	57	29	67	2	6	233	2	Right
-12146	\N	Iñaki Álvarez	Iñaki Álvarez Goñi	23	63	63	67	65	61	25	64	3	1	116	12	Right
-12160	\N	S. Perisan	Samuele Perisan	22	63	68	59	65	56	46	58	3	2	93	15	Right
-12172	\N	J. Bolado	Juan Cruz Bolado	22	63	67	60	64	55	26	63	2	14	219	1	Right
-12185	\N	Fran Vieites	Francisco Barbosa Vieites	21	63	65	60	63	62	19	59	2	23	457	12	Right
-12187	\N	B. Gabriël	Brent Gabriël	21	63	67	58	69	59	31	57	3	17	573	6	Right
-12205	\N	A. Helac	Ammar Helac	22	63	66	65	67	58	34	64	2	29	365	34	Right
-12213	\N	J. Coleman	Joel Coleman	24	63	63	61	64	62	45	62	3	48	589	13	Right
-12215	\N	L. Vasquez	Luis Erney Vásquez Caicedo	24	63	65	61	64	57	41	60	3	34	379	42	Right
-12216	\N	S. Brodersen	Svend Arvid Stanislaw Brodersen	23	63	64	60	67	56	43	62	3	35	443	8	Right
-12218	\N	Carlos Alves	Carlos Reinaldo Moreira Alves	22	63	65	63	61	66	43	60	2	6	186	2	Right
-12224	\N	I. Chicco	Ignacio Francisco Chicco	24	63	65	64	61	59	32	63	3	14	277	1	Right
-12231	\N	R. ten Hove	Ramón ten Hove	22	63	60	65	64	48	25	64	2	7	82	9	Right
-12238	\N	A. Dini	Andrea Dini	24	63	64	64	66	56	28	65	3	2	143	15	Right
-12246	\N	Rodolfo Cardoso	Rodolfo Amaral Furtado Cardoso	22	63	64	60	64	57	27	61	2	6	390	2	Right
-12248	\N	Alberto	Alberto González Cespedosa	23	63	62	65	61	56	27	66	3	23	385	12	Right
-12268	\N	H. Burgoyne	Harry Burgoyne	23	63	65	62	64	61	35	61	2	48	635	13	Right
-12269	\N	Unai Etxebarría	Unai Etxebarría Martín	23	63	65	58	64	61	37	60	3	1	113	12	Left
-12300	\N	Pedro Mateus	Pedro Leonardo Gonçalves Mateus	23	63	65	61	64	55	34	62	2	6	291	2	Left
-12311	\N	J. Roca	Jimmy Leandro Roca Salazar	21	63	61	55	69	58	34	60	2	51	563	122	Right
-12326	\N	N. Flø	Nicolai Flø Jepsen	24	63	64	61	66	55	40	62	2	32	491	27	Left
-12333	\N	T. Schützenauer	Tobias Schützenauer	23	63	63	60	63	65	37	64	4	29	444	34	Right
-12342	\N	D. Reimann	Dominik Reimann	23	63	68	57	67	69	45	58	3	35	333	8	Right
-12349	\N	S. Müller	Sven Müller	24	63	63	66	67	54	22	62	2	45	572	8	Right
-12358	\N	M. Kos	Mirko Kos	23	63	64	59	68	57	40	59	3	29	365	34	Right
-12359	\N	J. Castillo	José Alberto Castillo Ramírez	25	63	63	62	63	65	19	60	2	16	234	33	Right
-12370	\N	S. Omossola	Omossola Medjo Simon Loti	22	63	65	58	67	59	30	59	2	19	85	30	Right
-12375	\N	Warleson	Warleson Stellion Lisboa Oliveira	23	63	68	53	68	56	27	58	3	17	345	5	Right
-12378	\N	Kewin	Kewin Oliveira Silva	25	63	68	63	63	59	24	68	3	6	246	5	Right
-12384	\N	T. Dähne	Thomas Dähne	26	63	67	56	67	65	58	59	4	35	333	8	Right
-12385	\N	L. Raeder	Lukas Raeder	26	63	60	61	63	64	32	65	3	45	646	8	Right
-12387	\N	L. Roberts	Liam Roberts	25	63	65	57	65	59	47	62	2	53	666	13	Left
-12392	\N	N. Gillekens	Nick Gillekens	24	63	65	58	66	61	44	58	2	17	236	6	Right
-12402	\N	T. Casali	Tino Casali	24	63	64	60	65	59	29	61	3	29	546	34	Right
-12405	\N	L. Mpasi	Lionel Mpasi-Nzau	25	63	62	61	66	64	46	61	3	27	540	7	Right
-12412	\N	T. Guivarch	Théo Guivarch	24	63	67	57	66	58	34	60	2	27	540	7	Right
-12423	\N	S. Dieng	Timothy Dieng	25	63	63	60	65	60	40	62	3	21	386	10	Right
-12454	\N	F. Stritzel	Florian Stritzel	26	63	68	57	63	42	34	66	3	35	415	8	Right
-12463	\N	O. Hadžikić	Osman Hadžikić	24	63	62	60	63	59	41	63	3	29	626	34	Right
-12473	\N	Samuel Portugal	Samuel Portugal Lima	26	63	65	62	65	56	43	63	3	6	228	5	Right
-12485	\N	Miguel Santos	Miguel José Oliveira Silva Santos	25	63	65	67	64	65	21	64	1	44	294	2	Right
-12498	\N	A. Gremsl	Armin Gremsl	25	63	66	61	64	57	44	59	2	29	576	34	Left
-12499	\N	F. Iacob	Florin Iacob	26	63	64	58	64	62	33	63	2	44	620	70	Right
-12500	\N	M. Szromnik	Michał Szromnik	27	63	66	63	62	65	49	60	3	40	509	4	Left
-12501	\N	D. Blažević	Davor Blažević	27	63	64	60	62	58	27	63	2	41	348	37	Right
-12503	\N	L. Burge	Lee Burge	27	63	67	60	69	51	41	59	3	48	496	13	Left
-12505	\N	B. Bertrand	Benjamin Bertrand	28	63	68	61	65	54	46	59	2	27	580	7	Left
-12508	\N	S. van der Lei	Stefan van der Lei	27	63	65	60	69	61	46	58	3	7	346	9	Right
-12517	\N	M. Brouwer	Michael Brouwer	27	63	66	62	63	60	26	58	3	7	354	9	Right
-12518	\N	M. Goblet	Merveille Goblet	25	63	68	55	70	51	47	57	2	17	345	6	Right
-12523	\N	Lee Tae Hee	이태희 李泰熙	25	63	62	62	63	61	44	62	3	39	517	20	Right
-12526	\N	H. Konaté	Yored Hillel Konaté	25	63	63	61	66	62	53	58	2	27	388	41	Right
-12533	\N	M. Engelhardt	Marcel Engelhardt	27	63	69	58	67	60	45	64	2	35	477	8	Right
-12534	\N	R. Wulle	Rick Wulle	26	63	62	62	64	59	46	61	2	35	272	8	Right
-12544	\N	M. Lansing	Michael Lansing	26	63	62	65	62	64	50	61	3	32	609	47	Right
-12552	\N	A. Ivačič	Aljaž Ivačič	26	63	64	65	65	60	38	63	3	8	126	3	Right
-12557	\N	M. Lukov	Martin Lukov	26	63	65	63	59	65	28	63	3	19	85	103	Right
-12560	\N	S. Rivadeneyra	Steven Aldair Rivadeneyra del Villar	25	63	63	60	61	63	25	62	2	46	514	66	Right
-12589	\N	A. Tarbell	Andrew Tarbell	26	63	62	64	70	59	29	61	2	8	221	47	Right
-12592	\N	B. Pindroch	Branislav Pindroch	28	63	65	60	63	60	31	64	2	40	398	23	Right
-12597	\N	M. Oxley	Mark Oxley	29	63	64	63	64	62	29	63	2	53	625	13	Right
-12598	\N	J. González	Julio José González Vela-Alvizu	29	63	64	61	61	67	44	57	3	16	234	33	Right
-12599	\N	D. Cornell	David Cornell	29	63	64	63	64	62	36	62	3	48	583	38	Right
-12605	\N	Lee Bum Soo	이범수 李范洙	29	63	65	62	64	59	60	62	3	39	466	20	Right
-12608	\N	M. Sourzac	Martin Sourzac	28	63	63	62	66	57	55	61	2	27	553	7	Right
-12616	\N	J. Muñoz	Joaquín Emanuel Muñoz Almarza	29	63	64	61	65	60	44	65	2	28	534	39	Right
-12623	\N	Yang Hyung Mo	양형모 梁瀅模	28	63	61	61	67	62	52	62	3	39	485	20	Left
-12658	\N	E. Arauz	Elder Arauz Saucedo	30	63	64	60	57	59	30	68	2	51	563	122	Right
-12659	\N	F. Croitoru	Flavius Dănuț Croitoru	27	63	60	68	66	67	44	46	2	44	636	70	Right
-12662	\N	Léo Vieira	Leonardo Vieira da Silva	29	63	61	64	60	55	27	64	2	6	186	5	Right
-12665	\N	M. Ratajczak	Michael Ratajczak	38	63	62	64	64	35	44	64	3	35	327	8	Right
-12667	\N	P. Heerwagen	Philipp Heerwagen	37	63	64	62	63	54	35	63	2	35	272	8	Right
-12668	\N	S. Andersen	Stephan Maigaard Andersen	38	63	61	63	61	63	39	63	3	32	190	27	Right
-12671	\N	G. Rogers	Gary Rogers	38	63	62	64	61	59	27	64	2	47	492	52	Right
-12672	\N	S. Flinders	Scott Flinders	34	63	64	60	65	58	34	62	2	53	648	13	Right
-12686	\N	G. Faivre	Guillaume Faivre	33	63	63	65	62	58	36	66	3	25	140	21	Right
-12689	\N	C. Taborda	César Omar Taborda	36	63	63	62	58	60	47	61	3	14	409	1	Right
-12698	\N	L. Reddy	Liam Reddy	38	63	63	61	62	60	48	64	2	36	202	56	Right
-12699	\N	Yang Cheng	杨程	34	63	62	60	62	63	32	62	1	9	106	58	Right
-12703	\N	S. Davies	Scott Davies	33	63	63	60	66	61	25	62	3	53	643	13	Right
-12705	\N	M. Štěch	Marek Štěch	30	63	65	61	63	64	36	64	2	53	662	44	Right
-12713	\N	G. Sandomierski	Grzegorz Sandomierski	30	63	59	62	65	63	44	61	3	44	369	4	Left
-12715	\N	K. Erdoğan	Kayacan Erdoğan	32	63	64	60	66	60	48	63	1	11	404	55	Right
-12727	\N	Jung San	정산 郑山	31	63	65	62	63	58	43	62	3	39	517	20	Right
-12728	\N	W. Abdullah	Waleed Abdullah Ali	34	63	63	58	64	69	35	61	2	10	103	101	Right
-12730	\N	Lee Bum Young	이범영 李范永	31	63	63	62	64	60	39	59	2	39	326	20	Right
-12731	\N	Jesús Fernández	Jesús Fernández Collado	32	63	63	65	62	57	47	61	3	44	531	12	Left
-12741	\N	P. Branduani	Paolo Branduani	31	63	62	64	63	60	55	63	1	30	349	15	Right
-12742	\N	B. Büchel	Benjamin Büchel	30	63	63	62	66	63	34	64	3	25	649	148	Right
-12751	\N	Alcolea	Pablo Alcolea Guerrero	31	63	63	64	66	61	60	60	2	23	435	12	Right
-12753	\N	S. Arnold	Steve Arnold	30	63	65	62	64	63	31	60	3	48	613	13	Right
-12763	\N	D. Moldovan	Dinu Bogdan Moldovan	30	63	63	65	64	62	37	62	2	44	621	70	Right
-12767	\N	Mejías	Tomás Mejías Osorio	31	63	63	64	64	65	55	62	2	44	413	12	Right
-12783	\N	L. Caffaratti	Leonel Caffaratti	30	63	63	70	58	70	33	60	2	14	409	1	Right
-12804	\N	M. Scholz	Markus Scholz	32	63	65	63	66	58	31	60	2	45	567	8	Right
-12806	\N	T. Vollnhofer	Thomas Vollnhofer	35	63	65	62	59	59	45	66	3	29	576	34	Right
-12812	\N	P. Farman	Paul Farman	30	63	64	58	66	63	42	60	3	53	641	13	Right
-12844	\N	Carlos Travisso	Carlos Adilson Travisso Rocha	24	63	68	43	72	64	53	64	3	12	178	5	Right
-12849	\N	Chi Wenyi	池文一	32	63	63	60	64	61	22	63	1	9	106	58	Right
-12853	\N	K. Seki	関宪 太郎	34	63	57	61	63	61	25	63	2	15	537	72	Right
-12866	\N	Sandro Couteiro	Sandro Nelson Couteiro Guedes	36	63	73	56	70	62	34	57	2	12	433	5	Left
-12867	\N	Sander Asevedo	Sander Luan Asevedo Cirino	24	63	68	59	58	47	45	60	1	12	225	5	Right
-12874	\N	H. Nakabayashi	中林 洋次	34	63	65	60	67	66	23	63	3	15	330	72	Left
-12884	\N	M. Nardi	Michele Nardi	33	63	64	62	64	58	23	59	2	30	416	15	Left
-12892	\N	F. Faist	Florian Faist	31	63	63	62	60	55	26	65	2	29	556	34	Left
-12899	\N	T. Kodama	児玉 剛	32	63	63	59	61	63	26	65	2	15	375	72	Right
-12902	\N	V. Rîmniceanu	Victor Teodor Rîmniceanu	30	63	61	60	63	66	39	64	3	44	559	70	Right
-12930	\N	P. Gavilán	Pablo Martín Gavilán Fernández	31	63	65	62	62	66	22	61	2	33	366	69	Left
-12952	\N	F. Jörgensen	Filip Jörgensen	18	62	63	69	64	68	36	60	2	1	24	37	Right
-12953	\N	Fortuño	Ángel Fortuño Viñas	18	62	62	60	66	61	25	63	3	23	137	12	Right
-12956	\N	S. Bajic	Stefan Bajic	18	62	63	63	63	59	24	63	3	4	75	7	Right
-12970	\N	L. Kasten	Lino Björn Kasten	19	62	66	62	67	62	41	51	3	3	36	8	Right
-12987	\N	J. Pourtau	Jerónimo Pourtau	20	62	64	62	65	57	17	60	3	14	123	1	Right
-13014	\N	Y. Obata	小畑 裕馬	18	62	65	59	70	56	44	49	3	15	537	72	Right
-13022	\N	D. Smarsch	Dennis Smarsch	21	62	65	62	63	66	32	65	4	35	443	8	Right
-13030	\N	J. Krahl	Julian Krahl	20	62	69	59	71	57	32	52	3	3	156	8	Right
-13033	\N	Vinicius	Caio Vinicius Pirana	21	62	68	58	72	54	58	54	2	2	172	5	Right
-13037	\N	N. Shinton	Nick Shinton	19	62	67	58	68	59	25	54	3	17	77	6	Left
-13052	\N	Victor Méndez	Victor Méndez Exposito	20	62	65	62	64	52	27	60	3	23	392	12	Right
-13057	\N	K. Tani	谷 晃生	19	62	62	63	67	58	26	53	3	15	499	72	Right
-13095	\N	G. Innocent	Garissone Innocent	20	62	62	59	64	61	31	61	3	4	5	7	Right
-13157	\N	C. Riveros	Cristhian David Riveros Silvero	21	62	61	60	63	61	31	62	2	33	479	69	Right
-13158	\N	D. Sandy	Juan Daniel Sandy Lazcano	18	62	60	62	61	60	31	62	2	51	560	122	Right
-13160	\N	M. Correa	Elcio Martín Correa Rodríguez	20	62	64	59	66	53	22	55	3	31	298	16	Right
-13175	\N	T. Glover	Thomas Glover	22	62	63	58	64	61	24	63	2	36	359	56	Right
-13180	\N	T. Krapikas	Titas Krapikas	21	62	62	60	64	58	24	59	2	2	192	100	Right
-13193	\N	B. Bayazit	Bilal Bayazit	21	62	63	60	64	42	24	61	2	7	313	9	Right
-13220	\N	R. Bacchia	Renzo Damián Bacchia Rodríguez	21	62	65	62	63	54	29	66	3	14	176	16	Right
-13230	\N	Felipe Galvis	Felipe Galvis Doménech	22	62	71	62	64	65	27	60	3	23	551	12	Right
-13258	\N	M. Wolff	Marco Wolff	23	62	60	57	63	56	16	62	2	50	493	1	Right
-13264	\N	M. Borgogno	Matías Nahuel Borgogno	21	62	60	63	61	59	38	62	3	14	174	1	Right
-13265	\N	J. Bursztyn	Jakub Bursztyn	22	62	64	60	63	58	26	61	2	40	490	4	Right
-13283	\N	Ricardo Velho	Mário Ricardo Silva Velho	21	62	62	61	64	58	22	61	2	6	394	2	Right
-13286	\N	K. O'Hara	Kieran O'Hara	24	62	63	59	64	57	45	60	2	48	614	52	Right
-13288	\N	J. Wrąbel	Jakub Wrąbel	24	62	62	61	62	58	44	62	2	40	597	4	Right
-13289	\N	V. Myhra	Viljar Røsholt Myhra	23	62	63	63	62	57	44	60	3	37	624	29	Right
-13292	\N	L. Ward	Lewis Ward	23	62	62	60	62	60	45	61	2	53	627	13	Right
-13298	\N	Juan Pérez	Juan Manuel Pérez Ruiz	23	62	58	65	67	57	34	63	3	1	116	12	Right
-13307	\N	S. Mbaye	Serigne Mor Mbaye	24	62	64	59	64	66	27	58	3	37	483	10	Right
-13310	\N	Y. van Osch	Yanick van Osch	23	62	62	59	67	68	43	60	3	7	502	9	Right
-13319	\N	Marcos Lavín	Marcos Lavín Rodríguez	23	62	60	65	64	56	31	57	3	44	559	12	Right
-13342	\N	B. Díaz	Benny Díaz Jáuregui	21	62	62	59	66	59	22	62	2	16	165	47	Right
-13346	\N	Ander Iru	Ander Iruarrizaga Díez	21	62	66	67	58	58	28	60	3	1	43	12	Right
-13348	\N	Esteve Peña	Esteve Peña Albons	23	62	59	61	65	60	33	62	3	23	406	12	Right
-13355	\N	J. Storevik	Jacob Storevik	23	62	63	60	64	58	36	60	2	37	661	29	Right
-13362	\N	D. Sommariva	Daniele Sommariva	22	62	64	54	68	61	42	58	2	30	372	15	Right
-13364	\N	T. Erlandsson	Tim Erlandsson	23	62	58	63	59	72	30	60	3	41	664	37	Right
-13366	\N	K. Joelsson	Kalle Joelsson	22	62	61	58	68	63	33	62	3	41	405	37	Right
-13368	\N	M. Hauptmeijer	Mike Hauptmeijer	23	62	60	62	66	60	34	63	2	7	494	9	Right
-13386	\N	G. Hatano	波多野 豪	22	62	61	65	62	56	26	61	3	15	375	72	Right
-13394	\N	L. Popescu	Iulian Laurențiu Popescu	23	62	64	62	64	66	26	61	2	44	377	70	Right
-13397	\N	A. Guendouz	Alexis Guendouz	24	62	66	62	67	65	31	58	3	4	75	7	Left
-13400	\N	A. Gudiño	Andrés Guillermo Gudiño Portillo	23	62	60	60	65	55	48	60	2	16	141	33	Right
-13417	\N	S. Mohlin	Sixten Mohlin	24	62	66	57	68	62	46	57	2	41	651	37	Right
-13420	\N	J. Rose	Jack Rose	25	62	64	60	64	58	42	61	3	53	666	13	Right
-13421	\N	M. Sætra	Morten Sætra	23	62	64	61	64	58	45	60	3	37	624	29	Right
-13430	\N	P. Gartler	Paul Gartler	23	62	60	61	62	60	30	61	2	29	347	34	Right
-13434	\N	J. de Lange	Jeffrey de Lange	22	62	62	60	63	61	24	60	4	7	387	9	Right
-13435	\N	J. Klinsmann	Jonathan Klinsmann	23	62	61	59	66	65	29	62	2	8	111	47	Right
-13442	\N	M. Bu Sanda	Mohammed Saeed Bu Sanda Ahmed Theyab Al Falahi	25	62	61	62	64	53	36	60	3	38	218	109	Right
-13456	\N	S. Yoshida	吉田 舜	23	62	66	57	65	59	32	56	3	15	489	72	Right
-13466	\N	I. Lawlor	Ian Lawlor	25	62	65	59	64	60	45	61	3	53	667	52	Right
-13480	\N	A. Zendejas	Adrián Zendejas Rodríguez	24	62	66	58	64	59	37	60	3	8	274	47	Right
-13484	\N	N. Klinger	Niklas Klinger	24	62	59	60	64	63	33	60	3	3	36	8	Right
-13492	\N	L. Watkowiak	Lukas Watkowiak	24	62	59	59	66	57	22	63	3	25	308	8	Right
-13515	\N	M. Malenica	Marko Malenica	26	62	62	63	62	59	26	60	2	40	400	17	Right
-13516	\N	G. De Amores	Guillermo Rafael De Amores Ravelo	25	62	65	63	56	60	24	66	3	31	596	16	Right
-13522	\N	M. Van Damme	Miguel Van Damme	26	62	63	58	65	59	49	58	2	17	345	6	Right
-13528	\N	T. King	Thomas King	25	62	63	62	63	56	42	61	3	53	660	38	Right
-13534	\N	M. Hamrol	Matthias Hamrol	26	62	63	62	65	53	25	60	4	45	528	8	Left
-13535	\N	S. Cleveland	Stefan Cleveland	26	62	63	59	65	60	56	60	2	8	147	47	Left
-13548	\N	R. Brüseke	Robin Brüseke	26	62	62	58	65	61	45	60	3	45	658	8	Right
-13555	\N	S. Mandé	Sayouba Mandé	27	62	63	61	63	58	43	62	2	32	523	41	Right
-13558	\N	L. Vigouroux	Lawrence Vigouroux	26	62	63	61	63	62	45	61	2	53	669	39	Right
-13574	\N	H. Fukushima	福島 春樹	27	62	62	61	61	69	40	59	2	15	482	72	Right
-13581	\N	C. Haas	Christoph Haas	27	62	63	60	59	62	29	62	4	29	626	34	Right
-13594	\N	S. Osigwe	Sebastian Ogenna Osigwe	26	62	64	62	61	62	32	58	2	25	473	31	Right
-13598	\N	B. Garratt	Ben Garratt	26	62	65	58	66	58	49	61	2	48	614	13	Right
-13603	\N	F. Flückiger	Franco Flückiger	29	62	64	62	63	59	45	61	3	45	637	8	Right
-13608	\N	M. Festa	Marco Festa	28	62	65	62	61	58	45	59	3	2	355	15	Right
-13616	\N	L. Cárdenas	Luis Fernando Cárdenas Montenegro	29	62	60	61	59	62	31	66	2	51	563	122	Right
-13618	\N	G. Kongshavn	Gudmund Broks Kongshavn	29	62	63	61	63	63	21	60	3	37	604	29	Right
-13622	\N	S. Thomas	Simon Edmund Thomas	30	62	64	63	61	58	40	61	1	37	586	46	Right
-13625	\N	I. Rodríguez	Jesús Iván Rodríguez Trujillo	27	62	70	45	67	55	63	64	2	16	288	33	Right
-13637	\N	D. Kudła	Dawid Kudła	28	62	62	56	64	67	46	63	2	40	495	4	Right
-13649	\N	I. Jónsson	Ingvar Jónsson	30	62	62	60	63	58	46	61	2	19	85	65	Right
-13652	\N	R. Hironaga	廣永 遼太郎	30	62	64	60	65	60	24	61	2	15	441	72	Left
-13656	\N	G. Viscarra	Guillermo Viscarra Bruckner	27	62	64	59	62	57	27	66	3	51	511	122	Right
-13666	\N	J. Murphy	Joe Murphy	38	62	59	62	60	60	37	62	3	53	643	52	Left
-13667	\N	P. Gori	Pier Graziano Gori	40	62	56	58	59	64	35	67	1	2	273	15	Right
-13668	\N	D. Zibung	David Zibung	36	62	64	60	64	52	29	61	2	25	238	21	Right
-13672	\N	B. Clarke	Brendan Clarke	34	62	62	63	61	59	48	62	3	47	677	52	Right
-13677	\N	J. Lillis	Josh Lillis	33	62	63	62	63	61	44	57	2	53	656	13	Right
-13680	\N	A. Lie	Andreas Lie	32	62	63	61	63	59	47	60	1	37	604	29	Right
-13698	\N	Zhang Chong	张翀	32	62	62	61	60	64	54	61	1	9	76	58	Right
-13700	\N	E. Parish	Elliot Parish	30	62	63	62	64	61	40	58	2	26	535	13	Right
-13714	\N	Cho Soo Hyuk	조수혁 赵寿赫	33	62	61	62	61	61	34	62	3	39	250	20	Right
-13725	\N	A. Al Mazaidi	Ali Ibrahim Al Mazyadi	34	62	60	64	61	62	38	62	3	10	616	101	Right
-13744	\N	M. Rozman	Matjaž Rožman	33	62	59	62	63	57	43	62	2	19	85	3	Right
-13762	\N	A. Berardi	Alessandro Berardi	29	62	61	58	64	56	51	63	2	2	168	15	Right
-13775	\N	K. Sharahili	Khalid Mohammed Sharahili	33	62	65	56	64	61	43	61	3	10	427	101	Left
-13776	\N	A. Al Kassar	Ahmed Ali Al Kassar	29	62	62	60	67	54	41	60	3	10	353	101	Right
-13782	\N	V. Janjetović	Vedran Janjetović	32	62	61	59	62	60	42	61	2	36	323	56	Right
-13793	\N	S. Lukić	Stojan Lukić	40	62	57	63	62	52	27	67	2	41	665	25	Right
-13801	\N	Shao Puliang	Puliang Shao	30	62	58	62	59	63	33	63	3	9	166	58	Right
-13808	\N	M. Al Furayj	Muslim Al Furayj	32	62	63	59	64	58	45	61	3	10	425	101	Right
-13836	\N	K. Tanno	丹野 研太	34	62	63	67	58	58	24	61	2	15	373	72	Right
-13838	\N	D. Buchholz	David Buchholz	35	62	61	66	62	44	24	64	2	35	450	8	Right
-13849	\N	L. Hroššo	Lukáš Hroššo	33	62	63	64	60	58	16	62	3	40	518	23	Left
-13864	\N	D. Corozo	Dennis Wilber Corozo Villalva	32	62	62	63	62	64	25	64	3	42	558	61	Right
-13869	\N	R. Farro	Ricardo Daniel Farro Caballero	35	62	60	60	65	60	46	62	2	46	508	66	Right
-13870	\N	D. Valdés	Daniel Eduardo Valdés Guerrero	35	62	59	58	66	60	29	64	2	52	678	50	Right
-13875	\N	F. Nicosia	Federico Ariel Nicosia Malizia	30	62	60	60	62	60	24	60	3	46	600	1	Right
-13878	\N	J. Pretel	Juan Miguel Pretel Sánchez	36	62	61	62	63	62	32	61	2	46	508	66	Right
-13880	\N	A. Takeshige	Akihiko Takeshige	32	62	61	62	58	57	17	66	2	15	602	72	Right
-13888	\N	L. Chevalier	Lucas Chevalier	18	61	61	58	64	62	24	58	3	4	54	7	Right
-13906	\N	L. Unbehaun	Luca Unbehaun	19	61	52	58	65	65	55	63	3	3	13	8	Right
-13926	\N	F. Palmowski	Florian Palmowski	19	61	58	60	62	60	31	65	3	3	119	8	Right
-13979	\N	C. Kelleher	Caoimhin Kelleher	21	61	62	59	64	55	39	58	2	5	7	52	Right
-13995	\N	�. Târnovanu	Ștefan Târnovanu	20	61	61	58	59	63	32	66	2	44	300	70	Right
-14020	\N	N. Trott	Nathan Trott	21	61	62	60	64	64	36	61	3	5	64	13	Left
-14032	\N	Matis Carvalho	Mathis Carvalho	21	61	62	61	63	59	38	59	2	4	130	2	Right
-14047	\N	Charlie	Carlos Florencio García	21	61	55	65	63	66	23	62	3	23	551	12	Right
-14072	\N	G. Crettaz	Gonzalo Alejandro Crettaz	20	61	64	65	59	68	29	56	3	23	451	1	Right
-14074	\N	M. Bakker	Mees Bakker	19	61	64	59	61	61	28	55	2	7	118	9	Right
-14090	\N	M. Pettersen	Markus Olsen Pettersen	21	61	63	59	64	58	23	60	2	37	487	29	Right
-14102	\N	Y. Oki	沖 悠哉	20	61	62	55	67	59	37	54	2	15	429	72	Right
-14108	\N	T. Lawal	Tobias Okiki Lawal	20	61	64	57	63	59	29	58	3	29	240	34	Right
-14136	\N	K. Haug	Christian Kjetil Haug	22	61	61	60	62	62	46	59	2	37	468	29	Right
-14137	\N	D. Gyollai	Dániel Gyollai	23	61	63	60	62	60	45	57	3	48	578	26	Right
-14138	\N	O. Evans	Owen Evans	23	61	64	60	64	58	40	62	3	48	532	38	Right
-14139	\N	M. Šarkić	Matija Šarkić	22	61	62	59	61	60	36	61	2	48	635	49	Right
-14141	\N	I. Eğribayat	İrfan Can Eğribayat	22	61	66	54	64	52	42	58	2	11	322	55	Right
-14149	\N	Guo Quanbo	郭全博	22	61	58	58	63	56	53	61	1	9	40	58	Right
-14184	\N	A. Rivero	Alejandro Rivero	22	61	61	59	62	61	43	60	3	14	456	1	Right
-14203	\N	E. Selvik	Egil Selvik	22	61	62	61	62	59	18	60	2	37	526	29	Left
-14224	\N	R. Doohan	Ross Doohan	22	61	59	59	62	60	61	59	3	26	659	14	Right
-14228	\N	S. Drljača	Stefan Drljača	21	61	64	60	62	58	34	57	3	3	13	8	Right
-14233	\N	J. Wollacott	Jojo Wollacott	23	61	61	59	64	56	41	58	2	21	384	13	Right
-14235	\N	J. Eastwood	Jake Eastwood	23	61	63	60	59	61	37	59	2	26	498	13	Right
-14236	\N	V. Cabezas	Víctor Andrés Cabezas Vergel	22	61	62	61	65	58	29	56	2	34	557	42	Right
-14238	\N	M. Funk	Marius Funk	24	61	61	59	62	61	38	59	3	35	411	8	Right
-14242	\N	J. Mendive	Joaquín Nicolás Mendive	23	61	56	65	59	62	24	61	3	14	383	1	Right
-14255	\N	E. Viveros	Erik Dalín Viveros Acosta	24	61	61	59	60	70	53	56	1	42	368	61	Right
-14324	\N	A. Hansen	Andreas Hansen	24	61	63	58	63	61	48	59	3	32	194	27	Right
-14325	\N	D. Iliev	Dejan Iliev	25	61	64	59	64	58	44	60	3	5	15	63	Right
-14327	\N	R. Fulton	Ryan William Fulton	24	61	59	60	65	65	31	58	3	26	629	14	Left
-14350	\N	C. Eriksson	Carljohan Eriksson	25	61	59	62	63	63	53	62	1	41	652	40	Right
-14352	\N	R. Banegas	Luis Rodrigo Banegas Cury	24	61	60	61	60	49	24	62	3	51	520	122	Right
-14357	\N	L. Vejmola	Luděk Vejmola	25	61	63	62	64	60	26	63	2	37	605	44	Right
-14361	\N	J. Maxted	Jonathan Maxted	26	61	61	60	64	60	46	58	3	53	627	13	Right
-14366	\N	J. Houwen	Jeroen Houwen	24	61	61	59	62	58	44	58	2	7	313	9	Right
-14374	\N	R. Sallinger	Raphael Lukas Sallinger	24	61	65	59	61	60	43	57	3	29	556	34	Right
-14375	\N	E. Verstappen	Eric Verstappen	26	61	62	59	61	53	38	61	2	35	504	9	Right
-14381	\N	A. Quintana	Aldair Alejandro Quintana Rojas	25	61	62	59	62	55	23	61	2	34	235	42	Left
-14385	\N	A. Weidinger	Alexander Weidinger	23	61	62	60	57	63	23	63	2	35	506	8	Right
-14387	\N	A. Putna	Andrew Putna	25	61	60	61	59	60	25	62	2	8	244	47	Right
-14407	\N	Han Rongze	韩镕泽	27	61	59	55	63	64	41	63	3	9	262	58	Left
-14412	\N	Yeerjieti Yeerzati	叶尔杰提·叶尔扎提	27	61	63	57	60	64	50	58	2	9	208	58	Right
-14413	\N	C. Akbaba	Çağlar Şahin Akbaba	25	61	65	58	68	55	42	54	2	11	381	55	Right
-14424	\N	B. Wilson	Ben Wilson	27	61	63	59	63	60	40	57	2	21	475	13	Right
-14428	\N	M. Acton	Matthew Acton	28	61	63	61	63	59	40	58	2	36	503	56	Right
-14438	\N	J. Rasheed	Jonathan Rasheed	28	61	63	58	62	61	31	59	2	41	510	29	Right
-14443	\N	E. Edwards Jr.	Earl William Edwards Jr.	28	61	58	64	57	60	42	65	2	8	248	47	Right
-14452	\N	D. Mehmet	Deniz Doğan Mehmet	27	61	63	61	61	60	22	59	3	26	633	55	Right
-14453	\N	R. Laidlaw	Ross Laidlaw	27	61	63	59	59	56	24	61	2	26	659	14	Right
-14473	\N	N. Townsend	Nick Townsend	25	61	60	61	64	57	40	61	2	53	660	13	Right
-14477	\N	Du Jia	杜佳	27	61	59	55	63	52	51	60	3	9	171	58	Right
-14480	\N	B. Moore	Brendan Moore	28	61	60	59	61	60	48	62	2	8	69	47	Left
-14483	\N	K. McIntosh	Kendall Isaiah McIntosh	26	61	62	60	62	64	41	60	3	8	245	47	Right
-14497	\N	E. İşcan	Eray İşcan	28	61	62	63	60	58	35	59	1	11	251	55	Right
-14510	\N	J. Lynch	Jay Lynch	27	61	68	58	65	56	41	58	3	48	631	13	Right
-14526	\N	B. Janošević	Budimir Janošević	30	61	60	63	63	55	23	62	3	41	364	22	Right
-14532	\N	L. Romero	Luis Enrique Romero Durán	29	61	63	61	62	62	26	59	2	52	678	50	Right
-14539	\N	E. González	Edixson Antonio González Peroza	30	61	59	60	60	59	21	59	3	52	617	50	Left
-14540	\N	L. Price	Lewis Price	35	61	60	61	59	57	37	61	2	21	533	38	Right
-14541	\N	X. Pinoteau	Xavier Pinoteau	37	61	62	64	52	58	30	67	3	27	562	7	Right
-14546	\N	M. Tørnes	Michael Tørnes	34	61	60	59	62	58	48	62	2	32	442	27	Right
-14552	\N	G. Ruíz	Gerardo Daniel Ruiz Barragán	34	61	61	60	62	60	43	57	3	16	397	33	Right
-14563	\N	G. Woods	Gary Woods	30	61	64	59	64	60	50	55	2	53	667	13	Right
-14564	\N	Li Shuai	李帅	37	61	62	61	58	62	32	61	2	9	129	58	Right
-14565	\N	Hong Jung Nam	홍정남 洪正男	32	61	62	60	59	61	36	62	3	39	326	20	Right
-14590	\N	B. Meredith	Bryan Meredith	30	61	65	60	64	64	48	54	2	8	255	47	Right
-14595	\N	Lee Jin Hyung	이진형 李敬恒	32	61	60	58	61	60	49	63	2	39	454	20	Right
-14622	\N	Sui Weijie	隋维杰	37	61	60	60	58	61	48	62	3	9	208	58	Right
-14630	\N	J. Peñarrieta	José Feliciano Peñarrieta Flores	31	61	60	58	62	60	48	60	2	51	565	122	Right
-14634	\N	Y. Takeda	武田 洋平	33	61	59	60	60	56	25	66	2	15	424	72	Right
-14635	\N	T. Masuda	増田 卓也	31	61	61	61	64	58	21	57	2	15	441	72	Right
-14642	\N	Y. Nishibe	西部 洋平	39	61	61	61	61	62	23	67	2	15	465	72	Right
-14651	\N	D. Tomii	富居 大樹	30	61	65	56	63	53	34	60	2	15	499	72	Right
-14661	\N	A. Marinescu	Andrei Daniel Marinescu	35	61	64	55	64	60	27	61	2	44	377	70	Right
-14669	\N	J. Pinto	Joel Ademir Pinto Herrera	40	61	59	59	63	61	50	60	1	46	600	66	Right
-14673	\N	L. Fernández	Luis Fernando Fernández López	42	61	60	62	63	61	32	55	2	42	516	42	Right
-14679	\N	A. Liebeskind	Alan José Liebeskind Díaz	35	61	60	59	62	61	29	60	3	52	617	50	Right
-14691	\N	G. Bazunu	Gavin Bazunu	18	60	60	59	60	56	27	59	2	48	631	52	Right
-14696	\N	Iván Martínez	Iván Martínez Marqués	18	60	61	64	61	60	31	57	2	1	116	12	Right
-14713	\N	Adrián	Adrián Rodríguez Giménez	19	60	57	58	60	64	29	62	3	1	56	1	Right
-14726	\N	E. Caprile	Elia Caprile	18	60	63	59	63	61	33	58	3	5	63	15	Right
-14731	\N	R. Schofield	Ryan Schofield	20	60	62	59	62	59	31	58	2	21	338	13	Right
-14732	\N	S. Laiton	Sonny Patrick Laiton	20	60	57	59	59	53	47	56	2	27	419	7	Right
-14746	\N	J. García	Jean Paul García	18	60	61	56	62	56	27	58	3	1	57	42	Right
-14760	\N	Azón	Juan Carlos Azón Marco	19	60	56	70	57	59	26	56	3	23	213	12	Right
-14778	\N	J. Bursik	Josef Bursik	19	60	62	59	60	60	40	57	2	48	476	13	Left
-14796	\N	João Monteiro	João Manuel Silva Monteiro	19	60	61	59	61	53	23	58	2	6	367	2	Left
-14798	\N	A. Pérez	Aldo Sebastián Pérez Ramos	19	60	59	61	58	58	27	60	2	33	316	69	Right
-14801	\N	T. Boulhendi	Teddy Boulhendi	19	60	59	60	58	60	44	59	3	4	67	7	Right
-14808	\N	Javier Izquierdo	Javier Izquierdo Cuervo	19	60	63	58	62	55	49	59	2	23	312	12	Right
-14811	\N	A. Confente	Alessandro Confente	22	60	65	61	73	50	31	47	1	30	416	15	Right
-14813	\N	E. Balcombe	Ellery Balcombe	20	60	59	57	65	55	40	59	3	21	158	13	Right
-14814	\N	J. Cumming	Jamie Cumming	20	60	62	57	63	56	25	58	2	53	670	13	Right
-14817	\N	D. Desprez	Didier Desprez	21	60	60	56	61	54	26	58	3	4	184	7	Right
-14824	\N	Miguel Morro	Miguel Ángel Morro Muñoz	19	60	60	56	62	61	23	55	2	23	321	12	Left
-14843	\N	Ruvira	Álvaro Ruvira Yáñez	20	60	59	61	63	59	29	52	3	23	435	12	Right
-14860	\N	K. Niemczycki	Karol Niemczycki	20	60	60	59	62	55	25	59	3	40	518	4	Right
-14864	\N	L. Ingolotti	Luis Ignacio Ingolotti	20	60	61	58	62	55	30	60	2	14	331	1	Right
-14876	\N	Barredo	Pablo Barredo Calvo	16	60	61	56	60	57	23	59	2	23	437	12	Right
-14892	\N	D. Margush	Daniel Margush	22	60	57	61	61	57	30	60	2	36	202	56	Right
-14899	\N	V. Johansson	Viktor Johansson	21	60	62	60	63	58	31	62	3	21	533	37	Right
-14904	\N	B. Żynel	Bartłomiej Żynel	22	60	60	59	61	55	28	58	2	40	597	4	Left
-14908	\N	J. Bartels	Jan-Christoph Bartels	21	60	63	61	60	59	23	61	2	45	567	8	Right
-14929	\N	Diego Fuoli	Diego Licinio Lázaro Fuoli	22	60	58	57	62	64	28	61	2	23	568	12	Right
-14934	\N	M. Johansson	Marko Johansson	21	60	58	60	63	59	41	59	2	41	267	37	Right
-14940	\N	A. Fisher	Andy Fisher	22	60	64	59	64	61	33	58	3	21	309	13	Right
-14970	\N	B. Leneis	Benjamin Leneis	21	60	64	55	62	59	22	56	3	3	150	8	Right
-14982	\N	D. Matijaš	Davor Matijaš	20	60	63	58	62	57	22	56	3	17	145	17	Right
-14990	\N	Y. Meykher	Yaroslav Meykher	20	60	60	65	60	63	20	50	3	23	527	51	Right
-15008	\N	J. Marcinkowski	James Thomas Marcinkowski	23	60	64	60	63	66	23	56	2	8	310	47	Right
-15013	\N	C. Frommann	Constantin Frommann	22	60	62	59	62	64	37	55	3	3	115	8	Right
-15014	\N	Y. Bangsow	Yannik Bangsow	22	60	60	57	64	57	33	55	4	45	459	8	Right
-15015	\N	M. Vantruba	Martin Vantruba	22	60	62	59	62	60	25	56	3	32	460	23	Right
-15022	\N	D. St. Clair	Dayne St. Clair	23	60	68	52	65	51	26	52	3	8	274	46	Left
-15032	\N	Carlos Mena	Carlos Mena Díaz	23	60	58	60	61	59	23	57	3	23	351	12	Right
-15045	\N	Joel Sousa	Carlos Joel Castro de Sousa	20	60	56	58	59	57	55	57	3	6	342	2	Right
-15047	\N	A. Wichne	Amund Wichne	23	60	62	53	62	56	44	58	3	37	584	29	Right
-15049	\N	L. Thomas	Lewis Thomas	22	60	60	58	63	57	57	58	3	53	632	38	Right
-15080	\N	Zarco	Amador Antonio Zarco Jiménez	22	60	64	54	62	61	26	60	3	1	70	12	Right
-15088	\N	João Silva	João Pedro O. Veiga da Silva	20	60	61	57	63	58	31	58	1	6	227	2	Right
-15097	\N	M. Vargas	Miguel Angel Vargas Mañan	24	60	59	57	62	58	50	58	2	28	393	39	Right
-15103	\N	E. Ross	Ethan Ross	23	60	63	59	61	62	33	60	3	48	547	13	Right
-15104	\N	E. McGinty	Edward McGinty	20	60	60	61	61	56	50	58	2	47	675	52	Left
-15105	\N	Valera	Antonio Valera Salmoral	23	60	61	56	61	46	38	64	2	1	142	12	Right
-15109	\N	M. Harsman	Matthis Harsman	20	60	62	61	62	61	34	60	3	45	598	8	Right
-15111	\N	E. González	Emilio Emiliano González	24	60	58	61	61	52	21	62	2	14	123	1	Right
-15119	\N	Carlos Marín	Carlos Marín Tomás	23	60	66	65	57	60	27	59	3	1	37	12	Right
-15140	\N	R. Watson	Rory Watson	24	60	57	57	63	55	44	60	2	53	668	13	Right
-15144	\N	A. Lejoly	Antoine Lejoly	22	60	61	52	67	62	49	58	3	17	448	6	Right
-15150	\N	V. Xenopoulos	Vasilios Xenopoulos	22	60	65	57	63	50	29	57	3	22	293	36	Right
-15161	\N	K. Bucker	Koen Bucker	24	60	63	55	60	54	31	58	3	7	354	9	Right
-15181	\N	Rui Encarnação	Rui Filipe Teixeira Encarnação	22	60	61	51	68	52	28	57	2	6	401	2	Right
-15186	\N	M. Soldo	Marko Soldo	23	60	58	62	60	59	43	58	2	29	362	34	Right
-15187	\N	M. Crowe	Michael Thomas Tallaksen Crowe	24	60	57	60	58	58	44	60	2	37	538	38	Right
-15190	\N	M. Stryjek	Maksymilian Stryjek	23	60	60	59	60	56	43	57	2	26	587	4	Right
-15192	\N	M. Ledesma	Marcos Ignacio Ledesma	23	60	65	55	58	55	47	62	3	14	242	1	Right
-15200	\N	N. Insfrán	Nelson Federico Insfrán	25	60	60	56	58	62	26	61	2	14	378	1	Right
-15217	\N	A. Preciado	Álvaro Enrique Preciado Ferrín	22	60	58	57	63	63	31	59	3	42	474	61	Right
-15224	\N	D. Rogers	Daniel Rogers	26	60	61	60	62	61	46	58	3	26	498	52	Right
-15225	\N	S. McGuinness	Stephen McGuinness	25	60	61	60	60	58	51	58	2	47	655	52	Right
-15229	\N	J. Brattberg	Johan Brattberg	23	60	61	59	60	61	34	61	2	41	664	37	Right
-15245	\N	K. Yoshimaru	吉丸 絢梓	24	60	64	57	62	55	19	56	2	15	71	72	Right
-15254	\N	D. Campisi	Dante Nicolás Campisi	23	60	59	59	57	58	36	59	2	33	619	1	Right
-15267	\N	Zhang ZhenQiang	ZhenQiang Zhang	27	60	63	52	64	63	51	55	3	9	166	58	Right
-15271	\N	O. Sail	Oliver Sail	24	60	59	56	61	60	49	59	2	36	414	71	Right
-15276	\N	M. Bleve	Marco Bleve	24	60	65	62	62	58	18	59	2	30	183	15	Right
-15277	\N	Kyung Gun Mun	Mun Kyung Gun	25	60	57	62	63	56	39	57	3	15	489	20	Right
-15281	\N	P. Galindo	Pedro Domingo Galindo Suheiro	25	60	58	60	63	62	46	59	2	51	552	122	Right
-15302	\N	M. Goto	後藤 正明	26	60	62	57	65	52	25	54	3	15	499	72	Right
-15305	\N	E. Fujishima	藤嶋 栄介	28	60	63	57	64	53	26	54	2	15	373	72	Right
-15307	\N	A. Greab	Alexandru Doru Greab	28	60	63	55	61	50	34	58	2	44	636	70	Right
-15319	\N	V. Noring	Viktor Noring	29	60	60	61	62	54	32	58	2	41	664	37	Right
-15325	\N	B. Uraezaña	Braulio Uraezaña Cuñaendi	25	60	60	59	57	62	40	59	3	51	565	122	Right
-15327	\N	Hwang ByeongGeun	황병근 黄秉根	26	60	62	57	62	56	26	57	2	39	432	20	Right
-15329	\N	G. Pozos	Guillermo Pozos Guevara	27	60	62	63	63	65	39	58	3	16	152	33	Right
-15334	\N	D. Lyness	Dean Lyness	28	60	60	60	62	56	53	58	2	26	588	13	Right
-15335	\N	S. Deana	Steven Deana	30	60	63	60	62	56	53	56	3	45	543	21	Right
-15336	\N	S. Ando	安藤 骏介	29	60	58	53	60	52	42	65	3	15	373	72	Right
-15346	\N	G. Kawanami	川浪 吾郎	29	60	60	63	56	55	24	58	2	15	537	72	Right
-15355	\N	N. Mirković	Nikola Mirković	28	60	64	56	59	65	30	63	3	32	491	22	Right
-15357	\N	E. Hermoza	Éder Alberto Hermoza Guevara	30	60	59	58	60	58	52	61	2	46	600	66	Right
-15358	\N	H. Pérez	Héctor Eduardo Pérez Cuevas	29	60	60	59	58	54	36	57	2	52	654	50	Right
-15365	\N	L. McCormick	Luke McCormick	36	60	55	58	53	62	33	62	4	48	607	13	Right
-15366	\N	P. Cherrie	Peter Cherrie	36	60	58	58	60	59	22	61	2	47	673	14	Left
-15367	\N	B. Murphy	Brian Murphy	37	60	61	57	60	55	33	62	1	47	681	52	Right
-15368	\N	M. McNulty	Mark McNulty	39	60	60	61	57	54	34	60	2	47	676	52	Right
-15384	\N	Hou Sen	侯森	31	60	58	53	62	56	45	62	1	9	40	58	Right
-15389	\N	F. Rossi	Francesco Rossi	29	60	62	60	60	62	21	58	2	2	17	15	Right
-15395	\N	H. Shaian	Hussain Abdoh Al Shae'an	31	60	61	57	63	55	48	58	2	10	281	101	Right
-15399	\N	B. Al Baqi	Basem Atallah Al Baqi	30	60	59	57	58	55	46	64	2	10	177	101	Right
-15400	\N	A. Al Saleh	Abdullah Al Saleh	30	60	61	57	59	61	48	60	2	10	329	101	Right
-15424	\N	V. Centurión	Víctor Hugo Centurión Miranda	34	60	60	61	61	60	23	59	3	33	515	69	Right
-15427	\N	K. Kirihata	桐细 和繁	33	60	54	57	57	60	12	66	2	15	311	72	Right
-15429	\N	F. Costa	Federico Costa	31	60	62	57	63	55	29	56	2	14	431	1	Right
-15451	\N	R. Escobar	Rubén Escobar Fernández	30	60	60	60	60	60	25	60	3	33	619	69	Right
-15464	\N	J. Belshaw	James Belshaw	29	60	61	60	61	59	28	60	2	53	680	13	Right
-15484	\N	M. Delanghe	Maxime Delanghe	19	59	62	58	65	61	20	62	3	7	83	6	Right
-15494	\N	B. Verbruggen	Bart Verbruggen	17	59	67	58	65	56	48	46	3	17	159	9	Right
-15495	\N	Iago Domínguez	Iago Domínguez Rodríguez	18	59	55	65	58	56	41	52	2	1	32	12	Right
-15502	\N	R. Josipović	Renato Josipović	19	59	62	58	60	54	30	56	3	20	90	17	Right
-15514	\N	F. Fragueda	Franco Nicolás Fragueda	19	59	61	59	59	59	31	57	2	14	299	1	Right
-15516	\N	D. Ramaj	Diant Ramaj	18	59	64	57	64	56	24	57	3	35	357	8	Right
-15517	\N	O. Hindrich	Otto Hindrich	17	59	59	60	61	55	25	58	2	44	369	70	Right
-15566	\N	S. Ngapandouetnbu	Simon Brady Ngapandouetnbu	17	59	62	58	66	59	21	54	3	4	38	30	Right
-15587	\N	M. Cooper	Michael Cooper	20	59	59	60	58	57	29	58	3	48	607	13	Right
-15600	\N	T. Hasal	Thomas Hasal	20	59	62	50	62	47	16	59	1	8	255	46	Right
-15602	\N	Lee Gwang Yeon	이광연 Gwang Yeon Lee	20	59	57	60	61	49	24	59	2	39	466	20	Right
-15609	\N	Luis Castillo	Luis Castillo Grau	20	59	61	62	63	61	29	59	3	1	284	12	Right
-15636	\N	D. Bielica	Daniel Bielica	21	59	58	61	60	58	37	56	2	40	612	4	Right
-15651	\N	G. Centurión	Guillermo Christian Centurión Elizalde	18	59	60	58	60	75	25	55	1	31	188	16	Right
-15656	\N	F. Zenobio	Felipe Tomás Zenobio	20	59	57	59	60	57	31	56	2	50	493	1	Right
-15665	\N	A. Oxborough	Aston Oxborough	22	59	60	59	57	56	47	56	1	21	154	13	Right
-15670	\N	M. Engl	Maximilian Engl	22	59	61	52	60	60	32	58	3	45	637	8	Right
-15681	\N	N. Thiede	Niclas Thiede	21	59	63	56	60	57	43	54	4	3	115	8	Left
-15687	\N	Y. Gil	Yosmel Daniel Gil Rodríguez	19	59	58	57	57	54	25	61	2	52	654	50	Right
-15691	\N	D. Ndiaye	Dialy Kobaly Ndiaye	20	59	59	59	59	54	32	61	2	4	112	10	Left
-15709	\N	T. Weiner	Timon Moritz Weiner	21	59	60	57	63	60	51	56	4	45	634	8	Right
-15715	\N	S. Bouzian	Sofiane Bouzian Hassan	19	59	58	63	61	55	26	61	3	17	395	6	Right
-15718	\N	Y. Schoonderwaldt	Youri Schoonderwaldt	20	59	59	59	57	55	22	58	1	7	422	9	Right
-15729	\N	D. Daniliuc	Daniel-Edward Daniliuc	20	59	64	57	61	52	34	49	2	29	575	34	Left
-15732	\N	C. Dur-Bozoancă	Cosmin Dur-Bozoancă	22	59	54	58	64	60	45	59	1	44	453	70	Left
-15733	\N	L. Klatte	Luis Klatte	20	59	62	60	65	59	32	60	2	45	539	8	Right
-15751	\N	B. Verbong	Bram Verbong	20	59	62	60	59	61	26	54	2	7	480	9	Right
-15773	\N	N. Christogeorgos	Nikos Christogeorgos	20	59	63	64	66	48	27	46	2	22	293	36	Right
-15791	\N	A. Nurudeen	Abdul Manaf Nurudeen	21	59	65	57	63	58	24	53	3	17	320	32	Right
-15793	\N	S. Mogi	茂木 秀	21	59	60	55	62	57	30	54	2	15	374	72	Right
-15801	\N	M. Freese	Matthew Freese	21	59	63	59	62	56	29	59	2	8	252	47	Right
-15809	\N	L. Machado	Lucas Machado Solari	22	59	57	58	57	59	21	61	3	31	544	16	Right
-15824	\N	H. Al Watyan	Habib Al Watyan	23	59	57	59	59	52	48	57	3	10	421	101	Right
-15834	\N	A. Ureche	Andrei Gabriel Ureche	21	59	58	59	61	59	29	60	2	44	653	70	Right
-15836	\N	B. Velásquez	Beycker Eduardo Velásquez Ortega	24	59	58	59	57	60	53	56	2	52	622	50	Left
-15845	\N	E. Pacheco	Edwin Pacheco Chura	21	59	58	60	58	55	24	57	2	51	563	122	Right
-15856	\N	D. Mitov	Dimitar Mitov	23	59	66	56	62	57	60	55	3	53	638	103	Right
-15861	\N	L. Bossin	Liam Bossin	24	59	59	57	60	55	47	57	3	47	676	52	Right
-15895	\N	C. Burton	Callum Burton	23	59	63	57	60	61	44	58	3	53	638	13	Right
-15897	\N	A. Al Ruhaili	Ahmad Ali Al Harbi	25	59	62	60	56	52	43	57	3	10	472	101	Right
-15900	\N	M. Hudson	Matthew Hudson	21	59	58	59	58	53	45	60	3	21	239	13	Right
-15902	\N	J. Fryer	Joe Fryer	24	59	61	55	62	59	45	55	2	48	639	13	Right
-15904	\N	H. Takimoto	滝本 晴彦	23	59	62	57	64	59	20	53	3	15	311	72	Right
-15910	\N	T. Brinkmann	Till Brinkmann	24	59	60	62	57	61	23	56	2	45	658	8	Right
-15915	\N	M. Kamenz	Matti Kamenz	21	59	64	59	58	59	33	56	3	45	571	8	Right
-15922	\N	D. Richards	David Richards	26	59	60	55	61	56	35	57	2	48	601	38	Right
-15925	\N	F. Sollacaro	François-Joseph Sollacaro	26	59	62	54	66	57	44	53	2	27	418	7	Right
-15935	\N	B. Petersen	Brylon Lee Petersen	24	59	65	57	62	60	29	57	3	43	292	89	Right
-15942	\N	L. Nazareno	Leonel Romario Nazareno Delgado	26	59	60	56	61	56	59	55	2	42	368	61	Right
-15948	\N	M. Diaw	Mory Diaw	27	59	59	56	61	56	43	57	2	25	590	7	Right
-15949	\N	E. Salles	Esteban Salles	26	59	61	56	62	56	26	55	2	27	501	7	Right
-15954	\N	T. Shibuya	涉谷 飞翔	25	59	59	57	59	64	29	58	2	15	424	72	Right
-15955	\N	B. McDriscoll	Benjamin McDriscoll	27	59	56	57	60	58	18	57	3	36	497	56	Right
-15956	\N	I. Espinoza	Ítalo Gilmar Espinoza Gómez	24	59	59	60	56	58	45	57	2	46	514	66	Right
-15958	\N	J. Dixon	Joel Dixon	26	59	57	59	58	60	31	60	3	53	656	13	Right
-15960	\N	M. Crocombe	Maxime Teremoana Crocombe	26	59	59	57	60	56	48	57	2	36	582	71	Right
-15961	\N	A. Strömberg	August Strömberg	28	59	57	60	62	57	44	56	2	41	665	37	Right
-15965	\N	S. Fassi	Sebastián Andrés Fassi Álvarez	27	59	65	53	66	58	62	51	3	16	382	33	Right
-15970	\N	J. Kiassumbua	Joël Kiassumbua	28	59	64	53	63	51	39	56	1	25	376	60	Right
-15973	\N	W. Rojas	Widen Rojas Jou	27	59	58	57	61	62	23	58	2	51	511	122	Right
-15986	\N	M. Halstead	Mark Halstead	29	59	61	59	57	63	49	56	2	53	672	13	Right
-15994	\N	K. Szymański	Karol Szymański	27	59	61	59	58	60	26	56	3	40	426	4	Right
-15999	\N	S. Russell	Sam Russell	37	59	56	60	58	58	32	60	3	53	640	13	Right
-16000	\N	M. Gurski	Michael Gurski	41	59	53	63	57	38	26	62	3	45	519	8	Right
-16004	\N	Yang Qipeng	杨启鹏	33	59	57	55	58	61	42	59	1	9	171	58	Right
-16007	\N	D. Melichárek	Dušan Melichárek	36	59	62	53	64	56	27	58	2	41	267	44	Right
-16016	\N	Kim Da Sol	김다솔 Da Sol Kim	31	59	59	59	56	61	37	60	3	39	485	20	Right
-16029	\N	L. Italiano	Lewis Italiano	29	59	61	58	59	58	32	58	2	36	569	56	Left
-16034	\N	G. Orellana	Guillermo Enrique Orellana Riquelme	33	59	59	56	58	60	46	59	3	28	455	39	Right
-16060	\N	V. Boral	Vihaan Boral	30	59	56	60	60	54	42	61	3	19	85	150	Left
-16073	\N	D. Balauru	Dragoș Balauru	30	59	58	52	63	62	23	58	3	44	620	70	Left
-16075	\N	Z. Kostadinović	Živko Kostadinović	28	59	59	54	65	50	20	57	2	25	462	21	Right
-16078	\N	C. Boyce-Clarke	Coniah Boyce-Clarke	17	58	60	57	59	59	27	55	2	21	306	13	Right
-16084	\N	K. Tzolakis	Konstantinos Tzolakis	17	58	61	56	62	50	31	51	2	22	125	36	Right
-16104	\N	José Oliveira	José Pedro Ferreira Oliveira	18	58	58	56	58	57	35	51	3	6	340	2	Right
-16134	\N	L. Ntumba	Lévi Kahamba Ntumba	19	58	58	55	62	56	24	55	2	4	187	7	Left
-16143	\N	T. Axinte	Teodor Axinte	20	58	59	58	58	53	17	56	2	44	610	70	Right
-16151	\N	M. Schulze	Moritz Schulze	19	58	57	55	62	56	43	56	3	35	389	8	Right
-16215	\N	M. Barcola	Malcolm Barcola	21	58	59	54	63	50	25	59	3	4	22	43	Right
-16223	\N	M. Cabral	Rubén Maximiliano Cabral Araújo	19	58	55	58	57	56	32	56	2	31	481	16	Right
-16226	\N	D. Gorka	Dennis-Adam Gorka	18	58	61	55	61	57	33	54	2	35	269	8	Right
-16234	\N	A. Damlu	Abdulsamed Damlu	20	58	57	60	58	53	23	55	2	11	251	55	Right
-16249	\N	E. Damergy	Elias Damergy	17	58	59	54	60	52	35	54	3	4	66	74	Right
-16256	\N	G. Micle	George Mihai Micle	18	58	63	52	62	54	22	51	2	44	636	70	Left
-16269	\N	K. Kristensen	Kasper Thiesson Kristensen	20	58	61	55	59	60	29	58	2	32	447	27	Right
-16275	\N	L. Schaffran	Leon Valentin Schaffran	21	58	62	61	55	59	28	56	3	35	411	8	Right
-16280	\N	Kim Tae Gon	Tae Gon Kim	21	58	56	58	56	56	46	57	3	39	454	20	Right
-16288	\N	W. Ramírez	Wellington Moisés Ramírez Preciado	19	58	55	59	58	57	24	57	2	42	286	61	Right
-16292	\N	L. López	Lautaro López	19	58	58	57	60	52	38	55	2	14	144	1	Right
-16305	\N	M. Fabrie	Michael Fabrie	22	58	55	56	60	63	21	60	1	7	530	9	Right
-16326	\N	H. Moldovan	Horațiu Moldovan	22	58	57	57	57	61	39	56	2	44	620	70	Right
-16352	\N	B. Ozegovic	Benjamin Ozegovic	20	58	61	56	60	54	31	54	3	29	581	34	Right
-16358	\N	K. Le Roy	Killian Le Roy	22	58	58	58	59	59	32	59	2	27	562	7	Right
-16366	\N	M. Al Rubaie	Mohammed Al Rubaie Al Yami	22	58	58	53	64	58	36	54	2	10	177	101	Right
-16367	\N	P. González	Pedro Bernardo González Ojeda	21	58	60	58	61	62	31	51	2	33	196	69	Right
-16368	\N	O. Hanin	Omer Hanin	22	58	62	52	63	54	34	55	4	3	181	53	Right
-16376	\N	Nacho Córdoba	Ignacio Córdoba García	20	58	58	55	60	56	24	57	2	23	412	12	Left
-16383	\N	J. Ruddy	John Jack Ruddy	23	58	57	56	57	54	42	58	3	48	607	14	Right
-16397	\N	M. Sprang	Max Sprang	19	58	58	61	54	57	17	53	3	45	571	8	Right
-16419	\N	Y. Çakır	Yakup Mert Çakır	20	58	57	61	57	59	20	54	2	11	258	55	Right
-16431	\N	M. Miño	Marcelo Agustín Miño	22	58	62	56	61	49	17	52	2	14	276	1	Right
-16432	\N	Lee Jun	Jun Lee	22	58	62	56	62	63	26	60	2	39	484	20	Right
-16452	\N	R. Castellucci	Ramon Castellucci	23	58	61	59	62	56	29	58	3	45	650	8	Right
-16460	\N	D. Sváček	Dominik Sváček	23	58	52	57	67	59	26	54	2	24	304	44	Right
-16461	\N	H. Al Mansoury	Hamad Abdulla Nasser	24	58	56	59	61	51	37	55	2	38	218	109	Right
-16463	\N	M. Al Moqahwi	Mohammed Al Moqahwi	24	58	58	57	59	53	39	55	3	10	616	101	Right
-16468	\N	K. Córdova	Kenneth Fernando Córdova Oyuela	20	58	55	58	60	54	45	59	2	46	470	47	Right
-16472	\N	M. Sündermann	Marlon Sündermann	22	58	63	55	55	60	42	54	2	35	327	8	Right
-16475	\N	R. Morínigo	Rodrigo Mario Morínigo Acosta	21	58	54	55	62	56	27	59	2	33	314	69	Right
-16480	\N	D. Barnes	Dillon Barnes	24	58	61	56	61	54	58	55	3	26	555	13	Left
-16484	\N	A. Pearce	Adam Pearce	23	58	60	63	58	60	38	50	2	36	615	56	Right
-16489	\N	J. Dakir	Jonas Dakir	23	58	59	56	58	53	18	57	3	32	536	27	Right
-16500	\N	T. Secchi	Thomas Secchi	23	58	61	54	62	55	31	56	2	27	540	7	Right
-16506	\N	F. Casanova	Francisco Casanova Bruzzone	23	58	57	52	62	60	24	55	2	31	596	16	Left
-16517	\N	F. Schram	Frederik August Albrecht Schram	25	58	59	56	58	60	43	54	2	32	548	65	Right
-16519	\N	M. Norman	Magnus Norman	23	58	58	60	56	55	24	56	3	53	641	13	Right
-16520	\N	F. Pizzicanella	Franco Pizzicanella Blasi	24	58	57	58	56	61	34	53	2	14	410	1	Right
-16524	\N	S. Awaka	阿波加 俊太	25	58	56	59	58	54	29	53	2	15	396	72	Right
-16527	\N	Choi Young Eun	최영은 Young Eun Choi	24	58	58	58	61	47	18	54	2	39	295	20	Right
-16541	\N	L. Franco	Luis Hernán Franco Fariña	20	58	60	57	58	58	26	57	2	33	515	69	Right
-16546	\N	A. McCarey	Aaron McCarey	28	58	59	55	60	57	35	56	2	47	492	52	Right
-16553	\N	S. Hornby	Sam Hornby	25	58	60	58	60	61	46	57	2	53	630	13	Left
-16558	\N	J. van Stappershoef	Jordi van Stappershoef	24	58	59	55	62	56	31	57	2	48	608	9	Right
-16563	\N	A. Vera	Armando Andrés Vera Amarilla	27	58	58	59	57	55	26	57	3	33	366	69	Left
-16566	\N	D. Primel	Damian Primel	28	58	60	53	60	56	44	55	1	40	594	4	Right
-16567	\N	R. Leszczyński	Rafał Leszczyński	28	58	62	54	59	58	37	56	4	40	671	4	Right
-16568	\N	K. Ishikawa	石川 慧	27	58	59	60	59	55	22	51	2	15	358	72	Right
-16579	\N	P. Nagarajan	Palkesh Nagarajan	30	58	59	61	56	51	50	57	2	19	85	150	Right
-16580	\N	Jorge Vieira	Jorge Miguel Soares Vieira	29	58	62	61	58	53	20	55	3	37	595	2	Right
-16585	\N	F. Al Shammari	Fahad Al Shammari	39	58	58	56	60	55	32	57	3	10	425	101	Right
-16586	\N	Liu Zhenli	刘震理	35	58	59	59	54	56	50	59	2	9	169	58	Right
-16588	\N	Han Feng	韩锋	36	58	59	55	57	58	51	55	2	9	166	58	Right
-16592	\N	Zhou Yajun	周亚君	35	58	57	57	58	52	52	59	3	9	307	58	Right
-16605	\N	D. Al Saeed	Dawood Al Saeed	29	58	60	55	59	56	38	57	2	10	430	101	Right
-16608	\N	Guo Wei	国威	30	58	60	58	56	61	23	62	2	9	307	58	Right
-16616	\N	M. Al Hassawi	Mohammed Al Hassawi	31	58	58	57	59	51	45	56	3	10	353	101	Right
-16620	\N	M. Bolboașă	Mirel Georgian Bolboașă	30	58	56	60	57	55	35	58	2	44	294	70	Right
-16621	\N	D. Visser	Dino Visser	30	58	59	61	59	58	31	56	2	53	642	89	Right
-16631	\N	M. Gasparini	Manuel Gasparini	18	57	57	56	60	51	44	50	3	2	93	15	Right
-16641	\N	O. Petersen	Oliver Petersen	18	57	60	59	60	58	29	56	3	37	259	29	Right
-16642	\N	S. Turati	Stefano Turati	18	57	62	51	60	49	27	55	3	2	74	15	Right
-16643	\N	S. Lammens	Senne Lammens	17	57	64	56	63	49	22	43	3	17	77	6	Right
-16652	\N	W. Bedfian	Wilfried Bedfian	18	57	57	58	59	53	30	52	3	27	507	7	Right
-16658	\N	I. Karargyris	Ilias Karargyris	18	57	65	52	55	56	30	51	2	22	125	36	Right
-16661	\N	J. Kroesen	Jaimy Kroesen	17	57	56	52	57	61	26	57	2	7	230	9	Right
-16662	\N	D. Klein	Daniel Klein	19	57	60	58	56	56	24	52	2	3	62	8	Right
-16669	\N	B. Crellin	Billy Crellin	20	57	58	56	60	57	32	55	3	53	645	13	Right
-16670	\N	Y. Fofana	Yahia Fofana	19	57	61	55	58	54	42	60	3	27	500	7	Right
-16686	\N	T. Yamada	山田 大樹	18	57	58	52	63	53	25	58	2	15	429	72	Left
-16699	\N	A. Cristea	Andrei David Cristea	20	57	58	59	58	59	22	52	2	44	542	70	Right
-16711	\N	W. Dennis	Will Dennis	19	57	59	56	58	57	35	56	3	21	157	13	Right
-16728	\N	J. Craenmehr	Jens Craenmehr	18	57	55	60	56	58	30	56	3	7	480	9	Right
-16739	\N	H. Holguín	Héctor Holguín	19	57	55	55	56	52	50	60	3	16	200	47	Right
-16743	\N	C. Anderson	Curtis Anderson	19	57	55	56	59	60	22	61	2	21	550	13	Right
-16744	\N	Erlantz	Erlantz Cubillo Marín	18	57	56	57	59	52	24	54	2	23	351	12	Right
-16747	\N	J. Delianov	James Delianov	20	57	56	58	58	59	26	57	3	36	261	56	Left
-16767	\N	R. Bouallak	Ryan Bouallak	20	57	55	54	58	53	21	59	3	27	324	7	Right
-16777	\N	B. Castro	Bismar Yasmani Castro Mina	18	57	57	56	56	58	29	61	2	42	516	61	Right
-16781	\N	R. Vercauteren	Rik Robert Vercauteren	19	57	62	53	62	57	23	52	3	17	159	6	Right
-16794	\N	M. Luyambula	Ngemba Michael Luyambula	21	57	60	58	61	57	22	57	2	45	646	60	Right
-16796	\N	K. Harr	Kevin Sören Harr	20	57	60	53	63	62	45	52	4	35	420	20	Right
-16807	\N	J. Ospelt	Justin Ospelt	20	57	60	56	57	55	49	55	3	25	649	148	Right
-16809	\N	L. Margueron	Lucas Margueron	19	57	59	56	62	61	20	57	2	27	452	7	Right
-16810	\N	J. Wehking	Joshua Jonas Wehking	20	57	61	55	60	54	25	57	3	7	502	8	Right
-16815	\N	P. Löhr	Paul Frederic Löhr	19	57	59	58	54	57	31	52	3	35	461	8	Right
-16824	\N	I. Brînză	Ianoș Brînză	21	57	57	58	60	57	37	54	2	44	610	92	Right
-16828	\N	J. de Boer	Jan de Boer	20	57	58	55	55	57	19	58	2	7	96	9	Right
-16831	\N	R. Bettocchi	Ricardo Bettocchi Matallana	18	57	57	56	60	52	30	57	3	46	471	66	Right
-16850	\N	Kim Min Ho	김민호 Min Ho Kim	20	57	57	55	58	53	33	55	2	15	591	20	Right
-16855	\N	C. van den Berg	Connor van den Berg	19	57	56	58	56	54	23	57	2	7	315	9	Right
-16860	\N	J. Cabezudo	Jorge Denilson Cabezudo Ormeño	18	57	59	57	56	56	36	54	2	46	471	66	Right
-16867	\N	M. Cotolan	Mihai Ionuț Cotolan	21	57	59	56	58	58	38	53	2	44	559	70	Right
-16872	\N	H. Isted	Harvey Isted	23	57	61	55	60	56	36	53	3	21	505	13	Right
-16874	\N	A. Long	Aubin Pierre Joseph Long	23	57	61	62	56	53	20	53	3	27	541	7	Right
-16876	\N	J. Vom Steeg	Justin Eric Vom Steeg	23	57	59	60	57	54	28	52	3	8	111	47	Right
-16881	\N	C. Yates	Cameron Yates	21	57	58	57	59	56	45	57	2	21	550	14	Right
-16882	\N	T. Durso	Tomás Durso	21	57	60	56	59	55	23	58	3	14	378	1	Right
-16885	\N	A. Attiah	Abdulquddus Attiah	23	57	61	56	64	51	31	52	3	10	215	101	Right
-16886	\N	A. Stone	Aidan Stone	20	57	61	55	56	61	35	54	3	53	662	13	Right
-16892	\N	L. Barraza	Luis Barraza	23	57	54	60	56	59	20	53	3	8	247	47	Right
-16894	\N	O. Djoco	Ouparine Djoco	22	57	60	58	59	53	26	54	2	27	452	7	Left
-16899	\N	I. Mayta	Iván José Mayta Apaza	21	57	61	55	56	48	25	53	2	46	508	66	Right
-16908	\N	J. Plath	Jean-Marie Plath	18	57	54	51	61	54	39	58	3	35	420	8	Right
-16910	\N	S. Sargeant	Sam Sargeant	22	57	59	57	58	55	44	56	3	53	669	13	Right
-16911	\N	N. Tzanev	Nikola Tzanev	23	57	57	55	59	54	46	55	1	48	657	71	Right
-16914	\N	H. Gostomski	Hubert Gostomski	22	57	54	56	61	50	21	59	2	40	469	4	Right
-16924	\N	C. Moreno	Carlos Agustín Moreno Luna	22	57	59	59	57	61	29	55	3	16	216	33	Right
-16928	\N	S. Beccari	Simon Beccari	21	57	57	55	58	52	39	55	2	29	581	15	Right
-16954	\N	Jeon Jong Hyeok	Jong Hyeok Jeon	24	57	60	55	60	55	22	57	3	39	570	20	Right
-16958	\N	Kim Jung Ho	Jeong-Ho Kim	22	57	59	59	59	49	27	55	2	39	593	20	Right
-16970	\N	M. Liesegang	Marius Liesegang	20	57	57	56	58	55	39	53	2	3	181	8	Right
-16985	\N	Ángel Fraga	Ángel Fraga Camba	24	57	59	60	61	56	35	52	3	23	457	12	Right
-16998	\N	E. Basilio	Enzo Basilio	25	57	59	52	63	48	46	51	3	27	164	7	Right
-17001	\N	M. Jawhar	Mansour Jawhar	25	57	56	58	57	53	43	57	3	10	486	101	Right
-17007	\N	M. Grim	Mike Grim	23	57	58	59	55	53	17	58	3	7	554	9	Right
-17019	\N	M. Al Haidari	Marwan Al Haidari	24	57	55	58	55	55	31	58	3	10	42	101	Right
-17023	\N	T. Nagaishi	永石 拓海	24	57	61	51	58	49	37	56	3	15	374	72	Right
-17027	\N	C. Klaus	Carl Klaus	26	57	57	60	53	58	27	56	2	35	415	8	Right
-17040	\N	Liu Weiguo	Weiguo Liu	28	57	58	50	59	60	48	58	3	9	44	58	Right
-17050	\N	J. Viscosi	Jonathan Viscosi	29	57	57	57	58	55	17	59	2	41	574	46	Right
-17053	\N	M. McGinley	Mark Anthony McGinley	30	57	57	57	60	52	41	56	2	47	682	52	Right
-17067	\N	K. Stamatopoulos	Kyriakos Stamatopoulos	40	57	57	52	56	54	33	57	2	41	364	46	Left
-17072	\N	A. Nadj	Alexander Nadj	33	57	54	57	58	52	28	59	2	41	510	37	Right
-17077	\N	M. Al Wakid	Mohammed Al Wakid	28	57	58	57	55	53	42	55	3	10	98	101	Right
-17080	\N	Sun Le	孙乐	30	57	58	55	58	54	43	53	1	9	45	58	Right
-17081	\N	Wang Guoming	王国明	30	57	58	55	59	56	49	58	1	9	268	58	Right
-17093	\N	E. Bravo	Eduardo Bravo Ávila	29	57	58	55	60	60	28	58	3	16	397	33	Right
-17116	\N	T. Leysen	Tobe Leysen	18	56	60	54	58	49	29	54	2	17	182	6	Right
-17118	\N	R. Jay	Ronan Jay	19	56	58	56	54	59	27	56	2	27	324	7	Right
-17121	\N	J. Eastham	Jordon Eastham	18	56	52	49	65	64	23	51	3	21	309	13	Right
-17134	\N	H. Cartwright	Harvey Cartwright	18	56	56	58	58	53	27	52	3	48	446	13	Right
-17154	\N	L. Philipp	Luca Philipp	19	56	56	54	60	55	27	57	2	3	62	8	Right
-17186	\N	A. Peña	Aldair Edgardo Peña Torres	19	56	55	54	55	55	23	54	2	52	599	50	Right
-17190	\N	E. van der Gouw	Ennio van der Gouw	19	56	59	52	57	59	46	51	3	7	387	9	Right
-17203	\N	J. Moreno	Juan Esteban Moreno Córdoba	20	56	58	52	61	60	23	48	2	34	360	42	Right
-17208	\N	J. Gauci	Joe Gauci	19	56	59	55	60	60	22	53	3	36	359	56	Right
-17228	\N	L. Gütlbauer	Lukas Gütlbauer	19	56	60	53	62	56	42	45	2	29	575	34	Right
-17230	\N	P. Trindade	Patrick Trindade	18	56	52	58	64	56	31	50	2	27	580	7	Right
-17241	\N	J. Brauti	Jonas Vatne Brauti	21	56	58	56	57	52	29	57	2	37	524	29	Right
-17246	\N	A. Popa	Albert Ionuț Popa	21	56	56	54	56	61	24	55	3	44	542	70	Right
-17256	\N	L. Jones	Louis Jones	21	56	53	55	57	57	40	56	3	48	476	13	Right
-17264	\N	C. Kearns	Conor Kearns	22	56	57	53	58	59	31	52	1	47	677	52	Right
-17265	\N	H. Constant	Hugo Constant	20	56	54	63	54	53	30	51	2	27	553	7	Right
-17268	\N	T. Schlitter	Tom Schlitter	18	56	56	58	53	57	26	57	4	45	634	8	Right
-17277	\N	C. Jan	Charly Jan	21	56	58	53	62	49	23	57	2	4	136	7	Right
-17285	\N	M. Stajduhar	Mason Stajduhar	22	56	59	54	55	62	33	53	2	8	97	47	Right
-17294	\N	T. Savin	Toby Savin	19	56	59	56	58	54	27	54	3	48	647	13	Right
-17308	\N	T. Heward-Belle	Thomas Heward-Belle	23	56	60	60	57	52	30	53	2	36	325	56	Right
-17317	\N	D. Quintero	Luis David Quintero Zúñiga	22	56	56	58	55	58	22	53	3	34	343	42	Right
-17324	\N	R. Jalving	Robin Jalving	20	56	58	53	59	58	27	53	2	7	346	9	Right
-17338	\N	M. Eșanu	Mihai Alexandru Eşanu	21	56	58	55	58	53	25	54	2	44	413	70	Right
-17344	\N	Zhang Yan	张岩	23	56	59	53	58	52	34	54	2	9	101	58	Right
-17357	\N	Bao Yaxiong	鲍亚雄	23	56	59	52	56	55	21	51	1	9	106	58	Right
-17358	\N	T. Ahumada	Tomás Alejandro Ahumada Oteíza	19	56	59	48	62	57	31	61	2	28	534	39	Right
-17359	\N	I. Pop	Ionuț Alin Pop	22	56	55	57	58	58	26	54	2	44	564	70	Right
-17373	\N	R. Gutiérrez	Ricardo Daniel Gutiérrez Hernández	24	56	54	56	57	59	25	57	2	16	363	33	Right
-17374	\N	M. Al Haeti	Mohammed Ahmed Alhaeti	24	56	56	56	59	55	38	54	3	10	329	101	Right
-17383	\N	R. Cerecedo	Rodrigo Alejandro Cerecedo Cabrera	22	56	53	59	55	52	27	55	3	16	234	33	Right
-17393	\N	Phelipe	Phelipe Megiolaro Alves	21	56	56	51	60	58	30	50	2	8	282	5	Right
-17403	\N	A. Nilsson	Alexander Nilsson	22	56	58	56	56	54	25	55	2	41	405	37	Right
-17405	\N	P. Izaguirre	Paolo Camilo Izaguirre Ferreyra	22	56	58	58	55	50	20	55	3	46	470	66	Right
-17407	\N	M. Rojas	Mauro Luis Alberto Rojas Figueredo	23	56	56	57	51	60	31	52	2	33	619	69	Right
-17408	\N	E. Tangvik	Erland Tangvik	22	56	57	53	54	56	24	59	3	41	417	29	Right
-17412	\N	M. Awaji	Mohammed Ahmed Awaji	25	56	57	61	53	50	41	56	2	10	42	101	Right
-17413	\N	T. Ryan	Tadhg Ryan	23	56	59	55	58	54	46	52	2	47	681	52	Right
-17421	\N	P. Morrison	Peter Morrison	22	56	55	58	63	60	27	57	2	26	522	14	Right
-17422	\N	Lluis Andreu	Lluís Andreu i Ruiz	20	56	55	58	53	55	26	59	2	1	284	12	Right
-17430	\N	M. Guillaume	Marc-Antoine Guillaume	24	56	60	57	61	58	26	53	3	27	618	7	Right
-17436	\N	Choi Cheol Won	Cheol Won Choi	25	56	58	56	54	55	28	55	2	39	432	20	Right
-17439	\N	D. Hotta	堀田 大暉	25	56	57	53	58	48	25	55	3	15	499	72	Left
-17443	\N	A. Rawls	Andre Rawls	28	56	58	56	58	67	37	53	2	8	352	47	Right
-17444	\N	M. Bersano	Matthew Bersano	27	56	56	51	58	60	37	54	2	8	310	47	Right
-17446	\N	J. Mero	John Jairo Mero Reascos	25	56	58	55	56	56	34	52	2	42	445	61	Right
-17460	\N	B. Gommert	Benjamin Yves Gommert	35	56	54	57	53	58	33	59	2	45	646	8	Right
-17464	\N	K. Zobeck	Kyle Zobeck	30	56	56	55	56	55	43	55	1	8	282	47	Right
-17471	\N	M. Zoulan	Mousa Zoulan	29	56	54	56	56	51	44	56	3	10	427	101	Right
-17473	\N	A. Alkan	Akın Alkan	30	56	60	59	54	60	20	50	3	11	253	55	Right
-17474	\N	A. García	Álvaro Marcelo García Zaroba	36	56	54	50	68	44	31	54	4	31	481	16	Right
-17482	\N	M. Dewhurst	Marcus Dewhurst	19	55	55	54	56	58	31	53	2	53	641	13	Right
-17488	\N	R. Sinclair	Ross Sinclair	19	55	54	55	54	55	26	52	3	26	535	14	Right
-17489	\N	J. Griffiths	Joshua Griffiths	18	55	57	53	55	53	21	56	3	53	648	13	Right
-17491	\N	D. Gril	Domen Gril	19	55	53	59	56	58	22	52	2	3	62	3	Right
-17499	\N	A. Pavlesic	Adam Pavlesic	17	55	53	55	59	53	29	56	2	36	325	56	Right
-17508	\N	J. Imbrechts	Joachim Imbrechts	18	55	60	54	59	55	27	48	2	17	302	37	Right
-17512	\N	M. Deman	Maxim Deman	18	55	61	53	57	56	19	49	3	17	391	6	Right
-17524	\N	I. Rus	Ionuț Casian Rus	20	55	56	60	57	55	31	50	2	44	369	70	Right
-17530	\N	M. Alexander	Matthew Alexander	18	55	56	54	57	49	30	54	2	53	645	13	Right
-17537	\N	C. Gregory	Cameron Gregory	20	55	56	52	57	55	40	55	3	48	635	13	Right
-17542	\N	M. Hermansen	Mads Hermansen	19	55	56	58	60	59	35	49	2	32	442	27	Right
-17556	\N	F. Correa	Fabrizio Nicolás Correa González	19	55	55	59	55	48	21	54	2	31	544	16	Right
-17560	\N	J. Jäger	Jordaine Jäger	17	55	57	56	59	50	31	51	3	45	637	47	Right
-17565	\N	J. Froeling	Job Froeling	18	55	51	58	62	55	17	48	2	7	313	9	Right
-17569	\N	H. Seaden	Harry Seaden	19	55	56	55	56	55	23	54	2	53	625	13	Right
-17579	\N	E. Mawete Mwimba	Enock Mawete Mwimba	20	55	57	52	62	55	25	54	3	37	604	29	Right
-17591	\N	F. Ravaglia	Federico Ravaglia	20	55	58	59	58	51	37	49	3	2	172	15	Right
-17593	\N	B. Wade	Bradley Wade	19	55	56	60	53	57	31	54	2	48	631	13	Right
-17603	\N	J. Schelfhout	Jordy Schelfhout	19	55	57	51	62	54	30	47	3	17	525	6	Left
-17605	\N	Han Jiaqi	韩佳奇	20	55	56	58	57	57	24	54	3	9	100	58	Right
-17622	\N	R. Sandford	Ryan Sandford	21	55	57	56	56	55	36	55	2	21	254	13	Right
-17629	\N	T. Muse	Trey Muse	20	55	59	56	59	53	35	59	1	8	147	47	Right
-17631	\N	P. Ejimadu	Phillip Chijoke Ejimadu	20	55	56	53	60	58	31	55	2	8	41	47	Right
-17633	\N	F. Bloch	Florentin Bloch	20	55	53	59	53	54	23	53	3	27	241	7	Left
-17634	\N	D. Rouyard	Davy Rouyard	20	55	55	54	56	51	28	51	2	4	124	7	Right
-17635	\N	L. Otto	Lorenz Otto	19	55	57	57	56	53	20	53	2	45	407	8	Right
-17644	\N	M. Kablan	Muzaffer Cem Kablan	20	55	53	54	58	50	28	53	3	11	163	55	Right
-17660	\N	M. Bozan	Mustafa Burak Bozan	19	55	59	53	58	60	20	47	3	11	381	55	Right
-17665	\N	H. Cardozo	Hernán Arturo Cardozo Alessandri	19	55	55	58	50	55	30	54	3	51	552	122	Right
-17666	\N	P. Urminsky	Peter Urminský	21	55	59	55	54	57	27	53	3	26	588	23	Right
-17670	\N	J. Contreras	Jose Alexander Contreras Berna	19	55	56	54	57	56	24	51	2	52	678	50	Right
-17678	\N	D. Vásquez	Devis Estiven Vásquez Llach	22	55	55	52	54	52	26	60	3	33	316	42	Right
-17681	\N	T. Amos	Tom Amos	22	55	50	55	57	56	23	58	2	41	408	37	Right
-17685	\N	R. Ishii	石井 綾	19	55	56	57	59	53	30	48	2	15	482	72	Right
-17687	\N	G. Ito	伊藤 元太	19	55	56	56	60	49	35	48	2	15	71	72	Right
-17692	\N	L. Vaca	Leonardo Vaca Yoki	20	55	50	60	53	52	31	52	2	51	520	122	Right
-17693	\N	N. Gartside	Nathan James Gartside	22	55	57	51	57	51	46	51	2	47	673	57	Right
-17694	\N	N. Hayes	Nicholas Hayes	21	55	52	55	54	56	23	52	3	53	611	13	Right
-17697	\N	O. Ottesen	Oliver Ottesen	21	55	55	54	59	58	29	56	2	32	193	27	Right
-17699	\N	E. Idem	Emmanuel Okokon Idem	21	55	56	53	56	59	40	53	3	21	161	13	Right
-17705	\N	A. Abdullah	Abdulbasit Abdullah	23	55	56	54	56	52	29	53	3	10	472	101	Right
-17710	\N	M. Al Mahasna	Mohammed Al Mahasna	23	55	57	53	56	50	43	55	3	10	427	101	Right
-17711	\N	J. Lara	Johan David Lara Medrano	21	55	54	52	57	58	32	58	1	42	516	61	Right
-17714	\N	D. Turnbull	Duncan Turnbull	22	55	55	53	59	60	21	50	3	48	529	47	Right
-17715	\N	R. Strączek	Rafał Strączek	21	55	55	52	59	54	18	54	2	40	594	4	Right
-17720	\N	J. Lindgren	Julius Lindgren	22	55	60	55	52	53	25	49	2	41	339	37	Right
-17721	\N	C. McCabe	Colin McCabe	23	55	57	54	56	55	26	55	3	47	679	52	Right
-17732	\N	A. Leszczyński	Arkadiusz Leszczyński	20	55	53	57	58	58	21	54	1	40	671	4	Right
-17734	\N	M. Rundqvist	Max Rundqvist	19	55	53	56	56	54	25	53	3	41	652	37	Right
-17735	\N	N. Baumann	Novem Baumann	24	55	60	51	54	53	47	52	3	25	462	21	Right
-17740	\N	A. Firth	Andrew Firth	23	55	54	59	55	52	16	53	3	26	231	13	Right
-17747	\N	Shi Chenglong	Shi Chenglong	21	55	56	56	54	55	25	54	3	9	268	58	Right
-17750	\N	J. Brady	Jack Brady	23	55	55	55	55	54	39	54	2	47	679	52	Right
-17763	\N	A. Al Bahri	Abdullah Al Bahri	25	55	57	53	56	51	31	55	3	10	329	101	Right
-17766	\N	B. Edwards	Bobby Edwards	24	55	59	52	54	58	32	51	2	8	243	47	Right
-17767	\N	L. Chalá	Leodan Raúl Chalá Ayoví	22	55	55	52	54	58	21	52	3	42	423	61	Right
-17769	\N	C. Sparrow	Connor Sparrow	26	55	58	54	52	59	33	57	2	8	287	47	Right
-17779	\N	Lee Joon Hee	이준희 Joon Hee Lee	26	55	59	48	60	51	45	51	3	39	295	20	Right
-17788	\N	A. Al Shammari	Abdullah Hamdan Al Shammari	28	55	56	52	55	52	46	53	3	10	486	101	Right
-17789	\N	Choe Pil Soo	최필수 崔弼秀	29	55	55	55	53	55	43	50	3	39	593	20	Left
-17795	\N	Sun Shoubo	孙寿博	37	55	52	52	52	57	46	63	2	9	149	58	Right
-17804	\N	E. Pérez	Edgar David Pérez Rodríguez	33	55	51	59	54	59	31	55	1	52	617	50	Right
-17813	\N	A. Luna	Ángel Samuel Luna Beltrachini	17	54	55	52	55	48	45	50	3	31	481	16	Right
-17820	\N	L. Soldini	Lucio Soldini	19	54	56	58	55	58	32	49	2	25	473	21	Right
-17825	\N	T. Schreiber	Tim Schreiber	18	54	52	59	55	50	23	51	2	3	23	8	Right
-17830	\N	J. Andrésson	Jökull Andrésson	18	54	55	53	57	54	22	53	3	21	306	65	Right
-17831	\N	R. Sandberg	Rasmus Semundseth Sandberg	19	54	58	58	55	55	24	53	2	37	204	29	Right
-17841	\N	H. Bernat	Hans Christian Bernat	19	54	57	52	55	57	33	52	3	32	523	27	Right
-17850	\N	T. Collins	Tom Collins	17	54	57	56	52	48	27	55	1	53	668	13	Left
-17851	\N	O. Nkambadio	Obed Nkambadio	17	54	56	50	55	50	29	51	2	27	279	7	Right
-17855	\N	D. Ochoa	David Ochoa	19	54	56	52	55	53	26	53	2	8	244	47	Right
-17859	\N	D. Youfeigane	Dominique Youfeigane	20	54	54	54	56	47	17	54	2	27	164	7	Right
-17871	\N	T. Hendriks	Tom Hendriks	18	54	57	54	52	52	27	55	2	7	502	9	Right
-17876	\N	J. Odehnal	Jakob Odehnal	18	54	56	53	56	56	32	50	3	29	546	34	Right
-17879	\N	N. Törnqvist	Noel Törnqvist	18	54	56	54	53	60	45	52	2	41	652	37	Left
-17881	\N	B. Foster-Theniger	Bradley Foster-Theniger	18	54	58	52	56	54	18	49	3	21	161	13	Right
-17883	\N	A. Yalçın	Ali Eren Yalçın	19	54	60	58	46	54	19	54	3	11	264	55	Right
-17886	\N	M. Suárez	Marcelo Ignacio Suárez Báez	19	54	53	56	52	52	23	50	3	28	173	39	Right
-17897	\N	J. Pulskamp	John Pulskamp	19	54	59	51	58	48	24	52	1	8	266	47	Right
-17910	\N	J. Turner	Jake Turner	21	54	56	57	56	52	24	54	3	53	672	13	Right
-17917	\N	M. Wagner	Michael Wagner	19	54	55	56	59	53	22	52	2	45	623	8	Right
-17918	\N	K. Ibrahim	Kevin Ibrahim	20	54	57	49	60	51	26	52	3	35	357	8	Right
-17922	\N	J. Render	Joshua Render	19	54	58	59	50	55	26	49	3	21	370	13	Right
-17928	\N	D. Mitsui	Daiki Mitsui	19	54	59	54	58	49	24	42	3	15	424	72	Right
-17935	\N	N. Suman	Nicholas Suman	20	54	57	57	54	54	21	55	3	36	497	56	Left
-17938	\N	M. Sutton	Matthew Sutton	20	54	55	53	53	51	20	54	2	36	503	56	Right
-17939	\N	N. James	Noah James	19	54	57	54	57	51	24	51	3	36	569	56	Right
-17943	\N	E. Lopez	Eric Lopez	21	54	57	51	59	53	23	49	2	8	111	47	Left
-17947	\N	J. Brendieck	Jonas Brendieck	21	54	57	55	56	49	20	52	2	45	543	8	Right
-17949	\N	L. Beckemeyer	Laurenz Beckemeyer	20	54	57	55	56	51	34	50	3	35	450	8	Right
-17950	\N	S. Barone	Simone Barone	21	54	56	54	55	52	27	50	3	2	192	15	Right
-17953	\N	N. Al Ghamdi	Nawaf Saeed Al Ghamdi	21	54	53	58	53	51	21	52	2	10	98	101	Right
-17974	\N	H. Hawsawi	Hamad Hawsawi	23	54	55	51	56	52	38	53	3	10	425	101	Right
-17975	\N	J. Granlund	Jesper Granlund	20	54	54	56	57	51	23	48	3	37	661	29	Right
-17978	\N	T. Kretzschmar	Tom Kretzschmar	21	54	52	57	60	51	42	49	3	45	592	8	Right
-17979	\N	J. Hass	Joaquín Fabricio Hass	22	54	56	57	55	51	22	50	2	14	277	1	Right
-17982	\N	Seo Ju Hwan	Ju Hwan Seo	21	54	52	54	56	57	26	54	3	39	250	20	Right
-17985	\N	A. Desjardins	Axel Desjardins	20	54	56	52	56	48	22	53	3	2	192	46	Right
-17986	\N	G. Thomas	Gard Bergmann Thomas	19	54	58	56	58	50	27	46	2	37	595	29	Right
-17992	\N	D. Callender	Drake Callender	22	54	56	48	57	60	18	50	3	8	39	47	Right
-18001	\N	C. Ramos	César Rafael Ramos Becerra	20	54	54	56	59	55	19	52	3	16	148	33	Right
-18006	\N	Liu Shibo	刘世博	23	54	52	56	57	51	35	48	2	9	44	58	Right
-18008	\N	S. Moloney	Scott Moloney	20	54	55	51	54	53	27	55	2	53	656	13	Right
-18010	\N	L. Pöhls	Leon Maurice Pöhls	23	54	56	57	56	56	34	50	2	47	439	8	Right
-18022	\N	L. McNicholas	Luke McNicholas	20	54	55	56	56	51	28	55	2	47	675	52	Right
-18029	\N	Julen	Julen Fernández Díaz	21	54	56	61	57	47	23	45	2	23	457	12	Right
-18031	\N	G. Chande	Gion Fadri Chande	22	54	57	52	57	52	27	53	2	25	649	21	Right
-18037	\N	H. Altıntaş	Hüseyin Altıntaş	25	54	55	48	56	56	29	52	2	11	264	55	Right
-18041	\N	J. Cracknell	Joe Cracknell	26	54	54	53	55	52	46	53	3	53	680	13	Right
-18057	\N	A. Azurín	Ángel David Azurín Condori	29	54	54	56	55	49	20	51	2	46	428	66	Right
-18059	\N	T. Sharman-Lowe	Teddy Sharman-Lowe	17	53	54	53	54	52	24	52	3	48	614	13	Right
-18070	\N	O. Dovin	Oliver Nnonyelu-Dovin	17	53	62	54	53	48	25	52	2	41	348	37	Right
-18075	\N	J. Walsh	Joe Walsh	18	53	57	54	58	61	60	47	5	48	628	13	Right
-18076	\N	Z. Jeacock	Zachary Jeacock	19	53	53	51	56	61	28	51	3	21	170	13	Right
-18079	\N	M. Ulla	Marius Amundsen Ulla	18	53	55	54	53	50	29	53	2	37	524	29	Right
-18080	\N	M. Andersen	Marcus Ellingsen Andersen	19	53	55	51	55	54	19	51	3	37	350	29	Right
-18094	\N	D. Ciofu	Denis Constantin Ciofu	18	53	54	49	57	53	35	52	2	44	610	70	Right
-18095	\N	S. Brynn	Solomon Brynn	19	53	48	55	57	58	31	50	2	21	344	13	Right
-18104	\N	J. Newman	Jack Newman	18	53	57	55	56	54	22	52	2	26	633	14	Right
-18105	\N	T. Billson	Thomas Billson	19	53	58	50	60	46	28	48	2	21	475	13	Right
-18106	\N	K. Broda	Kamil Broda	18	53	59	51	58	53	26	45	2	40	263	4	Right
-18107	\N	J. Pukaj	Jozef Pukaj	20	53	57	56	52	54	21	53	3	25	197	21	Right
-18116	\N	B. Neugebauer	Bartosz Neugebauer	18	53	49	56	55	52	33	52	2	40	495	4	Right
-18119	\N	B. Jones	Bobby Jones	18	53	55	53	54	52	25	51	2	48	532	52	Right
-18126	\N	T. McGill	Thomas McGill	20	53	56	53	55	59	18	50	2	53	663	13	Right
-18133	\N	J. Uribe	Juan José Uribe Colorado	18	53	60	56	57	45	26	43	3	34	235	42	Right
-18135	\N	S. Long	Sam Long	17	53	58	48	51	56	43	52	3	48	547	13	Right
-18138	\N	D. Andersen	Daniel Gadegaard Andersen	19	53	55	51	56	54	34	54	3	32	447	27	Right
-18151	\N	W. Hernández	Wilbert Miguel Hernández Torrealba	19	53	55	50	59	51	22	55	2	52	622	50	Right
-18156	\N	F. Brancolini	Federico Brancolini	18	53	48	54	51	60	27	55	1	2	73	15	Right
-18161	\N	K. Gourlay	Kyle Gourlay	21	53	53	49	53	57	44	53	3	26	629	14	Right
-18166	\N	P. Grave	Paul Grave	19	53	51	54	59	50	24	52	2	35	290	8	Right
-18178	\N	P. Bourdelle	Paul Bourdelle	19	53	55	52	57	50	52	55	2	27	501	7	Right
-18185	\N	B. James	Bradley James	20	53	51	53	55	49	27	52	3	21	344	13	Right
-18190	\N	R. Ferrario	Rafael Ferrario	20	53	56	47	59	58	24	47	2	14	383	1	Right
-18191	\N	T. Fayulu	Timothy Bruce Fayulu	20	53	55	59	52	50	20	47	3	25	317	60	Right
-18193	\N	A. Lyska	Arthur Lyska	20	53	56	54	55	53	42	49	3	45	528	8	Right
-18197	\N	Kwon Jae Beom	Jae Beom Kwon	18	53	51	52	60	46	22	55	3	39	466	20	Right
-18198	\N	R. Rodríguez	Ricardo Rodríguez	19	53	52	55	54	49	23	53	3	16	363	33	Right
-18199	\N	D. Krzysztofek	Dariusz Krzysztofek	20	53	55	52	54	49	22	55	2	40	490	4	Right
-18200	\N	D. Thiam	Demba Thiam Ngagne	22	53	53	52	51	62	54	61	1	30	212	10	Right
-18201	\N	C. Lyle	Curtis Lyle	20	53	54	53	51	55	25	50	2	26	498	14	Right
-18203	\N	M. Nilsson	Mathias Nilsson	21	53	53	57	54	56	23	48	3	41	267	37	Right
-18205	\N	Chen Wei	陈威	22	53	52	52	52	51	30	52	3	9	45	58	Right
-18209	\N	B. Johnson	Billy Johnson	20	53	54	54	54	58	27	54	2	53	670	13	Right
-18211	\N	Z. Jones	Zac Maxwell Jones	19	53	56	46	58	42	36	49	2	36	414	71	Right
-18215	\N	L. Cueva	Lucas Cueva Gordillo	19	53	51	52	53	55	50	51	3	42	521	61	Right
-18219	\N	R. Pop	Rareş Antonio Pop	21	53	54	56	53	50	37	52	3	44	621	70	Left
-18221	\N	A. Kelsey	Adam Kelsey	20	53	54	52	51	51	28	52	2	53	668	13	Right
-18229	\N	B. Rivas	Bruno Rivas Reyes	19	53	55	48	54	59	24	51	1	51	520	122	Right
-18235	\N	H. Ravas	Henrich Ravas	22	53	55	52	56	52	37	51	2	21	161	23	Right
-18238	\N	M. Al Baqawi	Moataz Al Baqawi	22	53	55	51	58	49	28	48	2	10	281	101	Right
-18239	\N	L. Finochietto	Leandro Farid Finochietto	23	53	58	52	52	55	30	53	2	14	285	1	Right
-18249	\N	E. Panicco	Elliot Panicco	23	53	56	52	60	52	28	53	3	8	356	47	Right
-18253	\N	G. Galindo	Carlos Gustavo Galindo De La Rosa	20	53	54	51	53	50	19	54	2	16	72	33	Right
-18260	\N	J. Gould	Joshua Gould	23	53	46	58	56	59	20	52	2	21	206	38	Left
-18267	\N	F. Hansen	Fredrik Repstad Hansen	19	53	55	56	57	45	27	47	2	37	584	29	Right
-18276	\N	A. André Jr	Alexis André Jr	23	53	52	53	56	58	51	50	4	48	608	24	Right
-18279	\N	G. Gutiérrez	Gustavo Guadalupe Gutiérrez Muñoz	23	53	57	50	57	47	47	50	3	16	203	33	Right
-18280	\N	F. Rivasseau	Franco Rivasseau	23	53	53	57	55	46	20	48	3	14	431	1	Right
-18282	\N	R. Al Najjar	Rakan Al Najjar	25	53	54	55	55	50	33	48	3	10	318	101	Right
-18284	\N	T. Prendergast	Tristan Prendergast	25	53	56	56	50	49	26	52	1	36	323	56	Right
-18285	\N	M. Al Burayh	Mohammad Al Burayh	26	53	54	47	54	44	44	52	2	10	421	101	Right
-18286	\N	Xu Jiamin	徐嘉敏	26	53	56	52	54	49	36	49	3	9	76	58	Right
-18287	\N	Hwang In Jae	In Jae Hwang	26	53	54	55	49	56	25	49	3	39	484	20	Right
-18288	\N	J. McGuire	Jake McGuire	25	53	49	52	54	69	34	51	2	41	577	47	Right
-18305	\N	K. Trelowski	Kacper Trelowski	16	52	54	52	56	54	31	52	2	40	398	4	Right
-18309	\N	M. Dudek	Mateusz Dudek	17	52	49	53	57	58	20	49	2	40	594	4	Right
-18310	\N	A. Gülstorff	Andreas Gülstorff	17	52	55	52	57	46	43	47	2	32	460	27	Right
-18311	\N	K. Bąkowski	Krzysztof Bąkowski	17	52	53	52	51	50	32	54	3	40	400	4	Right
-18313	\N	K. Molefe	Karabo Molefe	17	52	58	48	61	46	39	38	3	43	292	89	Right
-18316	\N	D. Alemdar	Doğan Alemdar	17	52	50	56	50	54	24	47	2	11	271	55	Right
-18318	\N	T. Canteros	Tomás Canteros	18	52	45	57	58	55	47	48	3	14	146	1	Right
-18331	\N	E. Mirus	Eryk Mirus	16	52	47	53	58	48	25	48	3	40	458	4	Right
-18334	\N	F. Stople	Frank Stople	18	52	52	53	55	51	29	50	2	37	605	29	Right
-18335	\N	M. Sanyor	Meshari Sanyor	18	52	51	50	53	50	30	51	3	10	472	101	Right
-18355	\N	L. Schneller	Lukas Schneller	18	52	54	51	57	55	24	52	3	45	623	8	Right
-18375	\N	A. Torres	Axel Torres	18	52	53	49	53	58	16	48	3	16	283	33	Right
-18382	\N	N. Curcija	Nikola Curcija	19	52	53	52	61	47	40	50	3	27	500	46	Right
-18387	\N	C. Hawkins	Callum Hawkins	20	52	56	51	50	55	28	51	3	48	614	13	Left
-18388	\N	A. Fojtíček	Alex Fojtíček	20	52	54	48	56	52	39	51	2	48	603	23	Right
-18390	\N	O. Battersby	Ollie Battersby	18	52	49	52	53	52	26	53	2	53	640	13	Right
-18396	\N	S. Nilsen	Simen Vidtun Nilsen	20	52	53	55	54	47	27	51	2	37	586	29	Right
-18404	\N	S. Kiefer	Stefan Kiefer	18	52	53	58	45	58	47	53	2	45	464	8	Right
-18406	\N	A. Foged	Andreas Skjøtt Foged	19	52	53	52	54	56	31	49	2	32	609	27	Left
-18408	\N	Li Guanxi	李冠希	21	52	57	49	59	42	34	40	2	9	262	58	Right
-18419	\N	T. Ur	Trym Sølvberg Ur	19	52	57	52	51	57	36	50	2	37	538	29	Right
-18437	\N	A. Maynard-Brewer	Ashley Maynard-Brewer	21	52	54	46	47	56	22	55	3	48	440	56	Right
-18440	\N	M. Yıldız	Murat Can Yıldız	21	52	47	54	54	58	27	51	2	11	399	55	Right
-18441	\N	N. Forastiero	Nicolás Alejandro Forastiero	21	52	47	58	53	59	15	48	2	14	285	1	Right
-18444	\N	R. Munro	Ross Munro	20	52	53	56	52	52	30	51	2	26	659	14	Right
-18447	\N	D. Ochsenham	Dakota Ochsenham	20	52	54	51	53	50	25	51	2	36	436	56	Right
-18451	\N	D. Segovia	Diego Segovia	20	52	48	54	57	47	30	53	2	14	176	16	Right
-18453	\N	M. Al Ghamdi	Majed Al Ghamdi	21	52	54	51	54	56	18	48	3	10	430	101	Right
-18455	\N	B. Grawe	Benedikt Grawe	20	52	56	54	55	53	36	44	3	35	272	8	Right
-18459	\N	H. Keto	Hugo Keto	22	52	53	51	54	52	45	49	2	49	467	40	Right
-18462	\N	A. Patterson	Anthony Patterson	20	52	53	52	54	54	26	53	2	48	496	13	Right
-18467	\N	M. Parra	Martín Cristián Parra Plaza	19	52	49	56	53	47	31	50	3	28	566	39	Right
-18478	\N	R. Al Najjar	Raghid Alaa Najjar	23	52	53	47	53	60	21	53	2	10	215	101	Right
-18479	\N	F. Bekleviç	Furkan Bekleviç	21	52	56	47	54	49	30	48	2	11	280	55	Right
-18480	\N	C. Fraga	Claudio Adolfo Fraga Pérez	21	52	53	58	49	54	25	54	2	52	674	50	Right
-18484	\N	W. Barlasina	Williams Barlasina	22	52	54	52	56	47	18	50	2	14	265	1	Right
-18489	\N	Y. Kafkasyalı	Yiğit Kafkasyalı	22	52	55	57	48	53	33	51	2	11	280	55	Right
-18490	\N	T. Bartouche	Teddy Bartouche-Selbonne	23	52	58	49	57	49	29	47	2	4	256	7	Right
-18495	\N	J. Stevens	Jack Stevens	22	52	56	50	54	47	42	45	3	48	549	13	Right
-18496	\N	B. Al Bahrani	Basil Al Bahrani	25	52	53	55	51	46	26	50	2	10	421	101	Right
-18498	\N	M. Nelson	Michael Nelson	25	52	48	55	55	54	24	50	3	8	275	47	Right
-18500	\N	Xing Yu	Yu Xing	24	52	57	46	59	49	21	48	1	9	169	58	Right
-18501	\N	G. Székely	György Székely	25	52	47	50	58	50	18	54	3	45	592	26	Right
-18503	\N	Zhao Shi	Shi Zhao	27	52	59	51	54	48	29	44	3	9	169	58	Right
-18505	\N	G. Ranjitsingh	Gregory Ranjitsingh	26	52	53	52	60	50	20	46	1	8	274	116	Right
-18509	\N	G. Maley	Gary Maley	37	52	48	52	46	53	18	58	1	26	587	14	Right
-18511	\N	W. Jimenéz	Wilver Eduardo Jiménez	30	52	50	58	51	50	21	49	1	52	674	50	Left
-18517	\N	S. Tangvik	Sander Tangvik	17	51	56	46	57	58	61	44	2	37	204	29	Right
-18537	\N	A. Hoff	Anders Nørbo Hoff Nielsen	16	51	59	50	45	51	28	53	2	32	609	27	Right
-18539	\N	T. Parker	Tiernan Christopher Luke Parker	18	51	50	49	55	50	26	53	3	21	505	57	Right
-18542	\N	J. Paris	Julius Paris	18	51	53	51	55	58	20	41	2	45	606	8	Right
-18588	\N	B. Bottomley	Ben Bottomley	17	51	53	50	54	55	23	52	1	48	476	13	Right
-18589	\N	T. Seymour	Taylor Seymour	18	51	51	49	51	50	26	49	3	48	529	13	Left
-18599	\N	N. Falk	Noah Falk	18	51	52	50	51	53	25	55	3	25	590	21	Right
-18605	\N	K. Bielikow	Kamil Bielikow	19	51	56	49	51	55	23	49	2	40	513	4	Right
-18610	\N	L. Marsella	Lucas Marsella	20	51	55	48	53	57	26	51	2	27	418	7	Right
-18612	\N	N. Harness	Nathan Harness	20	51	55	51	47	49	20	48	3	48	440	13	Right
-18635	\N	J. Sims	Jack Sims	21	51	47	48	52	53	18	52	2	48	603	13	Right
-18638	\N	B. Voll	Ben Alexander Voll	19	51	52	55	57	52	25	42	2	45	539	8	Right
-18640	\N	A. Rojo	Alejandro Exequiel Rojo Veas	20	51	48	53	50	54	25	49	3	28	393	39	Right
-18648	\N	A. Matthews	Archie Matthews	18	51	51	55	57	58	21	42	2	48	639	13	Right
-18650	\N	L. Chang-Andersen	Lucas Chang-Andersen	20	51	51	53	56	52	32	48	2	32	579	27	Right
-18654	\N	V. Bernedo	Vicente Bernedo García Huidobro	19	51	55	56	53	52	26	41	1	28	173	39	Right
-18655	\N	D. Salhi	Dorian Salhi	21	51	59	46	52	51	23	54	3	27	618	7	Right
-18656	\N	M. Lagunes	Martín Gerardo Lagunes Contreras	19	51	52	52	50	48	38	48	3	16	288	33	Right
-18659	\N	K. McKenzie-Lyle	Kai McKenzie-Lyle	22	51	52	50	53	49	40	49	2	53	638	135	Right
-18664	\N	J. García	Joaquín Andrés García Epull	21	51	47	58	46	52	31	52	2	28	534	39	Right
-18668	\N	J. Pinillo	Jeison Alberto Pinillo Solís	23	51	57	52	56	59	26	45	3	34	343	42	Right
-18672	\N	A. Machuca	Alejandro Machuca Gallardo	21	51	51	47	50	47	33	48	2	33	314	69	Right
-18678	\N	B. Ünsal	Batuhan Ünsal	23	51	49	50	55	49	24	47	2	11	404	55	Right
-18680	\N	J. Caldwell	Jefferson Caldwell	24	51	54	47	54	51	29	50	1	8	211	47	Right
-18685	\N	A. Mills	Andrew Mills	25	51	51	48	53	45	44	51	2	41	651	13	Right
-18686	\N	T. Andersson	Tobias Andersson	26	51	57	46	55	55	27	49	2	41	585	37	Right
-18689	\N	R. Scott	Ryan Scott	24	51	47	53	58	51	17	50	2	36	261	56	Right
-18695	\N	M. Cox	Matthew Cox	17	50	52	56	50	57	29	42	3	48	657	13	Right
-18706	\N	S. Czajor	Szymon Czajor	18	50	51	50	52	42	22	45	2	48	589	4	Right
-18712	\N	E. Bilen	Eren Bilen	19	50	55	53	50	55	20	41	2	11	322	55	Right
-18713	\N	J. Sirois	Jonathan Sirois	19	50	54	53	47	49	16	49	2	8	210	46	Right
-18715	\N	A. Pietrogiovanna	Alessandro Pietrogiovanna	19	50	52	50	53	55	30	42	2	25	473	21	Right
-18720	\N	J. Lee	Jackson Lee	18	50	51	50	53	50	24	49	3	36	202	56	Right
-18722	\N	H. Kendrick	Henry Kendrick	19	50	53	52	51	50	26	51	2	21	434	13	Right
-18725	\N	Andre Mendes	Andre Filipe Da Silva Mendes	17	50	56	50	50	51	38	48	2	53	672	2	Right
-18732	\N	A. Jones	Alfie Jones	19	50	56	48	52	45	22	44	2	53	663	13	Right
-18733	\N	J. Cleary	Jamie Cleary	18	50	50	49	50	54	29	45	2	47	655	52	Right
-18741	\N	I. Boehmer	Isaac Boehmer	18	50	54	50	46	54	17	53	2	8	255	46	Right
-18750	\N	L. Isherwood	Liam Isherwood	17	50	50	54	55	46	29	45	2	48	647	13	Right
-18757	\N	J. Wright	Joe Wright	19	50	53	54	48	47	18	46	3	21	254	13	Right
-18759	\N	C. Coulter	Callum Coulter	19	50	50	50	50	43	27	50	1	53	644	13	Right
-18760	\N	L. Schellenberg	Lukas Schellenberg	19	50	57	52	46	51	24	43	4	45	438	8	Right
-18764	\N	J. Osaghae	Joseph Osaghae	19	50	48	56	59	47	31	41	2	48	440	13	Right
-18769	\N	M. Harris	Max Harris	20	50	50	49	53	48	16	48	3	53	648	13	Right
-18771	\N	M. Freke	Macklin Freke	21	50	48	52	55	51	19	49	2	36	582	56	Right
-18774	\N	T. Callens	Thomas Callens	21	50	57	51	51	46	17	45	3	27	217	7	Left
-18779	\N	G. Leijon	Gustav Leijon	18	50	56	52	51	51	23	47	3	41	577	37	Right
-18789	\N	F. Jakobsson	Felix Jakobsson	20	50	48	53	52	52	18	51	2	41	339	37	Left
-18801	\N	J. González	Juan Carlos González Quintero	19	50	55	52	44	51	31	47	1	52	674	50	Right
-18802	\N	D. Kalinowski	Dominik Kalinowski	22	50	57	48	51	46	22	47	1	40	513	4	Right
-18814	\N	D. Retamal	Daniel Enrique Retamal Vargas	25	50	45	50	56	50	28	49	3	28	455	39	Right
-18815	\N	Huang Zihao	黄子豪	19	50	55	45	58	45	25	45	1	9	101	58	Right
-18817	\N	Teng Shangkun	滕尚坤	29	50	46	56	53	55	26	45	2	9	171	58	Right
-18832	\N	D. Bokov	Danila Bokov	17	49	52	45	50	53	23	49	3	13	61	45	Right
-18834	\N	M. Chapman	Mackenzie Chapman	17	49	50	47	53	45	25	50	2	53	667	13	Right
-18849	\N	G. Crespi	Gian Marco Crespi	19	49	50	48	54	46	27	48	1	2	355	15	Right
-18853	\N	H. Sveijer	Hannes Sveijer	18	49	50	51	51	49	24	50	2	41	574	37	Right
-18868	\N	N. Purtscher	Nico Purtscher	19	49	46	51	51	49	22	53	2	35	504	8	Right
-18871	\N	J. Lemoignan	Jack Lemoignan	19	49	51	48	48	54	22	44	3	47	673	57	Right
-18876	\N	Li Xuebo	李学博	20	49	47	51	57	48	28	42	3	9	76	58	Right
-18878	\N	Wang Zhifeng	王智峰	23	49	49	53	50	52	34	43	3	9	149	58	Right
-18893	\N	J. Arthur	Jack Jamie Arthur	17	48	49	48	50	47	34	47	3	53	627	13	Right
-18909	\N	R. Fontalvo	Reynaldo Miguel Fontalvo Freile	21	48	46	46	51	58	30	44	2	34	198	42	Left
-18914	\N	P. McGarvey	Patrick McGarvey	16	48	47	46	50	46	20	45	1	47	682	52	Right
-18925	\N	Ma Zhen	马镇	22	48	49	47	46	45	54	44	2	9	129	58	Right
-18927	\N	L. Walker	Laurie Walker	30	48	51	47	48	43	34	46	2	48	545	13	Right
+10	212831	Alisson	Alisson Ramsés Becker	27	90	86	88	89	85	51	91	3	5	7	5	Right
+13	192119	T. Courtois	Thibaut Courtois	28	89	84	89	88	74	48	85	3	1	8	6	Left
+17	167495	M. Neuer	Manuel Neuer	34	89	87	87	89	91	57	86	4	3	4	8	Right
+19	210257	Ederson	Ederson Santana de Moraes	26	88	86	82	88	93	63	86	3	5	6	5	Left
+24	162835	S. Handanovič	Samir Handanovič	35	88	88	85	89	73	53	89	3	2	10	3	Right
+37	167948	H. Lloris	Hugo Lloris	33	87	89	82	90	68	63	84	1	5	9	7	Left
+41	186153	W. Szczęsny	Wojciech Szczęsny	30	87	86	82	88	73	49	87	3	2	2	4	Right
+45	193041	K. Navas	Keylor Navas Gamboa	33	87	90	81	90	75	53	82	3	4	5	19	Right
+55	177683	Y. Sommer	Yann Sommer	31	86	80	86	85	85	51	87	4	3	19	21	Right
+60	193080	De Gea	David De Gea Quintana	29	86	88	81	89	78	58	82	3	5	14	12	Right
+64	230621	G. Donnarumma	Gianluigi Donnarumma	21	85	89	81	89	76	50	83	3	2	21	15	Right
+76	192563	B. Leno	Bernd Leno	28	85	85	83	86	80	56	84	3	5	15	8	Right
+90	185122	P. Gulácsi	Péter Gulácsi	30	85	84	85	86	82	43	84	2	3	23	26	Right
+111	226753	A. Onana	André Onana	24	84	84	80	86	87	63	82	3	7	26	30	Right
+114	189117	R. Bürki	Roman Bürki	29	84	85	82	88	72	47	82	2	3	13	21	Right
+123	163587	K. Schmeichel	Kasper Schmeichel	33	84	82	77	89	83	54	79	3	5	20	27	Right
+124	168435	S. Sirigu	Salvatore Sirigu	33	84	84	80	82	76	51	84	2	2	30	15	Right
+127	178005	Rui Patrício	Rui Pedro dos Santos Patrício	32	84	84	80	83	77	55	82	2	5	31	2	Left
+145	212151	T. Strakosha	Thomas Strakosha	25	83	86	79	88	75	44	81	2	2	16	35	Right
+146	221087	Pau López	Pau López Sabata	25	83	82	83	84	79	49	82	3	2	35	12	Left
+161	192984	K. Casteels	Koen Casteels	28	83	83	80	84	80	45	83	2	3	36	6	Left
+162	199482	A. Lopes	Anthony Lopes	29	83	85	80	86	74	64	80	2	4	22	2	Left
+171	163705	S. Mandanda	Steve Mandanda	35	83	81	81	84	78	48	81	3	4	38	7	Right
+189	188943	K. Trapp	Kevin Trapp	29	83	82	78	85	79	49	83	4	3	46	8	Right
+192	190941	L. Hrádecký	Lukáš Hrádecký	30	83	85	78	87	69	41	83	3	3	47	40	Right
+194	193314	Aitor	Aitor Fernández Abarisketa	29	83	84	78	86	74	55	81	2	1	48	12	Right
+210	220407	M. Dúbravka	Martin Dúbravka	31	83	79	80	86	81	46	82	2	5	51	23	Right
+218	193105	A. Areola	Alphonse Areola	27	82	85	79	84	80	55	78	3	5	53	7	Right
+219	206585	Kepa	Kepa Arrizabalaga Revuelta	25	82	81	82	82	85	33	79	4	5	12	12	Right
+220	215698	M. Maignan	Mike Maignan	24	82	80	80	83	82	46	82	3	4	54	7	Right
+226	215316	G. Rulli	Gerónimo Rulli	28	82	85	78	88	77	54	78	3	1	24	1	Right
+229	198009	M. Perin	Mattia Perin	27	82	82	82	87	71	56	79	3	2	55	15	Right
+231	209960	Pacheco	Fernando Pacheco Flores	28	82	81	79	84	71	45	83	2	1	56	12	Left
+232	223952	David Soria	David Soria Solís	27	82	83	81	84	72	41	81	3	1	57	12	Right
+235	203841	N. Pope	Nick Pope	28	82	79	81	84	75	48	83	3	5	58	13	Right
+239	236583	J. Pavlenka	Jiří Pavlenka	28	82	84	76	87	68	36	76	3	3	59	44	Right
+240	1179	G. Buffon	Gianluigi Buffon	42	82	77	76	78	74	33	91	2	2	2	15	Right
+246	178750	Sergio Asenjo	Sergio Asenjo Andrés	31	82	84	82	82	77	56	80	3	1	24	12	Right
+249	182494	F. Muslera	Néstor Fernando Muslera Micol	34	82	84	76	83	75	61	82	2	11	60	16	Right
+257	193698	O. Baumann	Oliver Baumann	30	82	81	80	82	79	49	79	1	3	62	8	Right
+258	194404	Neto	Norberto Murara Neto	30	82	84	79	80	78	54	79	2	1	1	5	Right
+262	201095	A. Marchesín	Agustín Federico Marchesín	32	82	82	78	86	76	53	81	3	6	28	1	Right
+264	204120	T. Vaclík	Tomáš Vaclík	31	82	82	76	85	76	37	81	3	1	29	44	Right
+271	230168	Raphaelito Anjos	Raphael William Anjos Rochedo	32	82	79	84	78	77	42	83	2	12	52	5	Right
+284	211990	O. Vlachodimos	Odisseas Vlachodimos	26	81	84	76	86	67	43	77	3	6	25	36	Right
+287	205659	A. Cragno	Alessio Cragno	26	81	84	78	88	69	39	76	3	2	65	15	Right
+299	204935	J. Pickford	Jordan Pickford	26	81	81	77	85	87	48	77	5	5	27	13	Left
+302	215223	W. Benítez	Walter Daniel Benítez	27	81	80	79	83	77	48	80	2	4	67	1	Right
+312	205849	E. Andrada	Esteban Maximiliano Andrada	29	81	77	79	83	82	44	82	2	14	68	1	Right
+315	227290	M. Dmitrović	Marko Dmitrović	28	81	78	80	82	79	37	81	2	1	70	22	Left
+322	163489	A. Consigli	Andrea Consigli	33	81	81	82	83	72	40	80	3	2	74	15	Right
+323	164835	L. Fabiański	Łukasz Fabiański	35	81	80	82	82	70	48	81	2	5	64	4	Right
+324	167628	S. Ruffier	Stéphane Ruffier	33	81	80	81	81	74	48	82	3	4	75	7	Right
+326	173426	S. Mignolet	Simon Luc Hildebert Mignolet	32	81	80	75	82	76	51	84	3	17	77	6	Right
+343	199575	Jordi Masip	Jordi Masip López	31	81	82	82	84	72	65	77	4	1	81	12	Right
+344	199987	J. Cillessen	Jasper Cillessen	31	81	81	80	79	77	53	80	3	1	34	9	Right
+371	233306	D. Henderson	Dean Henderson	23	80	80	80	83	70	49	77	3	5	14	13	Right
+378	230869	Unai Simón	Unai Simón Mendibil	23	80	81	77	80	68	47	83	2	1	43	12	Right
+381	241671	D. Livaković	Dominik Livaković	25	80	80	78	82	74	55	79	3	20	90	17	Right
+397	227127	Álex Remiro	Alejandro Remiro Gargallo	25	80	83	72	81	78	43	81	4	1	18	12	Right
+406	214979	J. Musso	Juan Agustín Musso	26	80	82	77	84	74	44	80	3	2	93	1	Right
+419	200726	B. Lecomte	Benjamin Lecomte	29	80	80	78	81	77	42	80	3	4	33	7	Left
+434	148119	I. Akinfeev	Igor Akinfeev	34	80	77	72	84	78	50	82	3	13	61	45	Right
+444	173373	S. Romero	Sergio Germán Romero	33	80	78	76	83	81	45	79	3	5	14	1	Right
+447	178086	Adán	Antonio Adán Garrido	33	80	77	80	80	78	55	79	2	6	80	12	Left
+462	189690	Guaita	Vicente Guaita Panadero	33	80	81	80	82	77	52	78	3	5	49	12	Right
+488	214584	F. Armani	Franco Armani	33	80	78	76	86	67	43	81	3	14	84	1	Right
+492	230204	Héniton Pires	Héniton Enaldo Pires Tramontino	24	80	81	75	79	78	41	81	3	12	89	5	Right
+495	245294	J. Serendero	Jorge Ezequiel Serendero	32	80	78	81	77	77	42	80	2	19	85	16	Right
+539	241727	P. Rajković	Predrag Rajković	24	79	78	77	81	74	23	79	2	4	112	22	Right
+543	210385	Rui Silva	Rui Tiago Dantas da Silva	26	79	78	74	84	75	30	80	3	1	113	2	Right
+546	211515	P. Gollini	Pierluigi Gollini	25	79	81	75	81	69	47	79	2	2	17	15	Right
+553	208104	Matheus	Matheus Lima Magalhães	27	79	82	75	83	72	46	77	3	6	114	5	Right
+565	199641	M. Sels	Matz Sels	28	79	81	76	80	76	36	79	2	4	117	6	Right
+571	234642	E. Mendy	Édouard Mendy	28	79	80	77	79	75	34	79	2	4	66	10	Right
+574	200110	M. Bizot	Marco Bizot	29	79	82	76	79	67	46	76	2	7	118	9	Right
+579	202789	A. Schwolow	Alexander Schwolow	28	79	78	76	81	71	37	78	3	3	119	8	Right
+594	24630	Pepe Reina	José Manuel Reina Páez	37	79	77	79	78	80	46	80	3	2	16	12	Right
+595	140233	G. Ochoa	Francisco Guillermo Ochoa Magaña	34	79	77	69	83	75	49	79	3	16	122	33	Right
+597	158121	B. Costil	Benoît Costil	32	79	78	77	80	77	49	78	3	4	124	7	Right
+598	163155	B. Foster	Ben Foster	37	79	80	77	80	73	49	79	3	21	95	13	Left
+605	176550	D. Ospina	David Ospina Ramírez	31	79	82	72	84	77	34	77	3	2	11	42	Right
+607	176919	N. Guzmán	Nahuel Ignacio Guzmán	34	79	78	77	79	72	52	81	3	16	72	1	Right
+625	186569	S. Ulreich	Sven Ulreich	31	79	79	71	84	68	40	79	2	3	4	8	Right
+677	230312	Gabri Prestão	Bernard Gabriel Prestão Chaves	28	79	81	75	82	71	60	77	3	12	133	5	Right
+683	245306	L. Sáreda	Leandro Miguel Sáreda	28	79	81	75	82	71	60	77	3	19	85	16	Right
+686	244316	Luís Maximiano	Luís Manuel Arantes Maximiano	21	78	79	76	79	65	55	76	2	6	80	2	Right
+690	225116	A. Meret	Alex Meret	23	78	79	74	82	70	45	77	3	2	11	15	Left
+709	223898	P. Bernardoni	Paul Bernardoni	23	78	78	74	84	73	29	77	2	4	135	7	Left
+713	231691	A. Lafont	Alban Lafont	21	78	79	76	82	70	46	75	3	4	136	7	Right
+733	244467	O. Kolář	Ondřej Kolář	25	78	75	73	80	81	58	79	3	24	138	44	Right
+743	202811	E. Martínez	Damián Emiliano Martínez	27	78	78	80	77	78	58	77	3	5	92	1	Right
+744	203775	L. Karius	Loris Karius	27	78	82	72	81	78	54	76	3	5	7	8	Right
+759	212442	José Sá	José Pedro Malheiro de Sá	27	78	79	76	80	64	45	76	2	22	125	2	Right
+784	110677	Moyá	Miguel Ángel Moyá Rumbo	36	78	82	72	78	80	39	79	2	1	18	12	Right
+786	140293	A. Mirante	Antonio Mirante	36	78	79	78	77	65	43	79	2	2	35	15	Right
+790	146296	Andrés Fernández	Andrés Eduardo Fernández Moreno	33	78	80	75	79	68	56	76	3	1	142	12	Right
+793	163264	T. Heaton	Tom Heaton	34	78	78	77	79	74	55	78	3	5	92	13	Right
+810	180714	Guilherme	Guilherme Alvim Marinato	34	78	82	73	80	72	39	78	2	13	108	45	Right
+821	190243	M. Hitz	Marwin Hitz	32	78	79	77	80	63	44	79	3	3	13	21	Right
+828	193152	Herrerín	Iago Herrerín Buisán	32	78	80	78	74	83	43	77	3	1	43	12	Right
+849	201325	C. Tătărușanu	Anton Ciprian Tătărușanu	34	78	79	76	80	75	44	77	3	2	21	70	Right
+862	207557	R. Olsen	Robin Olsen	30	78	78	77	78	76	36	78	2	2	35	37	Right
+904	228413	E. Audero	Emil Audero Mulyadi	23	77	80	73	80	73	52	74	2	2	99	15	Right
+941	223550	J. Omlin	Jonas Omlin	26	77	77	75	79	73	50	75	4	4	130	21	Right
+946	230727	G. Larsonneur	Gautier Larsonneur	23	77	79	78	78	72	52	74	2	4	155	7	Right
+959	226300	U. Çakır	Uğurcan Çakır	24	77	75	73	80	70	55	76	3	11	153	55	Right
+964	198513	Cláudio Ramos	Cláudio Pires de Morais Ramos	28	77	81	75	79	65	54	73	3	6	28	2	Right
+965	200316	T. Horn	Timo Horn	27	77	78	78	79	60	48	73	2	3	156	8	Left
+966	205186	P. Gazzaniga	Paulo Dino Gazzaniga	28	77	80	76	80	84	64	77	3	5	9	1	Right
+985	204308	H. Van Crombrugge	Hendrik Van Crombrugge	27	77	79	74	79	76	37	77	2	17	159	6	Left
+987	206652	Sergio Rico	Sergio Rico González	26	77	77	74	80	77	47	74	3	4	5	12	Right
+999	199833	L. Unnerstall	Lars Unnerstall	29	77	77	76	78	73	33	75	1	7	83	8	Right
+1020	220604	Jaume	Jaume Doménech Sánchez	29	77	77	76	79	75	58	76	3	1	34	12	Right
+1024	104389	R. Jarstein	Rune Almenning Jarstein	35	77	80	73	77	71	43	80	4	3	119	29	Right
+1025	146952	Iván Cuéllar	Iván Cuéllar Sacristán	36	77	74	76	79	78	50	73	2	23	162	12	Left
+1034	163301	J. Orozco	Jonathan Emmanuel Orozco Domínguez	34	77	76	72	76	84	59	77	3	16	165	33	Right
+1039	174543	C. Bravo	Claudio Andrés Bravo Muñoz	37	77	77	76	77	84	56	75	3	1	37	39	Right
+1041	176994	R. Gurtner	Régis Gurtner	33	77	77	75	78	75	43	77	2	27	167	7	Right
+1046	179783	R. Fährmann	Ralf Fährmann	31	77	79	78	78	44	43	77	1	3	120	8	Right
+1076	189324	A. McCarthy	Alex McCarthy	30	77	77	75	81	64	57	75	2	5	107	13	Right
+1083	190113	M. Günok	Fehmi Mert Günok	31	77	73	72	82	81	56	80	2	11	50	55	Right
+1090	191011	L. Sepe	Luigi Sepe	29	77	79	75	80	71	47	75	2	2	143	15	Left
+1102	194333	R. Gikiewicz	Rafał Gikiewicz	32	77	78	73	80	64	28	74	2	3	150	4	Right
+1146	212067	C. Vargas	Camilo Andrés Vargas Gil	31	77	77	72	79	69	45	76	3	16	175	42	Left
+1155	223249	G. Arias	Gabriel Arias Arroyo	32	77	79	70	81	73	37	79	3	14	127	39	Right
+1161	230182	Lucas Mantela	Lucas Luciano Mantela Patrício	20	77	79	77	71	75	34	77	3	12	88	5	Right
+1193	232229	J. Bijlow	Justin Bijlow	22	76	78	72	77	75	50	73	2	7	82	9	Right
+1209	234833	F. Müller	Florian Müller	22	76	75	73	80	71	43	73	3	3	115	8	Left
+1214	211101	Rubén Blanco	Rubén Blanco Veiga	24	76	79	75	74	73	53	76	3	1	32	12	Right
+1218	227275	A. Rossi	Agustín Daniel Rossi	24	76	75	73	76	72	41	79	2	14	68	1	Right
+1226	234777	Z. Steffen	Zack Steffen	25	76	77	72	83	73	53	71	3	5	6	47	Right
+1229	206003	Y. Mvogo	Yvon Landry Mvogo Nganoma	26	76	80	74	79	71	42	72	3	7	83	21	Right
+1256	201931	Gabriel	Gabriel Vasconelos Ferreira	27	76	78	73	79	68	36	75	2	30	183	5	Right
+1281	213732	A. Selikhov	Aleksandr Selikhov	26	76	76	79	75	76	41	75	4	13	139	45	Right
+1294	189908	L. Skorupski	Łukasz Skorupski	29	76	80	75	81	54	51	75	2	2	172	4	Right
+1297	201269	F. Rønnow	Frederik Rønnow	27	76	77	72	78	67	46	76	2	3	46	27	Right
+1298	201976	A. Gomis	Alfred Benjamin Gomis	26	76	77	77	75	70	42	75	3	4	187	10	Right
+1299	202089	L. Mejía	Luis Ricardo Mejía Cajar	29	76	77	72	78	65	54	75	3	31	188	80	Left
+1306	224003	Sergio Herrera	Sergio Herrera Pirón	27	76	77	76	76	73	47	73	3	1	116	12	Right
+1310	190120	K. Johnsson	Karl-Johan Anton Johnsson	30	76	75	73	77	73	49	77	2	32	190	37	Right
+1312	190734	G. Makaridze	Giorgi Makaridze	30	76	79	73	76	63	44	73	2	23	191	81	Right
+1313	190778	J. Zoet	Jeroen Zoet	29	76	76	74	78	76	50	76	4	2	192	9	Right
+1327	209981	Y. Bounou	Yassine Bounou	29	76	75	76	76	74	35	75	2	1	29	24	Left
+1345	142902	A. Pyatov	Andriy Pyatov	36	76	75	69	78	78	44	80	3	18	79	51	Right
+1348	146748	Diego López	Diego López Rodríguez	38	76	71	76	73	72	44	78	3	23	137	12	Right
+1362	172203	F. Forster	Fraser Forster	32	76	76	72	80	65	31	75	5	5	107	13	Right
+1369	176772	A. Oukidja	Alexandre Oukidja	31	76	76	71	81	65	46	76	3	4	185	28	Right
+1383	183497	O. Karnezis	Orestis Karnezis	34	76	76	75	77	71	39	76	3	4	54	36	Right
+1406	189296	E. Berisha	Etrit Berisha	31	76	76	76	78	67	28	75	2	30	212	35	Left
+1414	191628	L. Chichizola	Leandro Chichizola	30	76	76	75	78	69	52	74	3	1	57	1	Right
+1424	194911	Adrián	Adrián San Miguel del Castillo	33	76	79	72	80	68	45	72	2	5	7	12	Right
+1428	195668	Joel Robles	Joel Robles Blázquez	30	76	78	73	80	72	53	73	2	1	37	12	Right
+1474	216065	M. Sportiello	Marco Sportiello	28	76	76	74	78	68	43	76	2	2	17	15	Right
+1486	230317	Fred Aníbão	Fred Marcos Aníbal Dias	28	76	71	77	77	76	32	72	2	12	223	5	Right
+1487	230318	Nelsildo Reis	Nelson Arturo Reis Lopes	20	76	76	77	74	77	52	76	3	12	224	5	Right
+1488	230328	Pierrino Faria	Pierre Tomás Torres De Faria	36	76	77	71	79	65	49	77	2	12	134	5	Right
+1504	243952	A. Lunin	Andriy Lunin	21	75	72	71	77	74	37	75	3	1	8	51	Right
+1514	223885	A. Nübel	Alexander Nübel	23	75	75	65	85	71	47	76	5	3	4	8	Right
+1516	228736	W. Faríñez	Wuilker Fariñez Aray	22	75	73	70	78	69	53	74	3	4	184	50	Right
+1517	234102	I. Radu	Ionuț Andrei Radu	23	75	79	69	80	72	40	75	2	2	10	70	Right
+1546	233934	A. Ramsdale	Aaron Ramsdale	22	75	76	73	77	69	49	73	2	5	110	13	Right
+1563	215502	B. Drągowski	Bartłomiej Drągowski	22	75	76	72	78	70	44	74	2	2	73	4	Right
+1575	235073	G. Kobel	Gregor Kobel	22	75	75	71	78	75	26	73	2	3	229	21	Right
+1587	219244	D. von Ballmoos	David von Ballmoos	25	75	76	74	76	73	52	73	3	25	140	21	Right
+1624	239342	H. Koffi	Hervé Kouakou Koffi	23	75	73	78	74	68	55	72	3	17	236	68	Right
+1631	204883	B. Samba	Brice Samba	26	75	77	69	79	73	55	71	3	21	237	86	Left
+1633	206075	S. Johnstone	Sam Johnstone	27	75	79	74	77	70	41	73	3	5	102	13	Right
+1635	208375	M. Müller	Marius Müller	26	75	74	74	79	68	32	75	2	25	238	8	Right
+1639	215522	A. Schlager	Alexander Schlager	24	75	75	72	79	66	35	73	3	29	240	34	Right
+1645	224251	R. Zentner	Robin Zentner	25	75	74	72	79	64	65	74	3	3	181	8	Right
+1659	200159	S. Ortega	Stefan Ortega Moreno	27	75	72	70	78	80	52	75	4	3	214	8	Right
+1705	239272	V. Barkas	Vasilios Barkas	26	75	71	75	75	74	34	77	2	26	160	36	Left
+1707	194904	B. Hamid	Bilal Abdul Hamid	29	75	76	70	76	70	41	76	3	8	248	47	Right
+1708	199904	J. Joronen	Jesse Joronen	27	75	76	74	75	68	46	73	3	30	249	40	Right
+1710	211738	M. Flekken	Mark Flekken	27	75	76	69	77	75	32	73	4	3	115	9	Right
+1712	212432	Jo Hyeon Woo	조현우 崔永宇	28	75	75	71	81	59	50	73	3	39	250	20	Right
+1713	213951	Helton Leite	Helton Brant Aleixo Leite	29	75	77	72	75	68	31	73	2	6	25	5	Right
+1715	215251	G. Herrera	Guido Herrera	28	75	75	73	77	69	58	75	2	11	251	1	Left
+1716	216939	A. Blake	Andre Blake	29	75	75	68	80	68	46	75	2	8	252	54	Right
+1725	186990	H. González	Hugo Alfonso González Durán	29	75	76	74	73	70	33	76	4	16	148	33	Right
+1767	47201	S. Proto	Silvio Proto	37	75	74	71	75	73	47	76	2	2	16	6	Right
+1769	132740	J. Hansen	Jesper Hansen	35	75	75	72	75	77	42	76	4	32	193	27	Right
+1775	144172	S. Kırıntılı	Serkan Kırıntılı	35	75	75	72	78	68	49	75	2	11	257	55	Right
+1777	148526	P. Kieszek	Paweł Kieszek	36	75	74	72	77	68	50	76	2	6	186	4	Right
+1780	150724	J. Hart	Joe Hart	33	75	72	75	77	65	58	74	3	5	9	13	Right
+1786	156412	J. Corona	José de Jesús Corona Rodríguez	39	75	72	77	73	68	39	78	3	16	141	33	Right
+1792	162220	S. Bolat	Sinan Bolat	31	75	71	78	75	79	43	74	4	17	205	55	Right
+1803	169181	K. Vermeer	Kenneth Vermeer	34	75	75	68	81	66	57	76	4	8	41	9	Right
+1805	169697	D. Randolph	Darren Randolph	33	75	77	72	76	67	43	73	3	5	64	52	Right
+1806	170084	W. Hennessey	Wayne Hennessey	33	75	76	74	71	79	41	75	3	5	49	38	Right
+1807	170597	T. Krul	Tim Krul	32	75	76	74	77	66	39	74	2	21	154	9	Left
+1816	172723	A. Begović	Asmir Begović	33	75	75	74	75	72	48	74	2	21	157	25	Right
+1844	183666	Roberto	Roberto Jiménez Gago	34	75	78	67	79	73	47	73	2	1	81	12	Right
+1851	185181	Yoel	Yoel Rodríguez Oterino	31	75	75	73	75	74	39	72	5	1	70	12	Right
+1852	186098	R. Cota	Rodolfo Cota Robles	32	75	75	70	78	67	57	79	2	16	152	33	Right
+1865	188938	C. Álvarez	Cristian Darío Álvarez	34	75	75	73	78	71	48	76	3	23	213	1	Right
+1867	189084	E. Room	Eloy Victor Room	31	75	76	75	76	69	45	72	3	8	221	93	Right
+1877	190569	S. Frei	Stefan Frei	34	75	75	71	78	67	44	77	2	8	147	47	Right
+1890	192358	S. Padt	Sergio Padt	30	75	76	72	77	68	38	73	3	7	96	9	Right
+1944	204240	B. Reynet	Baptiste Reynet	29	75	74	72	77	74	45	75	3	4	232	7	Right
+1948	205211	M. Borjan	Milan Borjan	32	75	76	74	72	72	43	74	2	19	85	46	Right
+1951	205942	S. Lung	Silviu Lung	31	75	74	71	76	67	36	75	3	11	271	70	Right
+1956	207935	M. Dituro	Matías Ezequiel Dituro	33	75	72	72	77	75	41	77	3	28	173	1	Right
+1968	214076	N. Vikonis	Nicolás Vikonis Mureau	36	75	76	72	77	68	42	74	3	16	288	16	Left
+1993	220932	L. Kalinić	Lovre Kalinić	30	75	78	74	76	48	35	76	2	5	92	17	Left
+2000	224348	L. Hoyos	Lucas Adrián Hoyos	31	75	79	71	79	70	60	70	3	14	174	1	Right
+2009	230195	Alexio Sanctos	Alexandre Jonas Santos Fernandes	28	75	74	71	76	69	36	75	3	12	86	5	Right
+2018	230323	Kaíquão Castro	Kaíque Osvaldo Castro Rodrigues	24	75	77	76	73	61	36	72	2	12	109	5	Right
+2030	232226	D. Boyko	Denys Boyko	32	75	76	67	75	68	48	76	3	18	91	51	Right
+2035	245307	P. Dárenas	Pablo Nicolás Dárenas	36	75	77	76	73	61	36	72	2	19	85	16	Right
+2041	253272	K. Dawson	Kevin Emiliano Dawson Blanco	28	75	77	73	74	70	32	69	2	31	298	16	Right
+2089	222951	M. Rodák	Marek Rodák	23	74	76	71	75	72	46	70	3	5	53	23	Right
+2111	222511	E. Unsain	Luis Ezequiel Unsain	25	74	77	69	79	76	56	68	3	14	242	1	Right
+2130	220901	David Raya	David Raya Martin	24	74	73	73	74	66	51	72	2	21	158	12	Right
+2145	203042	J. Butland	Jack Butland	27	74	74	68	76	66	56	76	4	21	305	13	Right
+2151	216325	A. Gunn	Angus Gunn	24	74	76	72	78	70	49	72	3	5	107	13	Right
+2179	216175	C. Stanković	Cican Stanković	27	74	77	71	79	62	44	70	4	29	180	34	Right
+2182	219522	J. Ledesma	Jeremías Ledesma	27	74	75	71	75	64	45	73	2	1	201	1	Right
+2194	233267	M. Turner	Matt Turner	26	74	74	71	75	66	39	79	2	8	211	47	Right
+2199	193512	M. Heča	Milan Heča	29	74	75	72	77	71	44	74	3	24	270	44	Right
+2202	207683	S. Dioudis	Sokratis Dioudis	27	74	77	71	78	67	43	73	2	22	293	36	Right
+2216	190459	A. Hansen	André Hansen	30	74	76	68	78	70	36	75	2	37	204	29	Right
+2219	199493	Diego Mariño	Diego Mariño Villar	30	74	74	72	77	69	50	72	3	23	312	12	Right
+2237	215123	A. Aguerre	Alan Aguerre	29	74	75	72	76	63	46	72	2	14	265	1	Right
+2257	49000	A. McGregor	Allan James McGregor	38	74	74	71	79	66	37	73	3	26	231	14	Right
+2262	146996	Rubén	Rubén Iván Martínez Andrade	36	74	73	72	75	73	45	74	2	1	116	12	Right
+2273	163806	Sergio	Sergio Álvarez Conde	33	74	75	62	81	75	43	73	2	1	32	12	Right
+2278	165769	Cássio	Cássio Albuquerque dos Anjos	39	74	76	74	75	68	37	69	2	10	281	5	Right
+2280	167959	Marcelo Grohe	Marcelo Grohe	33	74	74	72	77	66	37	75	2	10	318	5	Right
+2281	168354	E. Viviano	Emiliano Viviano	34	74	73	74	73	70	32	77	2	11	163	15	Left
+2292	177644	Kiko Casilla	Francisco Casilla Cortés	33	74	74	72	75	72	47	72	2	5	63	12	Right
+2293	177723	Fabricio	Fabricio Martín Agosto Ramírez	32	74	73	75	74	71	56	71	4	5	53	12	Right
+2303	181481	D. Vukovic	Daniel Vuković	35	74	73	70	76	63	50	78	2	17	182	56	Right
+2307	182959	A. Hruška	Aleš Hruška	34	74	72	72	72	70	32	75	2	24	304	44	Right
+2308	183141	Oier	Oier Olazábal Paredes	30	74	74	71	73	70	44	77	3	23	137	12	Left
+2320	186148	R. Zieler	Ron-Robert Zieler	31	74	73	69	75	70	48	74	3	3	156	8	Right
+2336	190195	M. Samassa	Mamadou Samassa	30	74	75	68	78	69	52	71	1	11	151	67	Right
+2345	192297	G. Arlauskis	Giedrius Arlauskis	32	74	77	68	79	68	34	72	3	10	42	100	Right
+2346	192397	Rafael	Rafael Cabral Barbosa	30	74	74	73	75	64	54	72	2	21	306	5	Right
+2351	192665	A. Luthe	Andreas Luthe	33	74	74	69	77	61	39	75	3	3	78	8	Right
+2357	194781	Renan Ribeiro	Renan Ribeiro	30	74	78	65	79	65	51	72	2	6	80	5	Right
+2372	199417	H. Tekin	Harun Tekin	31	74	73	70	79	72	38	73	1	11	104	55	Right
+2379	199909	P. Pervan	Pavao Pervan	32	74	72	74	75	69	29	72	4	3	36	34	Right
+2226	194319	D. Ward	Danny Ward	27	74	75	72	75	66	45	73	3	5	20	38	Right
+2450	230191	Enzo Marteiro	Enzo Wellington Marteiro Santoso	28	74	82	73	69	73	39	74	3	12	89	5	Right
+2459	230320	Victorino Magela	Victorino M. Magela Sá	20	74	71	72	76	73	42	75	2	12	296	5	Right
+2460	230324	Adrianiscito	Adriano Leandro Soares Taffarel	28	74	68	76	73	74	18	77	3	12	52	5	Right
+2483	238033	F. Niță	Florin Constantin Niţă	32	74	75	72	76	69	28	76	2	24	270	70	Right
+2488	251712	J. Santigaro	Juan José Santigaro	34	74	71	79	69	81	30	75	3	19	85	61	Right
+2504	233791	A. Maksimenko	Aleksandr Maksimenko	22	73	74	70	77	67	48	71	3	13	139	45	Left
+2509	224442	B. Kamara	Bingourou Kamara	23	73	77	71	76	67	39	71	3	4	117	7	Right
+2535	235183	C. Acevedo	Carlos Acevedo López	24	73	73	72	74	69	23	72	3	16	200	33	Right
+2554	236823	I. Pettersson	Isak Pettersson	23	73	77	64	79	79	38	68	3	41	339	37	Left
+2560	243647	A. Bayındır	Altay Bayındır	22	73	77	69	80	68	21	69	2	11	104	55	Right
+2568	213272	L. Cháves	Lucas Abraham Chávez	24	73	76	69	74	66	48	74	2	14	285	1	Right
+2591	206218	P. Nardi	Paul Nardi	26	73	78	67	78	68	48	69	3	4	256	7	Right
+2615	241976	Tiago Sá	Tiago Magalhães de Sá	25	73	74	71	75	67	44	72	3	6	114	2	Right
+2617	205878	S. Kapino	Stefanos Kapino	26	73	74	67	79	66	42	72	2	3	59	36	Right
+2626	219793	T. Didillon	Thomas Didillon	24	73	74	71	74	66	55	74	2	17	345	7	Left
+2642	192009	J. Rodríguez	José Antonio Rodríguez Romero	27	73	74	70	73	66	57	73	3	16	226	33	Right
+2644	204234	Edgar Badía	Edgar Badía Guardiola	28	73	76	69	75	67	33	73	3	1	284	12	Right
+2654	209990	R. Strebinger	Richard Strebinger	27	73	74	64	79	63	38	74	2	29	347	34	Right
+2656	210358	A. Brignoli	Alberto Brignoli	28	73	72	72	73	75	32	73	3	30	349	15	Left
+2667	221584	J. Rinne	Jacob Rinne	27	73	73	72	75	70	47	71	3	32	194	37	Left
+2681	193331	K. Darlow	Karl Darlow	29	73	75	70	76	64	55	71	2	5	51	13	Right
+2684	204092	J. Blaswich	Janis Blaswich	29	73	71	71	78	68	41	71	3	7	354	8	Right
+2695	219754	Bruno Varela	Bruno Miguel Semedo Varela	25	73	77	70	76	63	40	72	3	6	121	2	Right
+2697	224599	Yan Junling	颜骏凌	29	73	72	70	74	67	48	72	3	9	45	58	Right
+2703	237419	A. Abedzadeh	Amir Abedzadeh	27	73	72	70	74	70	27	72	2	6	291	78	Right
+2704	241790	A. Beiranvand	Alireza Safar Beiranvand	27	73	78	67	73	66	41	71	3	17	145	78	Right
+2708	193186	N. Etheridge	Neil Leonard Dula Etheridge	30	73	74	67	75	61	52	75	3	21	170	105	Right
+2742	253343	J. Pinos	Jorge Bladimir Pinos Haiman	30	73	71	72	70	73	22	75	2	42	286	61	Right
+2743	18122	N. Penneteau	Nicolas Penneteau	39	73	70	76	66	66	27	81	3	17	302	7	Left
+2746	49472	L. Butelle	Ludovic Butelle	37	73	74	69	75	62	32	74	3	4	135	7	Left
+2748	105846	A. Boruc	Artur Boruc	40	73	73	72	71	66	32	75	3	40	361	4	Right
+2749	110638	Cifuentes	Alberto Cifuentes Martínez	41	73	67	74	71	65	46	82	3	1	201	12	Right
+2754	140082	Rafael	Rafael de Andrade Bittencourt Pinheiro	38	73	75	71	73	63	36	74	3	2	192	5	Right
+2758	153275	J. Leca	Jean-Louis Leca	34	73	72	69	75	69	45	74	3	4	184	7	Right
+2760	156433	A. Talavera	Alfredo Talavera Díaz	37	73	74	74	68	70	58	75	4	16	234	33	Right
+2761	156437	P. Pentke	Philipp Pentke	35	73	74	69	77	66	37	73	2	3	62	8	Right
+2767	161663	S. Viera	Mario Sebastián Viera Galain	37	73	71	70	75	72	39	73	3	34	198	16	Right
+2769	162297	D. Padelli	Daniele Padelli	34	73	72	72	70	63	44	76	2	2	10	15	Left
+2770	162328	R. Pasveer	Remko Pasveer	36	73	73	70	72	83	45	74	4	7	313	9	Right
+2778	165247	I. Khune	Itumeleng Khune	33	73	70	71	73	90	35	74	5	43	292	89	Right
+2782	167575	A. Shunin	Anton Shunin	33	73	72	72	75	70	41	72	3	19	85	45	Left
+2792	172553	J. Lössl	Jonas Lössl	31	73	73	74	75	68	32	71	2	5	27	27	Right
+2797	173857	M. Andújar	Mariano Gonzalo Andújar	36	73	72	71	75	62	45	75	3	14	123	1	Right
+2805	177299	A. Gabbarini	Adrián José Gabbarini	34	73	71	72	77	65	46	71	2	42	368	1	Right
+2806	177475	T. Sippel	Tobias Sippel	32	73	74	69	77	76	46	69	2	3	19	8	Right
+2876	193247	H. Lindner	Heinz Lindner	29	73	78	69	76	65	42	70	3	25	197	34	Right
+2894	198355	S. Clark	Steve Clark	34	73	72	69	73	65	48	75	4	8	126	47	Right
+2898	198653	M. Silva	Martín Andrés Silva Leites	37	73	75	70	77	72	31	72	2	33	314	16	Right
+2908	200463	T. Melia	Tim Melia	34	73	73	68	73	73	37	74	2	8	266	47	Right
+2912	200798	Marafona	José Carlos Coentrão Marafona	33	73	73	73	74	66	37	74	2	11	179	2	Right
+2918	201936	Kim Jin Hyeon	김진현 金镇铉	32	73	73	67	76	61	47	73	3	15	374	20	Right
+2921	202873	K. Müller	Kevin Müller	29	73	72	70	75	66	47	72	3	35	357	8	Right
+2937	205409	S. Sosa	Carlos Sebastián Sosa Silva	33	73	73	68	75	66	41	74	3	16	363	16	Right
+2987	216033	J. Broun	Jorge Emanuel Broun	34	73	71	68	77	69	43	75	3	14	378	1	Right
+2989	216692	S. Torrico	Sebastián Alberto Torrico	40	73	71	69	73	68	45	75	2	14	144	1	Right
+2993	221610	D. Dibusz	Dénes Dibusz	29	73	74	72	75	70	23	72	3	19	85	26	Right
+3000	225701	P. Gallese	Pedro David Gallese Quiróz	30	73	74	67	74	69	47	70	3	8	97	66	Right
+3002	228182	M. El Shenawy	Mohamed El Shenawy	31	73	73	71	73	70	47	69	3	19	85	11	Right
+3005	230170	Jaim Abra	Jaime Tomás Abravanel Mestres	28	73	77	71	74	68	54	73	3	12	132	5	Right
+2811	258299	L. Robles	Luis Robles	36	73	74	71	76	70	41	71	3	8	39	47	Right
+3051	240493	A. Paschalakis	Alexandros Paschalakis	30	73	81	62	82	65	50	70	2	22	260	36	Right
+3052	241769	D. Akpeyi	Daniel Akpeyi	34	73	74	72	75	68	24	75	2	43	292	31	Right
+3057	251673	Z. Živković	Živko Živković	31	73	73	68	75	68	29	75	2	22	260	22	Right
+3090	222514	F. Woodman	Freddie Woodman	23	72	72	68	73	69	45	71	2	21	206	13	Right
+3129	206561	C. Walton	Christian Walton	24	72	72	72	74	70	35	66	2	5	94	13	Left
+3150	215363	L. Montipò	Lorenzo Montipò	24	72	72	70	76	69	41	69	1	2	273	15	Right
+3151	220048	S. Scuffet	Simone Scuffet	24	72	72	68	80	60	50	70	2	2	93	15	Right
+3157	226285	R. Gudiño	Raúl Manolo Gudiño Vega	24	72	72	72	74	62	47	69	1	16	226	33	Right
+3159	228279	J. Drommel	Joël Drommel	23	72	73	69	73	70	51	70	3	7	387	9	Right
+3184	222411	J. Prior	Jérôme Prior	24	72	70	69	78	68	52	71	3	27	388	7	Left
+3185	222464	Sivera	Antonio Sivera Salvá	23	72	72	70	72	68	56	73	3	1	56	12	Right
+3187	226085	Léo Jardim	Leonardo César Jardim	25	72	75	72	73	67	42	66	2	6	233	5	Right
+3240	244385	G. Bushchan	Georgiy Bushchan	26	72	72	65	74	73	28	69	3	18	91	51	Right
+3266	204549	D. Roef	Davy Roef	26	72	75	70	75	64	50	70	3	17	205	6	Right
+3283	217805	A. Martín Arias	Alexis Martín Arias	27	72	73	67	75	73	50	70	3	28	393	1	Right
+3299	229637	G. Akkan	Gökhan Akkan	25	72	69	68	80	68	48	70	2	11	207	55	Right
+3317	188400	T. Kaminski	Thomas Kaminski	27	72	72	75	74	67	46	67	3	21	309	6	Right
+3319	198625	S. Bain	Scott Bain	28	72	70	72	74	72	60	67	3	26	160	14	Right
+3321	200332	T. Koubek	Tomáš Koubek	27	72	77	62	76	67	41	69	2	3	150	44	Right
+3333	215417	C. Mathenia	Christian Mathenia	28	72	74	68	76	62	45	71	1	35	301	8	Right
+3340	222546	L. Zingerle	Leopold Zingerle	26	72	70	69	75	67	43	72	3	35	389	8	Right
+3347	184436	A. Smithies	Alex Smithies	30	72	72	69	72	66	59	72	2	21	371	13	Right
+3349	193336	V. Belec	Vid Belec	30	72	73	72	74	60	48	71	3	2	99	3	Right
+3360	203766	A. El Shenawy	Ahmed Naser Mahmoud Al Shenawy	29	72	72	68	74	70	34	73	4	19	85	11	Right
+3385	215069	R. Rey	Rodrigo Francisco Jesús Rey	29	72	74	71	73	69	48	72	3	22	260	1	Right
+3417	2147	M. Stekelenburg	Maarten Stekelenburg	37	72	69	71	70	72	33	73	4	7	26	9	Right
+3420	107298	Y. Pelé	Yohann Pelé	37	72	71	72	73	67	39	71	3	4	38	7	Right
+3423	138798	G. Lux	Germán Darío Lux	38	72	70	70	72	74	38	70	2	14	84	1	Right
+3426	140498	D. Marshall	David Marshall	35	72	71	69	73	66	49	72	3	21	161	14	Right
+3427	142258	S. Bossut	Sammy Bossut	34	72	72	70	71	65	45	73	3	17	402	6	Right
+3429	149258	A. Cordaz	Alex Cordaz	37	72	68	71	74	62	26	72	1	2	355	15	Right
+3430	150477	R. Salin	Romain Jules Salin	35	72	76	64	75	68	31	72	2	4	66	7	Left
+3432	155871	B. Białkowski	Bartosz Białkowski	32	72	66	71	73	67	41	75	3	21	254	4	Right
+3437	158777	P. Tschauner	Philipp Tschauner	34	72	71	70	73	66	42	71	3	3	23	8	Right
+3439	164484	J. Dahlin	Johan Dahlin	33	72	66	72	69	67	37	79	3	41	267	37	Right
+3440	164505	B. Guzan	Bradley Guzan	35	72	72	68	74	72	37	72	2	8	69	47	Left
+3441	165735	B. Jones	Brad Scott Jones	38	72	71	69	70	68	54	74	3	10	103	56	Left
+3452	172939	K. Westwood	Keiren Westwood	35	72	72	71	73	70	47	72	4	21	370	52	Left
+3455	176526	L. Burián	Leonardo Fabián Burián Castro	36	72	71	70	71	68	41	72	3	14	277	16	Right
+3457	176630	Marco Pereira	Marco André Rocha Pereira	33	72	71	67	74	65	56	71	2	6	390	2	Right
+3469	178571	Bracali	Rafael Wihby Bracali	39	72	73	72	71	60	40	71	2	6	233	5	Right
+3481	182087	Denis	Denis César de Matos	33	72	73	72	76	70	54	64	2	6	335	5	Right
+3483	183475	S. Grytebust	Sten Michael Grytebust	30	72	73	70	75	64	44	73	2	32	190	29	Right
+3493	185427	O. Nyland	Ørjan Håskjold Nyland	29	72	72	67	73	77	48	73	4	5	92	29	Right
+3497	186681	Alberto	Alberto García Cabrera	35	72	72	71	73	71	63	70	3	23	321	12	Right
+3500	187601	S. Dzhanaev	Soslan Dzhanaev	33	72	74	67	73	69	46	71	2	19	85	45	Right
+3506	188524	V. Babacan	Volkan Babacan	31	72	73	70	72	68	56	76	2	11	50	55	Right
+3508	189061	S. Burchert	Sascha Burchert	30	72	72	70	73	68	45	73	3	35	411	8	Right
+3514	189342	C. Pinsoglio	Carlo Pinsoglio	30	72	74	70	76	58	42	74	2	2	2	15	Left
+3520	189707	Da Costa	Angelo Esmael da Costa Júnior	36	72	71	71	72	64	39	75	2	2	172	5	Right
+3526	190435	Tomeu Nadal	Bartolomé Nadal Mesquida	31	72	69	70	75	68	39	72	3	23	412	12	Right
+3533	190780	S. Johnson	Sean Johnson	31	72	73	67	76	70	43	70	2	8	247	47	Right
+3541	192129	K. Nordfeldt	Kristoffer Nordfeldt	31	72	71	66	74	69	50	74	3	11	319	37	Right
+3556	194730	Juan Carlos	Juan Carlos Martín Corral	32	72	71	72	73	74	60	71	3	23	128	12	Right
+3557	194934	Dani Jiménez	Daniel Jiménez López	30	72	73	69	75	65	52	69	3	23	351	12	Right
+3564	197641	B. Leroy	Benjamin Leroy	31	72	71	71	72	70	39	72	3	27	418	7	Right
+3566	197851	A. Hayashi	林 昭大	33	72	72	68	74	63	48	71	3	15	375	72	Right
+3580	199103	A. Domínguez	Alexander Domínguez Carabalí	33	72	69	70	72	71	31	73	3	14	174	61	Right
+3587	199339	M. Riemann	Manuel Riemann	31	72	72	68	74	71	50	70	5	35	290	8	Right
+3645	206272	C. Bălgrădean	Cristian Emanuel Bălgrădean	32	72	72	71	72	70	50	71	3	44	369	70	Right
+3433	250994	J. Lewis	Joe Lewis	32	72	75	68	75	67	56	72	3	26	403	13	Right
+3694	215132	S. Moyano	Sebastián Emanuel Moyano	29	72	72	68	74	68	51	72	2	14	334	1	Right
+3722	223573	Munir	Munir Mohand Mohamedi	31	72	70	72	72	66	45	73	3	11	253	24	Right
+3734	228231	A. Aguilar	Alfredo Ariel Aguilar	31	72	76	69	73	69	46	68	3	33	196	69	Right
+3740	230176	Sacramentinho	Luiz Santiago Sacramento Cruz	36	72	74	68	71	72	46	74	2	12	86	5	Right
+3741	230185	Túlio Changas	Túlio Sebastião Changas Tramontino	24	72	72	71	73	75	43	68	3	12	88	5	Right
+3752	230319	André Milazisco	André Mikael Milazar Santoso	24	72	77	64	77	62	34	66	1	12	223	5	Left
+3774	230525	João Bruinheira	João Fabrício Bruinheira Salvador	32	72	71	63	75	77	33	74	1	12	132	5	Right
+3887	253271	T. Cardozo	Thiago Gastón Cardozo Brugman	23	71	65	70	72	68	38	73	2	31	298	16	Right
+3905	237525	A. Bodart	Arnaud Bodart	22	71	73	72	74	65	21	68	2	17	303	6	Right
+3917	215086	B. Cortés	Brayan Josué Cortés Fernández	25	71	70	71	72	67	48	71	3	28	220	39	Right
+3956	220058	D. Phillips	Dillon Phillips	25	71	72	67	72	62	45	70	3	48	440	13	Right
+3978	205530	M. Pigliacelli	Mirko Pigliacelli	27	71	71	69	71	83	48	66	3	44	377	15	Right
+3980	211348	S. Dimitrievski	Stole Dimitrievski	26	71	72	70	70	68	37	74	2	23	321	63	Right
+3982	213536	M. Crépeau	Maxime Crépeau	26	71	70	69	74	65	50	71	2	8	255	46	Right
+3986	217813	G. Lajud	Manuel Gibran Lajud Bojalil	26	71	71	66	74	63	45	74	1	16	200	33	Right
+3989	219736	E. Horvath	Ethan Shea Horvath	25	71	78	66	76	57	49	62	3	17	77	47	Right
+3997	223686	T. Wellenreuther	Timon Wellenreuther	24	71	74	67	72	66	53	68	4	17	159	8	Right
+4001	224440	J. Pollersbeck	Julian Pollersbeck	25	71	73	66	73	72	28	70	3	4	22	8	Right
+4003	225149	J. Butez	Jean Butez	25	71	73	67	72	73	44	68	3	17	145	7	Right
+4016	198039	M. Gillespie	Mark Gillespie	28	71	74	68	73	66	35	72	3	5	51	13	Right
+4020	204966	Adrián Ortolá	Adrián Ortolá Vañó	26	71	70	68	73	74	51	70	5	23	392	12	Left
+4024	207926	A. Linde	Andreas Christopher Linde	26	71	73	67	74	65	49	69	2	37	259	37	Right
+4026	209987	M. Schuhen	Marcel Schuhen	27	71	73	68	75	68	52	67	3	35	415	8	Right
+4030	212197	D. Heuer Fernandes	Daniel Heuer Fernandes	27	71	72	69	74	70	43	69	4	35	199	2	Right
+4050	226721	G. Alcalá	Gil Esaul Alcalá Barba	27	71	71	70	72	62	59	73	2	16	397	33	Right
+4053	229255	Charles	Charles Marcelo da Silva	26	71	72	66	74	60	30	70	2	6	291	5	Right
+4060	239846	P. Tsintotas	Panagiotis Tsintotas	26	71	73	70	75	70	30	63	2	22	195	36	Right
+4072	204246	M. Bettinelli	Marcus Bettinelli	28	71	71	69	73	73	29	73	3	21	344	13	Right
+4073	204513	M. Dupé	Maxime Dupé	27	71	73	70	75	62	45	67	2	27	241	7	Right
+4094	227497	M. Fraisl	Martin Fraisl	27	71	73	68	73	64	41	69	2	35	272	34	Right
+4095	231056	S. Marinović	Stefan Marinović	28	71	73	66	77	60	51	65	2	36	414	71	Right
+4124	205812	P. Terracciano	Pietro Terracciano	30	71	72	67	75	64	41	69	2	2	73	15	Right
+4128	208719	P. Kühn	Philipp Kühn	27	71	72	64	78	69	49	75	3	35	450	8	Right
+4131	210923	M. Al Owais	Mohammed Al Owais	28	71	71	72	70	67	47	71	3	10	177	101	Left
+4151	230117	Jhonatan	Jhonatan Luiz da Siqueira	29	71	75	70	74	70	33	67	2	6	121	5	Right
+4165	110974	Riesgo	Asier Riesgo Unamuno	36	71	71	73	69	67	55	71	3	23	162	12	Right
+4168	121134	A. Walke	Alexander Walke	37	71	71	70	72	75	35	69	3	29	180	8	Right
+4170	139668	F. Marchetti	Federico Marchetti	37	71	68	70	70	64	52	70	3	2	55	15	Left
+4177	143598	L. Pocrnjic	Luciano Darío Pocrnjic	38	71	71	68	70	64	27	72	3	14	331	1	Right
+4182	156483	C. Lucchetti	Cristian David Lucchetti	42	71	72	69	70	76	43	69	3	14	410	1	Right
+4194	171146	R. M'Bolhi	Raïs M'Bolhi Ouhab	34	71	71	67	77	65	48	67	3	10	329	28	Right
+4199	173178	Manolo Reina	Manuel Reina Rodríguez	35	71	68	68	72	67	57	74	3	23	209	12	Right
+4210	177621	F. Rodríguez	Carlos Felipe Rodríguez Rangel	31	71	68	68	73	71	52	72	3	16	283	33	Right
+4222	182043	Zeng Cheng	曾诚	33	71	70	66	74	69	33	71	4	9	129	58	Right
+4223	182224	Wang Dalei	王大雷	31	71	70	69	72	70	59	68	3	9	262	58	Right
+4226	182520	M. Männel	Martin Männel	32	71	73	71	74	60	48	69	3	35	420	8	Right
+4228	183315	D. González	David González Giraldo	37	71	69	70	73	66	37	72	2	34	289	42	Right
+4245	185405	D. Kuciak	Dušan Kuciak	35	71	74	64	76	64	36	71	2	40	458	23	Right
+4252	187208	A. Saldívar	Alfredo Saldívar Medina	30	71	71	72	68	70	43	70	3	16	203	33	Right
+4266	189357	C. Toselli	Cristopher Benjamín Toselli Ríos	32	71	69	69	72	70	49	70	3	28	173	39	Right
+4277	190769	E. Lamanna	Eugenio Lamanna	30	71	68	70	73	66	31	70	2	30	372	15	Right
+4286	192613	C. Pantilimon	Costel Fane Pantilimon	33	71	67	71	72	72	37	70	2	11	264	70	Right
+4289	192922	O. Jiménez	Óscar Francisco Jiménez Fabela	31	71	73	69	72	68	33	71	3	16	122	33	Right
+4292	193182	W. Foderingham	Wesley Foderingham	29	71	71	69	72	68	43	70	2	5	110	13	Left
+4294	193277	J. Siebenhandl	Jörg Siebenhandl	30	71	69	68	74	75	47	69	3	29	444	34	Left
+4309	197439	F. Wiedwald	Felix Wiedwald	30	71	73	64	73	68	40	67	2	3	46	8	Right
+4358	203928	R. Fernández	Raúl Omar Fernández Valverde	34	71	71	69	75	60	50	68	2	46	428	66	Left
+4411	214373	A. Silva	Antony Domingo Silva Cano	36	71	70	67	71	64	39	70	3	19	85	69	Right
+4416	215414	Daniel Guimarães	Daniel Martins Guimarães	33	71	75	65	74	60	40	68	1	6	401	5	Right
+4419	215985	F. Monetti	Fernando Monetti	31	71	70	68	71	72	57	69	3	14	144	1	Right
+4448	225877	B. Medina	Bernardo David Medina	32	71	76	66	75	60	47	66	2	46	470	69	Right
+4467	230315	Ailton Cardenhas	Ailton Nuno Cardenhas Macedo	20	71	71	72	72	72	24	76	3	12	134	5	Right
+4468	230332	Wiliam Santinho	Wiliam Carlos Santoso Sampaio	24	71	61	77	73	76	35	70	2	12	109	5	Right
+4481	232441	M. Higashiguchi	東口 順昭	34	71	68	70	69	75	33	73	3	15	358	72	Right
+4487	233977	Eduardo Fonseira	Eduardo Flávio Fonseira Meire	20	71	71	70	69	74	35	72	3	12	224	5	Right
+4490	234054	C. Cáceda	Carlos Alberto Cáceda Oyaguez	28	71	69	69	72	65	29	71	2	46	471	66	Right
+4507	247072	K. Eissa	Khalid Eisa Mohamed Bilal Saeed	30	71	70	65	77	59	48	72	3	38	218	109	Right
+4511	251503	Mateus Pasinato	Mateus Pasinato	28	71	71	72	67	71	21	71	3	6	246	5	Right
+4536	234577	Diogo Costa	Diogo Meireles Costa	20	70	69	66	73	59	33	71	3	6	28	2	Right
+4569	234383	M. Schubert	Markus Schubert	22	70	73	67	75	62	37	65	3	3	120	8	Right
+4571	236046	I. Zlobin	Ivan Zlobin	23	70	68	66	71	61	29	72	2	6	227	45	Right
+4572	236571	M. Paes	Maarten Paes	22	70	69	66	71	65	32	69	3	7	189	9	Right
+4574	241119	Dani Martín	Daniel Martín Fernández	21	70	70	67	73	67	47	69	3	1	37	12	Right
+4620	236301	Koke Vegas	Jorge Ruiz Ojeda	24	70	72	70	68	60	52	67	3	1	48	12	Right
+4628	242969	N. Baumann	Noam Baumann	24	70	69	68	74	68	23	69	2	25	473	21	Right
+4630	244274	A. Šemper	Adrian Šemper	22	70	73	69	71	63	19	69	2	30	416	17	Right
+4638	215213	A. Werner	Axel Wilfredo Werner	24	70	74	72	70	75	44	68	2	16	283	1	Right
+4652	234790	Juan Soriano	Juan Soriano Oropesa	22	70	72	67	73	66	37	67	2	1	29	12	Left
+4679	228505	P. Pentz	Patrick Pentz	23	70	68	65	73	73	54	68	4	29	365	34	Left
+4681	229325	O. Linnér	Oscar Linnér	23	70	73	67	70	66	35	72	3	3	214	37	Right
+4690	238674	K. Broll	Kevin Broll	24	70	72	65	73	44	15	70	2	45	464	8	Right
+4691	240043	F. Manojlović	Filip Manojlović	24	70	72	69	71	70	19	66	3	1	57	22	Right
+4696	246398	S. Rojas	Santiago Gerardo Rojas López	24	70	68	67	71	70	25	72	3	33	479	69	Right
+4714	222562	R. Rúnarsson	Rúnar Alex Rúnarsson	25	70	71	68	71	72	46	70	2	4	187	65	Right
+4746	251292	F. Kastenmeier	Florian Kastenmeier	23	70	72	65	71	68	25	66	3	35	269	8	Right
+4747	254052	N. Guirin	Nicolás Guirin Chialvo	25	70	67	67	70	67	46	70	2	31	481	16	Right
+4751	198350	D. Bentley	Daniel Bentley	26	70	75	64	72	66	44	69	3	21	384	13	Right
+4752	202810	S. McDermott	Sean McDermott	27	70	70	67	73	57	44	68	2	37	483	52	Right
+4753	206145	B. Uphoff	Benjamin Uphoff	26	70	69	69	71	68	38	69	2	3	115	8	Right
+4756	211033	L. García	Luis Manuel García Palomera	27	70	71	71	70	67	48	70	3	16	203	33	Right
+4759	212406	Jordi	Jordi Martins Almeida	26	70	69	68	72	70	45	69	3	6	340	5	Right
+4761	214680	G. Gallon	Gauthier Gallon	27	70	72	67	72	66	40	70	2	27	324	7	Right
+4764	216245	L. Cárdenas	Luis Alberto Cárdenas López	26	70	68	70	73	68	40	68	3	16	148	33	Right
+4765	218298	S. Allagbé	Owalabi Franck Saturnin Allagbé Kassifa	26	70	69	71	73	67	29	69	2	27	478	99	Right
+4767	221912	Kang Hyeon Mu	강현무 姜贤茂	25	70	71	64	74	63	45	69	3	39	484	20	Right
+4775	229692	J. Huth	Jannik Huth	26	70	70	66	73	74	60	67	4	35	389	8	Right
+4777	234779	Caro	José Antonio Caro Díaz	26	70	68	68	70	68	35	71	3	23	437	12	Right
+4785	200715	A. Davies	Adam Davies	27	70	70	68	71	67	40	68	3	21	305	38	Right
+4820	234748	Gu Sung Yun	구성윤 具圣润	26	70	70	64	74	61	22	67	2	39	295	20	Right
+4838	244584	O. Shevchenko	Oleksiy Shevchenko	28	70	69	66	71	73	23	71	3	18	79	51	Right
+4842	192317	J. Steer	Jed Steer	27	70	68	69	71	70	50	70	2	5	92	13	Left
+4843	193302	F. Kurto	Filip Kurto	29	70	71	65	73	61	60	67	2	36	261	4	Right
+4845	197678	A. Ahamada	Ali Nadhoim Ahamada	28	70	78	62	75	58	40	63	2	37	487	110	Right
+4848	203239	Caio Secco	Caio Gobbo Secco	29	70	67	69	69	62	42	71	2	6	291	5	Right
+4852	209423	M. Michel	Mathieu Michel	28	70	70	68	72	66	49	69	2	27	419	7	Right
+4858	211908	G. Güvenç	Günay Güvenç	28	70	70	69	74	67	56	69	2	11	381	55	Right
+4861	214415	E. Chaux	Eder Aleixo Chaux Ospina	28	70	69	65	74	60	46	70	3	34	343	42	Right
+4879	237580	D. Schmidt	シュミット・ダニエル	28	70	71	68	73	71	17	68	4	17	337	72	Right
+4880	239271	G. Anestis	Giannis Anestis	29	70	70	65	71	68	23	73	2	41	408	36	Right
+4882	241781	M. Awad	Mohamed Hussein Awad	27	70	70	66	72	67	49	67	2	19	85	11	Right
+4883	242514	F. Plach	František Plach	28	70	69	68	71	66	27	69	2	40	426	23	Left
+4887	248091	D. Lazar	David Beniamin Lazar	28	70	70	65	74	62	39	69	3	44	294	70	Right
+4888	250939	D. Stipica	Dante Stipica	29	70	72	67	75	64	29	73	2	40	490	17	Right
+4890	191655	Kim Seung Gyu	김승규 金承奎	29	70	70	66	72	69	36	70	2	15	311	20	Right
+4897	197689	A. Seculin	Andrea Seculin	29	70	73	67	79	57	30	63	3	30	416	15	Right
+4909	203423	L. Thomas	Lawrence Andrew Kingsley Thomas	28	70	71	67	73	62	38	66	2	32	491	56	Right
+4914	205288	Fernando	Fernando Martínez Rubio	30	70	71	68	72	63	48	65	2	23	191	12	Right
+4966	53739	L. Grant	Lee Grant	37	70	70	70	69	72	41	67	4	5	14	13	Right
+4967	106795	G. Pegolo	Gianluca Pegolo	39	70	70	68	70	60	43	70	2	2	74	15	Left
+4973	142962	E. Bologna	Enrique Alberto Bologna Gómez	38	70	70	67	71	70	42	69	3	14	84	1	Right
+4975	148212	A. Rebrov	Artem Rebrov	36	70	69	66	69	64	34	74	3	13	139	45	Right
+4983	163600	J. Ruddy	John Ruddy	33	70	70	66	71	72	41	70	3	5	31	13	Right
+4990	165493	N. Navarro	Nicolás Gastón Navarro	35	70	71	70	70	68	44	67	2	50	493	1	Left
+4992	167435	O. Ustari	Óscar Alfredo Ustari	33	70	66	70	72	69	35	70	2	16	216	1	Right
+4995	168965	R. Riou	Rémy Riou	32	70	70	68	68	66	49	71	1	27	217	7	Right
+4997	169321	M. Fraga	Miguel Ángel Fraga Licona	32	70	70	70	69	74	51	69	3	16	363	33	Right
+4999	172198	J. Moulin	Jessy Moulin	34	70	72	70	71	65	52	68	2	4	75	7	Right
+5016	179547	V. Mannone	Vito Mannone	32	70	68	67	71	66	55	70	3	4	33	15	Right
+5024	182435	M. Langerak	Mitchell James Langerak	31	70	71	68	72	53	27	70	3	15	424	56	Right
+5033	183567	E. Mulder	Erwin Mulder	31	70	71	70	71	73	33	66	3	7	230	9	Right
+5050	186511	René	René Román Hinojo	36	70	71	68	69	63	54	70	2	44	413	12	Right
+5055	186680	Raúl Fernández	Raúl Fernández-Cavada Mateos	32	70	70	69	70	62	42	71	2	23	449	12	Right
+5056	186781	K. Kronholm	Kenneth Kronholm	34	70	74	64	74	65	36	64	3	8	287	47	Right
+5058	186882	P. Šteinbors	Pāvels Šteinbors	34	70	72	66	74	65	37	72	2	40	469	124	Right
+5072	189430	S. Colombi	Simone Colombi	29	70	71	67	76	53	40	69	2	2	143	15	Right
+5077	189936	R. Ruiter	Robbin Ruiter	33	70	70	66	69	67	55	71	2	7	315	9	Right
+5105	193222	F. Giefer	Fabian Giefer	30	70	73	64	72	58	37	71	1	35	504	8	Right
+5127	195357	F. Farnolle	Fabien Farnolle	35	70	70	69	69	65	42	72	2	11	404	99	Right
+5149	199721	M. Gorgelin	Mathieu Gorgelin	29	70	73	64	71	70	48	67	2	27	500	7	Left
+5175	202469	D. Bingham	David Bingham	30	70	74	64	72	72	39	67	2	8	111	47	Right
+5219	208679	R. Himmelmann	Robin Himmelmann	31	70	71	65	75	62	34	67	2	35	443	8	Right
+5226	210140	A. Al Mayoof	Abdullah Ibrahim Al Maiouf	33	70	69	68	70	70	47	70	3	10	98	101	Right
+5234	211327	M. Goicoechea	Mauro Daniel Goicoechea Furia	32	70	71	68	70	71	51	68	2	27	241	16	Right
+5274	217502	A. Kofler	Alexander Kofler	33	70	68	71	69	62	47	73	3	29	362	34	Right
+5276	217649	S. Gonda	権田 修一	31	70	69	68	71	63	48	70	2	6	228	72	Right
+5300	223843	D. Frascarelli	Damián Andrés Frascarelli Gutiérrez	35	70	67	68	69	69	41	70	2	42	516	16	Right
+5323	230169	Vítor Angulho	Vítor Martín Angulho Fancini	24	70	69	73	74	58	38	63	2	12	380	5	Right
+5324	230180	Adrizinho Bastos	Adriano Well. Bastos Oliveira	32	70	72	64	68	72	46	70	3	12	222	5	Right
+5360	233999	Jairo Farnias	Jairo Ralph Farnias Almeida	20	70	64	68	75	69	55	68	3	12	133	5	Left
+5397	253632	M. Sotillo	Michael Anthony Sotillo Cañari	35	70	72	75	65	68	49	70	2	46	428	66	Right
+5408	252179	J. Markovič	Jakub Markovič	18	69	71	71	72	76	60	69	3	24	138	44	Right
+5412	239816	N. Mantl	Nico Mantl	20	69	70	69	70	64	32	69	3	45	519	8	Right
+5432	242656	I. Meslier	Illan Meslier	20	69	70	67	73	70	28	67	2	5	63	7	Left
+5520	229091	B. Peacock-Farrell	Bailey Peacock-Farrell	23	69	72	65	73	72	52	64	2	5	58	57	Left
+5545	258390	I. Grbić	Ivo Grbić	24	69	66	69	70	67	26	68	3	1	3	17	Right
+5548	213729	S. Rossbach	Sondre Løvseth Rossbach	24	69	70	66	72	66	44	67	3	37	526	29	Right
+5560	231413	M. Verrips	Michael Verrips	23	69	71	68	72	71	16	65	3	5	110	9	Right
+5581	258585	I. Pandur	Ivor Pandur	20	69	67	65	71	58	39	67	3	2	168	17	Right
+5586	219637	Cantero	Ander Cantero Armendáriz	25	69	65	74	67	69	57	68	3	23	457	12	Left
+5587	219937	N. Körber	Nils-Jonathan Körber	23	69	71	64	75	59	35	67	3	3	119	8	Right
+5588	220624	L. Acosta	Lucas Mauricio Acosta	25	69	68	70	72	67	63	66	3	14	146	1	Right
+5620	240371	A. Jakubech	Adam Jakubech	23	69	72	64	69	64	40	67	3	17	391	23	Right
+5638	209532	D. Bachmann	Daniel Bachmann	25	69	68	67	69	68	43	65	3	21	95	34	Right
+5656	227370	M. Zetterer	Michael Zetterer	24	69	68	66	73	71	42	64	4	7	494	8	Right
+5671	232713	D. Sappa	Daniel Sappa	25	69	63	72	69	68	34	71	3	14	431	1	Right
+5695	206307	J. Frick	Jérémy Frick	27	69	68	67	69	69	45	66	2	25	376	21	Left
+5697	211021	P. Bråtveit	Per Kristian Worre Bråtveit	24	69	70	65	67	72	46	70	3	41	417	29	Right
+5705	223603	F. Bredlow	Fabian Bredlow	25	69	71	68	71	62	38	64	4	3	229	8	Left
+5706	224987	I. Provedel	Ivan Provedel	26	69	69	66	71	61	42	68	2	30	349	15	Right
+5710	228221	Bernabé	Bernabé Barragán Maestre	27	69	67	70	67	66	46	68	3	23	412	12	Right
+5730	204846	J. Blackman	Jamal Blackman	26	69	70	69	73	63	27	65	2	21	533	13	Right
+5742	211398	M. Caillard	Marc-Aurèle Caillard	26	69	73	64	72	59	43	70	3	4	185	7	Right
+5755	221700	No Dong Geon	노동건 卢东件	28	69	69	67	71	65	42	69	3	39	485	20	Right
+5794	252022	G. Athanasiadis	Giorgos Athanasiadis	27	69	69	67	75	65	32	66	2	22	195	36	Right
+5799	188657	D. Rudd	Declan Rudd	29	69	72	62	73	64	50	65	3	21	239	13	Right
+5800	190947	D. Jensen	David Jensen	28	69	66	68	68	74	40	69	3	8	245	27	Right
+5802	191153	M. Sandberg	Marcus Sandberg	29	69	69	67	70	66	33	69	2	37	524	37	Right
+5804	200059	C. Coosemans	Colin Coosemans	27	69	70	63	72	70	45	68	4	17	205	6	Right
+5805	203004	Yang Han Been	양한빈 梁韩彬	28	69	70	63	73	60	44	69	3	39	278	20	Right
+5806	204269	Z. Clark	Zander Clark	28	69	66	65	75	70	31	70	2	26	535	14	Right
+5818	213615	R. Williams	Ronwen Williams	28	69	71	64	71	65	57	67	3	19	85	89	Right
+6553	240091	G. Vicario	Guglielmo Vicario	23	68	66	68	69	62	26	70	1	2	65	15	Right
+5826	222129	A. Koselev	Alexei Koşelev	26	69	68	66	72	58	29	69	2	7	502	92	Right
+5842	180337	M. Vanhamel	Mike Vanhamel	30	69	69	68	70	75	41	68	2	17	448	6	Right
+5846	193772	A. Kovácsik	Ádám Gergely Kovácsik	29	69	68	64	75	63	48	70	2	19	85	26	Right
+5859	204367	B. van Leer	Benjamin van Leer	28	69	67	71	69	63	43	68	2	7	530	9	Right
+5876	211946	M. Kolke	Markus Kolke	29	69	70	65	74	59	44	67	2	45	539	8	Right
+5896	223968	V. Vasić	Vaso Vasić	30	69	74	59	72	67	44	71	3	17	236	22	Right
+5920	251511	M. Zeghba	Moustapha Zeghba	29	69	67	67	71	63	49	69	3	10	427	28	Left
+5921	251703	J. Borgueray	José Borgueray	30	69	65	63	73	61	50	69	2	19	85	61	Right
+5935	147970	R. Pleșca	Răzvan Neculaie Pleșca	37	69	69	70	65	70	35	68	3	44	542	70	Left
+5937	149309	A. Rosati	Antonio Rosati	37	69	68	69	68	46	31	70	1	2	30	15	Right
+5941	156507	I. Vázquez	Edmundo Iván Vázquez Mellado Pérez	37	69	66	67	70	71	43	69	3	16	328	33	Right
+5945	157888	Q. Westberg	Quentin Westberg	34	69	68	65	69	65	45	70	3	8	131	47	Right
+5959	169493	F. Fielding	Frank Fielding	32	69	67	67	74	60	40	66	3	21	254	13	Right
+5964	171574	Santamaría	Roberto Santamaría Ciprián	35	69	68	71	69	64	47	66	3	23	527	12	Right
+5975	175897	S. Ujkani	Samir Ujkani	31	69	69	68	69	62	50	71	2	2	30	62	Right
+5976	175934	K. Steppe	Kenny Steppe	31	69	69	68	70	64	44	68	2	17	337	6	Right
+5978	176389	Jung Sung Ryong	정성룡 郑俊玄	35	69	70	66	70	77	44	68	3	15	373	20	Right
+5989	178283	R. Boffin	Ruud Boffin	32	69	68	67	71	73	57	68	2	11	258	6	Right
+6003	182270	W. Sandilands	Wayne Sandilands	36	69	69	70	71	68	53	68	3	43	332	89	Right
+6013	183743	A. Blanco	Alfonso Blanco Antúnez	32	69	66	69	71	65	55	68	3	16	152	33	Left
+6014	184139	Ricardo Ferreira	Ricardo Abel Barbosa Ferreira	30	69	71	69	69	62	46	67	3	6	228	2	Right
+6021	184781	D. Petrić	Denis Petrić	32	69	69	63	72	61	43	71	2	4	136	22	Right
+6028	186611	M. Vigorito	Mauro Vigorito	30	69	70	67	73	63	44	66	2	30	183	15	Right
+6031	186941	R. Wolf	Raphael Wolf	32	69	70	67	69	65	33	67	2	35	269	8	Right
+6052	192201	P. Abrahamsson	Peter Abrahamsson	31	69	69	70	68	68	42	68	3	41	510	37	Right
+6073	196885	C. Lampe	Carlos Emilio Lampe Porras	33	69	66	71	70	62	32	68	3	51	552	122	Right
+6091	199526	B. Megyeri	Balázs Megyeri	30	69	65	63	73	68	38	72	2	11	322	26	Right
+6093	199568	K. Lamprou	Konstantinos Lamprou	28	69	71	62	75	74	44	63	3	7	554	36	Left
+6119	202778	E. Özbir	Ertaç Özbir	30	69	70	69	70	61	30	69	2	11	319	55	Right
+6126	204349	I. Šehić	Ibrahim Šehić	31	69	65	70	69	66	33	71	1	11	257	25	Right
+6134	205496	Nicolas	David Nicolas Andrade	32	69	71	69	71	64	43	67	5	2	93	5	Right
+6152	208507	Dani Barrio	Daniel Barrio Álvarez	33	69	70	69	73	63	49	66	3	23	451	12	Left
+6178	214110	J. Cuadrado	José Fernando Cuadrado Romero	35	69	70	67	67	73	46	66	3	34	235	42	Right
+6191	214933	D. Rodríguez	Diego Matías Rodríguez	31	69	70	64	73	71	45	65	2	14	242	1	Left
+6192	215048	J. Burrai	Javier Nicolás Burrai	29	69	67	68	71	70	43	69	2	42	474	1	Right
+6206	217646	S. Nishikawa	西川 周作	34	69	68	66	72	73	42	69	3	15	482	72	Left
+6211	218971	S. Gbohouo	Sylvain Gbohouo	31	69	69	67	66	67	41	71	2	19	85	41	Right
+6252	230164	Luciano Cacheira	Luciano Renato Cacheira Sá	24	69	76	62	76	77	31	55	2	12	225	5	Right
+6259	230314	Kaíque Mutto	Miguel Kaíque Acuna Mutto	28	69	79	55	83	66	42	55	3	12	87	5	Right
+6289	233154	S. Takagi	髙木 骏	31	69	70	67	71	73	47	68	2	15	489	72	Left
+6290	233975	Caio Padricio	Caio Rodrigo Padricio Resende	28	69	69	71	73	46	24	70	2	12	297	5	Right
+6317	243552	Limones	Jesús Reguillos Moya	33	69	67	69	70	64	32	71	2	23	385	12	Right
+6320	244017	M. Asselah	Malik Asselah	33	69	70	68	72	62	43	66	3	10	430	28	Right
+6324	246806	Park Il Gyu	박일규 朴一圭	30	69	73	54	74	61	38	73	4	15	330	20	Right
+6342	242879	M. Vandevoordt	Maarten Vandevoordt	18	68	72	67	71	64	15	59	2	17	182	6	Right
+6384	235413	R. Majecki	Radosław Majecki	20	68	69	65	67	62	29	70	3	4	33	4	Right
+6385	236515	Álvaro	Álvaro Fernández Llorente	22	68	72	65	70	63	46	66	2	1	142	12	Left
+6386	236613	L. Grill	Lennart Grill	21	68	68	65	73	62	41	64	3	3	47	8	Right
+6402	233164	A. Muric	Arijanet Murić	21	68	70	65	71	76	45	66	2	23	128	62	Right
+6435	243311	Josep Martínez	Josep Martínez Riera	22	68	70	68	69	64	27	67	3	3	23	12	Right
+6451	231841	M. Prévot	Maxence André Prévôt	23	68	67	66	69	67	34	68	3	27	541	7	Right
+6456	235840	M. Di Gregorio	Michele Di Gregorio	22	68	70	69	71	63	28	69	3	30	372	15	Right
+6470	244654	K. Osako	大迫 圭介	20	68	68	67	70	65	30	64	2	15	441	72	Right
+6491	231073	B. Radunović	Boris Radunović	24	68	69	68	71	64	41	69	2	2	17	22	Right
+6496	235124	S. Jurado	Sebastián Jurado Roca	22	68	72	64	72	65	51	68	2	16	141	33	Right
+6514	246657	Álvaro Vallés	Álvaro Vallés Rosa	22	68	70	67	66	64	30	68	2	23	449	12	Right
+6515	247882	R. Cordano	Ruben Cordano Justiniano	21	68	71	67	72	65	29	70	3	51	565	122	Right
+6527	222572	Iván Villar	Iván Villar Martínez	22	68	69	63	70	65	33	66	2	1	32	12	Right
+6531	221279	L. Kelly	Liam Kelly	24	68	70	65	69	72	39	68	3	21	386	14	Right
+6540	231351	Y. Urra	Yerko Andrés Urra Cortés	23	68	68	66	68	67	25	69	3	28	566	39	Right
+6546	235213	Alex Craninx	Alexandro Marco Craninx Joostens	24	68	69	65	70	62	36	66	4	37	259	6	Right
+6583	224836	V. Milinković-Savić	Vanja Milinković-Savić	23	68	67	66	68	78	43	67	3	2	30	22	Right
+6585	225282	J. Devecchi	José Antonio Devecchi	24	68	67	65	70	59	48	68	2	28	534	1	Right
+6606	235629	O. De Wolf	Ortwin De Wolf	23	68	67	68	70	74	35	67	3	17	320	6	Left
+6618	247976	C. Căbuz	Cătălin Vasile Căbuz	24	68	66	67	68	66	34	68	2	44	453	70	Right
+6626	212948	F. Ondoa	Joseph Fabrice Ondoa Ebogo	24	68	71	62	75	61	53	68	2	17	525	30	Right
+6628	213573	M. Gersbeck	Marius Gersbeck	25	68	67	69	70	58	42	65	3	35	461	8	Left
+6632	214088	C. Dawson	Cameron Dawson	24	68	66	66	72	68	56	63	3	21	370	13	Right
+6643	224041	M. Schwäbe	Marvin Schwäbe	25	68	71	68	69	77	46	63	3	32	442	8	Right
+6661	234877	F. Buntić	Fabijan Buntić	23	68	69	68	69	66	25	68	2	45	438	17	Left
+6664	235383	R. Piscitelli	Riccardo Piscitelli	26	68	68	69	70	60	42	66	3	6	401	15	Left
+6678	204380	J. Brinkies	Johannes Brinkies	27	68	67	64	74	65	52	69	5	45	571	8	Right
+6679	204842	Y. Brecher	Yanick Brecher	27	68	70	63	71	65	40	66	3	25	462	21	Right
+6680	205759	D. Stojanović	Dejan Stojanović	26	68	69	63	70	59	38	66	2	21	344	63	Left
+6681	208782	M. van der Hart	Mickey van der Hart	26	68	70	64	72	70	42	64	3	40	400	9	Left
+6682	210366	N. Lomb	Niklas Lomb	26	68	70	64	71	66	39	65	3	3	47	8	Right
+6700	231878	T. Miller	Tyler Miller	27	68	69	65	68	66	32	67	2	8	274	47	Right
+6705	234994	Ratón	Álvaro López Ratón	27	68	64	69	68	68	50	67	2	23	213	12	Left
+6725	202199	G. Long	George Long	26	68	68	68	71	72	32	69	3	48	446	13	Left
+6736	208894	F. Bednarek	Filip Bednarek	27	68	66	65	70	64	43	68	2	40	400	4	Right
+6739	211299	K. Roos	Kelle Roos	28	68	72	60	70	71	41	68	4	21	161	9	Right
+6747	214582	C. Bonilla	Cristian Harson Bonilla Garzón	27	68	70	67	71	65	55	64	2	34	360	42	Right
+6757	223727	C. MacGillivray	Craig MacGillivray	27	68	68	65	70	64	50	66	3	48	529	14	Right
+6772	232562	K. Nakamura	中村 航輔	25	68	71	62	71	69	39	64	3	15	311	72	Right
+6791	254389	J. Padilla	Johan David Padilla Quiñónez	27	68	70	68	68	65	39	64	4	42	423	61	Right
+6797	193272	S. Şahin-Radlinger	Samuel Şahin-Radlinger	27	68	70	62	71	59	39	68	2	29	575	34	Right
+6798	199101	Raúl Lizoain	Raúl Lizoáin Cruz	29	68	67	69	67	63	51	67	2	23	385	12	Left
+6799	200209	N. Larsen	Nicolai Oppen Larsen	29	68	67	66	71	69	44	69	3	27	164	27	Right
+6814	219941	G. Castellón	Gabriel Jesús Castellón Velazquez	26	68	66	63	72	57	41	66	2	28	566	39	Right
+6816	221130	Y. Cardinale	Yoan Cardinale	26	68	69	67	71	69	46	66	3	4	67	7	Right
+6822	228912	B. Allain	Bobby Allain	28	68	70	65	69	68	38	65	2	22	125	7	Right
+6823	229542	A. Desmas	Arthur Desmas	26	68	68	67	70	66	29	67	2	27	452	7	Right
+6827	234646	C. Riegler	Christoph Riegler	28	68	68	66	72	61	30	65	2	29	576	34	Right
+6832	188202	Y. Thoelen	Yannick Thoelen	29	68	67	70	68	64	39	69	2	17	395	6	Right
+6833	190669	O. Jansson	Oscar Jansson	29	68	70	64	69	64	30	68	2	41	577	37	Right
+6835	194198	J. Delle	Joris Delle	30	68	68	67	68	64	49	67	2	43	332	7	Left
+6851	205068	Cristiano	Cristiano Pereira Figueiredo	29	68	67	64	70	61	30	70	2	44	564	2	Right
+6871	214274	J. Chunga	José Luis Chunga Vega	28	68	74	62	69	68	42	63	3	34	198	42	Right
+6910	241050	A. Meyer	Alexander Meyer	29	68	70	65	69	69	26	63	3	35	506	8	Right
+6915	250797	P. Ortiz	Pedro Alfredo Ortíz Angulo	30	68	72	64	70	68	25	69	2	42	445	61	Right
+6920	136686	Kim Young Kwang	김영광 Young Kwang Kim	37	68	62	71	68	60	56	68	3	39	570	20	Right
+6926	150659	V. Demarconnay	Vincent Demarconnay	37	68	67	65	65	69	45	72	3	27	279	7	Right
+6934	163616	J. Young	Jamie Young	34	68	66	66	70	63	47	64	2	36	582	13	Left
+6939	166097	F. Öztürk	Fatih Öztürk	33	68	71	63	71	62	56	69	2	11	60	55	Right
+6940	166764	T. Carson	Trevor Carson	32	68	69	68	66	63	52	68	2	26	522	57	Right
+6948	173533	D. Button	David Button	31	68	70	67	68	65	53	65	3	5	102	13	Right
+6957	176094	P. Tytoń	Przemysław Tytoń	33	68	67	64	70	66	50	66	2	8	243	4	Right
+6958	176345	Kwoun Sun Tae	권순태 权纯泰	35	68	68	66	68	64	43	68	2	15	429	20	Right
+6960	176895	M. Pinto	Miguel Ángel Pinto Jérez	36	68	70	63	68	68	53	65	2	28	220	39	Right
+6972	180739	E. Kawashima	川島 永嗣	37	68	67	65	72	64	42	65	3	4	117	72	Right
+6978	182047	Wu Yan	吴龑	31	68	71	64	69	61	48	66	2	9	268	58	Right
+7000	186998	W. Yarbrough	William Paul Yarbrough Story	31	68	67	62	68	70	57	68	3	8	352	47	Right
+7006	187959	M. Peškovič	Michal Peškovič	38	68	68	64	66	65	31	70	3	40	518	23	Left
+7008	188094	J. McLaughlin	Jonathan Peter McLaughlin	32	68	68	68	68	69	55	67	3	26	231	14	Right
+7018	189024	M. Banguera	Máximo Orlando Banguera Valdivieso	34	68	68	66	68	65	38	67	3	42	423	61	Right
+7022	189233	T. Vaiho	Tommi Vaiho	31	68	72	65	67	63	32	66	2	41	417	37	Right
+7024	189586	D. Hernández	Daniel Hernández Santos	34	68	70	67	68	59	32	67	1	23	392	50	Right
+7032	189952	K. Çelikay	Korcan Çelikay	32	68	68	66	73	61	31	67	2	11	280	55	Right
+7058	193870	Pedro Trigueira	Pedro José da Silva Trigueira	32	68	64	66	70	70	45	69	3	6	342	2	Right
+7061	194647	Rubén Miño	Rubén Miño Peralta	31	68	65	69	71	63	58	68	2	23	527	12	Right
+7092	200698	N. Marsman	Nick Marsman	29	68	69	60	72	68	39	65	3	7	82	9	Right
+7111	202630	A. Kochenkov	Anton Kochenkov	33	68	65	66	71	67	47	67	3	13	108	45	Right
+7137	205874	F. Kaplan	Ferhat Kaplan	31	68	63	68	67	70	46	71	1	11	258	55	Right
+7140	206402	M. Putnocký	Matúš Putnocký	35	68	69	70	68	64	44	70	2	40	509	23	Right
+7189	215130	N. Ibáñez	Nelson Martín Ibáñez	38	68	71	65	70	73	45	68	2	14	219	1	Right
+7202	217441	S. Makani	Sosha Makani	33	68	69	66	73	60	45	68	2	37	595	78	Right
+7204	218114	Hugo Marques	Hugo Miguel Barreto Henriques Marques	34	68	72	63	67	64	26	66	2	6	394	75	Right
+7206	219918	O. Cabral	Osvaldo Ramón Cabral	35	68	68	70	71	63	42	65	3	33	366	1	Right
+7207	220314	O. Marciano	Ofir Meir Marciano	30	68	69	67	70	60	42	66	3	26	555	53	Right
+7228	224702	Liu Dianzuo	刘殿座	30	68	66	67	70	64	50	69	3	9	44	58	Right
+7236	228232	L. Azcona	Librado Daniel Azcona Salinas	36	68	68	63	70	67	47	71	2	33	196	61	Right
+7301	251126	M. Gagliardo	Maximiliano José Gagliardo	37	68	67	62	70	63	36	69	3	14	456	1	Right
+7338	243675	K. Scherpen	Kjell Scherpen	20	67	67	66	69	64	42	66	5	7	26	9	Right
+7352	245370	E. Destanoğlu	Ersin Destanoğlu	19	67	67	70	74	58	22	66	1	11	105	55	Right
+7362	240751	G. Poussin	Gaëtan Poussin	21	67	68	66	66	64	21	67	2	4	124	7	Right
+7381	230872	M. Svilar	Mile Svilar	20	67	70	64	68	63	57	64	3	6	25	6	Right
+7404	229956	L. Zigi	Lawrence Ati Zigi	23	67	68	64	69	61	38	65	3	25	308	32	Right
+7450	234903	G. Coucke	Gaëtan Coucke	21	67	68	65	68	66	38	63	3	17	395	6	Right
+7456	236758	O. Christensen	Oliver Christensen	21	67	68	65	68	66	38	66	2	32	523	27	Right
+7462	241179	Cristian Rivero	Cristian Rivero Sabater	22	67	71	60	73	62	27	62	3	1	34	12	Right
+7485	222639	R. Ramírez	Roberto Ramírez	23	67	67	66	71	59	49	64	2	14	219	1	Right
+7503	232549	M. Peano	Marcos Hernán Peano	21	67	69	65	69	65	43	67	3	14	334	1	Right
+7506	233763	P. Dahlberg	Pontus Dahlberg	21	67	67	64	68	65	28	65	3	41	510	37	Right
+7521	243304	Zubiaurre	Andoni Zubiaurre Dorronsoro	23	67	65	66	68	67	29	63	3	1	18	12	Left
+7522	243778	M. Hiller	Marco Hiller	23	67	69	67	71	51	31	67	3	45	592	8	Right
+7556	231071	Miquel Parera	Miquel Parera Pizá	24	67	72	64	72	62	37	61	3	23	209	12	Right
+7573	242266	E. Bansen	Eike Bansen	22	67	70	67	65	60	22	64	3	17	402	8	Right
+7588	258718	M. Ilic	Marko Ilić	22	67	71	63	69	59	39	61	2	17	391	22	Right
+7597	220383	Aarón	Aarón Escandell Banacloche	24	67	65	69	66	63	36	65	3	1	113	12	Right
+7600	222263	N. Jackers	Nordin Jackers	22	67	68	65	70	61	44	65	2	17	573	6	Right
+7603	223738	X. Mous	Xavier Mous	24	67	69	66	65	65	39	63	2	7	494	9	Right
+7607	228410	D. Iversen	Daniel Iversen	22	67	69	65	68	69	42	67	2	17	488	27	Right
+7631	239499	K. Eisele	Kai Eisele	25	67	70	66	72	63	19	66	5	45	572	8	Right
+7642	252123	A. Araque	Alejandro José Araque Peña	24	67	72	55	73	62	46	64	2	52	599	50	Right
+7671	231105	A. Olliero	Alexandre Olliero	24	67	69	64	69	65	46	64	2	27	580	7	Right
+7676	234371	R. Descamps	Rémy Descamps	24	67	70	65	68	61	42	66	3	17	302	7	Left
+7679	236330	V. Cojocaru	Valentin Alexandru Cojocaru	24	67	66	67	69	66	33	65	2	44	453	70	Right
+7711	209957	J. Busk	Jakob Busk Jensen	26	67	69	62	70	65	43	65	2	3	78	27	Right
+7712	211053	L. Hägg Johansson	Lucas Hägg Johansson	25	67	71	63	68	65	39	65	3	41	585	37	Right
+7713	211132	Andrés Prieto	Andrés Tomás Prieto Albert	26	67	65	67	68	66	40	69	2	21	170	12	Right
+7714	211358	J. Fabri	Julien Fabri	26	67	66	67	68	62	52	66	3	27	507	7	Right
+7715	211827	P. Klewin	Philipp Mickel Klewin	26	67	67	63	66	60	41	69	2	35	420	8	Right
+7724	221531	M. Maroši	Marko Maroši	26	67	68	64	68	68	41	66	3	21	475	23	Right
+7727	223690	S. Rochet	Sergio Ramón Rochet Álvarez	27	67	71	62	72	63	48	60	3	31	188	16	Right
+7732	228860	H. Jurjus	Hidde Jurjus	26	67	70	61	71	62	44	62	3	45	606	9	Right
+7737	238223	B. Bvuma	Bruce Bvuma	25	67	69	71	65	62	33	65	3	43	292	89	Right
+7746	254601	G. Olveira	Gastón Hernán Olveira Echeverría	27	67	67	68	66	65	20	64	2	31	544	16	Right
+7754	203824	R. Matthews	Remi Matthews	26	67	67	66	68	65	46	66	3	48	496	13	Right
+7756	204334	I. Gelios	Ioannis Gelios	28	67	69	70	68	62	45	64	3	35	333	36	Right
+7757	205386	G. Hubert	Guillaume Hubert	26	67	70	65	66	64	43	65	2	17	525	6	Right
+7763	210476	M. Kuster	Markus Kuster	26	67	66	69	67	62	30	66	3	35	461	34	Right
+7768	214024	J. Wallens	Johan Wallens Otálvaro	27	67	65	67	69	62	41	72	2	34	289	42	Right
+7803	236989	S. Richey	Spencer Richey	28	67	66	65	69	66	56	65	2	8	243	47	Right
+7833	200076	L. Henkinet	Laurent Henkinet	27	67	68	67	66	62	58	65	3	17	303	6	Right
+7834	201112	J. Słowik	Jakub Słowik	28	67	70	59	69	54	38	71	2	15	537	4	Right
+7835	202457	L. Koopmans	Luuk Koopmans	26	67	68	65	67	66	36	65	3	7	422	9	Right
+7836	202910	D. Mitov Nilsson	David Mitov Nilsson	29	67	71	59	74	70	31	61	2	37	586	63	Right
+7840	204424	P. Izzo	Paul Izzo	25	67	68	63	69	63	56	66	3	36	436	56	Right
+7844	207712	N. Bertrams	Nigel Bertrams	27	67	67	66	67	63	51	65	2	7	96	9	Right
+7845	207899	Neto Volpi	Alvino Volpi Neto	27	67	67	65	67	69	48	65	2	15	465	5	Right
+7862	222876	J. Smith	Jordan Smith	25	67	65	63	73	55	34	64	4	21	237	13	Left
+7866	226786	A. Bono	Alexander Bono	26	67	67	66	68	66	41	64	2	8	131	47	Right
+7869	230172	Traeira Lopes	Filipe Vicente Traeira Lopes	28	67	61	60	67	40	37	77	1	12	178	5	Left
+7887	243985	Manu García	Manuel García Humanes	29	67	69	65	71	53	36	64	3	23	437	12	Right
+7891	251185	A. M'hamdi	Abdelali M'hamdi	28	67	67	65	69	62	55	66	4	10	486	24	Right
+7894	187218	M. Jiménez	Miguel Jiménez Ponce	30	67	65	67	71	66	43	65	3	16	226	33	Right
+7896	197233	A. Diallo	Abdoulaye Diallo	28	67	68	66	66	65	41	64	2	21	237	10	Right
+7904	202617	V. Hladký	Václav Hladký	29	67	67	63	71	59	57	65	3	53	611	44	Right
+7910	205378	B. Valette	Baptiste Valette	27	67	69	66	67	64	41	67	3	27	553	7	Right
+7922	210422	K. Kamiński	Krzysztof Kamiński	29	67	67	66	64	65	38	68	3	40	597	4	Right
+7947	229817	R. Swete	René Swete	30	67	70	58	72	66	46	67	3	29	556	34	Left
+7948	232533	Y. Kajikawa	梶川 裕嗣	28	67	67	64	68	63	32	66	3	15	330	72	Right
+7964	105308	J. Gillet	Jean-François Gillet	41	67	64	70	64	69	39	74	2	17	303	6	Left
+7965	109493	B. Castro	Bram Castro	37	67	68	68	63	52	35	74	2	17	525	6	Right
+7966	135043	A. Lindegaard	Anders Lindegaard	36	67	69	68	67	68	50	64	2	41	405	27	Right
+7968	139257	D. Lopar	Daniel Lopar	35	67	67	65	67	61	40	65	2	36	323	21	Right
+7976	157734	A. Jaakkola	Anssi Jaakkola	33	67	68	64	70	59	59	68	1	48	608	40	Right
+7981	162052	D. Ousted	David Ousted	35	67	66	67	65	66	37	68	3	41	348	27	Right
+7983	162952	M. Caranta	Mauricio Ariel Caranta	41	67	65	67	63	67	48	65	3	14	299	1	Right
+7984	163201	M. McGovern	Michael McGovern	35	67	68	65	68	64	33	68	3	21	154	57	Right
+7996	170008	B. Hamer	Ben Hamer	32	67	68	62	68	66	45	66	3	21	338	13	Right
+8000	171490	S. Aresti	Simone Aresti	34	67	66	65	65	61	38	69	2	2	65	15	Right
+8004	173165	N. Ravaglia	Nicola Ravaglia	31	67	64	65	69	60	30	66	2	2	99	15	Right
+8007	173531	B. Amos	Ben Amos	30	67	65	67	69	70	47	65	2	48	440	13	Right
+8031	182207	D. Stockdale	David Stockdale	34	67	66	64	69	73	31	66	3	21	550	13	Right
+8033	182365	J. Jones	Jamie Jones	31	67	69	66	68	64	34	65	2	48	532	13	Right
+8038	182743	T. Kirschbaum	Thorsten Kirschbaum	33	67	70	66	69	67	27	61	2	7	480	8	Left
+8042	183244	A. Redmayne	Andrew James Redmayne	31	67	67	66	67	63	45	67	2	36	325	56	Right
+8047	184084	M. Dreyer	Matthieu Dreyer	31	67	66	68	69	65	50	65	3	4	256	7	Right
+8053	184630	L. Daniels	Luke Daniels	32	67	67	63	75	65	50	62	3	21	158	13	Right
+8069	188278	M. Birighitti	Mark Birighitti	29	67	67	67	68	64	48	65	4	36	615	56	Right
+8075	188836	J. Steele	Jason Steele	29	67	68	66	67	70	35	67	3	5	94	13	Right
+8078	188968	G. Marinelli	Gonzalo Marinelli	30	67	65	65	69	62	35	70	3	50	493	1	Right
+8085	189920	R. Köse	Ramazan Köse	32	67	70	60	71	56	34	70	3	11	399	55	Right
+8115	192792	P. Kovář	Přemysl Kovář	34	67	68	62	69	69	34	66	2	24	138	44	Right
+8119	193312	S. Mielitz	Sebastian Mielitz	30	67	67	64	68	65	42	67	4	45	459	8	Right
+8121	193411	K. Fickentscher	Kevin Fickentscher	31	67	65	64	71	61	50	66	3	25	317	21	Right
+8127	193765	K. Thamsatchanan	Kawin Thamsatchanan	30	67	69	66	70	61	34	68	4	15	396	113	Right
+8130	194050	M. Grün	Max Grün	33	67	68	66	65	64	50	67	3	3	19	8	Right
+8131	194150	S. Moore	Simon Moore	30	67	66	68	67	71	49	64	3	5	110	13	Right
+8138	196316	B. Maubleu	Brice Maubleu	30	67	69	66	66	58	41	66	3	27	501	7	Right
+8142	197496	Y. Al Mosailem	Yasser Abdullah Nasser Al Mosailem	36	67	64	70	64	63	38	71	2	10	177	101	Right
+8166	200466	V. Eicher	Vitus Eicher	29	67	67	66	69	61	45	67	2	35	357	8	Left
+8167	200502	Marc Martínez	Marc Martínez Aranda	30	67	69	63	69	74	50	66	2	23	406	12	Right
+8173	201875	J. Attinella	Jeff Attinella	31	67	69	61	69	66	44	65	3	8	126	47	Right
+8221	209333	C. Maxwell	Christopher Maxwell	29	67	67	65	69	68	42	65	3	48	603	38	Right
+8243	212518	B. Sangaré	Badra Ali Sangaré	34	67	69	65	68	63	42	67	3	19	85	41	Right
+8246	213588	A. Sánchez	Alejandro Miguel Sánchez	33	67	66	63	69	66	21	67	2	14	409	1	Left
+8253	214583	C. Vargas	Christian Vargas Cortés	30	67	68	65	67	58	43	68	2	34	360	42	Right
+8271	217696	A. Doukha	Azzeddine Doukha	33	67	67	58	75	62	38	64	2	10	472	28	Right
+8289	222342	Gu Chao	顾超	30	67	68	64	69	62	49	63	1	9	101	58	Right
+8326	230166	Fepe Avedo	Felipe Melvin Azevedo Lima	32	67	65	63	77	61	44	64	3	12	296	5	Right
+8327	230167	Mateus Tangil	Mateus Bernardo Tangil Melo	36	67	66	68	72	63	54	64	3	12	433	5	Right
+8336	230321	Rafael de Aseiro	Rafael Simão de Aseiro Vieira	28	67	67	59	71	58	43	68	1	12	297	5	Left
+8399	244258	D. Zagorac	Danijel Zagorac	33	67	70	67	68	66	42	63	3	20	90	17	Right
+8405	246884	M. Chudý	Martin Chudý	31	67	66	68	69	65	23	65	3	40	495	23	Right
+8416	253354	H. Galíndez	Hernán Ismael Galíndez	33	67	66	69	62	61	31	71	2	42	521	1	Right
+8432	235266	C. Früchtl	Christian Früchtl	20	66	69	66	69	67	24	65	2	35	301	8	Left
+8445	252154	M. Carnesecchi	Marco Carnesecchi	20	66	65	66	70	58	32	66	3	2	17	15	Right
+8473	232284	M. Travers	Mark Travers	21	66	67	66	66	64	39	65	2	21	157	52	Right
+8482	225134	A. Bass	Alex Bass	22	66	67	60	67	65	55	65	3	48	529	13	Right
+8496	244364	Gabriel Brazão	Gabriel Nascimento Resende Brazão	19	66	65	63	70	59	28	66	3	23	341	5	Right
+8501	246267	D. Kotarski	Dominik Kotarski	20	66	65	62	67	62	29	68	2	7	26	17	Right
+8516	238570	Song Bum Keun	송범근 Bum Keun Song	22	66	67	64	66	65	26	65	2	39	326	20	Right
+8523	242068	L. Moser	Lennart Moser	20	66	71	63	68	58	26	61	3	3	78	8	Left
+8530	248018	A. Vlad	Andrei Daniel Vlad	21	66	68	63	67	66	35	63	3	44	300	70	Right
+8574	232654	L. Malagón	Luis Ángel Malagón Velázquez	23	66	67	64	70	63	24	67	2	16	382	33	Right
+8601	242802	San Román	Miguel San Román Ferrándiz	22	66	65	67	66	68	24	64	3	1	3	12	Right
+8618	212710	Joel Pereira	Joel Castro Pereira	24	66	66	65	67	65	43	64	2	21	338	2	Right
+8619	220807	M. O'Leary	Max O’Leary	23	66	71	65	72	63	44	64	3	21	384	13	Right
+8620	221909	J. Staněk	Jindřich Staněk	24	66	62	66	67	69	42	65	3	24	304	44	Right
+8622	224953	André Moreira	André Campos Moreira	24	66	66	67	67	66	52	63	2	6	367	2	Right
+8623	227477	F. Altamirano	Facundo Altamirano	24	66	67	66	67	66	45	63	3	14	336	1	Right
+8637	235925	G. Gómez	Gastón Gómez	24	66	68	60	69	68	23	66	2	14	127	1	Right
+8682	224010	José Suárez	José Aurelio Suárez García	24	66	67	63	68	69	47	66	3	23	128	12	Right
+8697	234049	B. Niasse	Babacar Niasse Mbaye	23	66	74	65	69	60	31	56	3	6	342	10	Right
+8714	238503	L. Weinkauf	Leo Weinkauf	23	66	68	66	69	57	19	68	3	45	543	8	Right
+8722	244363	Daniel Fuzato	Daniel Cerântula Fuzato	22	66	63	65	65	60	25	70	3	6	335	5	Right
+8742	216540	W. Eskelinen	Karl William Eskelinen	23	66	67	61	69	67	33	65	2	32	447	37	Right
+8766	236963	R. Niczuly	Roland Csaba Niczuly	24	66	65	63	67	69	29	66	2	44	531	70	Right
+8769	242084	Carlos Miguel	Carlos Miguel Coronel	23	66	68	59	70	62	27	64	3	29	180	5	Right
+8778	250817	Gabriel Souza	Gabriel Eugénio Souza	23	66	64	62	67	72	37	65	2	6	227	5	Right
+8789	255946	Michael	Michael Matias Fracaro	25	66	70	65	72	67	26	70	2	6	340	5	Left
+8804	218975	D. Cuero	Darwin Patricio Cuero Anangonó	25	66	64	69	67	63	45	61	2	42	521	61	Right
+8805	219836	Rubén Yáñez	Orlando Rubén Yáñez Alabart	26	66	65	64	68	60	43	64	3	1	57	12	Right
+8806	219967	D. Hładun	Dominik Hładun	24	66	66	65	67	63	34	64	3	40	513	4	Right
+8845	243925	M. Behrens	Morten Jens Behrens	23	66	68	68	68	65	27	65	3	45	634	8	Right
+8849	250916	E. Vaessen	Etienne Vaessen	24	66	67	65	69	59	36	63	2	7	554	9	Right
+8858	255053	S. Amorín	Santiago Amorín Barrientos	25	66	65	69	61	64	39	65	2	31	512	16	Right
+8862	202770	C. Ripley	Connor Ripley	27	66	67	66	69	65	35	65	3	21	239	13	Right
+8865	204922	A. Leitner	Andreas Leitner	26	66	67	66	67	59	24	62	4	29	626	34	Right
+8866	204931	J. Smits	Joshua Gerardus Petrus Wilhelmus Smits	27	66	67	65	65	67	56	64	1	37	350	9	Right
+8867	206065	S. Sluga	Simon Sluga	27	66	66	65	70	67	54	62	3	21	505	17	Right
+8882	225868	David Gil	David Gil Mohedano	26	66	68	70	65	69	47	61	2	1	201	12	Left
+8892	238489	T. Boss	Tim Boss	27	66	70	64	67	60	50	63	3	45	528	8	Right
+8908	201082	J. Szumski	Jakub Szumski	28	66	68	63	68	64	22	66	3	40	398	4	Right
+8909	201847	L. Bostyn	Louis Bostyn	26	66	69	65	66	58	36	67	3	17	402	6	Right
+8910	203215	A. Cairns	Alex Cairns	27	66	66	61	68	58	48	68	3	48	589	13	Left
+8912	204354	J. Alnwick	Jak Alnwick	27	66	66	63	66	65	48	66	2	26	588	13	Left
+8917	207633	J. Haugaard	Jakob Haugaard	28	66	65	63	66	72	43	66	3	41	364	27	Left
+8936	215097	A. Maraval	Axel Maraval	26	66	71	59	70	57	41	69	2	27	618	7	Right
+8944	220593	J. Brondeel	Jorn Brondeel	26	66	68	64	70	60	44	62	2	7	315	6	Right
+8949	223957	L. Pirard	Lucas Pirard	25	66	66	63	69	62	34	62	2	17	573	6	Right
+8982	252081	E. Kardeşler	Erce Kardeşler	26	66	66	63	67	62	41	67	2	11	153	55	Right
+8990	258264	D. Holec	Dominik Holec	25	66	69	68	68	67	22	69	3	24	270	23	Right
+8992	186508	A. Østbø	Arild Østbø	29	66	66	64	67	62	25	61	2	37	538	29	Right
+8999	205377	D. Léon	Donovan Léon	27	66	64	64	70	62	47	64	2	27	419	7	Right
+9002	206412	M. Koval	Maksym Koval	27	66	67	63	69	63	44	65	2	10	421	51	Right
+9003	208764	Z. Alomerović	Zlatan Alomerović	29	66	66	66	68	63	37	63	3	40	458	22	Right
+9019	226259	L. Andrenacci	Lorenzo Andrenacci	25	66	67	68	69	59	49	66	3	30	249	15	Right
+9029	248000	E. Pap	Eduard Adrian Pap	26	66	64	67	69	58	30	66	2	44	561	70	Right
+9036	193443	T. Coremans	Tim Coremans	29	66	68	65	66	63	35	64	2	7	530	9	Right
+9037	195356	M. Delač	Matej Delač	27	66	68	66	67	62	32	66	2	32	609	17	Right
+9041	199812	R. Allsop	Ryan Allsop	28	66	66	63	67	66	42	64	3	21	550	13	Right
+9058	208968	F. Al Qarni	Fawaz Al Qarni	28	66	66	63	70	61	44	66	3	10	318	101	Right
+9063	213274	L. Ojeda	Luis Alberto Ojeda	30	66	63	63	69	60	45	65	3	51	560	1	Right
+9082	223709	A. Vural	Ali Şaşal Vural	29	66	68	62	72	59	45	66	2	11	151	55	Right
+9098	232564	T. Morita	守田 達弥	29	66	66	63	65	63	28	67	3	15	591	72	Right
+9112	250781	F. Oswald	Ferdinand Oswald	29	66	68	64	64	62	23	66	4	29	581	8	Right
+9128	52326	E. Jakupović	Eldin Jakupović	35	66	66	66	65	64	30	66	2	5	20	21	Right
+9131	110606	A. Mannus	Alan Mannus	38	66	64	68	64	62	38	67	3	47	439	57	Right
+9132	116314	D. Martin	David Edward Martin	34	66	66	62	65	66	39	66	2	5	64	13	Right
+9139	148729	I. Austbø	Iven Austbø	35	66	64	63	65	65	27	67	2	37	538	29	Right
+9161	169404	J. Fejzić	Jasmin Fejzić	34	66	66	63	70	59	27	66	2	35	477	25	Right
+9166	170280	J. McKeown	James McKeown	30	66	66	61	68	58	45	65	3	53	640	52	Right
+9170	171033	M. Andersen	Mikkel Andersen	31	66	67	63	66	59	36	67	3	32	193	27	Right
+9176	173895	S. Eastwood	Simon Eastwood	31	66	64	61	68	61	50	66	3	48	549	13	Right
+9180	177508	P. Klandt	Patric Klandt	36	66	66	67	64	63	41	66	3	35	301	8	Right
+9187	178767	N. Mihaylov	Nikolay Borislavov Mihaylov	32	66	63	65	67	64	59	65	2	19	85	103	Right
+9189	179685	C. Seitz	Christopher Seitz	33	66	67	61	66	71	52	69	3	8	248	47	Right
+9192	181001	B. Knighton	Bradley Burton Knighton	35	66	67	64	64	65	54	65	2	8	211	47	Right
+9195	181832	Guan Zhen	关震	35	66	74	64	59	65	49	65	1	9	307	58	Right
+9203	183513	J. Grahl	Jens Grahl	31	66	70	60	70	58	45	63	2	3	229	8	Right
+9205	183643	L. Königshofer	Lukas Königshofer	31	66	68	64	68	58	52	62	2	45	606	34	Right
+9206	183646	M. Kobras	Martin Kobras	34	66	68	62	71	56	52	65	3	29	546	34	Right
+9211	184040	M. Hansen	Martin Hansen	30	66	65	64	66	64	49	65	3	35	327	27	Right
+9253	190169	D. Telgenkamp	Dennis Telgenkamp	33	66	68	63	65	60	33	64	2	7	346	9	Right
+9263	191093	R. Pillot	Rémi Pillot	29	66	66	66	65	58	39	65	2	27	507	7	Right
+9279	193244	B. Shuttleworth	Bobby Shuttleworth	33	66	65	66	66	64	43	66	2	8	287	47	Right
+9280	193359	R. Romo	Rafael Enrique Romo Pérez	30	66	63	65	68	61	37	65	2	17	488	50	Right
+9316	201179	A. Donnarumma	Antonio Donnarumma	29	66	70	62	74	51	18	59	2	2	21	15	Right
+9323	201940	Z. MacMath	Zac MacMath	28	66	66	64	67	54	36	67	2	8	244	47	Right
+9339	203237	Yu Sang Hun	유상훈 柳相勋	31	66	65	62	67	62	38	67	3	39	278	20	Right
+9357	206379	H. Halldórsson	Hannes Þór Halldórsson	36	66	67	61	65	62	38	68	2	19	85	65	Right
+9361	206549	E. Bush	Evan Bush	34	66	68	63	69	63	32	64	2	8	210	47	Right
+9366	207610	R. Meara	Ryan Meara	29	66	65	64	70	61	46	66	3	8	245	47	Right
+9372	208778	N. Manfredini	Niccolò Manfredini	32	66	69	64	69	63	44	63	2	2	273	15	Right
+9377	209166	M. Malaeka	Mustafa Reda Malayekah	34	66	65	64	67	66	47	65	4	10	353	101	Right
+9390	210711	B. Rowe	Brian Rowe	31	66	65	66	68	63	50	65	2	8	97	47	Right
+9405	214761	A. Giménez	Arnaldo Andrés Giménez Dos Santos	33	66	62	65	69	67	46	62	2	51	560	69	Left
+9420	217095	A. Baroja	Alain Baroja Méndez	30	66	65	64	67	62	42	66	3	42	558	50	Right
+9422	218175	C. Servín	Carlos María Servín Caballero	33	66	64	61	70	69	38	67	2	33	314	69	Right
+9442	223107	M. Yıldırım	Muammer Zülfikar Yıldırım	29	66	68	66	66	60	25	65	2	11	151	55	Left
+9456	226542	D. Martínez	Diego Alejandro Martínez Marín	30	66	64	63	68	69	44	67	3	34	557	42	Right
+9475	231489	A. Keita	Aly Keita	33	66	69	61	68	79	22	60	2	41	651	48	Right
+9500	235451	M. Cano	Matías Nicolás Cano	34	66	71	64	67	73	27	57	3	28	455	1	Left
+9529	244987	M. Álvarez	Milton David Álvarez	31	66	68	62	68	57	23	76	3	14	176	1	Left
+9539	251709	J. Doriado	Jhonathan Doriado	30	66	65	66	66	59	42	66	3	19	85	61	Right
+9549	253838	C. Flores	Cristhian Jesús Flores Ramírez	29	66	69	64	64	66	57	66	2	52	622	50	Right
+9604	245601	C. Sánchez	Christian Joel Sánchez Leal	20	65	66	64	67	58	36	65	2	23	312	94	Left
+9609	237935	K. Klaesson	Kristoffer Klaesson	19	65	66	61	68	63	31	64	2	37	468	29	Left
+9624	253012	L. Morales	Lautaro Alberto Morales	20	65	66	65	68	69	51	62	3	14	146	1	Right
+9627	228616	D. Bertaud	Dimitry Bertaud	22	65	67	62	71	58	52	61	3	4	130	7	Right
+9643	230674	F. Alastra	Fabrizio Alastra	22	65	65	63	69	66	52	62	2	2	143	15	Right
+9657	240595	A. Pears	Aynsley Pears	22	65	63	61	69	61	16	63	2	21	344	13	Right
+9670	251330	V. Müller	Vincent Müller	19	65	67	64	70	64	31	66	2	35	504	8	Right
+9680	225406	J. Talbot	James Talbot	23	65	64	63	67	59	42	62	2	47	655	52	Left
+9682	230787	J. Lund	Julian Faye Lund	21	65	64	63	68	62	44	65	2	37	204	29	Right
+9687	234669	D. Nikolić	Đorđe Nikolić	23	65	65	68	67	62	24	65	5	25	197	22	Right
+9689	236028	Javi Díaz	Javier Díaz Sánchez	23	65	67	61	68	65	57	63	3	1	29	12	Right
+9709	251036	M. Aioani	Mihai Marian Aioani	20	65	66	62	67	62	24	64	2	44	621	70	Right
+9726	231237	P. Jensen	Peter Vindahl Jensen	22	65	65	63	66	67	21	65	3	32	460	27	Right
+9750	242200	T. Rönning	Tim Rönning	21	65	65	67	69	63	18	65	3	41	463	37	Right
+9785	220944	J. Wildsmith	Joe Wildsmith	24	65	70	59	69	62	42	65	3	21	370	13	Right
+9786	223909	A. Palmer	Alex Palmer	23	65	66	65	66	64	32	64	3	48	547	13	Right
+9788	225395	Ezkieta	Jokin Ezkieta Mendiburu	23	65	63	64	63	63	45	67	3	1	43	12	Right
+9789	225543	B. Collins	Bradley Collins	23	65	66	60	67	63	43	63	2	21	434	13	Right
+9794	230038	A. Maisonnial	Anthony Maisonnial	22	65	63	63	69	63	63	63	3	27	279	7	Right
+9796	231258	R. Macagno	Ramiro Jesús Macagno	23	65	66	64	68	58	28	64	2	14	265	1	Right
+9797	231474	Andorinha	João Paulo Santos da Costa	24	65	67	63	66	56	26	63	1	1	113	2	Right
+9816	242242	S. Cibois	Sébastien Cibois	22	65	65	62	69	66	33	61	3	4	155	7	Right
+9818	244020	André Ferreira	André Filipe Magalhães Ribeiro Ferreira	24	65	66	65	68	55	39	63	2	6	390	2	Right
+9821	245089	Samu Pérez	Samuel Pérez Fariña	23	65	66	66	74	63	25	62	3	1	81	12	Left
+9828	251944	Joan Femenías	Joan Femenías del Salto	23	65	65	66	67	59	20	60	2	23	341	12	Right
+9834	254053	I. Cartés	Luis Iván Cartés Maidana	22	65	63	62	67	67	39	58	2	31	481	16	Right
+9840	212973	M. Marić	Marko Marić	24	65	65	64	68	65	42	66	3	8	275	17	Left
+9855	225511	C. Trueman	Connal Trueman	24	65	66	64	68	61	45	63	3	48	657	13	Right
+9875	237778	Ahn Joon Soo	안준수 安俊洙	22	65	64	63	66	62	27	64	2	15	374	20	Right
+9329	254002	J. Willis	Joe Willis	31	66	68	65	65	60	46	68	3	8	356	47	Left
+9955	250842	J. Graterol	Joel David Graterol Nader	23	65	67	71	65	63	22	67	3	34	343	50	Right
+9958	251498	J. Rojas	Javier Rojas Iguaro	24	65	63	65	64	68	26	62	2	51	511	122	Right
+9963	206555	C. Pym	Christy Pym	25	65	66	63	69	65	46	64	4	48	578	13	Right
+9969	213407	M. Macey	Matt Macey	25	65	63	65	66	65	39	64	2	5	15	13	Right
+9971	214440	D. Melo	Dario Esteban Melo Pulgar	26	65	63	65	68	63	48	60	1	28	220	39	Right
+9991	229704	J. Vachoux	Jérémy Vachoux	25	65	66	62	66	62	44	63	2	27	618	7	Right
+9997	231244	E. Reséndez	Edson Alan Reséndez Sánchez	24	65	64	63	67	64	32	64	3	16	148	33	Right
+10005	235590	P. Sisniega	Pablo Eduardo Sisniega Fink	24	65	63	68	63	64	45	65	2	8	41	33	Right
+10018	244366	Guilherme Oliveira	Guilherme Mata Oliveira	25	65	64	65	64	54	29	68	2	6	367	2	Right
+10019	244656	Y. Takaoka	髙丘 陽平	24	65	66	64	68	58	24	59	2	15	591	72	Right
+10027	252965	Matheus Kayser	Matheus Alberto Kayser	25	65	61	66	60	69	27	70	2	6	233	5	Right
+10029	254714	J. Espínola	Juan Ángel Espínola González	25	65	63	68	66	66	29	65	2	33	479	69	Right
+10035	200696	H. Verhulst	Hobie Verhulst	27	65	66	61	68	64	49	63	3	7	118	9	Left
+10037	204502	M. Ingram	Matt Ingram	26	65	69	64	68	62	37	63	3	48	446	13	Left
+10038	205871	Dani Sotres	Daniel Sotres Castañeda	27	65	72	62	73	67	59	51	4	1	201	12	Right
+10041	210502	M. Kuttin	Manuel Kuttin	26	65	67	62	66	68	35	63	3	29	362	34	Right
+10042	210509	T. Castella	Thomas Castella	27	65	66	63	70	62	44	65	2	25	590	21	Right
+10043	210772	P. Drewes	Patrick Drewes	27	65	68	63	62	60	29	64	2	35	290	8	Right
+10051	219260	F. Dornebusch	Felix Dornebusch	25	65	67	60	66	54	41	64	2	35	477	8	Right
+10055	222438	Zou Dehai	邹德海	27	65	62	64	67	60	45	65	3	9	40	58	Right
+10060	229655	Varo	Alberto Varó Lara	27	65	61	62	68	63	40	64	2	23	457	12	Right
+10083	255994	V. Mendoza	Víctor Eduardo Mendoza Izurieta	25	65	66	69	68	67	29	62	3	42	474	61	Right
+10085	198285	L. Nicholls	Lee Nicholls	27	65	67	62	69	63	41	61	3	48	545	13	Right
+10086	201169	K. Forenc	Konrad Forenc	27	65	66	66	66	64	43	63	2	40	513	4	Left
+10089	204438	C. Diop	Clément Diop Degoud	26	65	68	63	67	60	43	63	2	8	210	10	Right
+10098	211264	G. Servio	Gaspar Andrés Servio	28	65	65	64	67	65	47	61	2	33	316	1	Right
+10102	212915	Yun Pyeong Gook	윤평국 尹平国	28	65	64	65	65	63	47	63	3	39	454	20	Right
+10105	213646	Miguel Oliveira	Miguel Aires Fernandes de Oliveira	26	65	64	65	65	62	28	67	2	6	246	2	Left
+10130	225678	H. Piedra	Hamilton Emanuel Piedra Ordóñez	27	65	63	66	64	67	41	63	3	42	286	61	Right
+10146	240212	D. Petković	Danijel Petković	27	65	66	63	67	63	42	66	3	4	135	49	Right
+10172	199321	T. Holý	Tomáš Holý	28	65	68	60	69	56	28	65	3	48	583	44	Right
+10173	200525	S. Walker	Sam Walker	28	65	66	66	63	62	43	65	2	21	306	13	Right
+10175	202886	B. Siegrist	Benjamin Kevin Siegrist	28	65	65	65	64	64	36	64	3	26	633	21	Right
+10186	208214	T. Defourny	Théo Defourny	28	65	63	64	64	65	36	66	2	17	320	6	Right
+10206	223082	W. Norris	Will Norris	26	65	67	62	67	60	45	63	3	5	58	13	Left
+10216	242159	Ricardo Friedrich	Ricardo Henrique Schuck Friedrich	27	65	66	62	66	64	28	64	1	11	280	5	Right
+10219	244503	H. Hankić	Hidajet Hankić	26	65	64	68	65	69	35	60	4	44	561	34	Right
+10222	253844	Y. Yustiz	Yhonatann Alexander Yustiz Linarez	28	65	61	63	65	62	38	65	2	52	654	50	Left
+10225	257640	A. Lis	Adrian Lis	28	65	67	63	68	56	41	62	3	40	612	4	Right
+10228	193013	J. Shea	James Shea	29	65	64	63	66	58	27	66	2	21	505	13	Right
+10252	206032	Pol Freixanet	Pol Freixanet Viejo	28	65	64	69	66	59	48	60	2	23	435	12	Right
+10259	209193	P. Wiegers	Patrick Wiegers	30	65	65	66	68	61	45	59	2	45	464	8	Right
+10261	211953	R. Vollath	René Vollath	30	65	64	62	67	60	39	66	3	45	637	8	Right
+10281	227909	J. McCarthy	John McCarthy	27	65	66	64	68	58	34	63	2	8	39	47	Right
+10321	254903	J. Ichimori	一森 純	28	65	66	61	67	58	31	65	3	15	358	72	Right
+10323	19541	G. Morris	Glenn Morris	36	65	67	63	66	62	33	64	3	53	663	13	Right
+10325	51694	H. Opdal	Håkon Eikemo Opdal	38	65	62	63	65	64	41	66	2	37	487	29	Right
+10327	107084	M. Langer	Michael Langer	35	65	64	62	65	60	32	67	2	3	120	34	Right
+10330	128529	U. Ceylan	Ufuk Ceylan	34	65	66	65	62	62	55	67	2	11	179	55	Left
+10335	140181	H. Sogahata	曾端 准	40	65	64	66	65	64	18	72	3	15	429	72	Right
+10342	155886	S. Henderson	Stephen Henderson	32	65	66	62	62	70	39	64	3	5	49	52	Right
+10344	155998	T. Černý	Tomáš Černý	35	65	63	63	64	60	42	65	2	26	403	44	Left
+10350	162265	R. Cierzniak	Radosław Cierzniak	37	65	64	64	63	61	39	66	2	40	361	4	Right
+10352	162901	C. Doyle	Colin Doyle	35	65	66	67	63	63	32	64	3	26	498	52	Right
+10375	176645	Z. Zlámal	Zdeněk Zlámal	34	65	67	62	75	67	60	60	3	26	588	44	Right
+10379	178211	R. Zwinkels	Robert Zwinkels	37	65	61	63	65	64	39	70	2	7	422	9	Right
+10380	178289	S. Pontdemé	Simon Pontdemé	32	65	65	66	65	65	34	64	2	27	562	7	Right
+10385	181733	A. Lukse	Andreas Lukse	32	65	66	62	68	60	40	64	3	35	301	34	Right
+10388	182206	R. O'Donnell	Richard O'Donnell	31	65	62	64	65	62	52	64	3	53	630	13	Left
+10389	182451	Cheng Yuelei	程月磊	32	65	65	65	64	59	38	62	2	9	100	58	Right
+10394	183827	J. Deumeland	Jonas Deumeland	32	65	65	65	66	66	49	62	2	37	584	8	Right
+10402	185038	M. Gliwa	Michał Gliwa	32	65	64	62	67	62	29	68	2	40	594	4	Right
+10408	187171	Kim Ho Jun	김호준 金浩军	36	65	64	63	64	66	52	65	3	39	593	20	Right
+10414	189013	M. Buchalik	Michał Buchalik	31	65	65	63	66	62	33	67	3	40	263	4	Right
+10447	194372	E. Taşkıran	Mahmut Ertuğrul Taşkıran	30	65	62	63	65	58	54	68	2	11	399	55	Right
+10450	195900	H. Suárez	Hugo Suárez Vaca	38	65	63	63	69	62	34	60	3	51	560	122	Right
+10462	198299	Campos	Álvaro Campos Estellés	33	65	69	66	64	61	31	62	3	23	551	12	Right
+10470	199803	D. Batz	Daniel Batz	29	65	66	63	67	66	34	59	3	45	650	8	Right
+10482	200955	A. Özer	Aykut Özer	27	65	66	64	64	62	49	63	3	11	163	55	Right
+10489	201873	J. Bendik	Joe Bendik	31	65	67	62	65	63	35	63	3	8	252	47	Left
+10495	202570	J. Maurer	Jimmy Maurer	31	65	67	64	69	65	40	67	3	8	282	47	Left
+10499	203034	J. Day	Joe Day	29	65	68	59	70	58	55	66	2	21	371	13	Left
+10508	203815	P. Delecroix	Paul Delecroix	31	65	64	65	65	62	27	66	4	4	185	7	Right
+10523	205455	A. Weis	André Weis	30	65	67	64	70	63	39	56	2	45	459	8	Right
+10551	210941	Lee Chang Geun	이창근 李灿东	26	65	66	64	66	63	46	62	3	39	432	20	Right
+10573	213428	C. Irwin	Clinton Robert Irwin	31	65	66	64	64	64	46	63	1	8	352	47	Right
+10582	215693	T. Mikkelsen	Thomas Korsgaard Mikkelsen	36	65	66	65	63	67	40	66	3	32	548	27	Right
+10612	224475	Dong Chunyu	董春雨	29	65	65	64	65	66	46	65	3	9	149	58	Left
+10621	225983	S. Mpontshane	Siyabonga Mpontshane	34	65	66	63	71	62	46	65	3	43	332	89	Left
+10646	232447	Y. Rokutan	六反 勇治	33	65	64	64	63	58	33	63	1	15	602	72	Right
+10647	232505	T. Hayashi	林 卓人	37	65	60	67	61	60	28	70	2	15	441	72	Right
+10651	232790	H. Iikura	饭仓 大樹	34	65	65	64	64	58	25	65	2	15	71	72	Right
+10674	237443	T. Okubo	大久保 択生	30	65	65	57	69	58	28	65	1	15	465	72	Right
+10746	240123	L. Plogmann	Luca Bastian Plogmann	20	64	66	61	67	61	40	58	4	45	598	8	Right
+10758	240796	M. Roffo	Manuel Roffo	20	64	65	64	66	61	26	62	4	14	68	1	Right
+10761	242948	M. Kovář	Matěj Kovář	20	64	62	63	63	65	29	62	4	48	639	44	Right
+10806	241076	S. Benda	Steven Benda	21	64	64	63	67	59	37	64	3	21	206	8	Right
+10809	243573	A. Racioppi	Anthony Racioppi	21	64	63	64	66	62	29	60	2	4	22	21	Right
+10835	238186	M. Bułka	Marcin Bułka	20	64	65	61	69	62	26	60	2	4	5	4	Right
+10839	241859	R. Hoffmann	Ron-Thorben Hoffmann	21	64	61	62	67	66	25	64	3	45	623	8	Right
+10871	231695	Aritz Castro	Aritz Castro Pérez	22	64	60	62	66	62	38	68	3	1	56	12	Right
+10874	235018	M. Nicolas	Moritz Nicolas	22	64	68	65	65	62	22	59	2	35	450	8	Right
+10883	240752	O. Mandanda	Over Mandanda	21	64	67	63	66	59	26	63	2	4	124	60	Right
+10903	227621	U. Adıyaman	Übeyd Adıyaman	22	64	67	58	68	57	48	60	3	11	319	55	Right
+10904	228789	Robert Sanchez	Robert Lynch Sanchez	22	64	64	62	66	64	43	63	4	5	94	12	Right
+10920	246796	T. Umeda	梅田 透吾	19	64	66	58	70	56	30	57	2	15	465	72	Right
+10933	232101	J. Hernández	José Santiago Hernández García	23	64	64	67	64	62	26	65	2	16	175	33	Right
+10936	235689	A. Zaccagno	Andrea Zaccagno	23	64	64	61	69	48	25	64	3	2	30	15	Right
+10957	251449	Brian Araújo	Brian Rocha Araújo	20	64	59	63	69	58	21	63	3	6	335	2	Right
+10962	257288	M. Okoye	Maduka Emilio Okoye	20	64	64	57	71	58	24	61	3	7	530	31	Right
+10969	228369	J. Walton	Jack Walton	22	64	64	62	63	60	34	65	2	21	434	13	Right
+11016	248104	A. Tordai	Árpád Ors György Tordai	23	64	61	61	63	65	20	64	2	44	453	70	Right
+11027	253255	S. Lentinelly	Carlos Sebastián Lentinelly Villavicencio	22	64	62	60	62	61	25	63	2	31	512	16	Right
+11030	254008	Belman	José Javier Belman Calvo	21	64	64	61	65	67	29	62	5	1	8	12	Right
+11034	257027	Jesús Ruiz	Jesús Ruiz Suárez	23	64	70	54	75	59	50	55	3	23	351	12	Right
+11039	220532	N. Contini	Nikita Contini Baranovsky	24	64	64	63	65	57	48	61	1	2	11	51	Right
+11041	224204	S. Kroll	Steve Kroll	23	64	64	62	65	59	37	62	3	45	519	8	Right
+11044	226288	Samu Casado	Samuel Casado Conde	23	64	66	62	67	59	45	57	3	23	351	12	Right
+11052	231720	Q. Braat	Quentin Braat	22	64	68	66	67	62	27	59	2	27	478	7	Right
+11053	232007	M. Lis	Mateusz Lis	23	64	68	58	70	55	27	63	2	40	263	4	Right
+11060	236867	L. Dias	Lucas Lionel Dias	21	64	65	63	64	59	18	63	2	4	232	7	Right
+11076	242289	C. Hazard	Conor Hazard	22	64	64	65	66	64	25	66	3	26	160	57	Right
+11078	243735	A. Spahić	Avdo Spahić	23	64	63	62	66	60	29	69	3	45	407	25	Right
+11084	251057	O. Vâlceanu	Octavian Gabriel Vâlceanu	23	64	66	65	63	60	27	66	2	44	653	70	Right
+11088	251996	Raphael Aflalo	Raphael Aflalo Lopes Martins	23	64	61	64	66	66	25	65	3	6	228	5	Right
+11092	252847	D. Rosić	Dragan Rosić	23	64	60	62	66	68	31	65	2	23	435	22	Left
+11098	208573	M. Dyngeland	Mathias Lønne Dyngeland	24	64	65	63	65	58	41	60	3	41	463	29	Right
+11104	223823	T. Königsmann	Timo Königsmann	23	64	66	65	69	57	47	59	3	45	567	8	Right
+11118	232417	N. Kocik	Nicolas Kocik	21	64	62	62	64	63	39	65	3	27	388	7	Right
+11124	235931	M. Şengezer	Muhammed Şengezer	23	64	67	62	66	57	35	61	2	11	50	55	Right
+11162	257225	F. López	Felipe López Gutiérrez	24	64	60	62	68	61	28	65	2	16	328	33	Right
+11167	216478	J. Mitchell	Jonathan Mitchell	25	64	63	61	65	63	51	62	2	48	613	13	Right
+11172	222389	N. Haikin	Nikita Haikin	24	64	67	62	67	60	42	60	2	37	350	45	Right
+11177	225361	L. McGee	Luke McGee	24	64	69	59	70	53	39	59	3	53	632	13	Right
+11191	233725	T. Nijhuis	Thijmen Joel Sander Nijhuis	21	64	66	60	63	62	18	62	3	7	189	9	Right
+11192	234197	I. Groothuizen	Indy Groothuizen	23	64	62	63	67	66	24	62	4	32	579	9	Right
+11199	237695	M. Ortega	Miguel René Ortega Rodríguez	25	64	66	59	68	60	29	63	2	16	72	33	Left
+11222	252799	T. Çetin	Tarık Çetin	23	64	64	65	73	60	19	62	2	11	207	55	Right
+11241	215343	A. Mehring	Andrés Ulises Mehring	26	64	60	61	64	63	47	65	2	31	512	1	Right
+11245	223925	A. Brunst	Alexander Brunst-Zöllner	24	64	66	63	66	60	41	61	3	32	579	8	Right
+11256	225869	G. Gazzaniga	Gianfranco Gazzaniga Farías	26	64	66	64	61	63	51	62	4	23	437	1	Right
+11268	235237	R. Jendrusch	Robert Jendrusch	24	64	67	60	70	59	34	60	3	45	438	8	Right
+11297	202125	J. Bonham	Jack Bonham	26	64	65	63	65	67	44	66	3	48	628	52	Right
+11308	219705	D. Węglarz	Damian Węglarz	24	64	66	62	66	61	33	60	2	40	469	4	Right
+11319	230694	I. Çipe	İsmail Çipe	25	64	63	66	64	64	45	64	2	11	271	55	Right
+11321	237359	L. Jonsson	Lukas Jonsson	27	64	63	62	65	62	37	64	2	41	574	37	Right
+11327	241206	D. Maekawa	前川 黛也	25	64	64	57	67	56	26	66	3	15	71	72	Right
+11338	197928	J. Bond	Jonathan Bond	27	64	65	61	64	61	47	62	2	5	102	13	Right
+11340	202786	R. Sánchez	Richard Sánchez Alcaraz	26	64	70	61	68	64	43	60	2	8	266	33	Right
+11343	205554	L. Zima	Lukáš Zima	26	64	66	61	62	61	43	63	2	2	55	44	Right
+11360	222221	A. Buzbuchi	Alexandru Buzbuchi	26	64	67	62	63	60	36	61	2	44	542	70	Right
+11397	253308	J. Young	Jeremías Young Romanutti	22	64	64	62	63	63	41	62	2	31	596	1	Right
+11402	254198	A. Campos	Ángelo Ademir Campos Turriarte	27	64	56	63	63	61	37	64	2	46	471	66	Right
+11408	190822	E. Johansen	Eirik Holmen Johansen	27	64	60	63	69	65	28	61	3	37	483	29	Right
+11412	203849	C. Cropper	Cody Cropper	27	64	67	62	66	61	36	61	3	8	275	47	Right
+11430	220542	R. Quiñonez	Romel Javier Quiñónez Suárez	28	64	66	63	66	66	44	62	1	51	520	122	Right
+11441	238699	K. Kunz	Kevin Kunz	28	64	67	63	64	51	30	64	3	35	506	8	Right
+11451	189955	O. Söderberg	Ole Söderberg	29	64	64	63	64	62	30	64	3	41	585	37	Left
+11460	201353	J. Kempin	Jonathan Kempin	27	64	63	63	66	64	57	64	2	8	221	47	Right
+11481	212038	A. Al Jadani	Abdullah Al Jadani	29	64	65	60	65	57	50	62	3	10	98	101	Right
+11486	221235	A. Mosquera	Andrés Felipe Mosquera Marmolejo	28	64	69	57	67	64	43	62	2	34	379	42	Left
+11498	228845	H. Sandvik	Helge Valvatne Sandvik	30	64	62	64	62	63	41	62	2	37	605	29	Right
+11505	238018	D. van Crooij	Delano van Crooij	29	64	66	65	63	60	22	65	4	7	480	9	Right
+11509	240662	F. Torgnascioli	Franco Luis Torgnascioli Lagreca	29	64	64	61	71	63	28	60	3	16	216	16	Left
+11512	244120	S. Rénot	Sébastien Rénot	30	64	61	63	65	62	33	65	3	27	324	7	Right
+11520	11381	M. Gilks	Matt Gilks	38	64	63	64	62	63	35	64	2	53	645	14	Right
+11522	139476	D. Gerken	Dean Gerken	35	64	64	62	63	64	49	64	3	53	644	13	Right
+11524	146571	Reguero	Antonio Reguero Chapinal	37	64	62	61	63	60	36	66	3	49	467	12	Right
+11532	155422	J. Szmatuła	Jakub Szmatuła	39	64	60	62	63	61	32	66	3	40	426	4	Right
+11534	156438	T. Gebauer	Thomas Gebauer	38	64	63	65	60	61	36	66	3	29	240	34	Right
+11551	169108	L. Butrón	Leao Butrón Gotuzzo	43	64	63	60	62	61	23	67	3	46	514	66	Right
+11552	169415	E. Hernández	Edgar Adolfo Hernández Tellez	37	64	71	54	66	60	57	63	3	16	175	33	Right
+11558	171391	E. Palos	Enrique Eduardo Palos Reyes	34	64	65	51	67	54	43	68	2	16	328	33	Left
+11562	176509	J. Bava	Jorge Rodrigo Bava	38	64	64	64	68	63	40	62	1	33	316	16	Right
+11565	176922	F. Assmann	Walter Fabián Assmann	34	64	70	53	66	65	52	64	3	14	331	1	Right
+11569	178022	C. Gönen	Cenk Gönen	32	64	67	60	67	64	46	63	1	11	264	55	Right
+11577	182023	Deng Xiaofei	邓小飞	37	64	60	61	66	59	37	66	2	9	208	58	Right
+11582	183347	J. Leutwiler	Jayson Leutwiler	31	64	63	61	66	62	46	65	2	48	589	46	Right
+11587	183596	E. Domaschke	Erik Domaschke	34	64	65	64	63	64	38	61	2	45	598	8	Right
+11593	184254	J. Ayala	Josué Daniel Ayala	32	64	66	65	66	65	35	58	2	14	276	1	Left
+11597	184763	Y. Thuram	Yohann Thuram-Ulien	31	64	65	60	66	55	39	62	2	27	167	7	Right
+11617	189387	T. Mickel	Tom Mickel	31	64	64	62	65	64	47	61	2	35	199	8	Right
+11647	195057	S. Fox	Scott Fox	33	64	64	62	65	62	33	63	3	26	522	14	Right
+11691	204773	M. Jeannin	Mehdi Jeannin	29	64	66	62	66	65	50	61	2	27	541	28	Right
+11697	207427	M. Lampson	Matthew Tyler Lampson	30	64	62	65	65	65	45	65	2	8	221	47	Right
+11719	212022	A. Bone	Adrián Javier Bone Sánchez	31	64	64	66	59	60	32	67	2	42	445	61	Right
+11723	213206	B. Stuver	Brad Stuver	29	64	67	64	62	62	46	62	1	8	247	47	Right
+11726	213719	A. Kann	Alec Kann	29	64	64	62	62	62	43	66	3	8	69	47	Left
+11729	214503	L. Delgado	Luis Enrique Delgado Mantilla	39	64	58	62	64	64	48	69	3	34	557	42	Right
+11739	216633	O. Kristinsson	Ögmundur Kristinsson	31	64	61	66	68	57	45	59	2	22	125	65	Right
+11767	229662	M. Polaček	Martin Polaček	30	64	67	60	61	72	38	64	2	40	671	23	Right
+11790	233976	Nelson Freitosa	Nelson Arturo Freitosa Ruiz	24	64	59	47	74	66	49	72	3	12	380	5	Right
+11822	244912	T. Sugeno	菅野 孝宪	36	64	65	62	63	57	33	64	2	15	396	72	Right
+11826	247944	C. Straton	Cătălin George Straton	30	64	64	59	66	60	32	64	2	44	300	70	Right
+11859	255583	Y. Minami	Yuta Minami	40	64	62	64	62	63	28	66	2	15	602	72	Right
+11884	257273	J. Olschowsky	Jan Jakob Olschowsky	18	63	64	63	64	64	19	65	3	3	19	8	Right
+11887	242073	J. Blázquez	Joaquín Blázquez	19	63	63	59	64	63	23	63	3	14	299	1	Right
+11896	247411	Altube	Diego Altube Suárez	20	63	63	58	65	63	16	59	3	1	8	12	Right
+11900	250753	A. Trubin	Anatoliy Trubin	18	63	55	67	63	57	29	69	2	18	79	51	Right
+11923	235633	Y. Diouf	Yehvann Diouf	20	63	64	64	63	60	44	62	3	4	112	7	Right
+11926	240809	A. Akbulut	Arda Akbulut	19	63	65	61	68	59	34	64	3	11	153	55	Left
+11927	241978	C. Higuera	Carlos Alberto Higuera de los Ríos	19	63	64	61	64	53	47	61	3	16	165	33	Right
+11950	258466	Leo Román	Leonardo Román Riquelme	20	63	64	62	63	66	50	60	2	23	209	12	Right
+11961	243397	Daniel Rebollo	Daniel Rebollo Franco	20	63	61	63	64	64	27	62	3	1	37	12	Right
+11972	252112	Berto Hórreo	Alberto Hórreo Taveras	20	63	62	64	63	59	33	61	3	23	341	12	Right
+11981	258534	Diego Conde	Diego José Conde Alcolado	21	63	58	56	67	61	42	65	3	23	162	12	Right
+11984	237704	João Virgínia	João Manuel Neves Virgínia	20	63	62	60	65	63	52	59	3	5	27	2	Left
+12004	253497	P. Bonet	Pépé Bonet Kapambu	17	63	65	60	61	58	17	64	2	4	66	60	Right
+12005	254297	Z. Görgen	Zafer Görgen	20	63	66	60	69	60	25	64	3	11	207	55	Right
+12011	234228	R. McCrorie	Robby McCrorie	22	63	62	64	67	63	32	62	3	26	587	14	Right
+12012	235027	L. Southwood	Luke Southwood	22	63	65	64	62	66	56	62	3	21	306	13	Right
+12025	243201	Álex Domínguez	Alejandro Domínguez Romero	21	63	61	62	64	63	43	60	2	23	449	12	Right
+12033	252032	M. Mbaye	Mouhamed Mbaye	22	63	67	58	68	56	22	55	3	6	28	10	Right
+12052	235652	U. Yuvakuran	Utku Yuvakuran	22	63	64	60	64	59	35	60	3	11	105	55	Right
+12053	235860	M. Woud	Michael Cornelis Woud	21	63	63	56	66	58	22	60	2	19	85	71	Left
+12055	236239	A. Whiteman	Alfie Whiteman	21	63	66	61	66	59	31	62	2	5	9	13	Right
+12090	253442	F. de Keijzer	Fabian de Keijzer	20	63	62	63	66	60	29	61	2	7	189	9	Right
+12102	229067	N. Rehnen	Nikolai Rehnen	23	63	65	59	64	60	36	63	3	3	214	8	Right
+12103	230000	W. Jääskeläinen	William Jääskeläinen	21	63	63	62	64	63	37	62	2	48	601	40	Right
+12112	236033	Dani Cárdenas	Daniel Cárdenas Líndez	23	63	60	62	69	58	36	55	3	1	48	12	Right
+12117	238734	T. Müller	Tom Müller	22	63	65	59	67	59	32	61	2	45	572	8	Right
+12129	242818	F. Dahmen	Finn Gilbert Dahmen	22	63	65	60	65	59	42	60	3	3	181	8	Right
+12140	251995	João Gonçalves	João Pedro Oliveira Gonçalves	19	63	62	64	56	57	29	67	2	6	233	2	Right
+12146	254506	Iñaki Álvarez	Iñaki Álvarez Goñi	23	63	63	67	65	61	25	64	3	1	116	12	Right
+12160	230858	S. Perisan	Samuele Perisan	22	63	68	59	65	56	46	58	3	2	93	15	Right
+12172	236237	J. Bolado	Juan Cruz Bolado	22	63	67	60	64	55	26	63	2	14	219	1	Right
+12185	243587	Fran Vieites	Francisco Barbosa Vieites	21	63	65	60	63	62	19	59	2	23	457	12	Right
+12187	244720	B. Gabriël	Brent Gabriël	21	63	67	58	69	59	31	57	3	17	573	6	Right
+12205	257304	A. Helac	Ammar Helac	22	63	66	65	67	58	34	64	2	29	365	34	Right
+12213	219795	J. Coleman	Joel Coleman	24	63	63	61	64	62	45	62	3	48	589	13	Right
+12215	222356	L. Vasquez	Luis Erney Vásquez Caicedo	24	63	65	61	64	57	41	60	3	34	379	42	Right
+12216	222829	S. Brodersen	Svend Arvid Stanislaw Brodersen	23	63	64	60	67	56	43	62	3	35	443	8	Right
+12218	226051	Carlos Alves	Carlos Reinaldo Moreira Alves	22	63	65	63	61	66	43	60	2	6	186	2	Right
+12224	232817	I. Chicco	Ignacio Francisco Chicco	24	63	65	64	61	59	32	63	3	14	277	1	Right
+12231	236824	R. ten Hove	Ramón ten Hove	22	63	60	65	64	48	25	64	2	7	82	9	Right
+12238	240735	A. Dini	Andrea Dini	24	63	64	64	66	56	28	65	3	2	143	15	Right
+12246	243610	Rodolfo Cardoso	Rodolfo Amaral Furtado Cardoso	22	63	64	60	64	57	27	61	2	6	390	2	Right
+12248	245589	Alberto	Alberto González Cespedosa	23	63	62	65	61	56	27	66	3	23	385	12	Right
+12268	228385	H. Burgoyne	Harry Burgoyne	23	63	65	62	64	61	35	61	2	48	635	13	Right
+12269	230877	Unai Etxebarría	Unai Etxebarría Martín	23	63	65	58	64	61	37	60	3	1	113	12	Left
+12300	244619	Pedro Mateus	Pedro Leonardo Gonçalves Mateus	23	63	65	61	64	55	34	62	2	6	291	2	Left
+12311	253990	J. Roca	Jimmy Leandro Roca Salazar	21	63	61	55	69	58	34	60	2	51	563	122	Right
+12326	211105	N. Flø	Nicolai Flø Jepsen	24	63	64	61	66	55	40	62	2	32	491	27	Left
+12333	223868	T. Schützenauer	Tobias Schützenauer	23	63	63	60	63	65	37	64	4	29	444	34	Right
+12342	228607	D. Reimann	Dominik Reimann	23	63	68	57	67	69	45	58	3	35	333	8	Right
+12349	234846	S. Müller	Sven Müller	24	63	63	66	67	54	22	62	2	45	572	8	Right
+12358	239410	M. Kos	Mirko Kos	23	63	64	59	68	57	40	59	3	29	365	34	Right
+12359	239461	J. Castillo	José Alberto Castillo Ramírez	25	63	63	62	63	65	19	60	2	16	234	33	Right
+12370	253944	S. Omossola	Omossola Medjo Simon Loti	22	63	65	58	67	59	30	59	2	19	85	30	Right
+12375	255754	Warleson	Warleson Stellion Lisboa Oliveira	23	63	68	53	68	56	27	58	3	17	345	5	Right
+12378	258328	Kewin	Kewin Oliveira Silva	25	63	68	63	63	59	24	68	3	6	246	5	Right
+12384	210006	T. Dähne	Thomas Dähne	26	63	67	56	67	65	58	59	4	35	333	8	Right
+12385	210019	L. Raeder	Lukas Raeder	26	63	60	61	63	64	32	65	3	45	646	8	Right
+12387	211604	L. Roberts	Liam Roberts	25	63	65	57	65	59	47	62	2	53	666	13	Left
+12402	222024	T. Casali	Tino Casali	24	63	64	60	65	59	29	61	3	29	546	34	Right
+12405	223150	L. Mpasi	Lionel Mpasi-Nzau	25	63	62	61	66	64	46	61	3	27	540	7	Right
+12412	229168	T. Guivarch	Théo Guivarch	24	63	67	57	66	58	34	60	2	27	540	7	Right
+12423	239358	S. Dieng	Timothy Dieng	25	63	63	60	65	60	40	62	3	21	386	10	Right
+12454	208776	F. Stritzel	Florian Stritzel	26	63	68	57	63	42	34	66	3	35	415	8	Right
+12463	219643	O. Hadžikić	Osman Hadžikić	24	63	62	60	63	59	41	63	3	29	626	34	Right
+12473	227819	Samuel Portugal	Samuel Portugal Lima	26	63	65	62	65	56	43	63	3	6	228	5	Right
+12485	236372	Miguel Santos	Miguel José Oliveira Silva Santos	25	63	65	67	64	65	21	64	1	44	294	2	Right
+12498	257618	A. Gremsl	Armin Gremsl	25	63	66	61	64	57	44	59	2	29	576	34	Left
+12499	257794	F. Iacob	Florin Iacob	26	63	64	58	64	62	33	63	2	44	620	70	Right
+12500	201035	M. Szromnik	Michał Szromnik	27	63	66	63	62	65	49	60	3	40	509	4	Left
+12501	202079	D. Blažević	Davor Blažević	27	63	64	60	62	58	27	63	2	41	348	37	Right
+12503	203175	L. Burge	Lee Burge	27	63	67	60	69	51	41	59	3	48	496	13	Left
+12505	205441	B. Bertrand	Benjamin Bertrand	28	63	68	61	65	54	46	59	2	27	580	7	Left
+12508	207723	S. van der Lei	Stefan van der Lei	27	63	65	60	69	61	46	58	3	7	346	9	Right
+12517	215546	M. Brouwer	Michael Brouwer	27	63	66	62	63	60	26	58	3	7	354	9	Right
+12518	216280	M. Goblet	Merveille Goblet	25	63	68	55	70	51	47	57	2	17	345	6	Right
+12523	222600	Lee Tae Hee	이태희 李泰熙	25	63	62	62	63	61	44	62	3	39	517	20	Right
+12526	224068	H. Konaté	Yored Hillel Konaté	25	63	63	61	66	62	53	58	2	27	388	41	Right
+12533	228935	M. Engelhardt	Marcel Engelhardt	27	63	69	58	67	60	45	64	2	35	477	8	Right
+12534	229530	R. Wulle	Rick Wulle	26	63	62	62	64	59	46	61	2	35	272	8	Right
+12544	239797	M. Lansing	Michael Lansing	26	63	62	65	62	64	50	61	3	32	609	47	Right
+12552	246958	A. Ivačič	Aljaž Ivačič	26	63	64	65	65	60	38	63	3	8	126	3	Right
+12557	253090	M. Lukov	Martin Lukov	26	63	65	63	59	65	28	63	3	19	85	103	Right
+12560	254939	S. Rivadeneyra	Steven Aldair Rivadeneyra del Villar	25	63	63	60	61	63	25	62	2	46	514	66	Right
+12589	232082	A. Tarbell	Andrew Tarbell	26	63	62	64	70	59	29	61	2	8	221	47	Right
+12592	240274	B. Pindroch	Branislav Pindroch	28	63	65	60	63	60	31	64	2	40	398	23	Right
+12597	186494	M. Oxley	Mark Oxley	29	63	64	63	64	62	29	63	2	53	625	13	Right
+12598	187363	J. González	Julio José González Vela-Alvizu	29	63	64	61	61	67	44	57	3	16	234	33	Right
+12599	190179	D. Cornell	David Cornell	29	63	64	63	64	62	36	62	3	48	583	38	Right
+12605	204725	Lee Bum Soo	이범수 李范洙	29	63	65	62	64	59	60	62	3	39	466	20	Right
+12608	205747	M. Sourzac	Martin Sourzac	28	63	63	62	66	57	55	61	2	27	553	7	Right
+12616	213589	J. Muñoz	Joaquín Emanuel Muñoz Almarza	29	63	64	61	65	60	44	65	2	28	534	39	Right
+12623	222229	Yang Hyung Mo	양형모 梁瀅模	28	63	61	61	67	62	52	62	3	39	485	20	Left
+12658	255892	E. Arauz	Elder Arauz Saucedo	30	63	64	60	57	59	30	68	2	51	563	122	Right
+12659	257740	F. Croitoru	Flavius Dănuț Croitoru	27	63	60	68	66	67	44	46	2	44	636	70	Right
+12662	258521	Léo Vieira	Leonardo Vieira da Silva	29	63	61	64	60	55	27	64	2	6	186	5	Right
+12665	101317	M. Ratajczak	Michael Ratajczak	38	63	62	64	64	35	44	64	3	35	327	8	Right
+12667	122718	P. Heerwagen	Philipp Heerwagen	37	63	64	62	63	54	35	63	2	35	272	8	Right
+12668	125586	S. Andersen	Stephan Maigaard Andersen	38	63	61	63	61	63	39	63	3	32	190	27	Right
+12671	149721	G. Rogers	Gary Rogers	38	63	62	64	61	59	27	64	2	47	492	52	Right
+12672	152523	S. Flinders	Scott Flinders	34	63	64	60	65	58	34	62	2	53	648	13	Right
+12686	170785	G. Faivre	Guillaume Faivre	33	63	63	65	62	58	36	66	3	25	140	21	Right
+12689	173244	C. Taborda	César Omar Taborda	36	63	63	62	58	60	47	61	3	14	409	1	Right
+12698	180717	L. Reddy	Liam Reddy	38	63	63	61	62	60	48	64	2	36	202	56	Right
+12699	181831	Yang Cheng	杨程	34	63	62	60	62	63	32	62	1	9	106	58	Right
+12703	182489	S. Davies	Scott Davies	33	63	63	60	66	61	25	62	3	53	643	13	Right
+12705	183477	M. Štěch	Marek Štěch	30	63	65	61	63	64	36	64	2	53	662	44	Right
+12713	187857	G. Sandomierski	Grzegorz Sandomierski	30	63	59	62	65	63	44	61	3	44	369	4	Left
+12715	188248	K. Erdoğan	Kayacan Erdoğan	32	63	64	60	66	60	48	63	1	11	404	55	Right
+12727	191684	Jung San	정산 郑山	31	63	65	62	63	58	43	62	3	39	517	20	Right
+12728	191848	W. Abdullah	Waleed Abdullah Ali	34	63	63	58	64	69	35	61	2	10	103	101	Right
+12730	191924	Lee Bum Young	이범영 李范永	31	63	63	62	64	60	39	59	2	39	326	20	Right
+12731	192457	Jesús Fernández	Jesús Fernández Collado	32	63	63	65	62	57	47	61	3	44	531	12	Left
+12741	193574	P. Branduani	Paolo Branduani	31	63	62	64	63	60	55	63	1	30	349	15	Right
+12742	193665	B. Büchel	Benjamin Büchel	30	63	63	62	66	63	34	64	3	25	649	148	Right
+12751	198199	Alcolea	Pablo Alcolea Guerrero	31	63	63	64	66	61	60	60	2	23	435	12	Right
+12753	198253	S. Arnold	Steve Arnold	30	63	65	62	64	63	31	60	3	48	613	13	Right
+12763	199730	D. Moldovan	Dinu Bogdan Moldovan	30	63	63	65	64	62	37	62	2	44	621	70	Right
+12767	200734	Mejías	Tomás Mejías Osorio	31	63	63	64	64	65	55	62	2	44	413	12	Right
+12783	203855	L. Caffaratti	Leonel Caffaratti	30	63	63	70	58	70	33	60	2	14	409	1	Right
+12804	209843	M. Scholz	Markus Scholz	32	63	65	63	66	58	31	60	2	45	567	8	Right
+12812	212175	P. Farman	Paul Farman	30	63	64	58	66	63	42	60	3	53	641	13	Right
+12844	230171	Carlos Travisso	Carlos Adilson Travisso Rocha	24	63	68	43	72	64	53	64	3	12	178	5	Right
+12849	231993	Chi Wenyi	池文一	32	63	63	60	64	61	22	63	1	9	106	58	Right
+12853	232448	K. Seki	関宪 太郎	34	63	57	61	63	61	25	63	2	15	537	72	Right
+12866	233973	Sandro Couteiro	Sandro Nelson Couteiro Guedes	36	63	73	56	70	62	34	57	2	12	433	5	Left
+12867	234000	Sander Asevedo	Sander Luan Asevedo Cirino	24	63	68	59	58	47	45	60	1	12	225	5	Right
+12874	237426	H. Nakabayashi	中林 洋次	34	63	65	60	67	66	23	63	3	15	330	72	Left
+12884	239648	M. Nardi	Michele Nardi	33	63	64	62	64	58	23	59	2	30	416	15	Left
+12892	244409	F. Faist	Florian Faist	31	63	63	62	60	55	26	65	2	29	556	34	Left
+12899	246725	T. Kodama	児玉 剛	32	63	63	59	61	63	26	65	2	15	375	72	Right
+12902	248024	V. Rîmniceanu	Victor Teodor Rîmniceanu	30	63	61	60	63	66	39	64	3	44	559	70	Right
+12930	254712	P. Gavilán	Pablo Martín Gavilán Fernández	31	63	65	62	62	66	22	61	2	33	366	69	Left
+12952	258485	F. Jörgensen	Filip Jörgensen	18	62	63	69	64	68	36	60	2	1	24	37	Right
+12953	258948	Fortuño	Ángel Fortuño Viñas	18	62	62	60	66	61	25	63	3	23	137	12	Right
+12956	245865	S. Bajic	Stefan Bajic	18	62	63	63	63	59	24	63	3	4	75	7	Right
+12970	252905	L. Kasten	Lino Björn Kasten	19	62	66	62	67	62	41	51	3	3	36	8	Right
+12987	237575	J. Pourtau	Jerónimo Pourtau	20	62	64	62	65	57	17	60	3	14	123	1	Right
+13014	255079	Y. Obata	小畑 裕馬	18	62	65	59	70	56	44	49	3	15	537	72	Right
+13022	241388	D. Smarsch	Dennis Smarsch	21	62	65	62	63	66	32	65	4	35	443	8	Right
+13030	244417	J. Krahl	Julian Krahl	20	62	69	59	71	57	32	52	3	3	156	8	Right
+13033	245564	Vinicius	Caio Vinicius Pirana	21	62	68	58	72	54	58	54	2	2	172	5	Right
+13037	250754	N. Shinton	Nick Shinton	19	62	67	58	68	59	25	54	3	17	77	6	Left
+13052	257998	Victor Méndez	Victor Méndez Exposito	20	62	65	62	64	52	27	60	3	23	392	12	Right
+13057	238526	K. Tani	谷 晃生	19	62	62	63	67	58	26	53	3	15	499	72	Right
+13095	243710	G. Innocent	Garissone Innocent	20	62	62	59	64	61	31	61	3	4	5	7	Right
+13157	255452	C. Riveros	Cristhian David Riveros Silvero	21	62	61	60	63	61	31	62	2	33	479	69	Right
+13158	255485	D. Sandy	Juan Daniel Sandy Lazcano	18	62	60	62	61	60	31	62	2	51	560	122	Right
+13160	256050	M. Correa	Elcio Martín Correa Rodríguez	20	62	64	59	66	53	22	55	3	31	298	16	Right
+13175	232110	T. Glover	Thomas Glover	22	62	63	58	64	61	24	63	2	36	359	56	Right
+13180	235195	T. Krapikas	Titas Krapikas	21	62	62	60	64	58	24	59	2	2	192	100	Right
+13193	240856	B. Bayazit	Bilal Bayazit	21	62	63	60	64	42	24	61	2	7	313	9	Right
+13220	255308	R. Bacchia	Renzo Damián Bacchia Rodríguez	21	62	65	62	63	54	29	66	3	14	176	16	Right
+13230	258323	Felipe Galvis	Felipe Galvis Doménech	22	62	71	62	64	65	27	60	3	23	551	12	Right
+13258	242446	M. Wolff	Marco Wolff	23	62	60	57	63	56	16	62	2	50	493	1	Right
+13264	243476	M. Borgogno	Matías Nahuel Borgogno	21	62	60	63	61	59	38	62	3	14	174	1	Right
+13265	243502	J. Bursztyn	Jakub Bursztyn	22	62	64	60	63	58	26	61	2	40	490	4	Right
+13283	257635	Ricardo Velho	Mário Ricardo Silva Velho	21	62	62	61	64	58	22	61	2	6	394	2	Right
+13286	213678	K. O'Hara	Kieran O'Hara	24	62	63	59	64	57	45	60	2	48	614	52	Right
+13288	219701	J. Wrąbel	Jakub Wrąbel	24	62	62	61	62	58	44	62	2	40	597	4	Right
+13289	220584	V. Myhra	Viljar Røsholt Myhra	23	62	63	63	62	57	44	60	3	37	624	29	Right
+13292	223988	L. Ward	Lewis Ward	23	62	62	60	62	60	45	61	2	53	627	13	Right
+13298	228456	Juan Pérez	Juan Manuel Pérez Ruiz	23	62	58	65	67	57	34	63	3	1	116	12	Right
+13307	234050	S. Mbaye	Serigne Mor Mbaye	24	62	64	59	64	66	27	58	3	37	483	10	Right
+13310	236649	Y. van Osch	Yanick van Osch	23	62	62	59	67	68	43	60	3	7	502	9	Right
+13319	240791	Marcos Lavín	Marcos Lavín Rodríguez	23	62	60	65	64	56	31	57	3	44	559	12	Right
+13342	255389	B. Díaz	Benny Díaz Jáuregui	21	62	62	59	66	59	22	62	2	16	165	47	Right
+13346	255953	Ander Iru	Ander Iruarrizaga Díez	21	62	66	67	58	58	28	60	3	1	43	12	Right
+13348	257375	Esteve Peña	Esteve Peña Albons	23	62	59	61	65	60	33	62	3	23	406	12	Right
+13355	222431	J. Storevik	Jacob Storevik	23	62	63	60	64	58	36	60	2	37	661	29	Right
+13362	225432	D. Sommariva	Daniele Sommariva	22	62	64	54	68	61	42	58	2	30	372	15	Right
+13364	227050	T. Erlandsson	Tim Erlandsson	23	62	58	63	59	72	30	60	3	41	664	37	Right
+13366	228355	K. Joelsson	Kalle Joelsson	22	62	61	58	68	63	33	62	3	41	405	37	Right
+13368	229135	M. Hauptmeijer	Mike Hauptmeijer	23	62	60	62	66	60	34	63	2	7	494	9	Right
+13386	241217	G. Hatano	波多野 豪	22	62	61	65	62	56	26	61	3	15	375	72	Right
+13394	248054	L. Popescu	Iulian Laurențiu Popescu	23	62	64	62	64	66	26	61	2	44	377	70	Right
+13397	251535	A. Guendouz	Alexis Guendouz	24	62	66	62	67	65	31	58	3	4	75	7	Left
+13400	252801	A. Gudiño	Andrés Guillermo Gudiño Portillo	23	62	60	60	65	55	48	60	2	16	141	33	Right
+13417	212255	S. Mohlin	Sixten Mohlin	24	62	66	57	68	62	46	57	2	41	651	37	Right
+13420	222864	J. Rose	Jack Rose	25	62	64	60	64	58	42	61	3	53	666	13	Right
+13421	223488	M. Sætra	Morten Sætra	23	62	64	61	64	58	45	60	3	37	624	29	Right
+13430	235820	P. Gartler	Paul Gartler	23	62	60	61	62	60	30	61	2	29	347	34	Right
+13435	239742	J. Klinsmann	Jonathan Klinsmann	23	62	61	59	66	65	29	62	2	8	111	47	Right
+13442	247067	M. Bu Sanda	Mohammed Saeed Bu Sanda Ahmed Theyab Al Falahi	25	62	61	62	64	53	36	60	3	38	218	109	Right
+13456	254876	S. Yoshida	吉田 舜	23	62	66	57	65	59	32	56	3	15	489	72	Right
+13466	209750	I. Lawlor	Ian Lawlor	25	62	65	59	64	60	45	61	3	53	667	52	Right
+13480	229433	A. Zendejas	Adrián Zendejas Rodríguez	24	62	66	58	64	59	37	60	3	8	274	47	Right
+13484	233211	N. Klinger	Niklas Klinger	24	62	59	60	64	63	33	60	3	3	36	8	Right
+13492	239746	L. Watkowiak	Lukas Watkowiak	24	62	59	59	66	57	22	63	3	25	308	8	Right
+13515	257993	M. Malenica	Marko Malenica	26	62	62	63	62	59	26	60	2	40	400	17	Right
+13516	258133	G. De Amores	Guillermo Rafael De Amores Ravelo	25	62	65	63	56	60	24	66	3	31	596	16	Right
+13522	216106	M. Van Damme	Miguel Van Damme	26	62	63	58	65	59	49	58	2	17	345	6	Right
+13528	225650	T. King	Thomas King	25	62	63	62	63	56	42	61	3	53	660	38	Right
+13534	236406	M. Hamrol	Matthias Hamrol	26	62	63	62	65	53	25	60	4	45	528	8	Left
+13535	237250	S. Cleveland	Stefan Cleveland	26	62	63	59	65	60	56	60	2	8	147	47	Left
+13548	256276	R. Brüseke	Robin Brüseke	26	62	62	58	65	61	45	60	3	45	658	8	Right
+13555	209002	S. Mandé	Sayouba Mandé	27	62	63	61	63	58	43	62	2	32	523	41	Right
+13558	213413	L. Vigouroux	Lawrence Vigouroux	26	62	63	61	63	62	45	61	2	53	669	39	Right
+13574	232367	H. Fukushima	福島 春樹	27	62	62	61	61	69	40	59	2	15	482	72	Right
+13581	237802	C. Haas	Christoph Haas	27	62	63	60	59	62	29	62	4	29	626	34	Right
+13594	256699	S. Osigwe	Sebastian Ogenna Osigwe	26	62	64	62	61	62	32	58	2	25	473	31	Right
+13598	201094	B. Garratt	Ben Garratt	26	62	65	58	66	58	49	61	2	48	614	13	Right
+13603	211835	F. Flückiger	Franco Flückiger	29	62	64	62	63	59	45	61	3	45	637	8	Right
+13608	230631	M. Festa	Marco Festa	28	62	65	62	61	58	45	59	3	2	355	15	Right
+13616	255428	L. Cárdenas	Luis Fernando Cárdenas Montenegro	29	62	60	61	59	62	31	66	2	51	563	122	Right
+13618	192316	G. Kongshavn	Gudmund Broks Kongshavn	29	62	63	61	63	63	21	60	3	37	604	29	Right
+13622	201864	S. Thomas	Simon Edmund Thomas	30	62	64	63	61	58	40	61	1	37	586	46	Right
+13625	205267	I. Rodríguez	Jesús Iván Rodríguez Trujillo	27	62	70	45	67	55	63	64	2	16	288	33	Right
+13637	216110	D. Kudła	Dawid Kudła	28	62	62	56	64	67	46	63	2	40	495	4	Right
+13649	228266	I. Jónsson	Ingvar Jónsson	30	62	62	60	63	58	46	61	2	19	85	65	Right
+13652	232507	R. Hironaga	廣永 遼太郎	30	62	64	60	65	60	24	61	2	15	441	72	Left
+13656	236241	G. Viscarra	Guillermo Viscarra Bruckner	27	62	64	59	62	57	27	66	3	51	511	122	Right
+13666	52679	J. Murphy	Joe Murphy	38	62	59	62	60	60	37	62	3	53	643	52	Left
+13667	120243	P. Gori	Pier Graziano Gori	40	62	56	58	59	64	35	67	1	2	273	15	Right
+13668	144024	D. Zibung	David Zibung	36	62	64	60	64	52	29	61	2	25	238	21	Right
+13672	157407	B. Clarke	Brendan Clarke	34	62	62	63	61	59	48	62	3	47	677	52	Right
+13677	165502	J. Lillis	Josh Lillis	33	62	63	62	63	61	44	57	2	53	656	13	Right
+13680	169159	A. Lie	Andreas Lie	32	62	63	61	63	59	47	60	1	37	604	29	Right
+13698	182474	Zhang Chong	张翀	32	62	62	61	60	64	54	61	1	9	76	58	Right
+13700	183549	E. Parish	Elliot Parish	30	62	63	62	64	61	40	58	2	26	535	13	Right
+13714	187144	Cho Soo Hyuk	조수혁 赵寿赫	33	62	61	62	61	61	34	62	3	39	250	20	Right
+13725	191437	A. Al Mazaidi	Ali Ibrahim Al Mazyadi	34	62	60	64	61	62	38	62	3	10	616	101	Right
+13744	198116	M. Rozman	Matjaž Rožman	33	62	59	62	63	57	43	62	2	19	85	3	Right
+13762	202793	A. Berardi	Alessandro Berardi	29	62	61	58	64	56	51	63	2	2	168	15	Right
+13775	208958	K. Sharahili	Khalid Mohammed Sharahili	33	62	65	56	64	61	43	61	3	10	427	101	Left
+13776	209027	A. Al Kassar	Ahmed Ali Al Kassar	29	62	62	60	67	54	41	60	3	10	353	101	Right
+13782	209757	V. Janjetović	Vedran Janjetović	32	62	61	59	62	60	42	61	2	36	323	56	Right
+13793	213483	S. Lukić	Stojan Lukić	40	62	57	63	62	52	27	67	2	41	665	25	Right
+13801	221844	Shao Puliang	Puliang Shao	30	62	58	62	59	63	33	63	3	9	166	58	Right
+13808	223407	M. Al Furayj	Muslim Al Furayj	32	62	63	59	64	58	45	61	3	10	425	101	Right
+13836	237776	K. Tanno	丹野 研太	34	62	63	67	58	58	24	61	2	15	373	72	Right
+13838	238588	D. Buchholz	David Buchholz	35	62	61	66	62	44	24	64	2	35	450	8	Right
+13849	247205	L. Hroššo	Lukáš Hroššo	33	62	63	64	60	58	16	62	3	40	518	23	Left
+13864	253849	D. Corozo	Dennis Wilber Corozo Villalva	32	62	62	63	62	64	25	64	3	42	558	61	Right
+13869	254401	R. Farro	Ricardo Daniel Farro Caballero	35	62	60	60	65	60	46	62	2	46	508	66	Right
+13870	254584	D. Valdés	Daniel Eduardo Valdés Guerrero	35	62	59	58	66	60	29	64	2	52	678	50	Right
+13875	255026	F. Nicosia	Federico Ariel Nicosia Malizia	30	62	60	60	62	60	24	60	3	46	600	1	Right
+13878	255203	J. Pretel	Juan Miguel Pretel Sánchez	36	62	61	62	63	62	32	61	2	46	508	66	Right
+13880	255581	A. Takeshige	Akihiko Takeshige	32	62	61	62	58	57	17	66	2	15	602	72	Right
+13888	251752	L. Chevalier	Lucas Chevalier	18	61	61	58	64	62	24	58	3	4	54	7	Right
+13906	247479	L. Unbehaun	Luca Unbehaun	19	61	52	58	65	65	55	63	3	3	13	8	Right
+13926	258031	F. Palmowski	Florian Palmowski	19	61	58	60	62	60	31	65	3	3	119	8	Right
+13979	240913	C. Kelleher	Caoimhin Kelleher	21	61	62	59	64	55	39	58	2	5	7	52	Right
+13995	248073	�. Târnovanu	Ștefan Târnovanu	20	61	61	58	59	63	32	66	2	44	300	70	Right
+14020	238060	N. Trott	Nathan Trott	21	61	62	60	64	64	36	61	3	5	64	13	Left
+14032	246603	Matis Carvalho	Mathis Carvalho	21	61	62	61	63	59	38	59	2	4	130	2	Right
+14047	258321	Charlie	Carlos Florencio García	21	61	55	65	63	66	23	62	3	23	551	12	Right
+14072	253211	G. Crettaz	Gonzalo Alejandro Crettaz	20	61	64	65	59	68	29	56	3	23	451	1	Right
+14074	255236	M. Bakker	Mees Bakker	19	61	64	59	61	61	28	55	2	7	118	9	Right
+14090	233466	M. Pettersen	Markus Olsen Pettersen	21	61	63	59	64	58	23	60	2	37	487	29	Right
+14102	242774	Y. Oki	沖 悠哉	20	61	62	55	67	59	37	54	2	15	429	72	Right
+14108	244810	T. Lawal	Tobias Okiki Lawal	20	61	64	57	63	59	29	58	3	29	240	34	Right
+14136	224322	K. Haug	Christian Kjetil Haug	22	61	61	60	62	62	46	59	2	37	468	29	Right
+14137	229783	D. Gyollai	Dániel Gyollai	23	61	63	60	62	60	45	57	3	48	578	26	Right
+14138	230893	O. Evans	Owen Evans	23	61	64	60	64	58	40	62	3	48	532	38	Right
+14139	231028	M. Šarkić	Matija Šarkić	22	61	62	59	61	60	36	61	2	48	635	49	Right
+14141	234341	I. Eğribayat	İrfan Can Eğribayat	22	61	66	54	64	52	42	58	2	11	322	55	Right
+14149	240704	Guo Quanbo	郭全博	22	61	58	58	63	56	53	61	1	9	40	58	Right
+14184	232816	A. Rivero	Alejandro Rivero	22	61	61	59	62	61	43	60	3	14	456	1	Right
+14203	247611	E. Selvik	Egil Selvik	22	61	62	61	62	59	18	60	2	37	526	29	Left
+14224	257237	R. Doohan	Ross Doohan	22	61	59	59	62	60	61	59	3	26	659	14	Right
+14228	258864	S. Drljača	Stefan Drljača	21	61	64	60	62	58	34	57	3	3	13	8	Right
+14233	230653	J. Wollacott	Jojo Wollacott	23	61	61	59	64	56	41	58	2	21	384	13	Right
+14235	231046	J. Eastwood	Jake Eastwood	23	61	63	60	59	61	37	59	2	26	498	13	Right
+14236	233324	V. Cabezas	Víctor Andrés Cabezas Vergel	22	61	62	61	65	58	29	56	2	34	557	42	Right
+14238	234858	M. Funk	Marius Funk	24	61	61	59	62	61	38	59	3	35	411	8	Right
+14242	241584	J. Mendive	Joaquín Nicolás Mendive	23	61	56	65	59	62	24	61	3	14	383	1	Right
+14255	254050	E. Viveros	Erik Dalín Viveros Acosta	24	61	61	59	60	70	53	56	1	42	368	61	Right
+14324	210715	A. Hansen	Andreas Hansen	24	61	63	58	63	61	48	59	3	32	194	27	Right
+14325	213649	D. Iliev	Dejan Iliev	25	61	64	59	64	58	44	60	3	5	15	63	Right
+14327	219482	R. Fulton	Ryan William Fulton	24	61	59	60	65	65	31	58	3	26	629	14	Left
+14350	254513	C. Eriksson	Carljohan Eriksson	25	61	59	62	63	63	53	62	1	41	652	40	Right
+14352	254935	R. Banegas	Luis Rodrigo Banegas Cury	24	61	60	61	60	49	24	62	3	51	520	122	Right
+14357	257046	L. Vejmola	Luděk Vejmola	25	61	63	62	64	60	26	63	2	37	605	44	Right
+14361	206500	J. Maxted	Jonathan Maxted	26	61	61	60	64	60	46	58	3	53	627	13	Right
+14366	216833	J. Houwen	Jeroen Houwen	24	61	61	59	62	58	44	58	2	7	313	9	Right
+14374	228562	R. Sallinger	Raphael Lukas Sallinger	24	61	65	59	61	60	43	57	3	29	556	34	Right
+14375	229806	E. Verstappen	Eric Verstappen	26	61	62	59	61	53	38	61	2	35	504	9	Right
+14381	235375	A. Quintana	Aldair Alejandro Quintana Rojas	25	61	62	59	62	55	23	61	2	34	235	42	Left
+14385	240218	A. Weidinger	Alexander Weidinger	23	61	62	60	57	63	23	63	2	35	506	8	Right
+14387	244567	A. Putna	Andrew Putna	25	61	60	61	59	60	25	62	2	8	244	47	Right
+14407	221845	Han Rongze	韩镕泽	27	61	59	55	63	64	41	63	3	9	262	58	Left
+14412	235220	Yeerjieti Yeerzati	叶尔杰提·叶尔扎提	27	61	63	57	60	64	50	58	2	9	208	58	Right
+14413	241886	C. Akbaba	Çağlar Şahin Akbaba	25	61	65	58	68	55	42	54	2	11	381	55	Right
+14424	204825	B. Wilson	Ben Wilson	27	61	63	59	63	60	40	57	2	21	475	13	Right
+14428	209895	M. Acton	Matthew Acton	28	61	63	61	63	59	40	58	2	36	503	56	Right
+14438	222471	J. Rasheed	Jonathan Rasheed	28	61	63	58	62	61	31	59	2	41	510	29	Right
+14443	227653	E. Edwards Jr.	Earl William Edwards Jr.	28	61	58	64	57	60	42	65	2	8	248	47	Right
+14452	238121	D. Mehmet	Deniz Doğan Mehmet	27	61	63	61	61	60	22	59	3	26	633	55	Right
+14453	238969	R. Laidlaw	Ross Laidlaw	27	61	63	59	59	56	24	61	2	26	659	14	Right
+14473	212560	N. Townsend	Nick Townsend	25	61	60	61	64	57	40	61	2	53	660	13	Right
+14477	222621	Du Jia	杜佳	27	61	59	55	63	52	51	60	3	9	171	58	Right
+14480	227941	B. Moore	Brendan Moore	28	61	60	59	61	60	48	62	2	8	69	47	Left
+14483	237201	K. McIntosh	Kendall Isaiah McIntosh	26	61	62	60	62	64	41	60	3	8	245	47	Right
+14497	200658	E. İşcan	Eray İşcan	28	61	62	63	60	58	35	59	1	11	251	55	Right
+14510	207606	J. Lynch	Jay Lynch	27	61	68	58	65	56	41	58	3	48	631	13	Right
+14526	241648	B. Janošević	Budimir Janošević	30	61	60	63	63	55	23	62	3	41	364	22	Right
+14532	251773	L. Romero	Luis Enrique Romero Durán	29	61	63	61	62	62	26	59	2	52	678	50	Right
+14539	255129	E. González	Edixson Antonio González Peroza	30	61	59	60	60	59	21	59	3	52	617	50	Left
+14540	53756	L. Price	Lewis Price	35	61	60	61	59	57	37	61	2	21	533	38	Right
+14541	120041	X. Pinoteau	Xavier Pinoteau	37	61	62	64	52	58	30	67	3	27	562	7	Right
+14546	163135	M. Tørnes	Michael Tørnes	34	61	60	59	62	58	48	62	2	32	442	27	Right
+14552	176844	G. Ruíz	Gerardo Daniel Ruiz Barragán	34	61	61	60	62	60	43	57	3	16	397	33	Right
+14563	186147	G. Woods	Gary Woods	30	61	64	59	64	60	50	55	2	53	667	13	Right
+14565	187275	Hong Jung Nam	홍정남 洪正男	32	61	62	60	59	61	36	62	3	39	326	20	Right
+14595	208067	Lee Jin Hyung	이진형 李敬恒	32	61	60	58	61	60	49	63	2	39	454	20	Right
+14622	226182	Sui Weijie	隋维杰	37	61	60	60	58	61	48	62	3	9	208	58	Right
+14630	228739	J. Peñarrieta	José Feliciano Peñarrieta Flores	31	61	60	58	62	60	48	60	2	51	565	122	Right
+14634	232418	Y. Takeda	武田 洋平	33	61	59	60	60	56	25	66	2	15	424	72	Right
+14635	232506	T. Masuda	増田 卓也	31	61	61	61	64	58	21	57	2	15	441	72	Right
+14642	237751	Y. Nishibe	西部 洋平	39	61	61	61	61	62	23	67	2	15	465	72	Right
+14651	242564	D. Tomii	富居 大樹	30	61	65	56	63	53	34	60	2	15	499	72	Right
+14661	251523	A. Marinescu	Andrei Daniel Marinescu	35	61	64	55	64	60	27	61	2	44	377	70	Right
+14669	253638	J. Pinto	Joel Ademir Pinto Herrera	40	61	59	59	63	61	50	60	1	46	600	66	Right
+14673	254196	L. Fernández	Luis Fernando Fernández López	42	61	60	62	63	61	32	55	2	42	516	42	Right
+14679	255127	A. Liebeskind	Alan José Liebeskind Díaz	35	61	60	59	62	61	29	60	3	52	617	50	Right
+14691	243585	G. Bazunu	Gavin Bazunu	18	60	60	59	60	56	27	59	2	48	631	52	Right
+14696	245787	Iván Martínez	Iván Martínez Marqués	18	60	61	64	61	60	31	57	2	1	116	12	Right
+14713	253216	Adrián	Adrián Rodríguez Giménez	19	60	57	58	60	64	29	62	3	1	56	1	Right
+14726	255303	E. Caprile	Elia Caprile	18	60	63	59	63	61	33	58	3	5	63	15	Right
+14731	237176	R. Schofield	Ryan Schofield	20	60	62	59	62	59	31	58	2	21	338	13	Right
+14732	240776	S. Laiton	Sonny Patrick Laiton	20	60	57	59	59	53	47	56	2	27	419	7	Right
+14746	254300	J. García	Jean Paul García	18	60	61	56	62	56	27	58	3	1	57	42	Right
+14760	254266	Azón	Juan Carlos Azón Marco	19	60	56	70	57	59	26	56	3	23	213	12	Right
+14778	240784	J. Bursik	Josef Bursik	19	60	62	59	60	60	40	57	2	48	476	13	Left
+14796	255290	João Monteiro	João Manuel Silva Monteiro	19	60	61	59	61	53	23	58	2	6	367	2	Left
+14798	255952	A. Pérez	Aldo Sebastián Pérez Ramos	19	60	59	61	58	58	27	60	2	33	316	69	Right
+14801	257235	T. Boulhendi	Teddy Boulhendi	19	60	59	60	58	60	44	59	3	4	67	7	Right
+14808	258767	Javier Izquierdo	Javier Izquierdo Cuervo	19	60	63	58	62	55	49	59	2	23	312	12	Right
+14811	235835	A. Confente	Alessandro Confente	22	60	65	61	73	50	31	47	1	30	416	15	Right
+14813	236663	E. Balcombe	Ellery Balcombe	20	60	59	57	65	55	40	59	3	21	158	13	Right
+14814	238070	J. Cumming	Jamie Cumming	20	60	62	57	63	56	25	58	2	53	670	13	Right
+14817	238997	D. Desprez	Didier Desprez	21	60	60	56	61	54	26	58	3	4	184	7	Right
+14824	245632	Miguel Morro	Miguel Ángel Morro Muñoz	19	60	60	56	62	61	23	55	2	23	321	12	Left
+14843	256445	Ruvira	Álvaro Ruvira Yáñez	20	60	59	61	63	59	29	52	3	23	435	12	Right
+14860	240170	K. Niemczycki	Karol Niemczycki	20	60	60	59	62	55	25	59	3	40	518	4	Right
+14864	243810	L. Ingolotti	Luis Ignacio Ingolotti	20	60	61	58	62	55	30	60	2	14	331	1	Right
+14876	252255	Barredo	Pablo Barredo Calvo	16	60	61	56	60	57	23	59	2	23	437	12	Right
+14892	231914	D. Margush	Daniel Margush	22	60	57	61	61	57	30	60	2	36	202	56	Right
+14899	241643	V. Johansson	Viktor Johansson	21	60	62	60	63	58	31	62	3	21	533	37	Right
+14904	243758	B. Żynel	Bartłomiej Żynel	22	60	60	59	61	55	28	58	2	40	597	4	Left
+14908	245176	J. Bartels	Jan-Christoph Bartels	21	60	63	61	60	59	23	61	2	45	567	8	Right
+14929	258183	Diego Fuoli	Diego Licinio Lázaro Fuoli	22	60	58	57	62	64	28	61	2	23	568	12	Right
+14934	226524	M. Johansson	Marko Johansson	21	60	58	60	63	59	41	59	2	41	267	37	Right
+14940	234260	A. Fisher	Andy Fisher	22	60	64	59	64	61	33	58	3	21	309	13	Right
+14970	246246	B. Leneis	Benjamin Leneis	21	60	64	55	62	59	22	56	3	3	150	8	Right
+14982	255412	D. Matijaš	Davor Matijaš	20	60	63	58	62	57	22	56	3	17	145	17	Right
+14990	258156	Y. Meykher	Yaroslav Meykher	20	60	60	65	60	63	20	50	3	23	527	51	Right
+15008	242703	J. Marcinkowski	James Thomas Marcinkowski	23	60	64	60	63	66	23	56	2	8	310	47	Right
+15013	244066	C. Frommann	Constantin Frommann	22	60	62	59	62	64	37	55	3	3	115	8	Right
+15014	244073	Y. Bangsow	Yannik Bangsow	22	60	60	57	64	57	33	55	4	45	459	8	Right
+15015	244468	M. Vantruba	Martin Vantruba	22	60	62	59	62	60	25	56	3	32	460	23	Right
+15022	247228	D. St. Clair	Dayne St. Clair	23	60	68	52	65	51	26	52	3	8	274	46	Left
+15032	254311	Carlos Mena	Carlos Mena Díaz	23	60	58	60	61	59	23	57	3	23	351	12	Right
+15045	258181	Joel Sousa	Carlos Joel Castro de Sousa	20	60	56	58	59	57	55	57	3	6	342	2	Right
+15047	227616	A. Wichne	Amund Wichne	23	60	62	53	62	56	44	58	3	37	584	29	Right
+15049	229274	L. Thomas	Lewis Thomas	22	60	60	58	63	57	57	58	3	53	632	38	Right
+15080	253214	Zarco	Amador Antonio Zarco Jiménez	22	60	64	54	62	61	26	60	3	1	70	12	Right
+15088	258295	João Silva	João Pedro O. Veiga da Silva	20	60	61	57	63	58	31	58	1	6	227	2	Right
+15097	229397	M. Vargas	Miguel Angel Vargas Mañan	24	60	59	57	62	58	50	58	2	28	393	39	Right
+15104	237927	E. McGinty	Edward McGinty	20	60	60	61	61	56	50	58	2	47	675	52	Left
+15105	239651	Valera	Antonio Valera Salmoral	23	60	61	56	61	46	38	64	2	1	142	12	Right
+15109	244172	M. Harsman	Matthis Harsman	20	60	62	61	62	61	34	60	3	45	598	8	Right
+15111	246843	E. González	Emilio Emiliano González	24	60	58	61	61	52	21	62	2	14	123	1	Right
+15119	254099	Carlos Marín	Carlos Marín Tomás	23	60	66	65	57	60	27	59	3	1	37	12	Right
+15103	252898	E. Ross	Ethan Ross	23	60	63	59	61	62	33	60	3	48	547	13	Right
+15144	231421	A. Lejoly	Antoine Lejoly	22	60	61	52	67	62	49	58	3	17	448	6	Right
+15150	237081	V. Xenopoulos	Vasilios Xenopoulos	22	60	65	57	63	50	29	57	3	22	293	36	Right
+15161	245056	K. Bucker	Koen Bucker	24	60	63	55	60	54	31	58	3	7	354	9	Right
+15181	258357	Rui Encarnação	Rui Filipe Teixeira Encarnação	22	60	61	51	68	52	28	57	2	6	401	2	Right
+15186	215418	M. Soldo	Marko Soldo	23	60	58	62	60	59	43	58	2	29	362	34	Right
+15187	217994	M. Crowe	Michael Thomas Tallaksen Crowe	24	60	57	60	58	58	44	60	2	37	538	38	Right
+15190	224543	M. Stryjek	Maksymilian Stryjek	23	60	60	59	60	56	43	57	2	26	587	4	Right
+15192	225858	M. Ledesma	Marcos Ignacio Ledesma	23	60	65	55	58	55	47	62	3	14	242	1	Right
+15200	237576	N. Insfrán	Nelson Federico Insfrán	25	60	60	56	58	62	26	61	2	14	378	1	Right
+15217	256004	A. Preciado	Álvaro Enrique Preciado Ferrín	22	60	58	57	63	63	31	59	3	42	474	61	Right
+15224	208697	D. Rogers	Daniel Rogers	26	60	61	60	62	61	46	58	3	26	498	52	Right
+15225	212763	S. McGuinness	Stephen McGuinness	25	60	61	60	60	58	51	58	2	47	655	52	Right
+15229	220985	J. Brattberg	Johan Brattberg	23	60	61	59	60	61	34	61	2	41	664	37	Right
+15245	241207	K. Yoshimaru	吉丸 絢梓	24	60	64	57	62	55	19	56	2	15	71	72	Right
+15254	255473	D. Campisi	Dante Nicolás Campisi	23	60	59	59	57	58	36	59	2	33	619	1	Right
+15267	222177	Zhang ZhenQiang	ZhenQiang Zhang	27	60	63	52	64	63	51	55	3	9	166	58	Right
+15271	225993	O. Sail	Oliver Sail	24	60	59	56	61	60	49	59	2	36	414	71	Right
+15276	239573	M. Bleve	Marco Bleve	24	60	65	62	62	58	18	59	2	30	183	15	Right
+15277	246436	Kyung Gun Mun	Mun Kyung Gun	25	60	57	62	63	56	39	57	3	15	489	20	Right
+15281	253636	P. Galindo	Pedro Domingo Galindo Suheiro	25	60	58	60	63	62	46	59	2	51	552	122	Right
+15302	241882	M. Goto	後藤 正明	26	60	62	57	65	52	25	54	3	15	499	72	Right
+15305	247413	E. Fujishima	藤嶋 栄介	28	60	63	57	64	53	26	54	2	15	373	72	Right
+15307	248025	A. Greab	Alexandru Doru Greab	28	60	63	55	61	50	34	58	2	44	636	70	Right
+15319	188950	V. Noring	Viktor Noring	29	60	60	61	62	54	32	58	2	41	664	37	Right
+15325	226148	B. Uraezaña	Braulio Uraezaña Cuñaendi	25	60	60	59	57	62	40	59	3	51	565	122	Right
+15327	228526	Hwang ByeongGeun	황병근 黄秉根	26	60	62	57	62	56	26	57	2	39	432	20	Right
+15329	244578	G. Pozos	Guillermo Pozos Guevara	27	60	62	63	63	65	39	58	3	16	152	33	Right
+15334	183533	D. Lyness	Dean Lyness	28	60	60	60	62	56	53	58	2	26	588	13	Right
+15335	190061	S. Deana	Steven Deana	30	60	63	60	62	56	53	56	3	45	543	21	Right
+15336	191336	S. Ando	安藤 骏介	29	60	58	53	60	52	42	65	3	15	373	72	Right
+15346	232565	G. Kawanami	川浪 吾郎	29	60	60	63	56	55	24	58	2	15	537	72	Right
+15355	247318	N. Mirković	Nikola Mirković	28	60	64	56	59	65	30	63	3	32	491	22	Right
+15357	253639	E. Hermoza	Éder Alberto Hermoza Guevara	30	60	59	58	60	58	52	61	2	46	600	66	Right
+15358	253843	H. Pérez	Héctor Eduardo Pérez Cuevas	29	60	60	59	58	54	36	57	2	52	654	50	Right
+15587	240987	M. Cooper	Michael Cooper	20	59	59	60	58	57	29	58	3	48	607	13	Right
+15366	140300	P. Cherrie	Peter Cherrie	36	60	58	58	60	59	22	61	2	47	673	14	Left
+15367	140420	B. Murphy	Brian Murphy	37	60	61	57	60	55	33	62	1	47	681	52	Right
+15368	142333	M. McNulty	Mark McNulty	39	60	60	61	57	54	34	60	2	47	676	52	Right
+15384	191528	Hou Sen	侯森	31	60	58	53	62	56	45	62	1	9	40	58	Right
+15389	194894	F. Rossi	Francesco Rossi	29	60	62	60	60	62	21	58	2	2	17	15	Right
+15395	208988	H. Shaian	Hussain Abdoh Al Shae'an	31	60	61	57	63	55	48	58	2	10	281	101	Right
+15399	210785	B. Al Baqi	Basem Atallah Al Baqi	30	60	59	57	58	55	46	64	2	10	177	101	Right
+15400	210791	A. Al Saleh	Abdullah Al Saleh	30	60	61	57	59	61	48	60	2	10	329	101	Right
+15424	231196	V. Centurión	Víctor Hugo Centurión Miranda	34	60	60	61	61	60	23	59	3	33	515	69	Right
+15427	232560	K. Kirihata	桐细 和繁	33	60	54	57	57	60	12	66	2	15	311	72	Right
+15429	233085	F. Costa	Federico Costa	31	60	62	57	63	55	29	56	2	14	431	1	Right
+15451	254397	R. Escobar	Rubén Escobar Fernández	30	60	60	60	60	60	25	60	3	33	619	69	Right
+15464	257862	J. Belshaw	James Belshaw	29	60	61	60	61	59	28	60	2	53	680	13	Right
+15484	258763	M. Delanghe	Maxime Delanghe	19	59	62	58	65	61	20	62	3	7	83	6	Right
+15494	258498	B. Verbruggen	Bart Verbruggen	17	59	67	58	65	56	48	46	3	17	159	9	Right
+15495	258727	Iago Domínguez	Iago Domínguez Rodríguez	18	59	55	65	58	56	41	52	2	1	32	12	Right
+15502	255424	R. Josipović	Renato Josipović	19	59	62	58	60	54	30	56	3	20	90	17	Right
+15514	247756	F. Fragueda	Franco Nicolás Fragueda	19	59	61	59	59	59	31	57	2	14	299	1	Right
+15516	248478	D. Ramaj	Diant Ramaj	18	59	64	57	64	56	24	57	3	35	357	8	Right
+15517	248586	O. Hindrich	Otto Hindrich	17	59	59	60	61	55	25	58	2	44	369	70	Right
+15566	255151	S. Ngapandouetnbu	Simon Brady Ngapandouetnbu	17	59	62	58	66	59	21	54	3	4	38	30	Right
+15365	238188	L. McCormick	Luke McCormick	36	60	55	58	53	62	33	62	4	48	607	13	Right
+15600	248216	T. Hasal	Thomas Hasal	20	59	62	50	62	47	16	59	1	8	255	46	Right
+15602	251157	Lee Gwang Yeon	이광연 Gwang Yeon Lee	20	59	57	60	61	49	24	59	2	39	466	20	Right
+15609	252914	Luis Castillo	Luis Castillo Grau	20	59	61	62	63	61	29	59	3	1	284	12	Right
+15636	244256	D. Bielica	Daniel Bielica	21	59	58	61	60	58	37	56	2	40	612	4	Right
+15656	256145	F. Zenobio	Felipe Tomás Zenobio	20	59	57	59	60	57	31	56	2	50	493	1	Right
+15665	225751	A. Oxborough	Aston Oxborough	22	59	60	59	57	56	47	56	1	21	154	13	Right
+15670	239172	M. Engl	Maximilian Engl	22	59	61	52	60	60	32	58	3	45	637	8	Right
+15681	251285	N. Thiede	Niclas Thiede	21	59	63	56	60	57	43	54	4	3	115	8	Left
+15687	255674	Y. Gil	Yosmel Daniel Gil Rodríguez	19	59	58	57	57	54	25	61	2	52	654	50	Right
+15691	257405	D. Ndiaye	Dialy Kobaly Ndiaye	20	59	59	59	59	54	32	61	2	4	112	10	Left
+15709	244001	T. Weiner	Timon Moritz Weiner	21	59	60	57	63	60	51	56	4	45	634	8	Right
+15715	247930	S. Bouzian	Sofiane Bouzian Hassan	19	59	58	63	61	55	26	61	3	17	395	6	Right
+15718	252462	Y. Schoonderwaldt	Youri Schoonderwaldt	20	59	59	59	57	55	22	58	1	7	422	9	Right
+15729	256536	D. Daniliuc	Daniel-Edward Daniliuc	20	59	64	57	61	52	34	49	2	29	575	34	Left
+15732	257374	C. Dur-Bozoancă	Cosmin Dur-Bozoancă	22	59	54	58	64	60	45	59	1	44	453	70	Left
+15733	257503	L. Klatte	Luis Klatte	20	59	62	60	65	59	32	60	2	45	539	8	Right
+15751	240584	B. Verbong	Bram Verbong	20	59	62	60	59	61	26	54	2	7	480	9	Right
+15773	255633	N. Christogeorgos	Nikos Christogeorgos	20	59	63	64	66	48	27	46	2	22	293	36	Right
+15791	239076	A. Nurudeen	Abdul Manaf Nurudeen	21	59	65	57	63	58	24	53	3	17	320	32	Right
+15793	241223	S. Mogi	茂木 秀	21	59	60	55	62	57	30	54	2	15	374	72	Right
+15801	247506	M. Freese	Matthew Freese	21	59	63	59	62	56	29	59	2	8	252	47	Right
+15809	254613	L. Machado	Lucas Machado Solari	22	59	57	58	57	59	21	61	3	31	544	16	Right
+15824	230765	H. Al Watyan	Habib Al Watyan	23	59	57	59	59	52	48	57	3	10	421	101	Right
+15834	251056	A. Ureche	Andrei Gabriel Ureche	21	59	58	59	61	59	29	60	2	44	653	70	Right
+15836	253839	B. Velásquez	Beycker Eduardo Velásquez Ortega	24	59	58	59	57	60	53	56	2	52	622	50	Left
+15845	255893	E. Pacheco	Edwin Pacheco Chura	21	59	58	60	58	55	24	57	2	51	563	122	Right
+15856	225280	D. Mitov	Dimitar Mitov	23	59	66	56	62	57	60	55	3	53	638	103	Right
+15861	229114	L. Bossin	Liam Bossin	24	59	59	57	60	55	47	57	3	47	676	52	Right
+15895	222095	C. Burton	Callum Burton	23	59	63	57	60	61	44	58	3	53	638	13	Right
+15897	225061	A. Al Ruhaili	Ahmad Ali Al Harbi	25	59	62	60	56	52	43	57	3	10	472	101	Right
+15900	227529	M. Hudson	Matthew Hudson	21	59	58	59	58	53	45	60	3	21	239	13	Right
+15902	229685	J. Fryer	Joe Fryer	24	59	61	55	62	59	45	55	2	48	639	13	Right
+15904	232566	H. Takimoto	滝本 晴彦	23	59	62	57	64	59	20	53	3	15	311	72	Right
+15910	239101	T. Brinkmann	Till Brinkmann	24	59	60	62	57	61	23	56	2	45	658	8	Right
+15915	243737	M. Kamenz	Matti Kamenz	21	59	64	59	58	59	33	56	3	45	571	8	Right
+15922	214525	D. Richards	David Richards	26	59	60	55	61	56	35	57	2	48	601	38	Right
+15925	223011	F. Sollacaro	François-Joseph Sollacaro	26	59	62	54	66	57	44	53	2	27	418	7	Right
+15935	237381	B. Petersen	Brylon Lee Petersen	24	59	65	57	62	60	29	57	3	43	292	89	Right
+15942	254049	L. Nazareno	Leonel Romario Nazareno Delgado	26	59	60	56	61	56	59	55	2	42	368	61	Right
+15948	220820	M. Diaw	Mory Diaw	27	59	59	56	61	56	43	57	2	25	590	7	Right
+15949	222820	E. Salles	Esteban Salles	26	59	61	56	62	56	26	55	2	27	501	7	Right
+15954	242585	T. Shibuya	涉谷 飞翔	25	59	59	57	59	64	29	58	2	15	424	72	Right
+15955	247104	B. McDriscoll	Benjamin McDriscoll	27	59	56	57	60	58	18	57	3	36	497	56	Right
+15956	253628	I. Espinoza	Ítalo Gilmar Espinoza Gómez	24	59	59	60	56	58	45	57	2	46	514	66	Right
+15958	256792	J. Dixon	Joel Dixon	26	59	57	59	58	60	31	60	3	53	656	13	Right
+15960	206566	M. Crocombe	Maxime Teremoana Crocombe	26	59	59	57	60	56	48	57	2	36	582	71	Right
+15961	207720	A. Strömberg	August Strömberg	28	59	57	60	62	57	44	56	2	41	665	37	Right
+15965	224244	S. Fassi	Sebastián Andrés Fassi Álvarez	27	59	65	53	66	58	62	51	3	16	382	33	Right
+15970	239973	J. Kiassumbua	Joël Kiassumbua	28	59	64	53	63	51	39	56	1	25	376	60	Right
+15973	253627	W. Rojas	Widen Rojas Jou	27	59	58	57	61	62	23	58	2	51	511	122	Right
+15986	194679	M. Halstead	Mark Halstead	29	59	61	59	57	63	49	56	2	53	672	13	Right
+15994	244498	K. Szymański	Karol Szymański	27	59	61	59	58	60	26	56	3	40	426	4	Right
+15999	53960	S. Russell	Sam Russell	37	59	56	60	58	58	32	60	3	53	640	13	Right
+16000	104900	M. Gurski	Michael Gurski	41	59	53	63	57	38	26	62	3	45	519	8	Right
+16004	182359	Yang Qipeng	杨启鹏	33	59	57	55	58	61	42	59	1	9	171	58	Right
+16007	187336	D. Melichárek	Dušan Melichárek	36	59	62	53	64	56	27	58	2	41	267	44	Right
+16016	199259	Kim Da Sol	김다솔 Da Sol Kim	31	59	59	59	56	61	37	60	3	39	485	20	Right
+16029	211768	L. Italiano	Lewis Italiano	29	59	61	58	59	58	32	58	2	36	569	56	Left
+16034	215997	G. Orellana	Guillermo Enrique Orellana Riquelme	33	59	59	56	58	60	46	59	3	28	455	39	Right
+16060	251739	V. Boral	Vihaan Boral	30	59	56	60	60	54	42	61	3	19	85	150	Left
+16073	257796	D. Balauru	Dragoș Balauru	30	59	58	52	63	62	23	58	3	44	620	70	Left
+16075	257958	Z. Kostadinović	Živko Kostadinović	28	59	59	54	65	50	20	57	2	25	462	21	Right
+16078	250831	C. Boyce-Clarke	Coniah Boyce-Clarke	17	58	60	57	59	59	27	55	2	21	306	13	Right
+16084	252552	K. Tzolakis	Konstantinos Tzolakis	17	58	61	56	62	50	31	51	2	22	125	36	Right
+16104	257492	José Oliveira	José Pedro Ferreira Oliveira	18	58	58	56	58	57	35	51	3	6	340	2	Right
+16143	251882	T. Axinte	Teodor Axinte	20	58	59	58	58	53	17	56	2	44	610	70	Right
+16151	257149	M. Schulze	Moritz Schulze	19	58	57	55	62	56	43	56	3	35	389	8	Right
+16215	248766	M. Barcola	Malcolm Barcola	21	58	59	54	63	50	25	59	3	4	22	43	Right
+16223	255681	M. Cabral	Rubén Maximiliano Cabral Araújo	19	58	55	58	57	56	32	56	2	31	481	16	Right
+16226	257176	D. Gorka	Dennis-Adam Gorka	18	58	61	55	61	57	33	54	2	35	269	8	Right
+16234	239477	A. Damlu	Abdulsamed Damlu	20	58	57	60	58	53	23	55	2	11	251	55	Right
+16249	254580	E. Damergy	Elias Damergy	17	58	59	54	60	52	35	54	3	4	66	74	Right
+16256	257721	G. Micle	George Mihai Micle	18	58	63	52	62	54	22	51	2	44	636	70	Left
+16269	241655	K. Kristensen	Kasper Thiesson Kristensen	20	58	61	55	59	60	29	58	2	32	447	27	Right
+16275	244090	L. Schaffran	Leon Valentin Schaffran	21	58	62	61	55	59	28	56	3	35	411	8	Right
+16280	247751	Kim Tae Gon	Tae Gon Kim	21	58	56	58	56	56	46	57	3	39	454	20	Right
+16288	256161	W. Ramírez	Wellington Moisés Ramírez Preciado	19	58	55	59	58	57	24	57	2	42	286	61	Right
+16292	257379	L. López	Lautaro López	19	58	58	57	60	52	38	55	2	14	144	1	Right
+16305	235354	M. Fabrie	Michael Fabrie	22	58	55	56	60	63	21	60	1	7	530	9	Right
+16326	251136	H. Moldovan	Horațiu Moldovan	22	58	57	57	57	61	39	56	2	44	620	70	Right
+16352	235421	B. Ozegovic	Benjamin Ozegovic	20	58	61	56	60	54	31	54	3	29	581	34	Right
+16358	240527	K. Le Roy	Killian Le Roy	22	58	58	58	59	59	32	59	2	27	562	7	Right
+16366	245276	M. Al Rubaie	Mohammed Al Rubaie Al Yami	22	58	58	53	64	58	36	54	2	10	177	101	Right
+16367	248865	P. González	Pedro Bernardo González Ojeda	21	58	60	58	61	62	31	51	2	33	196	69	Right
+16368	251298	O. Hanin	Omer Hanin	22	58	62	52	63	54	34	55	4	3	181	53	Right
+16376	257583	Nacho Córdoba	Ignacio Córdoba García	20	58	58	55	60	56	24	57	2	23	412	12	Left
+16383	224565	J. Ruddy	John Jack Ruddy	23	58	57	56	57	54	42	58	3	48	607	14	Right
+16397	239689	M. Sprang	Max Sprang	19	58	58	61	54	57	17	53	3	45	571	8	Right
+16419	255833	Y. Çakır	Yakup Mert Çakır	20	58	57	61	57	59	20	54	2	11	258	55	Right
+16431	238298	M. Miño	Marcelo Agustín Miño	22	58	62	56	61	49	17	52	2	14	276	1	Right
+16432	238571	Lee Jun	Jun Lee	22	58	62	56	62	63	26	60	2	39	484	20	Right
+16452	233886	R. Castellucci	Ramon Castellucci	23	58	61	59	62	56	29	58	3	45	650	8	Right
+16460	246032	D. Sváček	Dominik Sváček	23	58	52	57	67	59	26	54	2	24	304	44	Right
+16461	247066	H. Al Mansoury	Hamad Abdulla Nasser	24	58	56	59	61	51	37	55	2	38	218	109	Right
+16463	250819	M. Al Moqahwi	Mohammed Al Moqahwi	24	58	58	57	59	53	39	55	3	10	616	101	Right
+16468	254394	K. Córdova	Kenneth Fernando Córdova Oyuela	20	58	55	58	60	54	45	59	2	46	470	47	Right
+16472	255159	M. Sündermann	Marlon Sündermann	22	58	63	55	55	60	42	54	2	35	327	8	Right
+16475	256156	R. Morínigo	Rodrigo Mario Morínigo Acosta	21	58	54	55	62	56	27	59	2	33	314	69	Right
+16480	213344	D. Barnes	Dillon Barnes	24	58	61	56	61	54	58	55	3	26	555	13	Left
+16484	225981	A. Pearce	Adam Pearce	23	58	60	63	58	60	38	50	2	36	615	56	Right
+16489	236794	J. Dakir	Jonas Dakir	23	58	59	56	58	53	18	57	3	32	536	27	Right
+16500	248826	T. Secchi	Thomas Secchi	23	58	61	54	62	55	31	56	2	27	540	7	Right
+16506	254085	F. Casanova	Francisco Casanova Bruzzone	23	58	57	52	62	60	24	55	2	31	596	16	Left
+16517	225489	F. Schram	Frederik August Albrecht Schram	25	58	59	56	58	60	43	54	2	32	548	65	Right
+16519	229368	M. Norman	Magnus Norman	23	58	58	60	56	55	24	56	3	53	641	13	Right
+16520	233030	F. Pizzicanella	Franco Pizzicanella Blasi	24	58	57	58	56	61	34	53	2	14	410	1	Right
+16524	237736	S. Awaka	阿波加 俊太	25	58	56	59	58	54	29	53	2	15	396	72	Right
+16527	245074	Choi Young Eun	최영은 Young Eun Choi	24	58	58	58	61	47	18	54	2	39	295	20	Right
+16541	254399	L. Franco	Luis Hernán Franco Fariña	20	58	60	57	58	58	26	57	2	33	515	69	Right
+16546	200942	A. McCarey	Aaron McCarey	28	58	59	55	60	57	35	56	2	47	492	52	Right
+16553	229393	S. Hornby	Sam Hornby	25	58	60	58	60	61	46	57	2	53	630	13	Left
+16558	251095	J. van Stappershoef	Jordi van Stappershoef	24	58	59	55	62	56	31	57	2	48	608	9	Right
+16563	254729	A. Vera	Armando Andrés Vera Amarilla	27	58	58	59	57	55	26	57	3	33	366	69	Left
+16566	221790	D. Primel	Damian Primel	28	58	60	53	60	56	44	55	1	40	594	4	Right
+16567	229227	R. Leszczyński	Rafał Leszczyński	28	58	62	54	59	58	37	56	4	40	671	4	Right
+16568	232449	K. Ishikawa	石川 慧	27	58	59	60	59	55	22	51	2	15	358	72	Right
+16579	251733	P. Nagarajan	Palkesh Nagarajan	30	58	59	61	56	51	50	57	2	19	85	150	Right
+16580	253051	Jorge Vieira	Jorge Miguel Soares Vieira	29	58	62	61	58	53	20	55	3	37	595	2	Right
+16585	180760	F. Al Shammari	Fahad Al Shammari	39	58	58	56	60	55	32	57	3	10	425	101	Right
+16586	182076	Liu Zhenli	刘震理	35	58	59	59	54	56	50	59	2	9	169	58	Right
+16588	183031	Han Feng	韩锋	36	58	59	55	57	58	51	55	2	9	166	58	Right
+16592	186969	Zhou Yajun	周亚君	35	58	57	57	58	52	52	59	3	9	307	58	Right
+16605	228611	D. Al Saeed	Dawood Al Saeed	29	58	60	55	59	56	38	57	2	10	430	101	Right
+16608	247561	Guo Wei	国威	30	58	60	58	56	61	23	62	2	9	307	58	Right
+16616	253069	M. Al Hassawi	Mohammed Al Hassawi	31	58	58	57	59	51	45	56	3	10	353	101	Right
+16620	256017	M. Bolboașă	Mirel Georgian Bolboașă	30	58	56	60	57	55	35	58	2	44	294	70	Right
+16621	256318	D. Visser	Dino Visser	30	58	59	61	59	58	31	56	2	53	642	89	Right
+16641	248329	O. Petersen	Oliver Petersen	18	57	60	59	60	58	29	56	3	37	259	29	Right
+16642	254502	S. Turati	Stefano Turati	18	57	62	51	60	49	27	55	3	2	74	15	Right
+16643	254803	S. Lammens	Senne Lammens	17	57	64	56	63	49	22	43	3	17	77	6	Right
+16652	247020	W. Bedfian	Wilfried Bedfian	18	57	57	58	59	53	30	52	3	27	507	7	Right
+16658	255301	I. Karargyris	Ilias Karargyris	18	57	65	52	55	56	30	51	2	22	125	36	Right
+16661	257392	J. Kroesen	Jaimy Kroesen	17	57	56	52	57	61	26	57	2	7	230	9	Right
+16662	257637	D. Klein	Daniel Klein	19	57	60	58	56	56	24	52	2	3	62	8	Right
+16669	241599	B. Crellin	Billy Crellin	20	57	58	56	60	57	32	55	3	53	645	13	Right
+16670	242179	Y. Fofana	Yahia Fofana	19	57	61	55	58	54	42	60	3	27	500	7	Right
+16686	255433	T. Yamada	山田 大樹	18	57	58	52	63	53	25	58	2	15	429	72	Left
+16699	247960	A. Cristea	Andrei David Cristea	20	57	58	59	58	59	22	52	2	44	542	70	Right
+16711	243048	W. Dennis	Will Dennis	19	57	59	56	58	57	35	56	3	21	157	13	Right
+16728	252406	J. Craenmehr	Jens Craenmehr	18	57	55	60	56	58	30	56	3	7	480	9	Right
+16739	257901	H. Holguín	Héctor Holguín	19	57	55	55	56	52	50	60	3	16	200	47	Right
+16743	258624	C. Anderson	Curtis Anderson	19	57	55	56	59	60	22	61	2	21	550	13	Right
+16744	258810	Erlantz	Erlantz Cubillo Marín	18	57	56	57	59	52	24	54	2	23	351	12	Right
+16747	239019	J. Delianov	James Delianov	20	57	56	58	58	59	26	57	3	36	261	56	Left
+16767	251332	R. Bouallak	Ryan Bouallak	20	57	55	54	58	53	21	59	3	27	324	7	Right
+16777	255811	B. Castro	Bismar Yasmani Castro Mina	18	57	57	56	56	58	29	61	2	42	516	61	Right
+16781	256081	R. Vercauteren	Rik Robert Vercauteren	19	57	62	53	62	57	23	52	3	17	159	6	Right
+16794	248709	M. Luyambula	Ngemba Michael Luyambula	21	57	60	58	61	57	22	57	2	45	646	60	Right
+16796	251164	K. Harr	Kevin Sören Harr	20	57	60	53	63	62	45	52	4	35	420	20	Right
+16807	256974	J. Ospelt	Justin Ospelt	20	57	60	56	57	55	49	55	3	25	649	148	Right
+16809	257142	L. Margueron	Lucas Margueron	19	57	59	56	62	61	20	57	2	27	452	7	Right
+16810	257287	J. Wehking	Joshua Jonas Wehking	20	57	61	55	60	54	25	57	3	7	502	8	Right
+16815	258780	P. Löhr	Paul Frederic Löhr	19	57	59	58	54	57	31	52	3	35	461	8	Right
+16824	251520	I. Brînză	Ianoș Brînză	21	57	57	58	60	57	37	54	2	44	610	92	Right
+16828	253110	J. de Boer	Jan de Boer	20	57	58	55	55	57	19	58	2	7	96	9	Right
+16831	255991	R. Bettocchi	Ricardo Bettocchi Matallana	18	57	57	56	60	52	30	57	3	46	471	66	Right
+16850	247127	Kim Min Ho	김민호 Min Ho Kim	20	57	57	55	58	53	33	55	2	15	591	20	Right
+16855	252342	C. van den Berg	Connor van den Berg	19	57	56	58	56	54	23	57	2	7	315	9	Right
+16860	255989	J. Cabezudo	Jorge Denilson Cabezudo Ormeño	18	57	59	57	56	56	36	54	2	46	471	66	Right
+16867	258278	M. Cotolan	Mihai Ionuț Cotolan	21	57	59	56	58	58	38	53	2	44	559	70	Right
+16872	222503	H. Isted	Harvey Isted	23	57	61	55	60	56	36	53	3	21	505	13	Right
+16874	231722	A. Long	Aubin Pierre Joseph Long	23	57	61	62	56	53	20	53	3	27	541	7	Right
+16876	236005	J. Vom Steeg	Justin Eric Vom Steeg	23	57	59	60	57	54	28	52	3	8	111	47	Right
+16881	240804	C. Yates	Cameron Yates	21	57	58	57	59	56	45	57	2	21	550	14	Right
+16882	240955	T. Durso	Tomás Durso	21	57	60	56	59	55	23	58	3	14	378	1	Right
+16885	242352	A. Attiah	Abdulquddus Attiah	23	57	61	56	64	51	31	52	3	10	215	101	Right
+16886	243594	A. Stone	Aidan Stone	20	57	61	55	56	61	35	54	3	53	662	13	Right
+16892	247121	L. Barraza	Luis Barraza	23	57	54	60	56	59	20	53	3	8	247	47	Right
+16894	251369	O. Djoco	Ouparine Djoco	22	57	60	58	59	53	26	54	2	27	452	7	Left
+16899	255641	I. Mayta	Iván José Mayta Apaza	21	57	61	55	56	48	25	53	2	46	508	66	Right
+16908	258755	J. Plath	Jean-Marie Plath	18	57	54	51	61	54	39	58	3	35	420	8	Right
+16910	228582	S. Sargeant	Sam Sargeant	22	57	59	57	58	55	44	56	3	53	669	13	Right
+16911	230971	N. Tzanev	Nikola Tzanev	23	57	57	55	59	54	46	55	1	48	657	71	Right
+16914	235068	H. Gostomski	Hubert Gostomski	22	57	54	56	61	50	21	59	2	40	469	4	Right
+16924	245359	C. Moreno	Carlos Agustín Moreno Luna	22	57	59	59	57	61	29	55	3	16	216	33	Right
+16928	251218	S. Beccari	Simon Beccari	21	57	57	55	58	52	39	55	2	29	581	15	Right
+16954	247712	Jeon Jong Hyeok	Jong Hyeok Jeon	24	57	60	55	60	55	22	57	3	39	570	20	Right
+16958	253169	Kim Jung Ho	Jeong-Ho Kim	22	57	59	59	59	49	27	55	2	39	593	20	Right
+16970	257082	M. Liesegang	Marius Liesegang	20	57	57	56	58	55	39	53	2	3	181	8	Right
+16985	251814	Ángel Fraga	Ángel Fraga Camba	24	57	59	60	61	56	35	52	3	23	457	12	Right
+16998	212735	E. Basilio	Enzo Basilio	25	57	59	52	63	48	46	51	3	27	164	7	Right
+17001	228253	M. Jawhar	Mansour Jawhar	25	57	56	58	57	53	43	57	3	10	486	101	Right
+17007	252458	M. Grim	Mike Grim	23	57	58	59	55	53	17	58	3	7	554	9	Right
+17019	232673	M. Al Haidari	Marwan Al Haidari	24	57	55	58	55	55	31	58	3	10	42	101	Right
+17023	243189	T. Nagaishi	永石 拓海	24	57	61	51	58	49	37	56	3	15	374	72	Right
+17027	252456	C. Klaus	Carl Klaus	26	57	57	60	53	58	27	56	2	35	415	8	Right
+17040	222176	Liu Weiguo	Weiguo Liu	28	57	58	50	59	60	48	58	3	9	44	58	Right
+17050	256368	J. Viscosi	Jonathan Viscosi	29	57	57	57	58	55	17	59	2	41	574	46	Right
+17067	102881	K. Stamatopoulos	Kyriakos Stamatopoulos	40	57	57	52	56	54	33	57	2	41	364	46	Left
+17072	201989	A. Nadj	Alexander Nadj	33	57	54	57	58	52	28	59	2	41	510	37	Right
+17077	219936	M. Al Wakid	Mohammed Al Wakid	28	57	58	57	55	53	42	55	3	10	98	101	Right
+17080	224622	Sun Le	孙乐	30	57	58	55	58	54	43	53	1	9	45	58	Right
+17081	226838	Wang Guoming	王国明	30	57	58	55	59	56	49	58	1	9	268	58	Right
+17093	257385	E. Bravo	Eduardo Bravo Ávila	29	57	58	55	60	60	28	58	3	16	397	33	Right
+17116	243294	T. Leysen	Tobe Leysen	18	56	60	54	58	49	29	54	2	17	182	6	Right
+17118	247644	R. Jay	Ronan Jay	19	56	58	56	54	59	27	56	2	27	324	7	Right
+17121	256965	J. Eastham	Jordon Eastham	18	56	52	49	65	64	23	51	3	21	309	13	Right
+17134	254122	H. Cartwright	Harvey Cartwright	18	56	56	58	58	53	27	52	3	48	446	13	Right
+17154	257638	L. Philipp	Luca Philipp	19	56	56	54	60	55	27	57	2	3	62	8	Right
+17186	252980	A. Peña	Aldair Edgardo Peña Torres	19	56	55	54	55	55	23	54	2	52	599	50	Right
+17190	254276	E. van der Gouw	Ennio van der Gouw	19	56	59	52	57	59	46	51	3	7	387	9	Right
+17203	239961	J. Moreno	Juan Esteban Moreno Córdoba	20	56	58	52	61	60	23	48	2	34	360	42	Right
+17208	243917	J. Gauci	Joe Gauci	19	56	59	55	60	60	22	53	3	36	359	56	Right
+17228	256537	L. Gütlbauer	Lukas Gütlbauer	19	56	60	53	62	56	42	45	2	29	575	34	Right
+17230	257115	P. Trindade	Patrick Trindade	18	56	52	58	64	56	31	50	2	27	580	7	Right
+17241	246915	J. Brauti	Jonas Vatne Brauti	21	56	58	56	57	52	29	57	2	37	524	29	Right
+17246	251844	A. Popa	Albert Ionuț Popa	21	56	56	54	56	61	24	55	3	44	542	70	Right
+17256	229046	L. Jones	Louis Jones	21	56	53	55	57	57	40	56	3	48	476	13	Right
+17264	246987	C. Kearns	Conor Kearns	22	56	57	53	58	59	31	52	1	47	677	52	Right
+17265	247202	H. Constant	Hugo Constant	20	56	54	63	54	53	30	51	2	27	553	7	Right
+17268	253371	T. Schlitter	Tom Schlitter	18	56	56	58	53	57	26	57	4	45	634	8	Right
+17277	257140	C. Jan	Charly Jan	21	56	58	53	62	49	23	57	2	4	136	7	Right
+17285	231861	M. Stajduhar	Mason Stajduhar	22	56	59	54	55	62	33	53	2	8	97	47	Right
+17294	251165	T. Savin	Toby Savin	19	56	59	56	58	54	27	54	3	48	647	13	Right
+17308	231682	T. Heward-Belle	Thomas Heward-Belle	23	56	60	60	57	52	30	53	2	36	325	56	Right
+17317	248597	D. Quintero	Luis David Quintero Zúñiga	22	56	56	58	55	58	22	53	3	34	343	42	Right
+17324	252257	R. Jalving	Robin Jalving	20	56	58	53	59	58	27	53	2	7	346	9	Right
+17338	258420	M. Eșanu	Mihai Alexandru Eşanu	21	56	58	55	58	53	25	54	2	44	413	70	Right
+17344	233668	Zhang Yan	张岩	23	56	59	53	58	52	34	54	2	9	101	58	Right
+17357	248735	Bao Yaxiong	鲍亚雄	23	56	59	52	56	55	21	51	1	9	106	58	Right
+17358	251016	T. Ahumada	Tomás Alejandro Ahumada Oteíza	19	56	59	48	62	57	31	61	2	28	534	39	Right
+17359	251777	I. Pop	Ionuț Alin Pop	22	56	55	57	58	58	26	54	2	44	564	70	Right
+17373	244828	R. Gutiérrez	Ricardo Daniel Gutiérrez Hernández	24	56	54	56	57	59	25	57	2	16	363	33	Right
+17374	245088	M. Al Haeti	Mohammed Ahmed Alhaeti	24	56	56	56	59	55	38	54	3	10	329	101	Right
+17383	254981	R. Cerecedo	Rodrigo Alejandro Cerecedo Cabrera	22	56	53	59	55	52	27	55	3	16	234	33	Right
+17393	258362	Phelipe	Phelipe Megiolaro Alves	21	56	56	51	60	58	30	50	2	8	282	5	Right
+17403	252280	A. Nilsson	Alexander Nilsson	22	56	58	56	56	54	25	55	2	41	405	37	Right
+17405	255345	P. Izaguirre	Paolo Camilo Izaguirre Ferreyra	22	56	58	58	55	50	20	55	3	46	470	66	Right
+17407	255864	M. Rojas	Mauro Luis Alberto Rojas Figueredo	23	56	56	57	51	60	31	52	2	33	619	69	Right
+17408	256436	E. Tangvik	Erland Tangvik	22	56	57	53	54	56	24	59	3	41	417	29	Right
+17412	226450	M. Awaji	Mohammed Ahmed Awaji	25	56	57	61	53	50	41	56	2	10	42	101	Right
+17413	227545	T. Ryan	Tadhg Ryan	23	56	59	55	58	54	46	52	2	47	681	52	Right
+17421	258383	P. Morrison	Peter Morrison	22	56	55	58	63	60	27	57	2	26	522	14	Right
+17422	258688	Lluis Andreu	Lluís Andreu i Ruiz	20	56	55	58	53	55	26	59	2	1	284	12	Right
+17430	256755	M. Guillaume	Marc-Antoine Guillaume	24	56	60	57	61	58	26	53	3	27	618	7	Right
+17436	234301	Choi Cheol Won	Cheol Won Choi	25	56	58	56	54	55	28	55	2	39	432	20	Right
+17439	254873	D. Hotta	堀田 大暉	25	56	57	53	58	48	25	55	3	15	499	72	Left
+17443	233262	A. Rawls	Andre Rawls	28	56	58	56	58	67	37	53	2	8	352	47	Right
+17444	238076	M. Bersano	Matthew Bersano	27	56	56	51	58	60	37	54	2	8	310	47	Right
+17446	255717	J. Mero	John Jairo Mero Reascos	25	56	58	55	56	56	34	52	2	42	445	61	Right
+17460	202655	B. Gommert	Benjamin Yves Gommert	35	56	54	57	53	58	33	59	2	45	646	8	Right
+17464	213535	K. Zobeck	Kyle Zobeck	30	56	56	55	56	55	43	55	1	8	282	47	Right
+17471	252437	M. Zoulan	Mousa Zoulan	29	56	54	56	56	51	44	56	3	10	427	101	Right
+17473	256759	A. Alkan	Akın Alkan	30	56	60	59	54	60	20	50	3	11	253	55	Right
+17474	258113	A. García	Álvaro Marcelo García Zaroba	36	56	54	50	68	44	31	54	4	31	481	16	Right
+17482	244809	M. Dewhurst	Marcus Dewhurst	19	55	55	54	56	58	31	53	2	53	641	13	Right
+17488	252730	R. Sinclair	Ross Sinclair	19	55	54	55	54	55	26	52	3	26	535	14	Right
+17489	252773	J. Griffiths	Joshua Griffiths	18	55	57	53	55	53	21	56	3	53	648	13	Right
+17491	254937	D. Gril	Domen Gril	19	55	53	59	56	58	22	52	2	3	62	3	Right
+17499	257892	A. Pavlesic	Adam Pavlesic	17	55	53	55	59	53	29	56	2	36	325	56	Right
+17512	252160	M. Deman	Maxim Deman	18	55	61	53	57	56	19	49	3	17	391	6	Right
+17524	248047	I. Rus	Ionuț Casian Rus	20	55	56	60	57	55	31	50	2	44	369	70	Right
+17530	252583	M. Alexander	Matthew Alexander	18	55	56	54	57	49	30	54	2	53	645	13	Right
+17537	241033	C. Gregory	Cameron Gregory	20	55	56	52	57	55	40	55	3	48	635	13	Right
+17542	246158	M. Hermansen	Mads Hermansen	19	55	56	58	60	59	35	49	2	32	442	27	Right
+17556	255727	F. Correa	Fabrizio Nicolás Correa González	19	55	55	59	55	48	21	54	2	31	544	16	Right
+17560	257141	J. Jäger	Jordaine Jäger	17	55	57	56	59	50	31	51	3	45	637	47	Right
+17565	258799	J. Froeling	Job Froeling	18	55	51	58	62	55	17	48	2	7	313	9	Right
+17569	245858	H. Seaden	Harry Seaden	19	55	56	55	56	55	23	54	2	53	625	13	Right
+17579	254530	E. Mawete Mwimba	Enock Mawete Mwimba	20	55	57	52	62	55	25	54	3	37	604	29	Right
+17591	240657	F. Ravaglia	Federico Ravaglia	20	55	58	59	58	51	37	49	3	2	172	15	Right
+17593	240838	B. Wade	Bradley Wade	19	55	56	60	53	57	31	54	2	48	631	13	Right
+17603	251904	J. Schelfhout	Jordy Schelfhout	19	55	57	51	62	54	30	47	3	17	525	6	Left
+17605	253955	Han Jiaqi	韩佳奇	20	55	56	58	57	57	24	54	3	9	100	58	Right
+17622	233505	R. Sandford	Ryan Sandford	21	55	57	56	56	55	36	55	2	21	254	13	Right
+17629	247346	T. Muse	Trey Muse	20	55	59	56	59	53	35	59	1	8	147	47	Right
+17631	247620	P. Ejimadu	Phillip Chijoke Ejimadu	20	55	56	53	60	58	31	55	2	8	41	47	Right
+17633	252227	F. Bloch	Florentin Bloch	20	55	53	59	53	54	23	53	3	27	241	7	Left
+17634	252241	D. Rouyard	Davy Rouyard	20	55	55	54	56	51	28	51	2	4	124	7	Right
+17635	252538	L. Otto	Lorenz Otto	19	55	57	57	56	53	20	53	2	45	407	8	Right
+17644	257815	M. Kablan	Muzaffer Cem Kablan	20	55	53	54	58	50	28	53	3	11	163	55	Right
+17660	250897	M. Bozan	Mustafa Burak Bozan	19	55	59	53	58	60	20	47	3	11	381	55	Right
+17665	255669	H. Cardozo	Hernán Arturo Cardozo Alessandri	19	55	55	58	50	55	30	54	3	51	552	122	Right
+17666	255921	P. Urminsky	Peter Urminský	21	55	59	55	54	57	27	53	3	26	588	23	Right
+17670	256076	J. Contreras	Jose Alexander Contreras Berna	19	55	56	54	57	56	24	51	2	52	678	50	Right
+17678	233189	D. Vásquez	Devis Estiven Vásquez Llach	22	55	55	52	54	52	26	60	3	33	316	42	Right
+17681	242251	T. Amos	Tom Amos	22	55	50	55	57	56	23	58	2	41	408	37	Right
+17685	247134	R. Ishii	石井 綾	19	55	56	57	59	53	30	48	2	15	482	72	Right
+17687	247272	G. Ito	伊藤 元太	19	55	56	56	60	49	35	48	2	15	71	72	Right
+17692	255429	L. Vaca	Leonardo Vaca Yoki	20	55	50	60	53	52	31	52	2	51	520	122	Right
+17693	226423	N. Gartside	Nathan James Gartside	22	55	57	51	57	51	46	51	2	47	673	57	Right
+17694	233695	N. Hayes	Nicholas Hayes	21	55	52	55	54	56	23	52	3	53	611	13	Right
+17697	239927	O. Ottesen	Oliver Ottesen	21	55	55	54	59	58	29	56	2	32	193	27	Right
+17699	241641	E. Idem	Emmanuel Okokon Idem	21	55	56	53	56	59	40	53	3	21	161	13	Right
+17705	248255	A. Abdullah	Abdulbasit Abdullah	23	55	56	54	56	52	29	53	3	10	472	101	Right
+17710	254792	M. Al Mahasna	Mohammed Al Mahasna	23	55	57	53	56	50	43	55	3	10	427	101	Right
+17711	255812	J. Lara	Johan David Lara Medrano	21	55	54	52	57	58	32	58	1	42	516	61	Right
+17714	257274	D. Turnbull	Duncan Turnbull	22	55	55	53	59	60	21	50	3	48	529	47	Right
+17715	257669	R. Strączek	Rafał Strączek	21	55	55	52	59	54	18	54	2	40	594	4	Right
+17720	233689	J. Lindgren	Julius Lindgren	22	55	60	55	52	53	25	49	2	41	339	37	Right
+17721	241542	C. McCabe	Colin McCabe	23	55	57	54	56	55	26	55	3	47	679	52	Right
+17732	257656	A. Leszczyński	Arkadiusz Leszczyński	20	55	53	57	58	58	21	54	1	40	671	4	Right
+17734	258514	M. Rundqvist	Max Rundqvist	19	55	53	56	56	54	25	53	3	41	652	37	Right
+17735	229031	N. Baumann	Novem Baumann	24	55	60	51	54	53	47	52	3	25	462	21	Right
+17740	247099	A. Firth	Andrew Firth	23	55	54	59	55	52	16	53	3	26	231	13	Right
+17747	257475	Shi Chenglong	Shi Chenglong	21	55	56	56	54	55	25	54	3	9	268	58	Right
+17750	244701	J. Brady	Jack Brady	23	55	55	55	55	54	39	54	2	47	679	52	Right
+17763	245085	A. Al Bahri	Abdullah Al Bahri	25	55	57	53	56	51	31	55	3	10	329	101	Right
+17766	255291	B. Edwards	Bobby Edwards	24	55	59	52	54	58	32	51	2	8	243	47	Right
+17767	255800	L. Chalá	Leodan Raúl Chalá Ayoví	22	55	55	52	54	58	21	52	3	42	423	61	Right
+17769	232031	C. Sparrow	Connor Sparrow	26	55	58	54	52	59	33	57	2	8	287	47	Right
+17779	228533	Lee Joon Hee	이준희 Joon Hee Lee	26	55	59	48	60	51	45	51	3	39	295	20	Right
+17788	208932	A. Al Shammari	Abdullah Hamdan Al Shammari	28	55	56	52	55	52	46	53	3	10	486	101	Right
+17789	222703	Choe Pil Soo	최필수 崔弼秀	29	55	55	55	53	55	43	50	3	39	593	20	Left
+17795	182471	Sun Shoubo	孙寿博	37	55	52	52	52	57	46	63	2	9	149	58	Right
+17804	251772	E. Pérez	Edgar David Pérez Rodríguez	33	55	51	59	54	59	31	55	1	52	617	50	Right
+17813	258112	A. Luna	Ángel Samuel Luna Beltrachini	17	54	55	52	55	48	45	50	3	31	481	16	Right
+17820	246262	L. Soldini	Lucio Soldini	19	54	56	58	55	58	32	49	2	25	473	21	Right
+17825	252911	T. Schreiber	Tim Schreiber	18	54	52	59	55	50	23	51	2	3	23	8	Right
+17830	244867	J. Andrésson	Jökull Andrésson	18	54	55	53	57	54	22	53	3	21	306	65	Right
+17831	248283	R. Sandberg	Rasmus Semundseth Sandberg	19	54	58	58	55	55	24	53	2	37	204	29	Right
+17841	246240	H. Bernat	Hans Christian Bernat	19	54	57	52	55	57	33	52	3	32	523	27	Right
+18138	243130	D. Andersen	Daniel Gadegaard Andersen	19	53	55	51	56	54	34	54	3	32	447	27	Right
+17850	254811	T. Collins	Tom Collins	17	54	57	56	52	48	27	55	1	53	668	13	Left
+17851	255266	O. Nkambadio	Obed Nkambadio	17	54	56	50	55	50	29	51	2	27	279	7	Right
+17855	247428	D. Ochoa	David Ochoa	19	54	56	52	55	53	26	53	2	8	244	47	Right
+17859	252046	D. Youfeigane	Dominique Youfeigane	20	54	54	54	56	47	17	54	2	27	164	7	Right
+17871	247058	T. Hendriks	Tom Hendriks	18	54	57	54	52	52	27	55	2	7	502	9	Right
+17876	251753	J. Odehnal	Jakob Odehnal	18	54	56	53	56	56	32	50	3	29	546	34	Right
+17879	255900	N. Törnqvist	Noel Törnqvist	18	54	56	54	53	60	45	52	2	41	652	37	Left
+17881	257832	B. Foster-Theniger	Bradley Foster-Theniger	18	54	58	52	56	54	18	49	3	21	161	13	Right
+17883	258329	A. Yalçın	Ali Eren Yalçın	19	54	60	58	46	54	19	54	3	11	264	55	Right
+17886	243128	M. Suárez	Marcelo Ignacio Suárez Báez	19	54	53	56	52	52	23	50	3	28	173	39	Right
+17897	256053	J. Pulskamp	John Pulskamp	19	54	59	51	58	48	24	52	1	8	266	47	Right
+17910	236337	J. Turner	Jake Turner	21	54	56	57	56	52	24	54	3	53	672	13	Right
+17917	250957	M. Wagner	Michael Wagner	19	54	55	56	59	53	22	52	2	45	623	8	Right
+17918	251305	K. Ibrahim	Kevin Ibrahim	20	54	57	49	60	51	26	52	3	35	357	8	Right
+17922	254223	J. Render	Joshua Render	19	54	58	59	50	55	26	49	3	21	370	13	Right
+17928	255849	D. Mitsui	Daiki Mitsui	19	54	59	54	58	49	24	42	3	15	424	72	Right
+17935	236919	N. Suman	Nicholas Suman	20	54	57	57	54	54	21	55	3	36	497	56	Left
+17938	242086	M. Sutton	Matthew Sutton	20	54	55	53	53	51	20	54	2	36	503	56	Right
+17939	245425	N. James	Noah James	19	54	57	54	57	51	24	51	3	36	569	56	Right
+17943	255178	E. Lopez	Eric Lopez	21	54	57	51	59	53	23	49	2	8	111	47	Left
+17947	244355	J. Brendieck	Jonas Brendieck	21	54	57	55	56	49	20	52	2	45	543	8	Right
+17949	245090	L. Beckemeyer	Laurenz Beckemeyer	20	54	57	55	56	51	34	50	3	35	450	8	Right
+17950	245545	S. Barone	Simone Barone	21	54	56	54	55	52	27	50	3	2	192	15	Right
+17953	252537	N. Al Ghamdi	Nawaf Saeed Al Ghamdi	21	54	53	58	53	51	21	52	2	10	98	101	Right
+17974	240330	H. Hawsawi	Hamad Hawsawi	23	54	55	51	56	52	38	53	3	10	425	101	Right
+17975	240339	J. Granlund	Jesper Granlund	20	54	54	56	57	51	23	48	3	37	661	29	Right
+17978	244178	T. Kretzschmar	Tom Kretzschmar	21	54	52	57	60	51	42	49	3	45	592	8	Right
+17979	247295	J. Hass	Joaquín Fabricio Hass	22	54	56	57	55	51	22	50	2	14	277	1	Right
+17982	254978	Seo Ju Hwan	Ju Hwan Seo	21	54	52	54	56	57	26	54	3	39	250	20	Right
+17985	257700	A. Desjardins	Axel Desjardins	20	54	56	52	56	48	22	53	3	2	192	46	Right
+17986	258305	G. Thomas	Gard Bergmann Thomas	19	54	58	56	58	50	27	46	2	37	595	29	Right
+17992	254962	D. Callender	Drake Callender	22	54	56	48	57	60	18	50	3	8	39	47	Right
+18001	257926	C. Ramos	César Rafael Ramos Becerra	20	54	54	56	59	55	19	52	3	16	148	33	Right
+18006	233681	Liu Shibo	刘世博	23	54	52	56	57	51	35	48	2	9	44	58	Right
+18008	241401	S. Moloney	Scott Moloney	20	54	55	51	54	53	27	55	2	53	656	13	Right
+18010	247434	L. Pöhls	Leon Maurice Pöhls	23	54	56	57	56	56	34	50	2	47	439	8	Right
+18022	247176	L. McNicholas	Luke McNicholas	20	54	55	56	56	51	28	55	2	47	675	52	Right
+18029	258548	Julen	Julen Fernández Díaz	21	54	56	61	57	47	23	45	2	23	457	12	Right
+18031	235426	G. Chande	Gion Fadri Chande	22	54	57	52	57	52	27	53	2	25	649	21	Right
+18037	248843	H. Altıntaş	Hüseyin Altıntaş	25	54	55	48	56	56	29	52	2	11	264	55	Right
+18041	205558	J. Cracknell	Joe Cracknell	26	54	54	53	55	52	46	53	3	53	680	13	Right
+18057	258877	A. Azurín	Ángel David Azurín Condori	29	54	54	56	55	49	20	51	2	46	428	66	Right
+18059	257126	T. Sharman-Lowe	Teddy Sharman-Lowe	17	53	54	53	54	52	24	52	3	48	614	13	Right
+18070	255976	O. Dovin	Oliver Nnonyelu-Dovin	17	53	62	54	53	48	25	52	2	41	348	37	Right
+18076	250865	Z. Jeacock	Zachary Jeacock	19	53	53	51	56	61	28	51	3	21	170	13	Right
+18079	253398	M. Ulla	Marius Amundsen Ulla	18	53	55	54	53	50	29	53	2	37	524	29	Right
+18080	254573	M. Andersen	Marcus Ellingsen Andersen	19	53	55	51	55	54	19	51	3	37	350	29	Right
+18094	258600	D. Ciofu	Denis Constantin Ciofu	18	53	54	49	57	53	35	52	2	44	610	70	Right
+18095	242853	S. Brynn	Solomon Brynn	19	53	48	55	57	58	31	50	2	21	344	13	Right
+18104	257854	J. Newman	Jack Newman	18	53	57	55	56	54	22	52	2	26	633	14	Right
+18105	242976	T. Billson	Thomas Billson	19	53	58	50	60	46	28	48	2	21	475	13	Right
+18106	245470	K. Broda	Kamil Broda	18	53	59	51	58	53	26	45	2	40	263	4	Right
+18107	245797	J. Pukaj	Jozef Pukaj	20	53	57	56	52	54	21	53	3	25	197	21	Right
+18116	254550	B. Neugebauer	Bartosz Neugebauer	18	53	49	56	55	52	33	52	2	40	495	4	Right
+18119	257486	B. Jones	Bobby Jones	18	53	55	53	54	52	25	51	2	48	532	52	Right
+18126	243588	T. McGill	Thomas McGill	20	53	56	53	55	59	18	50	2	53	663	13	Right
+18133	256665	J. Uribe	Juan José Uribe Colorado	18	53	60	56	57	45	26	43	3	34	235	42	Right
+18135	258056	S. Long	Sam Long	17	53	58	48	51	56	43	52	3	48	547	13	Right
+18151	256186	W. Hernández	Wilbert Miguel Hernández Torrealba	19	53	55	50	59	51	22	55	2	52	622	50	Right
+18156	257580	F. Brancolini	Federico Brancolini	18	53	48	54	51	60	27	55	1	2	73	15	Right
+18161	225938	K. Gourlay	Kyle Gourlay	21	53	53	49	53	57	44	53	3	26	629	14	Right
+18178	256924	P. Bourdelle	Paul Bourdelle	19	53	55	52	57	50	52	55	2	27	501	7	Right
+18185	240592	B. James	Bradley James	20	53	51	53	55	49	27	52	3	21	344	13	Right
+18190	245057	R. Ferrario	Rafael Ferrario	20	53	56	47	59	58	24	47	2	14	383	1	Right
+18191	248858	T. Fayulu	Timothy Bruce Fayulu	20	53	55	59	52	50	20	47	3	25	317	60	Right
+18193	251465	A. Lyska	Arthur Lyska	20	53	56	54	55	53	42	49	3	45	528	8	Right
+18197	255498	Kwon Jae Beom	Jae Beom Kwon	18	53	51	52	60	46	22	55	3	39	466	20	Right
+18199	258248	D. Krzysztofek	Dariusz Krzysztofek	20	53	55	52	54	49	22	55	2	40	490	4	Right
+18200	237127	D. Thiam	Demba Thiam Ngagne	22	53	53	52	51	62	54	61	1	30	212	10	Right
+18201	238994	C. Lyle	Curtis Lyle	20	53	54	53	51	55	25	50	2	26	498	14	Right
+18203	240210	M. Nilsson	Mathias Nilsson	21	53	53	57	54	56	23	48	3	41	267	37	Right
+18205	241327	Chen Wei	陈威	22	53	52	52	52	51	30	52	3	9	45	58	Right
+18209	245210	B. Johnson	Billy Johnson	20	53	54	54	54	58	27	54	2	53	670	13	Right
+18211	246850	Z. Jones	Zac Maxwell Jones	19	53	56	46	58	42	36	49	2	36	414	71	Right
+18215	255982	L. Cueva	Lucas Cueva Gordillo	19	53	51	52	53	55	50	51	3	42	521	61	Right
+18219	258409	R. Pop	Rareş Antonio Pop	21	53	54	56	53	50	37	52	3	44	621	70	Left
+18221	237463	A. Kelsey	Adam Kelsey	20	53	54	52	51	51	28	52	2	53	668	13	Right
+18229	255704	B. Rivas	Bruno Rivas Reyes	19	53	55	48	54	59	24	51	1	51	520	122	Right
+18235	232131	H. Ravas	Henrich Ravas	22	53	55	52	56	52	37	51	2	21	161	23	Right
+18238	240531	M. Al Baqawi	Moataz Al Baqawi	22	53	55	51	58	49	28	48	2	10	281	101	Right
+18239	241099	L. Finochietto	Leandro Farid Finochietto	23	53	58	52	52	55	30	53	2	14	285	1	Right
+18249	256111	E. Panicco	Elliot Panicco	23	53	56	52	60	52	28	53	3	8	356	47	Right
+18253	258309	G. Galindo	Carlos Gustavo Galindo De La Rosa	20	53	54	51	53	50	19	54	2	16	72	33	Right
+18260	248690	J. Gould	Joshua Gould	23	53	46	58	56	59	20	52	2	21	206	38	Left
+18267	257695	F. Hansen	Fredrik Repstad Hansen	19	53	55	56	57	45	27	47	2	37	584	29	Right
+18276	240884	A. André Jr	Alexis André Jr	23	53	52	53	56	58	51	50	4	48	608	24	Right
+18279	257425	G. Gutiérrez	Gustavo Guadalupe Gutiérrez Muñoz	23	53	57	50	57	47	47	50	3	16	203	33	Right
+18280	258091	F. Rivasseau	Franco Rivasseau	23	53	53	57	55	46	20	48	3	14	431	1	Right
+18282	245435	R. Al Najjar	Rakan Al Najjar	25	53	54	55	55	50	33	48	3	10	318	101	Right
+18284	257074	T. Prendergast	Tristan Prendergast	25	53	56	56	50	49	26	52	1	36	323	56	Right
+18285	210750	M. Al Burayh	Mohammad Al Burayh	26	53	54	47	54	44	44	52	2	10	421	101	Right
+18286	224555	Xu Jiamin	徐嘉敏	26	53	56	52	54	49	36	49	3	9	76	58	Right
+18287	233286	Hwang In Jae	In Jae Hwang	26	53	54	55	49	56	25	49	3	39	484	20	Right
+18288	237269	J. McGuire	Jake McGuire	25	53	49	52	54	69	34	51	2	41	577	47	Right
+18305	258311	K. Trelowski	Kacper Trelowski	16	52	54	52	56	54	31	52	2	40	398	4	Right
+18309	257670	M. Dudek	Mateusz Dudek	17	52	49	53	57	58	20	49	2	40	594	4	Right
+18310	257921	A. Gülstorff	Andreas Gülstorff	17	52	55	52	57	46	43	47	2	32	460	27	Right
+18311	252783	K. Bąkowski	Krzysztof Bąkowski	17	52	53	52	51	50	32	54	3	40	400	4	Right
+18313	256323	K. Molefe	Karabo Molefe	17	52	58	48	61	46	39	38	3	43	292	89	Right
+18316	245822	D. Alemdar	Doğan Alemdar	17	52	50	56	50	54	24	47	2	11	271	55	Right
+18318	247105	T. Canteros	Tomás Canteros	18	52	45	57	58	55	47	48	3	14	146	1	Right
+18331	258693	E. Mirus	Eryk Mirus	16	52	47	53	58	48	25	48	3	40	458	4	Right
+18334	247839	F. Stople	Frank Stople	18	52	52	53	55	51	29	50	2	37	605	29	Right
+18335	248256	M. Sanyor	Meshari Sanyor	18	52	51	50	53	50	30	51	3	10	472	101	Right
+18355	256888	L. Schneller	Lukas Schneller	18	52	54	51	57	55	24	52	3	45	623	8	Right
+18375	258052	A. Torres	Axel Torres	18	52	53	49	53	58	16	48	3	16	283	33	Right
+18382	258402	N. Curcija	Nikola Curcija	19	52	53	52	61	47	40	50	3	27	500	46	Right
+18387	243636	C. Hawkins	Callum Hawkins	20	52	56	51	50	55	28	51	3	48	614	13	Left
+18388	243839	A. Fojtíček	Alex Fojtíček	20	52	54	48	56	52	39	51	2	48	603	23	Right
+18390	246648	O. Battersby	Ollie Battersby	18	52	49	52	53	52	26	53	2	53	640	13	Right
+18396	255141	S. Nilsen	Simen Vidtun Nilsen	20	52	53	55	54	47	27	51	2	37	586	29	Right
+18404	258106	S. Kiefer	Stefan Kiefer	18	52	53	58	45	58	47	53	2	45	464	8	Right
+18406	258554	A. Foged	Andreas Skjøtt Foged	19	52	53	52	54	56	31	49	2	32	609	27	Left
+18408	233407	Li Guanxi	李冠希	21	52	57	49	59	42	34	40	2	9	262	58	Right
+18419	257085	T. Ur	Trym Sølvberg Ur	19	52	57	52	51	57	36	50	2	37	538	29	Right
+18437	237205	A. Maynard-Brewer	Ashley Maynard-Brewer	21	52	54	46	47	56	22	55	3	48	440	56	Right
+18440	245292	M. Yıldız	Murat Can Yıldız	21	52	47	54	54	58	27	51	2	11	399	55	Right
+18441	246841	N. Forastiero	Nicolás Alejandro Forastiero	21	52	47	58	53	59	15	48	2	14	285	1	Right
+18444	252788	R. Munro	Ross Munro	20	52	53	56	52	52	30	51	2	26	659	14	Right
+18447	255208	D. Ochsenham	Dakota Ochsenham	20	52	54	51	53	50	25	51	2	36	436	56	Right
+18451	258282	D. Segovia	Diego Segovia	20	52	48	54	57	47	30	53	2	14	176	16	Right
+18453	252872	M. Al Ghamdi	Majed Al Ghamdi	21	52	54	51	54	56	18	48	3	10	430	101	Right
+18455	256463	B. Grawe	Benedikt Grawe	20	52	56	54	55	53	36	44	3	35	272	8	Right
+18759	251946	C. Coulter	Callum Coulter	19	50	50	50	50	43	27	50	1	53	644	13	Right
+18459	225766	H. Keto	Hugo Keto	22	52	53	51	54	52	45	49	2	49	467	40	Right
+18462	246417	A. Patterson	Anthony Patterson	20	52	53	52	54	54	26	53	2	48	496	13	Right
+18467	256220	M. Parra	Martín Cristián Parra Plaza	19	52	49	56	53	47	31	50	3	28	566	39	Right
+18478	245502	R. Al Najjar	Raghid Alaa Najjar	23	52	53	47	53	60	21	53	2	10	215	101	Right
+18479	252281	F. Bekleviç	Furkan Bekleviç	21	52	56	47	54	49	30	48	2	11	280	55	Right
+18480	255661	C. Fraga	Claudio Adolfo Fraga Pérez	21	52	53	58	49	54	25	54	2	52	674	50	Right
+18484	258288	W. Barlasina	Williams Barlasina	22	52	54	52	56	47	18	50	2	14	265	1	Right
+18489	252214	Y. Kafkasyalı	Yiğit Kafkasyalı	22	52	55	57	48	53	33	51	2	11	280	55	Right
+18490	255014	T. Bartouche	Teddy Bartouche-Selbonne	23	52	58	49	57	49	29	47	2	4	256	7	Right
+18495	225342	J. Stevens	Jack Stevens	22	52	56	50	54	47	42	45	3	48	549	13	Right
+18496	240460	B. Al Bahrani	Basil Al Bahrani	25	52	53	55	51	46	26	50	2	10	421	101	Right
+18498	243299	M. Nelson	Michael Nelson	25	52	48	55	55	54	24	50	3	8	275	47	Right
+18500	255600	Xing Yu	Yu Xing	24	52	57	46	59	49	21	48	1	9	169	58	Right
+18501	257999	G. Székely	György Székely	25	52	47	50	58	50	18	54	3	45	592	26	Right
+18503	227969	Zhao Shi	Shi Zhao	27	52	59	51	54	48	29	44	3	9	169	58	Right
+18505	247448	G. Ranjitsingh	Gregory Ranjitsingh	26	52	53	52	60	50	20	46	1	8	274	116	Right
+18509	245558	G. Maley	Gary Maley	37	52	48	52	46	53	18	58	1	26	587	14	Right
+18511	255664	W. Jimenéz	Wilver Eduardo Jiménez	30	52	50	58	51	50	21	49	1	52	674	50	Left
+18517	257568	S. Tangvik	Sander Tangvik	17	51	56	46	57	58	61	44	2	37	204	29	Right
+18537	257130	A. Hoff	Anders Nørbo Hoff Nielsen	16	51	59	50	45	51	28	53	2	32	609	27	Right
+18539	252420	T. Parker	Tiernan Christopher Luke Parker	18	51	50	49	55	50	26	53	3	21	505	57	Right
+18542	256873	J. Paris	Julius Paris	18	51	53	51	55	58	20	41	2	45	606	8	Right
+18588	258670	B. Bottomley	Ben Bottomley	17	51	53	50	54	55	23	52	1	48	476	13	Right
+18589	258872	T. Seymour	Taylor Seymour	18	51	51	49	51	50	26	49	3	48	529	13	Left
+18599	256702	N. Falk	Noah Falk	18	51	52	50	51	53	25	55	3	25	590	21	Right
+18605	258568	K. Bielikow	Kamil Bielikow	19	51	56	49	51	55	23	49	2	40	513	4	Right
+18610	251142	L. Marsella	Lucas Marsella	20	51	55	48	53	57	26	51	2	27	418	7	Right
+18612	255054	N. Harness	Nathan Harness	20	51	55	51	47	49	20	48	3	48	440	13	Right
+18635	238583	J. Sims	Jack Sims	21	51	47	48	52	53	18	52	2	48	603	13	Right
+18638	251433	B. Voll	Ben Alexander Voll	19	51	52	55	57	52	25	42	2	45	539	8	Right
+18640	256108	A. Rojo	Alejandro Exequiel Rojo Veas	20	51	48	53	50	54	25	49	3	28	393	39	Right
+18648	248739	A. Matthews	Archie Matthews	18	51	51	55	57	58	21	42	2	48	639	13	Right
+18650	257974	L. Chang-Andersen	Lucas Chang-Andersen	20	51	51	53	56	52	32	48	2	32	579	27	Right
+18654	256529	V. Bernedo	Vicente Bernedo García Huidobro	19	51	55	56	53	52	26	41	1	28	173	39	Right
+18655	256754	D. Salhi	Dorian Salhi	21	51	59	46	52	51	23	54	3	27	618	7	Right
+18656	257902	M. Lagunes	Martín Gerardo Lagunes Contreras	19	51	52	52	50	48	38	48	3	16	288	33	Right
+18659	229429	K. McKenzie-Lyle	Kai McKenzie-Lyle	22	51	52	50	53	49	40	49	2	53	638	135	Right
+18664	243629	J. García	Joaquín Andrés García Epull	21	51	47	58	46	52	31	52	2	28	534	39	Right
+18668	248192	J. Pinillo	Jeison Alberto Pinillo Solís	23	51	57	52	56	59	26	45	3	34	343	42	Right
+18672	253236	A. Machuca	Alejandro Machuca Gallardo	21	51	51	47	50	47	33	48	2	33	314	69	Right
+18678	257908	B. Ünsal	Batuhan Ünsal	23	51	49	50	55	49	24	47	2	11	404	55	Right
+18680	242206	J. Caldwell	Jefferson Caldwell	24	51	54	47	54	51	29	50	1	8	211	47	Right
+18685	205861	A. Mills	Andrew Mills	25	51	51	48	53	45	44	51	2	41	651	13	Right
+18686	255004	T. Andersson	Tobias Andersson	26	51	57	46	55	55	27	49	2	41	585	37	Right
+18689	254906	R. Scott	Ryan Scott	24	51	47	53	58	51	17	50	2	36	261	56	Right
+18695	256488	M. Cox	Matthew Cox	17	50	52	56	50	57	29	42	3	48	657	13	Right
+18706	256624	S. Czajor	Szymon Czajor	18	50	51	50	52	42	22	45	2	48	589	4	Right
+18712	244943	E. Bilen	Eren Bilen	19	50	55	53	50	55	20	41	2	11	322	55	Right
+18713	247494	J. Sirois	Jonathan Sirois	19	50	54	53	47	49	16	49	2	8	210	46	Right
+18715	254298	A. Pietrogiovanna	Alessandro Pietrogiovanna	19	50	52	50	53	55	30	42	2	25	473	21	Right
+18720	243060	J. Lee	Jackson Lee	18	50	51	50	53	50	24	49	3	36	202	56	Right
+18722	248496	H. Kendrick	Henry Kendrick	19	50	53	52	51	50	26	51	2	21	434	13	Right
+18725	258732	Andre Mendes	Andre Filipe Da Silva Mendes	17	50	56	50	50	51	38	48	2	53	672	2	Right
+18733	243685	J. Cleary	Jamie Cleary	18	50	50	49	50	54	29	45	2	47	655	52	Right
+18741	258351	I. Boehmer	Isaac Boehmer	18	50	54	50	46	54	17	53	2	8	255	46	Right
+18750	258591	L. Isherwood	Liam Isherwood	17	50	50	54	55	46	29	45	2	48	647	13	Right
+18757	251563	J. Wright	Joe Wright	19	50	53	54	48	47	18	46	3	21	254	13	Right
+18760	252076	L. Schellenberg	Lukas Schellenberg	19	50	57	52	46	51	24	43	4	45	438	8	Right
+18764	256471	J. Osaghae	Joseph Osaghae	19	50	48	56	59	47	31	41	2	48	440	13	Right
+18769	248664	M. Harris	Max Harris	20	50	50	49	53	48	16	48	3	53	648	13	Right
+18771	252699	M. Freke	Macklin Freke	21	50	48	52	55	51	19	49	2	36	582	56	Right
+3	200389	J. Oblak	Jan Oblak	27	91	87	92	90	78	52	90	3	1	3	3	Right
+8	192448	M. ter Stegen	Marc-André ter Stegen	28	90	88	85	90	88	45	88	4	1	1	8	Right
+413	199005	M. Ryan	Mathew Ryan	28	80	81	75	82	82	52	78	4	5	94	56	Right
+1087	190745	M. Silvestri	Marco Silvestri	29	77	79	75	79	65	60	77	3	2	168	15	Right
+1773	139062	W. Caballero	Wilfredo Daniel Caballero	38	75	74	72	74	71	45	76	3	5	12	1	Right
+2380	200212	M. Esser	Michael Esser	32	74	73	72	78	64	41	71	3	35	327	8	Right
+2540	214462	I. Arboleda	Iván Mauricio Arboleda	24	73	75	69	75	66	59	71	2	14	336	42	Right
+3006	230175	Freder Cabral	Frederico Peter Cabral Bardini	28	73	73	77	66	69	48	76	2	12	87	5	Right
+3690	214983	M. Ibáñez	Matías Alejandro Ibáñez Basualdo	33	72	72	72	71	65	42	73	2	14	127	1	Right
+4446	224655	Rafael Defendi	Rafael Garcia Tonioli Defendi	36	71	68	70	71	69	34	73	2	6	394	5	Right
+4978	157804	S. Carson	Scott Carson	34	70	69	70	68	69	35	71	3	5	6	13	Right
+4988	164853	A. Federici	Adam Federici	35	70	70	67	67	76	42	70	2	36	497	56	Right
+5822	216750	P. Carlgren	Patrik Ulf Anders Carlgren	28	69	70	66	67	64	33	69	2	32	536	37	Right
+6573	217096	J. Lumley	Joe Lumley	25	68	69	67	68	69	45	64	3	21	386	13	Right
+7121	204062	D. Keet	Darren Keet	30	68	69	66	68	65	44	69	2	17	488	89	Left
+7889	250841	P. Álvarez	Patricio Leonel Álvarez Noguera	26	67	70	69	71	61	19	68	3	19	85	66	Right
+8573	232645	F. Cambeses	Facundo Nicolás Cambeses	23	66	66	63	67	63	46	64	2	14	383	1	Right
+9181	177705	Mackay	Juan Mackay Abad	33	66	72	61	70	60	58	59	2	23	568	12	Right
+9916	223175	O. Kocuk	Okan Kocuk	24	65	66	68	68	61	34	62	2	11	60	55	Right
+9975	220433	Óscar Whalley	Óscar Alexander Whalley Guardado	26	65	66	65	66	68	43	63	3	23	551	12	Left
+10400	184851	D. Vega	Mario Daniel Vega	36	65	66	62	64	64	25	62	2	8	310	1	Left
+11528	152456	S. Brown	Scott Brown	35	64	64	62	64	60	51	63	1	53	642	13	Right
+11837	251742	G. Chatterjee	Gajodara Chatterjee	34	64	64	68	60	69	30	61	3	19	85	150	Right
+11855	254645	G. Georgiev	Georgi Nikolaev Georgiev	31	64	66	65	65	66	36	61	2	19	85	103	Right
+12392	216348	N. Gillekens	Nick Gillekens	24	63	65	58	66	61	44	58	2	17	236	6	Right
+12806	210264	T. Vollnhofer	Thomas Vollnhofer	35	63	65	62	59	59	45	66	3	29	576	34	Right
+13434	239559	J. de Lange	Jeffrey de Lange	22	62	62	60	63	61	24	60	4	7	387	9	Right
+14564	186488	Li Shuai	李帅	37	61	62	61	58	62	32	61	2	9	129	58	Right
+14590	202244	B. Meredith	Bryan Meredith	30	61	65	60	64	64	48	54	2	8	255	47	Right
+15140	223982	R. Watson	Rory Watson	24	60	57	57	63	55	44	60	2	53	668	13	Right
+15651	253291	G. Centurión	Guillermo Christian Centurión Elizalde	18	59	60	58	60	75	25	55	1	31	188	16	Right
+16134	244746	L. Ntumba	Lévi Kahamba Ntumba	19	58	58	55	62	56	24	55	2	4	187	7	Left
+16631	244483	M. Gasparini	Manuel Gasparini	18	57	57	56	60	51	44	50	3	2	93	15	Right
+17053	199007	M. McGinley	Mark Anthony McGinley	30	57	57	57	60	52	41	56	2	47	682	52	Right
+17508	239594	J. Imbrechts	Joachim Imbrechts	18	55	60	54	59	55	27	48	2	17	302	37	Right
+18075	250804	J. Walsh	Joe Walsh	18	53	57	54	58	61	60	47	5	48	628	13	Right
+18166	247656	P. Grave	Paul Grave	19	53	51	54	59	50	24	52	2	35	290	8	Right
+18198	257034	R. Rodríguez	Ricardo Rodríguez	19	53	52	55	54	49	23	53	3	16	363	33	Right
+18732	243202	A. Jones	Alfie Jones	19	50	56	48	52	45	22	44	2	53	663	13	Right
+18774	243711	T. Callens	Thomas Callens	21	50	57	51	51	46	17	45	3	27	217	7	Left
+18779	256879	G. Leijon	Gustav Leijon	18	50	56	52	51	51	23	47	3	41	577	37	Right
+18789	256376	F. Jakobsson	Felix Jakobsson	20	50	48	53	52	52	18	51	2	41	339	37	Left
+18801	255665	J. González	Juan Carlos González Quintero	19	50	55	52	44	51	31	47	1	52	674	50	Right
+18802	255765	D. Kalinowski	Dominik Kalinowski	22	50	57	48	51	46	22	47	1	40	513	4	Right
+18814	247524	D. Retamal	Daniel Enrique Retamal Vargas	25	50	45	50	56	50	28	49	3	28	455	39	Right
+18815	251112	Huang Zihao	黄子豪	19	50	55	45	58	45	25	45	1	9	101	58	Right
+18817	243073	Teng Shangkun	滕尚坤	29	50	46	56	53	55	26	45	2	9	171	58	Right
+18832	257996	D. Bokov	Danila Bokov	17	49	52	45	50	53	23	49	3	13	61	45	Right
+18834	258762	M. Chapman	Mackenzie Chapman	17	49	50	47	53	45	25	50	2	53	667	13	Right
+18849	258918	G. Crespi	Gian Marco Crespi	19	49	50	48	54	46	27	48	1	2	355	15	Right
+18853	248182	H. Sveijer	Hannes Sveijer	18	49	50	51	51	49	24	50	2	41	574	37	Right
+18868	252233	N. Purtscher	Nico Purtscher	19	49	46	51	51	49	22	53	2	35	504	8	Right
+18871	256413	J. Lemoignan	Jack Lemoignan	19	49	51	48	48	54	22	44	3	47	673	57	Right
+18876	252519	Li Xuebo	李学博	20	49	47	51	57	48	28	42	3	9	76	58	Right
+18878	247224	Wang Zhifeng	王智峰	23	49	49	53	50	52	34	43	3	9	149	58	Right
+18893	258664	J. Arthur	Jack Jamie Arthur	17	48	49	48	50	47	34	47	3	53	627	13	Right
+18909	256662	R. Fontalvo	Reynaldo Miguel Fontalvo Freile	21	48	46	46	51	58	30	44	2	34	198	42	Left
+18914	255986	P. McGarvey	Patrick McGarvey	16	48	47	46	50	46	20	45	1	47	682	52	Right
+18925	250978	Ma Zhen	马镇	22	48	49	47	46	45	54	44	2	9	129	58	Right
+18927	183749	L. Walker	Laurie Walker	30	48	51	47	48	43	34	46	2	48	545	13	Right
 \.
 
 
@@ -5107,6 +5105,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2264	149184	C. Maggio	Christian Maggio	38	RB	74	69	69	69	71	72	77	3	2	2	273	15	Right
 2265	152997	D. Cvitanich	Darío Cvitanich	36	ST	74	58	74	71	71	36	66	3	3	14	127	1	Right
 2266	156432	G. Hoarau	Guillaume Hoarau	36	ST	74	43	76	68	68	44	74	3	3	25	317	7	Right
+2865	191648	M. Yoshida	吉田 麻也	31	CB	73	52	41	51	63	74	71	2	4	2	99	72	Right
 2267	158144	Salva Sevilla	Salvador Sevilla López	36	CM, CDM	74	43	70	80	71	48	60	3	3	23	209	12	Right
 2268	158856	C. Gentner	Christian Gentner	34	CM, CDM, CAM	74	33	73	73	67	75	74	2	4	3	78	8	Right
 2269	162329	K. El Ahmadi	Karim El Ahmadi Al Aroos	35	CDM, CM	74	60	61	68	72	70	77	3	2	10	318	24	Right
@@ -5513,6 +5512,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2725	215792	Jemerson	Jemerson de Jesus Nascimento	27	CB, CDM	73	58	37	49	57	73	75	2	2	4	33	5	Right
 2726	217605	L. Lerager	Lukas Reiff Lerager	26	CM	73	58	67	69	68	70	72	3	3	2	55	27	Right
 2727	221634	L. Acosta	Luciano Federico Acosta	26	CAM, LM, LW	73	80	66	68	80	46	55	5	3	16	175	1	Right
+2866	192091	Welinton	Welinton Souza Silva	31	CB	73	58	48	57	48	74	77	2	2	11	105	5	Right
 2728	221743	Hélder Costa	Hélder Wander Sousa Azevedo Costa	26	RM, RW, LM	73	86	66	67	76	28	57	4	3	5	63	2	Left
 2729	224459	V. Salazar	Víctor Salazar	27	RB, RWB	73	91	48	57	71	66	72	3	2	14	144	1	Right
 2730	225252	J. Duque	Jhon Fredy Duque Arias	28	CDM	73	64	44	60	64	72	75	2	3	34	360	42	Right
@@ -5629,8 +5629,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2862	190915	K. Wilczek	Kamil Antoni Wilczek	32	ST	73	62	73	65	69	46	81	3	3	32	190	4	Left
 2863	191173	A. Bedoya	Alejandro Bedoya	33	CM, CDM	73	64	65	71	72	67	73	3	4	8	252	47	Right
 2864	191388	T. Usami	宇佐美 貴史	28	CF, ST	73	76	71	72	77	43	63	4	4	15	358	72	Right
-2865	191648	M. Yoshida	吉田 麻也	31	CB	73	52	41	51	63	74	71	2	4	2	99	72	Right
-2866	192091	Welinton	Welinton Souza Silva	31	CB	73	58	48	57	48	74	77	2	2	11	105	5	Right
 2867	192242	P. Lasne	Paul Lasne	31	CM, LWB	73	59	65	73	72	72	74	3	3	4	155	7	Left
 2868	192349	Renatinho	Renato Ribeiro Calixto Aguiar	31	RW, RM	73	76	70	68	76	34	61	3	3	9	100	5	Left
 2869	192373	M. Caraglio	Milton Joel Caraglio	31	ST	73	44	76	61	68	27	79	3	3	16	141	1	Left
@@ -6446,6 +6444,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3782	233994	Kainho Selva	Kaio Antonaldo Selva Mota	20	CB	72	66	30	49	61	73	73	2	2	12	297	5	Right
 3783	234015	Caio Milaçar	Caio Bruno Milaçar Kenedy	24	CAM	72	66	68	69	76	31	52	4	4	12	380	5	Right
 3784	234949	João Amaral	João Pedro Reis Amaral	28	RM, RW	72	84	66	66	75	36	57	3	3	6	340	2	Left
+3906	237973	K. Kuchaev	Konstantin Kuchaev	22	LM	71	78	58	67	70	55	60	3	3	13	61	45	Right
 3785	235055	F. Stojković	Filip Stojković	27	RB, RWB, CB	72	73	36	68	66	69	70	2	3	29	347	49	Right
 3786	235502	Luisinho	Luis Gustavo Melere da Silva	29	RM, LM	72	76	69	67	76	27	62	4	3	10	215	5	Right
 3788	236548	J. Zmrhal	Jaromír Zmrhal	26	LM, RM	72	80	69	69	69	58	64	3	3	30	249	44	Left
@@ -6563,7 +6562,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3902	234457	O. Etebo	Oghenekaro Etebo	24	CM, CDM	71	77	65	68	76	72	78	3	4	11	60	31	Right
 3903	234889	F. Jensen	Fredrik Jensen	22	CAM	71	69	68	67	74	51	70	3	3	3	150	40	Right
 3904	235338	Marlon	Marlon Rodrigues Xavier	23	LWB	71	79	59	61	71	64	72	3	2	11	153	5	Left
-3906	237973	K. Kuchaev	Konstantin Kuchaev	22	LM	71	78	58	67	70	55	60	3	3	13	61	45	Right
 3907	240988	D. Vavro	Denis Vavro	24	CB	71	65	49	51	56	70	77	2	3	2	16	23	Right
 3908	241406	J. Intriago	Jefferson Alfredo Intriago Mendoza	24	CDM, CM, RM	71	72	46	68	72	65	76	3	4	16	328	61	Right
 3909	241637	A. Tchouaméni	Aurélien Tchouaméni	20	CM	71	67	53	65	71	71	73	3	3	4	33	7	Right
@@ -9678,6 +9676,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7400	256149	H. Martínez	Hugo Javier Martínez Cantero	20	CDM, CM	67	66	41	60	67	63	56	2	3	33	314	69	Right
 7401	256158	A. Oliveros	Agustín Oliveros Cano	21	LB, LWB	67	71	35	63	67	62	65	2	3	31	188	16	Left
 7402	222836	R. Ledson	Ryan Ledson	22	CDM, CM	67	61	55	62	64	61	70	2	2	21	239	13	Right
+7598	221197	F. Onyedinma	Fred Onyedinma	23	LW, RW	67	86	62	60	67	43	68	3	3	21	550	31	Right
 7403	225105	Cristo González	Cristo Ramón González Pérez	22	ST, LM, CAM	67	72	66	64	70	39	59	3	2	2	93	12	Right
 7405	232189	N. Ramírez	Nicolás Enrique Ramírez Aguilera	23	CB	67	57	36	48	56	68	69	2	2	28	566	39	Right
 7406	233084	N. Molina	Nahuel Molina Lucero	22	RB, RWB	67	74	35	58	63	62	68	2	3	2	93	1	Right
@@ -9854,7 +9853,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7593	219090	R. Osorio	Raúl Andrés Osorio Medina	25	CB, LB	67	69	29	40	57	67	74	2	3	28	455	39	Left
 7594	219259	R. Brown	Reece Brown	24	CM, CAM	67	80	63	65	70	59	66	3	4	48	578	13	Right
 7595	220139	S. Szmodics	Sammie Szmodics	24	CAM	67	80	65	60	70	47	68	3	4	48	578	13	Right
-7598	221197	F. Onyedinma	Fred Onyedinma	23	LW, RW	67	86	62	60	67	43	68	3	3	21	550	31	Right
 7599	222116	D. Ramírez	José David Ramírez García	24	LM, LW	67	84	59	57	73	39	60	3	3	16	152	33	Right
 7601	222396	D. Ball	Dominic Ball	24	CDM, CM, RB	67	60	41	58	57	65	73	2	2	21	386	13	Right
 7602	223680	M. Schuster	Marco Schuster	24	CDM	67	66	53	59	66	63	72	2	3	45	567	8	Right
@@ -10916,6 +10914,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8799	212990	C. Camps	Callum Camps	24	CAM, CM, CDM	66	72	66	65	67	57	66	2	3	48	589	57	Right
 8800	215410	B. Chardonnet	Brendan Chardonnet	25	CB	66	60	35	48	53	67	69	2	3	4	155	7	Right
 8801	216218	L. Shankland	Lawrence Shankland	24	ST	66	72	65	56	66	27	72	2	3	26	633	14	Right
+8941	218343	R. Hedges	Ryan Hedges	24	RM, LM	66	76	60	61	68	39	58	3	3	26	403	38	Left
 8802	216795	C. Long	Christopher Michael Long	25	ST	66	77	66	51	65	27	63	2	3	26	522	13	Right
 8803	217826	J. Laurent	Josh Laurent	25	CM, CAM	66	75	60	63	67	61	74	3	3	21	306	13	Right
 8808	220881	V. Sulejmani	Valmir Sulejmani	24	ST, LM, RM	66	71	67	56	66	39	68	3	4	35	327	62	Right
@@ -11035,7 +11034,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8947	221620	M. Hairston	Marlon Hairston	26	RB, RWB, RM	66	76	58	58	65	59	64	2	3	8	274	47	Right
 8939	216270	G. Honeyman	George Honeyman	25	CAM, CM	66	72	61	64	71	61	66	3	3	48	446	13	Right
 8940	218047	P. Bijen	Peet Bijen	25	CB	66	52	39	48	58	65	74	2	2	7	422	9	Right
-8941	218343	R. Hedges	Ryan Hedges	24	RM, LM	66	76	60	61	68	39	58	3	3	26	403	38	Left
 8942	219177	J. Grant	Jorge Grant	25	LM	66	68	62	66	68	48	66	4	4	48	547	13	Right
 8943	220388	S. Chakla	Sofian Chakla	26	CB	66	53	32	48	49	65	68	2	3	1	24	24	Right
 8945	220693	João Afonso	João Afonso Crispim	25	CDM, CM	66	63	45	56	62	64	74	2	3	6	335	5	Right
@@ -12993,6 +12991,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11153	251979	L. Marchi	Leonardo Marchi Rivero	23	LB	64	74	42	52	64	59	63	2	3	14	456	1	Left
 11154	252116	Andrés García	Andrés García Mohedano	24	CM	64	65	57	64	68	50	55	2	3	23	385	12	Right
 11155	253908	M. Luna Diale	Mauro Luna Diale	21	RW, ST	64	70	61	61	65	47	50	3	3	14	334	1	Right
+11289	255186	R. Marshall	Rhys Marshall	25	RB, CM	64	68	42	60	61	61	59	2	2	47	439	57	Right
 11156	253917	R. Celis	Richard Enrique Celis Sánchez	24	ST, LW, RW	64	74	62	58	68	44	58	4	3	52	622	50	Right
 11157	254060	I. Salazar	Iván Ernesto Salazar Aleizon	22	LM	64	92	47	58	62	27	58	3	3	31	481	16	Left
 11158	254281	A. Selmani	Astrit Selmani	23	ST	64	68	65	45	65	26	67	3	3	41	665	37	Right
@@ -13052,6 +13051,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11220	252094	Lapeña	Adrián Lapeña Ruiz	24	CB, CDM, RB	64	67	34	49	55	64	63	2	3	23	551	12	Right
 11221	252119	P. Schmiedl	Philipp Schmiedl	22	CB	64	54	34	45	49	62	76	2	3	29	546	34	Right
 11223	254063	R. Cueto	Robert Cueto Catima	21	RB	64	66	41	51	57	58	58	2	2	51	565	122	Right
+11290	255450	M. Chahiri	Mehdi Chahiri	23	LM	64	69	55	64	62	40	52	2	3	4	117	7	Right
 11224	254203	L. Mifflin	Leonardo William Mifflin Cabezudo	20	LB	64	73	41	52	56	59	74	2	3	46	471	66	Left
 11225	254361	I. Villalba	Iván Emilio Villalba Chamorro	25	CB, RB	64	60	26	49	45	63	69	2	3	33	515	69	Right
 11226	254887	J. Ortiz	Julio Joao Ortiz Landázuri	24	CDM, CAM	64	69	41	57	55	62	66	2	3	42	558	61	Right
@@ -13112,8 +13112,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11286	253261	F. Romero	Franco Gastón Romero Ponte	25	RB	64	69	34	54	52	63	58	2	2	31	512	16	Right
 11287	253541	A. Fuentes	Anthony Marcelo Fuentes Páucar	21	RB	64	77	45	57	60	61	74	2	3	46	600	66	Right
 11288	254257	S. Asan	Serkan Asan	21	RB, RM	64	65	43	54	63	62	48	2	3	11	153	55	Right
-11289	255186	R. Marshall	Rhys Marshall	25	RB, CM	64	68	42	60	61	61	59	2	2	47	439	57	Right
-11290	255450	M. Chahiri	Mehdi Chahiri	23	LM	64	69	55	64	62	40	52	2	3	4	117	7	Right
 11291	255591	K. Nakayama	Katsuhiro Nakayama	23	RM	64	71	58	61	65	37	55	3	3	15	602	72	Right
 11292	255799	T. Maekawa	Taiga Maekawa	24	CAM, CF, CM	64	68	58	63	67	41	61	3	3	15	374	72	Right
 11293	256694	L. Bury	Louis Bury	24	RB, LB	64	69	30	50	61	61	61	2	3	27	580	7	Right
@@ -14544,6 +14542,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12941	257551	F. Hadid	Fahad Hadid	26	RM	63	73	58	58	66	28	52	3	3	38	218	109	Left
 12942	257575	Pedro Capó	Pedro Luis Capó Payeras	29	CAM, CM	63	67	59	59	61	53	64	3	3	23	568	12	Right
 12943	257797	C. Rus	Ciprian Rus	29	ST	63	72	62	50	60	20	56	2	3	44	620	70	Right
+13011	250786	B. Jackson	Ben Jackson	19	LB, RB	62	82	35	42	58	61	52	2	3	21	338	13	Left
 12944	257814	M. Tomozei	Marius Ionuț Tomozei	29	RB	63	65	29	49	56	60	61	2	3	44	620	70	Right
 12945	258025	A. Aganović	Adnan Aganović	32	CAM, CM	63	67	49	64	67	38	62	2	3	44	531	17	Right
 12946	258869	T. Smola	Tomáš Smola	31	ST	63	50	63	46	55	20	73	2	3	44	542	44	Right
@@ -14604,7 +14603,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13008	243932	D. Philipp	David Lennart Philipp	20	RW, CAM	62	65	62	57	65	39	53	3	4	7	422	8	Right
 13009	246137	K. Ramsay	Kayne Ramsay	19	RB	62	70	33	45	60	59	63	2	2	5	107	13	Right
 13010	247582	F. Amaya	Frankie Amaya	19	CM, CAM	62	72	52	59	66	54	58	2	3	8	243	47	Right
-13011	250786	B. Jackson	Ben Jackson	19	LB, RB	62	82	35	42	58	61	52	2	3	21	338	13	Left
 13012	251431	M. Malone	Maurice Malone	19	ST, LW	62	71	60	47	59	23	58	3	3	45	528	8	Right
 13013	252454	H. Ortega	Óscar Haret Ortega Gatica	20	CB	62	55	31	42	47	61	68	2	3	16	203	33	Right
 13015	255432	K. Salvatierra	Kevin Francisco Salvatierra Flores	18	CM	62	63	52	58	58	49	59	2	2	51	520	122	Right
@@ -16270,6 +16268,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14920	254280	K. Ayer	Keanin Ayer	20	RM, RWB	60	75	43	56	60	46	47	2	2	41	665	89	Right
 14921	254632	J. Neris	José Pablo Neris Figueredo	20	RM, ST	60	63	50	57	61	39	62	2	3	31	544	16	Right
 14922	254785	Álex Cruz	Alejandro Cruz Hernández	20	CM, CAM, CDM	60	76	48	62	60	56	52	2	3	23	392	12	Right
+15347	233021	Han Xuan	韩轩	29	CB	60	50	23	34	37	61	73	2	2	9	268	58	Right
 14923	255270	Zabarte	Gorka Zabarte Moreno	21	CB, RB	60	68	33	49	48	59	62	2	3	1	116	12	Right
 14925	255879	M. Fernández	Martín Alejandro Fernández Figueira	19	CM	60	59	52	54	57	51	58	3	3	31	512	16	Right
 14926	255899	K. Díaz	Kevin Raphael Diaz	18	RM	60	73	49	54	57	24	42	2	3	52	674	50	Right
@@ -16627,7 +16626,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15342	211019	D. Ubbink	Desley Ubbink	27	CAM	60	66	54	58	63	42	56	3	3	40	671	9	Right
 15343	211143	J. Ironside	Joe Ironside	26	ST	60	67	59	46	55	40	73	2	3	53	638	13	Right
 15345	222380	J. Meza	Juan Pablo Meza Tepezano	26	RB	60	67	44	57	53	60	57	2	2	16	397	33	Right
-15347	233021	Han Xuan	韩轩	29	CB	60	50	23	34	37	61	73	2	2	9	268	58	Right
 15348	235369	S. Mladenovic	Stefan Mladenovic	26	LM, RM	60	90	53	49	62	30	55	3	3	37	661	29	Right
 15349	239173	M. Rüdiger	Morten Rüdiger	25	LM, LB	60	73	51	56	59	33	56	2	3	45	646	8	Left
 15350	239833	M. Al Dhaw	Vladislav Ignatenko	26	LM, RM	60	70	56	55	63	40	57	3	3	10	421	138	Right
@@ -18130,6 +18128,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17104	246054	J. Weir	Jensen Weir	18	CM, CAM	56	65	49	56	56	46	50	2	3	5	94	13	Right
 17105	246333	C. Jolley	Charlie Jolley	19	ST	56	69	58	43	56	19	47	2	3	48	532	13	Left
 17106	246601	J. Rowland	James Rowland	18	CAM	56	72	48	53	59	34	51	2	3	48	635	13	Right
+17240	245125	P. Plewka	Patryk Plewka	20	CM, LM	56	65	47	57	58	47	53	2	2	40	263	4	Right
 17107	251162	Kim Ju Sung	김주성 Joo-Sung Kim	19	CB, CDM	56	67	26	40	44	56	62	2	3	39	278	20	Left
 17108	251407	J. Young	Jack Young	19	CM, CDM	56	67	47	56	60	48	49	2	3	5	51	13	Right
 17109	251689	N. Lang	Niklas Lang	18	CB, CDM	56	67	22	34	43	56	60	2	4	45	592	8	Right
@@ -18250,7 +18249,6 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17237	242246	T. Al Otaibi	Thaar Al Otaibi	20	RM, LM	56	66	47	49	62	35	40	2	3	10	281	101	Right
 17238	243102	Wang Xianjun	王献钧	20	CDM	56	66	37	48	50	52	60	2	2	9	76	58	Right
 17239	245019	S. Woods	Sam Woods	21	CB	56	40	25	35	36	57	58	2	2	5	49	13	Right
-17240	245125	P. Plewka	Patryk Plewka	20	CM, LM	56	65	47	57	58	47	53	2	2	40	263	4	Right
 17242	251163	Lee Sang Jun	Sang Jun Lee	20	RB	56	73	28	47	56	50	46	2	3	39	593	20	Right
 17243	251375	D. De Vita	Dario De Vita	20	CB	56	62	30	37	40	54	67	2	4	45	459	8	Right
 17244	251581	C. Gustafsson	Carl Gustafsson	20	CM	56	61	46	56	57	36	57	2	3	41	585	37	Right

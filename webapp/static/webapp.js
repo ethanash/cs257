@@ -48,7 +48,7 @@ function getAPIBaseURL() {
 
 function setInactiveCardField(card){
     card.setAttribute("class", "inactive-card");
-    htmlContents = "<div class='player-overall-rating'></div>" + 
+    htmlContents = "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
@@ -66,7 +66,7 @@ function setInactiveCardField(card){
 
 function setInactiveCardSelection(card){
     card.setAttribute("class", "inactive-card");
-    htmlContents = "<div class='player-overall-rating'></div>" + 
+    htmlContents = "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
@@ -198,7 +198,7 @@ function draft(position, positionIndex) {
                 dribblingDiv.innerHTML = player['dribbling'];
                 defenseDiv.innerHTML = player['defense'];
                 physicalDiv.innerHTML = player['physicality'];
-                
+
                 var sofifa_id = player["sofifa_id"].toString();
                 while (sofifa_id.length < 6) {
                     sofifa_id = "0" + sofifa_id;
@@ -214,7 +214,7 @@ function draft(position, positionIndex) {
                 makeNotClickable();
                 makeSelectionsClickable();
             }
-        }  
+        }
     })
 
     .catch(function(error) {
@@ -277,7 +277,7 @@ function onDraftSelection(obj) {
         dribblingDiv.innerHTML = player['dribbling'];
         defenseDiv.innerHTML = player['defense'];
         physicalDiv.innerHTML = player['physicality'];
-        
+
         var sofifa_id = player["sofifa_id"].toString();
         while (sofifa_id.length < 6) {
             sofifa_id = "0" + sofifa_id;

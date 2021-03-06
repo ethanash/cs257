@@ -1,7 +1,6 @@
 '''
     Ethan Ash and Riaz Kelly
-
-    Tiny Flask API to support the FIFA draft webapp
+    Flask API to support the FIFA draft webapp
 '''
 import sys
 import flask
@@ -17,55 +16,64 @@ from config import user
 
 api = flask.Blueprint('api', __name__)
 
-'''diving integer,
-handling integer,
-reflexes integer,
-kicking integer,
-speed integer,
-positioning integer,'''
-
 @api.route('/goalies')
 def get_goalies():
-    nationality=request.args.get('nationality')
-    club=request.args.get('club')
-    league=request.args.get('league')
-    weakFootLow=request.args.get('weakfootlow')
-    weakFootHigh=request.args.get('weakfoothigh')
-    preferredFoot=request.args.get('preferredfoot')
-    divingLow=request.args.get('divingLow')
-    divingHigh=request.args.get('divingHigh')
-    handlingLow=request.args.get('handlingLow')
-    handlingHigh=request.args.get('handlingHigh')
-    reflexesLow=request.args.get('reflexesLow')
-    reflexesHigh=request.args.get('reflexesHigh')
-    kickingLow=request.args.get('kickingLow')
-    kickingHigh=request.args.get('kickingHigh')
-    speedLow=request.args.get('speedLow')
-    speedHigh=request.args.get('speedHigh')
-    positioningLow=request.args.get('positioningLow')
-    positioningHigh=request.args.get('positioningHigh')
-    overallRatingLow=request.args.get('overallRatingLow')
-    overallRatingHigh=request.args.get('overallRatingHigh')
-    ageLow=request.args.get('ageLow')
-    ageHigh=request.args.get('ageHigh')
-    name=request.args.get('name')
+    nationality = flask.request.args.get('nationality')
+    club = flask.request.args.get('club')
+    league = flask.request.args.get('league')
+    weakFootLow = flask.request.args.get('weakfootlow')
+    weakFootHigh = flask.request.args.get('weakfoothigh')
+    preferredFoot = flask.request.args.get('preferredfoot')
+    divingLow = flask.request.args.get('divingLow')
+    divingHigh = flask.request.args.get('divingHigh')
+    handlingLow = flask.request.args.get('handlingLow')
+    handlingHigh = flask.request.args.get('handlingHigh')
+    reflexesLow = flask.request.args.get('reflexesLow')
+    reflexesHigh = flask.request.args.get('reflexesHigh')
+    kickingLow = flask.request.args.get('kickingLow')
+    kickingHigh = flask.request.args.get('kickingHigh')
+    speedLow = flask.request.args.get('speedLow')
+    speedHigh = flask.request.args.get('speedHigh')
+    positioningLow = flask.request.args.get('positioningLow')
+    positioningHigh = flask.request.args.get('positioningHigh')
+    overallRatingLow = flask.request.args.get('overallRatingLow')
+    overallRatingHigh = flask.request.args.get('overallRatingHigh')
+    ageLow = flask.request.args.get('ageLow')
+    ageHigh = flask.request.args.get('ageHigh')
+    name = flask.request.args.get('name')
+    sofifa_id = flask.request.args.get('sofifa_id', default = -1)
+    draftModeOn = flask.request.args.get('draftmodeon', default = True)
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, player.overall_rating
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
                FROM goalie, nationality, club, league
-               WHERE player.nationality_id = nationality.id
-               AND player.league_id = league.id
-               AND player.club_id = club.id'''
+               WHERE goalie.nationality_id = nationality.id
+               AND nationality.nationality LIKE %s
+               AND goalie.league_id = league.id
+               AND league.league LIKE %s
+               AND goalie.club_id = club.id
+               AND club.club LIKE %s
+               AND goalie.diving > %s AND goalie.diving < %s
+               AND goalie.handling > %s AND goalie.handling < %s
+               AND goalie.reflexes > %s AND goalie.reflexes < %s
+               AND goalie.kicking > %s AND goalie.kicking < %s
+               AND goalie.speed > %s AND goalie.speed < %s
+               AND goalie.positioning > %s AND goalie.positioning < %s
+               AND goalie.age > %s AND goalie.age < %s
+               AND goalie.overall_rating > %s AND goalie.overall_rating < %s
+               AND (goalie.sofifa_id = %s OR %s < 0)
+               AND goalie.long_name LIKE %s'''
 
     try:
-        database_cursor.execute(query)
+        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), divingLow, divingHigh, handlingLow, handlingHigh, reflexesLow, reflexesHigh, kickingLow, kickingHigh, speedLow, speedHigh, positioningLow, positioningHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))
     except Exception as e:
         print(e)
         exit()
+        
     goalies = []
     for row in database_cursor:
         goalie = {}
@@ -80,6 +88,8 @@ def get_goalies():
         goalie_league = row[8]
         goalie_club = row[9]
         goalie_overall = row[10]
+        goalie_sofifa_id = row[11]
+        goalie_id = row[12]
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
         goalie['handling'] = goalie_handling
@@ -91,69 +101,78 @@ def get_goalies():
         goalie['league'] = goalie_league
         goalie['club'] = goalie_club
         goalie['overall'] = goalie_overall
+        goalie['sofifa_id'] = goalie_sofifa_id
+        goalie['goalie_id'] = goalie_id
         goalies.append(goalie)
 
-    random.shuffle(goalies)
+    if draftModeOn:
+        random.shuffle(goalies)
 
     return json.dumps(goalies)
 
 @api.route('/players')
 def get_players():
-    nationality=request.args.get('nationality')
-    club=request.args.get('club')
-    league=request.args.get('league')
-    weakFootLow=request.args.get('weakfootlow')
-    weakFootHigh=request.args.get('weakfoothigh')
-    skillMovesLow=request.args.get('skillmoves')
-    skillMovesHigh=request.args.get('skillmoves')
-    preferredFoot=request.args.get('preferredfoot')
-    shootingLow=request.args.get('shooting')
-    shootingHigh=request.args.get('shooting')
-    paceLow=request.args.get('pace')
-    paceHigh=request.args.get('pace')
-    dribblingLow=request.args.get('dribbling')
-    dribblingHigh=request.args.get('dribbling')
-    passingLow=request.args.get('passing')
-    passingHigh=request.args.get('passing')
-    defenseLow=request.args.get('defense')
-    defenseHigh=request.args.get('defense')
-    physicalityLow=request.args.get('physicality')
-    physicalityHigh=request.args.get('physicality')
-    overallRatingLow=request.args.get('overallrating')
-    overallRatingHigh=request.args.get('overallrating')
-    position=request.args.get('position')
-    ageLow=request.args.get('age')
-    ageHigh=request.args.get('age')
-    name=request.args.get('name')
-    sofifa_id = request.args.get('sofifa_id')
+    nationality = flask.request.args.get('nationality', default = '')
+    club = flask.request.args.get('club', default = '')
+    league = flask.request.args.get('league', default = '')
+    weakFootLow = flask.request.args.get('weakfootlow', default = 0)
+    weakFootHigh = flask.request.args.get('weakfoothigh', default = 5)
+    skillMovesLow = flask.request.args.get('skillmoveslow', default = 0)
+    skillMovesHigh = flask.request.args.get('skillmoveshigh', default = 5)
+    preferredFoot = flask.request.args.get('preferredfoot', default = '')
+    shootingLow = flask.request.args.get('shootinglow', default = 0)
+    shootingHigh = flask.request.args.get('shootinghigh', default = 99)
+    paceLow = flask.request.args.get('pacelow', default = 0)
+    paceHigh = flask.request.args.get('pacehigh', default = 99)
+    dribblingLow = flask.request.args.get('dribblinglow', default = 0)
+    dribblingHigh = flask.request.args.get('dribblinghigh', default = 99)
+    passingLow = flask.request.args.get('passinglow', default = 0)
+    passingHigh = flask.request.args.get('passinghigh', default = 99)
+    defenseLow = flask.request.args.get('defenselow', default = 0)
+    defenseHigh = flask.request.args.get('defensehigh', default = 99)
+    physicalityLow = flask.request.args.get('physicalitylow', default = 0)
+    physicalityHigh = flask.request.args.get('physicalityhigh', default = 99)
+    overallRatingLow = flask.request.args.get('overallratinglow', default = 80)
+    overallRatingHigh = flask.request.args.get('overallratinghigh', default = 99)
+    position = flask.request.args.get('position', default = '')
+    ageLow = flask.request.args.get('agelow', default = 0)
+    ageHigh = flask.request.args.get('agehigh', default = 99)
+    name = flask.request.args.get('name', default = '')
+    sofifa_id = flask.request.args.get('sofifa_id', default = -1)
+    draftModeOn = flask.request.args.get('draftmodeon', default = True)
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    if sofifa_id:
-        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
-            FROM player, nationality, club, league
-            WHERE player.nationality_id = nationality.id
-            AND player.league_id = league.id
-            AND player.club_id = club.id
-            AND player.sofifa_id = %s'''
-        try:
-            database_cursor.execute(query, (sofifa_id,))
-        except Exception as e:
-            print(e)
-            exit()
-    else:
-        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace, player.passing, player.defense, player.position, nationality.nationality, league.league, club.club, player.overall_rating, player.sofifa_id, player.physicality
-            FROM player, nationality, club, league
-            WHERE player.nationality_id = nationality.id
-            AND player.league_id = league.id
-            AND player.club_id = club.id
-            AND player.position LIKE %s'''
-        try:
-            database_cursor.execute(query, (("%" + position + "%"),))
-        except Exception as f:
-            print(f)
-            exit()
+    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
+               player.passing, player.defense, player.position,
+               nationality.nationality, league.league, club.club, player.overall_rating,
+               player.sofifa_id, player.physicality, player.id
+               FROM player, nationality, club, league
+               WHERE player.nationality_id = nationality.id
+               AND nationality.nationality LIKE %s
+               AND player.league_id = league.id
+               AND league.league LIKE %s
+               AND player.club_id = club.id
+               AND club.club LIKE %s
+               AND player.position LIKE %s
+               AND player.shooting > %s AND player.shooting < %s
+               AND player.dribbling > %s AND player.dribbling < %s
+               AND player.pace > %s AND player.pace < %s
+               AND player.passing > %s AND player.passing < %s
+               AND player.defense > %s AND player.defense < %s
+               AND player.physicality > %s AND player.physicality < %s
+               AND player.age > %s AND player.age < %s
+               AND player.overall_rating > %s AND player.overall_rating < %s
+               AND (player.sofifa_id = %s OR %s < 0)
+               AND player.long_name LIKE %s'''
+
+    try:
+        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), ('%'+position+'%'), shootingLow, shootingHigh, dribblingLow, dribblingHigh, paceLow, paceHigh, passingLow, passingHigh, defenseLow, defenseHigh, physicalityLow, physicalityHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))
+    except Exception as e:
+        print(e)
+        exit()
+
     players = []
     for row in database_cursor:
         player = {}
@@ -170,6 +189,7 @@ def get_players():
         player_overall = row[10]
         player_sofifa_id = row[11]
         player_physicality = row[12]
+        player_id = row[13]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -183,9 +203,11 @@ def get_players():
         player['overall'] = player_overall
         player['sofifa_id'] = player_sofifa_id
         player['physicality'] = player_physicality
+        player['player_id'] = player_id
         players.append(player)
 
-    random.shuffle(players)
+    if draftModeOn:
+        random.shuffle(players)
     #players = [{'name':'Leonel Messi', 'shooting':90, 'dribbling':85, 'pace':98, 'passing':'86', 'defense':74, 'nationality':'Argentina', 'club':'Barcelona'},
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
 

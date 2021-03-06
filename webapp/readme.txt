@@ -3,6 +3,27 @@ Here are things you must import to run our code:
 pip install requests-oauthlib
 pip install pyopenssl
 
+IMPORTANT: make sure you have this in your config.py file - 
+//////
+from oauthlib.oauth2 import WebApplicationClient
+import os
+
+# Change these values as appropriate for your postgresql setup.
+database = ''
+user = ''
+password = ''
+
+SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24)
+
+GOOGLE_CLIENT_ID = "900631144036-ml0eakqmhkk8039e86mpdlcs6l784uui.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET = "mD87UQpA8KkXAHLSDAR4jETP"
+GOOGLE_DISCOVERY_URL = (
+    "https://accounts.google.com/.well-known/openid-configuration"
+)
+
+# OAuth 2 client setup
+CLIENT_ = WebApplicationClient(GOOGLE_CLIENT_ID)
+//////
 We have a draft mode and a sandbox mode.
 You can toggle between the two using the button in the bottom left
 corner of the website. You can switch between formations using the

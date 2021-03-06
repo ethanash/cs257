@@ -16,6 +16,15 @@ from config import user
 
 api = flask.Blueprint('api', __name__)
 
+@api.route('/help')
+def help():
+    return('''API Endpoints:
+    /players - will return JSON output of players
+    /sandbox - will show sandbox mode where you can search for players
+
+    See readme.txt for more filters and examples. 
+    ''')
+
 @api.route('/goalies')
 def get_goalies():
     nationality = flask.request.args.get('nationality')

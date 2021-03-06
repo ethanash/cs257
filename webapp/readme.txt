@@ -23,8 +23,8 @@ to your team yet.
 Additional Notes:
 1) Goalies do NOT work right now. When you click on the goalie
 position, 6 blank cards will show up.
-2) Average Rating and Chemistry mean nothing as of right now
-(these are on the left side of the page)
+2) Chemistry means nothing as of right now
+(On the left side of the page)
 3) You can use the URL to search through our database but will
 receive JSON output. Here are possible searches:
 
@@ -57,7 +57,7 @@ name (S)
 
 Examples:
 
-https://localhost:5000/api/players?pacelow=85?club=chelsea
+https://localhost:5000/api/players?pacelow=85&club=chelsea
 
 This will return all players on Chelsea who have a pace of at least 85.
 

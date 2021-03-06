@@ -26,13 +26,20 @@ user_last_name = ''
 user_email = ''
 
 # Delivers the user to the site's home page.
+@app.route('/draft')
 @app.route('/')
+def dradr():
+    token = request.cookies.get('sessionToken')
+    if token in tokens:
+        return flask.render_template('draft.html', user_first_name=user_first_name[0])
+    return redirect('/login')
+    
+@app.route('/sandbox')
 def home():
     token = request.cookies.get('sessionToken')
     if token in tokens:
-        return flask.render_template('index.html', user_first_name=user_first_name[0])
+        return flask.render_template('sandbox.html', user_first_name=user_first_name[0])
     return redirect('/login')
-    
 
 # This route supports relative links among your web pages, assuming those pages
 # are stored in the templates/ directory or one of its descendant directories,
@@ -64,6 +71,9 @@ def loginPost():
 
 @app.route('/login/callback')
 def loginCallback():
+    '''
+        Dealing with return response form google login
+    '''
     # get authorization code google sends back
     code = request.args.get("code")
 

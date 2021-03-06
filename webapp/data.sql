@@ -52,6 +52,13 @@ CREATE TABLE public.goalie (
     preferred_foot text
 );
 
+--
+-- Name: account; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account (
+    
+);
 
 --
 -- Name: league; Type: TABLE; Schema: public; Owner: -

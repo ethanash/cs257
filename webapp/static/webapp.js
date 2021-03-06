@@ -6,10 +6,33 @@
  */
 
 window.onload = initialize;
+var isDraft;
 
 function initialize() {
     setFormation("4-3-3");
-    makeClickable();
+    if (location.href.split("/").slice(-1)[0] !== "sandbox") {
+        var isDraft = true;
+        makeClickable();
+    }
+    else {
+        var isDraft = false;
+        fillInPositionSelector();
+    }
+    
+}
+
+function fillInPositionSelector(){
+    var positionSelector = document.getElementById("positionSelector");
+    var playerField = document.getElementsByClassName("player-field")[0];
+    var innerHTML = "";
+    for (var card of playerField.children) {
+        var className = card.getAttribute("class");
+        if (className == "inactive-card") {
+            var position = card.getAttribute("position");
+            innerHTML = innerHTML + '<option value="' + position + '">' + position + '</option>';
+        }
+    }
+    positionSelector.innerHTML = innerHTML;
 }
 
 function makeClickable() {
@@ -132,17 +155,29 @@ function setFormation(newFormation){
                 setInactiveCardField(position);
             }
             else {
-                position.removeAttribute("onclick")
-                position.removeAttribute("class")
+                position.removeAttribute("onclick");
+                position.removeAttribute("class");
                 position.innerHTML = "";
             }
         }
     }
-    makeClickable();
+    if (!isDraft) {
+        fillInPositionSelector();
+    }
 }
 
 function createDraftCards(){
     var draftSelections = document.getElementById("draft-selections");
+    if (!(draftSelections.firstChild.firstChild)) {
+        var cardSlots = draftSelections.children;
+        for (card of cardSlots){
+            setInactiveCardSelection(card);
+        }
+    }
+}
+
+function createSearchCards(){
+    var draftSelections = document.getElementById("searched-players");
     if (!(draftSelections.firstChild.firstChild)) {
         var cardSlots = draftSelections.children;
         for (card of cardSlots){
@@ -295,5 +330,82 @@ function onDraftSelection(obj) {
         makeActiveNotClickable();
         makeClickable();
     })
+
+}
+
+function playerSearch(event){
+    event.preventDefault();
+    var position = event.target.elements.position.value;
+    var name = event.target.elements.name.value;
+    var club = event.target.elements.club.value;
+
+    createSearchCards();
+
+    var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club+ '&position=' + position;
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(players) {
+        var playerListElement = document.getElementById('searched-players');
+        if(playerListElement){
+            for (var i = 0; i < 6; i++) {
+                var card = playerListElement.children[i];
+                card.setAttribute("class", "active-card");
+                var player = players[i];
+
+                var positionDiv = card.getElementsByClassName("player-position")[0];
+                var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
+                // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
+                // var clubDiv = card.getElementsByClassName("player-position")[0];
+                var nameDiv = card.getElementsByClassName("player-name")[0];
+                var paceDiv = card.getElementsByClassName("player-pace")[0];
+                var shootingDiv = card.getElementsByClassName("player-shooting")[0];
+                var passingDiv = card.getElementsByClassName("player-passing")[0];
+                var dribblingDiv = card.getElementsByClassName("player-dribbling")[0];
+                var defenseDiv = card.getElementsByClassName("player-defense")[0];
+                var physicalDiv = card.getElementsByClassName("player-physical")[0];
+                var playerImage = card.getElementsByClassName("player-image")[0];
+                // var leagueDiv = card.getElementsByClassName("player-position")[0];
+
+                positionsPlayed = player['position'].split(",");
+                relevantPosition = positionsPlayed[0];
+                for (pos of positionsPlayed) {
+                    if (pos == position) {
+                        relevantPosition = pos;
+                    }
+                }
+                positionDiv.innerHTML = relevantPosition;
+                overallRatingDiv.innerHTML = player['overall'];
+                nameDiv.innerHTML = player['name'];
+                paceDiv.innerHTML = player['pace'];
+                shootingDiv.innerHTML = player['shooting'];
+                passingDiv.innerHTML = player['passing'];
+                dribblingDiv.innerHTML = player['dribbling'];
+                defenseDiv.innerHTML = player['defense'];
+                physicalDiv.innerHTML = player['physicality'];
+                
+                var sofifa_id = player["sofifa_id"].toString();
+                while (sofifa_id.length < 6) {
+                    sofifa_id = "0" + sofifa_id;
+                }
+                var idFirstHalf = sofifa_id.substring(0,3);
+                var idSecondHalf = sofifa_id.substring(3,6);
+                playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                card.setAttribute("playerid", sofifa_id);
+                card.setAttribute("positionindex", positionIndex);
+
+                makeNotClickable();
+                makeSelectionsClickable();
+            }
+        }  
+    })
+
+    .catch(function(error) {
+        console.log(error);
+    });
 
 }

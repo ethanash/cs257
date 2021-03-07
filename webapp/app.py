@@ -7,6 +7,7 @@ import argparse
 import flask
 import api
 import json
+import psycopg2
 import requests
 from flask import render_template, redirect, request, make_response
 from uuid import uuid4
@@ -16,6 +17,9 @@ from config import GOOGLE_CLIENT_ID
 from config import GOOGLE_CLIENT_SECRET 
 from config import GOOGLE_DISCOVERY_URL
 from config import CLIENT_
+from config import password
+from config import database
+from config import user
 
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
@@ -105,6 +109,8 @@ def loginCallback():
         auth=(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET),
     )
 
+    print(json.dumps(token_response.json()))
+
     # parsing received tokens
     CLIENT_.parse_request_body_response(json.dumps(token_response.json()))
 
@@ -121,8 +127,42 @@ def loginCallback():
         users_firstName = userinfo_response.json()["given_name"]
         users_lastName = userinfo_response.json()["family_name"]
 
-        #if already assigned to role by admin
+        user_first_name.append(users_firstName)
 
+        #create user in database if they don't already exist
+
+        # database_connection = connect_to_database()
+        # database_cursor = database_connection.cursor()
+
+        # query = '''SELECT account.id
+        #         FROM account
+        #         WHERE account.email = %s'''
+
+        # try:
+        #     database_cursor.execute(query, (,))
+        # except Exception as e:
+        #     print(e)
+        #     exit()
+
+        # user_id = None
+
+        # if len(database_cursor) == 0:
+        #     #add new user
+        #     database_connection = connect_to_database()
+        #     database_cursor = database_connection.cursor()
+
+        #     query = '''INSERT INTO account
+        #             VALUES (%s, %s, %s)'''
+
+        #     try:
+        #         database_cursor.execute(query, (users_firstName, users_lastName, users_email))
+        #     except Exception as e:
+        #         print(e)
+        #         exit()
+        # else:
+        #     for row in database_cursor:
+        #         user_id = row[0]
+                
         #make cookie for them
         token = str(uuid4())
         tokens[token] = users_email
@@ -148,6 +188,17 @@ def logOut():
 
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
+
+def connect_to_database():
+    '''
+    Connect to the database and return a connection object
+    '''
+    try:
+        connection = psycopg2.connect(database=database, user=user, password=password)
+    except Exception as e:
+        print(e)
+        exit()
+    return connection
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('FIFA Draft Website')

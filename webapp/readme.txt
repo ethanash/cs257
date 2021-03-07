@@ -16,7 +16,7 @@ password = ''
 SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24)
 
 GOOGLE_CLIENT_ID = "900631144036-ml0eakqmhkk8039e86mpdlcs6l784uui.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "mD87UQpA8KkXAHLSDAR4jETP"
+GOOGLE_CLIENT_SECRET = "HXTvm8Qmn6Im5zoQ0WBN41Mx"
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )

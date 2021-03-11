@@ -13,21 +13,18 @@ from flask import render_template, redirect, request, make_response
 from uuid import uuid4
 
 import config
-from config import GOOGLE_CLIENT_ID 
-from config import GOOGLE_CLIENT_SECRET 
+from config import GOOGLE_CLIENT_ID
+from config import GOOGLE_CLIENT_SECRET
 from config import GOOGLE_DISCOVERY_URL
 from config import CLIENT_
 from config import password
 from config import database
 from config import user
 
+from api import tokens, user_first_name, user_last_name, user_email
+
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
-
-tokens = dict()
-user_first_name = []
-user_last_name = ''
-user_email = ''
 
 # Delivers the user to the site's home page.
 @app.route('/draft')
@@ -109,8 +106,6 @@ def loginCallback():
         auth=(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET),
     )
 
-    print(json.dumps(token_response.json()))
-
     # parsing received tokens
     CLIENT_.parse_request_body_response(json.dumps(token_response.json()))
 
@@ -128,44 +123,61 @@ def loginCallback():
         users_lastName = userinfo_response.json()["family_name"]
 
         user_first_name.append(users_firstName)
+        user_last_name.append(users_lastName)
+        user_email.append(user_email)
 
         #create user in database if they don't already exist
 
-        # database_connection = connect_to_database()
-        # database_cursor = database_connection.cursor()
+        database_connection = connect_to_database()
+        database_cursor = database_connection.cursor()
+        print(1)
+        query = '''SELECT account.id
+                FROM account
+                WHERE account.email = %s'''
+        try:
+            database_cursor.execute(query, (users_email,))
+        except Exception as e:
+            print(e)
+            exit()
 
-        # query = '''SELECT account.id
-        #         FROM account
-        #         WHERE account.email = %s'''
+        user_id = None
 
-        # try:
-        #     database_cursor.execute(query, (,))
-        # except Exception as e:
-        #     print(e)
-        #     exit()
+        if database_cursor.rowcount == 0:
+            #add new user
+            database_connection = connect_to_database()
+            database_cursor = database_connection.cursor()
+            print(2)
+            query = '''INSERT INTO account(first_name, last_name, email)
+                    VALUES (%s, %s, %s)'''
+            try:
+                database_cursor.execute(query, (users_firstName, users_lastName, users_email))
+                database_connection.commit()
+            except Exception as e:
+                print(e)
+                exit()
 
-        # user_id = None
+            database_connection = connect_to_database()
+            database_cursor = database_connection.cursor()
+            print(3)
+            query = '''SELECT account.id
+                    FROM account
+                    WHERE account.email = %s'''
+            try:
+                database_cursor.execute(query, (users_email,))
+            except Exception as e:
+                print(e)
+                exit()
 
-        # if len(database_cursor) == 0:
-        #     #add new user
-        #     database_connection = connect_to_database()
-        #     database_cursor = database_connection.cursor()
-
-        #     query = '''INSERT INTO account
-        #             VALUES (%s, %s, %s)'''
-
-        #     try:
-        #         database_cursor.execute(query, (users_firstName, users_lastName, users_email))
-        #     except Exception as e:
-        #         print(e)
-        #         exit()
-        # else:
-        #     for row in database_cursor:
-        #         user_id = row[0]
+            for row in database_cursor:
+                user_id = row[0]
+            
+        else:
+            for row in database_cursor:
+                user_id = row[0]
                 
         #make cookie for them
         token = str(uuid4())
-        tokens[token] = users_email
+        tokens[token] = user_id
         resp = make_response(redirect('/'))
         resp.set_cookie('sessionToken', token)
         return resp

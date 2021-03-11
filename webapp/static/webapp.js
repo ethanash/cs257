@@ -13,6 +13,7 @@ var sum = 0;
 function initialize() {
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
         isDraft = true;
+        fillInTeamSelector();
         setFormation("4-3-3");
         makeClickable();
     }
@@ -22,6 +23,23 @@ function initialize() {
         fillInPositionSelector();
     }
 
+}
+
+function fillInTeamSelector() {
+    var url = getAPIBaseURL() + '/accountteams';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(teams) {
+        var teamSelector = document.getElementById("teamSelector");
+        var innerHTML = '<option value=""></option>';
+        for(var team of teams){
+            innerHTML = innerHTML + '<option value="' + team["id"] + '">' + team["name"] + '</option>';
+        }
+        teamSelector.innerHTML = innerHTML;
+    })
 }
 
 function fillInPositionSelector(){
@@ -36,6 +54,164 @@ function fillInPositionSelector(){
         }
     }
     positionSelector.innerHTML = innerHTML;
+}
+
+function createNewTeam(){
+    var url = getAPIBaseURL() + '/createteam';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(teams) {
+        var teamId;
+        var teamName;
+        for (var team of teams){
+            teamId = team["id"];
+            teamName = team["name"]
+        }
+        console.log("teamId: " + teamId)
+        setTeam(teamId, teamName);
+        fillInTeamSelector();
+    })
+}
+
+function changeTeam(teamId){
+    console.log("change: " + teamId)
+    var teamName;
+    var selectOptions = document.getElementById("teamSelector").children;
+    console.log(selectOptions);
+    for (var option of selectOptions){
+        if (option.value == teamId){
+            teamName = option.innerHTML;
+            break;
+        }
+    }
+    setTeam(teamId, teamName);
+    displayTeam();
+}
+
+function changeTeamName(){
+    var newNameInput = document.getElementById("new-team-name");
+    var newName = newNameInput.getAttribute("value")
+
+    var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(teams) {
+        var teamId;
+        var teamName;
+        for (var team of teams){
+            teamId = team["id"];
+            teamName = team["name"]
+        }
+        fillInTeamSelector();
+        setTeam(teamId, teamName);
+    })
+}
+
+function getTeamId(){
+    var teamIdForm = document.getElementById("teamId");
+    console.log("get id: " + teamIdForm.getAttribute("value"))
+    console.log("get id 2: " + teamIdForm.value)
+    return teamIdForm.getAttribute("value");
+}
+
+function setTeam(newId, newName){
+    var teamIdForm = document.getElementById("teamId");
+    console.log("in form:");
+    console.log(teamIdForm);
+    console.log(newId + " " + newName);
+    teamIdForm.setAttribute("value", newId);
+    teamIdForm.setAttribute("teamname", newName);
+
+    var newNameForm = document.getElementById("new-team-name");
+    newNameForm.setAttribute("value", newName)
+}
+
+function addPlayerToTeam(playerId, playerlocation){
+    var url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerlocation;
+    console.log(url);
+    fetch(url, {method: 'get'});
+}
+
+function displayTeam(){
+    var playerField = document.getElementsByClassName("player-field")[0];
+
+    var url = getAPIBaseURL() + '/teamplayers?teamid=' + getTeamId();
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(players) {
+        sum = 0
+        total = 0
+        for (var player of players){
+            // if (player['name'] == 'NO DATA'){
+            //     return;
+            // }
+            var query = '[positionindex="' + player["location"] + '"]'
+            var fieldLocation = playerField.querySelectorAll(query)[0];
+
+            if(fieldLocation.getAttribute("class") == "inactive-card"){
+                fieldLocation.setAttribute("class", "active-card");
+                var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
+                var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
+                // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
+                // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
+                var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+                var paceDiv = fieldLocation.getElementsByClassName("player-pace")[0];
+                var shootingDiv = fieldLocation.getElementsByClassName("player-shooting")[0];
+                var passingDiv = fieldLocation.getElementsByClassName("player-passing")[0];
+                var dribblingDiv = fieldLocation.getElementsByClassName("player-dribbling")[0];
+                var defenseDiv = fieldLocation.getElementsByClassName("player-defense")[0];
+                var physicalDiv = fieldLocation.getElementsByClassName("player-physical")[0];
+                var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
+                // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
+
+                positionsPlayed = player['position'].split(",");
+                relevantPosition = positionsPlayed[0];
+                for (var pos of positionsPlayed) {
+                    if (pos == fieldLocation.getAttribute("position")) {
+                        relevantPosition = pos;
+                    }
+                }
+                positionDiv.innerHTML = relevantPosition;
+                overallRatingDiv.innerHTML = player['overall'];
+                nameDiv.innerHTML = player['name'];
+                paceDiv.innerHTML = player['pace'];
+                shootingDiv.innerHTML = player['shooting'];
+                passingDiv.innerHTML = player['passing'];
+                dribblingDiv.innerHTML = player['dribbling'];
+                defenseDiv.innerHTML = player['defense'];
+                physicalDiv.innerHTML = player['physicality'];
+
+                sum = sum + player["overall"];
+                total = total + 1;
+                var teamAverageRating = document.getElementById("team-average-rating");
+                teamAverageRating.innerHTML = sum/total;
+
+                var sofifa_id = player["sofifa_id"].toString();
+                while (sofifa_id.length < 6) {
+                    sofifa_id = "0" + sofifa_id;
+                }
+                var idFirstHalf = sofifa_id.substring(0,3);
+                var idSecondHalf = sofifa_id.substring(3,6);
+                playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                fieldLocation.setAttribute("playerid", player["player_id"]);
+            }
+        }
+    })
+}
+
+function deleteTeam(){
+
 }
 
 function makeClickable() {
@@ -255,7 +431,7 @@ function draft(position, positionIndex) {
 
                 var positionsPlayed = player['position'].split(",");
                 var relevantPosition = positionsPlayed[0];
-                for (pos of positionsPlayed) {
+                for (var pos of positionsPlayed) {
                     if (pos == position) {
                         relevantPosition = pos;
                     }
@@ -279,7 +455,7 @@ function draft(position, positionIndex) {
                 playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
                 playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("playerid", sofifa_id);
+                card.setAttribute("playerid", player["player_id"]);
                 card.setAttribute("positionindex", positionIndex);
 
                 makeNotClickable();
@@ -357,87 +533,26 @@ function goalieDraft(position, positionIndex) {
 function makeSelectionsClickable() {
     var playerListElement = document.getElementById('draft-selections');
     selections = playerListElement.children;
-    for (selection of selections) {
+    for (var selection of selections) {
         selection.setAttribute("onclick", "onDraftSelection(this)");
     }
 }
 
-function onDraftSelection(obj) {
-    var sofifa_id = obj.getAttribute("playerid");
+function onDraftSelection(obj){
+    var playerId = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
 
-    if (positionIndex = 16){
-        onDraftSelectionGoalie(obj);
-        break;
-    }
+    if (getTeamId() == "")
+    createNewTeam();
 
-    var playerField = document.getElementsByClassName("player-field")[0];
-    var query = '[positionindex="' + positionIndex + '"]'
-    var fieldLocation = playerField.querySelectorAll(query)[0];
+    addPlayerToTeam(playerId, positionIndex);
+    displayTeam();
 
-    var url = getAPIBaseURL() + '/players?sofifa_id=' + sofifa_id;
-    console.log(url);
-    fetch(url, {method: 'get'})
+    var playerListElement = document.getElementById('draft-selections');
+    playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
 
-    .then((response) => response.json())
-
-    .then(function(players) {
-        player = players[0];
-        fieldLocation.setAttribute("class", "active-card");
-        var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
-        var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
-        // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
-        // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
-        var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
-        var paceDiv = fieldLocation.getElementsByClassName("player-pace")[0];
-        var shootingDiv = fieldLocation.getElementsByClassName("player-shooting")[0];
-        var passingDiv = fieldLocation.getElementsByClassName("player-passing")[0];
-        var dribblingDiv = fieldLocation.getElementsByClassName("player-dribbling")[0];
-        var defenseDiv = fieldLocation.getElementsByClassName("player-defense")[0];
-        var physicalDiv = fieldLocation.getElementsByClassName("player-physical")[0];
-        var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
-        // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
-
-        positionsPlayed = player['position'].split(",");
-        relevantPosition = positionsPlayed[0];
-        for (pos of positionsPlayed) {
-            if (pos == fieldLocation.getAttribute("position")) {
-                relevantPosition = pos;
-            }
-        }
-        positionDiv.innerHTML = relevantPosition;
-        overallRatingDiv.innerHTML = player['overall'];
-        nameDiv.innerHTML = player['name'];
-        paceDiv.innerHTML = player['pace'];
-        shootingDiv.innerHTML = player['shooting'];
-        passingDiv.innerHTML = player['passing'];
-        dribblingDiv.innerHTML = player['dribbling'];
-        defenseDiv.innerHTML = player['defense'];
-        physicalDiv.innerHTML = player['physicality'];
-
-        sum = sum + player["overall"];
-        total = total + 1;
-        var teamAverageRating = document.getElementById("team-average-rating");
-        teamAverageRating.innerHTML = sum/total;
-
-        var sofifa_id = player["sofifa_id"].toString();
-        while (sofifa_id.length < 6) {
-            sofifa_id = "0" + sofifa_id;
-        }
-        var idFirstHalf = sofifa_id.substring(0,3);
-        var idSecondHalf = sofifa_id.substring(3,6);
-        playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
-        playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
-
-        fieldLocation.setAttribute("playerid", sofifa_id);
-
-        var playerListElement = document.getElementById('draft-selections');
-        playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
-
-        makeActiveNotClickable();
-        makeClickable();
-    })
-
+    makeActiveNotClickable();
+    makeClickable();
 }
 
 function onDraftSelectionGoalie(obj) {
@@ -548,7 +663,7 @@ function playerSearch(event){
 
                 var positionsPlayed = player['position'].split(",");
                 var relevantPosition = positionsPlayed[0];
-                for (pos of positionsPlayed) {
+                for (var pos of positionsPlayed) {
                     console.log(pos);
                     console.log(position);
                     if (pos.replace(/\s/g, '') == position.replace(/\s/g, '')) {
@@ -575,7 +690,7 @@ function playerSearch(event){
                 playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
                 playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("playerid", sofifa_id);
+                card.setAttribute("playerid", player["player_id"]);
             }
         }
     })

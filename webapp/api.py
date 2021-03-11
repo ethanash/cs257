@@ -16,6 +16,11 @@ from config import user
 
 api = flask.Blueprint('api', __name__)
 
+tokens = dict()
+user_first_name = []
+user_last_name = []
+user_email = []
+
 @api.route('/help')
 def help():
     return('''API Endpoints:
@@ -222,6 +227,177 @@ def get_players():
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
 
     return json.dumps(players)
+
+@api.route('/teamplayers')
+def get_team_players():
+    team_id = flask.request.args.get('teamid')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
+               player.passing, player.defense, player.position,
+               nationality.nationality, league.league, club.club, player.overall_rating,
+               player.sofifa_id, player.physicality, player.id, account_player.player_location
+               FROM player, nationality, club, league, account_player, account, account_team
+               WHERE player.nationality_id = nationality.id
+               AND player.league_id = league.id
+               AND account_player.account_team_id = %s
+               AND account_team.id = %s
+               AND account_team.account_id = %s
+               AND player.id = account_player.player_id'''
+
+    try:
+        token = request.cookies.get('sessionToken')
+        account_id = tokens[token]
+        database_cursor.execute(query, (team_id, team_id, account_id))
+    except Exception as e:
+        print(e)
+        exit()
+
+    players = []
+    isData = False
+    for row in database_cursor:
+        isData = True
+        print("hello")
+        player = {}
+        player_name = row[0]
+        player_shooting = row[1]
+        player_dribbling = row[2]
+        player_pace= row[3]
+        player_passing = row[4]
+        player_defense = row[5]
+        player_position = row[6]
+        player_nationality = row[7]
+        player_league = row[8]
+        player_club = row[9]
+        player_overall = row[10]
+        player_sofifa_id = row[11]
+        player_physicality = row[12]
+        player_id = row[13]
+        player_location = row[14]
+        player['name'] = player_name
+        player['shooting'] = player_shooting
+        player['dribbling'] = player_dribbling
+        player['pace'] = player_pace
+        player['passing'] = player_passing
+        player['defense'] = player_defense
+        player['position'] = player_position
+        player['nationality'] = player_nationality
+        player['league'] = player_league
+        player['club'] = player_club
+        player['overall'] = player_overall
+        player['sofifa_id'] = player_sofifa_id
+        player['physicality'] = player_physicality
+        player['player_id'] = player_id
+        player['location'] = player_location
+        players.append(player)
+        print(player)
+    # if not isData:
+    #     player = {}
+    #     player['name'] = 'NO DATA'
+    #     players.append(player)
+    return json.dumps(players)
+
+@api.route('/accountteams')
+def get_account_teams():
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    #team_id = flask.request.args.get('teamid', default=-1)
+
+    query = '''SELECT account_team.id, account_team.team_name
+            FROM account_team
+            WHERE account_team.account_id = %s'''
+    
+    #AND (account_team.id = %s OR %s < 0)
+    try:
+        token = request.cookies.get('sessionToken')
+        account_id = tokens[token]
+        database_cursor.execute(query, (account_id,))
+    except Exception as e:
+        print(e)
+        exit()
+
+    teams = []
+
+    for row in database_cursor:
+        team = {}
+        team["id"] = row[0]
+        team["name"] = row[1]
+        teams.append(team)
+    
+    return json.dumps(teams)
+
+@api.route('/createteam')
+def create_account_team():
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''INSERT INTO account_team(account_id, team_name)
+            VALUES (%s, %s)
+            RETURNING id, team_name'''
+    try:
+        token = request.cookies.get('sessionToken')
+        account_id = tokens[token]
+        database_cursor.execute(query, (account_id, "New Draft"))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+    teams = []
+    for row in database_cursor:
+        team = {}
+        team["id"] = row[0]
+        team["name"] = row[1]
+        teams.append(team)
+    return json.dumps(teams)
+
+@api.route('changeteamname')
+def change_team_name():
+    player_id = flask.request.args.get('teamid')
+    team_name = flask.request.args.get('name')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''UPDATE account_team
+            SET team_name = %s
+            WHERE id = %s
+            RETURNING id, team_name'''
+    try:
+        database_cursor.execute(query, (team_name, player_id))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+    teams = []
+    for row in database_cursor:
+        team = {}
+        team["id"] = row[0]
+        team["name"] = row[1]
+        teams.append(team)
+    return json.dumps(teams)
+
+@api.route('/addplayer')
+def add_player_to_team():
+    player_id = flask.request.args.get('playerid')
+    team_id = flask.request.args.get('teamid')
+    player_location = flask.request.args.get('playerlocation')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''INSERT INTO account_player(account_team_id, player_id, player_location)
+            VALUES (%s, %s, %s)'''
+    try:
+        database_cursor.execute(query, (team_id, player_id, player_location))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+    return 'PLAYER ADDED'
+    
 
 def connect_to_database():
     '''

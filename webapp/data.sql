@@ -57,7 +57,30 @@ CREATE TABLE public.goalie (
 --
 
 CREATE TABLE public.account (
-    id integer
+    id SERIAL PRIMARY KEY,
+    first_name text,
+    last_name text,
+    email text
+);
+
+--
+-- Name: account_team; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_team (
+    id SERIAL PRIMARY KEY,
+    account_id integer,
+    team_name text
+);
+
+--
+-- Name: account_player; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_player (
+    account_team_id integer,
+    player_id integer,
+    player_location text
 );
 
 --

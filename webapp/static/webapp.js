@@ -21,7 +21,7 @@ function initialize() {
         setFormation("4-3-3");
         fillInPositionSelector();
     }
-    
+
 }
 
 function fillInPositionSelector(){
@@ -108,6 +108,24 @@ function setInactiveCardSelection(card){
     card.innerHTML = htmlContents;
 }
 
+function setInactiveGoalieCard(card){
+    card.setAttribute("class", "inactive-card");
+    htmlContents = "<div class='player-overall-rating'></div>" +
+                    "<div class='player-position'></div>" +
+                    "<div class='player-nationality'></div>" +
+                    "<div class='player-club'></div>" +
+                    "<div class='player-name'></div>" +
+                    "<div class='goalie-diving'></div>" +
+                    "<div class='goalie-reflexes'></div>" +
+                    "<div class='goalie-handling'></div>" +
+                    "<div class='goalie-kicking'></div>" +
+                    "<div class='goalie-speed'></div>" +
+                    "<div class='goalie-positioning'></div>" +
+                    "<div class='player-league'></div>" +
+                    "<img class='player-image' src=''>";
+    card.innerHTML = htmlContents;
+}
+
 function setFormation(newFormation){
     console.log(newFormation)
     var playerField = document.getElementsByClassName("player-field")[0];
@@ -116,7 +134,7 @@ function setFormation(newFormation){
     if (newFormation == "4-4-2") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [1,3,5,6,8,9,10,11,13,14,17];
+            var formationPositions = [1,3,5,6,8,9,10,11,13,14,16];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -133,7 +151,7 @@ function setFormation(newFormation){
     else if (newFormation == "4-3-3") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [0,2,4,6,7,8,10,11,13,14,17];
+            var formationPositions = [0,2,4,6,7,8,10,11,13,14,16];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -150,7 +168,7 @@ function setFormation(newFormation){
     else if (newFormation == "4-5-1") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [2,5,6,7,8,9,10,11,13,14,17];
+            var formationPositions = [2,5,6,7,8,9,10,11,13,14,16];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -169,12 +187,17 @@ function setFormation(newFormation){
     }
 }
 
-function createDraftCards(){
+function createDraftCards(position){
     var draftSelections = document.getElementById("draft-selections");
     if (!(draftSelections.firstChild.firstChild)) {
         var cardSlots = draftSelections.children;
         for (card of cardSlots){
-            setInactiveCardSelection(card);
+            if (position != 'GK'){
+                setInactiveCardSelection(card);
+            }
+            else {
+                setInactiveGoalieCard(card);
+            }
         }
     }
 }
@@ -184,13 +207,23 @@ function createSearchCards(){
     if (!(draftSelections.firstChild.firstChild)) {
         var cardSlots = draftSelections.children;
         for (card of cardSlots){
-            setInactiveCardSelection(card);
+            if (position != 'GK'){
+                setInactiveCardSelection(card);
+            }
+            else {
+                setInactiveGoalieCard(card);
+            }
         }
     }
 }
 
 function draft(position, positionIndex) {
-    createDraftCards();
+    createDraftCards(position);
+
+    if (positionIndex == 16){
+        goalieDraft(position, positionIndex);
+        return;
+    }
 
     var url = getAPIBaseURL() + '/players?position=' + position;
     console.log(url);
@@ -260,6 +293,67 @@ function draft(position, positionIndex) {
     });
 }
 
+function goalieDraft(position, positionIndex) {
+    var url = getAPIBaseURL() + '/goalies';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(goalies) {
+        var goalieListElement = document.getElementById('draft-selections');
+        if(goalieListElement){
+            for (var i = 0; i < 6; i++) {
+                var card = goalieListElement.children[i];
+                card.setAttribute("class", "active-card");
+                var goalie = goalies[i];
+
+                var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
+                // var nationalityDiv = card.getElementsByClassName("goalie-nationality")[0];
+                // var clubDiv = card.getElementsByClassName("goalie-position")[0];
+                var nameDiv = card.getElementsByClassName("player-name")[0];
+                var divingDiv = card.getElementsByClassName("goalie-diving")[0];
+                var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];
+                var handlingDiv = card.getElementsByClassName("goalie-handling")[0];
+                var kickingDiv = card.getElementsByClassName("goalie-kicking")[0];
+                var speedDiv = card.getElementsByClassName("goalie-speed")[0];
+                var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
+                var goalieImage = card.getElementsByClassName("player-image")[0];
+                // var leagueDiv = card.getElementsByClassName("goalie-position")[0];
+
+                positionDiv.innerHTML = 'GK';
+                overallRatingDiv.innerHTML = goalie['overall'];
+                nameDiv.innerHTML = goalie['name'];
+                divingDiv.innerHTML = goalie['diving'];
+                reflexesDiv.innerHTML = goalie['reflexes'];
+                handlingDiv.innerHTML = goalie['handling'];
+                kickingDiv.innerHTML = goalie['kicking'];
+                speedDiv.innerHTML = goalie['speed'];
+                positioningDiv.innerHTML = goalie['positioning'];
+
+                var sofifa_id = goalie["sofifa_id"].toString();
+                while (sofifa_id.length < 6) {
+                    sofifa_id = "0" + sofifa_id;
+                }
+                var idFirstHalf = sofifa_id.substring(0,3);
+                var idSecondHalf = sofifa_id.substring(3,6);
+                goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                card.setAttribute("goalieid", sofifa_id);
+                card.setAttribute("positionindex", positionIndex);
+
+                makeNotClickable();
+                makeSelectionsClickable();
+            }
+        }
+    })
+
+    .catch(function(error) {
+        console.log(error);
+    });
+}
+
 function makeSelectionsClickable() {
     var playerListElement = document.getElementById('draft-selections');
     selections = playerListElement.children;
@@ -271,6 +365,11 @@ function makeSelectionsClickable() {
 function onDraftSelection(obj) {
     var sofifa_id = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
+
+    if (positionIndex = 16){
+        onDraftSelectionGoalie(obj);
+        break;
+    }
 
     var playerField = document.getElementsByClassName("player-field")[0];
     var query = '[positionindex="' + positionIndex + '"]'
@@ -341,6 +440,71 @@ function onDraftSelection(obj) {
 
 }
 
+function onDraftSelectionGoalie(obj) {
+    var sofifa_id = obj.getAttribute("goalieid");
+    var positionIndex = obj.getAttribute("positionindex");
+
+    var playerField = document.getElementsByClassName("player-field")[0];
+    var query = '[positionindex="' + positionIndex + '"]'
+    var fieldLocation = playerField.querySelectorAll(query)[0];
+
+    var url = getAPIBaseURL() + '/goalies?sofifa_id=' + sofifa_id;
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(goalies) {
+        goalie = goalies[0];
+        fieldLocation.setAttribute("class", "active-card");
+        var overallRatingDiv = fieldLocation.getElementsByClassName("goalie-overall-rating")[0];
+        // var nationalityDiv = fieldLocation.getElementsByClassName("goalie-nationality")[0];
+        // var clubDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
+        var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+        var divingDiv = fieldLocation.getElementsByClassName("goalie-diving")[0];
+        var reflexesDiv = fieldLocation.getElementsByClassName("goalie-reflexes")[0];
+        var handlingDiv = fieldLocation.getElementsByClassName("goalie-handling")[0];
+        var kickingDiv = fieldLocation.getElementsByClassName("goalie-kicking")[0];
+        var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
+        var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
+        var goalieImage = fieldLocation.getElementsByClassName("player-image")[0];
+        // var leagueDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
+
+        positionDiv.innerHTML = 'GK';
+        overallRatingDiv.innerHTML = goalie['overall'];
+        nameDiv.innerHTML = goalie['name'];
+        divingDiv.innerHTML = goalie['diving'];
+        reflexesDiv.innerHTML = goalie['reflexes'];
+        handlingDiv.innerHTML = goalie['handling'];
+        kickingDiv.innerHTML = goalie['kicking'];
+        positioningDiv.innerHTML = goalie['positioning'];
+        speedDiv.innerHTML = goalie['speed'];
+
+        sum = sum + goalie["overall"];
+        total = total + 1;
+        var teamAverageRating = document.getElementById("team-average-rating");
+        teamAverageRating.innerHTML = sum/total;
+
+        var sofifa_id = goalie["sofifa_id"].toString();
+        while (sofifa_id.length < 6) {
+            sofifa_id = "0" + sofifa_id;
+        }
+        var idFirstHalf = sofifa_id.substring(0,3);
+        var idSecondHalf = sofifa_id.substring(3,6);
+        goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+        goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+        fieldLocation.setAttribute("playerid", sofifa_id);
+
+        var goalieListElement = document.getElementById('draft-selections');
+        goalieListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
+
+        makeActiveNotClickable();
+        makeClickable();
+    })
+
+}
+
 function playerSearch(event){
     event.preventDefault();
     var position = event.target.elements.position.value;
@@ -348,6 +512,11 @@ function playerSearch(event){
     var club = event.target.elements.club.value;
 
     createSearchCards();
+
+    if(position = 'GK'){
+        goalieSearch(event);
+        return;
+    }
 
     var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club+ '&position=' + position;
     console.log(url);
@@ -396,7 +565,7 @@ function playerSearch(event){
                 dribblingDiv.innerHTML = player['dribbling'];
                 defenseDiv.innerHTML = player['defense'];
                 physicalDiv.innerHTML = player['physicality'];
-                
+
                 var sofifa_id = player["sofifa_id"].toString();
                 while (sofifa_id.length < 6) {
                     sofifa_id = "0" + sofifa_id;
@@ -408,7 +577,71 @@ function playerSearch(event){
 
                 card.setAttribute("playerid", sofifa_id);
             }
-        }  
+        }
+    })
+
+    .catch(function(error) {
+        console.log(error);
+    });
+
+}
+
+function goalieSearch(event){
+    event.preventDefault();
+    var position = 'GK';
+    var name = event.target.elements.name.value;
+    var club = event.target.elements.club.value;
+
+    var url = getAPIBaseURL() + '/goalie?name=' + name + '&club=' + club + '&position=' + position;
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(goalies) {
+        var goalieListElement = document.getElementById('searched-players');
+        if(goalieListElement){
+            for (var i = 0; i < goalies.length; i++) {
+                var card = goalieListElement.children[i];
+                card.setAttribute("class", "active-card");
+                var goalie = goalies[i];
+
+                var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
+                // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
+                // var clubDiv = card.getElementsByClassName("player-position")[0];
+                var nameDiv = card.getElementsByClassName("player-name")[0];
+                var divingDiv = card.getElementsByClassName("goalie-diving")[0];
+                var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];
+                var handlingDiv = card.getElementsByClassName("goalie-handling")[0];
+                var kickingDiv = card.getElementsByClassName("goalie-kicking")[0];
+                var speedDiv = card.getElementsByClassName("goalie-speed")[0];
+                var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
+                var goalieImage = card.getElementsByClassName("player-image")[0];
+                // var leagueDiv = card.getElementsByClassName("player-position")[0];
+
+                console.log("---")
+                positionDiv.innerHTML = 'GK';
+                overallRatingDiv.innerHTML = goalie['overall'];
+                nameDiv.innerHTML = goalie['name'];
+                divingDiv.innerHTML = goalie['diving'];
+                reflexesDiv.innerHTML = goalie['reflexes'];
+                handlingDiv.innerHTML = goalie['handling'];
+                kickingDiv.innerHTML = goalie['kicking'];
+                speedDiv.innerHTML = goalie['speed'];
+                positioningDiv.innerHTML = goalie['positioning'];
+
+                var sofifa_id = goalie["sofifa_id"].toString();
+                while (sofifa_id.length < 6) {
+                    sofifa_id = "0" + sofifa_id;
+                }
+                var idFirstHalf = sofifa_id.substring(0,3);
+                var idSecondHalf = sofifa_id.substring(3,6);
+                goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                card.setAttribute("goalieid", sofifa_id);
+            }
+        }
     })
 
     .catch(function(error) {

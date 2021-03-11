@@ -138,7 +138,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
-}   
+}
 
 .player-pace {
     position: absolute;
@@ -181,6 +181,54 @@ body {
 }
 
 .player-physical {
+    position: absolute;
+    margin-top: 89px;
+    margin-left: 47px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-diving {
+    position: absolute;
+    margin-top: 73px;
+    margin-left: 16px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-reflexes {
+    position: absolute;
+    margin-top: 81px;
+    margin-left: 16px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-handling {
+    position: absolute;
+    margin-top: 89px;
+    margin-left: 16px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-kicking {
+    position: absolute;
+    margin-top: 73px;
+    margin-left: 47px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-speed {
+    position: absolute;
+    margin-top: 81px;
+    margin-left: 47px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-positioning {
     position: absolute;
     margin-top: 89px;
     margin-left: 47px;

@@ -22,11 +22,12 @@ def help():
     /players - will return JSON output of players
     /sandbox - will show sandbox mode where you can search for players
 
-    See readme.txt for more filters and examples. 
+    See readme.txt for more filters and examples.
     ''')
 
 @api.route('/goalies')
 def get_goalies():
+    position = flask.request.args.get('position')
     nationality = flask.request.args.get('nationality')
     club = flask.request.args.get('club')
     league = flask.request.args.get('league')

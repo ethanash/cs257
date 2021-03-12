@@ -81,7 +81,7 @@ def get_goalies():
                AND goalie.age > %s AND goalie.age < %s
                AND goalie.overall_rating > %s AND goalie.overall_rating < %s
                AND (goalie.sofifa_id = %s OR %s < 0)
-               AND goalie.long_name LIKE %s'''
+               AND UPPER(goalie.long_name) LIKE UPPER(%s)'''
 
     try:
         database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), divingLow, divingHigh, handlingLow, handlingHigh, reflexesLow, reflexesHigh, kickingLow, kickingHigh, speedLow, speedHigh, positioningLow, positioningHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))
@@ -105,6 +105,7 @@ def get_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
+        goalie['position'] = 'GK'
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
         goalie['handling'] = goalie_handling
@@ -307,7 +308,7 @@ def get_account_teams():
     query = '''SELECT account_team.id, account_team.team_name
             FROM account_team
             WHERE account_team.account_id = %s'''
-    
+
     #AND (account_team.id = %s OR %s < 0)
     try:
         token = request.cookies.get('sessionToken')
@@ -324,7 +325,7 @@ def get_account_teams():
         team["id"] = row[0]
         team["name"] = row[1]
         teams.append(team)
-    
+
     return json.dumps(teams)
 
 @api.route('/createteam')
@@ -425,7 +426,7 @@ def add_player_to_team():
         print(e)
         exit()
     return 'PLAYER ADDED'
-    
+
 
 def connect_to_database():
     '''

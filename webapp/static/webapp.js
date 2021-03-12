@@ -116,9 +116,9 @@ function changeTeamName(){
             var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
             console.log(url);
             fetch(url, {method: 'get'})
-    
+
             .then((response) => response.json())
-    
+
             .then(function(teams) {
                 var teamId;
                 var teamName;
@@ -131,7 +131,7 @@ function changeTeamName(){
             })
         }
     }
-    
+
 }
 
 function getTeamId(){
@@ -258,7 +258,7 @@ function deleteTeam(){
     var url = getAPIBaseURL() + '/deleteteam?teamid=' + getTeamId();
     console.log(url);
     fetch(url, {method: 'get'})
-    
+
     resetTeam()
 
     fillInTeamSelector();
@@ -433,10 +433,10 @@ function createDraftCards(position){
     }
 }
 
-function createSearchCards(){
-    var draftSelections = document.getElementById("searched-players");
-    if (!(draftSelections.firstChild.firstChild)) {
-        var cardSlots = draftSelections.children;
+function createSearchCards(position){
+    var searchSelections = document.getElementById("searched-players");
+    if (!(searchSelections.firstChild.firstChild)) {
+        var cardSlots = searchSelections.children;
         for (card of cardSlots){
             if (position != 'GK'){
                 setInactiveCardSelection(card);
@@ -449,12 +449,13 @@ function createSearchCards(){
 }
 
 function draft(position, positionIndex) {
-    createDraftCards(position);
 
-    if (positionIndex == 16){
+    if (positionIndex == 17){
         goalieDraft(position, positionIndex);
         return;
     }
+
+    createDraftCards(position);
 
     var url = getAPIBaseURL() + '/players?position=' + position;
     console.log(url);
@@ -525,6 +526,8 @@ function draft(position, positionIndex) {
 }
 
 function goalieDraft(position, positionIndex) {
+    createDraftCards(position);
+
     var url = getAPIBaseURL() + '/goalies';
     console.log(url);
     fetch(url, {method: 'get'})
@@ -571,7 +574,7 @@ function goalieDraft(position, positionIndex) {
                 goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
                 goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("goalieid", sofifa_id);
+                card.setAttribute("playerid", sofifa_id);
                 card.setAttribute("positionindex", positionIndex);
 
                 makeNotClickable();
@@ -621,7 +624,7 @@ function onDraftSelectionGoalie(obj) {
     .then(function(goalies) {
         goalie = goalies[0];
         fieldLocation.setAttribute("class", "active-card");
-        var overallRatingDiv = fieldLocation.getElementsByClassName("goalie-overall-rating")[0];
+        var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
         // var nationalityDiv = fieldLocation.getElementsByClassName("goalie-nationality")[0];
         // var clubDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
         var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
@@ -634,7 +637,7 @@ function onDraftSelectionGoalie(obj) {
         var goalieImage = fieldLocation.getElementsByClassName("player-image")[0];
         // var leagueDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
 
-        positionDiv.innerHTML = 'GK';
+        positionDiv.innerHTML = goalie['position'];
         overallRatingDiv.innerHTML = goalie['overall'];
         nameDiv.innerHTML = goalie['name'];
         divingDiv.innerHTML = goalie['diving'];
@@ -644,7 +647,7 @@ function onDraftSelectionGoalie(obj) {
         positioningDiv.innerHTML = goalie['positioning'];
         speedDiv.innerHTML = goalie['speed'];
 
-        sum = sum + goalie["overall"];
+        sum = sum + goalie['overall'];
         total = total + 1;
         var teamAverageRating = document.getElementById("team-average-rating");
         teamAverageRating.innerHTML = sum/total;
@@ -675,83 +678,86 @@ function playerSearch(event){
     var name = event.target.elements.name.value;
     var club = event.target.elements.club.value;
 
-    createSearchCards();
-
     if(position = 'GK'){
         goalieSearch(event);
-        return;
     }
 
-    var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club+ '&position=' + position;
-    console.log(url);
-    fetch(url, {method: 'get'})
+    else {
+        createSearchCards(position);
 
-    .then((response) => response.json())
+        var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club+ '&position=' + position;
+        console.log(url);
+        fetch(url, {method: 'get'})
 
-    .then(function(players) {
-        var playerListElement = document.getElementById('searched-players');
-        if(playerListElement){
-            for (var i = 0; i < players.length; i++) {
-                var card = playerListElement.children[i];
-                card.setAttribute("class", "active-card");
-                var player = players[i];
+        .then((response) => response.json())
 
-                var positionDiv = card.getElementsByClassName("player-position")[0];
-                var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
-                // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-                // var clubDiv = card.getElementsByClassName("player-position")[0];
-                var nameDiv = card.getElementsByClassName("player-name")[0];
-                var paceDiv = card.getElementsByClassName("player-pace")[0];
-                var shootingDiv = card.getElementsByClassName("player-shooting")[0];
-                var passingDiv = card.getElementsByClassName("player-passing")[0];
-                var dribblingDiv = card.getElementsByClassName("player-dribbling")[0];
-                var defenseDiv = card.getElementsByClassName("player-defense")[0];
-                var physicalDiv = card.getElementsByClassName("player-physical")[0];
-                var playerImage = card.getElementsByClassName("player-image")[0];
-                // var leagueDiv = card.getElementsByClassName("player-position")[0];
+        .then(function(players) {
+            var playerListElement = document.getElementById('searched-players');
+            if(playerListElement){
+                for (var i = 0; i < players.length; i++) {
+                    var card = playerListElement.children[i];
+                    card.setAttribute("class", "active-card");
+                    var player = players[i];
 
-                var positionsPlayed = player['position'].split(",");
-                var relevantPosition = positionsPlayed[0];
-                for (var pos of positionsPlayed) {
-                    if (pos.replace(/\s/g, '') == position.replace(/\s/g, '')) {
-                        relevantPosition = pos;
+                    var positionDiv = card.getElementsByClassName("player-position")[0];
+                    var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
+                    // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
+                    // var clubDiv = card.getElementsByClassName("player-position")[0];
+                    var nameDiv = card.getElementsByClassName("player-name")[0];
+                    var paceDiv = card.getElementsByClassName("player-pace")[0];
+                    var shootingDiv = card.getElementsByClassName("player-shooting")[0];
+                    var passingDiv = card.getElementsByClassName("player-passing")[0];
+                    var dribblingDiv = card.getElementsByClassName("player-dribbling")[0];
+                    var defenseDiv = card.getElementsByClassName("player-defense")[0];
+                    var physicalDiv = card.getElementsByClassName("player-physical")[0];
+                    var playerImage = card.getElementsByClassName("player-image")[0];
+                    // var leagueDiv = card.getElementsByClassName("player-position")[0];
+
+                    var positionsPlayed = player['position'].split(",");
+                    var relevantPosition = positionsPlayed[0];
+                    for (var pos of positionsPlayed) {
+                        if (pos.replace(/\s/g, '') == position.replace(/\s/g, '')) {
+                            relevantPosition = pos;
+                        }
                     }
-                }
-                positionDiv.innerHTML = relevantPosition;
-                overallRatingDiv.innerHTML = player['overall'];
-                nameDiv.innerHTML = player['name'];
-                paceDiv.innerHTML = player['pace'];
-                shootingDiv.innerHTML = player['shooting'];
-                passingDiv.innerHTML = player['passing'];
-                dribblingDiv.innerHTML = player['dribbling'];
-                defenseDiv.innerHTML = player['defense'];
-                physicalDiv.innerHTML = player['physicality'];
+                    positionDiv.innerHTML = relevantPosition;
+                    overallRatingDiv.innerHTML = player['overall'];
+                    nameDiv.innerHTML = player['name'];
+                    paceDiv.innerHTML = player['pace'];
+                    shootingDiv.innerHTML = player['shooting'];
+                    passingDiv.innerHTML = player['passing'];
+                    dribblingDiv.innerHTML = player['dribbling'];
+                    defenseDiv.innerHTML = player['defense'];
+                    physicalDiv.innerHTML = player['physicality'];
 
-                var sofifa_id = player["sofifa_id"].toString();
-                while (sofifa_id.length < 6) {
-                    sofifa_id = "0" + sofifa_id;
-                }
-                var idFirstHalf = sofifa_id.substring(0,3);
-                var idSecondHalf = sofifa_id.substring(3,6);
-                playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
-                playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+                    var sofifa_id = player["sofifa_id"].toString();
+                    while (sofifa_id.length < 6) {
+                        sofifa_id = "0" + sofifa_id;
+                    }
+                    var idFirstHalf = sofifa_id.substring(0,3);
+                    var idSecondHalf = sofifa_id.substring(3,6);
+                    playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                    playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("playerid", player["player_id"]);
+                    card.setAttribute("playerid", player["player_id"]);
+                }
             }
-        }
-    })
+        })
 
-    .catch(function(error) {
-        console.log(error);
-    });
+        .catch(function(error) {
+            console.log(error);
+        });
+    }
 
 }
 
 function goalieSearch(event){
     event.preventDefault();
-    var position = 'GK';
+    var position = event.target.elements.position.value;
     var name = event.target.elements.name.value;
     var club = event.target.elements.club.value;
+
+    createSearchCards(position);
 
     var url = getAPIBaseURL() + '/goalie?name=' + name + '&club=' + club + '&position=' + position;
     console.log(url);
@@ -781,7 +787,7 @@ function goalieSearch(event){
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 console.log("---")
-                positionDiv.innerHTML = 'GK';
+                positionDiv.innerHTML = goalie['position'];
                 overallRatingDiv.innerHTML = goalie['overall'];
                 nameDiv.innerHTML = goalie['name'];
                 divingDiv.innerHTML = goalie['diving'];
@@ -800,7 +806,7 @@ function goalieSearch(event){
                 goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
                 goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("goalieid", sofifa_id);
+                card.setAttribute("playerid", sofifa_id);
             }
         }
     })

@@ -289,12 +289,6 @@ function makeActiveNotClickable() {
     }
 }
 
-function onPositionDraft(obj) {
-    var position = obj.getAttribute("position");
-    var positionIndex = obj.getAttribute("positionindex")
-    draft(position, positionIndex);
-}
-
 function getAPIBaseURL() {
     var baseURL = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api';
     return baseURL;
@@ -418,6 +412,19 @@ function setFormation(newFormation){
     }
 }
 
+'''––––––––––––––––––––––––––– Draft Functions –––––––––––––––––––––––––––'''
+
+function onPositionDraft(obj) {
+    var position = obj.getAttribute("position");
+    var positionIndex = obj.getAttribute("positionindex")
+    if (position.equals("GK")) {
+        goalieDraft(position, positionIndex);
+    }
+    else {
+        draft(position, positionIndex);
+    }
+}
+
 function createDraftCards(position){
     var draftSelections = document.getElementById("draft-selections");
     if (!(draftSelections.firstChild.firstChild)) {
@@ -433,27 +440,7 @@ function createDraftCards(position){
     }
 }
 
-function createSearchCards(position){
-    var searchSelections = document.getElementById("searched-players");
-    if (!(searchSelections.firstChild.firstChild)) {
-        var cardSlots = searchSelections.children;
-        for (card of cardSlots){
-            if (position != 'GK'){
-                setInactiveCardSelection(card);
-            }
-            else {
-                setInactiveGoalieCard(card);
-            }
-        }
-    }
-}
-
 function draft(position, positionIndex) {
-
-    if (positionIndex == 17){
-        goalieDraft(position, positionIndex);
-        return;
-    }
 
     createDraftCards(position);
 
@@ -526,6 +513,7 @@ function draft(position, positionIndex) {
 }
 
 function goalieDraft(position, positionIndex) {
+
     createDraftCards(position);
 
     var url = getAPIBaseURL() + '/goalies';
@@ -672,6 +660,8 @@ function onDraftSelectionGoalie(obj) {
 
 }
 
+'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
+
 function playerSearch(event){
     event.preventDefault();
     var position = event.target.elements.position.value;
@@ -759,7 +749,7 @@ function goalieSearch(event){
 
     createSearchCards(position);
 
-    var url = getAPIBaseURL() + '/goalie?name=' + name + '&club=' + club + '&position=' + position;
+    var url = getAPIBaseURL() + '/goalies?name=' + name + '&club=' + club + '&position=' + position;
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -815,4 +805,19 @@ function goalieSearch(event){
         console.log(error);
     });
 
+}
+
+function createSearchCards(position){
+    var searchSelections = document.getElementById("searched-players");
+    if (!(searchSelections.firstChild.firstChild)) {
+        var cardSlots = searchSelections.children;
+        for (card of cardSlots){
+            if (position != 'GK'){
+                setInactiveCardSelection(card);
+            }
+            else {
+                setInactiveGoalieCard(card);
+            }
+        }
+    }
 }

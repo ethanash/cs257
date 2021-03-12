@@ -26,15 +26,12 @@
         <div class="left-side">
             <div class="menu-bar">
                 <select onchange="changeTeam(this.value)" id="teamSelector" name="teamSelector">
-                    <option value="team1">Ethan's cool Team</option>
-                    <option value="team2">Strawberry Field</option>
-                    <option value="team3">France</option>
                 </select>
                 <button onclick="createNewTeam()">Create New Team</button>
                 <div>
                     <input id="new-team-name" class="team-name" value="New Draft"></input>
                     <input type="hidden" id=teamId value=""></input>
-                    <button id="changeTeamName">Change Team Name</button>
+                    <button onclick="changeTeamName()">Change Team Name</button>
                     <button onclick="deleteTeam()">Delete Team</button>
                 </div>
                 <div class="stats">
@@ -48,6 +45,7 @@
                     </div> -->
                 </div>
                 <label for="formations">Change the Formation:</label>
+                <input type="hidden" id="currentFormation" value=""></input>
                 <select onchange="setFormation(this.value)" name="formations" id="formations">
                     <option value="4-3-3">4-3-3</option>
                     <option value="4-4-2">4-4-2</option>

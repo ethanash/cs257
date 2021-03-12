@@ -259,7 +259,6 @@ def get_team_players():
     isData = False
     for row in database_cursor:
         isData = True
-        print("hello")
         player = {}
         player_name = row[0]
         player_shooting = row[1]
@@ -292,7 +291,6 @@ def get_team_players():
         player['player_id'] = player_id
         player['location'] = player_location
         players.append(player)
-        print(player)
     # if not isData:
     #     player = {}
     #     player['name'] = 'NO DATA'
@@ -352,6 +350,36 @@ def create_account_team():
         team["name"] = row[1]
         teams.append(team)
     return json.dumps(teams)
+
+@api.route('/deleteteam')
+def delete_team():
+    team_id = flask.request.args.get('teamid')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''DELETE FROM account_team
+            WHERE id = %s'''
+    try:
+        database_cursor.execute(query, (team_id,))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''DELETE FROM account_player
+            WHERE account_team_id = %s'''
+    try:
+        database_cursor.execute(query, (team_id,))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+
+    return 'SUCCESSFULLY DELETED'
 
 @api.route('changeteamname')
 def change_team_name():

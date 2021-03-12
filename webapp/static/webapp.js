@@ -7,8 +7,7 @@
 
 window.onload = initialize;
 var isDraft;
-var total = 0;
-var sum = 0;
+var continueFunc = true;
 
 function initialize() {
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
@@ -34,7 +33,7 @@ function fillInTeamSelector() {
 
     .then(function(teams) {
         var teamSelector = document.getElementById("teamSelector");
-        var innerHTML = '<option value=""></option>';
+        var innerHTML = '<option selected disabled>Select Team</option>';
         for(var team of teams){
             innerHTML = innerHTML + '<option value="' + team["id"] + '">' + team["name"] + '</option>';
         }
@@ -68,16 +67,16 @@ function createNewTeam(){
         var teamName;
         for (var team of teams){
             teamId = team["id"];
-            teamName = team["name"]
+            teamName = team["name"];
         }
-        console.log("teamId: " + teamId)
         setTeam(teamId, teamName);
         fillInTeamSelector();
+        continueFunc = true;
+        console.log("done")
     })
 }
 
 function changeTeam(teamId){
-    console.log("change: " + teamId)
     var teamName;
     var selectOptions = document.getElementById("teamSelector").children;
     console.log(selectOptions);
@@ -87,49 +86,82 @@ function changeTeam(teamId){
             break;
         }
     }
+    resetField();
     setTeam(teamId, teamName);
     displayTeam();
 }
 
+function resetField(){
+    var currFormation = document.getElementById("currentFormation");
+    setFormation(currFormation.getAttribute("value"));
+}
+
 function changeTeamName(){
     var newNameInput = document.getElementById("new-team-name");
-    var newName = newNameInput.getAttribute("value")
-
-    var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
-    console.log(url);
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(teams) {
-        var teamId;
-        var teamName;
-        for (var team of teams){
-            teamId = team["id"];
-            teamName = team["name"]
+    var newName = newNameInput.value;
+    continueFunc = false;
+    if (!getTeamId()){
+        console.log("ok then?");
+        createNewTeam();
+    }else{
+        continueFunc = true;
+    }
+    waitForIt();
+    function waitForIt(){
+        if (!continueFunc) {
+            setTimeout(function(){waitForIt()},100);
+        }else {
+            console.log("team id");
+            console.log(getTeamId());
+            var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
+            console.log(url);
+            fetch(url, {method: 'get'})
+    
+            .then((response) => response.json())
+    
+            .then(function(teams) {
+                var teamId;
+                var teamName;
+                for (var team of teams){
+                    teamId = team["id"];
+                    teamName = team["name"]
+                }
+                fillInTeamSelector();
+                setTeam(teamId, teamName);
+            })
         }
-        fillInTeamSelector();
-        setTeam(teamId, teamName);
-    })
+    }
+    
 }
 
 function getTeamId(){
     var teamIdForm = document.getElementById("teamId");
-    console.log("get id: " + teamIdForm.getAttribute("value"))
-    console.log("get id 2: " + teamIdForm.value)
+    console.log(teamIdForm);
     return teamIdForm.getAttribute("value");
 }
 
 function setTeam(newId, newName){
     var teamIdForm = document.getElementById("teamId");
-    console.log("in form:");
-    console.log(teamIdForm);
-    console.log(newId + " " + newName);
     teamIdForm.setAttribute("value", newId);
     teamIdForm.setAttribute("teamname", newName);
 
+    var teamNameInput = document.getElementById("new-team-name");
+    teamNameInput.value = newName;
+
     var newNameForm = document.getElementById("new-team-name");
-    newNameForm.setAttribute("value", newName)
+    newNameForm.setAttribute("value", newName);
+}
+
+function resetTeam(){
+    var teamIdForm = document.getElementById("teamId");
+    teamIdForm.setAttribute("value", "");
+    teamIdForm.setAttribute("teamname", "");
+
+    var newNameForm = document.getElementById("new-team-name");
+    newNameForm.setAttribute("value", "New Draft");
+
+    var ratingDiv = document.getElementById("team-average-rating");
+    ratingDiv.innerHTML = "";
 }
 
 function addPlayerToTeam(playerId, playerlocation){
@@ -148,8 +180,8 @@ function displayTeam(){
     .then((response) => response.json())
 
     .then(function(players) {
-        sum = 0
-        total = 0
+        var sum = 0
+        var total = 0
         for (var player of players){
             // if (player['name'] == 'NO DATA'){
             //     return;
@@ -206,12 +238,32 @@ function displayTeam(){
 
                 fieldLocation.setAttribute("playerid", player["player_id"]);
             }
+            else{
+                sum = sum + player["overall"];
+                total = total + 1;
+                var teamAverageRating = document.getElementById("team-average-rating");
+                teamAverageRating.innerHTML = Math.round(sum/total);
+            }
         }
+
+        var playerListElement = document.getElementById('draft-selections');
+        playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
+
+        makeActiveNotClickable();
+        makeClickable();
     })
 }
 
 function deleteTeam(){
+    var url = getAPIBaseURL() + '/deleteteam?teamid=' + getTeamId();
+    console.log(url);
+    fetch(url, {method: 'get'})
+    
+    resetTeam()
 
+    fillInTeamSelector();
+    setFormation("4-3-3");
+    makeClickable()
 }
 
 function makeClickable() {
@@ -306,6 +358,9 @@ function setFormation(newFormation){
     console.log(newFormation)
     var playerField = document.getElementsByClassName("player-field")[0];
     var positions = playerField.children;
+
+    var storeFormation = document.getElementById("currentFormation");
+    storeFormation.setAttribute("value", newFormation);
 
     if (newFormation == "4-4-2") {
         for (var i = 0; i < positions.length; i ++) {
@@ -547,12 +602,6 @@ function onDraftSelection(obj){
 
     addPlayerToTeam(playerId, positionIndex);
     displayTeam();
-
-    var playerListElement = document.getElementById('draft-selections');
-    playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
-
-    makeActiveNotClickable();
-    makeClickable();
 }
 
 function onDraftSelectionGoalie(obj) {
@@ -664,13 +713,10 @@ function playerSearch(event){
                 var positionsPlayed = player['position'].split(",");
                 var relevantPosition = positionsPlayed[0];
                 for (var pos of positionsPlayed) {
-                    console.log(pos);
-                    console.log(position);
                     if (pos.replace(/\s/g, '') == position.replace(/\s/g, '')) {
                         relevantPosition = pos;
                     }
                 }
-                console.log("---")
                 positionDiv.innerHTML = relevantPosition;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];

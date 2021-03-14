@@ -104,6 +104,8 @@ def get_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
+        print("id")
+        print(goalie_id)
         goalie['position'] = 'GK'
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
@@ -316,6 +318,68 @@ def get_team_players():
 
     return json.dumps(players)
 
+@api.route('/teamgoalies')
+def get_team_goalies():
+    team_id = flask.request.args.get('teamid')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
+    		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
+               FROM goalie, nationality, club, league, account_goalie, account, account_team
+               WHERE nationality.id = goalie.nationality_id
+               AND club.id = goalie.club_id
+               AND league.id = goalie.league_id
+               AND account_goalie.account_team_id = %s
+               AND account_team.id = %s
+               AND account_team.account_id = %s
+               AND goalie.id = account_goalie.goalie_id'''
+
+    try:
+        token = request.cookies.get('sessionToken')
+        account_id = tokens[token]
+        database_cursor.execute(query, (team_id, team_id, account_id))
+    except Exception as e:
+        print(e)
+        exit()
+
+    goalies = []
+
+    for row in database_cursor:
+        goalie = {}
+        goalie_name = row[0]
+        goalie_diving = row[1]
+        goalie_handling = row[2]
+        goalie_reflexes = row[3]
+        goalie_kicking = row[4]
+        goalie_speed = row[5]
+        goalie_positioning = row[6]
+        goalie_nationality = row[7]
+        goalie_league = row[8]
+        goalie_club = row[9]
+        goalie_overall = row[10]
+        goalie_sofifa_id = row[11]
+        goalie_id = row[12]
+        goalie['name'] = goalie_name
+        goalie['diving'] = goalie_diving
+        goalie['handling'] = goalie_handling
+        goalie['reflexes'] = goalie_reflexes
+        goalie['kicking'] = goalie_kicking
+        goalie['speed'] = goalie_speed
+        goalie['positioning'] = goalie_positioning
+        goalie['nationality'] = goalie_nationality
+        goalie['league'] = goalie_league
+        goalie['club'] = goalie_club
+        goalie['overall'] = goalie_overall
+        goalie['sofifa_id'] = goalie_sofifa_id
+        goalie['goalie_id'] = goalie_id
+        goalies.append(goalie)
+
+    return json.dumps(goalies)
+
+
 @api.route('/accountteams')
 def get_account_teams():
     database_connection = connect_to_database()
@@ -444,6 +508,24 @@ def add_player_to_team():
         print(e)
         exit()
     return 'PLAYER ADDED'
+
+@api.route('/addgoalie')
+def add_goalie_to_team():
+    goalie_id = flask.request.args.get('goalieid')
+    team_id = flask.request.args.get('teamid')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''INSERT INTO account_goalie(account_team_id, goalie_id)
+            VALUES (%s, %s)'''
+    try:
+        database_cursor.execute(query, (team_id, goalie_id))
+        database_connection.commit()
+    except Exception as e:
+        print(e)
+        exit()
+    return 'GOALIE ADDED'
 
 
 def connect_to_database():

@@ -81,14 +81,12 @@ function createNewTeam(){
         setTeam(teamId, teamName);
         fillInTeamSelector();
         continueFunc = true;
-        console.log("done")
     })
 }
 
 function changeTeam(teamId){
     var teamName;
     var selectOptions = document.getElementById("teamSelector").children;
-    console.log(selectOptions);
     for (var option of selectOptions){
         if (option.value == teamId){
             teamName = option.innerHTML;
@@ -126,8 +124,6 @@ function changeTeamName(){
         if (!continueFunc) {
             setTimeout(function(){waitForIt()},100);
         }else {
-            console.log("team id");
-            console.log(getTeamId());
             var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
             console.log(url);
             fetch(url, {method: 'get'})
@@ -151,7 +147,6 @@ function changeTeamName(){
 
 function getTeamId(){
     var teamIdForm = document.getElementById("teamId");
-    console.log(teamIdForm);
     return teamIdForm.getAttribute("value");
 }
 
@@ -180,12 +175,14 @@ function resetTeam(){
 }
 
 function addPlayerToTeam(playerId, playerLocation){
-    if (playerLocation != 17) {
-        var url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
+    var url;
+    if (playerLocation == 17 || playerLocation == "17") {
+        goalieId = playerId;
+        url = getAPIBaseURL() + '/addgoalie?goalieid=' + goalieId + '&teamid=' + getTeamId();
+        
     }
     else {
-        goalieId = playerId;
-        var url = getAPIBaseURL() + '/addplayer?goalieid=' + goalieId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
+        url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
     }
     console.log(url);
     fetch(url, {method: 'get'});
@@ -203,9 +200,7 @@ function displayTeam(){
     .then(function(players) {
         var sum = 0;
         var total = 0;
-        var formation;
         for (var player of players){
-            console.log(player['formation'])
             if (player['formation']){
                 setFormation(player['formation']);
                 continue;
@@ -246,8 +241,6 @@ function displayTeam(){
                 defenseDiv.innerHTML = player['defense'];
                 physicalDiv.innerHTML = player['physicality'];
 
-                formation = player['formation'];
-
                 sum = sum + player["overall"];
                 total = total + 1;
                 var teamAverageRating = document.getElementById("team-average-rating");
@@ -271,6 +264,68 @@ function displayTeam(){
                 teamAverageRating.innerHTML = Math.round(sum/total);
             }
         }
+
+        var url = getAPIBaseURL() + '/teamgoalies?teamid=' + getTeamId();
+        console.log(url);
+        fetch(url, {method: 'get'})
+
+        .then((response) => response.json())
+
+        .then(function(goalies) {
+            for (var goalie of goalies){
+                var query = '[positionindex="' + 17 + '"]'
+                var fieldLocation = playerField.querySelectorAll(query)[0];
+
+                if(fieldLocation.getAttribute("class") == "inactive-goalie-card"){
+                    fieldLocation.setAttribute("class", "active-card");
+                    var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
+                    var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
+                    // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
+                    // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
+                    var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+                    var divingDiv = fieldLocation.getElementsByClassName("goalie-diving")[0];
+                    var handlingDiv = fieldLocation.getElementsByClassName("goalie-handling")[0];
+                    var kickingDiv = fieldLocation.getElementsByClassName("goalie-kicking")[0];
+                    var reflexesDiv = fieldLocation.getElementsByClassName("goalie-reflexes")[0];
+                    var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
+                    var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
+                    var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
+                    // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
+
+                    positionDiv.innerHTML = "GK";
+                    overallRatingDiv.innerHTML = goalie['overall'];
+                    nameDiv.innerHTML = goalie['name'];
+                    divingDiv.innerHTML = goalie['diving'];
+                    handlingDiv.innerHTML = goalie['handling'];
+                    kickingDiv.innerHTML = goalie['kicking'];
+                    reflexesDiv.innerHTML = goalie['reflexes'];
+                    speedDiv.innerHTML = goalie['speed'];
+                    positioningDiv.innerHTML = goalie['positioning'];
+
+                    sum = sum + goalie["overall"];
+                    total = total + 1;
+                    var teamAverageRating = document.getElementById("team-average-rating");
+                    teamAverageRating.innerHTML = sum/total;
+
+                    var sofifa_id = goalie["sofifa_id"].toString();
+                    while (sofifa_id.length < 6) {
+                        sofifa_id = "0" + sofifa_id;
+                    }
+                    var idFirstHalf = sofifa_id.substring(0,3);
+                    var idSecondHalf = sofifa_id.substring(3,6);
+                    playerImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+                    playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+
+                    fieldLocation.setAttribute("goalieid", goalie["goalie_id"]);
+                }
+                else{
+                    sum = sum + goalie["overall"];
+                    total = total + 1;
+                    var teamAverageRating = document.getElementById("team-average-rating");
+                    teamAverageRating.innerHTML = Math.round(sum/total);
+                }
+            }
+        })
 
         var playerListElement = document.getElementById('draft-selections');
         playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
@@ -381,7 +436,6 @@ function setInactiveGoalieCard(card){
 }
 
 function setFormation(newFormation){
-    console.log(newFormation)
     var playerField = document.getElementsByClassName("player-field")[0];
     var positions = playerField.children;
 
@@ -591,10 +645,9 @@ function goalieDraft(position, positionIndex) {
                 goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
                 goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-                card.setAttribute("playerid", sofifa_id);
+                card.setAttribute("playerid", goalie['goalie_id']);
                 card.setAttribute("positionindex", positionIndex);
             }
-            console.log("hello??????");
             makeNotClickable();
             makeSelectionsClickable();
         }
@@ -634,70 +687,70 @@ function onDraftSelection(obj){
     }
 }
 
-function onDraftSelectionGoalie(obj) {
-    var sofifa_id = obj.getAttribute("goalieid");
-    var positionIndex = obj.getAttribute("positionindex");
+// function onDraftSelectionGoalie(obj) {
+//     var sofifa_id = obj.getAttribute("goalieid");
+//     var positionIndex = obj.getAttribute("positionindex");
 
-    var playerField = document.getElementsByClassName("player-field")[0];
-    var query = '[positionindex="' + positionIndex + '"]'
-    var fieldLocation = playerField.querySelectorAll(query)[0];
+//     var playerField = document.getElementsByClassName("player-field")[0];
+//     var query = '[positionindex="' + positionIndex + '"]'
+//     var fieldLocation = playerField.querySelectorAll(query)[0];
 
-    var url = getAPIBaseURL() + '/goalies?sofifa_id=' + sofifa_id;
-    console.log(url);
-    fetch(url, {method: 'get'})
+//     var url = getAPIBaseURL() + '/goalies?sofifa_id=' + sofifa_id;
+//     console.log(url);
+//     fetch(url, {method: 'get'})
 
-    .then((response) => response.json())
+//     .then((response) => response.json())
 
-    .then(function(goalies) {
-        goalie = goalies[0];
-        fieldLocation.setAttribute("class", "active-card");
-        var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
-        // var nationalityDiv = fieldLocation.getElementsByClassName("goalie-nationality")[0];
-        // var clubDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
-        var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
-        var divingDiv = fieldLocation.getElementsByClassName("goalie-diving")[0];
-        var reflexesDiv = fieldLocation.getElementsByClassName("goalie-reflexes")[0];
-        var handlingDiv = fieldLocation.getElementsByClassName("goalie-handling")[0];
-        var kickingDiv = fieldLocation.getElementsByClassName("goalie-kicking")[0];
-        var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
-        var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
-        var goalieImage = fieldLocation.getElementsByClassName("player-image")[0];
-        // var leagueDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
+//     .then(function(goalies) {
+//         goalie = goalies[0];
+//         fieldLocation.setAttribute("class", "active-card");
+//         var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
+//         // var nationalityDiv = fieldLocation.getElementsByClassName("goalie-nationality")[0];
+//         // var clubDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
+//         var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+//         var divingDiv = fieldLocation.getElementsByClassName("goalie-diving")[0];
+//         var reflexesDiv = fieldLocation.getElementsByClassName("goalie-reflexes")[0];
+//         var handlingDiv = fieldLocation.getElementsByClassName("goalie-handling")[0];
+//         var kickingDiv = fieldLocation.getElementsByClassName("goalie-kicking")[0];
+//         var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
+//         var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
+//         var goalieImage = fieldLocation.getElementsByClassName("player-image")[0];
+//         // var leagueDiv = fieldLocation.getElementsByClassName("goalie-position")[0];
 
-        positionDiv.innerHTML = goalie['position'];
-        overallRatingDiv.innerHTML = goalie['overall'];
-        nameDiv.innerHTML = goalie['name'];
-        divingDiv.innerHTML = goalie['diving'];
-        reflexesDiv.innerHTML = goalie['reflexes'];
-        handlingDiv.innerHTML = goalie['handling'];
-        kickingDiv.innerHTML = goalie['kicking'];
-        positioningDiv.innerHTML = goalie['positioning'];
-        speedDiv.innerHTML = goalie['speed'];
+//         positionDiv.innerHTML = goalie['position'];
+//         overallRatingDiv.innerHTML = goalie['overall'];
+//         nameDiv.innerHTML = goalie['name'];
+//         divingDiv.innerHTML = goalie['diving'];
+//         reflexesDiv.innerHTML = goalie['reflexes'];
+//         handlingDiv.innerHTML = goalie['handling'];
+//         kickingDiv.innerHTML = goalie['kicking'];
+//         positioningDiv.innerHTML = goalie['positioning'];
+//         speedDiv.innerHTML = goalie['speed'];
 
-        sum = sum + goalie['overall'];
-        total = total + 1;
-        var teamAverageRating = document.getElementById("team-average-rating");
-        teamAverageRating.innerHTML = sum/total;
+//         sum = sum + goalie['overall'];
+//         total = total + 1;
+//         var teamAverageRating = document.getElementById("team-average-rating");
+//         teamAverageRating.innerHTML = sum/total;
 
-        var sofifa_id = goalie["sofifa_id"].toString();
-        while (sofifa_id.length < 6) {
-            sofifa_id = "0" + sofifa_id;
-        }
-        var idFirstHalf = sofifa_id.substring(0,3);
-        var idSecondHalf = sofifa_id.substring(3,6);
-        goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
-        goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
+//         var sofifa_id = goalie["sofifa_id"].toString();
+//         while (sofifa_id.length < 6) {
+//             sofifa_id = "0" + sofifa_id;
+//         }
+//         var idFirstHalf = sofifa_id.substring(0,3);
+//         var idSecondHalf = sofifa_id.substring(3,6);
+//         goalieImage.src = "https://cdn.sofifa.com/players/" + idFirstHalf + "/" + idSecondHalf + "/21_240.png";
+//         goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
-        fieldLocation.setAttribute("playerid", sofifa_id);
+//         fieldLocation.setAttribute("playerid", sofifa_id);
 
-        var goalieListElement = document.getElementById('draft-selections');
-        goalieListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
+//         var goalieListElement = document.getElementById('draft-selections');
+//         goalieListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
 
-        makeActiveNotClickable();
-        makeClickable();
-    })
+//         makeActiveNotClickable();
+//         makeClickable();
+//     })
 
-}
+// }
 
 //'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
 
@@ -815,7 +868,6 @@ function goalieSearch(event){
                 var goalieImage = card.getElementsByClassName("player-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                console.log("---")
                 positionDiv.innerHTML = goalie['position'];
                 overallRatingDiv.innerHTML = goalie['overall'];
                 nameDiv.innerHTML = goalie['name'];

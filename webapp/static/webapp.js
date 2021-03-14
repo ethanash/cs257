@@ -64,7 +64,8 @@ function fillInPositionSelector(){
 }
 
 function createNewTeam(){
-    var url = getAPIBaseURL() + '/createteam';
+    var formation = document.getElementById("formations").value;
+    var url = getAPIBaseURL() + '/createteam/' + formation;
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -100,8 +101,15 @@ function changeTeam(teamId){
 }
 
 function resetField(){
-    var currFormation = document.getElementById("currentFormation");
-    setFormation(currFormation.getAttribute("value"));
+    var playerField = document.getElementsByClassName("player-field")[0];
+    var positions = playerField.children;
+
+    for (var i = 0; i < positions.length; i ++) {
+        var position = positions[i];
+        position.removeAttribute("onclick");
+        position.removeAttribute("class");
+        position.innerHTML = "";
+    }
 }
 
 function changeTeamName(){
@@ -109,7 +117,6 @@ function changeTeamName(){
     var newName = newNameInput.value;
     continueFunc = false;
     if (!getTeamId()){
-        console.log("ok then?");
         createNewTeam();
     }else{
         continueFunc = true;
@@ -194,12 +201,15 @@ function displayTeam(){
     .then((response) => response.json())
 
     .then(function(players) {
-        var sum = 0
-        var total = 0
+        var sum = 0;
+        var total = 0;
+        var formation;
         for (var player of players){
-            // if (player['name'] == 'NO DATA'){
-            //     return;
-            // }
+            console.log(player['formation'])
+            if (player['formation']){
+                setFormation(player['formation']);
+                continue;
+            }
             var query = '[positionindex="' + player["location"] + '"]'
             var fieldLocation = playerField.querySelectorAll(query)[0];
 
@@ -235,6 +245,8 @@ function displayTeam(){
                 dribblingDiv.innerHTML = player['dribbling'];
                 defenseDiv.innerHTML = player['defense'];
                 physicalDiv.innerHTML = player['physicality'];
+
+                formation = player['formation'];
 
                 sum = sum + player["overall"];
                 total = total + 1;
@@ -368,9 +380,6 @@ function setFormation(newFormation){
     console.log(newFormation)
     var playerField = document.getElementsByClassName("player-field")[0];
     var positions = playerField.children;
-
-    var storeFormation = document.getElementById("currentFormation");
-    storeFormation.setAttribute("value", newFormation);
 
     if (newFormation == "4-4-2") {
         for (var i = 0; i < positions.length; i ++) {
@@ -604,11 +613,21 @@ function onDraftSelection(obj){
     var playerId = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
 
-    if (getTeamId() == "")
-    createNewTeam();
-
-    addPlayerToTeam(playerId, positionIndex);
-    displayTeam();
+    continueFunc = false;
+    if (!getTeamId()){
+        createNewTeam();
+    }else{
+        continueFunc = true;
+    }
+    waitForIt();
+    function waitForIt(){
+        if (!continueFunc) {
+            setTimeout(function(){waitForIt()},100);
+        }else {
+            addPlayerToTeam(playerId, positionIndex);
+            displayTeam();
+        }
+    }
 }
 
 function onDraftSelectionGoalie(obj) {

@@ -382,7 +382,7 @@ def delete_team():
 
     return 'SUCCESSFULLY DELETED'
 
-@api.route('changeteamname')
+@api.route('/changeteamname')
 def change_team_name():
     player_id = flask.request.args.get('teamid')
     team_name = flask.request.args.get('name')

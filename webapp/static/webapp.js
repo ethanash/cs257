@@ -9,6 +9,14 @@ window.onload = initialize;
 var isDraft;
 var continueFunc = true;
 
+// function setChemistryLines() {
+//     for (var positionIndex1 of positionIndexes) {
+//         for (var positionIndex2 of positionIndexes) {
+//
+//         }
+//     }
+// }
+
 function initialize() {
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
         isDraft = true;
@@ -359,7 +367,7 @@ function setFormation(newFormation){
     if (newFormation == "4-4-2") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [1,3,5,6,8,9,10,11,13,14,16];
+            var formationPositions = [1,3,5,6,8,9,10,11,13,14,17];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -376,7 +384,7 @@ function setFormation(newFormation){
     else if (newFormation == "4-3-3") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [0,2,4,6,7,8,10,11,13,14,16];
+            var formationPositions = [0,2,4,6,7,8,10,11,13,14,17];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -393,7 +401,7 @@ function setFormation(newFormation){
     else if (newFormation == "4-5-1") {
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
-            var formationPositions = [2,5,6,7,8,9,10,11,13,14,16];
+            var formationPositions = [2,5,6,7,8,9,10,11,13,14,17];
             if(formationPositions.includes(i)){
                 position.removeAttribute("onclick");
                 position.removeAttribute("class");
@@ -412,12 +420,12 @@ function setFormation(newFormation){
     }
 }
 
-'''––––––––––––––––––––––––––– Draft Functions –––––––––––––––––––––––––––'''
+//'''––––––––––––––––––––––––––– Draft Functions –––––––––––––––––––––––––––'''
 
 function onPositionDraft(obj) {
     var position = obj.getAttribute("position");
     var positionIndex = obj.getAttribute("positionindex")
-    if (position.equals("GK")) {
+    if (position == "GK") {
         goalieDraft(position, positionIndex);
     }
     else {
@@ -660,7 +668,7 @@ function onDraftSelectionGoalie(obj) {
 
 }
 
-'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
+//'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
 
 function playerSearch(event){
     event.preventDefault();

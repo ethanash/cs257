@@ -295,3 +295,19 @@ body {
     color: red;
     display: none;
 }
+
+.chemistry-Line-Up-One {
+    height: 0.5rem;
+}
+
+.chemistryRed {
+    color: red;
+}
+
+.chemistryYellow {
+    color: yellow;
+}
+
+.chemistryGreen {
+    color: green;
+}

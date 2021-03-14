@@ -90,6 +90,25 @@ body {
     cursor:pointer;
 }
 
+.inactive-goalie-card{
+    background-image: url(/static/goalie_card.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor:pointer;
+}
+.inactive-goalie-card img {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 6px;
+    max-width: 55px;
+}
+
+.active-goalie-card{
+    background-image: url(/static/goalie_card.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .inactive-card img {
     position: absolute;
     margin-left: 15px;

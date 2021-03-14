@@ -172,8 +172,14 @@ function resetTeam(){
     ratingDiv.innerHTML = "";
 }
 
-function addPlayerToTeam(playerId, playerlocation){
-    var url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerlocation;
+function addPlayerToTeam(playerId, playerLocation){
+    if (playerLocation != 17) {
+        var url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
+    }
+    else {
+        goalieId = playerId;
+        var url = getAPIBaseURL() + '/addplayer?goalieid=' + goalieId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
+    }
     console.log(url);
     fetch(url, {method: 'get'});
 }
@@ -275,6 +281,8 @@ function deleteTeam(){
 }
 
 function makeClickable() {
+    var inactiveGoalieCard = document.getElementsByClassName("inactive-goalie-card")[0];
+    inactiveGoalieCard.setAttribute("onclick", "onPositionDraft(this)");
     var inactiveCards = document.getElementsByClassName("inactive-card");
     for (var card of inactiveCards) {
         card.setAttribute("onclick", "onPositionDraft(this)");
@@ -302,7 +310,7 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-function setInactiveCardField(card){
+function setInactiveCard(card){
     card.setAttribute("class", "inactive-card");
     htmlContents = "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
@@ -339,20 +347,20 @@ function setInactiveCardSelection(card){
 }
 
 function setInactiveGoalieCard(card){
-    card.setAttribute("class", "inactive-card");
+    card.setAttribute("class", "inactive-goalie-card");
     htmlContents = "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
                     "<div class='player-name'></div>" +
                     "<div class='goalie-diving'></div>" +
-                    "<div class='goalie-reflexes'></div>" +
                     "<div class='goalie-handling'></div>" +
                     "<div class='goalie-kicking'></div>" +
+                    "<div class='goalie-reflexes'></div>" +
                     "<div class='goalie-speed'></div>" +
                     "<div class='goalie-positioning'></div>" +
                     "<div class='player-league'></div>" +
-                    "<img class='player-image' src=''>";
+                    "<img class='player-image' src='https://www.freeiconspng.com/uploads/plus-sign-icon-31.png'>";
     card.innerHTML = htmlContents;
 }
 
@@ -368,16 +376,16 @@ function setFormation(newFormation){
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
             var formationPositions = [1,3,5,6,8,9,10,11,13,14,17];
+            position.removeAttribute("onclick");
+            position.removeAttribute("class");
+            position.innerHTML = "";
             if(formationPositions.includes(i)){
-                position.removeAttribute("onclick");
-                position.removeAttribute("class");
-                position.innerHTML = "";
-                setInactiveCardField(position);
-            }
-            else {
-                position.removeAttribute("onclick");
-                position.removeAttribute("class");
-                position.innerHTML = "";
+                if (i != 17) {
+                    setInactiveCard(position);
+                }
+                else {
+                    setInactiveGoalieCard(position);
+                }
             }
         }
     }
@@ -385,16 +393,16 @@ function setFormation(newFormation){
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
             var formationPositions = [0,2,4,6,7,8,10,11,13,14,17];
+            position.removeAttribute("onclick");
+            position.removeAttribute("class");
+            position.innerHTML = "";
             if(formationPositions.includes(i)){
-                position.removeAttribute("onclick");
-                position.removeAttribute("class");
-                position.innerHTML = "";
-                setInactiveCardField(position);
-            }
-            else {
-                position.removeAttribute("onclick")
-                position.removeAttribute("class")
-                position.innerHTML = "";
+                if (i != 17) {
+                    setInactiveCard(position);
+                }
+                else {
+                    setInactiveGoalieCard(position);
+                }
             }
         }
     }
@@ -402,16 +410,16 @@ function setFormation(newFormation){
         for (var i = 0; i < positions.length; i ++) {
             var position = positions[i];
             var formationPositions = [2,5,6,7,8,9,10,11,13,14,17];
+            position.removeAttribute("onclick");
+            position.removeAttribute("class");
+            position.innerHTML = "";
             if(formationPositions.includes(i)){
-                position.removeAttribute("onclick");
-                position.removeAttribute("class");
-                position.innerHTML = "";
-                setInactiveCardField(position);
-            }
-            else {
-                position.removeAttribute("onclick");
-                position.removeAttribute("class");
-                position.innerHTML = "";
+                if (i != 17) {
+                    setInactiveCard(position);
+                }
+                else {
+                    setInactiveGoalieCard(position);
+                }
             }
         }
     }
@@ -425,7 +433,7 @@ function setFormation(newFormation){
 function onPositionDraft(obj) {
     var position = obj.getAttribute("position");
     var positionIndex = obj.getAttribute("positionindex")
-    if (position == "GK") {
+    if (positionIndex == 17) {
         goalieDraft(position, positionIndex);
     }
     else {
@@ -757,7 +765,7 @@ function goalieSearch(event){
 
     createSearchCards(position);
 
-    var url = getAPIBaseURL() + '/goalies?name=' + name + '&club=' + club + '&position=' + position;
+    var url = getAPIBaseURL() + '/goalies?name=' + name + '&club=' + club;
     console.log(url);
     fetch(url, {method: 'get'})
 

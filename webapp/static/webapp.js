@@ -552,12 +552,13 @@ function goalieDraft(position, positionIndex) {
         if(goalieListElement){
             for (var i = 0; i < 6; i++) {
                 var card = goalieListElement.children[i];
-                card.setAttribute("class", "active-card");
+                card.setAttribute("class", "active-goalie-card");
                 var goalie = goalies[i];
 
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
                 // var nationalityDiv = card.getElementsByClassName("goalie-nationality")[0];
                 // var clubDiv = card.getElementsByClassName("goalie-position")[0];
+                var positionDiv = card.getElementsByClassName("player-position")[0];
                 var nameDiv = card.getElementsByClassName("player-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
                 var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];

@@ -306,6 +306,10 @@ function makeNotClickable() {
     for (var card of inactiveCards) {
         card.removeAttribute("onclick");
     }
+    var inactiveCardsGoalie = document.getElementsByClassName("inactive-goalie-card");
+    for (var card of inactiveCardsGoalie) {
+        card.removeAttribute("onclick");
+    }
 }
 
 function makeActiveNotClickable() {
@@ -525,10 +529,9 @@ function draft(position, positionIndex) {
 
                 card.setAttribute("playerid", player["player_id"]);
                 card.setAttribute("positionindex", positionIndex);
-
-                makeNotClickable();
-                makeSelectionsClickable();
             }
+            makeNotClickable();
+            makeSelectionsClickable();
         }
     })
 
@@ -590,10 +593,10 @@ function goalieDraft(position, positionIndex) {
 
                 card.setAttribute("playerid", sofifa_id);
                 card.setAttribute("positionindex", positionIndex);
-
-                makeNotClickable();
-                makeSelectionsClickable();
             }
+            console.log("hello??????");
+            makeNotClickable();
+            makeSelectionsClickable();
         }
     })
 

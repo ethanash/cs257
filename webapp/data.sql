@@ -70,7 +70,8 @@ CREATE TABLE public.account (
 CREATE TABLE public.account_team (
     id SERIAL PRIMARY KEY,
     account_id integer,
-    team_name text
+    team_name text,
+    formation text
 );
 
 --
@@ -81,6 +82,15 @@ CREATE TABLE public.account_player (
     account_team_id integer,
     player_id integer,
     player_location text
+);
+
+--
+-- Name: account_player; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_goalie (
+    account_team_id integer,
+    goalie_id integer
 );
 
 --

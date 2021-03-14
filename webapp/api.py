@@ -233,13 +233,38 @@ def get_players():
 def get_team_players():
     team_id = flask.request.args.get('teamid')
 
+    players = []
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT account_team.formation
+               FROM account_team
+               WHERE account_team.id = %s
+               AND account_team.account_id = %s'''
+
+    try:
+        token = request.cookies.get('sessionToken')
+        account_id = tokens[token]
+        database_cursor.execute(query, (team_id, account_id))
+    except Exception as e:
+        print(e)
+        exit()
+    formation = {}
+    for row in database_cursor:
+        formation["formation"] = row[0]
+
+    players.append(formation)
+
+
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
-               player.sofifa_id, player.physicality, player.id, account_player.player_location
+               player.sofifa_id, player.physicality, player.id, 
+               account_player.player_location
                FROM player, nationality, club, league, account_player, account, account_team
                WHERE player.nationality_id = nationality.id
                AND player.league_id = league.id
@@ -256,10 +281,7 @@ def get_team_players():
         print(e)
         exit()
 
-    players = []
-    isData = False
     for row in database_cursor:
-        isData = True
         player = {}
         player_name = row[0]
         player_shooting = row[1]
@@ -292,10 +314,7 @@ def get_team_players():
         player['player_id'] = player_id
         player['location'] = player_location
         players.append(player)
-    # if not isData:
-    #     player = {}
-    #     player['name'] = 'NO DATA'
-    #     players.append(player)
+
     return json.dumps(players)
 
 @api.route('/accountteams')
@@ -328,18 +347,18 @@ def get_account_teams():
 
     return json.dumps(teams)
 
-@api.route('/createteam')
-def create_account_team():
+@api.route('/createteam/<formation>')
+def create_account_team(formation):
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_team(account_id, team_name)
-            VALUES (%s, %s)
+    query = '''INSERT INTO account_team(account_id, team_name, formation)
+            VALUES (%s, %s, %s)
             RETURNING id, team_name'''
     try:
         token = request.cookies.get('sessionToken')
         account_id = tokens[token]
-        database_cursor.execute(query, (account_id, "New Draft"))
+        database_cursor.execute(query, (account_id, "New Draft", formation))
         database_connection.commit()
     except Exception as e:
         print(e)

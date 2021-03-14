@@ -28,6 +28,12 @@
                 <select onchange="changeTeam(this.value)" id="teamSelector" name="teamSelector">
                 </select>
                 <button onclick="createNewTeam()">Create New Team</button>
+                <label for="formations">Formation For New Team:</label>
+                <select name="formations" id="formations">
+                    <option value="4-3-3">4-3-3</option>
+                    <option value="4-4-2">4-4-2</option>
+                    <option value="4-5-1">4-5-1</option>
+                </select>
                 <div>
                     <input id="new-team-name" class="team-name" value="New Draft"></input>
                     <input type="hidden" id=teamId value=""></input>
@@ -44,13 +50,6 @@
                         <div class="stat-value">82</div>
                     </div> -->
                 </div>
-                <label for="formations">Change the Formation:</label>
-                <input type="hidden" id="currentFormation" value=""></input>
-                <select onchange="setFormation(this.value)" name="formations" id="formations">
-                    <option value="4-3-3">4-3-3</option>
-                    <option value="4-4-2">4-4-2</option>
-                    <option value="4-5-1">4-5-1</option>
-                </select>
                 <a href="/sandbox">Switch To Sandbox Mode</a>
             </div>
 

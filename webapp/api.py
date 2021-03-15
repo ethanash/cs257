@@ -63,7 +63,8 @@ def get_goalies():
 
     query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id, 
+               goalie.preferred_foot, goalie.weak_foot
                FROM goalie, nationality, club, league
                WHERE goalie.nationality_id = nationality.id
                AND UPPER(nationality.nationality) LIKE UPPER(%s)
@@ -104,6 +105,8 @@ def get_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
+        goalie_preferred_foot = row[13]
+        goalie_weak_foot = row[14]
         print("id")
         print(goalie_id)
         goalie['position'] = 'GK'
@@ -120,6 +123,8 @@ def get_goalies():
         goalie['overall'] = goalie_overall
         goalie['sofifa_id'] = goalie_sofifa_id
         goalie['goalie_id'] = goalie_id
+        goalie['preferred_foot'] = goalie_preferred_foot
+        goalie['weak_foot'] = goalie_weak_foot
         goalies.append(goalie)
 
     if draftModeOn:
@@ -168,7 +173,7 @@ def get_players():
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
                player.sofifa_id, player.physicality, player.id,
-               player.age, player.weak_foot, player.preferred_foot, player.skill_moves
+               player.age, player.weak_foot, player.preferred_foot, player.skill_moves, player.preferred_foot, player.weak_foot, player.skill_moves
                FROM player, nationality, club, league
                WHERE player.nationality_id = nationality.id
                AND UPPER(nationality.nationality) LIKE UPPER(%s)
@@ -222,6 +227,9 @@ def get_players():
         player_weak_foot = row[15]
         player_preferred_foot = row[16]
         player_skill_moves = row[17]
+        player_preferred_foot = row[18]
+        player_weak_foot = row[19]
+        player_skill_moves = row[20]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -239,6 +247,9 @@ def get_players():
         player['age'] = player_age
         player['weak_foot'] = player_weak_foot
         player['preferred_foot'] = player_preferred_foot
+        player['skill_moves'] = player_skill_moves
+        player['preferred_foot'] = player_preferred_foot
+        player['weak_foot'] = player_weak_foot
         player['skill_moves'] = player_skill_moves
         players.append(player)
 
@@ -355,7 +366,8 @@ def get_team_goalies():
 
     query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
+               goalie.preferred_foot, goalie.weak_foot
                FROM goalie, nationality, club, league, account_goalie, account, account_team
                WHERE nationality.id = goalie.nationality_id
                AND club.id = goalie.club_id
@@ -390,6 +402,8 @@ def get_team_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
+        goalie_preferred_foot = row[13]
+        goalie_weak_foot = row[14]
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
         goalie['handling'] = goalie_handling
@@ -403,6 +417,8 @@ def get_team_goalies():
         goalie['overall'] = goalie_overall
         goalie['sofifa_id'] = goalie_sofifa_id
         goalie['goalie_id'] = goalie_id
+        goalie['preferred_foot'] = goalie_preferred_foot
+        goalie['weak_foot'] = goalie_weak_foot
         goalies.append(goalie)
 
     return json.dumps(goalies)

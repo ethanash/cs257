@@ -4,13 +4,19 @@ Ethan Ash & Riaz Kelly
 
 body {
     margin: 0;
+    min-width: 1285.5px;
+    min-height: 100%;
+    background-color: #0f5135;
+    width: 100%;
 }
 
 .top-title-bar {
-    background-color: rgba(158, 155, 155, 0.562);
+    /*background-color: rgba(158, 155, 155, 0.562);*/
+    background-color: #0c9263;
     text-align: center;
     padding: 1rem;
     display: flex;
+    width: 100%;
 }
 
 .welcome-user {
@@ -23,7 +29,7 @@ body {
 
 .title-text {
     font-size: 3rem;
-    color: darkgreen;
+    color: #deb52c;
     white-space: nowrap;
     text-align: center;
     flex-grow: 2;
@@ -48,7 +54,8 @@ body {
     white-space: nowrap;
     border-style: solid;
     border-width: thin;
-    padding: 0.5rem;
+    padding: 1rem;
+    background-color: #b99d41;
 }
 
 .player-info {
@@ -57,13 +64,16 @@ body {
     border-style: solid;
     border-width: thin;
     padding: 0.5rem;
+    background-color: #b99d41;
+    margin-right: -32px;
 }
 
 .player-field {
-    margin: 0.5rem;
+    padding: 0.5rem;
     flex-grow: 2;
     min-width: 528px;
     max-width: 528px;
+    background-color: #0f5135;
 }
 
 .player-field > div {
@@ -78,6 +88,7 @@ body {
 }
 
 .active-card {
+    position: relative;
     background-image: url(/static/fifa_card_2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -91,7 +102,7 @@ body {
 }
 
 .inactive-goalie-card{
-    background-image: url(/static/goalie_card.jpg);
+    background-image: url(/static/goalie_card.png);
     background-repeat: no-repeat;
     background-size: contain;
     cursor:pointer;
@@ -104,7 +115,8 @@ body {
 }
 
 .active-goalie-card{
-    background-image: url(/static/goalie_card.jpg);
+    position: relative;
+    background-image: url(/static/goalie_card.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -340,11 +352,65 @@ body {
     display: none;
 }
 
-.hide {
-    display: none;
+.popup{
+    visibility: hidden;
+    width: 120px;
+    height: fit-content;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Positioning */
+    position: absolute;
+    z-index: 1;
+    top: 105%;
+    left: 50%;
+    margin-left: -60px;
 }
 
-.active-card:hover + .hide {
-    display: block;
-    color: red;
+.active-card:hover .popup {
+    visibility: visible;
+}
+
+.active-goalie-card:hover .popup {
+    visibility: visible;
+}
+
+.popup::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+
+.popup div{
+    font-size: 12px;
+}
+
+.popupName {
+    font-weight: bold;
+    border-bottom: black;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.popupCountry {
+
+}
+
+.popupLeague {
+
+}
+
+.popupClub {
+    border-bottom: black;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    padding-bottom: 5px;
 }

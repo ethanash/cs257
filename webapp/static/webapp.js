@@ -8,6 +8,8 @@
 window.onload = initialize;
 var isDraft;
 var continueFunc = true;
+var continueFunc2 = true;
+var continueFunc3 = true;
 
 // function setHover() {
 //     var activePlayerCards = document.getElementsByClassName("active-card");
@@ -71,7 +73,7 @@ function fillInTeamSelector() {
             innerHTML = innerHTML + '<option value="' + team["id"] + '">' + team["name"] + '</option>';
         }
         teamSelector.innerHTML = innerHTML;
-        continueFunc = true;
+        continueFunc2 = true;
     })
 }
 
@@ -105,17 +107,25 @@ function createNewTeam(){
             teamId = team["id"];
             teamName = team["name"];
         }
-        continueFunc = false;
+        continueFunc2 = false;
         fillInTeamSelector();
         waitForIt();
         function waitForIt(){
-            if (!continueFunc) {
+            if (!continueFunc2) {
                 setTimeout(function(){waitForIt()},100);
             }else {
+                continueFunc3 = false;
                 setTeam(teamId, teamName);
+                waitForItAgain();
+                function waitForItAgain(){
+                    if (!continueFunc3) {
+                        setTimeout(function(){waitForItAgain()},100);
+                    }else {
+                        continueFunc = true;
+                    }
+                }
             }
         }
-        continueFunc = true;
     })
 }
 
@@ -172,11 +182,11 @@ function changeTeamName(){
                     teamId = team["id"];
                     teamName = team["name"]
                 }
-                continueFunc = false;
+                continueFunc2 = false;
                 fillInTeamSelector();
                 waitForItAgain();
                 function waitForItAgain(){
-                    if (!continueFunc) {
+                    if (!continueFunc2) {
                         setTimeout(function(){waitForItAgain()},100);
                     }else {
                         setTeam(teamId, teamName);
@@ -207,10 +217,11 @@ function setTeam(newId, newName){
     var teamsChoices = document.getElementById("teamSelector").children;
     for (team of teamsChoices){
         if (team.value == newId){
-            team.selected = 'selected'
+            team.selected = 'selected';
         }
     }
-    
+    console.log("done")
+    continueFunc3 = true;
 }
 
 function resetTeam(){
@@ -276,6 +287,23 @@ function displayTeam(){
                 var defenseDiv = fieldLocation.getElementsByClassName("player-defense")[0];
                 var physicalDiv = fieldLocation.getElementsByClassName("player-physical")[0];
                 var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
+                var popup = fieldLocation.getElementsByClassName("popup")[0];
+
+                var popupName = popup.getElementsByClassName("popupName")[0];
+                popupName.innerHTML = player['name'];
+                var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                popupNationality.innerHTML = "Nationality: " + player['nationality'];
+                var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                popupLeague.innerHTML = "League: " + player['league'];
+                var popupClub = popup.getElementsByClassName("popupClub")[0];
+                popupClub.innerHTML = "Club: " + player['club'];
+                var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
+                var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
+                popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'];         
+                
                 // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
 
                 // positionsPlayed = player['position'].split(",");
@@ -344,6 +372,20 @@ function displayTeam(){
                     var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
                     var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
                     var playerImage = fieldLocation.getElementsByClassName("goalie-image")[0];
+                    var popup = fieldLocation.getElementsByClassName("popup")[0];
+
+                    var popupName = popup.getElementsByClassName("popupName")[0];
+                    popupName.innerHTML = goalie['name'];
+                    var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                    popupNationality.innerHTML = "Nationality: " + goalie['nationality'];
+                    var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                    popupLeague.innerHTML = "League: " + goalie['league'];
+                    var popupClub = popup.getElementsByClassName("popupClub")[0];
+                    popupClub.innerHTML = "Club: " + goalie['club'];
+                    var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                    popupPreferredFoot.innerHTML = "Preferred Foot: " + goalie['preferred_foot'];
+                    var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                    popupWeakFoot.innerHTML = "Weak Foot Ability: " + goalie['weak_foot'];
                     // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
 
                     positionDiv.innerHTML = "GK";
@@ -440,7 +482,16 @@ function getAPIBaseURL() {
 
 function setInactiveCard(card){
     card.setAttribute("class", "inactive-card");
-    htmlContents = "<div class='player-overall-rating'></div>" +
+    htmlContents = "<span class='popup'>" + 
+                        "<div class='popupName'></div>" +
+                        "<div class='popupCountry'></div>" +
+                        "<div class='popupLeague'></div>" +
+                        "<div class='popupClub'></div>" + 
+                        "<div class='popupPreferredFoot'></div>" + 
+                        "<div class='popupWeakFoot'></div>" + 
+                        "<div class='popupSkillMoves'></div>" + 
+                    "</span>" +
+                    "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
@@ -459,7 +510,16 @@ function setInactiveCard(card){
 
 function setInactiveCardSelection(card){
     card.setAttribute("class", "inactive-card");
-    htmlContents = "<div class='player-overall-rating'></div>" +
+    htmlContents = "<span class='popup'>" + 
+                        "<div class='popupName'></div>" +
+                        "<div class='popupCountry'></div>" +
+                        "<div class='popupLeague'></div>" +
+                        "<div class='popupClub'></div>" + 
+                        "<div class='popupPreferredFoot'></div>" + 
+                        "<div class='popupWeakFoot'></div>" + 
+                        "<div class='popupSkillMoves'></div>" + 
+                    "</span>" +
+                    "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
@@ -477,7 +537,15 @@ function setInactiveCardSelection(card){
 
 function setInactiveGoalieCard(card){
     card.setAttribute("class", "inactive-goalie-card");
-    htmlContents = "<div class='player-overall-rating'></div>" +
+    htmlContents = "<span class='popup'>" + 
+                        "<div class='popupName'></div>" +
+                        "<div class='popupCountry'></div>" +
+                        "<div class='popupLeague'></div>" +
+                        "<div class='popupClub'></div>" + 
+                        "<div class='popupPreferredFoot'></div>" + 
+                        "<div class='popupWeakFoot'></div>" + 
+                    "</span>" +
+                    "<div class='player-overall-rating'></div>" +
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
@@ -613,6 +681,22 @@ function draft(position, positionIndex) {
                 var defenseDiv = card.getElementsByClassName("player-defense")[0];
                 var physicalDiv = card.getElementsByClassName("player-physical")[0];
                 var playerImage = card.getElementsByClassName("player-image")[0];
+                var popup = card.getElementsByClassName("popup")[0];
+
+                var popupName = popup.getElementsByClassName("popupName")[0];
+                popupName.innerHTML = player['name'];
+                var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                popupNationality.innerHTML = "Nationality: " + player['nationality'];
+                var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                popupLeague.innerHTML = "League: " + player['league'];
+                var popupClub = popup.getElementsByClassName("popupClub")[0];
+                popupClub.innerHTML = "Club: " + player['club'];
+                var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
+                var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
+                popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves']; 
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 // var positionsPlayed = player['position'].split(", ");
@@ -686,6 +770,20 @@ function goalieDraft(position, positionIndex) {
                 var speedDiv = card.getElementsByClassName("goalie-speed")[0];
                 var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
                 var goalieImage = card.getElementsByClassName("goalie-image")[0];
+                var popup = card.getElementsByClassName("popup")[0];
+
+                var popupName = popup.getElementsByClassName("popupName")[0];
+                popupName.innerHTML = goalie['name'];
+                var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                popupNationality.innerHTML = "Nationality: " + goalie['nationality'];
+                var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                popupLeague.innerHTML = "League: " + goalie['league'];
+                var popupClub = popup.getElementsByClassName("popupClub")[0];
+                popupClub.innerHTML = "Club: " + goalie['club'];
+                var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                popupPreferredFoot.innerHTML = "Preferred Foot: " + goalie['preferred_foot'];
+                var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + goalie['weak_foot'];
                 // var leagueDiv = card.getElementsByClassName("goalie-position")[0];
 
                 positionDiv.innerHTML = 'GK';
@@ -793,6 +891,22 @@ function playerSearch(event){
                     var defenseDiv = card.getElementsByClassName("player-defense")[0];
                     var physicalDiv = card.getElementsByClassName("player-physical")[0];
                     var playerImage = card.getElementsByClassName("player-image")[0];
+                    var popup = fieldLocation.getElementsByClassName("popup")[0];
+
+                    var popupName = popup.getElementsByClassName("popupName")[0];
+                    popupName.innerHTML = player['name'];
+                    var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                    popupNationality.innerHTML = "Nationality: " + player['nationality'];
+                    var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                    popupLeague.innerHTML = "League: " + player['league'];
+                    var popupClub = popup.getElementsByClassName("popupClub")[0];
+                    popupClub.innerHTML = "Club: " + player['club'];
+                    var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                    popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
+                    var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                    popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                    var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
+                    popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves']; 
                     // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                     var positionsPlayed = player['position'].split(",");
@@ -870,6 +984,20 @@ function goalieSearch(event){
                 var speedDiv = card.getElementsByClassName("goalie-speed")[0];
                 var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
                 var goalieImage = card.getElementsByClassName("goalie-image")[0];
+                var popup = fieldLocation.getElementsByClassName("popup")[0];
+
+                var popupName = popup.getElementsByClassName("popupName")[0];
+                popupName.innerHTML = player['name'];
+                var popupNationality = popup.getElementsByClassName("popupCountry")[0];
+                popupNationality.innerHTML = "Nationality: " + player['nationality'];
+                var popupLeague = popup.getElementsByClassName("popupLeague")[0];
+                popupLeague.innerHTML = "League: " + player['league'];
+                var popupClub = popup.getElementsByClassName("popupClub")[0];
+                popupClub.innerHTML = "Club: " + player['club'];
+                var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
+                popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
+                var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 positionDiv.innerHTML = goalie['position'];

@@ -257,7 +257,7 @@ def get_players():
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
                player.sofifa_id, player.physicality, player.id,
-               player.age, player.weak_foot, player.preferred_foot, player.skill_moves
+               player.age, player.weak_foot, player.preferred_foot, player.skill_moves, player.preferred_foot, player.weak_foot, player.skill_moves
                FROM player, nationality, club, league
                WHERE player.nationality_id = nationality.id
                AND UPPER(nationality.nationality) LIKE UPPER(%s)
@@ -311,6 +311,9 @@ def get_players():
         player_weak_foot = row[15]
         player_preferred_foot = row[16]
         player_skill_moves = row[17]
+        player_preferred_foot = row[18]
+        player_weak_foot = row[19]
+        player_skill_moves = row[20]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -328,6 +331,9 @@ def get_players():
         player['age'] = player_age
         player['weak_foot'] = player_weak_foot
         player['preferred_foot'] = player_preferred_foot
+        player['skill_moves'] = player_skill_moves
+        player['preferred_foot'] = player_preferred_foot
+        player['weak_foot'] = player_weak_foot
         player['skill_moves'] = player_skill_moves
         players.append(player)
 

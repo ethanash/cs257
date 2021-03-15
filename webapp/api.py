@@ -344,8 +344,8 @@ def get_players():
 
     return json.dumps(players)
 
-@api.route('/teamplayers')
-def get_team_players():
+@api.route('/teamplayers/<mode>')
+def get_team_players(mode):
     team_id = flask.request.args.get('teamid')
 
     players = []
@@ -353,10 +353,16 @@ def get_team_players():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT account_team_draft.formation
-               FROM account_team_draft_draft
-               WHERE account_team_draft_draft.id = %s
-               AND account_team_draft.account_id = %s'''
+    if mode == 'draft':
+        query = '''SELECT account_team_draft.formation
+                FROM account_team_draft
+                WHERE account_team_draft.id = %s
+                AND account_team_draft.account_id = %s'''
+    else:
+        query = '''SELECT account_team_sandbox.formation
+                FROM account_team_sandbox
+                WHERE account_team_sandbox.id = %s
+                AND account_team_sandbox.account_id = %s'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -374,20 +380,34 @@ def get_team_players():
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
-
-    query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
-               player.passing, player.defense, player.position,
-               nationality.nationality, league.league, club.club, player.overall_rating,
-               player.sofifa_id, player.physicality, player.id, account_player_draft .player_location,
-               player.age, player.weak_foot, player.preferred_foot, player.skill_moves
-               FROM player, nationality, club, league, account_player_draft , account, account_team_draft
-               WHERE player.nationality_id = nationality.id
-               AND player.league_id = league.id
-               AND player.club_id = club.id
-               AND account_player_draft .account_team_draft_id = %s
-               AND account_team_draft.id = %s
-               AND account_team_draft.account_id = %s
-               AND player.id = account_player_draft .player_id'''
+    if mode == 'draft':
+        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
+                player.passing, player.defense, player.position,
+                nationality.nationality, league.league, club.club, player.overall_rating,
+                player.sofifa_id, player.physicality, player.id, account_player_draft.player_location,
+                player.age, player.weak_foot, player.preferred_foot, player.skill_moves
+                FROM player, nationality, club, league, account_player_draft, account, account_team_draft
+                WHERE player.nationality_id = nationality.id
+                AND player.league_id = league.id
+                AND player.club_id = club.id
+                AND account_player_draft.account_team_id = %s
+                AND account_team_draft.id = %s
+                AND account_team_draft.account_id = %s
+                AND player.id = account_player_draft.player_id'''
+    else:
+        query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
+                player.passing, player.defense, player.position,
+                nationality.nationality, league.league, club.club, player.overall_rating,
+                player.sofifa_id, player.physicality, player.id, account_player_sandbox.player_location,
+                player.age, player.weak_foot, player.preferred_foot, player.skill_moves
+                FROM player, nationality, club, league, account_player_sandbox, account, account_team_sandbox
+                WHERE player.nationality_id = nationality.id
+                AND player.league_id = league.id
+                AND player.club_id = club.id
+                AND account_player_sandbox.account_team_id = %s
+                AND account_team_sandbox.id = %s
+                AND account_team_sandbox.account_id = %s
+                AND player.id = account_player_sandbox.player_id'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -441,25 +461,39 @@ def get_team_players():
 
     return json.dumps(players)
 
-@api.route('/teamgoalies')
-def get_team_goalies():
+@api.route('/teamgoalies/<mode>')
+def get_team_goalies(mode):
     team_id = flask.request.args.get('teamid')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
-    		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
-               goalie.age, goalie.weak_foot, goalie.preferred_foot
-               FROM goalie, nationality, club, league, account_goalie_draft, account, account_team_draft
-               WHERE nationality.id = goalie.nationality_id
-               AND club.id = goalie.club_id
-               AND league.id = goalie.league_id
-               AND account_goalie_draft.account_team_draft_id = %s
-               AND account_team_draft.id = %s
-               AND account_team_draft.account_id = %s
-               AND goalie.id = account_goalie_draft.goalie_id'''
+    if mode == 'draft':
+        query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
+                goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
+                league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
+                goalie.age, goalie.weak_foot, goalie.preferred_foot
+                FROM goalie, nationality, club, league, account_goalie_draft, account, account_team_draft
+                WHERE nationality.id = goalie.nationality_id
+                AND club.id = goalie.club_id
+                AND league.id = goalie.league_id
+                AND account_goalie_draft.account_team_id = %s
+                AND account_team_draft.id = %s
+                AND account_team_draft.account_id = %s
+                AND goalie.id = account_goalie_draft.goalie_id'''
+    else:
+        query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
+                goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
+                league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
+                goalie.age, goalie.weak_foot, goalie.preferred_foot
+                FROM goalie, nationality, club, league, account_goalie_sandbox, account, account_team_sandbox
+                WHERE nationality.id = goalie.nationality_id
+                AND club.id = goalie.club_id
+                AND league.id = goalie.league_id
+                AND account_goalie_sandbox.account_team_id = %s
+                AND account_team_sandbox.id = %s
+                AND account_team_sandbox.account_id = %s
+                AND goalie.id = account_goalie_sandbox.goalie_id'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -510,16 +544,21 @@ def get_team_goalies():
     return json.dumps(goalies)
 
 
-@api.route('/accountteams')
-def get_account_team_drafts():
+@api.route('/accountteams/<mode>')
+def get_account_team_drafts(mode):
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     #team_id = flask.request.args.get('teamid', default=-1)
 
-    query = '''SELECT account_team_draft.id, account_team_draft.team_name
-            FROM account_team_draft
-            WHERE account_team_draft.account_id = %s'''
+    if mode == 'draft':
+        query = '''SELECT account_team_draft.id, account_team_draft.team_name
+                FROM account_team_draft
+                WHERE account_team_draft.account_id = %s'''
+    else:
+        query = '''SELECT account_team_sandbox.id, account_team_sandbox.team_name
+                FROM account_team_sandbox
+                WHERE account_team_sandbox.account_id = %s'''
 
     #AND (account_team_draft.id = %s OR %s < 0)
     try:
@@ -540,14 +579,19 @@ def get_account_team_drafts():
 
     return json.dumps(teams)
 
-@api.route('/createteam/<formation>')
-def create_account_team_draft(formation):
+@api.route('/createteam/<mode>/<formation>')
+def create_account_team(mode, formation):
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_team_draft(account_id, team_name, formation)
-            VALUES (%s, %s, %s)
-            RETURNING id, team_name'''
+    if mode == 'draft':
+        query = '''INSERT INTO account_team_draft(account_id, team_name, formation)
+                VALUES (%s, %s, %s)
+                RETURNING id, team_name'''
+    else:
+        query = '''INSERT INTO account_team_sandbox(account_id, team_name, formation)
+                VALUES (%s, %s, %s)
+                RETURNING id, team_name'''
     try:
         token = request.cookies.get('sessionToken')
         account_id = tokens[token]
@@ -564,15 +608,20 @@ def create_account_team_draft(formation):
         teams.append(team)
     return json.dumps(teams)
 
-@api.route('/deleteteam')
-def delete_team():
+@api.route('/deleteteam/<mode>')
+def delete_team(mode):
     team_id = flask.request.args.get('teamid')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''DELETE FROM account_team_draft
+    if mode == 'draft':
+        query = '''DELETE FROM account_team_draft
+                WHERE id = %s'''
+    else:
+        query = '''DELETE FROM account_team_sandbox
             WHERE id = %s'''
+
     try:
         database_cursor.execute(query, (team_id,))
         database_connection.commit()
@@ -583,8 +632,13 @@ def delete_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''DELETE FROM account_player_draft 
-            WHERE account_team_draft_id = %s'''
+    if mode == 'draft':
+        query = '''DELETE FROM account_player_draft 
+                WHERE account_team_id = %s'''
+    else:
+         query = '''DELETE FROM account_player_sandbox 
+                WHERE account_team_id = %s'''
+
     try:
         database_cursor.execute(query, (team_id,))
         database_connection.commit()
@@ -594,18 +648,24 @@ def delete_team():
 
     return 'SUCCESSFULLY DELETED'
 
-@api.route('/changeteamname')
-def change_team_name():
+@api.route('/changeteamname/<mode>')
+def change_team_name(mode):
     player_id = flask.request.args.get('teamid')
     team_name = flask.request.args.get('name')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''UPDATE account_team_draft
-            SET team_name = %s
-            WHERE id = %s
-            RETURNING id, team_name'''
+    if mode == 'draft':
+        query = '''UPDATE account_team_draft
+                SET team_name = %s
+                WHERE id = %s
+                RETURNING id, team_name'''
+    else:
+        query = '''UPDATE account_team_sandbox
+                SET team_name = %s
+                WHERE id = %s
+                RETURNING id, team_name'''
     try:
         database_cursor.execute(query, (team_name, player_id))
         database_connection.commit()
@@ -620,8 +680,8 @@ def change_team_name():
         teams.append(team)
     return json.dumps(teams)
 
-@api.route('/addplayer')
-def add_player_to_team():
+@api.route('/addplayer/<mode>')
+def add_player_to_team(mode):
     player_id = flask.request.args.get('playerid')
     team_id = flask.request.args.get('teamid')
     player_location = flask.request.args.get('playerlocation')
@@ -629,8 +689,16 @@ def add_player_to_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_player_draft (account_team_draft_id, player_id, player_location)
+    print(mode)
+    if mode == 'draft':
+        print("draft mode on")
+        query = '''INSERT INTO account_player_draft (account_team_id, player_id, player_location)
+                VALUES (%s, %s, %s)'''
+    else:
+        print("sandbox mode on")
+        query = '''INSERT INTO account_player_sandbox (account_team_id, player_id, player_location)
             VALUES (%s, %s, %s)'''
+
     try:
         database_cursor.execute(query, (team_id, player_id, player_location))
         database_connection.commit()
@@ -639,16 +707,20 @@ def add_player_to_team():
         exit()
     return 'PLAYER ADDED'
 
-@api.route('/addgoalie')
-def add_goalie_to_team():
+@api.route('/addgoalie/<mode>')
+def add_goalie_to_team(mode):
     goalie_id = flask.request.args.get('goalieid')
     team_id = flask.request.args.get('teamid')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_goalie_draft(account_team_draft_id, goalie_id)
-            VALUES (%s, %s)'''
+    if mode == 'draft':
+        query = '''INSERT INTO account_goalie_draft(account_team_id, goalie_id)
+                VALUES (%s, %s)'''
+    else:
+        query = '''INSERT INTO account_goalie_sandbox(account_team_id, goalie_id)
+                VALUES (%s, %s)'''
     try:
         database_cursor.execute(query, (team_id, goalie_id))
         database_connection.commit()

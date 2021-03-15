@@ -131,8 +131,8 @@ body {
 .active-goalie-card img{
     position: absolute;
     max-width: 45px;
-    margin-left: 28px;
-    margin-top: 15px;
+    margin-left: 26px;
+    margin-top: 13px;
 }
 
 .player-overall-rating {
@@ -219,17 +219,22 @@ body {
     font-weight: bold;
 }
 
-.goalie-diving {
+.goalie-name {
     position: absolute;
-    margin-top: 73px;
-    margin-left: 16px;
-    font-size: 8px;
-    font-weight: bold;
+    font-size: 10px;
+    margin-left: 12px;
+    margin-top: 57px;
+    max-width: 57px;
+    width: 57px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 }
 
-.goalie-reflexes {
+.goalie-diving {
     position: absolute;
-    margin-top: 81px;
+    margin-top: 69px;
     margin-left: 16px;
     font-size: 8px;
     font-weight: bold;
@@ -237,7 +242,7 @@ body {
 
 .goalie-handling {
     position: absolute;
-    margin-top: 89px;
+    margin-top: 76px;
     margin-left: 16px;
     font-size: 8px;
     font-weight: bold;
@@ -245,24 +250,32 @@ body {
 
 .goalie-kicking {
     position: absolute;
-    margin-top: 73px;
-    margin-left: 47px;
+    margin-top: 83px;
+    margin-left: 16px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.goalie-reflexes {
+    position: absolute;
+    margin-top: 69px;
+    margin-left: 44px;
     font-size: 8px;
     font-weight: bold;
 }
 
 .goalie-speed {
     position: absolute;
-    margin-top: 81px;
-    margin-left: 47px;
+    margin-top: 76px;
+    margin-left: 44px;
     font-size: 8px;
     font-weight: bold;
 }
 
 .goalie-positioning {
     position: absolute;
-    margin-top: 89px;
-    margin-left: 47px;
+    margin-top: 83px;
+    margin-left: 44px;
     font-size: 8px;
     font-weight: bold;
 }

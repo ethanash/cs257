@@ -17,9 +17,9 @@ from config import user
 api = flask.Blueprint('api', __name__)
 
 tokens = dict()
-user_first_name = []
-user_last_name = []
-user_email = []
+user_first_name = ''
+user_last_name = ''
+user_email = ''
 
 @api.route('/help')
 def help():

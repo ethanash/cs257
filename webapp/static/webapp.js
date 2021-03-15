@@ -866,7 +866,7 @@ function goalieSearch(event){
                 // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
                 // var clubDiv = card.getElementsByClassName("player-position")[0];
                 var positionDiv = card.getElementsByClassName("player-position")[0];
-                var nameDiv = card.getElementsByClassName("player-name")[0];
+                var nameDiv = card.getElementsByClassName("goalie-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
                 var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];
                 var handlingDiv = card.getElementsByClassName("goalie-handling")[0];

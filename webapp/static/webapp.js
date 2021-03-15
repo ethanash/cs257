@@ -75,6 +75,7 @@ function fillInTeamSelector() {
             innerHTML = innerHTML + '<option value="' + team["id"] + '">' + team["name"] + '</option>';
         }
         teamSelector.innerHTML = innerHTML;
+        continueFunc = true;
     })
 }
 
@@ -108,8 +109,16 @@ function createNewTeam(){
             teamId = team["id"];
             teamName = team["name"];
         }
-        setTeam(teamId, teamName);
+        continueFunc = false;
         fillInTeamSelector();
+        waitForIt();
+        function waitForIt(){
+            if (!continueFunc) {
+                setTimeout(function(){waitForIt()},100);
+            }else {
+                setTeam(teamId, teamName);
+            }
+        }
         continueFunc = true;
     })
 }
@@ -167,8 +176,16 @@ function changeTeamName(){
                     teamId = team["id"];
                     teamName = team["name"]
                 }
+                continueFunc = false;
                 fillInTeamSelector();
-                setTeam(teamId, teamName);
+                waitForItAgain();
+                function waitForItAgain(){
+                    if (!continueFunc) {
+                        setTimeout(function(){waitForItAgain()},100);
+                    }else {
+                        setTeam(teamId, teamName);
+                    }
+                }
             })
         }
     }
@@ -190,6 +207,14 @@ function setTeam(newId, newName){
 
     var newNameForm = document.getElementById("new-team-name");
     newNameForm.setAttribute("value", newName);
+
+    var teamsChoices = document.getElementById("teamSelector").children;
+    for (team of teamsChoices){
+        if (team.value == newId){
+            team.selected = 'selected'
+        }
+    }
+    
 }
 
 function resetTeam(){
@@ -219,6 +244,8 @@ function addPlayerToTeam(playerId, playerLocation){
 }
 
 function displayTeam(){
+    var rating = document.getElementById('team-average-rating');
+    rating.innerHTML='';
     var playerField = document.getElementsByClassName("player-field")[0];
 
     var url = getAPIBaseURL() + '/teamplayers?teamid=' + getTeamId();
@@ -308,19 +335,19 @@ function displayTeam(){
                 var fieldLocation = playerField.querySelectorAll(query)[0];
 
                 if(fieldLocation.getAttribute("class") == "inactive-goalie-card"){
-                    fieldLocation.setAttribute("class", "active-card");
+                    fieldLocation.setAttribute("class", "active-goalie-card");
                     var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
                     var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
                     // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
                     // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
-                    var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
+                    var nameDiv = fieldLocation.getElementsByClassName("goalie-name")[0];
                     var divingDiv = fieldLocation.getElementsByClassName("goalie-diving")[0];
                     var handlingDiv = fieldLocation.getElementsByClassName("goalie-handling")[0];
                     var kickingDiv = fieldLocation.getElementsByClassName("goalie-kicking")[0];
                     var reflexesDiv = fieldLocation.getElementsByClassName("goalie-reflexes")[0];
                     var speedDiv = fieldLocation.getElementsByClassName("goalie-speed")[0];
                     var positioningDiv = fieldLocation.getElementsByClassName("goalie-positioning")[0];
-                    var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
+                    var playerImage = fieldLocation.getElementsByClassName("goalie-image")[0];
                     // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
 
                     positionDiv.innerHTML = "GK";
@@ -367,6 +394,9 @@ function displayTeam(){
 }
 
 function deleteTeam(){
+    var rating = document.getElementById('team-average-rating');
+    rating.innerHTML='';
+    
     var url = getAPIBaseURL() + '/deleteteam?teamid=' + getTeamId();
     console.log(url);
     fetch(url, {method: 'get'})
@@ -455,7 +485,7 @@ function setInactiveGoalieCard(card){
                     "<div class='player-position'></div>" +
                     "<div class='player-nationality'></div>" +
                     "<div class='player-club'></div>" +
-                    "<div class='player-name'></div>" +
+                    "<div class='goalie-name'></div>" +
                     "<div class='goalie-diving'></div>" +
                     "<div class='goalie-handling'></div>" +
                     "<div class='goalie-kicking'></div>" +
@@ -463,7 +493,7 @@ function setInactiveGoalieCard(card){
                     "<div class='goalie-speed'></div>" +
                     "<div class='goalie-positioning'></div>" +
                     "<div class='player-league'></div>" +
-                    "<img class='player-image' src='https://www.freeiconspng.com/uploads/plus-sign-icon-31.png'>";
+                    "<img class='goalie-image' src='https://www.freeiconspng.com/uploads/plus-sign-icon-31.png'>";
     card.innerHTML = htmlContents;
 }
 
@@ -652,14 +682,14 @@ function goalieDraft(position, positionIndex) {
                 // var nationalityDiv = card.getElementsByClassName("goalie-nationality")[0];
                 // var clubDiv = card.getElementsByClassName("goalie-position")[0];
                 var positionDiv = card.getElementsByClassName("player-position")[0];
-                var nameDiv = card.getElementsByClassName("player-name")[0];
+                var nameDiv = card.getElementsByClassName("goalie-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
                 var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];
                 var handlingDiv = card.getElementsByClassName("goalie-handling")[0];
                 var kickingDiv = card.getElementsByClassName("goalie-kicking")[0];
                 var speedDiv = card.getElementsByClassName("goalie-speed")[0];
                 var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
-                var goalieImage = card.getElementsByClassName("player-image")[0];
+                var goalieImage = card.getElementsByClassName("goalie-image")[0];
                 // var leagueDiv = card.getElementsByClassName("goalie-position")[0];
 
                 positionDiv.innerHTML = 'GK';
@@ -843,7 +873,7 @@ function goalieSearch(event){
                 var kickingDiv = card.getElementsByClassName("goalie-kicking")[0];
                 var speedDiv = card.getElementsByClassName("goalie-speed")[0];
                 var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
-                var goalieImage = card.getElementsByClassName("player-image")[0];
+                var goalieImage = card.getElementsByClassName("goalie-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 positionDiv.innerHTML = goalie['position'];

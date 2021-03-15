@@ -21,7 +21,8 @@ from config import password
 from config import database
 from config import user
 
-from api import tokens, user_first_name, user_last_name, user_email
+import api
+from api import tokens
 
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
@@ -32,14 +33,51 @@ app.register_blueprint(api.api, url_prefix='/api')
 def draft():
     token = request.cookies.get('sessionToken')
     if token in tokens:
-        return flask.render_template('draft.html', user_first_name=user_first_name[0])
+        return flask.render_template('draft.html', user_first_name=api.user_first_name)
     return redirect('/login')
 
-@app.route('/draftspecial')
-def draftSpecial():
-    user_first_name.append('')
+@app.route('/guestlogin')
+def guest_login():
+    #create guest user in database if they don't already exist
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+    print(1)
+    query = '''SELECT account.id
+            FROM account
+            WHERE account.email = 'GUEST_USER' '''
+    try:
+        database_cursor.execute(query)
+    except Exception as e:
+        print(e)
+        exit()
+
+    user_id = None
+
+    if database_cursor.rowcount == 0:
+        #add new user
+        database_connection = connect_to_database()
+        database_cursor = database_connection.cursor()
+        print(2)
+        query = '''INSERT INTO account(first_name, last_name, email)
+                VALUES ('Guest', 'User', 'GUEST_USER')
+                RETURNING id'''
+        try:
+            database_cursor.execute(query)
+            database_connection.commit()
+        except Exception as e:
+            print(e)
+            exit()
+        
+    for row in database_cursor:
+        user_id = row[0]
+
+    api.user_first_name = "Guest"
+    api.user_last_name = "User"
+    api.user_email = "GUEST_USER"
+            
+    #make cookie for them
     token = str(uuid4())
-    tokens[token] = ''
+    tokens[token] = user_id
     resp = make_response(redirect('/'))
     resp.set_cookie('sessionToken', token)
     return resp
@@ -48,7 +86,7 @@ def draftSpecial():
 def sandbox():
     token = request.cookies.get('sessionToken')
     if token in tokens:
-        return flask.render_template('sandbox.html', user_first_name=user_first_name[0])
+        return flask.render_template('sandbox.html', user_first_name=api.user_first_name)
     return redirect('/login')
 
 # This route supports relative links among your web pages, assuming those pages
@@ -66,7 +104,7 @@ def login():
     return flask.render_template('login.html')
 
 @app.route('/login', methods=['POST'])
-def loginPost():
+def login_post():
     # gets the URL we need for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
@@ -122,10 +160,9 @@ def loginCallback():
         users_firstName = userinfo_response.json()["given_name"]
         users_lastName = userinfo_response.json()["family_name"]
 
-        user_first_name.append(users_firstName)
-        user_last_name.append(users_lastName)
-        user_email.append(user_email)
-
+        api.user_first_name = users_firstName
+        api.user_last_name = users_lastName
+        api.user_email = users_email
         #create user in database if they don't already exist
 
         database_connection = connect_to_database()
@@ -148,32 +185,17 @@ def loginCallback():
             database_cursor = database_connection.cursor()
             print(2)
             query = '''INSERT INTO account(first_name, last_name, email)
-                    VALUES (%s, %s, %s)'''
+                    VALUES (%s, %s, %s)
+                    RETURNING id'''
             try:
                 database_cursor.execute(query, (users_firstName, users_lastName, users_email))
                 database_connection.commit()
             except Exception as e:
                 print(e)
                 exit()
-
-            database_connection = connect_to_database()
-            database_cursor = database_connection.cursor()
-            print(3)
-            query = '''SELECT account.id
-                    FROM account
-                    WHERE account.email = %s'''
-            try:
-                database_cursor.execute(query, (users_email,))
-            except Exception as e:
-                print(e)
-                exit()
-
-            for row in database_cursor:
-                user_id = row[0]
             
-        else:
-            for row in database_cursor:
-                user_id = row[0]
+        for row in database_cursor:
+            user_id = row[0]
                 
         #make cookie for them
         token = str(uuid4())
@@ -192,9 +214,9 @@ def logOut():
     token = request.cookies.get('sessionToken')
     if token in tokens:
         del tokens[token]
-    user_first_name = []
-    user_last_name = ''
-    user_email = ''
+    api.user_first_name = ''
+    api.user_last_name = ''
+    api.user_email = ''
     return redirect('/login')
 
 

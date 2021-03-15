@@ -66,11 +66,11 @@ def get_goalies():
     		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
                FROM goalie, nationality, club, league
                WHERE goalie.nationality_id = nationality.id
-               AND nationality.nationality LIKE %s
+               AND UPPER(nationality.nationality) LIKE UPPER(%s)
                AND goalie.league_id = league.id
-               AND league.league LIKE %s
+               AND UPPER(league.league) LIKE UPPER(%s)
                AND goalie.club_id = club.id
-               AND club.club LIKE %s
+               AND UPPER(club.club) LIKE UPPER(%s)
                AND goalie.diving > %s AND goalie.diving < %s
                AND goalie.handling > %s AND goalie.handling < %s
                AND goalie.reflexes > %s AND goalie.reflexes < %s
@@ -132,10 +132,10 @@ def get_players():
     nationality = flask.request.args.get('nationality', default = '')
     club = flask.request.args.get('club', default = '')
     league = flask.request.args.get('league', default = '')
-    weakFootLow = flask.request.args.get('weakfootlow', default = 0)
-    weakFootHigh = flask.request.args.get('weakfoothigh', default = 5)
-    skillMovesLow = flask.request.args.get('skillmoveslow', default = 0)
-    skillMovesHigh = flask.request.args.get('skillmoveshigh', default = 5)
+    weakFootLow = flask.request.args.get('weakfootlow', default = -1)
+    weakFootHigh = flask.request.args.get('weakfoothigh', default = 6)
+    skillMovesLow = flask.request.args.get('skillmoveslow', default = -1)
+    skillMovesHigh = flask.request.args.get('skillmoveshigh', default = 6)
     preferredFoot = flask.request.args.get('preferredfoot', default = '')
     shootingLow = flask.request.args.get('shootinglow', default = 0)
     shootingHigh = flask.request.args.get('shootinghigh', default = 99)
@@ -158,13 +158,17 @@ def get_players():
     sofifa_id = flask.request.args.get('sofifa_id', default = -1)
     draftModeOn = flask.request.args.get('draftmodeon', default = True)
 
+    # print(preferredFoot)
+    # print(weakFootLow + weakFootHigh + skillMovesLow + skillMovesHigh)
+
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
-               player.sofifa_id, player.physicality, player.id
+               player.sofifa_id, player.physicality, player.id,
+               player.age, player.weak_foot, player.preferred_foot, player.skill_moves
                FROM player, nationality, club, league
                WHERE player.nationality_id = nationality.id
                AND UPPER(nationality.nationality) LIKE UPPER(%s)
@@ -182,10 +186,17 @@ def get_players():
                AND player.age > %s AND player.age < %s
                AND player.overall_rating > %s AND player.overall_rating < %s
                AND (player.sofifa_id = %s OR %s < 0)
-               AND UPPER(player.long_name) LIKE UPPER(%s)'''
+               AND UPPER(player.long_name) LIKE UPPER(%s)
+               AND player.weak_foot > %s AND player.weak_foot < %s
+               AND player.skill_moves > %s AND player.skill_moves < %s
+               AND UPPER(player.preferred_foot) LIKE UPPER(%s)'''
 
     try:
-        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), ('%'+position+'%'), shootingLow, shootingHigh, dribblingLow, dribblingHigh, paceLow, paceHigh, passingLow, passingHigh, defenseLow, defenseHigh, physicalityLow, physicalityHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))
+        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), ('%'+position+'%'),
+        shootingLow, shootingHigh, dribblingLow, dribblingHigh, paceLow, paceHigh, passingLow, passingHigh,
+        defenseLow, defenseHigh, physicalityLow, physicalityHigh, ageLow, ageHigh, overallRatingLow,
+        overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%'), weakFootLow, weakFootHigh, skillMovesLow,
+        skillMovesHigh, ('%'+preferredFoot+'%')))
     except Exception as e:
         print(e)
         exit()
@@ -207,6 +218,10 @@ def get_players():
         player_sofifa_id = row[11]
         player_physicality = row[12]
         player_id = row[13]
+        player_age = row[14]
+        player_weak_foot = row[15]
+        player_preferred_foot = row[16]
+        player_skill_moves = row[17]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -221,6 +236,10 @@ def get_players():
         player['sofifa_id'] = player_sofifa_id
         player['physicality'] = player_physicality
         player['player_id'] = player_id
+        player['age'] = player_age
+        player['weak_foot'] = player_weak_foot
+        player['preferred_foot'] = player_preferred_foot
+        player['skill_moves'] = player_skill_moves
         players.append(player)
 
     if draftModeOn:
@@ -264,11 +283,12 @@ def get_team_players():
     query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
-               player.sofifa_id, player.physicality, player.id, 
-               account_player.player_location
+               player.sofifa_id, player.physicality, player.id, account_player.player_location,
+               player.age, player.weak_foot, player.preferred_foot, player.skill_moves
                FROM player, nationality, club, league, account_player, account, account_team
                WHERE player.nationality_id = nationality.id
                AND player.league_id = league.id
+               AND player.club_id = club.id
                AND account_player.account_team_id = %s
                AND account_team.id = %s
                AND account_team.account_id = %s
@@ -299,6 +319,10 @@ def get_team_players():
         player_physicality = row[12]
         player_id = row[13]
         player_location = row[14]
+        player_age = row[15]
+        player_weak_foot = row[16]
+        player_preferred_foot = row[17]
+        player_skill_moves = row[18]
         player['name'] = player_name
         player['shooting'] = player_shooting
         player['dribbling'] = player_dribbling
@@ -314,6 +338,10 @@ def get_team_players():
         player['physicality'] = player_physicality
         player['player_id'] = player_id
         player['location'] = player_location
+        player['age'] = player_age
+        player['weak_foot'] = player_weak_foot
+        player['preferred_foot'] = player_preferred_foot
+        player['skill_moves'] = player_skill_moves
         players.append(player)
 
     return json.dumps(players)

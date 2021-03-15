@@ -123,6 +123,11 @@ body {
     margin-top: 15px;
 }
 
+.active-card:hover img {
+    position: relative;
+    background-color: black;
+}
+
 .active-goalie-card img{
     position: absolute;
     max-width: 45px;
@@ -322,18 +327,11 @@ body {
     display: none;
 }
 
-/* .chemistry-Line-Up-One {
-    height: 0.5rem;
+.hide {
+    display: none;
 }
 
-.chemistryRed {
+.active-card:hover + .hide {
+    display: grid;
     color: red;
 }
-
-.chemistryYellow {
-    color: yellow;
-}
-
-.chemistryGreen {
-    color: green;
-} */

@@ -27,6 +27,96 @@ var continueFunc3 = true;
 //
 //     }
 // }
+function changeFilters(position) {
+    if (position == "GK") {
+        var firstStatMin = document.getElementById("minPace");
+        firstStatMin.innerHTML = "Min Diving:";
+        firstStatMin.setAttribute("id", "minDiving");
+        var firstStatMax = document.getElementById("maxPace");
+        firstStatMax.innerHTML = "Max Diving:";
+        firstStatMax.setAttribute("id", "maxDiving");
+
+        var secondStatMin = document.getElementById("minShooting");
+        secondStatMin.innerHTML = "Min Handling:";
+        secondStatMin.setAttribute("id", "minHandling");
+        var secondStatMax = document.getElementById("maxShooting");
+        secondStatMax.innerHTML = "Max Handling:";
+        secondStatMax.setAttribute("id", "maxHandling");
+
+        var thirdStatMin = document.getElementById("minPassing");
+        thirdStatMin.innerHTML = "Min Kicking:";
+        thirdStatMin.setAttribute("id", "minKicking");
+        var thirdStatMax = document.getElementById("maxPassing");
+        thirdStatMax.innerHTML = "Max Kicking:";
+        thirdStatMax.setAttribute("id", "maxKicking");
+
+        var fourthStatMin = document.getElementById("minDribbling");
+        fourthStatMin.innerHTML = "Min Reflexes:";
+        fourthStatMin.setAttribute("id", "minReflexes");
+        var fourthStatMax = document.getElementById("maxDribbling");
+        fourthStatMax.innerHTML = "Max Reflexes:";
+        fourthStatMax.setAttribute("id", "maxReflexes");
+
+        var fifthStatMin = document.getElementById("minDefense");
+        fifthStatMin.innerHTML = "Min Speed:";
+        fifthStatMin.setAttribute("id", "minSpeed");
+        var fifthStatMax = document.getElementById("maxDefense");
+        fifthStatMax.innerHTML = "Max Speed:";
+        fifthStatMax.setAttribute("id", "maxSpeed");
+
+        var sixthStatMin = document.getElementById("minPhysicality");
+        sixthStatMin.innerHTML = "Min Positioning:";
+        sixthStatMin.setAttribute("id", "minPositioning");
+        var sixthStatMax = document.getElementById("maxPhysicality");
+        sixthStatMax.innerHTML = "Max Positioning:";
+        sixthStatMax.setAttribute("id", "maxPositioning");
+    }
+
+    else if (position != "GK") {
+        var firstStatMin = document.getElementById("minDiving");
+        firstStatMin.innerHTML = "Min Pace:";
+        firstStatMin.setAttribute("id", "minPace");
+        var firstStatMax = document.getElementById("maxDiving");
+        firstStatMax.innerHTML = "Max Pace:";
+        firstStatMax.setAttribute("id", "maxPace");
+
+        var secondStatMin = document.getElementById("minHandling");
+        secondStatMin.innerHTML = "Min Shooting:";
+        secondStatMin.setAttribute("id", "minShooting");
+        var secondStatMax = document.getElementById("maxHandling");
+        secondStatMax.innerHTML = "Max Shooting:";
+        secondStatMax.setAttribute("id", "maxShooting");
+
+        var thirdStatMin = document.getElementById("minKicking");
+        thirdStatMin.innerHTML = "Min Passing:";
+        thirdStatMin.setAttribute("id", "minPassing");
+        var thirdStatMax = document.getElementById("maxKicking");
+        thirdStatMax.innerHTML = "Max Passing:";
+        thirdStatMax.setAttribute("id", "maxPassing");
+
+        var fourthStatMin = document.getElementById("minReflexes");
+        fourthStatMin.innerHTML = "Min Dribbling:";
+        fourthStatMin.setAttribute("id", "minDribbling");
+        var fourthStatMax = document.getElementById("maxReflexes");
+        fourthStatMax.innerHTML = "Max Dribbling:";
+        fourthStatMax.setAttribute("id", "maxDribbling");
+
+        var fifthStatMin = document.getElementById("minSpeed");
+        fifthStatMin.innerHTML = "Min Defense:";
+        fifthStatMin.setAttribute("id", "minDefense");
+        var fifthStatMax = document.getElementById("maxSpeed");
+        fifthStatMax.innerHTML = "Max Defense:";
+        fifthStatMax.setAttribute("id", "maxDefense");
+
+        var sixthStatMin = document.getElementById("minPositioning");
+        sixthStatMin.innerHTML = "Min Physicality:";
+        sixthStatMin.setAttribute("id", "minPhysicality");
+        var sixthStatMax = document.getElementById("maxPositioning");
+        sixthStatMax.innerHTML = "Max Physicality:";
+        sixthStatMax.setAttribute("id", "maxPhysicality");
+    }
+}
+
 function searchPreferredFeet() {
     var feet = ["Right", "Left"];
 
@@ -35,6 +125,31 @@ function searchPreferredFeet() {
         optionElement.value = feet[foot];
         document.getElementById("feet").appendChild(optionElement);
   }
+}
+
+function searchNames() {
+    var name_array = [];
+
+    var url = getAPIBaseURL() + '/names';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(names) {
+        for (var name of names) {
+            var player_name = name['name'];
+            name_array.push(player_name);
+        }
+        for (var name in name_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = name_array[name];
+            document.getElementById("names").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
 }
 
 function searchLeagues() {
@@ -123,7 +238,7 @@ function displayPlayerStats(card, player) {
     // var ageDiv = card.getElementsByClassName("player-age")[0];
 
     stats.innerHTML = player['nationality'] + player['league'] + player['club'] + String(player['weak_foot'])
-    + String(player['skill_moves']) + player['preferred_foot'] + player['age'];
+    + '/5' + String(player['skill_moves']) + '/5' + player['preferred_foot'] + player['age'];
 }
 
 // function displayGoalieStats(card) {
@@ -150,6 +265,7 @@ function initialize() {
         searchClubs();
         searchNationalities();
         searchPreferredFeet();
+        searchNames();
     }
 
 }
@@ -421,9 +537,9 @@ function displayTeam(){
                 var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
                 popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
                 var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
-                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'] + '/5';
                 var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
-                popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'];
+                popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'] + '/5';
 
                 // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
 
@@ -1019,18 +1135,20 @@ function playerSearch(event){
     var club = event.target.elements.club.value;
     var nationality = event.target.elements.nationality.value;
     var preferredFoot = event.target.elements.preferredFoot.value;
-    var paceLow = event.target.elements.paceLow.value;
-    var paceHigh = event.target.elements.paceHigh.value;
-    var shootingLow = event.target.elements.shootingLow.value;
-    var shootingHigh = event.target.elements.shootingHigh.value;
-    var passingLow = event.target.elements.passingLow.value;
-    var passingHigh = event.target.elements.passingHigh.value;
-    var dribblingLow = event.target.elements.dribblingLow.value;
-    var dribblingHigh = event.target.elements.dribblingHigh.value;
-    var defenseLow = event.target.elements.defenseLow.value;
-    var defenseHigh = event.target.elements.defenseHigh.value;
-    var physicalityLow = event.target.elements.physicalityLow.value;
-    var physicalityHigh = event.target.elements.physicalityHigh.value;
+    var paceLow = event.target.elements.firstLow.value;
+    var paceHigh = event.target.elements.firstHigh.value;
+    var shootingLow = event.target.elements.secondLow.value;
+    var shootingHigh = event.target.elements.secondHigh.value;
+    var passingLow = event.target.elements.thirdLow.value;
+    var passingHigh = event.target.elements.thirdHigh.value;
+    var dribblingLow = event.target.elements.fourthLow.value;
+    var dribblingHigh = event.target.elements.fourthHigh.value;
+    var defenseLow = event.target.elements.fifthLow.value;
+    var defenseHigh = event.target.elements.fifthHigh.value;
+    var physicalityLow = event.target.elements.sixthLow.value;
+    var physicalityHigh = event.target.elements.sixthHigh.value;
+    var ratingLow = event.target.elements.ratingLow.value;
+    var ratingHigh = event.target.elements.ratingHigh.value;
 
     if(position == 'GK'){
         goalieSearch(event);
@@ -1044,7 +1162,7 @@ function playerSearch(event){
         + '&pacehigh=' + paceHigh + '&shootinglow=' + shootingLow + '&shootinghigh=' + shootingHigh + '&passinglow=' + passingLow
         + '&passinghigh=' + passingHigh + '&dribblinglow=' + dribblingLow + '&dribblinghigh=' + dribblingHigh
         + '&defenselow=' + defenseLow + '&defensehigh=' + defenseHigh + '&physicalitylow=' + physicalityLow
-        + '&physicalityhigh=' + physicalityHigh;
+        + '&physicalityhigh=' + physicalityHigh + '&overallratinglow=' + ratingLow + '&overallratinghigh=' + ratingHigh;
         console.log(url);
         fetch(url, {method: 'get'})
 
@@ -1083,9 +1201,9 @@ function playerSearch(event){
                     var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
                     popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
                     var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
-                    popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                    popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'] + '/5';
                     var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
-                    popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'];
+                    popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'] + '/5';
                     // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                     var positionsPlayed = player['position'].split(",");
@@ -1136,12 +1254,31 @@ function goalieSearch(event){
     var club = event.target.elements.club.value;
     var nationality = event.target.elements.nationality.value;
     var league = event.target.elements.league.value;
+    var preferredFoot = event.target.elements.preferredFoot.value;
+    var divingLow = event.target.elements.firstLow.value;
+    var divingHigh = event.target.elements.firstHigh.value;
+    var handlingLow = event.target.elements.secondLow.value;
+    var handlingHigh = event.target.elements.secondHigh.value;
+    var kickingLow = event.target.elements.thirdLow.value;
+    var kickingHigh = event.target.elements.thirdHigh.value;
+    var reflexesLow = event.target.elements.fourthLow.value;
+    var reflexesHigh = event.target.elements.fourthHigh.value;
+    var speedLow = event.target.elements.fifthLow.value;
+    var speedHigh = event.target.elements.fifthHigh.value;
+    var positioningLow = event.target.elements.sixthLow.value;
+    var positioningHigh = event.target.elements.sixthHigh.value;
+    var ratingLow = event.target.elements.ratingLow.value;
+    var ratingHigh = event.target.elements.ratingHigh.value;
 
 
     createSearchCards(position);
 
-    var url = getAPIBaseURL() + '/goalies?draftModeOn=False' + '&name=' + name + '&club=' + club + '&league=' + league
-    + '&nationality=' + nationality;
+    var url = getAPIBaseURL() + '/goalies?draftmodeon=False' + '&name=' + name + '&club=' + club + '&league=' + league
+    + '&nationality=' + nationality + '&preferredfoot=' + preferredFoot + '&divinglow=' + divingLow
+    + '&divinghigh=' + divingHigh + '&handlinglow=' + handlingLow + '&handlinghigh=' + handlingHigh + '&kickinglow=' + kickingLow
+    + '&kickinghigh=' + kickingHigh + '&reflexeslow=' + reflexesLow + '&reflexeshigh=' + reflexesHigh
+    + '&speedlow=' + speedLow + '&speedhigh=' + speedHigh + '&positioninglow=' + positioningLow
+    + '&positioninghigh=' + positioningHigh + '&overallratinglow=' + ratingLow + '&overallratinghigh=' + ratingHigh;
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -1167,20 +1304,20 @@ function goalieSearch(event){
                 var speedDiv = card.getElementsByClassName("goalie-speed")[0];
                 var positioningDiv = card.getElementsByClassName("goalie-positioning")[0];
                 var goalieImage = card.getElementsByClassName("goalie-image")[0];
-                var popup = fieldLocation.getElementsByClassName("popup")[0];
+                var popup = card.getElementsByClassName("popup")[0];
 
                 var popupName = popup.getElementsByClassName("popupName")[0];
-                popupName.innerHTML = player['name'];
+                popupName.innerHTML = goalie['name'];
                 var popupNationality = popup.getElementsByClassName("popupCountry")[0];
-                popupNationality.innerHTML = "Nationality: " + player['nationality'];
+                popupNationality.innerHTML = "Nationality: " + goalie['nationality'];
                 var popupLeague = popup.getElementsByClassName("popupLeague")[0];
-                popupLeague.innerHTML = "League: " + player['league'];
+                popupLeague.innerHTML = "League: " + goalie['league'];
                 var popupClub = popup.getElementsByClassName("popupClub")[0];
-                popupClub.innerHTML = "Club: " + player['club'];
+                popupClub.innerHTML = "Club: " + goalie['club'];
                 var popupPreferredFoot = popup.getElementsByClassName("popupPreferredFoot")[0];
-                popupPreferredFoot.innerHTML = "Preferred Foot: " + player['preferred_foot'];
+                popupPreferredFoot.innerHTML = "Preferred Foot: " + goalie['preferred_foot'];
                 var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
-                popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
+                popupWeakFoot.innerHTML = "Weak Foot Ability: " + goalie['weak_foot'];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 positionDiv.innerHTML = goalie['position'];

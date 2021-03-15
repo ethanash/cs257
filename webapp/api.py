@@ -30,6 +30,33 @@ def help():
     See readme.txt for more filters and examples.
     ''')
 
+@api.route('/names')
+def get_names():
+    name = flask.request.args.get('name', default = '')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT player.long_name
+               FROM player
+               WHERE UPPER(player.long_name) LIKE UPPER(%s)'''
+
+    try:
+        database_cursor.execute(query, ('%'+name+'%',))
+    except Exception as e:
+        print(e)
+        exit()
+
+    names = []
+    for row in database_cursor:
+        name_dict = {}
+        player_name = row[0]
+        name_dict['name'] = player_name
+        names.append(name_dict)
+
+    return json.dumps(names)
+
+
 @api.route('/leagues')
 def get_leagues():
     league = flask.request.args.get('league', default = '')
@@ -150,17 +177,17 @@ def get_goalies():
                AND UPPER(league.league) LIKE UPPER(%s)
                AND goalie.club_id = club.id
                AND UPPER(club.club) LIKE UPPER(%s)
-               AND goalie.diving > %s AND goalie.diving < %s
-               AND goalie.handling > %s AND goalie.handling < %s
-               AND goalie.reflexes > %s AND goalie.reflexes < %s
-               AND goalie.kicking > %s AND goalie.kicking < %s
-               AND goalie.speed > %s AND goalie.speed < %s
-               AND goalie.positioning > %s AND goalie.positioning < %s
-               AND goalie.age > %s AND goalie.age < %s
-               AND goalie.overall_rating > %s AND goalie.overall_rating < %s
+               AND goalie.diving >= %s AND goalie.diving <= %s
+               AND goalie.handling >= %s AND goalie.handling <= %s
+               AND goalie.reflexes >= %s AND goalie.reflexes <= %s
+               AND goalie.kicking >= %s AND goalie.kicking <= %s
+               AND goalie.speed >= %s AND goalie.speed <= %s
+               AND goalie.positioning >= %s AND goalie.positioning <= %s
+               AND goalie.age >= %s AND goalie.age <= %s
+               AND goalie.overall_rating >= %s AND goalie.overall_rating <= %s
                AND (goalie.sofifa_id = %s OR %s < 0)
                AND UPPER(goalie.long_name) LIKE UPPER(%s)
-               AND goalie.weak_foot > %s AND goalie.weak_foot < %s
+               AND goalie.weak_foot >= %s AND goalie.weak_foot <= %s
                AND UPPER(goalie.preferred_foot) LIKE UPPER(%s)'''
 
     try:
@@ -266,18 +293,18 @@ def get_players():
                AND player.club_id = club.id
                AND UPPER(club.club) LIKE UPPER(%s)
                AND player.position LIKE UPPER(%s)
-               AND player.shooting > %s AND player.shooting < %s
-               AND player.dribbling > %s AND player.dribbling < %s
-               AND player.pace > %s AND player.pace < %s
-               AND player.passing > %s AND player.passing < %s
-               AND player.defense > %s AND player.defense < %s
-               AND player.physicality > %s AND player.physicality < %s
-               AND player.age > %s AND player.age < %s
-               AND player.overall_rating > %s AND player.overall_rating < %s
+               AND player.shooting >= %s AND player.shooting <= %s
+               AND player.dribbling >= %s AND player.dribbling <= %s
+               AND player.pace >= %s AND player.pace <= %s
+               AND player.passing >= %s AND player.passing <= %s
+               AND player.defense >= %s AND player.defense <= %s
+               AND player.physicality >= %s AND player.physicality < %s
+               AND player.age >= %s AND player.age <= %s
+               AND player.overall_rating >= %s AND player.overall_rating <= %s
                AND (player.sofifa_id = %s OR %s < 0)
                AND UPPER(player.long_name) LIKE UPPER(%s)
-               AND player.weak_foot > %s AND player.weak_foot < %s
-               AND player.skill_moves > %s AND player.skill_moves < %s
+               AND player.weak_foot >= %s AND player.weak_foot <= %s
+               AND player.skill_moves >= %s AND player.skill_moves <= %s
                AND UPPER(player.preferred_foot) LIKE UPPER(%s)'''
 
     try:

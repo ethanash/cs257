@@ -1,8 +1,6 @@
 /*
  * webapp.js
  * Ethan Ash and Riaz Kelly
- *
- * Preliminary Javascript to get 6 drafted players
  */
 
 window.onload = initialize;
@@ -11,22 +9,8 @@ var continueFunc = true;
 var continueFunc2 = true;
 var continueFunc3 = true;
 
-// function setHover() {
-//     var activePlayerCards = document.getElementsByClassName("active-card");
-//     for (var card of activePlayerCards) {
-//         card.setAttribute("onmouseover", displayStats(this));
-//     }
-//     var activeGoalieCards = document.getElementsByClassName("active-goalie-card");
-//     for (var card of activeGoalieCards) {
-//         card.setAttribute("onmouseover", displayGoalieStats(this));
-//     }
-// }
-// function league_list_creator(elements) {
-//     var list = document
-//     for (element in elements) {
-//
-//     }
-// }
+//––––––––––––––––––––––––––– Filter Functions –––––––––––––––––––––––––––
+
 function changeFilters(position) {
     if (position == "GK") {
         var firstStatMin = document.getElementById("minPace");
@@ -119,7 +103,6 @@ function changeFilters(position) {
 
 function searchPreferredFeet() {
     var feet = ["Right", "Left"];
-
     for (var foot in feet) {
         var optionElement = document.createElement("option");
         optionElement.value = feet[foot];
@@ -227,27 +210,13 @@ function searchNationalities() {
     });
 }
 
+
+
 function displayPlayerStats(card, player) {
     var displayPlayerStats = card.getElementById('displayPlayerStats')[0];
-    // var nationalityDiv = card.getElementsByClassName("hide")[0];
-    // var leagueDiv = card.getElementsByClassName("player-league")[0];
-    // var clubDiv = card.getElementsByClassName("player-club")[0];
-    // var weakFootDiv = card.getElementsByClassName("player-weak-foot")[0];
-    // var skillMovesDiv = card.getElementsByClassName("player-skill-moves")[0];
-    // var preferredFootDiv = card.getElementsByClassName("player-preferred-foot")[0];
-    // var ageDiv = card.getElementsByClassName("player-age")[0];
-
     stats.innerHTML = player['nationality'] + player['league'] + player['club'] + String(player['weak_foot'])
     + '/5' + String(player['skill_moves']) + '/5' + player['preferred_foot'] + player['age'];
 }
-
-// function displayGoalieStats(card) {
-//     var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-//     var leagueDiv = card.getElementsByClassName("player-league")[0];
-//     var clubDiv = card.getElementsByClassName("player-club")[0];
-//     var weakFootDiv = card.getElementsByClassName("player-weak-foot")[0];
-//     var preferredFootDiv = card.getElementsByClassName("player-preferred-foot")[0];
-// }
 
 function initialize() {
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
@@ -831,7 +800,7 @@ function setFormation(newFormation){
     }
 }
 
-//'''––––––––––––––––––––––––––– Draft Functions –––––––––––––––––––––––––––'''
+//––––––––––––––––––––––––––– Draft Functions –––––––––––––––––––––––––––
 
 function onPositionDraft(obj) {
     var position = obj.getAttribute("position");
@@ -1057,7 +1026,7 @@ function onDraftSelection(obj){
     }
 }
 
-//'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
+//––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––
 
 function playerSearch(event){
     event.preventDefault();

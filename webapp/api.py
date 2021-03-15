@@ -26,8 +26,12 @@ def help():
     return('''API Endpoints:
     /players - will return JSON output of players
     /sandbox - will show sandbox mode where you can search for players
-
-    See readme.txt for more filters and examples.
+    /draft - will show draft mode where you can draft players
+    /names - will show all player names
+    /leagues - will show all leagues
+    /clubs - will show all clubs
+    /nationalities - will show all nationalities
+    /goalies - will show all goalies
     ''')
 
 @api.route('/names')

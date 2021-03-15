@@ -1,87 +1,60 @@
-Here are things you must import to run our code:
+AUTHORS: Ethan Ash & Riaz Kelly
 
-pip install requests-oauthlib
-pip install pyopenssl
+DATA: All normal player cards from FIFA 21.
 
-IMPORTANT: make sure you have this in your config.py file - 
-//////
-from oauthlib.oauth2 import WebApplicationClient
-import os
+We downloaded our data through Kaggle and SoFifa. We got the raw
+player stats from Kaggle and the player pictures from SoFifa.
+https://www.kaggle.com/stefanoleone992/fifa-21-complete-player-dataset
 
-# Change these values as appropriate for your postgresql setup.
-database = ''
-user = ''
-password = ''
+STATUS: What's Working:
 
-SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24)
+––You can draft random players on draft mode
+––You can search for players on sandbox mode
+––You can hover over a player card to display more stats
+––You can create new teams, delete teams, and change a team's name
+––Your team's average rating is displayed on the left side
 
-GOOGLE_CLIENT_ID = "900631144036-ml0eakqmhkk8039e86mpdlcs6l784uui.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "HXTvm8Qmn6Im5zoQ0WBN41Mx"
-GOOGLE_DISCOVERY_URL = (
-    "https://accounts.google.com/.well-known/openid-configuration"
-)
+What's Not Working:
 
-# OAuth 2 client setup
-CLIENT_ = WebApplicationClient(GOOGLE_CLIENT_ID)
-//////
-We have a draft mode and a sandbox mode.
-You can toggle between the two using the button in the bottom left
-corner of the website. You can switch between formations using the
-drop down menu on the left side of the website.
-Here are the functional features of each mode:
+––We don't have as many search filters as we would have liked
+(such as age, weak foot, and skill moves)
+––We never finished the chemistry of a team
 
-Draft Mode: You can click on a position and it will give you
-six players to choose from for that position. When you
-click on one of them, they will be added to your team.
+NOTES:
 
-Sandbox Mode: We only have three filters to choose from right now.
-You can pick the position, search by name, and search by club name.
-You can combine any and all of these if you wish. The search
-methods are not case sensitive. Nothing will happen if you click
-on these players as we have not made it so that it will add them
-to your team yet.
+NEEDED IN ORDER TO RUN OUR CODE:
 
-Additional Notes:
-1) Goalies do NOT work right now. When you click on the goalie
-position, 6 blank cards will show up.
-2) Chemistry means nothing as of right now
-(On the left side of the page)
-3) You can use the URL to search through our database but will
-receive JSON output. Here are possible searches:
+    Please install these pip commands:
 
-https://localhost:5000/api/players
+    pip install requests-oauthlib
+    pip install pyopenssl
 
-After this, here are a list of possible search arguments you can use
-(S means the parameter takes a string, N means a number):
+    Please put this in your config file:
 
-nationality (S)
-league (S)
-club (S)
-shootinglow (N from 0 to 99)
-shootinghigh (N from 0 to 99)
-pacelow (N from 0 to 99)
-pacehigh (N from 0 to 99)
-dribblinglow (N from 0 to 99)
-dribblinghigh (N from 0 to 99)
-passinglow (N from 0 to 99)
-passinghigh (N from 0 to 99)
-defenselow (N from 0 to 99)
-defensehigh (N from 0 to 99)
-physicalitylow (N from 0 to 99)
-physicalityhigh (N from 0 to 99)
-overallratinglow (N from 0 to 99)
-overallratinghigh (N from 0 to 99)
-position (S - two letter abbreviation of a position like CB, RB, ST, CM, RW)
-agelow (N from 0 to 99)
-agehigh (N from 0 to 99)
-name (S)
+    //////
+    from oauthlib.oauth2 import WebApplicationClient
+    import os
 
-Examples:
+    # Change these values as appropriate for your postgresql setup.
+    database = ''
+    user = ''
+    password = ''
 
-https://localhost:5000/api/players?pacelow=85&club=chelsea
+    SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24)
 
-This will return all players on Chelsea who have a pace of at least 85.
+    GOOGLE_CLIENT_ID = "900631144036-ml0eakqmhkk8039e86mpdlcs6l784uui.apps.googleusercontent.com"
+    GOOGLE_CLIENT_SECRET = "HXTvm8Qmn6Im5zoQ0WBN41Mx"
+    GOOGLE_DISCOVERY_URL = (
+        "https://accounts.google.com/.well-known/openid-configuration"
+    )
 
-https://localhost:5000/api/players?shootinghigh=76
+    # OAuth 2 client setup
+    CLIENT_ = WebApplicationClient(GOOGLE_CLIENT_ID)
+    //////
 
-This will return all players who have a shooting value less than 76.
+Last Note:
+
+We both thought this project was a lot of fun! It was
+undoubtedly a lot of work as well. We definitely had higher hopes,
+or at least a more ambitious picture of our website until we found
+out how many little details you have to add to make a website.

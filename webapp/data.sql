@@ -67,7 +67,7 @@ CREATE TABLE public.account (
 -- Name: account_team; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.account_team (
+CREATE TABLE public.account_team_draft (
     id SERIAL PRIMARY KEY,
     account_id integer,
     team_name text,
@@ -78,7 +78,7 @@ CREATE TABLE public.account_team (
 -- Name: account_player; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.account_player (
+CREATE TABLE public.account_player_draft (
     account_team_id integer,
     player_id integer,
     player_location text
@@ -88,7 +88,37 @@ CREATE TABLE public.account_player (
 -- Name: account_player; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.account_goalie (
+CREATE TABLE public.account_goalie_draft (
+    account_team_id integer,
+    goalie_id integer
+);
+
+--
+-- Name: account_team; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_team_sandbox (
+    id SERIAL PRIMARY KEY,
+    account_id integer,
+    team_name text,
+    formation text
+);
+
+--
+-- Name: account_player; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_player_sandbox (
+    account_team_id integer,
+    player_id integer,
+    player_location text
+);
+
+--
+-- Name: account_player; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.account_goalie_sandbox (
     account_team_id integer,
     goalie_id integer
 );

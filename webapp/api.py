@@ -353,10 +353,10 @@ def get_team_players():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''SELECT account_team.formation
-               FROM account_team
-               WHERE account_team.id = %s
-               AND account_team.account_id = %s'''
+    query = '''SELECT account_team_draft.formation
+               FROM account_team_draft_draft
+               WHERE account_team_draft_draft.id = %s
+               AND account_team_draft.account_id = %s'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -378,16 +378,16 @@ def get_team_players():
     query = '''SELECT player.long_name, player.shooting, player.dribbling, player.pace,
                player.passing, player.defense, player.position,
                nationality.nationality, league.league, club.club, player.overall_rating,
-               player.sofifa_id, player.physicality, player.id, account_player.player_location,
+               player.sofifa_id, player.physicality, player.id, account_player_draft .player_location,
                player.age, player.weak_foot, player.preferred_foot, player.skill_moves
-               FROM player, nationality, club, league, account_player, account, account_team
+               FROM player, nationality, club, league, account_player_draft , account, account_team_draft
                WHERE player.nationality_id = nationality.id
                AND player.league_id = league.id
                AND player.club_id = club.id
-               AND account_player.account_team_id = %s
-               AND account_team.id = %s
-               AND account_team.account_id = %s
-               AND player.id = account_player.player_id'''
+               AND account_player_draft .account_team_draft_id = %s
+               AND account_team_draft.id = %s
+               AND account_team_draft.account_id = %s
+               AND player.id = account_player_draft .player_id'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -452,14 +452,14 @@ def get_team_goalies():
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
     		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
                goalie.age, goalie.weak_foot, goalie.preferred_foot
-               FROM goalie, nationality, club, league, account_goalie, account, account_team
+               FROM goalie, nationality, club, league, account_goalie_draft, account, account_team_draft
                WHERE nationality.id = goalie.nationality_id
                AND club.id = goalie.club_id
                AND league.id = goalie.league_id
-               AND account_goalie.account_team_id = %s
-               AND account_team.id = %s
-               AND account_team.account_id = %s
-               AND goalie.id = account_goalie.goalie_id'''
+               AND account_goalie_draft.account_team_draft_id = %s
+               AND account_team_draft.id = %s
+               AND account_team_draft.account_id = %s
+               AND goalie.id = account_goalie_draft.goalie_id'''
 
     try:
         token = request.cookies.get('sessionToken')
@@ -511,17 +511,17 @@ def get_team_goalies():
 
 
 @api.route('/accountteams')
-def get_account_teams():
+def get_account_team_drafts():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     #team_id = flask.request.args.get('teamid', default=-1)
 
-    query = '''SELECT account_team.id, account_team.team_name
-            FROM account_team
-            WHERE account_team.account_id = %s'''
+    query = '''SELECT account_team_draft.id, account_team_draft.team_name
+            FROM account_team_draft
+            WHERE account_team_draft.account_id = %s'''
 
-    #AND (account_team.id = %s OR %s < 0)
+    #AND (account_team_draft.id = %s OR %s < 0)
     try:
         token = request.cookies.get('sessionToken')
         account_id = tokens[token]
@@ -541,11 +541,11 @@ def get_account_teams():
     return json.dumps(teams)
 
 @api.route('/createteam/<formation>')
-def create_account_team(formation):
+def create_account_team_draft(formation):
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_team(account_id, team_name, formation)
+    query = '''INSERT INTO account_team_draft(account_id, team_name, formation)
             VALUES (%s, %s, %s)
             RETURNING id, team_name'''
     try:
@@ -571,7 +571,7 @@ def delete_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''DELETE FROM account_team
+    query = '''DELETE FROM account_team_draft
             WHERE id = %s'''
     try:
         database_cursor.execute(query, (team_id,))
@@ -583,8 +583,8 @@ def delete_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''DELETE FROM account_player
-            WHERE account_team_id = %s'''
+    query = '''DELETE FROM account_player_draft 
+            WHERE account_team_draft_id = %s'''
     try:
         database_cursor.execute(query, (team_id,))
         database_connection.commit()
@@ -602,7 +602,7 @@ def change_team_name():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''UPDATE account_team
+    query = '''UPDATE account_team_draft
             SET team_name = %s
             WHERE id = %s
             RETURNING id, team_name'''
@@ -629,7 +629,7 @@ def add_player_to_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_player(account_team_id, player_id, player_location)
+    query = '''INSERT INTO account_player_draft (account_team_draft_id, player_id, player_location)
             VALUES (%s, %s, %s)'''
     try:
         database_cursor.execute(query, (team_id, player_id, player_location))
@@ -647,7 +647,7 @@ def add_goalie_to_team():
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
-    query = '''INSERT INTO account_goalie(account_team_id, goalie_id)
+    query = '''INSERT INTO account_goalie_draft(account_team_draft_id, goalie_id)
             VALUES (%s, %s)'''
     try:
         database_cursor.execute(query, (team_id, goalie_id))

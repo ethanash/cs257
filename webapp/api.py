@@ -32,6 +32,9 @@ def help():
     /clubs - will show all clubs
     /nationalities - will show all nationalities
     /goalies - will show all goalies
+
+    other endpoints are used to create, delete, and store teams
+    as well as add players to teams to display them
     ''')
 
 @api.route('/names')
@@ -664,10 +667,10 @@ def delete_team(mode):
     database_cursor = database_connection.cursor()
 
     if mode == 'draft':
-        query = '''DELETE FROM account_player_draft 
+        query = '''DELETE FROM account_player_draft
                 WHERE account_team_id = %s'''
     else:
-         query = '''DELETE FROM account_player_sandbox 
+         query = '''DELETE FROM account_player_sandbox
                 WHERE account_team_id = %s'''
 
     try:

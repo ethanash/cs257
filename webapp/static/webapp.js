@@ -9,215 +9,6 @@ var continueFunc = true;
 var continueFunc2 = true;
 var continueFunc3 = true;
 
-//––––––––––––––––––––––––––– Filter Functions –––––––––––––––––––––––––––
-
-function changeFilters(position) {
-    if (position == "GK") {
-        var firstStatMin = document.getElementById("minPace");
-        firstStatMin.innerHTML = "Min Diving:";
-        firstStatMin.setAttribute("id", "minDiving");
-        var firstStatMax = document.getElementById("maxPace");
-        firstStatMax.innerHTML = "Max Diving:";
-        firstStatMax.setAttribute("id", "maxDiving");
-
-        var secondStatMin = document.getElementById("minShooting");
-        secondStatMin.innerHTML = "Min Handling:";
-        secondStatMin.setAttribute("id", "minHandling");
-        var secondStatMax = document.getElementById("maxShooting");
-        secondStatMax.innerHTML = "Max Handling:";
-        secondStatMax.setAttribute("id", "maxHandling");
-
-        var thirdStatMin = document.getElementById("minPassing");
-        thirdStatMin.innerHTML = "Min Kicking:";
-        thirdStatMin.setAttribute("id", "minKicking");
-        var thirdStatMax = document.getElementById("maxPassing");
-        thirdStatMax.innerHTML = "Max Kicking:";
-        thirdStatMax.setAttribute("id", "maxKicking");
-
-        var fourthStatMin = document.getElementById("minDribbling");
-        fourthStatMin.innerHTML = "Min Reflexes:";
-        fourthStatMin.setAttribute("id", "minReflexes");
-        var fourthStatMax = document.getElementById("maxDribbling");
-        fourthStatMax.innerHTML = "Max Reflexes:";
-        fourthStatMax.setAttribute("id", "maxReflexes");
-
-        var fifthStatMin = document.getElementById("minDefense");
-        fifthStatMin.innerHTML = "Min Speed:";
-        fifthStatMin.setAttribute("id", "minSpeed");
-        var fifthStatMax = document.getElementById("maxDefense");
-        fifthStatMax.innerHTML = "Max Speed:";
-        fifthStatMax.setAttribute("id", "maxSpeed");
-
-        var sixthStatMin = document.getElementById("minPhysicality");
-        sixthStatMin.innerHTML = "Min Positioning:";
-        sixthStatMin.setAttribute("id", "minPositioning");
-        var sixthStatMax = document.getElementById("maxPhysicality");
-        sixthStatMax.innerHTML = "Max Positioning:";
-        sixthStatMax.setAttribute("id", "maxPositioning");
-    }
-
-    else if (position != "GK") {
-        var firstStatMin = document.getElementById("minDiving");
-        firstStatMin.innerHTML = "Min Pace:";
-        firstStatMin.setAttribute("id", "minPace");
-        var firstStatMax = document.getElementById("maxDiving");
-        firstStatMax.innerHTML = "Max Pace:";
-        firstStatMax.setAttribute("id", "maxPace");
-
-        var secondStatMin = document.getElementById("minHandling");
-        secondStatMin.innerHTML = "Min Shooting:";
-        secondStatMin.setAttribute("id", "minShooting");
-        var secondStatMax = document.getElementById("maxHandling");
-        secondStatMax.innerHTML = "Max Shooting:";
-        secondStatMax.setAttribute("id", "maxShooting");
-
-        var thirdStatMin = document.getElementById("minKicking");
-        thirdStatMin.innerHTML = "Min Passing:";
-        thirdStatMin.setAttribute("id", "minPassing");
-        var thirdStatMax = document.getElementById("maxKicking");
-        thirdStatMax.innerHTML = "Max Passing:";
-        thirdStatMax.setAttribute("id", "maxPassing");
-
-        var fourthStatMin = document.getElementById("minReflexes");
-        fourthStatMin.innerHTML = "Min Dribbling:";
-        fourthStatMin.setAttribute("id", "minDribbling");
-        var fourthStatMax = document.getElementById("maxReflexes");
-        fourthStatMax.innerHTML = "Max Dribbling:";
-        fourthStatMax.setAttribute("id", "maxDribbling");
-
-        var fifthStatMin = document.getElementById("minSpeed");
-        fifthStatMin.innerHTML = "Min Defense:";
-        fifthStatMin.setAttribute("id", "minDefense");
-        var fifthStatMax = document.getElementById("maxSpeed");
-        fifthStatMax.innerHTML = "Max Defense:";
-        fifthStatMax.setAttribute("id", "maxDefense");
-
-        var sixthStatMin = document.getElementById("minPositioning");
-        sixthStatMin.innerHTML = "Min Physicality:";
-        sixthStatMin.setAttribute("id", "minPhysicality");
-        var sixthStatMax = document.getElementById("maxPositioning");
-        sixthStatMax.innerHTML = "Max Physicality:";
-        sixthStatMax.setAttribute("id", "maxPhysicality");
-    }
-}
-
-function searchPreferredFeet() {
-    var feet = ["Right", "Left"];
-    for (var foot in feet) {
-        var optionElement = document.createElement("option");
-        optionElement.value = feet[foot];
-        document.getElementById("feet").appendChild(optionElement);
-  }
-}
-
-function searchNames() {
-    var name_array = [];
-
-    var url = getAPIBaseURL() + '/names';
-    console.log(url);
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(names) {
-        for (var name of names) {
-            var player_name = name['name'];
-            name_array.push(player_name);
-        }
-        for (var name in name_array) {
-            var optionElement = document.createElement("option");
-            optionElement.value = name_array[name];
-            document.getElementById("names").appendChild(optionElement);
-        }
-    })
-    .catch(function(error) {
-    console.log(error);
-    });
-}
-
-function searchLeagues() {
-    var league_array = [];
-
-    var url = getAPIBaseURL() + '/leagues';
-    console.log(url);
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(leagues) {
-        for (var league of leagues) {
-            var league_name = league['league'];
-            league_array.push(league_name);
-        }
-        for (var league in league_array) {
-            var optionElement = document.createElement("option");
-            optionElement.value = league_array[league];
-            document.getElementById("leagues").appendChild(optionElement);
-        }
-    })
-    .catch(function(error) {
-    console.log(error);
-    });
-}
-
-function searchClubs() {
-    var club_array = [];
-
-    var url = getAPIBaseURL() + '/clubs';
-    console.log(url);
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(clubs) {
-        for (var club of clubs) {
-            var club_name = club['club'];
-            club_array.push(club_name);
-        }
-        for (var club in club_array) {
-            var optionElement = document.createElement("option");
-            optionElement.value = club_array[club];
-            document.getElementById("clubs").appendChild(optionElement);
-        }
-    })
-    .catch(function(error) {
-    console.log(error);
-    });
-}
-
-function searchNationalities() {
-    var nationality_array = [];
-
-    var url = getAPIBaseURL() + '/nationalities';
-    console.log(url);
-    fetch(url, {method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(nationalities) {
-        for (var nationality of nationalities) {
-            var nationality_name = nationality['nationality'];
-            nationality_array.push(nationality_name);
-        }
-        for (var nationality in nationality_array) {
-            var optionElement = document.createElement("option");
-            optionElement.value = nationality_array[nationality];
-            document.getElementById("nationalities").appendChild(optionElement);
-        }
-    })
-    .catch(function(error) {
-    console.log(error);
-    });
-}
-
-
-
-function displayPlayerStats(card, player) {
-    var displayPlayerStats = card.getElementById('displayPlayerStats')[0];
-    stats.innerHTML = player['nationality'] + player['league'] + player['club'] + String(player['weak_foot'])
-    + '/5' + String(player['skill_moves']) + '/5' + player['preferred_foot'] + player['age'];
-}
-
 function initialize() {
     if (location.href.split("/").slice(-1)[0] !== "sandbox") {
         isDraft = true;
@@ -237,6 +28,14 @@ function initialize() {
         searchNames();
     }
 
+}
+
+//––––––––––––––––––––––––––– Overlapping Draft/Search Functions –––––––––––––––––––––––––––
+
+function displayPlayerStats(card, player) {
+    var displayPlayerStats = card.getElementById('displayPlayerStats')[0];
+    stats.innerHTML = player['nationality'] + player['league'] + player['club'] + String(player['weak_foot'])
+    + '/5' + String(player['skill_moves']) + '/5' + player['preferred_foot'] + player['age'];
 }
 
 function fillInTeamSelector() {
@@ -483,8 +282,6 @@ function displayTeam(){
                 fieldLocation.setAttribute("class", "active-card");
                 var positionDiv = fieldLocation.getElementsByClassName("player-position")[0];
                 var overallRatingDiv = fieldLocation.getElementsByClassName("player-overall-rating")[0];
-                // var nationalityDiv = fieldLocation.getElementsByClassName("player-nationality")[0];
-                // var clubDiv = fieldLocation.getElementsByClassName("player-position")[0];
                 var nameDiv = fieldLocation.getElementsByClassName("player-name")[0];
                 var paceDiv = fieldLocation.getElementsByClassName("player-pace")[0];
                 var shootingDiv = fieldLocation.getElementsByClassName("player-shooting")[0];
@@ -510,15 +307,6 @@ function displayTeam(){
                 var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
                 popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'] + '/5';
 
-                // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
-
-                // positionsPlayed = player['position'].split(",");
-                // relevantPosition = positionsPlayed[0];
-                // for (var pos of positionsPlayed) {
-                //     if (pos == fieldLocation.getAttribute("position")) {
-                //         relevantPosition = pos;
-                //     }
-                // }
                 positionDiv.innerHTML = position;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
@@ -883,13 +671,9 @@ function draft(position, positionIndex) {
                 var card = playerListElement.children[i];
                 var player = players[i];
                 card.setAttribute("class", "active-card");
-                //card.setAttribute("onmouseover", displayPlayerStats(this, player));
-
 
                 var positionDiv = card.getElementsByClassName("player-position")[0];
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
-                // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-                // var clubDiv = card.getElementsByClassName("player-position")[0];
                 var nameDiv = card.getElementsByClassName("player-name")[0];
                 var paceDiv = card.getElementsByClassName("player-pace")[0];
                 var shootingDiv = card.getElementsByClassName("player-shooting")[0];
@@ -914,16 +698,7 @@ function draft(position, positionIndex) {
                 popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'];
                 var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
                 popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'];
-                // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                // var positionsPlayed = player['position'].split(", ");
-                // console.log(positionsPlayed);
-                // var relevantPosition = positionsPlayed[0];
-                // for (var pos of positionsPlayed) {
-                //     if (pos == position) {
-                //         relevantPosition = pos;
-                //     }
-                // }
                 positionDiv.innerHTML = position;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
@@ -976,8 +751,6 @@ function goalieDraft(position, positionIndex) {
                 var goalie = goalies[i];
 
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
-                // var nationalityDiv = card.getElementsByClassName("goalie-nationality")[0];
-                // var clubDiv = card.getElementsByClassName("goalie-position")[0];
                 var positionDiv = card.getElementsByClassName("player-position")[0];
                 var nameDiv = card.getElementsByClassName("goalie-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
@@ -1001,7 +774,6 @@ function goalieDraft(position, positionIndex) {
                 popupPreferredFoot.innerHTML = "Preferred Foot: " + goalie['preferred_foot'];
                 var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
                 popupWeakFoot.innerHTML = "Weak Foot Ability: " + goalie['weak_foot'];
-                // var leagueDiv = card.getElementsByClassName("goalie-position")[0];
 
                 positionDiv.innerHTML = 'GK';
                 overallRatingDiv.innerHTML = goalie['overall'];
@@ -1051,7 +823,6 @@ function makeSelectionsClickableSandbox() {
     }
 }
 
-
 function onDraftSelection(obj){
     var playerId = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
@@ -1073,9 +844,6 @@ function onDraftSelection(obj){
     }
 }
 
-<<<<<<< HEAD
-//––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––
-=======
 function onPlayerSelection(obj){
     var playerId = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
@@ -1098,7 +866,6 @@ function onPlayerSelection(obj){
 }
 
 //'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
->>>>>>> f5ee6f2bf66e697f4a88d56984cd7cab83baf7d7
 
 function playerSearch(event){
     event.preventDefault();
@@ -1151,8 +918,7 @@ function playerSearch(event){
 
                     var positionDiv = card.getElementsByClassName("player-position")[0];
                     var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
-                    // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-                    // var clubDiv = card.getElementsByClassName("player-position")[0];
+
                     var nameDiv = card.getElementsByClassName("player-name")[0];
                     var paceDiv = card.getElementsByClassName("player-pace")[0];
                     var shootingDiv = card.getElementsByClassName("player-shooting")[0];
@@ -1177,7 +943,6 @@ function playerSearch(event){
                     popupWeakFoot.innerHTML = "Weak Foot Ability: " + player['weak_foot'] + '/5';
                     var popupSkillMoves = popup.getElementsByClassName("popupSkillMoves")[0];
                     popupSkillMoves.innerHTML = "Skill Moves: " + player['skill_moves'] + '/5';
-                    // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                     var positionsPlayed = player['position'].split(",");
                     var relevantPosition = positionsPlayed[0];
@@ -1207,7 +972,6 @@ function playerSearch(event){
 
                     card.setAttribute("playerid", player["player_id"]);
                     card.setAttribute("id", "draft-selections");
-                    //makeSelectionsClickable();
                     makeSelectionsClickableSandbox()
                 }
             }
@@ -1266,8 +1030,6 @@ function goalieSearch(event){
                 var goalie = goalies[i];
 
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
-                // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-                // var clubDiv = card.getElementsByClassName("player-position")[0];
                 var positionDiv = card.getElementsByClassName("player-position")[0];
                 var nameDiv = card.getElementsByClassName("goalie-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
@@ -1291,7 +1053,6 @@ function goalieSearch(event){
                 popupPreferredFoot.innerHTML = "Preferred Foot: " + goalie['preferred_foot'];
                 var popupWeakFoot = popup.getElementsByClassName("popupWeakFoot")[0];
                 popupWeakFoot.innerHTML = "Weak Foot Ability: " + goalie['weak_foot'];
-                // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
                 positionDiv.innerHTML = goalie['position'];
                 overallRatingDiv.innerHTML = goalie['overall'];
@@ -1338,4 +1099,203 @@ function createSearchCards(position){
             }
         }
     }
+}
+
+function changeFilters(position) {
+    if (position == "GK") {
+        var firstStatMin = document.getElementById("minPace");
+        firstStatMin.innerHTML = "Min Diving:";
+        firstStatMin.setAttribute("id", "minDiving");
+        var firstStatMax = document.getElementById("maxPace");
+        firstStatMax.innerHTML = "Max Diving:";
+        firstStatMax.setAttribute("id", "maxDiving");
+
+        var secondStatMin = document.getElementById("minShooting");
+        secondStatMin.innerHTML = "Min Handling:";
+        secondStatMin.setAttribute("id", "minHandling");
+        var secondStatMax = document.getElementById("maxShooting");
+        secondStatMax.innerHTML = "Max Handling:";
+        secondStatMax.setAttribute("id", "maxHandling");
+
+        var thirdStatMin = document.getElementById("minPassing");
+        thirdStatMin.innerHTML = "Min Kicking:";
+        thirdStatMin.setAttribute("id", "minKicking");
+        var thirdStatMax = document.getElementById("maxPassing");
+        thirdStatMax.innerHTML = "Max Kicking:";
+        thirdStatMax.setAttribute("id", "maxKicking");
+
+        var fourthStatMin = document.getElementById("minDribbling");
+        fourthStatMin.innerHTML = "Min Reflexes:";
+        fourthStatMin.setAttribute("id", "minReflexes");
+        var fourthStatMax = document.getElementById("maxDribbling");
+        fourthStatMax.innerHTML = "Max Reflexes:";
+        fourthStatMax.setAttribute("id", "maxReflexes");
+
+        var fifthStatMin = document.getElementById("minDefense");
+        fifthStatMin.innerHTML = "Min Speed:";
+        fifthStatMin.setAttribute("id", "minSpeed");
+        var fifthStatMax = document.getElementById("maxDefense");
+        fifthStatMax.innerHTML = "Max Speed:";
+        fifthStatMax.setAttribute("id", "maxSpeed");
+
+        var sixthStatMin = document.getElementById("minPhysicality");
+        sixthStatMin.innerHTML = "Min Positioning:";
+        sixthStatMin.setAttribute("id", "minPositioning");
+        var sixthStatMax = document.getElementById("maxPhysicality");
+        sixthStatMax.innerHTML = "Max Positioning:";
+        sixthStatMax.setAttribute("id", "maxPositioning");
+    }
+
+    else if (position != "GK") {
+        var firstStatMin = document.getElementById("minDiving");
+        firstStatMin.innerHTML = "Min Pace:";
+        firstStatMin.setAttribute("id", "minPace");
+        var firstStatMax = document.getElementById("maxDiving");
+        firstStatMax.innerHTML = "Max Pace:";
+        firstStatMax.setAttribute("id", "maxPace");
+
+        var secondStatMin = document.getElementById("minHandling");
+        secondStatMin.innerHTML = "Min Shooting:";
+        secondStatMin.setAttribute("id", "minShooting");
+        var secondStatMax = document.getElementById("maxHandling");
+        secondStatMax.innerHTML = "Max Shooting:";
+        secondStatMax.setAttribute("id", "maxShooting");
+
+        var thirdStatMin = document.getElementById("minKicking");
+        thirdStatMin.innerHTML = "Min Passing:";
+        thirdStatMin.setAttribute("id", "minPassing");
+        var thirdStatMax = document.getElementById("maxKicking");
+        thirdStatMax.innerHTML = "Max Passing:";
+        thirdStatMax.setAttribute("id", "maxPassing");
+
+        var fourthStatMin = document.getElementById("minReflexes");
+        fourthStatMin.innerHTML = "Min Dribbling:";
+        fourthStatMin.setAttribute("id", "minDribbling");
+        var fourthStatMax = document.getElementById("maxReflexes");
+        fourthStatMax.innerHTML = "Max Dribbling:";
+        fourthStatMax.setAttribute("id", "maxDribbling");
+
+        var fifthStatMin = document.getElementById("minSpeed");
+        fifthStatMin.innerHTML = "Min Defense:";
+        fifthStatMin.setAttribute("id", "minDefense");
+        var fifthStatMax = document.getElementById("maxSpeed");
+        fifthStatMax.innerHTML = "Max Defense:";
+        fifthStatMax.setAttribute("id", "maxDefense");
+
+        var sixthStatMin = document.getElementById("minPositioning");
+        sixthStatMin.innerHTML = "Min Physicality:";
+        sixthStatMin.setAttribute("id", "minPhysicality");
+        var sixthStatMax = document.getElementById("maxPositioning");
+        sixthStatMax.innerHTML = "Max Physicality:";
+        sixthStatMax.setAttribute("id", "maxPhysicality");
+    }
+}
+
+function searchPreferredFeet() {
+    var feet = ["Right", "Left"];
+    for (var foot in feet) {
+        var optionElement = document.createElement("option");
+        optionElement.value = feet[foot];
+        document.getElementById("feet").appendChild(optionElement);
+  }
+}
+
+function searchNames() {
+    var name_array = [];
+
+    var url = getAPIBaseURL() + '/names';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(names) {
+        for (var name of names) {
+            var player_name = name['name'];
+            name_array.push(player_name);
+        }
+        for (var name in name_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = name_array[name];
+            document.getElementById("names").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
+
+function searchLeagues() {
+    var league_array = [];
+
+    var url = getAPIBaseURL() + '/leagues';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(leagues) {
+        for (var league of leagues) {
+            var league_name = league['league'];
+            league_array.push(league_name);
+        }
+        for (var league in league_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = league_array[league];
+            document.getElementById("leagues").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
+
+function searchClubs() {
+    var club_array = [];
+
+    var url = getAPIBaseURL() + '/clubs';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(clubs) {
+        for (var club of clubs) {
+            var club_name = club['club'];
+            club_array.push(club_name);
+        }
+        for (var club in club_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = club_array[club];
+            document.getElementById("clubs").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
+
+function searchNationalities() {
+    var nationality_array = [];
+
+    var url = getAPIBaseURL() + '/nationalities';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(nationalities) {
+        for (var nationality of nationalities) {
+            var nationality_name = nationality['nationality'];
+            nationality_array.push(nationality_name);
+        }
+        for (var nationality in nationality_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = nationality_array[nationality];
+            document.getElementById("nationalities").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
 }

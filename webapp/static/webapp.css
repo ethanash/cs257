@@ -123,10 +123,10 @@ body {
     margin-top: 15px;
 }
 
-.active-card:hover img {
+/* .active-card:hover img {
     position: relative;
     background-color: black;
-}
+} */
 
 .active-goalie-card img{
     position: absolute;
@@ -332,6 +332,6 @@ body {
 }
 
 .active-card:hover + .hide {
-    display: grid;
+    display: block;
     color: red;
 }

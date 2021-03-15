@@ -20,24 +20,20 @@ var continueFunc = true;
 //     }
 // }
 
-// function displayPlayerStats(card, player) {
-//     var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
-//     var leagueDiv = card.getElementsByClassName("player-league")[0];
-//     var clubDiv = card.getElementsByClassName("player-club")[0];
-//     var weakFootDiv = card.getElementsByClassName("player-weak-foot")[0];
-//     var skillMovesDiv = card.getElementsByClassName("player-skill-moves")[0];
-//     var preferredFootDiv = card.getElementsByClassName("player-preferred-foot")[0];
-//     var ageDiv = card.getElementsByClassName("player-age")[0];
-//
-//     nationalityDiv.innerHTML = player['nationality'];
-//     leagueDiv.innerHTML = player['league'];
-//     clubDiv.innerHTML = player['club'];
-//     weakFootDiv.innerHTML = player['weak_foot'];
-//     skillMovesDiv.innerHTML = player['skill_moves'];
-//     preferredFootDiv.innerHTML = player['preferred_foot'];
-//     ageDiv.innerHTML = player['age'];
-// }
-//
+function displayPlayerStats(card, player) {
+    var displayPlayerStats = card.getElementById('displayPlayerStats')[0];
+    // var nationalityDiv = card.getElementsByClassName("hide")[0];
+    // var leagueDiv = card.getElementsByClassName("player-league")[0];
+    // var clubDiv = card.getElementsByClassName("player-club")[0];
+    // var weakFootDiv = card.getElementsByClassName("player-weak-foot")[0];
+    // var skillMovesDiv = card.getElementsByClassName("player-skill-moves")[0];
+    // var preferredFootDiv = card.getElementsByClassName("player-preferred-foot")[0];
+    // var ageDiv = card.getElementsByClassName("player-age")[0];
+
+    stats.innerHTML = player['nationality'] + player['league'] + player['club'] + String(player['weak_foot'])
+    + String(player['skill_moves']) + player['preferred_foot'] + player['age'];
+}
+
 // function displayGoalieStats(card) {
 //     var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
 //     var leagueDiv = card.getElementsByClassName("player-league")[0];
@@ -427,7 +423,7 @@ function setInactiveCard(card){
                     "<div class='player-physical'></div>" +
                     "<div class='player-league'></div>" +
                     "<img class='player-image' src='https://www.freeiconspng.com/uploads/plus-sign-icon-31.png'>" +
-                    "<div class='hide'></div>";
+                    "<div class='hide' id='displayPlayerStats'></div>";
     card.innerHTML = htmlContents;
 }
 

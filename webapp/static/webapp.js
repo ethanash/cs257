@@ -55,10 +55,11 @@ function fillInPositionSelector(){
     var innerHTML = "";
     for (var card of playerField.children) {
         var className = card.getAttribute("class");
-        if (className == "inactive-card") {
+        if (className == "inactive-card" || className =='inactive-goalie-card') {
             var position = card.getAttribute("position");
             innerHTML = innerHTML + '<option value="' + position + '">' + position + '</option>';
         }
+
     }
     positionSelector.innerHTML = innerHTML;
 }
@@ -207,6 +208,7 @@ function displayTeam(){
             }
             var query = '[positionindex="' + player["location"] + '"]'
             var fieldLocation = playerField.querySelectorAll(query)[0];
+            var position = fieldLocation.getAttribute("position");
 
             if(fieldLocation.getAttribute("class") == "inactive-card"){
                 fieldLocation.setAttribute("class", "active-card");
@@ -224,14 +226,14 @@ function displayTeam(){
                 var playerImage = fieldLocation.getElementsByClassName("player-image")[0];
                 // var leagueDiv = fieldLocation.getElementsByClassName("player-position")[0];
 
-                positionsPlayed = player['position'].split(",");
-                relevantPosition = positionsPlayed[0];
-                for (var pos of positionsPlayed) {
-                    if (pos == fieldLocation.getAttribute("position")) {
-                        relevantPosition = pos;
-                    }
-                }
-                positionDiv.innerHTML = relevantPosition;
+                // positionsPlayed = player['position'].split(",");
+                // relevantPosition = positionsPlayed[0];
+                // for (var pos of positionsPlayed) {
+                //     if (pos == fieldLocation.getAttribute("position")) {
+                //         relevantPosition = pos;
+                //     }
+                // }
+                positionDiv.innerHTML = position;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
                 paceDiv.innerHTML = player['pace'];
@@ -538,8 +540,10 @@ function draft(position, positionIndex) {
         if(playerListElement){
             for (var i = 0; i < 6; i++) {
                 var card = playerListElement.children[i];
-                card.setAttribute("class", "active-card");
                 var player = players[i];
+                card.setAttribute("class", "active-card");
+                card.setAttribute("onhover", "displayStats(this, player)");
+
 
                 var positionDiv = card.getElementsByClassName("player-position")[0];
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
@@ -555,14 +559,15 @@ function draft(position, positionIndex) {
                 var playerImage = card.getElementsByClassName("player-image")[0];
                 // var leagueDiv = card.getElementsByClassName("player-position")[0];
 
-                var positionsPlayed = player['position'].split(",");
-                var relevantPosition = positionsPlayed[0];
-                for (var pos of positionsPlayed) {
-                    if (pos == position) {
-                        relevantPosition = pos;
-                    }
-                }
-                positionDiv.innerHTML = relevantPosition;
+                // var positionsPlayed = player['position'].split(", ");
+                // console.log(positionsPlayed);
+                // var relevantPosition = positionsPlayed[0];
+                // for (var pos of positionsPlayed) {
+                //     if (pos == position) {
+                //         relevantPosition = pos;
+                //     }
+                // }
+                positionDiv.innerHTML = position;
                 overallRatingDiv.innerHTML = player['overall'];
                 nameDiv.innerHTML = player['name'];
                 paceDiv.innerHTML = player['pace'];
@@ -571,6 +576,7 @@ function draft(position, positionIndex) {
                 dribblingDiv.innerHTML = player['dribbling'];
                 defenseDiv.innerHTML = player['defense'];
                 physicalDiv.innerHTML = player['physicality'];
+
 
                 var sofifa_id = player["sofifa_id"].toString();
                 while (sofifa_id.length < 6) {
@@ -758,16 +764,19 @@ function playerSearch(event){
     event.preventDefault();
     var position = event.target.elements.position.value;
     var name = event.target.elements.name.value;
+    var league = event.target.elements.league.value;
     var club = event.target.elements.club.value;
+    var nationality = event.target.elements.nationality.value;
 
-    if(position = 'GK'){
+    if(position == 'GK'){
         goalieSearch(event);
     }
 
     else {
         createSearchCards(position);
 
-        var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club+ '&position=' + position;
+        var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club + '&position=' + position
+        + '&league=' + league + '&nationality=' + nationality;
         console.log(url);
         fetch(url, {method: 'get'})
 
@@ -852,12 +861,13 @@ function goalieSearch(event){
         if(goalieListElement){
             for (var i = 0; i < goalies.length; i++) {
                 var card = goalieListElement.children[i];
-                card.setAttribute("class", "active-card");
+                card.setAttribute("class", "active-goalie-card");
                 var goalie = goalies[i];
 
                 var overallRatingDiv = card.getElementsByClassName("player-overall-rating")[0];
                 // var nationalityDiv = card.getElementsByClassName("player-nationality")[0];
                 // var clubDiv = card.getElementsByClassName("player-position")[0];
+                var positionDiv = card.getElementsByClassName("player-position")[0];
                 var nameDiv = card.getElementsByClassName("player-name")[0];
                 var divingDiv = card.getElementsByClassName("goalie-diving")[0];
                 var reflexesDiv = card.getElementsByClassName("goalie-reflexes")[0];

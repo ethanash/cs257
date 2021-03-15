@@ -3282,7 +3282,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 147	225100	J. Gomez	Joe Gomez	23	CB	83	82	30	66	69	83	80	3	3	5	7	13	Right
 148	225953	S. Bergwijn	Steven Bergwijn	22	LM, LW, RM	83	87	79	78	85	39	72	4	2	5	9	9	Right
 149	228618	F. Mendy	Ferland Mendy	25	LB	83	92	64	76	79	78	82	4	5	1	8	7	Left
-150	229880	A. Wan-Bissaka	Aaron Wan-Bissaka	22	RB, RWB	83	86	51	68	80	82	74	4	2	5	14	13	Right
+150	229880	A. Wan-Bissaka	Aaron Wan-Bissaka	22	RB, RB	83	86	51	68	80	82	74	4	2	5	14	13	Right
 151	235212	A. Hakimi	Achraf Hakimi Mouh	21	RM	83	94	70	76	82	72	76	3	2	2	10	24	Right
 152	210413	A. Romagnoli	Alessio Romagnoli	25	CB	83	70	40	56	69	85	78	2	3	2	21	15	Left
 153	211117	D. Alli	Bamidele Alli	24	CAM, CM	83	72	80	79	83	71	79	4	3	5	9	13	Right
@@ -3367,7 +3367,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 253	186561	A. Ramsey	Aaron Ramsey	29	CM, CAM	82	68	77	79	80	68	73	3	3	2	2	38	Right
 254	190286	Canales	Sergio Canales Madrazo	29	CM, LM, RM	82	78	80	83	83	65	68	4	3	1	37	12	Left
 255	190815	D. Blind	Daley Blind	30	CB, CDM, LB	82	54	65	81	78	83	73	3	3	7	26	9	Left
-256	193525	Mário Fernandes	Mário Figueira Fernandes	29	RWB, RM	82	82	61	74	79	79	79	3	3	13	61	45	Right
+256	193525	Mário Fernandes	Mário Figueira Fernandes	29	RB, RM	82	82	61	74	79	79	79	3	3	13	61	45	Right
 259	198329	Rodrigo	Rodrigo Moreno Machado	29	ST	82	91	79	76	81	44	71	4	3	5	63	12	Left
 260	198710	J. Rodríguez	James David Rodríguez Rubio	28	CAM, CM, RM	82	53	86	85	86	50	63	4	2	5	27	42	Left
 261	200888	Danilo Pereira	Danilo Luís Hélio Pereira	28	CDM, CM	82	66	63	72	73	80	85	3	3	6	28	2	Right
@@ -3440,7 +3440,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 345	200260	S. Berghuis	Steven Berghuis	28	RW	81	80	80	83	82	36	64	4	3	7	82	9	Left
 346	200610	K. Volland	Kevin Volland	27	ST, RW, LW	81	73	84	79	79	41	84	3	4	4	33	8	Left
 347	201119	Ismaily	Ismaily Gonçalves dos Santos	30	LB	81	82	64	74	81	75	75	4	3	18	79	5	Left
-348	201417	M. Doherty	Matt Doherty	28	RWB, RB	81	72	64	73	75	76	79	3	4	5	9	52	Right
+348	201417	M. Doherty	Matt Doherty	28	RB, RB	81	72	64	73	75	76	79	3	4	5	9	52	Right
 349	201995	Felipe Anderson	Felipe Anderson Pereira Gomes	27	LM, CAM	81	89	75	78	86	55	60	4	4	5	64	5	Right
 350	202371	T. Meunier	Thomas Meunier	28	RB, RM	81	77	73	76	74	77	84	3	4	3	13	6	Right
 351	202651	Suso	Jesús Joaquín Fernández Sáez de la Torre	26	RW, CAM	81	76	75	82	86	33	53	4	3	1	29	12	Left
@@ -3461,7 +3461,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 366	230430	Oswaldinato	Marvin Oswaldo Rangel Azevedo	28	ST	81	76	81	67	77	20	78	2	3	12	89	5	Right
 367	238794	Vinícius Jr.	Vinícius José Paixão de Oliveira Júnior	19	LW	80	95	69	71	87	29	66	5	4	1	8	5	Right
 368	224232	N. Barella	Nicolò Barella	23	CM, CAM	80	78	67	79	82	74	72	3	3	2	10	15	Right
-369	226166	N. Mukiele	Nordi Mukiele Mulere	22	RB, CB, RWB	80	83	42	69	72	80	77	3	3	3	23	7	Right
+369	226166	N. Mukiele	Nordi Mukiele Mulere	22	RB, CB, RB	80	83	42	69	72	80	77	3	3	3	23	7	Right
 370	233064	M. Mount	Mason Mount	21	CAM, CM, LW	80	74	77	79	80	48	61	3	4	5	12	13	Right
 372	235569	T. Ndombele	Tanguy Ndombèlé Alvaro	23	CM, CDM	80	74	66	80	87	69	72	4	3	5	9	7	Right
 373	240130	Éder Militão	Éder Gabriel Militão	22	CB, RB	80	78	50	66	71	81	81	2	2	1	8	5	Right
@@ -3472,9 +3472,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 379	232411	C. Nkunku	Christopher Nkunku	22	CAM, ST	80	78	74	80	85	69	65	4	3	3	23	7	Right
 380	241095	N. Vlašić	Nikola Vlašić	22	CAM	80	83	75	76	82	48	71	3	5	13	61	17	Right
 382	244369	V. Tsygankov	Viktor Tsygankov	22	RM	80	85	73	78	80	45	57	4	4	18	91	51	Left
-383	203747	Héctor Bellerín	Héctor Bellerín Moruno	25	RB, RWB	80	85	51	70	77	76	65	3	2	5	15	12	Right
+383	203747	Héctor Bellerín	Héctor Bellerín Moruno	25	RB, RB	80	85	51	70	77	76	65	3	2	5	15	12	Right
 384	220651	Angeliño	José Ángel Esmoris Tasende	23	LB	80	73	66	80	81	75	72	4	3	3	23	12	Left
-385	222331	L. Klostermann	Lukas Klostermann	24	CB, RB, RWB	80	84	51	66	71	82	77	2	3	3	23	8	Right
+385	222331	L. Klostermann	Lukas Klostermann	24	CB, RB, RB	80	84	51	66	71	82	77	2	3	3	23	8	Right
 386	222509	Dani Ceballos	Daniel Ceballos Fernández	23	CM, CAM	80	69	70	79	83	69	70	4	3	5	15	12	Right
 387	227813	O. Zinchenko	Oleksandr Zinchenko	23	LB	80	73	66	81	80	77	69	3	3	5	6	51	Left
 388	229906	L. Bailey	Leon Bailey Butler	22	LM, RM	80	94	76	73	83	33	64	4	4	3	47	54	Left
@@ -3555,11 +3555,11 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 474	195859	D. Ings	Daniel William John Ings	27	ST	80	76	81	67	78	32	69	3	4	5	107	13	Right
 475	196432	E. Pérez	Enzo Nicolás Pérez	34	CDM, CM	80	68	69	77	77	77	79	3	4	14	84	1	Right
 476	197242	G. Krychowiak	Grzegorz Krychowiak	30	CDM, CM	80	68	76	72	71	76	81	3	3	13	108	4	Right
-477	197853	S. Aurier	Serge Aurier	27	RB, RWB	80	76	60	73	76	77	77	3	3	5	9	41	Right
+477	197853	S. Aurier	Serge Aurier	27	RB, RB	80	76	60	73	76	77	77	3	3	5	9	41	Right
 478	198141	Bartra	Marc Bartra Aregall	29	CB, CDM	80	72	61	72	73	80	74	3	3	1	37	12	Right
 479	198951	C. Bakambu	Cédric Bakambu	29	ST	80	90	80	72	77	36	77	4	3	9	40	60	Right
 481	202750	W. Boly	Willy Boly	29	CB	80	62	36	64	64	80	83	2	4	5	31	7	Right
-482	203605	P. Kadeřábek	Pavel Kadeřábek	28	RWB, RB, RM	80	74	43	74	75	74	81	3	2	3	62	44	Right
+482	203605	P. Kadeřábek	Pavel Kadeřábek	28	RB, RB, RM	80	74	43	74	75	74	81	3	2	3	62	44	Right
 483	203843	D. Suárez	Damián Nicolás Suárez Suárez	32	RB	80	75	69	74	75	78	79	3	3	1	57	16	Right
 484	203890	S. Vrsaljko	Šime Vrsaljko	28	RB	80	78	55	73	75	78	76	3	3	1	3	17	Right
 485	207566	William Carvalho	William Silva de Carvalho	28	CDM, CM	80	43	57	76	69	75	85	3	4	1	37	2	Right
@@ -3593,7 +3593,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 516	237942	P. Estupiñán	Pervis Josué Estupiñán Tenorio	22	LB	79	83	32	66	73	74	75	2	3	1	24	61	Left
 517	238476	D. Zagadou	Dan-Axel Zagadou	21	CB	79	59	34	61	50	81	81	2	3	3	13	7	Left
 518	241486	J. Koundé	Jules Koundé	21	CB	79	77	34	57	70	81	73	2	3	1	29	7	Right
-519	213956	Adama Traoré	Adama Traoré Diarra	24	RW, RWB	79	96	66	68	87	38	81	4	2	5	31	12	Right
+519	213956	Adama Traoré	Adama Traoré Diarra	24	RW, RB	79	96	66	68	87	38	81	4	2	5	31	12	Right
 520	224254	C. Pavón	Cristian David Pavón	24	LW, RW, LM	79	91	76	75	79	49	74	4	3	8	111	1	Right
 521	227535	R. Bentancur	Rodrigo Bentancur Colmán	23	CM	79	72	58	79	82	73	73	4	4	2	2	16	Right
 522	229167	M. Rashica	Milot Rashica	24	ST, LW, RW	79	88	79	74	84	46	65	4	4	3	59	62	Right
@@ -3616,7 +3616,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 541	205569	J. Ward-Prowse	James Ward-Prowse	25	CM	79	60	72	85	77	66	67	3	3	5	107	13	Right
 542	208920	N. Aké	Nathan Aké	25	CB	79	74	53	70	71	81	76	2	3	5	6	9	Left
 544	210625	K. Mbabu	Kevin Mbabu	25	RB	79	89	51	69	73	74	81	3	3	3	36	21	Right
-545	211147	V. Lazaro	Valentino Lazaro	24	RM, RWB, RB	79	82	70	76	80	69	67	4	3	3	19	34	Right
+545	211147	V. Lazaro	Valentino Lazaro	24	RM, RB, RB	79	82	70	76	80	69	67	4	3	3	19	34	Right
 547	220182	J. Denayer	Jason Denayer	25	CB	79	75	42	63	68	79	80	2	3	4	22	6	Right
 548	225663	A. Golovin	Aleksandr Golovin	24	CM, CAM	79	80	72	79	83	67	68	4	4	4	33	45	Right
 549	226456	Pablo Fornals	Pablo Fornals Malla	24	LM, CAM, RM	79	68	76	78	80	70	67	4	3	5	64	12	Right
@@ -3709,7 +3709,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 650	202935	Álvaro	Álvaro González Soberón	30	CB	79	68	33	57	58	80	79	2	3	4	38	12	Right
 651	203299	A. Carrillo	André Martín Carrillo Díaz	29	RM	79	87	74	72	83	37	68	4	4	10	98	66	Right
 652	203895	Pozuelo	Alejandro Pozuelo Melero	28	CAM, ST, ST	79	65	73	78	83	50	64	4	5	8	131	12	Right
-653	204105	K. Lala	Kenny Lala	28	RWB, RB, LB	79	79	63	76	76	73	76	3	3	4	117	7	Right
+653	204105	K. Lala	Kenny Lala	28	RB, RB, LB	79	79	63	76	76	73	76	3	3	4	117	7	Right
 654	204614	Mário Rui	Mário Rui Silva Duarte	29	LB	79	82	49	72	79	73	67	3	3	2	11	2	Left
 655	206304	L. Milivojević	Luka Milivojević	29	CDM, CM	79	54	67	76	67	77	82	2	2	5	49	22	Right
 601	203500	D. Rose	Danny Rose	29	LB, LB	79	75	61	72	76	77	72	3	3	5	9	13	Left
@@ -3724,7 +3724,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 665	215590	Ayoze Pérez	Ayoze Pérez Gutiérrez	26	RW, RM	79	78	75	71	82	58	66	4	4	5	20	12	Right
 666	216194	Dani García	Daniel García Carrillo	30	CM, CDM	79	48	69	73	74	79	83	3	3	1	43	12	Right
 667	216475	Morales	José Luis Morales Nogales	32	ST, LM, RM	79	86	78	75	84	58	68	4	4	1	48	12	Right
-668	219789	H. Traoré	Hamari Traoré	28	RB, RWB	79	82	54	72	76	73	76	3	3	4	66	67	Right
+668	219789	H. Traoré	Hamari Traoré	28	RB, RB	79	82	54	72	76	73	76	3	3	4	66	67	Right
 669	220132	Zaldúa	Joseba Zaldúa Bengoetxea	28	RB	79	69	34	67	66	78	76	2	3	1	18	12	Right
 670	222709	Petros	Petros Matheus dos Santos Araújo	31	CDM, CM	79	68	67	73	76	74	77	3	3	10	103	5	Right
 671	223578	Mata	Jaime Mata Arnaiz	31	ST	79	69	80	61	76	31	76	3	3	1	57	12	Right
@@ -3740,7 +3740,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 682	245302	E. Riquero	Enzo Martín Riquero	32	CDM, CM, CAM	79	81	57	72	76	78	74	2	4	19	85	16	Right
 684	244778	Trincão	Francisco António Machado Mota Castro Trincão	20	RW, LW, CAM	78	79	73	71	83	37	69	4	3	1	1	2	Left
 685	237678	I. Konaté	Ibrahima Konaté	21	CB	78	74	34	57	68	80	78	3	2	3	23	7	Right
-687	247204	Emerson	Emerson Aparecido Leite de Souza Junior	21	RB, RM, RWB	78	80	62	70	73	74	76	3	3	1	37	5	Right
+687	247204	Emerson	Emerson Aparecido Leite de Souza Junior	21	RB, RM, RB	78	80	62	70	73	74	76	3	3	1	37	5	Right
 688	247263	E. Tapsoba	Edmond Fayçal Tapsoba	21	CB	78	74	52	63	63	78	78	2	3	3	47	68	Right
 689	255475	Antony	Antony Matheus dos Santos	20	RW, LW	78	90	70	71	84	36	62	4	2	7	26	5	Left
 691	235353	I. Sarr	Ismaïla Sarr	22	RM	78	94	77	68	81	22	66	4	2	21	95	10	Right
@@ -3752,7 +3752,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 697	241464	Pau Torres	Pau Francisco Torres	23	CB	78	65	35	63	68	80	75	2	3	1	24	12	Left
 698	243282	D. McNeil	Dwight McNeil	20	LM	78	76	68	76	79	52	67	3	3	5	58	13	Left
 699	230767	Renato Sanches	Renato Júnior Luz Sanches	22	CM, RM, CDM	78	79	72	76	81	71	81	4	4	4	54	2	Right
-700	231340	G. Montiel	Gonzalo Ariel Montiel	23	RB, RWB	78	86	52	68	72	72	81	3	3	14	84	1	Right
+700	231340	G. Montiel	Gonzalo Ariel Montiel	23	RB, RB	78	86	52	68	72	72	81	3	3	14	84	1	Right
 701	231352	T. Abraham	Tammy Bakumo-Abraham	22	ST	78	74	78	59	72	31	70	3	3	5	12	13	Right
 702	231447	D. Malen	Donyell Malen	21	ST	78	90	77	65	81	29	71	4	3	7	83	9	Right
 703	232580	Gabriel	Gabriel dos Santos Magalhães	22	CB	78	55	36	59	55	79	78	2	2	5	15	5	Left
@@ -3814,17 +3814,17 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 766	198719	N. Redmond	Nathan Redmond	26	LM	78	83	72	72	82	30	52	4	3	5	107	13	Right
 767	201315	Pablo	Pablo Nascimento Castro	29	CB	78	52	52	53	61	79	79	2	2	4	124	5	Right
 768	202325	D. Demme	Diego Demme	28	CDM, CM	78	57	39	74	74	74	77	3	4	2	11	8	Right
-769	202429	D. da Costa	Danny Vieira da Costa	26	RWB, RM, RB	78	75	56	69	72	75	82	3	3	3	46	8	Right
+769	202429	D. da Costa	Danny Vieira da Costa	26	RB, RM, RB	78	75	56	69	72	75	82	3	3	3	46	8	Right
 770	205192	Denis Suárez	Denis Suárez Fernández	26	LW, LM, CM	78	75	72	78	81	61	56	3	3	1	32	12	Right
 771	207441	L. Vietto	Luciano Darío Vietto	26	LW, ST	78	77	75	75	82	45	63	3	4	6	80	1	Right
 772	207599	M. Keane	Michael Keane	27	CB	78	58	49	62	64	79	79	2	2	5	27	13	Right
 773	207993	S. Kolašinac	Sead Kolašinac	27	LB, LB	78	73	63	71	73	74	87	3	2	5	15	25	Left
 774	209973	J. Nsame	Jean-Pierre Nsame	27	ST	78	79	78	55	72	27	79	3	4	25	140	30	Right
 775	210287	J. Córdoba	Jhon Andrés Córdoba Copete	27	ST	78	78	78	61	74	44	87	3	3	3	119	42	Right
-776	212213	Ricardo Esgaio	Ricardo Sousa Esgaio	27	RWB, RW	78	73	67	75	79	70	68	4	4	6	114	2	Right
+776	212213	Ricardo Esgaio	Ricardo Sousa Esgaio	27	RB, RW	78	73	67	75	79	70	68	4	4	6	114	2	Right
 777	220093	H. Hateboer	Hans Hateboer	26	RM	78	83	64	72	77	76	76	3	3	2	17	9	Right
 778	223061	F. Cervi	Franco Emanuel Cervi	26	LM	78	92	65	70	84	58	56	4	3	6	25	1	Left
-779	223597	R. Aguilar	Ruben Aguilar	27	RB, RWB	78	80	53	70	76	74	72	3	3	4	33	7	Right
+779	223597	R. Aguilar	Ruben Aguilar	27	RB, RB	78	80	53	70	76	74	72	3	3	4	33	7	Right
 781	225997	B. Verbič	Benjamin Verbič	26	LM	78	83	72	72	80	43	73	4	3	18	91	3	Right
 782	230020	P. Lees-Melou	Pierre Lees-Melou	27	CM	78	68	74	78	78	68	74	4	4	4	67	7	Right
 783	230977	M. Almirón	Miguel Ángel Almirón Rejala	26	CAM, RM, LW	78	89	71	75	80	50	63	4	2	5	51	69	Left
@@ -3833,14 +3833,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 788	143001	C. Tévez	Carlos Alberto Tevez	36	ST, CAM, ST	78	68	81	74	78	45	77	4	3	14	68	1	Right
 789	143121	J. Sosa	José Ernesto Sosa	35	CM, CDM	78	69	70	82	80	66	65	4	4	11	104	1	Right
 791	154472	Jorge Molina	Jorge Molina Vidal	38	ST	78	36	82	67	70	42	73	3	4	1	113	12	Right
-792	158626	M. Debuchy	Mathieu Debuchy	34	RB, CB, RWB	78	67	67	73	74	77	72	3	3	4	75	7	Right
+792	158626	M. Debuchy	Mathieu Debuchy	34	RB, CB, RB	78	67	67	73	74	77	72	3	3	4	75	7	Right
 794	165109	�. Radu	Ştefan Daniel Radu	33	CB	78	61	64	65	68	83	69	3	3	2	16	70	Left
 795	166706	M. Škrtel	Martin Škrtel	35	CB	78	47	38	48	51	78	82	2	2	11	50	23	Right
 796	169705	R. Bertrand	Ryan Bertrand	30	LB	78	78	53	70	76	76	70	3	3	5	107	13	Left
 797	170733	Gervinho	Gervais Lombe Yao Kouassi	33	LW, RW	78	90	70	71	80	35	57	3	3	2	143	41	Right
 798	171791	José Fonte	José Miguel da Rocha Fonte	36	CB	78	32	38	54	59	79	76	2	3	4	54	2	Right
 799	171897	A. Guardado	José Andrés Guardado Hernández	33	CM, CDM, LM	78	67	69	79	80	71	68	4	2	1	37	33	Left
-800	172962	V. Moses	Victor Moses	29	RM, RWB	78	76	69	74	81	73	69	4	4	5	12	31	Right
+800	172962	V. Moses	Victor Moses	29	RM, RB	78	76	69	74	81	73	69	4	4	5	12	31	Right
 801	173208	D. Criscito	Domenico Criscito	33	LB, CB, LM	78	73	61	76	71	77	74	3	3	2	55	15	Left
 802	173221	A. Candreva	Antonio Candreva	33	RM	78	72	78	77	79	61	65	4	4	2	10	15	Right
 803	173306	C. Ansaldi	Cristian Daniel Ansaldi	33	LM, LB	78	78	64	77	80	76	70	4	5	2	30	1	Right
@@ -3908,7 +3908,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 872	214047	M. Uribe	Andrés Mateus Uribe Villa	29	CM, CDM	78	74	74	74	76	75	79	3	4	6	28	42	Right
 873	214766	C. Izquierdoz	Carlos Roberto Izquierdoz	31	CB	78	50	51	54	53	79	82	2	2	14	68	1	Right
 874	215057	I. Marcone	Iván José Marcone	30	CDM, CM	78	51	57	72	74	74	81	3	3	14	68	1	Right
-875	216150	D. Zappacosta	Davide Zappacosta	28	RB, RWB	78	75	66	72	74	76	71	3	3	2	55	15	Right
+875	216150	D. Zappacosta	Davide Zappacosta	28	RB, RB	78	75	66	72	74	76	71	3	3	2	55	15	Right
 876	216373	Marcelo Goiano	Marcelo Augusto Ferreira Teixeira	32	RB, CB	78	74	50	65	76	75	73	3	4	11	151	5	Right
 877	217546	Sequeira	Nuno Miguel Ribeiro Cruz Jerónimo Sequeira	29	LB, LW	78	70	59	68	72	74	75	3	3	6	114	2	Left
 878	221445	Wu Lei	武磊	28	ST, LM, RM	78	85	73	70	79	36	67	3	4	23	137	58	Right
@@ -4024,7 +4024,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 998	199577	Sergi Gómez	Sergi Gómez Solà	28	CB	77	62	40	64	61	78	74	2	2	1	29	12	Right
 1000	200094	M. Ozdoev	Magomed Ozdoev	27	CDM, CM	77	75	70	72	77	73	76	3	3	19	85	45	Right
 1001	200677	Pedro Mendes	Pedro Filipe Teodósio Mendes	29	CB	77	67	36	50	62	79	80	2	3	4	130	2	Right
-1002	200855	G. Baldock	George Baldock	27	RWB	77	78	47	65	74	72	74	3	3	5	110	13	Right
+1002	200855	G. Baldock	George Baldock	27	RB	77	78	47	65	74	72	74	3	3	5	110	13	Right
 1003	202849	J. Vestergaard	Jannik Vestergaard	27	CB	77	33	48	60	48	78	78	2	4	5	107	27	Right
 1004	203106	L. Bittencourt	Leonardo Bittencourt	26	RM, LM, CM	77	79	68	74	84	56	60	3	4	3	59	8	Right
 1005	203483	D. Klaassen	Davy Klaassen	27	CM, CAM	77	64	77	72	75	69	75	3	3	3	59	9	Right
@@ -4065,7 +4065,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1048	179847	F. Fazio	Federico Julián Fazio	33	CB	77	33	40	53	51	81	75	2	2	2	35	1	Right
 1049	180819	A. Lallana	Adam David Lallana	32	CM	77	66	71	78	81	62	63	4	5	5	94	13	Right
 1050	181820	S. Jovetić	Stevan Jovetić	30	ST, CAM	77	66	78	76	79	35	60	3	4	4	33	49	Right
-1051	182896	R. Rosales	Roberto José Rosales Altuve	31	RWB, RB	77	69	64	70	74	76	67	3	3	23	162	50	Right
+1051	182896	R. Rosales	Roberto José Rosales Altuve	31	RB, RB	77	69	64	70	74	76	67	3	3	23	162	50	Right
 1052	182945	M. Gradel	Max-Alain Gradel	32	LW, LM	77	77	75	71	79	42	62	4	4	11	151	41	Right
 1053	183427	F. Delph	Fabian Delph	30	CDM, CM, LB	77	66	68	74	76	73	71	3	3	5	27	13	Left
 1054	183855	A. Ogbonna	Angelo Obinze Ogbonna	32	CB	77	53	39	58	60	79	74	2	3	5	64	15	Left
@@ -4111,7 +4111,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1099	193469	Víctor Ruiz	Víctor Ruíz Torre	31	CB	77	48	42	62	58	80	76	2	2	1	37	12	Left
 1100	193532	G. Medel	Gary Alexis Medel Soto	32	CDM, CB	77	65	47	64	68	77	80	3	4	2	172	39	Right
 1101	193683	X. Chavalerin	Xavier Chavalerin	29	CDM	77	63	64	75	73	71	74	3	3	4	112	7	Left
-1103	194644	Montoya	Martín Montoya Torralbo	29	RB, RWB	77	76	61	71	73	74	70	3	4	1	37	12	Right
+1103	194644	Montoya	Martín Montoya Torralbo	29	RB, RB	77	76	61	71	73	74	70	3	4	1	37	12	Right
 1104	194728	I. Belfodil	Ishak Belfodil	28	ST	77	69	77	69	78	36	75	3	2	3	62	28	Right
 1105	194794	A. Yarmolenko	Andriy Yarmolenko	30	RM, RW	77	65	80	77	80	42	68	4	2	5	64	51	Left
 1106	194879	Sergi Enrich	Sergio Enrich Ametller	30	ST	77	57	76	70	74	43	77	4	4	1	70	12	Right
@@ -4119,7 +4119,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1109	196069	J. Fuenzalida	José Pedro Fuenzalida Gana	35	RW, RB, RM	77	91	63	71	79	64	67	3	4	28	173	39	Right
 1110	196147	G. Moreno	Giovanni Andrés Moreno Cardona	34	ST, CAM	77	72	77	74	77	61	79	4	2	9	129	42	Left
 1111	196889	S. Verdi	Simone Verdi	27	ST, CAM, LW	77	82	73	78	83	48	50	4	5	2	30	15	Left
-1112	197083	D. Caligiuri	Daniel Caligiuri	32	RM, RWB, RB	77	68	73	76	75	71	75	3	4	3	150	15	Right
+1112	197083	D. Caligiuri	Daniel Caligiuri	32	RM, RB, RB	77	68	73	76	75	71	75	3	4	3	150	15	Right
 1113	197756	J. Ayew	Jordan Ayew	28	ST, RM	77	77	76	71	79	45	74	4	3	5	49	32	Right
 1114	197837	D. Boyata	Anga Dedryck Boyata	29	CB	77	71	29	52	57	77	83	2	3	3	119	6	Right
 1115	198200	B. Stambouli	Benjamin Stambouli	29	CB, CDM	77	56	55	67	70	79	76	2	4	3	120	7	Right
@@ -4129,7 +4129,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1119	201262	V. Darida	Vladimír Darida	29	CM, CAM, CDM	77	66	71	74	80	70	63	3	4	3	119	44	Right
 1120	201508	G. Ramírez	Gastón Exequiel Ramírez Pereyra	29	CAM	77	61	75	78	79	39	57	4	3	2	99	16	Left
 1121	201510	L. Kurzawa	Layvin Kurzawa	27	LB, LM, RB	77	74	65	73	76	74	71	4	3	4	5	7	Left
-1122	201982	J. Schmid	Jonathan Schmid	30	RB, RM, RWB	77	79	64	74	77	69	75	3	3	3	115	7	Right
+1122	201982	J. Schmid	Jonathan Schmid	30	RB, RM, RB	77	79	64	74	77	69	75	3	3	3	115	7	Right
 1123	201988	F. Fernández	Federico Fernández	31	CB	77	48	30	53	50	78	74	2	2	5	51	1	Right
 1124	202493	Aleix Vidal	Aleix Vidal Parreu	30	RM, LM	77	82	67	72	78	72	70	3	4	1	29	12	Right
 1125	202685	S. Zaza	Simone Zaza	29	ST	77	73	78	62	75	50	82	4	3	2	30	15	Left
@@ -4139,7 +4139,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1129	204538	R. Ruidíaz	Raúl Mario Ruidíaz Misitich	29	ST	77	84	79	66	77	32	62	4	4	8	147	66	Right
 1130	205407	D. Baselli	Daniele Baselli	28	CM	77	70	72	79	80	66	67	4	3	2	30	15	Right
 1131	205566	Alberto Moreno	Alberto Moreno Pérez	27	LB	77	85	66	69	78	70	69	3	2	1	24	12	Left
-1132	205965	S. Ristovski	Stefan Ristovski	28	RB, RM, RWB	77	87	61	68	73	73	78	3	3	6	80	63	Right
+1132	205965	S. Ristovski	Stefan Ristovski	28	RB, RM, RB	77	87	61	68	73	73	78	3	3	6	80	63	Right
 1133	206225	D. Cheryshev	Denis Cheryshev	29	LM	77	79	76	76	75	55	67	3	4	1	34	45	Left
 1134	206493	Y. Abdelhamid	Yunis Abdelhamid	32	CB	77	34	33	56	65	78	82	2	3	4	112	24	Left
 1135	206651	Roberto Torres	Roberto Torres Morales	31	RM, CM	77	66	78	78	75	65	71	3	4	1	116	12	Right
@@ -4187,14 +4187,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1182	238067	N. Zaniolo	Nicolò Zaniolo	20	CAM, RM	76	76	73	72	77	62	75	3	3	2	35	15	Left
 1183	228708	L. Martínez Quarta	Lucas Martínez Quarta	24	CB	76	70	59	70	72	74	80	3	3	14	84	1	Right
 1184	232756	F. Tomori	Fikayo Tomori	22	CB	76	80	37	58	66	76	74	2	4	5	12	13	Right
-1185	232999	T. Adams	Tyler Adams	21	CDM, RWB	76	76	48	67	72	73	75	3	3	3	23	47	Right
+1185	232999	T. Adams	Tyler Adams	21	CDM, RB	76	76	48	67	72	73	75	3	3	3	23	47	Right
 1186	234574	Diogo Dalot	José Diogo Dalot Teixeira	21	RB, LB	76	79	60	70	76	71	76	3	3	5	14	2	Right
 1187	238160	M. Demiral	Merih Demiral	22	CB	76	72	39	49	59	78	77	2	3	2	2	55	Right
 1188	238370	M. Pongračić	Marin Pongračić	22	CB	76	71	26	52	64	75	81	2	3	3	36	17	Right
 1189	239817	B. Soumaré	Boubakary Soumaré	21	CDM, CM	76	69	56	71	76	70	76	3	3	4	54	7	Right
 1190	241202	P. Daka	Patson Daka	21	ST	76	93	76	58	76	24	70	3	3	29	180	79	Right
 1191	252935	L. Fernández	Leonardo Cecilio Fernández López	21	CAM	76	72	76	73	78	41	63	3	3	16	72	16	Left
-1192	225782	A. Maitland-Niles	Ainsley Maitland-Niles	22	RWB, RB, RM	76	83	59	69	76	69	68	4	3	5	15	13	Right
+1192	225782	A. Maitland-Niles	Ainsley Maitland-Niles	22	RB, RB, RM	76	83	59	69	76	69	68	4	3	5	15	13	Right
 1194	235926	M. Zaracho	Federico Matías Zaracho	22	CM, CAM, RM	76	89	70	74	82	63	63	4	4	14	127	1	Right
 1195	236532	R. Koch	Robin Koch	23	CB, CDM	76	71	38	59	63	77	75	2	3	5	63	8	Right
 1196	244380	V. Mykolenko	Vitaliy Mykolenko	21	LB	76	78	44	62	57	73	63	2	2	18	91	51	Left
@@ -4203,7 +4203,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1199	220196	D. Brooks	David Brooks	22	RM	76	73	70	74	79	48	64	4	4	21	157	38	Left
 1200	221014	Carlos Fernández	Carlos Fernández Luna	24	ST, CAM	76	69	78	63	77	27	71	3	3	1	29	12	Left
 1201	222368	A. Miranchuk	Anton Miranchuk	24	CAM, RM	76	76	73	74	77	28	62	3	3	13	108	45	Right
-1202	224263	J. Kenny	Jonjoe Kenny	23	RB, RWB	76	71	49	67	71	74	70	3	3	5	27	13	Right
+1202	224263	J. Kenny	Jonjoe Kenny	23	RB, RB	76	71	49	67	71	74	70	3	3	5	27	13	Right
 1203	224540	E. Boateng	Emmanuel Okyere Boateng	24	ST	76	91	74	58	75	40	76	4	4	9	76	32	Right
 1204	226168	M. Eggestein	Maximilian Eggestein	23	CM, CDM	76	71	66	73	77	71	78	3	4	3	59	8	Right
 1205	229862	Edu Expósito	Eduardo Expósito Jaén	23	CM, CDM, CAM	76	54	70	71	74	66	57	4	5	1	70	12	Right
@@ -4222,7 +4222,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1222	232244	S. Ascacíbar	Santiago Lionel Ascacíbar	23	CDM, CM	76	62	46	61	68	77	75	2	3	3	119	1	Right
 1223	233631	A. Ndiaye	Amath Ndiaye	23	LM	76	92	71	67	80	46	68	4	4	1	57	10	Right
 1224	234128	Luiz Araújo	Luiz de Araujo Guimarães Neto	24	LM, RM	76	88	67	69	82	38	51	3	2	4	54	5	Left
-1225	234573	Aurélio Buta	Aurélio Gabriel Ulineia Buta	23	RB, RWB, RM	76	94	60	66	76	67	70	4	4	17	145	2	Right
+1225	234573	Aurélio Buta	Aurélio Gabriel Ulineia Buta	23	RB, RB, RM	76	94	60	66	76	67	70	4	4	17	145	2	Right
 1227	235424	D. Samassékou	Diadie Samassékou	24	CDM, CM	76	60	49	67	72	75	74	3	3	3	62	67	Right
 1228	236786	M. Terrier	Martin Terrier	23	LW, ST	76	84	75	73	75	35	65	3	3	4	66	7	Right
 1230	210881	J. McGinn	John McGinn	25	CM	76	70	71	72	78	71	79	3	4	5	92	14	Left
@@ -4235,7 +4235,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1237	222160	Y. Koné	Youssouf Koné	24	LB	76	85	47	64	73	70	75	2	3	4	22	67	Left
 1238	225201	Alex Berenguer	Alejandro Berenguer Remiro	24	ST, ST, LW	76	80	72	73	79	63	63	3	3	2	30	12	Right
 1239	225403	I. Kahveci	İrfan Can Kahveci	24	CM, CAM	76	78	68	76	78	65	71	4	4	11	50	55	Left
-1240	227222	F. Guilbert	Frédéric Guilbert	25	RB, RWB	76	75	48	67	68	74	77	3	2	5	92	7	Right
+1240	227222	F. Guilbert	Frédéric Guilbert	25	RB, RB	76	75	48	67	68	74	77	3	2	5	92	7	Right
 1241	227234	L. Tousart	Lucas Tousart	23	CDM, CM	76	59	54	64	61	79	83	2	3	3	119	7	Right
 1242	228414	Matheus Pereira	Matheus Fellipe Costa Pereira	24	CAM, RW	76	79	73	74	79	39	63	4	3	5	102	5	Left
 1243	228881	D. Calabria	Davide Calabria	23	RB	76	73	43	67	72	75	66	3	3	2	21	15	Right
@@ -4245,7 +4245,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1247	233927	Lucas Paquetá	Lucas Tolentino Coelho de Lima	22	CM, CAM	76	75	74	75	81	59	75	4	2	2	21	5	Left
 1248	234678	J. Mæhle	Joakim Mæhle Pedersen	23	RB	76	91	56	67	71	68	79	3	3	17	182	27	Right
 1249	235634	G. Konan	Ghislain Konan	24	LB	76	79	48	68	77	70	73	3	3	4	112	41	Left
-1250	236441	F. Bustos	Fabricio Bustos Sein	24	RB, RWB, RM	76	86	63	70	76	69	71	4	3	14	176	1	Right
+1250	236441	F. Bustos	Fabricio Bustos Sein	24	RB, RB, RM	76	86	63	70	76	69	71	4	3	14	176	1	Right
 1251	237207	S. Kalu	Samuel Kalu Ojim	22	LM, RM, RW	76	87	66	70	78	34	56	4	4	4	124	31	Right
 1252	240190	K. Malong	Pierre Kunde Malong	24	CDM, CM	76	82	69	70	74	70	82	3	4	3	181	30	Right
 1253	242201	Luis Milla	Luis Milla Manzanares	25	CDM	76	77	60	75	73	70	72	3	3	1	113	12	Right
@@ -4284,7 +4284,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1289	227890	Nuno Santos	Nuno Miguel Gomes dos Santos	25	LW, RW	76	78	74	72	79	33	66	4	3	6	80	2	Left
 1290	231786	A. Šporar	Andraž Šporar	26	ST	76	76	75	66	73	19	70	3	4	6	80	3	Right
 1291	237556	C. Luyindama	Christian Luyindama Nekadio	26	CB, CDM	76	73	37	50	52	76	85	2	2	11	60	60	Right
-1292	238305	Nacho Vidal	Ignacio Vidal Miralles	25	RB, RWB	76	74	55	69	70	71	65	3	3	1	116	12	Right
+1292	238305	Nacho Vidal	Ignacio Vidal Miralles	25	RB, RB	76	74	55	69	70	71	65	3	3	1	116	12	Right
 1293	247030	P. Ševčík	Petr Ševčík	26	CM, RM, CDM	76	80	73	74	78	65	75	3	5	24	138	44	Right
 1295	199652	D. Praet	Dennis Praet	26	CM	76	67	70	77	78	61	64	4	4	5	20	6	Right
 1296	200746	J. Lundstram	John Lundstram	26	CM	76	64	69	70	71	71	73	3	5	5	110	13	Right
@@ -4315,7 +4315,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1329	211368	Bruma	Armindo Tué Na Bangna	25	LM	76	89	69	70	83	32	62	4	4	7	83	2	Right
 1330	211454	M. Elneny	Mohamed Naser Elsayed Elneny	27	CDM, CM	76	55	63	72	70	73	74	3	3	5	15	11	Right
 1331	212678	L. Augustinsson	Ludwig Augustinsson	26	LB, LB, LM	76	68	60	75	74	71	71	3	2	3	59	37	Left
-1332	212722	D. Yedlin	DeAndre Yedlin	26	RWB, RB	76	92	51	64	75	70	68	3	3	5	51	47	Right
+1332	212722	D. Yedlin	DeAndre Yedlin	26	RB, RB	76	92	51	64	75	70	68	3	3	5	51	47	Right
 1333	215616	Jason	David Jason Remeseiro Salgueiro	25	RM	76	78	74	72	78	49	66	3	4	1	34	12	Right
 1334	216158	S. Widmer	Silvan Dominic Widmer	27	RB	76	80	63	70	74	72	77	3	4	25	197	21	Right
 1335	217870	G. Di Lorenzo	Giovanni Di Lorenzo	26	RB, RM	76	70	69	71	74	75	74	3	3	2	11	15	Right
@@ -4410,8 +4410,8 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1436	199737	Wilson Eduardo	Wilson Bruno Naval da Costa Eduardo	29	RM, ST, LM	76	78	79	73	77	31	67	4	3	38	218	75	Right
 1437	199935	Rômulo	Rômulo Borges Monteiro	29	CDM, CM	76	71	63	71	69	75	76	3	3	9	166	5	Right
 1438	200318	M. Uth	Mark Uth	28	CAM, ST, ST	76	72	78	71	76	40	68	3	2	3	120	8	Left
-1439	200630	J. Forrest	James Forrest	28	RM, LM, RWB	76	89	72	68	79	51	62	4	3	26	160	14	Right
-1440	201118	Cédric	Cédric Ricardo Alves Soares	28	RB, RWB	76	76	65	70	75	72	67	3	4	5	15	2	Right
+1439	200630	J. Forrest	James Forrest	28	RM, LM, RB	76	89	72	68	79	51	62	4	3	26	160	14	Right
+1440	201118	Cédric	Cédric Ricardo Alves Soares	28	RB, RB	76	76	65	70	75	72	67	3	4	5	15	2	Right
 1441	201144	M. Badelj	Milan Badelj	31	CDM, CM	76	52	63	75	72	74	69	3	4	2	55	17	Right
 1442	201303	R. Falk	Rasmus Falk Jensen	28	CM, LM, RM	76	85	63	72	81	63	75	4	4	32	190	27	Right
 1443	201505	David López	David López Silva	30	CDM, CB	76	54	60	67	65	77	75	2	3	23	137	12	Right
@@ -4451,7 +4451,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1480	222134	T. Hamed	Tarek Hamed	31	CDM, CM	76	64	59	69	69	75	75	2	3	19	85	11	Right
 1481	224116	Dyego Sousa	Dyego Wilverson Ferreira Sousa	30	ST	76	57	77	61	74	30	81	3	3	6	25	2	Right
 1482	226515	Andrei Girotto	Andrei Girotto	28	CB, CDM	76	58	66	66	68	78	72	2	3	4	136	5	Right
-1483	229359	Jorge Miramón	Jorge Miramón Santagertrudis	31	RB, RWB	76	73	58	74	69	72	74	3	3	1	48	12	Right
+1483	229359	Jorge Miramón	Jorge Miramón Santagertrudis	31	RB, RB	76	73	58	74	69	72	74	3	3	1	48	12	Right
 1484	230189	Silas Almeim	Silas Enaldo Barros de Almeida	28	LB, LM	76	78	56	70	68	73	69	3	3	12	178	5	Left
 1485	230208	Lúcio Corteijo	Lúcio Anselmo Corteijo Salazar	32	RB	76	77	45	66	64	74	73	2	3	12	222	5	Right
 1489	230348	Lafortiscinho	Erick Sebastião Laforte Medeiros	28	LB	76	79	53	67	72	74	67	3	3	12	224	5	Left
@@ -4579,7 +4579,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1622	236639	Xeka	Miguel Ângelo da Silva Rocha	25	CDM, CM	75	56	58	71	74	69	76	4	4	4	54	2	Right
 1623	237646	D. Muñoz	Daniel Muñoz Mejía	24	RB, CB, CDM	75	83	62	62	70	69	72	3	3	17	182	42	Right
 1625	240289	Calero	Fernando Calero Villa	24	CB	75	68	46	68	70	76	75	3	4	23	137	12	Right
-1626	241497	C. Dagba	Colin Dagba	21	RB, RWB	75	82	50	70	77	71	60	3	2	4	5	7	Right
+1626	241497	C. Dagba	Colin Dagba	21	RB, RB	75	82	50	70	77	71	60	3	2	4	5	7	Right
 1627	241827	Martín	Martín Aguirregabiria Padilla	24	RB, RM	75	67	35	63	69	74	65	3	3	1	56	12	Right
 1628	243015	L. Romo	Luis Francisco Romo Barrón	25	CDM, CB, CM	75	66	57	64	64	75	77	3	3	16	141	33	Right
 1629	202445	Rodrigo Ely	Rodrigo Ely	26	CB	75	55	32	44	53	76	78	2	2	1	56	5	Right
@@ -4779,9 +4779,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1858	186684	Kiko Olivas	Francisco José Olivas Alba	31	CB	75	51	52	61	59	76	77	2	3	1	81	12	Right
 1859	186992	J. Dueñas	Jesús Alberto Dueñas Manzo	31	LB, CM	75	73	67	72	74	69	82	3	4	16	72	33	Right
 1860	187421	J. Hernández	Jorge Daniel Hernández Govea	31	CDM, CM	75	66	60	71	69	70	79	3	3	16	216	33	Right
-1861	188155	D. Janmaat	Daryl Janmaat	30	RB, RWB	75	67	65	72	74	74	72	3	3	21	95	9	Right
+1861	188155	D. Janmaat	Daryl Janmaat	30	RB, RB	75	67	65	72	74	74	72	3	3	21	95	9	Right
 1862	188166	M. Phillips	Matt Phillips	29	RM	75	81	70	71	74	43	70	4	4	5	102	14	Right
-1863	188313	Diogo Viana	Diogo Filipe Guerreiro Viana	30	RWB	75	82	64	71	77	70	63	4	3	6	114	2	Right
+1863	188313	Diogo Viana	Diogo Filipe Guerreiro Viana	30	RB	75	82	64	71	77	70	63	4	3	6	114	2	Right
 1864	188840	Miguel Lopes	Hugo Miguel Almeida Costa Lopes	33	RB, CB	75	77	50	68	67	73	78	3	4	11	271	2	Right
 1866	189043	D. Brosinski	Daniel Brosinski	31	RB, LB	75	76	61	71	71	72	68	3	3	3	181	8	Right
 1868	189157	Y. Bolasie	Yannick Bolasie Yala	31	LW, RW	75	79	69	68	79	34	76	5	3	5	27	60	Right
@@ -4815,7 +4815,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1898	193254	C. Trimmel	Christopher Trimmel	33	RB, RM	75	69	60	70	67	72	79	3	3	3	78	34	Right
 1899	193408	H. Seferović	Haris Seferović	28	ST	75	70	74	65	70	47	81	3	2	6	25	21	Left
 1900	193440	N. Viergever	Nick Viergever	30	CB	75	68	55	66	67	75	77	2	2	7	83	9	Left
-1901	193470	A. Souquet	Arnaud Souquet	28	RWB, RB	75	72	58	70	71	71	69	3	3	4	130	7	Right
+1901	193470	A. Souquet	Arnaud Souquet	28	RB, RB	75	72	58	70	71	71	69	3	3	4	130	7	Right
 1902	193844	Portillo	Francisco Portillo Soler	30	RM, LM	75	66	70	75	76	55	63	3	3	1	57	12	Right
 1903	193847	Osmar	Osmar Ibáñez Barba	32	CDM, CB, CM	75	48	60	69	57	73	87	3	3	39	278	12	Left
 1904	193849	C. Hourihane	Conor Hourihane	29	CM, CDM	75	64	70	76	70	66	74	3	4	5	92	52	Left
@@ -4895,7 +4895,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1985	216283	Danilo	Danilo Teodoro Soares	28	LB	75	73	59	66	76	73	71	3	3	35	290	5	Left
 1986	217235	Zainadine	Zainadine Abdula Chavango Júnior	32	CB	75	68	41	57	62	76	77	2	3	6	291	95	Right
 1987	218154	K. Billiat	Khama Billiat	29	RW, LW, ST	75	85	74	69	80	47	64	4	4	43	292	88	Right
-1988	218621	F. Sánchez	Facundo Sánchez	30	RB, RM, RWB	75	91	60	62	73	70	72	3	3	22	293	1	Right
+1988	218621	F. Sánchez	Facundo Sánchez	30	RB, RM, RB	75	91	60	62	73	70	72	3	3	22	293	1	Right
 1990	219576	R. Battaglia	Rodrigo Andrés Battaglia	28	CM, CDM	75	65	67	67	73	77	78	3	4	1	56	1	Right
 1991	219953	Embarba	Adrián Embarba Blázquez	28	RM, LM, ST	75	78	69	73	75	47	65	3	3	23	137	12	Right
 1992	220332	A. Romero	Ángel Rodrigo Romero Villamayor	27	ST, LM, RW	75	78	72	67	76	48	73	4	3	14	144	69	Right
@@ -4986,7 +4986,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2085	215725	Quintillà	Xavier Quintillà Guasch	23	LB	74	72	51	66	70	70	65	2	3	21	154	12	Left
 2086	219087	S. Vegas	Sebastián Ignacio Vegas Orellana	23	CB, LB	74	71	54	62	67	73	80	2	3	16	148	39	Left
 2087	219932	A. Sanabria	Arnaldo Antonio Sanabria Ayala	24	ST	74	73	72	70	74	34	62	4	4	1	37	69	Right
-2088	221342	Pablo Maffeo	Pablo Maffeo Becerra	22	RB, RWB	74	86	52	67	74	71	64	3	3	1	142	12	Right
+2088	221342	Pablo Maffeo	Pablo Maffeo Becerra	22	RB, RB	74	86	52	67	74	71	64	3	3	1	142	12	Right
 2090	226789	A. Fulgini	Angelo Fulgini	23	CM, RM	74	75	63	74	77	69	70	3	4	4	135	7	Right
 2091	229752	D. Sow	Djibril Sow	23	CM, CDM	74	74	67	73	74	71	75	3	4	3	46	21	Right
 2092	231247	B. Cufré	Braian Ezequiel Cufré	23	LB, LB	74	82	64	72	74	70	75	3	3	14	174	1	Left
@@ -5089,7 +5089,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2198	240037	S. Plavšić	Srđan Plavšić	24	LM, RM	74	85	67	68	77	28	60	3	3	24	270	22	Left
 2200	204121	J. Brabec	Jakub Brabec	27	CB	74	70	51	61	63	75	77	2	3	24	304	44	Right
 2201	207593	J. Uronen	Jere Juhani Uronen	25	LB	74	74	57	69	68	70	75	3	4	17	182	40	Left
-2203	209818	J. Brenet	Joshua Brenet	26	LB, RB, RWB	74	85	36	61	72	70	69	3	3	3	62	9	Right
+2203	209818	J. Brenet	Joshua Brenet	26	LB, RB, RB	74	85	36	61	72	70	69	3	3	3	62	9	Right
 2204	211098	B. Dack	Bradley Dack	26	CAM, CM	74	76	72	71	76	53	75	4	4	21	309	13	Right
 2205	212476	Medrán	Álvaro Medrán Just	26	CM, CDM, CAM	74	57	68	77	72	63	54	3	4	8	287	12	Right
 2206	213928	E. Sobol	Eduard Sobol	25	LM, LB	74	76	61	73	73	68	71	2	2	17	77	51	Left
@@ -5133,8 +5133,8 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2250	229406	João Novais	João Pedro Barradas Novais	26	CM	74	66	76	76	77	49	68	4	3	6	114	2	Right
 2251	230685	E. Akbaba	Emre Akbaba	27	CAM, CM, CDM	74	71	72	75	74	55	67	3	3	11	60	55	Left
 2252	230850	G. Cimirot	Gojko Cimirot	27	CM, CDM	74	66	67	71	73	70	72	3	3	17	303	25	Right
-2253	237223	J. Gressel	Julian Gressel	26	RM, RWB, CAM	74	72	66	74	71	61	76	3	4	8	248	8	Right
-2254	237532	Rodrigo	Rodrigo Alves Soares	27	RB, RWB, RM	74	74	61	74	74	69	71	3	2	22	260	5	Right
+2253	237223	J. Gressel	Julian Gressel	26	RM, RB, CAM	74	72	66	74	71	61	76	3	4	8	248	8	Right
+2254	237532	Rodrigo	Rodrigo Alves Soares	27	RB, RB, RM	74	74	61	74	74	69	71	3	2	22	260	5	Right
 2255	244373	V. Buyalskyi	Vitaliy Buyalskyi	27	CM, CAM	74	71	67	70	76	67	49	3	4	18	91	51	Right
 2256	246708	G. Masouras	Giorgios Masouras	26	LM, RM	74	76	72	70	73	38	66	3	4	22	125	36	Right
 2258	110381	M. Rodríguez	Maximiliano Rubén Rodríguez	39	LW, LM, ST	74	67	75	75	75	44	65	4	4	14	265	1	Right
@@ -5193,7 +5193,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2322	186551	F. Navarro	Fernando Navarro Morán	31	RB	74	86	58	66	69	69	66	3	2	16	152	33	Right
 2323	186589	I. Radovanović	Ivan Radovanović	31	CDM, CM	74	53	59	70	66	73	75	2	2	2	55	22	Right
 2324	186935	Claudemir	Claudemir Domingues de Souza	32	CDM, CM	74	60	67	72	71	71	73	3	3	11	151	5	Right
-2325	188135	Juanfran	Juan Francisco Moreno Fuertes	31	RB, RWB	74	74	66	69	74	70	71	3	3	11	179	12	Right
+2325	188135	Juanfran	Juan Francisco Moreno Fuertes	31	RB, RB	74	74	66	69	74	70	71	3	3	11	179	12	Right
 2326	188270	B. Ecuélé Manga	Bruno Écuélé Manga	31	CB	74	48	35	56	49	74	79	2	3	4	187	18	Right
 2327	188802	M. Schmelzer	Marcel Schmelzer	32	LB	74	66	48	66	65	75	73	2	2	3	13	8	Left
 2328	188879	A. N'Diaye	Alfred John Momar N'Diaye	30	CDM	74	69	63	68	69	71	83	3	3	10	42	10	Right
@@ -5249,14 +5249,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2387	202061	J. Kurtić	Jasmin Kurtić	31	CM, CAM	74	59	69	73	71	71	75	3	3	2	143	3	Right
 2388	202088	F. Klaus	Felix Klaus	27	RM, LM	74	76	68	68	78	37	68	3	3	3	36	8	Right
 2389	202151	K. Stafylidis	Konstantinos Stafylidis	26	LB, LB	74	75	64	67	72	70	74	3	3	3	62	36	Left
-2390	202316	T. Chandler	Timothy Chandler	30	RM, RWB, RB	74	67	71	73	71	74	80	2	3	3	46	47	Right
+2390	202316	T. Chandler	Timothy Chandler	30	RM, RB, RB	74	67	71	73	71	74	80	2	3	3	46	47	Right
 2391	202646	Álex Martínez	Alejandro Martínez Sánchez	29	LB	74	75	59	68	70	67	67	3	3	1	113	12	Left
 2392	202882	T. Bifouma	Thievy Guivane Bifouma Koulossa	28	LM, RM	74	93	71	63	77	29	70	4	4	9	307	86	Right
 2393	203280	V. Germain	Valère Germain	30	ST	74	71	75	73	74	38	67	3	4	4	38	7	Right
 2394	203796	F. Gutiérrez	Felipe Alejandro Gutiérrez Leiva	29	CM, CDM	74	65	72	74	76	61	65	3	4	8	266	39	Left
 2395	203910	A. Knockaert	Anthony Knockaert	28	RW, RM	74	74	69	72	79	48	65	4	3	5	53	7	Left
 2396	204226	D. Lezcano	Darío Lezcano	30	ST	74	80	74	68	73	45	81	3	4	16	328	69	Right
-2397	204401	Diogo Figueiras	Diogo José Rosário Gomes Figueiras	29	RWB, RW	74	82	60	66	77	67	50	3	3	6	114	2	Right
+2397	204401	Diogo Figueiras	Diogo José Rosário Gomes Figueiras	29	RB, RW	74	82	60	66	77	67	50	3	3	6	114	2	Right
 2398	204539	L. Advíncula	Luis Jan Piers Advíncula Castrillón	30	RB	74	93	64	69	75	67	81	3	4	23	321	66	Right
 2399	204713	J. Campbell	Joel Nathaniel Campbell Samuels	28	ST, RM	74	81	74	73	75	41	73	4	2	16	152	19	Left
 2400	204977	I. Piris	Iván Rodrigo Piris Leguizamón	31	RB, LB	74	83	48	61	70	69	74	3	3	33	314	69	Right
@@ -5422,7 +5422,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2576	229659	B. Heynen	Bryan Heynen	23	CM, CDM	73	66	63	72	72	67	70	3	4	17	182	6	Right
 2577	230975	D. Vergara	Duván Andrés Vergara Hernández	23	LW, RM, RW	73	88	68	64	74	37	67	3	3	34	343	42	Right
 2578	231318	R. Perraud	Romain Perraud	22	LB	73	71	65	68	71	71	71	3	2	4	155	7	Left
-2579	233301	R. Kristensen	Rasmus Nissen Kristensen	22	RB, RWB, RM	73	71	56	67	67	68	76	3	3	29	180	27	Right
+2579	233301	R. Kristensen	Rasmus Nissen Kristensen	22	RB, RB, RM	73	71	56	67	67	68	76	3	3	29	180	27	Right
 2580	234728	L. Bénes	László Bénes	22	CM, CAM	73	59	70	77	75	44	60	3	3	3	19	23	Left
 2581	236723	F. Ballo-Touré	Fodé Ballo-Touré	23	LB, LM	73	84	51	69	71	67	72	2	3	4	33	7	Left
 2582	237211	Yuri Ribeiro	Yuri Oliveira Ribeiro	23	LB	73	76	51	69	72	70	67	3	3	21	237	2	Left
@@ -5554,7 +5554,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2727	221634	L. Acosta	Luciano Federico Acosta	26	CAM, LM, LW	73	80	66	68	80	46	55	5	3	16	175	1	Right
 2866	192091	Welinton	Welinton Souza Silva	31	CB	73	58	48	57	48	74	77	2	2	11	105	5	Right
 2728	221743	Hélder Costa	Hélder Wander Sousa Azevedo Costa	26	RM, RW, LM	73	86	66	67	76	28	57	4	3	5	63	2	Left
-2729	224459	V. Salazar	Víctor Salazar	27	RB, RWB	73	91	48	57	71	66	72	3	2	14	144	1	Right
+2729	224459	V. Salazar	Víctor Salazar	27	RB, RB	73	91	48	57	71	66	72	3	2	14	144	1	Right
 2730	225252	J. Duque	Jhon Fredy Duque Arias	28	CDM	73	64	44	60	64	72	75	2	3	34	360	42	Right
 2731	225305	S. Gümüş	Sinan Gümüş	26	RM, ST	73	83	72	67	75	33	60	3	3	11	104	8	Left
 2732	225402	Bruno Gaspar	Bruno Miguel Boialvo Gaspar	27	RB	73	82	58	65	75	67	66	3	3	6	80	75	Right
@@ -5663,7 +5663,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2856	189963	W. Bony	Wilfried Guemiand Bony	31	ST	73	48	76	58	68	38	72	3	4	10	318	41	Right
 2857	190430	J. Bennett	Joe Bennett	30	LB	73	70	44	66	67	72	70	3	2	21	371	13	Left
 2858	190535	Míchel	Miguel Alfonso Herrero Javaloyas	31	CM, CDM	73	47	66	79	73	55	54	3	4	1	81	12	Right
-2859	190633	H. Dalsgaard	Henrik Dalsgaard	30	RB, RWB, CB	73	75	57	62	65	71	72	3	3	21	158	27	Right
+2859	190633	H. Dalsgaard	Henrik Dalsgaard	30	RB, RB, CB	73	75	57	62	65	71	72	3	3	21	158	27	Right
 2860	190653	I. Brizuela	Isaác Brizuela Muñoz	29	RM, LW	73	89	67	67	75	45	64	4	4	16	226	33	Right
 2861	190748	Y. Öztekin	Yasin Öztekin	33	LM, RM	73	78	71	69	73	45	66	3	3	11	151	55	Right
 2862	190915	K. Wilczek	Kamil Antoni Wilczek	32	ST	73	62	73	65	69	46	81	3	3	32	190	4	Left
@@ -5688,7 +5688,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2884	196318	S. Gürler	Serdar Gürler	28	LM, RM, LW	73	80	67	69	74	44	54	3	4	11	258	55	Right
 2885	196916	M. Pack	Marlon Pack	29	CDM, CM	73	51	60	71	69	68	78	3	2	21	371	13	Right
 2886	197117	I. Fetfatzidis	Ioannis Fetfatzidis	29	RM, RW, CAM	73	78	63	72	78	31	54	4	2	19	85	36	Left
-2887	197786	G. Donati	Giulio Donati	30	RB, RWB	73	69	43	62	67	74	76	2	3	30	372	15	Right
+2887	197786	G. Donati	Giulio Donati	30	RB, RB	73	69	43	62	67	74	76	2	3	30	372	15	Right
 2888	197813	J. Martin	Jonas Martin	30	CM	73	59	69	74	72	66	67	3	4	4	66	7	Right
 2889	198128	Caio	Caio Canedo Corrêa	29	ST, LM	73	81	73	66	76	29	66	3	4	38	218	109	Right
 2890	198213	Leandro Damião	Leandro Damião da Silva dos Santos	30	ST	73	56	74	59	69	35	77	3	2	15	373	5	Right
@@ -5699,9 +5699,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2896	198614	Raúl Navas	Raúl Rodríguez Navas	32	CB	73	35	45	55	46	75	63	2	3	1	116	12	Right
 2897	198617	D. Drexler	Dominick Drexler	30	CAM, CM, LM	73	71	63	72	77	40	56	3	3	3	156	8	Right
 2899	198843	Aday Benítez	Francesc Aday Benítez Caraballo	32	RM, LB, RB	73	72	57	69	75	68	63	3	4	23	128	12	Right
-2900	199131	A. Tinnerholm	Anton Tinnerholm	29	RB, RWB	73	75	51	65	69	67	76	3	3	8	247	37	Right
+2900	199131	A. Tinnerholm	Anton Tinnerholm	29	RB, RB	73	75	51	65	69	67	76	3	3	8	247	37	Right
 2901	199274	I. Nestorovski	Ilija Nestorovski	30	ST	73	68	74	53	71	35	75	3	3	2	93	63	Left
-2902	199313	A. Bamba	Abdoulaye Bamba	30	RB, LB, RWB	73	77	41	65	65	69	71	2	3	4	135	41	Right
+2902	199313	A. Bamba	Abdoulaye Bamba	30	RB, LB, RB	73	77	41	65	65	69	71	2	3	4	135	41	Right
 2903	199781	R. Métanire	Romain Métanire	30	RB	73	77	31	64	67	68	76	3	2	8	274	91	Right
 2904	199800	Z. Bergdich	Zakarya Bergdich	31	LB	73	82	51	65	73	69	74	3	2	11	264	24	Left
 2905	199912	S. Kittel	Sonny Kittel	27	LW, CAM	73	73	67	73	76	33	56	4	5	35	199	8	Right
@@ -5774,7 +5774,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2980	215042	G. Lezcano	Gastón Adrián Lezcano	33	RM, LM	73	77	70	66	74	24	72	3	4	28	173	1	Right
 2981	215079	P. Pérez	Pablo Javier Pérez	34	CM, CDM	73	63	68	74	71	69	79	3	3	14	265	1	Right
 2982	215181	G. Peruzzi	Gino Peruzzi Lucchetti	28	RB	73	76	50	64	69	69	71	3	3	14	144	1	Right
-2983	215331	L. Jara	Leonardo Rafael Jara	29	RB, RWB	73	72	53	67	70	68	78	3	3	14	68	1	Right
+2983	215331	L. Jara	Leonardo Rafael Jara	29	RB, RB	73	72	53	67	70	68	78	3	3	14	68	1	Right
 2984	215334	G. Carrillo	Guido Marcelo Carrillo	29	ST	73	52	75	54	71	39	74	3	3	5	107	1	Right
 2985	215553	Henrique Dourado	José Henrique da Silva Dourado	30	ST	73	68	75	63	65	34	78	3	3	9	268	5	Left
 2986	216020	L. Gil	Leonardo Roque Gil	29	CM, CDM	73	68	52	78	72	70	75	3	2	10	318	1	Left
@@ -5803,7 +5803,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3016	230333	Jonas Damasto	Jonas Welson Damasto Orsi	24	LB	73	78	45	59	62	70	61	2	2	12	225	5	Left
 3017	230344	Jeff Meirson	Jeff Nazario Meire Costinho	28	LB	73	72	50	69	60	72	74	2	3	12	132	5	Left
 3018	230358	Tramontinaldo	Márcio Anderson Tramontino Sá	24	RB, RM	73	66	50	70	67	72	59	2	3	12	223	5	Right
-3019	230366	Silvosinho	Thomas Nicolas Silva Rangel	24	RB, RM, RWB	73	65	54	64	63	70	69	2	3	12	134	5	Right
+3019	230366	Silvosinho	Thomas Nicolas Silva Rangel	24	RB, RM, RB	73	65	54	64	63	70	69	2	3	12	134	5	Right
 3020	230397	Enaldo Toxeto	Enaldo Charles Toxeto Reis	36	CB	73	67	54	58	63	73	75	2	3	12	52	5	Left
 3021	230408	Fabrio Farinha	Fabrio Sandro Farinha Donatelo	28	CAM, LM	73	72	62	75	77	43	58	4	3	12	87	5	Left
 3022	230411	Brenito Duarte	Breno Ronaldo Duarte Catarino	28	RM	73	73	71	70	73	38	64	2	2	12	222	5	Right
@@ -5827,7 +5827,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3042	233871	Júnior Morais	Iraneuton Sousa Morais Júnior	33	LB, LB	73	74	69	67	70	68	75	3	3	11	381	5	Left
 3043	233982	Vágner Corraldo	Vágner Joshua Corraldo Santoso	20	LB	73	72	59	63	69	71	63	3	3	12	223	5	Left
 3044	234458	C. Quintana	Carlos Gustavo Quintana	32	CB	73	51	32	46	48	75	80	2	3	14	285	1	Left
-3045	234514	O. El Hajjam	Oualid El Hajjam	29	RB, RWB	73	71	46	66	72	69	74	3	3	27	324	24	Right
+3045	234514	O. El Hajjam	Oualid El Hajjam	29	RB, RB	73	71	46	66	72	69	74	3	3	27	324	24	Right
 3046	236075	Enzo Merques	Enzo Diogo Merques Gomes	24	LB	73	72	64	70	73	67	74	3	4	12	133	5	Left
 3047	236076	Marlion Simões	Marlion Gustavo Simões Paiva	28	LB, CM	73	85	56	59	70	70	71	3	4	12	380	5	Left
 3048	236142	Nildo Reisão	Nildo Enaldo Reisão Dinis	24	CDM, CB	73	52	41	61	47	73	84	2	3	12	87	5	Right
@@ -5871,7 +5871,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3089	258370	Bruno Fuchs	Bruno de Lara Fuchs	21	CB	72	70	56	64	67	73	72	2	3	13	61	5	Right
 3091	231448	R. Nelson	Reiss Nelson	20	RW, LW, LM	72	85	64	66	77	34	53	4	3	5	15	13	Right
 3092	234857	I. Oblyakov	Ivan Oblyakov	21	CM, LM	72	73	67	75	76	55	64	3	2	13	61	45	Left
-3093	236316	Y. Valery	Yan Valery	21	RWB, RB	72	71	52	60	69	71	71	3	2	5	107	7	Right
+3093	236316	Y. Valery	Yan Valery	21	RB, RB	72	71	52	60	69	71	71	3	2	5	107	7	Right
 3094	236935	H. Wolf	Hannes Wolf	21	CAM	72	78	67	67	77	34	60	4	3	3	19	34	Left
 3095	240099	K. Rüegg	Kevin Rüegg	21	RB, CDM, CM	72	81	42	64	70	68	80	3	3	2	168	21	Right
 3096	240709	R. Baku	Ridle Bote Baku	22	RB, CM, RM	72	83	59	68	75	65	66	3	4	3	181	8	Right
@@ -5881,7 +5881,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3100	244622	Puado	Javier Puado Díaz	22	ST, CAM, LM	72	79	69	60	75	29	65	3	3	23	137	12	Right
 3101	244797	P. Musa	Petar Musa	22	ST	72	74	73	58	68	35	71	3	3	24	138	17	Right
 3102	244973	M. Ruiz	Marcel Alejandro Ruiz Suárez	19	CM	72	66	64	72	72	56	66	3	4	16	165	33	Right
-3103	245597	Víctor Gómez	Víctor Gómez Perea	20	RB, RWB, RM	72	76	31	61	64	69	63	2	2	23	385	12	Right
+3103	245597	Víctor Gómez	Víctor Gómez Perea	20	RB, RB, RM	72	76	31	61	64	69	63	2	2	23	385	12	Right
 3104	251217	Jean Lucas	Jean Lucas de Souza Oliveira	22	CM, CDM	72	68	62	70	73	64	72	3	3	4	22	5	Right
 3105	253072	D. Núñez	Darwin Gabriel Núñez Ribeiro	21	ST	72	80	73	50	69	32	74	3	3	6	25	16	Right
 3106	253157	H. Boudaoui	Hichem Boudaoui	20	CM, RM	72	75	63	69	76	70	70	3	3	4	67	28	Right
@@ -5919,7 +5919,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3139	235407	S. Özcan	Salih Özcan	22	CM, CAM, CDM	72	69	59	68	75	67	73	3	3	3	156	8	Right
 3140	236474	M. Bundu	Mustapha Bundu	23	RW	72	87	66	66	72	43	69	4	4	17	159	106	Right
 3141	236518	A. Nordin	Arnaud Nordin	22	LM, RM	72	80	67	66	74	36	57	3	4	4	75	7	Left
-3142	237156	M. Wagué	Moussa Wagué	21	RB, RWB, LB	72	77	40	64	74	69	67	3	3	22	260	10	Right
+3142	237156	M. Wagué	Moussa Wagué	21	RB, RB, LB	72	77	40	64	74	69	67	3	3	22	260	10	Right
 3143	239845	K. Galanopoulos	Konstantinos Galanopoulos	22	CDM, CM	72	73	51	67	72	69	66	3	3	22	195	36	Right
 3144	242380	Stephen Eustáquio	Stephen Antunes Eustáquio	23	CDM, CM	72	59	60	72	69	68	70	2	3	6	340	46	Right
 3145	246836	A. Pieper	Amos Pieper	22	CB	72	64	32	51	53	74	74	2	3	3	214	8	Right
@@ -5971,12 +5971,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3200	233965	A. Castro-Montes	Alessio Castro-Montes	23	RB, LB	72	72	64	71	71	65	64	3	4	17	205	6	Right
 3201	235565	D. Bronn	Dylan Bronn	25	CB, RB	72	64	60	66	63	73	75	2	3	4	185	74	Right
 3202	236696	A. Chatzigiovanis	Anastasios Chatzigiovanis	23	LM, RM	72	80	62	68	74	25	61	3	4	22	293	36	Right
-3203	237122	T. Guidara	Tomás Ezequiel Guidara	24	RB, RWB	72	79	41	61	68	66	78	3	2	14	174	1	Right
+3203	237122	T. Guidara	Tomás Ezequiel Guidara	24	RB, RB	72	79	41	61	68	66	78	3	2	14	174	1	Right
 3204	237131	J. Rodríguez	José Iván Rodríguez Rebollar	24	CDM	72	68	44	66	67	70	54	2	3	16	152	33	Left
 3205	237456	L. Agbenyenu	Lumor Agbenyenu	23	LB	72	78	46	59	71	68	71	2	3	6	80	32	Left
 3206	237631	L. Mothiba	Lebo Mothiba	24	ST	72	69	72	60	70	27	68	3	3	4	117	89	Right
 3207	238637	S. Vasiliadis	Sebastian Vasiliadis	22	CM, CDM	72	72	61	68	75	65	72	3	3	35	389	36	Right
-3208	240898	Francis	Francisco Javier Guerrero Martín	24	RM, RWB, RB	72	80	59	68	72	65	59	3	3	1	37	12	Right
+3208	240898	Francis	Francisco Javier Guerrero Martín	24	RM, RB, RB	72	80	59	68	72	65	59	3	3	1	37	12	Right
 3209	241176	L. Vera	Lucas Gabriel Vera	23	CM, CAM	72	84	58	71	79	57	54	4	3	14	146	1	Right
 3210	244186	Luquinhas	Lucas Lima Linhares	23	LM, CAM	72	81	65	68	76	30	54	3	3	40	361	5	Right
 3211	247832	Thierry Correia	Thierry Rendall Correia	21	RB, LB	72	82	46	62	73	66	66	3	4	1	34	2	Right
@@ -5989,7 +5989,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3218	220969	N. Eliasson	Niclas Eliasson	24	RM, LM, CAM	72	85	57	68	75	37	51	4	3	21	384	37	Left
 3220	222598	Nélson Monte	Nélson Macedo Monte	24	RB, CB	72	61	37	60	59	73	75	2	2	6	186	2	Right
 3221	223154	O. Tufan	Ozan Tufan	25	CM, CDM, RB	72	71	65	70	73	71	75	3	3	11	104	55	Right
-3222	225147	C. Roberts	Connor Roberts	24	RWB, RB	72	71	38	62	66	68	68	3	4	21	206	38	Right
+3222	225147	C. Roberts	Connor Roberts	24	RB, RB	72	71	38	62	66	68	68	3	4	21	206	38	Right
 3223	226012	R. Manning	Ryan Manning	24	LB, CM	72	67	61	68	69	68	69	3	3	21	386	52	Left
 3224	226777	C. Larin	Cyle Larin	25	ST	72	68	72	53	66	26	79	3	4	11	105	46	Right
 3225	229188	V. Pavlidis	Vangelis Pavlidis	21	ST, LW	72	74	73	57	68	42	78	3	4	7	315	36	Right
@@ -6009,7 +6009,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3239	243661	A. Vallci	Albert Vallci	24	RB, CB, LB	72	77	49	60	55	69	81	2	4	29	180	34	Right
 3241	245209	M. Sadílek	Michal Sadílek	21	CDM, LB	72	73	60	68	70	69	74	3	4	7	83	44	Left
 3242	245520	Luca Sangalli	Luca Sangalli Fuentes	25	CM, CAM, RM	72	76	64	70	75	61	63	3	3	1	18	12	Right
-3243	246387	M. Suárez	Mathías Sebastián Suárez Suárez	24	RB, RWB	72	76	42	59	63	70	78	2	4	31	188	16	Right
+3243	246387	M. Suárez	Mathías Sebastián Suárez Suárez	24	RB, RB	72	76	42	59	63	70	78	2	4	31	188	16	Right
 3244	246870	E. Díaz	Enzo Hernán Díaz	24	LB, LM	72	65	45	64	70	70	70	2	2	14	299	1	Left
 3245	206469	T. Fountas	Taxiarchis Fountas	24	ST, CAM, RM	72	84	75	66	72	44	58	3	3	29	347	36	Right
 3246	206518	C. Robinson	Callum Robinson	25	ST, LM, LW	72	84	72	65	74	34	60	3	3	5	102	52	Right
@@ -6051,7 +6051,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3285	220921	A. Esiti	Anderson Esiti	26	CDM, CM	72	58	46	56	54	74	83	2	3	22	260	31	Right
 3286	221250	G. Poblete	Gerónimo Gastón Poblete	27	CDM, CM	72	67	51	65	73	68	72	2	3	4	185	1	Right
 3287	221367	D. Milošević	Deni Milošević	25	LM, CAM, CM	72	66	67	70	73	37	65	3	3	11	257	25	Right
-3288	222022	L. Di Plácido	Leonel Di Plácido	26	RB, RWB, RM	72	85	59	63	75	65	72	3	2	14	146	1	Right
+3288	222022	L. Di Plácido	Leonel Di Plácido	26	RB, RB, RM	72	85	59	63	75	65	72	3	2	14	146	1	Right
 3289	222262	C. Dessers	Cyriel Dessers	25	ST	72	75	75	54	65	28	72	3	4	17	182	6	Right
 3290	222461	Rochinha	Diogo Filipe Rocha Costa	25	RW, LW	72	82	64	65	76	40	49	4	3	6	121	2	Right
 3291	222825	C. Akolo	Chadrac Akolo	25	RM, RW, ST	72	79	68	63	78	27	61	3	3	27	167	60	Right
@@ -6092,12 +6092,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3330	212205	N. Storm	Nikola Storm	25	LM	72	76	67	68	73	36	57	3	5	17	395	6	Right
 3331	212613	W. Saïd	Wesley Saïd	25	ST, RW, LW	72	75	73	67	76	29	57	3	3	27	241	7	Right
 3332	213613	S. Gustafson	Simon Gustafson	25	CM, CAM	72	66	72	72	71	54	71	3	3	7	189	37	Left
-3334	216275	P. Mwene	Phillipp Mwene	26	RB, RM, RWB	72	76	44	61	71	64	62	3	4	3	181	34	Right
+3334	216275	P. Mwene	Phillipp Mwene	26	RB, RM, RB	72	76	44	61	71	64	62	3	4	3	181	34	Right
 3335	216289	M. Diemers	Mark Diemers	26	CAM, CM, LW	72	71	70	75	74	57	66	3	3	7	82	9	Right
 3336	219777	Chema Rodríguez	José Manuel Rodríguez Benito	28	CB, LB	72	62	59	57	60	72	71	2	3	1	57	12	Left
 3337	219797	R. Martínez	Roger Beyker Martínez Tobinson	26	ST, LM, RM	72	76	72	62	75	35	76	3	4	16	122	42	Right
 3338	220165	J. Pohjanpalo	Joel Pohjanpalo	25	ST	72	59	73	56	68	26	70	3	3	3	47	40	Right
-3339	220925	A. Schöpf	Alessandro Schöpf	26	CM, RM, RWB	72	69	69	71	75	63	71	3	4	3	120	34	Right
+3339	220925	A. Schöpf	Alessandro Schöpf	26	CM, RM, RB	72	69	69	71	75	63	71	3	4	3	120	34	Right
 3341	226877	Ivo Rodrigues	Ivo Tiago dos Santos Rodrigues	25	RM, LM	72	76	69	67	77	39	65	4	4	17	145	2	Right
 3343	234698	C. Songkrasin	Chanathip Songkrasin	26	ST, CAM, LW	72	84	65	70	78	26	43	5	3	15	396	113	Right
 3344	238717	E. Pinnock	Ethan Pinnock	27	CB	72	71	37	56	59	71	77	2	3	21	158	13	Left
@@ -6122,7 +6122,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3366	207960	Aitor García	Aitor García Flores	26	LM, ST	72	86	71	67	72	37	59	3	3	23	312	12	Right
 3367	208250	A. Bakasetas	Anastasios Bakasetas	27	CAM, RM, ST	72	68	74	74	69	43	71	3	4	11	179	36	Left
 3368	208459	M. Dijks	Mitchell Dijks	27	LB, LM	72	69	40	65	65	71	77	3	3	2	172	9	Left
-3369	208502	J. Van Rankin	Josecarlos Van Rankin Galland	27	RB, RWB	72	77	39	63	68	68	71	3	3	16	200	33	Right
+3369	208502	J. Van Rankin	Josecarlos Van Rankin Galland	27	RB, RB	72	77	39	63	68	68	71	3	3	16	200	33	Right
 3370	209618	F. Tardieu	Florian Tardieu	28	CDM, CM	72	58	58	68	66	69	75	3	3	27	324	7	Right
 3371	209660	S. Magnasco	Stefano Magnasco Galindo	27	RB, LB	72	82	43	59	66	66	78	3	2	28	173	39	Right
 3372	210648	A. Hegazi	Ahmed Hegazi	29	CB	72	50	20	46	55	72	79	2	2	5	102	11	Right
@@ -6138,7 +6138,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3382	213711	A. Rocha	Aldo Paul Rocha González	27	CM, CDM	72	72	64	70	72	69	74	3	3	16	363	33	Right
 3383	214665	J. Ramírez	Juan Edgardo Ramírez	27	CM, LW, LM	72	76	69	70	76	65	64	3	3	14	144	1	Left
 3384	214718	M. Rodríguez	Martín Vladimir Rodríguez Torrejón	25	LM, LW	72	86	67	63	74	47	63	3	4	16	363	39	Right
-3386	216381	J. Zimmer	Jean Zimmer	26	RB, RM, RWB	72	79	60	65	71	65	72	2	3	35	269	8	Right
+3386	216381	J. Zimmer	Jean Zimmer	26	RB, RM, RB	72	79	60	65	71	65	72	2	3	35	269	8	Right
 3387	216520	J. Güemez	Javier Güemez López	28	CDM, CM	72	61	68	67	65	69	85	3	3	16	203	33	Right
 3388	217242	Y. Kubo	久保 裕也	26	LW, RW, ST	72	75	69	67	76	41	57	4	4	8	243	72	Right
 3389	218981	H. Palacios	Helibelton Palacios Zapata	27	RB, CB	72	84	37	62	63	66	78	2	2	34	235	42	Right
@@ -6150,7 +6150,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3395	224510	W. Bou	Walter Ariel Bou	26	ST	72	73	74	66	73	36	72	3	2	14	68	1	Right
 3396	224719	A. Tashaev	Aleksandr Tashaev	26	LM, LW, RM	72	78	61	71	71	40	62	3	4	13	139	45	Right
 3397	224808	G. Ferrari	Gian Marco Ferrari	28	CB	72	53	27	39	47	74	70	2	3	2	74	15	Left
-3398	225555	A. Oğuz	Ahmet Oğuz	27	RB, RWB	72	78	59	68	72	67	75	3	3	11	399	55	Right
+3398	225555	A. Oğuz	Ahmet Oğuz	27	RB, RB	72	78	59	68	72	67	75	3	3	11	399	55	Right
 3399	226086	A. González	Ángel González	26	RW, ST, RM	72	84	69	64	73	48	64	3	3	14	123	1	Right
 3400	227527	Fábio Abreu	Fábio Gonçalves Abreu	27	ST, RW	72	77	73	54	70	25	66	3	3	6	246	75	Right
 3401	228716	Kevin	Kevin Vázquez Comesaña	27	RB	72	69	53	65	67	68	67	3	3	1	32	12	Right
@@ -6199,7 +6199,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3462	177280	T. Reginiussen	Tore Reginiussen	34	CB	72	59	42	54	51	72	78	2	3	37	204	29	Right
 3463	177537	N. Bertolo	Nicolás Santiago Bertolo	34	LM, RM	72	61	70	75	72	38	66	3	3	14	336	1	Right
 3464	177578	S. Prödl	Sebastian Prödl	33	CB	72	31	36	50	39	74	71	2	2	2	93	34	Right
-3465	177712	K. Monnet-Paquet	Kévin Monnet-Paquet	31	LM, RWB, RM	72	74	68	70	70	52	70	3	3	4	75	7	Right
+3465	177712	K. Monnet-Paquet	Kévin Monnet-Paquet	31	LM, RB, RM	72	74	68	70	70	52	70	3	3	4	75	7	Right
 3466	177790	A. Jędrzejczyk	Artur Jędrzejczyk	32	CB, RB	72	68	48	59	63	70	81	2	3	40	361	4	Right
 3467	177896	M. Vrančić	Mario Vrančić	31	CM, CDM, CAM	72	53	70	74	72	58	70	3	3	21	154	25	Left
 3468	178087	Bueno	Alberto Bueno Calvo	32	CAM	72	71	73	70	73	41	46	3	3	6	233	12	Right
@@ -6221,7 +6221,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3488	184035	B. Angulo	Brayan Alexis Angulo León	30	LB, LB	72	78	54	62	68	69	73	3	3	16	288	42	Left
 3489	184111	C. Benteke	Christian Benteke Liolo	29	ST	72	57	73	61	64	32	73	2	2	5	49	6	Right
 3490	184716	J. Allen	Joe Allen	30	CM, CDM	72	67	62	70	73	71	72	3	2	21	305	38	Right
-3491	184990	Antoñito	Antonio Jesús Regal Angulo	32	RB, RM, RWB	72	79	61	64	71	64	69	3	4	1	81	12	Right
+3491	184990	Antoñito	Antonio Jesús Regal Angulo	32	RB, RM, RB	72	79	61	64	71	64	69	3	4	1	81	12	Right
 3492	185199	S. Ribas	Sebastián César Helios Ribas Barbato	32	ST	72	63	74	51	66	30	74	3	4	14	409	16	Right
 3494	186140	F. Macheda	Federico Macheda	28	ST, LW	72	69	73	58	70	30	62	3	3	22	293	15	Right
 3495	186519	Juan Cala	Juan Torres Ruiz	30	CB	72	61	53	62	60	71	80	2	3	1	201	12	Right
@@ -6238,10 +6238,10 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3510	189172	Fidel	Fidel Chaves de la Torre	30	LM, RM, CM	72	75	71	68	72	34	65	3	2	1	284	12	Left
 3511	189207	J. Durmaz	Jakup Jimmy Durmaz	31	CAM, LM, RM	72	69	69	73	75	32	60	3	4	11	60	37	Left
 3512	189224	Júnior Negão	Gleidionor Figueiredo Pinto Júnior	33	ST	72	74	72	57	69	35	77	3	3	39	250	5	Right
-3513	189300	M. Johansson	Mattias Johansson	28	RB, RWB	72	85	47	58	74	66	65	3	3	11	319	37	Right
+3513	189300	M. Johansson	Mattias Johansson	28	RB, RB	72	85	47	58	74	66	65	3	3	11	319	37	Right
 3515	189462	J. Hoilett	David Junior Hoilett	30	LM	72	86	70	67	74	34	61	3	3	21	371	46	Right
 3516	189468	Daniel Candeias	Daniel João Santos Candeias	32	RM	72	75	64	69	73	56	79	4	4	11	319	2	Right
-3517	189514	H. Afful	Harrison Afful	34	RB, RWB	72	78	58	67	70	66	68	3	3	8	221	32	Right
+3517	189514	H. Afful	Harrison Afful	34	RB, RB	72	78	58	67	70	66	68	3	3	8	221	32	Right
 3518	189530	Sílvio	Sílvio Manuel de Azevedo Ferreira Sá Pereira	32	RB, LB	72	67	56	66	67	70	69	3	5	6	121	2	Right
 3519	189557	A. Rispoli	Andrea Rispoli	31	RB, RM	72	79	64	66	69	68	75	3	3	2	355	15	Right
 3521	189757	A. Prijović	Aleksandar Prijović	30	ST	72	64	72	55	67	35	76	3	3	10	318	22	Right
@@ -6334,7 +6334,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3619	202515	Jesé	Jesé Rodríguez Ruiz	27	RW, ST	72	73	68	69	77	25	58	4	4	4	5	12	Right
 3620	202539	L. Griffiths	Leigh Griffiths	29	ST	72	76	75	63	71	24	68	3	3	26	160	14	Left
 3621	202541	Jota	José Ignacio Peleteiro Ramallo	29	RW, RM	72	69	68	72	74	31	58	3	2	5	92	12	Left
-3622	202678	J. Risdon	Joshua Risdon	27	RWB, RB	72	74	49	61	66	70	79	3	3	36	261	56	Right
+3622	202678	J. Risdon	Joshua Risdon	27	RB, RB	72	74	49	61	66	70	79	3	3	36	261	56	Right
 3623	202686	N. Wells	Nahki Wells	30	ST	72	75	72	63	71	44	63	3	3	21	384	114	Right
 3624	202746	T. Serero	Thulani Caleeb Serero	30	CM, CDM	72	79	48	68	77	66	56	3	4	19	85	89	Right
 3625	203128	T. Monconduit	Thomas Monconduit	29	CDM, CM	72	61	55	69	67	71	76	2	3	4	256	7	Right
@@ -6346,7 +6346,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3632	204215	A. Reach	Adam Reach	27	CAM, RW, RM	72	76	69	70	73	62	70	3	4	21	370	13	Left
 3633	204523	Rubén Pardo	Rubén Pardo Gutiérrez	27	CM, CAM, CDM	72	55	68	73	72	62	53	3	4	4	124	12	Right
 3634	204542	Y. Yotún	Víctor Yoshimar Yotún Flores	30	CDM, CM, LB	72	64	66	75	73	65	73	3	1	16	141	66	Left
-3635	204904	M. Bauer	Moritz Bauer	28	RB, RWB	72	79	46	69	71	68	69	3	3	21	305	34	Right
+3635	204904	M. Bauer	Moritz Bauer	28	RB, RB	72	79	46	69	71	68	69	3	3	21	305	34	Right
 3636	205188	R. Alioui	Rachid Alioui	28	ST	72	68	74	62	68	33	69	3	3	4	135	24	Right
 3637	205212	David Ferreiro	David Ferreiro Quiroga	32	LM, RM	72	87	68	71	75	37	48	4	3	1	142	12	Right
 3638	205215	Igor Rossi	Igor Rossi Branco	31	CB	72	46	30	54	53	71	82	2	2	10	353	5	Left
@@ -6357,7 +6357,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3643	206104	S. Dursun	Serdar Dursun	28	ST	72	64	72	53	69	31	73	3	4	35	415	8	Right
 3644	206222	Bigas	Pedro Bigas Rigo	29	CB, LB	72	66	52	59	60	72	72	2	2	1	70	12	Left
 3646	206662	M. Hedges	Matt Hedges	30	CB	72	50	28	51	52	71	84	2	3	8	282	47	Right
-3647	207448	J. Paredes	Juan Carlos Paredes Reasco	32	RB, RWB	72	85	47	59	72	68	66	3	3	42	423	61	Right
+3647	207448	J. Paredes	Juan Carlos Paredes Reasco	32	RB, RB	72	85	47	59	72	68	66	3	3	42	423	61	Right
 3648	207722	Cristiano	Cristiano da Silva	33	LM, ST, LW	72	75	73	69	70	48	81	3	4	15	311	5	Right
 3649	207929	Pedro Henrique	Pedro Henrique Konzen Medina da Silva	30	LM, RM	72	80	68	68	73	31	61	3	4	11	271	5	Left
 3650	208335	L. Kübler	Lukas Kübler	27	RB	72	67	45	57	62	72	66	2	2	3	115	8	Right
@@ -6372,7 +6372,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3659	210438	F. Boulaya	Farid Boulaya	27	RW	72	73	65	69	78	25	52	5	4	4	185	28	Right
 3660	210533	João Schmidt	João Felipe Schmidt Urbano	27	CM, CDM	72	52	66	73	70	68	78	3	3	15	424	5	Left
 3661	211005	Jang Hyeon Soo	장현수 张贤秀	28	CB	72	68	26	49	61	72	77	2	3	10	98	20	Right
-3662	211014	Paulinho	Paulo Sérgio Mota	28	RB, RWB, RM	72	84	49	63	70	66	68	3	3	22	195	2	Right
+3662	211014	Paulinho	Paulo Sérgio Mota	28	RB, RB, RM	72	84	49	63	70	66	68	3	3	22	195	2	Right
 3663	211061	A. Maxim	Alexandru Iulian Maxim	29	CAM, CM, LM	72	69	67	71	78	32	54	5	4	11	381	70	Right
 3664	211287	M. Fofana	Moryké Fofana	28	LM, RM	72	90	65	62	77	26	57	4	3	11	251	41	Right
 3665	211592	A. Semenov	Andrey Semenov	31	CB	72	53	40	57	59	73	74	2	3	19	85	45	Right
@@ -6405,7 +6405,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3695	215144	E. Insúa	Emanuel Mariano Insúa Zapata	29	LB, LB, LM	72	73	58	62	67	70	76	3	3	22	195	1	Left
 3696	215155	F. Zuqui	Fernando Zuqui	28	CM, RM	72	69	64	71	74	65	70	3	3	11	251	1	Right
 3697	215157	F. Lértora	Federico Eduardo Lértora	29	CDM, CM	72	61	55	65	67	73	76	2	3	14	277	1	Right
-3698	215368	R. Ranftl	Reinhold Ranftl	28	RM, RWB	72	77	64	67	71	64	71	3	3	29	240	34	Right
+3698	215368	R. Ranftl	Reinhold Ranftl	28	RM, RB	72	77	64	67	71	64	71	3	3	29	240	34	Right
 3699	215391	I. Seck	Ibrahima Seck	30	CDM, CM	72	35	46	56	55	73	84	2	3	17	402	10	Left
 3700	215665	Filipe Ferreira	Filipe Miguel Neves Ferreira	29	LB	72	73	53	65	68	67	68	3	3	6	342	2	Left
 3701	216302	E. García	Emmanuel García Vaca	30	LB	72	72	53	61	71	68	65	3	5	16	216	33	Right
@@ -6433,7 +6433,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3724	224104	D. Martínez	Damián Alberto Martínez	30	RB	72	72	65	64	71	68	73	3	3	14	276	1	Right
 3725	225346	Felipe Gedoz	Felipe Gedoz da Conceição	26	RW, LW	72	82	72	68	74	36	67	3	3	31	188	5	Right
 3726	225926	Pere Milla	Pere Milla Peña	27	ST, CAM, LM	72	77	73	68	76	37	62	3	2	1	284	12	Left
-3727	226075	M. Bakakis	Michalis Bakakis	29	RB, CB, RWB	72	83	56	66	71	67	66	3	3	22	195	36	Right
+3727	226075	M. Bakakis	Michalis Bakakis	29	RB, CB, RB	72	83	56	66	71	67	66	3	3	22	195	36	Right
 3729	226278	Xavier	António Manuel Pereira Xavier	27	LW, RW	72	80	68	70	73	34	62	3	3	22	293	2	Left
 3730	226772	J. Laso	Joaquín Marcelo Laso	29	CB, RB	72	61	41	51	54	69	83	2	3	14	276	1	Right
 3731	227232	F. Sotoca	Florian Sotoca	29	ST, RM	72	85	71	67	66	40	80	3	3	4	184	7	Right
@@ -6455,7 +6455,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3751	230289	Santi da Bruma	Santiago André da Bruma Reis	24	ST, RM	72	86	70	73	77	37	58	3	5	12	296	5	Right
 3753	230322	Teixe Gaúcho	Jorge Pietro Teixeira Lima	20	CB	72	73	50	63	67	71	75	2	3	12	222	5	Right
 3754	230350	Flávio Rebeilo	Flávio Raphael Rebeilo Mestres	28	LB	72	79	44	61	71	68	62	3	3	12	134	5	Left
-3755	230367	Tony Muttinho	Tony Josimar Mutto Abrão	24	RB, RWB, RM	72	69	48	64	64	70	71	2	3	12	225	5	Right
+3755	230367	Tony Muttinho	Tony Josimar Mutto Abrão	24	RB, RB, RM	72	69	48	64	64	70	71	2	3	12	225	5	Right
 3756	230369	Durval Dutría	Durval Murilo Dutría Pereira	28	CM	72	68	69	70	71	69	76	2	3	12	222	5	Right
 3757	230374	Deiverson Kaio	Deiverson Breno Kaio de Freitas	36	CAM	72	81	71	71	75	44	59	2	5	12	89	5	Left
 3758	230393	Paolito Serra	Paolito Jesus Serra Fonseca	28	CB	72	35	47	49	49	74	68	2	3	12	224	5	Right
@@ -6485,7 +6485,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3783	234015	Caio Milaçar	Caio Bruno Milaçar Kenedy	24	CAM	72	66	68	69	76	31	52	4	4	12	380	5	Right
 3784	234949	João Amaral	João Pedro Reis Amaral	28	RM, RW	72	84	66	66	75	36	57	3	3	6	340	2	Left
 3906	237973	K. Kuchaev	Konstantin Kuchaev	22	LM	71	78	58	67	70	55	60	3	3	13	61	45	Right
-3785	235055	F. Stojković	Filip Stojković	27	RB, RWB, CB	72	73	36	68	66	69	70	2	3	29	347	49	Right
+3785	235055	F. Stojković	Filip Stojković	27	RB, RB, CB	72	73	36	68	66	69	70	2	3	29	347	49	Right
 3786	235502	Luisinho	Luis Gustavo Melere da Silva	29	RM, LM	72	76	69	67	76	27	62	4	3	10	215	5	Right
 3788	236548	J. Zmrhal	Jaromír Zmrhal	26	LM, RM	72	80	69	69	69	58	64	3	3	30	249	44	Left
 3789	237109	O. Karavaev	Oleksandr Karavaev	28	RM, RB	72	78	54	69	71	58	64	3	4	18	91	51	Right
@@ -6542,7 +6542,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3840	251756	R. Nteka	Randy Nteka	22	ST, CAM	71	76	67	63	71	63	78	3	2	23	435	7	Left
 3841	255891	B. Šutalo	Boško Šutalo	20	CB	71	64	31	51	54	74	66	2	3	2	17	17	Right
 3842	226430	S. Hakšabanovič	Sead Hakšabanovič	21	LW, LM	71	75	64	68	74	28	56	4	4	41	339	49	Right
-3843	230824	Pedro Pereira	Pedro Miguel Almeida Lopes Pereira	22	RB, RWB, RM	71	72	39	65	71	69	61	3	2	2	355	2	Right
+3843	230824	Pedro Pereira	Pedro Miguel Almeida Lopes Pereira	22	RB, RB, RM	71	72	39	65	71	69	61	3	2	2	355	2	Right
 3845	232708	M. Valenzuela	Milton Nahuel Valenzuela	21	LB	71	72	43	64	69	69	67	3	2	8	221	1	Left
 3846	233097	R. van Drongelen	Rick van Drongelen	21	CB	71	61	25	58	53	71	77	2	4	35	199	9	Left
 3847	233230	K. Mac Allister	Kevin Mac Allister	22	LB, RB	71	70	42	56	64	70	66	2	3	14	285	1	Right
@@ -6579,7 +6579,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3878	239458	B. Kraev	Bozhidar Boykov Kraev	23	CAM	71	68	63	66	74	43	69	3	4	32	193	103	Right
 3879	240193	E. Rexhbeçaj	Elvis Rexhbeçaj	22	CM	71	66	58	70	72	64	66	3	3	3	156	62	Left
 3880	241004	F. Carballo	Felipe Ignacio Carballo Ares	23	CM, CDM	71	65	60	70	68	64	76	2	3	31	188	16	Right
-3881	241696	H. De la Fuente	Hernán De la Fuente	23	RB, RWB	71	84	56	60	71	65	76	3	3	14	174	1	Right
+3881	241696	H. De la Fuente	Hernán De la Fuente	23	RB, RB	71	84	56	60	71	65	76	3	3	14	174	1	Right
 3882	242614	I. Nedelcearu	Ionuț Nedelcearu	24	CB	71	61	46	53	55	71	77	2	4	19	85	70	Right
 3883	244261	L. Majer	Lovro Majer	22	CAM, CM	71	69	66	76	80	38	57	4	3	20	90	17	Left
 3884	244731	N. Rusyn	Nazariy Rusyn	21	ST	71	78	71	47	66	20	53	2	3	18	91	51	Right
@@ -6638,11 +6638,11 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3942	206463	J. Dudziak	Jeremy Dudziak	24	CM, CDM, RB	71	78	61	71	76	67	67	3	3	35	199	74	Left
 3943	210021	H. Mukhtar	Hany Mukhtar	25	CAM, CM	71	79	63	69	75	44	59	3	5	8	356	8	Right
 3944	210583	M. Stendera	Marc Stendera	24	CM, CAM, CDM	71	44	70	72	75	57	65	3	4	45	438	8	Right
-3945	211966	M. Romeo	Mahlon Beresford Baker Romeo	24	RWB, RB	71	78	47	61	68	69	70	3	3	21	254	117	Right
+3945	211966	M. Romeo	Mahlon Beresford Baker Romeo	24	RB, RB	71	78	47	61	68	69	70	3	3	21	254	117	Right
 3946	212137	A. Vindheim	Andreas Aalen Vindheim	24	RB, RM	71	83	54	63	68	64	69	3	3	24	270	29	Right
 3947	213777	I. Fossum	Iver Fossum	23	CM	71	70	63	68	73	63	71	3	4	32	194	29	Right
 3948	215433	F. Vicari	Francesco Vicari	25	CB	71	34	27	49	45	74	68	2	2	30	212	15	Right
-3949	216282	R. Framberger	Raphael Framberger	24	RB, RWB	71	82	41	56	58	69	61	2	3	3	150	8	Right
+3949	216282	R. Framberger	Raphael Framberger	24	RB, RB	71	82	41	56	58	69	61	2	3	3	150	8	Right
 3950	216416	J. Gyamerah	Jan Gyamerah	25	RB, CB	71	79	45	60	70	68	65	3	3	35	199	8	Right
 3951	218744	J. Byrne	Jack Byrne	24	RW, CAM, RM	71	75	67	69	73	52	69	3	3	47	439	52	Right
 3952	219469	S. Perica	Stipe Perica	24	ST	71	64	70	49	65	27	72	3	2	21	95	17	Right
@@ -6693,10 +6693,10 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4008	232882	K. Misao	三竿 健斗	24	CDM, CM	71	73	44	66	71	68	73	3	2	15	429	72	Right
 4009	234195	D. Warmerdam	Django Warmerdam	24	LB	71	72	60	65	73	65	75	3	2	7	189	9	Left
 4010	236944	F. Diabaté	Fousseni Diabaté	24	LM, RM, ST	71	76	66	61	76	23	43	3	3	5	20	67	Left
-4011	240257	C. Traoré	Cheick Omar Traoré	25	RB, RWB	71	74	46	62	71	67	68	3	3	4	184	67	Right
+4011	240257	C. Traoré	Cheick Omar Traoré	25	RB, RB	71	74	46	62	71	67	68	3	3	4	184	67	Right
 4012	243551	A. Gholizadeh	Ali Gholizadeh	24	LM, RM	71	73	60	66	74	41	67	4	3	17	302	78	Left
 4013	245058	O. Kiteishvili	Otar Kiteishvili	24	CM, CAM	71	71	67	68	74	67	58	3	4	29	444	81	Right
-4014	246098	Vítor Tormena	Vítor Tormena de Farias	24	CB, RWB	71	52	36	57	59	73	74	2	2	6	114	5	Right
+4014	246098	Vítor Tormena	Vítor Tormena de Farias	24	CB, RB	71	52	36	57	59	73	74	2	2	6	114	5	Right
 4015	254067	A. Julio	Anderson Andrés Julio Santos	24	LM, LW	71	82	64	63	72	27	59	2	3	16	283	61	Right
 4017	201093	N. Powell	Nick Powell	26	CAM, CM	71	67	70	66	72	48	65	3	4	21	305	13	Right
 4018	201122	T. Kalas	Tomáš Kalas	27	CB	71	72	48	54	63	71	75	2	3	21	384	44	Right
@@ -6715,7 +6715,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4036	218743	A. Zapata	Alexis Zapata Álvarez	25	LM, RM	71	80	67	67	72	31	66	3	3	42	445	42	Left
 4037	219686	Carlos Júnior	Carlos Alberto Carvalho da Silva Júnior	24	LW, ST	71	73	69	63	74	30	48	3	3	6	390	5	Right
 4038	220148	N. Orsini	Nicolás Orsini	25	ST, RW, LW	71	85	69	56	67	31	69	2	3	14	146	1	Right
-4039	220620	F. Hadergjonaj	Florent Hadërgjonaj	25	RB, RWB, LB	71	79	48	66	71	66	65	3	3	21	338	62	Right
+4039	220620	F. Hadergjonaj	Florent Hadërgjonaj	25	RB, RB, LB	71	79	48	66	71	66	65	3	3	21	338	62	Right
 4040	220685	Léo Bonatini	Leonardo Bonatini Lohner Maia	26	ST	71	68	70	68	71	34	71	3	4	5	31	5	Right
 4041	221269	J. Riedewald	Jaïro Riedewald	23	CB, LB	71	63	51	68	67	72	67	3	2	5	49	9	Left
 4042	221284	J. Gradit	Jonathan Gradit	27	CB, RB	71	68	28	59	62	70	79	2	3	4	184	7	Right
@@ -6781,7 +6781,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4110	198177	B. Schenkeveld	Bart Schenkeveld	28	CB	71	77	39	59	64	70	76	2	2	22	293	9	Right
 4111	198705	A. Najar	Andy Aryel Najar Rodríguez	27	RB, CB	71	73	65	70	73	70	61	3	4	8	41	85	Right
 4112	200473	S. Skrzybski	Steven Skrzybski	27	ST, RM	71	75	73	65	75	33	62	3	3	3	120	8	Right
-4113	200778	C. Christie	Cyrus Christie	27	RB, RWB	71	83	53	63	69	66	74	3	2	21	237	52	Right
+4113	200778	C. Christie	Cyrus Christie	27	RB, RB	71	83	53	63	69	66	74	3	2	21	237	52	Right
 4114	200818	Bruno Uvini	Bruno Uvini Bortolança	29	CB	71	38	42	48	48	70	81	2	2	10	318	5	Left
 4115	201908	A. Wisdom	Andre Wisdom	27	RB, CB	71	68	30	60	63	72	78	2	3	21	161	13	Right
 4116	203038	Lucas Piazón	Gustavo Lucas Domingues Piazón	26	RW, CAM	71	65	71	72	73	34	52	3	4	6	186	5	Right
@@ -6800,7 +6800,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4132	212225	E. Roco	Enzo Pablo Roco Roco	27	CB	71	37	41	54	56	72	76	2	3	11	163	39	Right
 4133	212369	Eduardo	Eduardo Antônio Machado Teixeira	27	CM, CAM	71	62	67	73	74	57	56	3	3	6	114	5	Left
 4134	213000	S. van Beek	Sven van Beek	25	CB	71	55	34	55	51	73	71	2	2	7	82	9	Right
-4135	213203	Gonçalo Silva	Gonçalo Filipe Oliveira Silva	29	CB, RWB	71	54	33	52	48	73	73	2	2	6	367	2	Right
+4135	213203	Gonçalo Silva	Gonçalo Filipe Oliveira Silva	29	CB, RB	71	54	33	52	48	73	73	2	2	6	367	2	Right
 4136	213302	I. Tajouri-Shradi	Ismael Tajouri-Shradi	26	RW, LB, RM	71	82	70	64	75	31	54	3	4	8	247	104	Left
 4137	213420	B. Islamkhan	Bauyrzhan Islamkhan	27	CAM, LM	71	74	64	73	73	39	54	3	4	38	218	119	Right
 4138	213705	Camacho	João Pedro Gomes Camacho	26	LW, RW	71	78	67	65	75	31	55	4	3	6	401	2	Right
@@ -6897,7 +6897,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4244	185349	D. Odoi	Denis Odoi	32	RB, CB	71	76	51	66	73	67	70	3	3	5	53	6	Right
 4246	186405	F. Di Santo	Franco Matías Di Santo	31	ST, LW, CAM	71	69	69	68	71	45	74	3	3	14	144	1	Right
 4247	186556	Dentinho	Bruno Ferreira Bonfim	31	CAM	71	77	67	67	74	48	71	4	4	18	79	5	Right
-4248	186598	K. Naughton	Kyle Naughton	31	RB, LB, RWB	71	68	52	64	67	70	69	3	3	21	206	13	Right
+4248	186598	K. Naughton	Kyle Naughton	31	RB, LB, RB	71	68	52	64	67	70	69	3	3	21	206	13	Right
 4249	186881	J. Holland	James Robert Holland	31	CM	71	64	62	68	71	68	78	2	4	29	240	56	Right
 4250	186954	B. Ideye	Brown Ideye Aide	31	ST	71	73	71	61	67	40	69	3	4	11	322	31	Right
 4251	186982	A. Büttner	Alexander Büttner	31	LM, LB	71	73	65	72	72	69	69	3	3	8	211	9	Left
@@ -6927,7 +6927,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4278	190870	J. Boye	John Boye	33	CB	71	67	33	47	57	71	76	2	3	4	185	32	Right
 4279	190931	E. Zukanović	Ervin Zukanović	33	CB	71	45	49	64	53	73	71	2	3	11	163	25	Left
 4280	190942	K. Hansen	Kian Hansen	31	CB	71	65	47	66	60	72	73	2	3	32	460	27	Right
-4281	191005	A. Elmohamady	Ahmed Eissa El Mohamady Abdel Fattah	32	RB, RM, RWB	71	68	64	71	69	67	70	3	3	5	92	11	Right
+4281	191005	A. Elmohamady	Ahmed Eissa El Mohamady Abdel Fattah	32	RB, RM, RB	71	68	64	71	69	67	70	3	3	5	92	11	Right
 4282	191688	Botía	Alberto Tomás Botía Rabasco	31	CB	71	54	50	52	49	70	79	2	2	10	215	12	Right
 4283	192026	Souza	Elierce Barbosa de Souza	32	CM, CDM	71	64	69	71	71	66	75	3	3	10	329	5	Right
 4284	192241	R. Grant	Rhyan Grant	29	RB	71	70	60	64	67	65	79	3	3	36	325	56	Right
@@ -6943,13 +6943,13 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4299	193425	H. Behrens	Hanno Behrens	30	CM, CAM, CDM	71	56	70	64	68	72	81	3	2	35	301	8	Right
 4300	193561	K. Leerdam	Kelvin Leerdam	30	RB, LB	71	71	57	65	68	67	73	3	3	8	147	9	Right
 4301	193850	M. Calderoni	Marco Calderoni	31	LB	71	80	51	57	62	67	77	2	2	30	183	15	Left
-4302	193900	J. Hunt	Jack Hunt	29	RWB, RB	71	81	52	63	68	66	69	3	2	21	384	13	Right
+4302	193900	J. Hunt	Jack Hunt	29	RB, RB	71	81	52	63	68	66	69	3	2	21	384	13	Right
 4303	194017	A. Weimann	Andreas Weimann	28	ST, CAM, CM	71	83	70	62	71	45	71	3	3	21	384	34	Right
 4304	194053	L. Sobiech	Lasse Sobiech	29	CB	71	42	51	47	41	73	73	2	3	25	462	8	Right
 4305	194063	J. Greguš	Ján Greguš	29	CM, CDM	71	65	68	72	69	66	72	3	4	8	274	23	Right
 4306	194146	K. Long	Kevin Long	29	CB	71	53	35	50	55	71	74	2	2	5	58	52	Right
 4307	197136	K. Ansarifard	Karim Ansarifard	30	ST	71	74	71	56	71	42	67	3	4	22	195	78	Right
-4308	197170	K. Harris	Kadeem Harris	27	LW, RWB, LB	71	85	58	62	76	27	58	3	3	21	370	13	Right
+4308	197170	K. Harris	Kadeem Harris	27	LW, RB, LB	71	85	58	62	76	27	58	3	3	21	370	13	Right
 4310	197890	Arribas	Alejandro Arribas Garrido	31	CB	71	64	36	56	55	70	69	2	3	23	341	12	Right
 4311	198138	R. Rojas	Juan Rodrigo Rojas Ovelar	32	CM, RM	71	70	66	70	72	66	82	3	5	33	196	69	Right
 4312	198455	J. Larsson	Johan Larsson	30	RB	71	80	63	68	67	64	75	3	4	41	463	37	Right
@@ -7062,7 +7062,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4425	219496	Simy	Simeon Tochukwu Nwankwo	28	ST	71	59	74	44	59	29	78	2	3	2	355	31	Right
 4426	220128	J. Cristaldo	Jonathan Ezequiel Cristaldo	31	ST	71	74	71	62	74	28	71	3	4	14	127	1	Right
 4427	220829	E. Torregrossa	Ernesto Torregrossa	28	ST	71	73	70	55	66	28	73	4	3	30	249	15	Left
-4428	221403	Fabiano	Fabiano Leismann	28	CB, RWB	71	66	47	60	64	70	78	2	3	11	264	5	Right
+4428	221403	Fabiano	Fabiano Leismann	28	CB, RB	71	66	47	60	64	70	78	2	3	11	264	5	Right
 4429	221553	V. Kjartansson	Viðar Örn Kjartansson	30	ST	71	70	72	49	64	29	69	2	4	37	468	65	Right
 4430	221774	Fernando Karanga	Luiz Fernando da Silva Monte	29	ST	71	62	71	52	62	30	74	3	3	9	268	5	Right
 4431	221969	F. Mladenović	Filip Mladenović	28	LB	71	84	59	66	72	64	70	3	3	40	361	22	Left
@@ -7101,7 +7101,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4469	230335	Wagner Orsinho	Wagner Mauro Orsi Vasquez	20	LB	71	77	57	68	64	68	59	2	3	12	109	5	Left
 4435	258212	Y. Erdoğan	Yusuf Erdoğan	27	LM, RM	71	88	68	62	75	59	65	3	4	11	399	55	Left
 4471	230342	Edsinho Torres	Edson Gérson Torres Guerra	24	LB	71	70	54	60	60	67	70	2	3	12	297	5	Right
-4472	230362	Daguinho Parrela	Dagoberto Josué Pinho Parrela	24	RB, RWB	71	75	44	68	58	68	75	2	3	12	133	5	Right
+4472	230362	Daguinho Parrela	Dagoberto Josué Pinho Parrela	24	RB, RB	71	75	44	68	58	68	75	2	3	12	133	5	Right
 4473	230390	Alexandre Frandeira	Alex Martin Frandeira Álvares	20	CB, CDM	71	49	44	53	49	70	81	2	1	12	297	5	Right
 4474	230451	Dinei Peixo	Luis Claudinei Peixoto Álvares	24	RW, RM	71	73	66	69	73	58	75	2	4	12	86	5	Right
 4475	230474	Macarinho Louro	Macario André Louro Padilha	20	LM, CM	71	81	60	67	76	32	51	4	3	12	296	5	Left
@@ -7137,7 +7137,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4509	251122	M. Fernández	Mauro Raúl Fernández	31	RM	71	82	68	64	73	32	58	3	4	16	328	1	Right
 4510	251139	J. Soraire	Jesús Miguel Soraire	31	CM	71	76	61	71	75	62	83	3	5	14	456	1	Right
 4512	254183	A. Romero	Ángel Elías Romero Iparraguirre	29	CDM	71	67	68	70	73	61	75	2	2	46	428	66	Right
-4513	253149	J. Frimpong	Jeremie Agyekum Frimpong	19	RB, RWB	70	90	48	64	77	62	67	3	3	26	160	9	Right
+4513	253149	J. Frimpong	Jeremie Agyekum Frimpong	19	RB, RB	70	90	48	64	77	62	67	3	3	26	160	9	Right
 4514	254796	N. Madueke	Chukwunonso Tristan Madueke	18	RM, ST	70	78	65	64	78	36	56	4	3	7	83	13	Left
 4515	243392	R. Matondo	Rabbi Matondo	19	LM, ST, RM	70	94	57	64	73	37	49	3	3	3	120	38	Right
 4517	238460	R. Brewster	Rhian Brewster	20	ST	70	79	71	55	72	20	61	3	4	5	7	13	Right
@@ -7196,7 +7196,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4576	243580	L. Openda	Ikoma Loïs Openda	20	ST, LM	70	93	67	60	69	25	70	3	3	7	313	6	Right
 4577	244204	N. Katić	Nikola Katić	23	CB	70	71	35	45	59	68	77	2	2	26	231	17	Right
 4578	245065	D. Palacios	Juan Diego Palacios Ricardo	20	LB	70	77	33	62	68	65	64	3	2	8	41	61	Left
-4579	246106	M. Herrera	Marcelo Andrés Herrera Mansilla	21	RB, RWB	70	80	40	55	70	67	64	2	3	14	144	1	Right
+4579	246106	M. Herrera	Marcelo Andrés Herrera Mansilla	21	RB, RB	70	80	40	55	70	67	64	2	3	14	144	1	Right
 4580	247150	A. Vigo	Alex Vigo	21	RB	70	79	49	62	70	65	67	2	3	14	277	1	Right
 4581	253287	G. Neves	Gabriel Neves Perdomo	22	CM, CDM	70	71	65	68	71	63	63	2	4	31	188	16	Right
 4582	258208	O. Lingr	Ondřej Lingr	21	CAM, LW, RW	70	76	65	67	72	42	63	2	3	24	138	44	Right
@@ -7278,14 +7278,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4664	248831	M. Diaby	Mohamed Lamine Diaby	23	CDM	70	35	45	52	51	73	78	2	2	6	340	7	Right
 4665	251763	L. Ranđelović	Lazar Ranđelović	22	LM, RM	70	79	65	67	70	33	61	2	3	22	125	22	Right
 4666	257889	K. Jakić	Kristijan Jakić	23	CDM, CM	70	66	57	63	65	66	79	2	3	20	90	17	Right
-4667	213659	F. Dabo	Fankaty Dabo	24	RWB, RB	70	73	47	62	65	65	77	2	3	21	475	13	Right
+4667	213659	F. Dabo	Fankaty Dabo	24	RB, RB	70	73	47	62	65	65	77	2	3	21	475	13	Right
 4668	214658	J. Karlström	Jesper Karlström	25	CDM, CM	70	67	54	65	66	68	79	2	3	41	417	37	Right
 4669	219452	J. Fernández	Julián Rodrigo Fernández	25	CDM, CM	70	71	55	61	68	68	75	2	3	14	265	1	Right
 4670	220831	M. Malsa	Mickaël Ramon Malsa	24	CM, CDM	70	69	58	67	66	71	75	2	3	1	48	7	Right
 4671	221695	G. Donsah	Godfred Donsah	24	CM, CDM	70	70	63	70	73	66	73	3	3	2	172	32	Right
 4672	223255	A. Witry	Aslak Fonn Witry	24	RB	70	76	54	65	66	65	67	3	2	41	417	29	Right
 4673	223929	A. Leya Iseka	Aaron Leya Iseka	22	ST	70	81	71	60	69	27	71	3	3	27	241	6	Right
-4674	224013	Sergi Canós	Sergi Canós Tenés	23	RW, LW, RWB	70	72	67	64	73	52	63	3	3	21	158	12	Right
+4674	224013	Sergi Canós	Sergi Canós Tenés	23	RW, LW, RB	70	72	67	64	73	52	63	3	3	21	158	12	Right
 4675	225071	B. Whiteman	Benjamin Whiteman	24	CDM	70	71	61	66	67	64	74	3	3	48	476	13	Right
 4676	226720	Witi	Witiness Chimoio Joao Quembo	23	LB, LW, RW	70	88	63	61	72	60	50	3	3	6	401	95	Left
 4677	227513	C. Arrieta	Cristian Camilo Arrieta Medina	24	RB	70	88	50	60	63	61	73	2	3	34	343	42	Right
@@ -7408,7 +7408,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4818	234515	J. Lefort	Jordan Lefort	26	CB, LB	70	65	26	59	63	71	75	2	3	25	140	7	Left
 4819	234716	J. Attamah	Joseph Attamah	26	CB, CDM	70	68	47	58	55	70	76	2	2	11	271	32	Right
 4821	235553	Y. Salmier	Yoann Salmier	27	CB	70	47	28	41	53	71	79	2	3	27	324	7	Right
-4822	235943	Rafa Navarro	Rafael Jesús Navarro Mazuelos	26	RB, RWB	70	74	44	60	66	66	48	2	3	1	56	12	Right
+4822	235943	Rafa Navarro	Rafael Jesús Navarro Mazuelos	26	RB, RB	70	74	44	60	66	66	48	2	3	1	56	12	Right
 4823	236287	N. Ibáñez	Nicolás Alejandro Ibáñez	25	ST	70	73	69	55	66	33	71	2	3	16	283	1	Right
 4824	236533	R. Glatzel	Robert Nesta Glatzel	26	ST	70	71	70	45	65	27	68	2	4	21	371	8	Right
 4825	237153	L. Blessing	Latif Blessing	23	CM, RW	70	86	63	65	76	66	57	3	4	8	41	32	Right
@@ -7456,7 +7456,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4874	225386	Ygor Nogueira	Ygor Nogueira de Paula	25	CB	70	54	30	45	50	69	78	2	3	6	335	5	Right
 4875	226517	H. Hajradinović	Haris Hajradinović	26	CAM, CM	70	76	66	69	72	45	67	3	3	11	399	25	Left
 4876	233670	A. Fukumori	福森 晃斗	27	CB	70	65	67	72	66	70	72	2	3	15	396	72	Left
-4877	234172	B. Bese	Barnabás Bese	26	RB, RWB, CB	70	85	52	57	64	62	81	3	3	17	488	26	Right
+4877	234172	B. Bese	Barnabás Bese	26	RB, RB, CB	70	85	52	57	64	62	81	3	3	17	488	26	Right
 4878	235077	B. Riascos	José Brayan Riascos Valencia	25	RW, ST	70	81	67	62	70	35	81	3	3	6	401	42	Right
 4881	239645	M. de los Santos	Matías De los Santos De los Santos	27	CB	70	54	56	58	58	68	82	2	3	34	360	16	Right
 4884	244605	C. Albanis	Christos Albanis	25	LM, RM, ST	70	74	67	62	72	38	64	3	3	22	195	36	Right
@@ -7472,7 +7472,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4898	198198	Jordi Amat	Jordi Amat Maas	28	CB, CDM	70	64	48	53	55	69	76	2	3	17	320	12	Right
 4899	199027	J. Robinson	Jack Robinson	26	CB, LB	70	70	41	61	63	72	66	2	3	5	110	13	Left
 4900	199761	M. Kamiński	Marcin Kamiński	28	CB	70	66	56	62	59	71	69	2	2	3	229	4	Left
-4901	199890	N. Lavanchy	Numa Lavanchy	26	RWB, RM, LB	70	80	62	63	68	60	70	3	3	25	473	21	Right
+4901	199890	N. Lavanchy	Numa Lavanchy	26	RB, RM, LB	70	80	62	63	68	60	70	3	3	25	473	21	Right
 4902	201955	M. Haïdara	Massadio Haïdara	27	LB, LB	70	76	51	59	67	66	77	3	3	4	184	67	Left
 4903	202052	B. Afobe	Benik Afobe	27	ST	70	76	70	59	67	29	69	3	2	11	153	60	Right
 4904	202238	Muralha	Luiz Philipe Lima de Oliveira	27	CDM, CM	70	70	67	66	72	66	76	3	2	10	430	5	Right
@@ -7492,15 +7492,15 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 4920	209698	B. Touré	Birama Touré	28	CDM, CM	70	42	52	63	65	68	73	2	3	27	419	67	Right
 4921	210237	T. Pledl	Thomas Pledl	26	RM	70	76	59	69	74	49	57	3	4	35	269	8	Right
 4924	210926	A. Ateef	Abdullah Ibrahim Otayf	27	CDM, CM	70	41	46	72	66	67	62	2	2	10	98	101	Right
-4925	212104	J. Gómez	Jaime Gómez Valencia	26	RB, CM, RWB	70	77	64	64	72	64	70	3	3	16	165	33	Right
+4925	212104	J. Gómez	Jaime Gómez Valencia	26	RB, CM, RB	70	77	64	64	72	64	70	3	3	16	165	33	Right
 4926	212223	S. Maguire	Sean Maguire	26	LM, ST	70	90	65	55	73	38	67	3	3	21	239	52	Right
 4927	212282	I. Sylla	Issiaga Sylla	26	LB, LB	70	64	61	67	68	66	73	3	2	4	184	48	Left
 4928	214000	Y. Reyna	José Yordy Reyna Serna	26	ST, RW	70	88	66	62	75	36	64	3	4	8	248	66	Right
 4929	215020	J. Cavallaro	Juan Ignacio Cavallaro	26	LM, CAM	70	75	70	69	73	35	62	3	3	50	493	1	Right
-4930	215969	L. Dos Santos	Laurent Dos Santos	27	RWB, RB	70	57	48	65	66	68	61	3	3	27	388	7	Right
+4930	215969	L. Dos Santos	Laurent Dos Santos	27	RB, RB	70	57	48	65	66	68	61	3	3	27	388	7	Right
 4931	216286	J. Andersen	Jeppe Andersen	27	CM, CDM	70	74	61	67	69	64	78	3	3	41	348	27	Right
 4932	216605	Akapo	Carlos Akapo Martínez	27	RB, LB	70	84	50	60	59	66	76	2	3	1	201	82	Right
-4933	219626	J. Gómez	José Luis Gómez	26	RB, RWB	70	87	54	62	75	61	61	3	4	14	146	1	Right
+4933	219626	J. Gómez	José Luis Gómez	26	RB, RB	70	87	54	62	75	61	61	3	4	14	146	1	Right
 4934	219860	G. Perea	Geisson Alexander Perea Ocoró	28	CB	70	61	28	49	60	68	79	2	3	34	235	42	Right
 4935	220638	Luismi	Luis Miguel Sánchez Benítez	28	CDM, CM	70	57	39	59	62	68	77	2	3	1	81	12	Right
 4936	221621	S. Birnbaum	Steven Mitchell Birnbaum	29	CB	70	38	31	46	51	69	80	2	2	8	248	47	Right
@@ -7561,7 +7561,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5005	175608	A. Fathi	Ahmed Fathy Abdel Meneim Ibrahim	35	RB, CDM	70	63	62	64	66	69	74	2	4	19	85	11	Right
 5006	176346	Choi Chul Soon	최철순 崔喆淳	33	RB, LB	70	71	46	63	66	67	75	3	3	39	326	20	Right
 5007	176348	Yeom Ki Hun	염기훈 廉基勋	37	CM, LW, ST	70	47	71	76	72	47	62	3	3	39	485	20	Left
-5008	176687	A. Beck	Andreas Beck	33	RWB, RB	70	62	45	65	65	71	70	3	3	17	320	8	Right
+5008	176687	A. Beck	Andreas Beck	33	RB, RB	70	62	45	65	65	71	70	3	3	17	320	8	Right
 5009	176920	M. Torrén	Miguel Ángel Torrén	31	CB, RB	70	67	45	57	55	72	73	2	3	14	285	1	Right
 5010	176942	M. Lustig	Carl Mikael Lustig	33	RB	70	51	53	66	62	72	71	3	3	41	364	37	Right
 5011	177129	A. Bodzek	Adam Bodzek	34	CDM, CM	70	37	54	61	58	71	74	2	2	35	269	4	Right
@@ -7648,7 +7648,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5102	192938	Y. Ngbakoto	Yeni Atito N'Gbakoto	28	LM, CAM, RM	70	79	68	64	73	25	63	3	3	27	164	60	Right
 5103	193092	M. Rojas	Marco Rojas	28	RM, CAM, LM	70	90	65	63	74	45	46	4	4	36	503	71	Right
 5104	193185	S. Malone	Scott Malone	29	LB, LB	70	73	62	64	71	64	69	3	3	21	254	13	Left
-5106	193276	P. Klingmann	Philipp Klingmann	32	RB, RWB	70	65	58	64	62	69	70	3	3	35	272	8	Right
+5106	193276	P. Klingmann	Philipp Klingmann	32	RB, RB	70	65	58	64	62	69	70	3	3	35	272	8	Right
 5107	193461	Fredy	Alfredo Kulembe Ribeiro	30	CAM, LM	70	87	64	66	73	28	56	4	3	11	258	75	Right
 5108	193505	I. Martić	Ivan Martić	29	RB	70	71	51	61	66	67	71	3	2	25	317	21	Right
 5109	193510	D. Novaretti	Diego Martín Novaretti	35	CB	70	32	32	50	44	71	76	2	3	14	276	1	Left
@@ -7669,7 +7669,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5125	195037	D. Batth	Danny Batth	29	CB	70	32	23	42	37	70	83	2	2	21	305	13	Right
 5126	195258	L. Schmitz	Lukas Schmitz	31	LB	70	67	57	64	62	68	75	2	2	7	480	8	Left
 5128	195912	Suk Hyun Jun	석현준 玄铉俊	29	ST	70	59	72	57	68	39	78	3	4	27	324	20	Right
-5129	196688	A. Corzo	Aldo Sebastián Corzo Chávez	31	RB, RWB	70	71	46	58	63	70	64	3	3	19	85	66	Right
+5129	196688	A. Corzo	Aldo Sebastián Corzo Chávez	31	RB, RB	70	71	46	58	63	70	64	3	3	19	85	66	Right
 5130	197975	S. Morsy	Sam Morsy	28	CDM, CM	70	66	57	63	70	64	79	3	3	21	344	11	Right
 5131	197996	E. Larsson	Eric Larsson	28	RB, CB	70	65	54	66	65	64	79	2	4	41	267	37	Right
 5132	198000	J. Morrow	Justin Morrow	32	LB, LB, LM	70	67	62	65	66	67	73	3	4	8	131	47	Left
@@ -7716,7 +7716,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5176	202530	Alvaro Rey	Álvaro Rey Vázquez	30	RW, LW	70	77	66	66	72	45	65	3	4	51	511	12	Right
 5177	202620	R. Boateng	Richard Boateng	27	CM, CDM, CAM	70	70	68	64	68	67	75	3	2	23	351	32	Right
 5179	202708	L. Palun	Lloyd Palun	31	LB, RB	70	69	47	60	63	68	71	2	3	27	164	18	Right
-5180	202814	N. Byrne	Nathan Byrne	28	RB, RWB	70	88	52	61	70	63	66	3	3	21	161	13	Right
+5180	202814	N. Byrne	Nathan Byrne	28	RB, RB	70	88	52	61	70	63	66	3	3	21	161	13	Right
 5181	202827	C. Battocchio	Cristian Damián Battocchio	28	CM, CDM, CAM	70	69	68	70	75	57	58	3	3	4	155	15	Right
 5182	202940	N. Kebano	Neeskens Kebano	28	LW, LM, CAM	70	80	65	65	74	39	53	3	3	5	53	60	Right
 5183	202968	Yun Il Lok	윤일록 尹日录	28	LM, ST	70	71	65	66	70	47	67	3	3	4	130	20	Right
@@ -7774,7 +7774,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5239	211903	B. Kololli	Benjamin Kololli	28	LM, ST, LB	70	75	67	66	70	54	68	3	4	25	462	62	Right
 5240	211907	J. Gondorf	Jérôme Gondorf	32	CM, CDM	70	52	63	70	70	66	77	3	4	35	461	8	Right
 5241	212332	R. Ramírez	Robin Ariel Ramírez González	30	ST	70	79	69	61	71	37	68	3	3	33	366	69	Right
-5242	213010	Cifu	Miguel Ángel Garrido Cifuentes	29	RB, RWB, RM	70	81	54	58	67	64	75	3	3	23	451	12	Right
+5242	213010	Cifu	Miguel Ángel Garrido Cifuentes	29	RB, RB, RM	70	81	54	58	67	64	75	3	3	23	451	12	Right
 5243	213064	F. Calvo	Francisco Javier Calvo Quesada	27	CB	70	67	44	60	62	69	75	2	3	8	287	19	Left
 5244	213106	R. Sigurjónsson	Rúnar Már Sigurjónsson	30	CM, CDM	70	66	71	71	69	52	82	3	4	19	85	65	Right
 5245	213136	S. Willems	Steeven Willems	29	CB, LB	70	68	44	59	58	72	69	2	3	17	302	7	Left
@@ -7804,7 +7804,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5269	216260	F. Kaufmann	Fabio Kaufmann	27	RM	70	88	60	61	70	52	72	3	3	35	477	8	Right
 5270	216376	Marco Sangalli	Marco Sangalli Fuentes	28	RM, RB	70	76	69	64	71	52	65	3	3	23	341	12	Right
 5271	216682	D. Hotto	Deon Hotto Kavendji	29	LW	70	80	70	68	71	28	59	3	3	43	332	112	Right
-5272	216751	D. Bejarano	Diego Bejarano Ibañez	28	RB, RWB, RM	70	66	38	61	62	66	58	2	2	51	511	122	Right
+5272	216751	D. Bejarano	Diego Bejarano Ibañez	28	RB, RB, RM	70	66	38	61	62	66	58	2	2	51	511	122	Right
 5273	216811	K. Waston	Kendall Jamaal Waston Manley	32	CB	70	43	30	44	42	68	81	2	2	8	243	19	Right
 5275	217532	M. El-Munir	Mohammed Mounir Abdussalam	28	LB, LM	70	84	29	58	68	66	66	4	3	8	41	104	Left
 5277	218717	G. Mhango	Hellings Frank Mhango	27	ST	70	77	73	46	70	21	61	3	2	43	332	127	Right
@@ -7821,7 +7821,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5288	221820	Zhang Xizhe	张稀哲	29	CAM, RM, CM	70	72	63	68	70	48	60	3	4	9	40	58	Right
 5289	221838	M. Jojić	Miloš Jojić	28	CM, RM, CDM	70	67	72	74	73	56	70	3	3	11	50	22	Right
 5290	221875	Son Jun Ho	손준호 孙准浩	28	CM, CDM	70	60	63	68	64	62	69	3	3	39	326	20	Right
-5291	222278	Tang Miao	唐淼	29	RB, RM, RWB	70	75	29	64	69	61	78	3	3	9	100	58	Right
+5291	222278	Tang Miao	唐淼	29	RB, RM, RB	70	75	29	64	69	61	78	3	3	9	100	58	Right
 5292	222315	G. Esparza	Cristian Gabriel Esparza	27	LM	70	90	60	64	72	44	54	3	3	33	515	1	Left
 5293	222741	Leandro Pereira	Leandro Marcos Peruchena Pereira	28	ST	70	65	69	56	67	40	73	3	2	15	441	5	Right
 5294	222987	H. Yamaguchi	山口 蛍	29	CM, CDM	70	75	64	70	72	65	71	3	3	15	71	72	Right
@@ -7833,7 +7833,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5303	224315	L. Paganini	Luca Rudolf Paganini	27	RM, CM	70	75	55	66	72	29	59	3	3	30	183	15	Right
 5304	224358	Dani Ramírez	Daniel Ramírez Fernández	28	CAM, RM	70	72	65	68	73	36	60	3	3	40	400	12	Left
 5305	224508	L. Mancuso	Leonardo Mancuso	28	ST, LW, RW	70	76	70	62	72	34	68	3	4	30	349	15	Right
-5306	224604	Wang Shenchao	王燊超	31	RB, RWB, CB	70	71	32	55	63	66	69	3	4	9	45	58	Right
+5306	224604	Wang Shenchao	王燊超	31	RB, RB, CB	70	71	32	55	63	66	69	3	4	9	45	58	Right
 5307	224831	G. Beltrán	Guillermo Alexis Beltrán Paredes	36	ST	70	67	72	52	70	23	67	3	3	33	479	69	Right
 5308	224885	Guilherme Sityá	Guilherme Haubert Sityá	30	LB, LM	70	80	36	67	70	62	76	3	3	11	257	5	Left
 5309	225445	D. Bohar	Damjan Bohar	28	LM	70	82	67	64	69	33	62	3	3	40	513	3	Right
@@ -8019,7 +8019,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5500	241602	J. Arias	Jhon Adolfo Arias Andrade	22	CAM, CM	69	82	68	66	71	34	69	2	3	34	343	42	Right
 5501	242491	F. Jaramillo	Felipe Jaramillo Velásquez	24	CDM, CB	69	64	54	60	57	69	83	2	3	34	343	42	Right
 5502	242629	João Moutinho	João Gervásio Bragança Moutinho	22	LB	69	68	30	61	64	68	65	2	2	8	97	2	Right
-5503	244952	V. Loroña	Vladimir Eduardo Loroña Aguilar	21	RB, RWB	69	77	37	59	70	66	71	3	3	16	165	33	Right
+5503	244952	V. Loroña	Vladimir Eduardo Loroña Aguilar	21	RB, RB	69	77	37	59	70	66	71	3	3	16	165	33	Right
 5504	245084	M. Busi	Maxime Busi	20	RB, RM	69	73	49	59	72	63	68	2	3	17	302	6	Right
 5505	245368	G. Yalçın	Güven Yalçın	21	ST, LM	69	76	72	50	67	23	57	3	3	11	105	55	Right
 5506	251294	Guga Rodrigues	Gonçalo Rosa Gonçalves Pereira Rodrigues	22	CM	69	67	62	64	72	64	58	3	3	6	227	2	Right
@@ -8048,11 +8048,11 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5531	237994	N. Barrios	Cristian Nahuel Barrios	22	LM, LW, ST	69	81	63	64	75	40	44	4	3	14	409	1	Right
 5532	237997	U. Antuna	Carlos Uriel Antuna Romero	22	LM, RM, RW	69	87	56	60	72	31	47	3	3	16	226	33	Right
 5533	238391	G. Kalulu	Gédéon Kalulu Kyatengwa	22	RB	69	79	40	55	64	67	73	2	3	27	418	7	Right
-5534	239306	J. Bataille	Jelle Bataille	21	RB, RWB, RW	69	75	52	65	72	63	64	3	3	17	525	6	Right
+5534	239306	J. Bataille	Jelle Bataille	21	RB, RB, RW	69	75	52	65	72	63	64	3	3	17	525	6	Right
 5535	239571	T. Handwerker	Tim-Henry Handwerker	22	LB, LM	69	75	39	62	65	64	66	2	3	35	301	8	Left
 5536	239575	G. Nyamsi	Gerzino Nyamsi	23	CB	69	53	33	47	48	66	79	2	2	4	66	7	Right
 5537	244205	M. Salas	Maximiliano Nahuel Salas	22	ST, RM	69	71	70	66	73	29	63	2	3	16	382	1	Left
-5538	244625	Pipa	Gonzalo Ávila Gordón	22	RM, RB, RWB	69	75	57	67	70	66	68	3	3	21	338	12	Right
+5538	244625	Pipa	Gonzalo Ávila Gordón	22	RM, RB, RB	69	75	57	67	70	66	68	3	3	21	338	12	Right
 5539	245228	F. Krüger	Florian Krüger	21	ST, RM	69	85	68	53	68	22	69	3	3	35	420	8	Right
 5540	246732	A. Loba	Ake Arnaud Loba	22	ST	69	80	67	57	70	24	70	3	3	16	148	41	Right
 5541	247019	B. Kouyaté	Boubakar Kouyaté	23	CB, RB	69	64	35	47	55	69	75	2	4	4	185	67	Right
@@ -8120,7 +8120,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5611	234983	Q. Laçi	Qazim Laçi	24	CDM, CM, CAM	69	73	67	67	69	66	73	3	3	27	418	35	Right
 5612	235432	M. Munetsi	Marshall Nyasha Munetsi	24	CDM, CM	69	64	46	62	62	68	70	2	3	4	112	88	Right
 5613	237647	A. Hrustić	Ajdin Hrustić	23	RM, CM, LM	69	67	63	67	70	57	66	3	2	7	96	56	Left
-5614	237662	B. Lennon	Brooks Lennon	22	RWB, RM, RB	69	72	61	65	66	61	68	3	3	8	69	47	Right
+5614	237662	B. Lennon	Brooks Lennon	22	RB, RM, RB	69	72	61	65	66	61	68	3	3	8	69	47	Right
 5615	238497	M. Spielmann	Marvin Spielmann	24	LM	69	86	68	64	69	36	61	3	3	25	140	21	Right
 5616	239340	J. Chabot	Julian Chabot	22	CB	69	37	27	43	49	69	75	2	2	2	99	8	Left
 5617	239361	D. de Wit	Dani de Wit	22	CM, CAM	69	65	68	65	66	63	80	3	3	7	118	9	Right
@@ -8166,7 +8166,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5661	229150	P. Hatzidiakos	Pantelis Chatzidiakos	23	CB	69	68	52	65	61	68	71	2	3	7	118	36	Right
 5662	229271	P. Köpke	Pascal Köpke	24	ST, RW, LW	69	76	69	60	70	35	62	3	3	35	301	8	Right
 5663	229702	J. Mees	Joshua Mees	24	LW, LM	69	68	68	63	72	21	59	3	4	3	78	8	Right
-5664	229896	Jordi Calavera	Jordi Calavera Espinach	24	RB, RWB	69	77	56	59	66	63	74	3	3	23	128	12	Right
+5664	229896	Jordi Calavera	Jordi Calavera Espinach	24	RB, RB	69	77	56	59	66	63	74	3	3	23	128	12	Right
 5665	231110	P. Erras	Patrick Erras	25	CDM, CB, CM	69	35	42	61	47	68	72	2	3	3	59	8	Right
 5666	231549	J. Angulo	José Angulo	25	ST	69	76	66	60	72	36	63	3	4	42	474	61	Right
 5667	231638	A. Peñaranda	Adalberto Peñaranda Maestre	23	ST, LM	69	74	67	65	73	36	60	3	3	19	85	50	Right
@@ -8258,7 +8258,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5763	226706	Felipe Pires	Felipe Augusto Rodrigues Pires	25	LM, RM	69	79	57	62	72	39	52	3	3	6	246	5	Right
 5764	228144	Jorge Pombo	Jorge Marcos Pombo Escobar	26	ST, LM, CAM	69	69	70	68	71	57	82	3	3	1	201	12	Right
 5765	228614	G. Holtmann	Gerrit Holtmann	25	LM, LB, LB	69	89	63	61	70	57	59	3	3	35	290	8	Left
-5766	229039	D. Johannesson	Diego Johannesson Pando	26	RB, RWB, RM	69	82	44	60	62	62	68	2	2	23	341	65	Right
+5766	229039	D. Johannesson	Diego Johannesson Pando	26	RB, RB, RM	69	82	44	60	62	62	68	2	2	23	341	65	Right
 5767	229728	F. Kamberi	Florian Kamberi	25	ST	69	76	67	63	68	38	78	3	3	25	308	21	Right
 5768	229923	S. Stolze	Sebastian Stolze	25	CAM, RM	69	85	63	63	74	29	56	3	3	35	506	8	Right
 5769	230506	Adão Salvadaldo	Adão Dênis Salvador Vidigal	24	ST, LW	69	72	73	51	76	26	51	3	5	12	223	5	Left
@@ -8334,14 +8334,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5853	200671	V. Ulloa	Victor Ulloa	28	CDM, CM	69	47	58	63	66	66	72	3	3	8	39	33	Right
 5854	200689	R. Leonard	Ryan Leonard	28	CDM, CM	69	79	65	65	67	65	78	3	3	21	254	13	Right
 5855	201888	V. Berisha	Veton Berisha	26	ST, LW	69	83	68	61	70	34	80	3	3	37	538	29	Right
-5856	202113	M. Odubajo	Moses Odubajo	26	RWB, RB, LB	69	81	56	62	68	68	68	3	3	21	370	13	Right
+5856	202113	M. Odubajo	Moses Odubajo	26	RB, RB, LB	69	81	56	62	68	68	68	3	3	21	370	13	Right
 5857	203265	T. Blackett	Tyler Blackett	26	LB, LB, CB	69	69	40	66	63	67	75	3	1	21	237	13	Left
 5858	203749	S. Bradley	Sonny Bradley	28	CB	69	56	31	47	50	68	76	2	3	21	505	13	Left
 5860	204412	G. Saville	George Saville	27	CM	69	63	65	69	68	66	74	3	3	21	344	57	Left
 5861	204652	A. Escoboza	Jesús Alonso Escoboza Lugo	27	LB, CM, LM	69	74	65	70	72	61	67	3	4	16	122	33	Left
 5862	204677	Oriol Rosell	Oriol Rosell Argerich	27	CDM, CM	69	44	56	66	66	66	67	3	4	8	97	12	Right
 5863	204761	G. Hall	Grant Hall	28	CB	69	61	39	48	44	68	70	2	3	21	344	13	Right
-5864	204847	T. Kane	Todd Kane	26	RB, RWB	69	74	52	60	66	65	62	3	2	21	386	13	Right
+5864	204847	T. Kane	Todd Kane	26	RB, RB	69	74	52	60	66	65	62	3	2	21	386	13	Right
 5865	205529	L. Antei	Luca Antei	28	CB, RB	69	47	27	41	47	71	69	2	2	2	273	15	Right
 5866	206492	A. Sané	Abdoulaye Sané	27	ST, RM	69	74	72	59	67	26	59	2	2	10	281	10	Right
 5867	206601	M. Sampirisi	Mario Sampirisi	27	RB, RM	69	67	37	60	61	67	73	2	3	30	372	15	Right
@@ -8457,7 +8457,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5993	178600	U. Demirok	Uğur Demirok	31	CB	69	38	43	55	55	71	73	2	3	11	257	55	Right
 5994	179695	R. Cruzado	Paulo Rinaldo Cruzado Durand	35	CM, CAM	69	63	64	68	63	51	72	3	3	46	514	66	Left
 5995	179746	S. Vokes	Sam Vokes	30	ST	69	46	72	58	60	43	80	2	3	21	305	38	Right
-5996	179811	B. Capon	Brecht Capon	32	RB, RWB, RM	69	69	63	66	66	67	66	3	3	17	525	6	Right
+5996	179811	B. Capon	Brecht Capon	32	RB, RB, RM	69	69	63	66	66	67	66	3	3	17	525	6	Right
 5997	179899	A. Skúlason	Ari Freyr Skúlason	33	LB, LB, LM	69	64	60	69	68	66	67	3	2	17	525	65	Left
 5998	179947	Edgar	Edgar Bruno da Silva	33	ST, RW	69	62	71	62	63	32	75	3	3	39	295	5	Right
 5999	180250	William	William Fernando da Silva	33	CM, CDM, LM	69	71	70	65	74	63	74	3	3	16	203	5	Left
@@ -8689,7 +8689,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6251	230094	N. Stojiljković	Nikola Stojiljković	27	ST	69	66	69	58	65	36	71	3	4	6	394	22	Right
 6253	230178	Fredinho Mutto	Frederico Tomás Mutto Heck	28	LB	69	70	46	65	54	64	73	2	2	12	296	5	Left
 6254	230196	Anselmo Meirás	Anselmo Túlio Meirás Abrão	24	RB	69	66	44	58	53	68	66	2	2	12	296	5	Right
-6255	230205	Nosberto Vila	Nosberto Diego Vila Abranches	24	RB, RWB, RM	69	60	56	63	68	68	70	3	3	12	297	5	Right
+6255	230205	Nosberto Vila	Nosberto Diego Vila Abranches	24	RB, RB, RM	69	60	56	63	68	68	70	3	3	12	297	5	Right
 6256	230226	Charles de Breito	Charles Dênis de Breito Catarino	32	CM, CDM	69	72	53	68	70	65	82	2	3	12	222	5	Right
 6257	230253	Alson Botelho	Alan Jonathan Patrício Botelho	20	CDM	69	61	46	55	62	72	67	2	3	12	87	5	Right
 6258	230265	João Barnierie	João Everton Barnierie Cabral	24	CB	69	43	43	52	58	70	72	2	3	12	433	5	Right
@@ -8809,7 +8809,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6382	233917	D. Kutesa	Dereck Kutesa	22	LW, RW	68	88	58	59	72	38	62	4	3	4	112	21	Right
 6383	234894	E. Bohinen	Emil Bohinen	21	CM	68	67	58	66	69	66	69	3	3	37	524	29	Left
 6387	237477	M. Tavernier	Marcus Tavernier	21	LM, LW	68	79	64	62	72	39	55	3	3	21	344	13	Left
-6388	238319	T. Edwards	Thomas Edwards	21	RB, RWB	68	76	42	62	63	62	72	2	3	21	305	13	Right
+6388	238319	T. Edwards	Thomas Edwards	21	RB, RB	68	76	42	62	63	62	72	2	3	21	305	13	Right
 6389	239138	Jeong Woo Yeong	정우영 Woo Yeong Jeong	20	RM, LM, CAM	68	77	54	59	75	35	56	4	4	3	115	20	Right
 6390	240241	B. Toma	Bastien Toma	21	CM, CDM	68	64	63	66	68	63	69	3	3	17	182	21	Right
 6391	242294	J. Cacciabue	Jerónimo Cacciabue	22	CDM, CM	68	55	53	63	65	65	61	2	3	14	265	1	Right
@@ -8887,7 +8887,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6469	244624	Álex López	Alejandro López Moreno	23	CM, LM, CDM	68	64	58	67	67	58	57	3	3	23	137	12	Right
 6471	245016	A. Ciss	Amadou Ciss	20	LM, ST	68	77	60	61	69	55	71	3	3	27	167	10	Right
 6472	246275	Avilés	Javier Avilés Cortés	22	RM, LM, CM	68	63	56	67	68	23	45	4	4	23	162	12	Right
-6473	246284	Óscar Gil	Óscar Gil Regaño	22	RB, RWB	68	77	37	57	65	64	64	3	3	23	137	12	Right
+6473	246284	Óscar Gil	Óscar Gil Regaño	22	RB, RB	68	77	37	57	65	64	64	3	3	23	137	12	Right
 6474	246608	Fidalgo	Álvaro Fidalgo Fernández	23	CAM, LM	68	74	62	67	70	49	56	4	3	23	551	12	Right
 6475	247112	S. Dewaele	Sieben Dewaele	21	CDM, LB	68	68	49	69	68	64	62	2	4	7	230	6	Right
 6476	247534	C. Zady Sery	Caleb Zady Sery	20	LM, RM	68	83	59	63	70	21	51	3	3	27	217	41	Right
@@ -8995,7 +8995,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6593	229640	M. Pedersen	Mads Pedersen	23	LB, LB	68	85	46	62	70	60	66	3	3	3	150	27	Left
 6594	230079	A. Kalulu	Aldo-Nsawila Kalulu Kyatengwa	24	RM, ST	68	91	63	57	73	32	50	3	3	25	197	7	Right
 6595	230107	L. Coulibaly	Lassana Coulibaly	24	CDM, CM	68	74	54	61	68	65	71	3	3	4	135	67	Right
-6596	231356	M. Millar	Matthew Millar	23	RB, RWB	68	83	52	58	72	61	75	3	3	36	569	56	Right
+6596	231356	M. Millar	Matthew Millar	23	RB, RB	68	83	52	58	72	61	75	3	3	36	569	56	Right
 6597	231587	L. Caicedo	Luís Alberto Caicedo Mosquera	24	CDM, CM	68	65	49	57	69	63	76	3	3	8	211	42	Right
 6598	232000	Lee Seung Woo	이승우 李昇佑	22	LM, RM, CAM	68	73	63	60	74	27	46	3	3	17	337	20	Right
 6599	232156	M. Honsak	Mathias Honsak	23	LM, ST, LB	68	82	63	61	66	50	70	3	3	35	415	34	Left
@@ -9029,7 +9029,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6631	213905	S. Gallagher	Sam Gallagher	24	ST, RW	68	70	68	54	63	45	74	2	3	21	309	13	Right
 6633	215412	C. Elder	Callum Elder	25	LB	68	74	34	56	62	64	67	2	2	48	446	56	Left
 6634	215758	J. McCarthy	Jason McCarthy	24	RB	68	73	52	61	64	64	75	2	3	21	550	13	Right
-6635	216105	G. Dewaele	Gilles Dewaele	24	RB, CB, RWB	68	71	61	59	57	65	69	2	3	17	391	6	Right
+6635	216105	G. Dewaele	Gilles Dewaele	24	RB, CB, RB	68	71	61	59	57	65	69	2	3	17	391	6	Right
 6636	219605	C. Cuevas	Cristian Alejandro Cuevas Jara	25	LB, LB	68	82	57	63	68	63	64	3	3	28	566	39	Left
 6637	220201	I. Ledezma	Iván Patricio Ledezma Ahumada	24	CAM, CM	68	64	68	62	72	32	53	3	2	28	534	39	Right
 6638	220529	L. Palmiero	Luca Palmiero	24	CM, CDM	68	63	64	70	69	61	61	3	2	2	11	15	Right
@@ -9077,7 +9077,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6689	219990	V. Hoff	Vebjørn Hoff	24	CM	68	69	56	65	69	66	68	3	3	37	526	29	Right
 6690	222930	T. Serbest	Tarkan Serbest	26	CDM, CM, CB	68	60	54	65	65	66	71	2	3	11	399	55	Right
 6691	224009	G. Ekpolo	Elohor Godswill Ekpolo	25	RB	68	76	37	57	65	64	78	3	3	41	510	31	Right
-6692	224191	A. Ciranni	Alessandro Ciranni	24	RB, RWB, LB	68	72	56	65	68	63	49	3	3	17	236	6	Right
+6692	224191	A. Ciranni	Alessandro Ciranni	24	RB, RB, LB	68	72	56	65	68	63	49	3	3	17	236	6	Right
 6693	224376	Philipe Sampaio	Philipe Sampaio Azevedo	25	CB	68	34	36	45	44	68	80	2	2	27	164	5	Right
 6694	226237	Marcelo Hermes	Marcelo Hermes	25	LB	68	71	51	59	70	63	54	3	2	6	291	5	Left
 6695	227945	S. Findlay	Stuart Findlay	24	CB	68	63	37	57	53	70	71	2	3	26	498	14	Left
@@ -9091,7 +9091,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 6704	234382	N. Landgraf	Niklas Landgraf	24	LB, CB, LM	68	74	41	56	62	64	70	2	2	45	572	8	Left
 6706	235005	O. Kakabadze	Otar Kakabadze	25	RB	68	85	47	64	69	61	70	3	3	25	238	81	Right
 6707	235135	H. Balic	Husein Balić	24	LW, ST	68	86	66	62	66	30	59	3	3	29	240	34	Right
-6708	237339	R. Koike	小池 龍太	24	RB, RWB, RM	68	88	29	57	66	59	66	3	3	15	330	72	Right
+6708	237339	R. Koike	小池 龍太	24	RB, RB, RM	68	88	29	57	66	59	66	3	3	15	330	72	Right
 6709	237665	K. Chinen	知念 庆	25	ST, ST	68	76	65	53	69	24	66	3	3	15	489	72	Right
 6710	243628	A. Vukotić	Aleksandar Vukotić	24	CB	68	31	42	49	45	68	79	2	3	17	573	22	Left
 6711	243733	D. Saddiki	Driess Saddiki	23	CDM, CM	68	76	54	61	62	67	75	2	3	7	315	9	Right
@@ -9356,7 +9356,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7011	188232	K. Yoda	Abdoul Karim Yoda	31	RM	68	83	68	61	71	52	67	3	3	10	430	7	Left
 7012	188305	A. Bouhaddouz	Aziz Bouhaddouz	33	ST	68	60	70	56	64	23	76	3	4	35	272	24	Right
 7013	188383	P. Valdivia	Pierrick Valdivia	32	CDM, CM	68	42	61	67	63	63	72	2	3	27	164	7	Left
-7014	188421	J. Dom	Joren Dom	30	RB, RWB, RM	68	76	56	62	61	62	68	2	3	17	448	6	Right
+7014	188421	J. Dom	Joren Dom	30	RB, RB, RM	68	76	56	62	61	62	68	2	3	17	448	6	Right
 7015	188430	V. Rüfli	Vincent Rüfli	32	LB, RB	68	70	57	66	66	64	75	3	3	25	308	21	Right
 7016	188621	A. Meijers	Aaron Meijers	32	LB	68	67	57	67	69	64	72	3	4	7	530	9	Left
 7017	188762	I. Lewczuk	Igor Lewczuk	35	CB	68	37	44	60	56	68	72	2	3	40	361	4	Right
@@ -9409,7 +9409,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7071	198156	L. Marín	Leandro Lucas Marín	28	RB, CB, RM	68	69	51	60	66	65	73	3	3	14	431	1	Right
 7072	198235	J. Taylor	Jon Taylor	27	RM, LM	68	88	62	60	69	26	62	3	3	48	476	13	Right
 7073	198322	Aguilera	Juan Aguilera Núñez	34	CDM	68	47	57	63	69	62	72	3	3	23	351	12	Right
-7074	198377	L. Palmer	Liam Palmer	28	RB, LB, RWB	68	75	58	64	65	62	72	3	2	21	370	14	Right
+7074	198377	L. Palmer	Liam Palmer	28	RB, LB, RB	68	75	58	64	65	62	72	3	2	21	370	14	Right
 7075	198479	P. Arajuuri	Paulus Arajuuri	32	CB	68	33	35	44	42	66	82	2	2	19	85	40	Right
 7076	198517	X. Kouassi	Xavier Laglais Kouassi	30	CB, CDM	68	69	51	61	67	67	75	3	2	27	580	41	Right
 7077	198631	Rodri	Rodrigo Ríos Lozano	30	ST	68	77	69	55	70	22	67	3	4	23	341	12	Right
@@ -9420,7 +9420,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7082	199195	J. Delaplace	Jonathan Delaplace	34	RB, CM	68	55	52	66	66	66	71	3	3	4	256	7	Right
 7083	199285	S. Kukuruzović	Stjepan Kukuruzović	31	CM, CDM	68	65	66	70	63	56	73	3	3	25	590	17	Left
 7084	199490	Joselu	José Luís Moreno Barroso	29	ST, CAM	68	80	68	60	65	42	77	3	3	23	392	12	Right
-7085	199537	J. Cuffaut	Joffrey Cuffaut	32	CB, RWB, RB	68	68	39	62	62	66	75	2	3	27	388	7	Right
+7085	199537	J. Cuffaut	Joffrey Cuffaut	32	CB, RB, RB	68	68	39	62	62	66	75	2	3	27	388	7	Right
 7086	199569	E. Torres	Erick Estéfano Torres Padilla	27	ST	68	68	68	66	66	34	69	3	3	8	69	33	Right
 7087	199665	J. Cools	Jens Cools	29	CDM, CM	68	55	52	64	58	69	71	2	3	17	320	6	Right
 7088	199789	M. Yumlu	Mustafa Yumlu	32	CB	68	36	37	45	46	68	77	2	2	11	264	55	Right
@@ -9446,7 +9446,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7109	202401	Patric	Anderson Patric Aguiar Oliveira	32	ST	68	59	66	53	61	33	75	3	3	15	358	5	Right
 7110	202535	T. Röcher	Thorsten Röcher	29	ST, LM, LW	68	78	65	63	71	23	68	4	4	45	438	34	Left
 7112	203095	S. Gannon	Seán Gannon	28	RB	68	75	52	59	64	62	74	2	3	47	492	52	Right
-7114	203315	G. Teigl	Georg Teigl	29	RB, RWB, RM	68	84	55	59	66	61	69	3	3	29	365	34	Right
+7114	203315	G. Teigl	Georg Teigl	29	RB, RB, RM	68	84	55	59	66	61	69	3	3	29	365	34	Right
 7115	203388	Tiago Alves	Tiago Alves Sales de Lima	27	LM, RM, ST	68	72	65	67	67	44	68	3	4	15	591	5	Left
 7116	203445	B. Kessel	Benjamin Kessel	32	RB, CB	68	59	57	60	60	70	75	2	2	35	477	8	Right
 7117	203795	B. Romo	Bruno Sebastián Romo Rojas	31	CB	68	44	28	46	46	68	80	2	3	16	328	39	Left
@@ -9458,12 +9458,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7124	204242	M. Barreto	Michaël Barreto	29	RM, CAM, LM	68	79	62	64	69	27	62	3	4	27	418	7	Right
 7125	204388	A. Wiegel	Andreas Wiegel	28	RB	68	77	62	62	67	62	70	3	3	17	573	8	Right
 7126	204450	P. Diamanka	Pape Maly Diamanka	30	CM, CDM	68	71	64	62	62	67	80	3	3	23	128	10	Right
-7127	204687	P. Olkowski	Paweł Olkowski	30	RB, RWB	68	74	57	62	66	64	70	3	2	11	381	4	Right
+7127	204687	P. Olkowski	Paweł Olkowski	30	RB, RB	68	74	57	62	66	64	70	3	2	11	381	4	Right
 7128	204763	P. Steinhart	Phillipp Steinhart	27	LB, LM	68	73	54	68	62	60	72	2	3	45	592	8	Left
 7129	204786	S. Mladen	Sebastian Mladen	28	CB, RB	68	72	51	57	54	68	73	2	3	44	453	70	Right
 7130	204987	B. Blume	Bror Emil Blume Jensen	28	CM	68	73	60	65	72	60	68	3	3	32	447	27	Right
 7131	205340	Marcelo	Marcelo dos Santos Ferreira	30	CB	68	61	26	50	50	69	66	2	2	6	340	5	Right
-7132	205447	M. Kuhn	Moritz Kuhn	28	RB, RWB	68	89	51	67	67	59	66	3	2	45	528	8	Right
+7132	205447	M. Kuhn	Moritz Kuhn	28	RB, RB	68	89	51	67	67	59	66	3	2	45	528	8	Right
 7133	205518	Y. Croizet	Yohan Croizet	28	CAM, RM, ST	68	73	67	66	73	47	70	4	3	17	488	7	Left
 7134	205588	I. Höhn	Immanuel Höhn	28	CB, RB	68	46	32	51	57	70	67	2	3	35	415	8	Right
 7135	205598	André Sousa	André Alexandre Carreira Sousa	29	CM	68	62	68	70	69	59	72	3	2	11	381	2	Left
@@ -9479,8 +9479,8 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7147	208030	B. Fofana	Boubacar Fofana	30	CDM, CM	68	60	59	62	54	66	84	2	3	44	531	48	Right
 7148	208049	E. Orfano	Esteban Gabriel Orfano	28	RM, RB	68	84	60	62	67	55	67	2	4	51	560	1	Right
 7149	208607	M. Mantovani	Martín Maximiliano Mantovani	35	CB	68	33	42	53	57	69	68	2	3	23	449	1	Right
-7150	208688	M. Kerhe	Manuel Kerhe	33	RWB, RM, RB	68	73	54	62	66	63	62	3	3	29	575	34	Right
-7151	208730	E. Valentini	Enrico Valentini	31	RB, LB, RWB	68	71	55	66	67	63	73	3	3	35	301	8	Right
+7150	208688	M. Kerhe	Manuel Kerhe	33	RB, RM, RB	68	73	54	62	66	63	62	3	3	29	575	34	Right
+7151	208730	E. Valentini	Enrico Valentini	31	RB, LB, RB	68	71	55	66	67	63	73	3	3	35	301	8	Right
 7152	208817	Andy	Andrés José Rodríguez Gaitán	30	CDM, CM, CAM	68	55	62	71	62	62	70	2	3	23	527	12	Left
 7153	208898	D. Łukasik	Daniel Łukasik	29	CDM	68	48	45	65	63	66	71	2	2	11	280	4	Right
 7154	209194	S. Nachreiner	Sebastian Nachreiner	31	CB	68	48	23	37	35	70	70	2	3	35	506	8	Right
@@ -9497,7 +9497,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7165	210826	F. Gallegos	Luis Felipe Gallegos Leiva	28	CM, LM	68	77	62	67	72	59	62	3	3	16	283	39	Left
 7166	210917	M. Fossati	Marco Ezio Fossati	27	CM, CDM	68	67	62	66	70	53	67	3	3	30	372	15	Right
 7167	211057	Pablo Valcarce	Pablo Valcarce Vidal	27	RM, LM, CAM	68	75	64	63	70	51	66	3	3	23	437	12	Right
-7168	211221	M. Boyle	Martin Callie Boyle	27	RM, RWB, ST	68	93	61	58	68	44	59	3	3	26	555	56	Right
+7168	211221	M. Boyle	Martin Callie Boyle	27	RM, RB, ST	68	93	61	58	68	44	59	3	3	26	555	56	Right
 7169	211240	J. Lopez	Julien Yves Rémi López Baila	28	LM, RM, LW	68	81	58	61	71	40	54	3	2	27	279	28	Right
 7170	211791	M. Konczkowski	Martin Konczkowski	26	RM, RB	68	78	40	67	67	61	71	3	2	40	426	4	Right
 7171	211848	B. Zolinski	Ben Zolinski	28	ST, RM	68	73	68	61	67	61	78	2	3	35	420	8	Right
@@ -9551,7 +9551,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7225	224344	A. Vilches	Hugo Alejandro Héctor Vilches Manuguian	28	ST, LW	68	68	65	54	68	21	67	3	3	28	393	39	Right
 7226	224420	S. Aškovski	Stefan Aškovski	28	RM, LM	68	77	59	63	68	59	67	3	3	44	561	63	Left
 7227	224648	Li Lei	李磊	28	LB	68	73	43	65	62	66	72	3	3	9	40	58	Left
-7229	225145	R. Mphahlele	Ramahlwe Mphahlele	30	RB, CB, RWB	68	66	33	59	64	69	62	3	3	43	292	89	Right
+7229	225145	R. Mphahlele	Ramahlwe Mphahlele	30	RB, CB, RB	68	66	33	59	64	69	62	3	3	43	292	89	Right
 7230	225285	V. Fındıklı	Volkan Fındıklı	29	CDM, CB	68	33	42	60	65	66	74	3	2	11	257	55	Right
 7231	226286	G. Ávalos	Gabriel Ávalos Stumpfs	29	ST, RM, LM	68	67	64	48	65	35	72	2	4	14	285	69	Right
 7232	226793	M. Polster	Matthew Ryan Polster	27	RB, CDM	68	56	47	64	65	67	77	2	3	8	211	47	Right
@@ -9564,7 +9564,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7240	229473	Costinha	João José Pereira da Costa	27	CM, CAM, RW	68	82	67	67	76	61	56	3	4	6	390	2	Right
 7241	229496	Marco Baixinho	Marco João Costa Baixinho	30	CB, CDM	68	53	34	49	51	68	76	2	3	6	340	2	Right
 7242	229620	V. Rodić	Vladimir Rodić	26	RW, RM	68	82	61	57	71	45	65	3	3	41	348	49	Right
-7243	229654	Gerard Valentín	Gerard Valentín Sancho	26	RM, RB, RWB	68	89	40	61	71	60	66	3	3	23	457	12	Right
+7243	229654	Gerard Valentín	Gerard Valentín Sancho	26	RM, RB, RB	68	89	40	61	71	60	66	3	3	23	457	12	Right
 7244	229851	A. Al Bulayhi	Ali Al Bulayhi	30	CB, LB	68	67	28	37	43	69	76	2	2	10	98	101	Left
 7245	230221	Kauã Zanson	Kauã Ricardo Zanon Bardini	24	CB, RB	68	65	45	49	62	70	60	2	3	12	109	5	Right
 7246	230247	Jadson Castrelo	Jadson José Castrelo Rios	24	CDM, CM	68	52	51	57	63	66	78	2	3	12	109	5	Right
@@ -9619,7 +9619,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7297	248017	C. Golofca	Cătălin Gheorghiță Golofca	30	RW, LW	68	88	63	61	73	25	62	3	3	44	531	70	Right
 7298	248023	L. Filip	Lucian Ionuț Filip	29	CDM, CB	68	61	49	60	62	69	68	2	5	44	300	70	Left
 7299	248043	G. Vașvari	Gabriel Cristian Vașvari	33	CDM, CM	68	53	58	62	60	63	72	2	2	44	531	70	Right
-7300	250902	O. Ceylan	Oğuz Ceylan	29	RWB, RB	68	76	31	63	66	62	61	2	2	11	381	55	Right
+7300	250902	O. Ceylan	Oğuz Ceylan	29	RB, RB	68	76	31	63	66	62	61	2	2	11	381	55	Right
 7302	251362	D. Štiglec	Dino Štiglec	29	LB	68	68	43	57	60	65	77	2	3	40	509	17	Left
 7303	251704	J. Mejídez	Juan Mejídez	35	RM, CM	68	77	59	62	72	29	49	3	3	19	85	61	Right
 7304	251705	J. Breitez	Jorge Breitez	34	LB	68	78	34	54	63	69	77	2	2	19	85	61	Left
@@ -9682,7 +9682,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7365	244234	A. Opoku	Aaron Opoku	21	LM, RW, RM	67	85	49	64	71	39	62	3	4	35	199	8	Right
 7366	244509	D. Jastrzembski	Dennis Jastrzembski	20	LM	67	81	61	60	70	35	58	3	3	35	389	8	Left
 7367	245714	Álex Blanco	Alejandro Blanco Sánchez	21	LM, RM	67	81	58	62	68	36	53	3	3	1	34	12	Left
-7368	246351	Valery	Valery Fernández Estrada	20	LM, RB, RWB	67	83	55	60	68	62	59	3	3	23	128	12	Right
+7368	246351	Valery	Valery Fernández Estrada	20	LM, RB, RB	67	83	55	60	68	62	59	3	3	23	128	12	Right
 7369	246423	L. Orellano	Luca Nicolás Orellano	20	RW, LW, ST	67	87	66	54	73	32	55	3	3	14	174	1	Left
 7370	247496	Apa	Javier Aparicio Gómez	20	RB, RM	67	80	27	56	65	63	56	3	3	1	81	12	Right
 7371	248113	A. Mățan	Alexandru Irinel Mățan	20	LW, CAM, LM	67	88	55	63	73	33	46	3	3	44	453	70	Right
@@ -9719,7 +9719,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7598	221197	F. Onyedinma	Fred Onyedinma	23	LW, RW	67	86	62	60	67	43	68	3	3	21	550	31	Right
 7403	225105	Cristo González	Cristo Ramón González Pérez	22	ST, LM, CAM	67	72	66	64	70	39	59	3	2	2	93	12	Right
 7405	232189	N. Ramírez	Nicolás Enrique Ramírez Aguilera	23	CB	67	57	36	48	56	68	69	2	2	28	566	39	Right
-7406	233084	N. Molina	Nahuel Molina Lucero	22	RB, RWB	67	74	35	58	63	62	68	2	3	2	93	1	Right
+7406	233084	N. Molina	Nahuel Molina Lucero	22	RB, RB	67	74	35	58	63	62	68	2	3	2	93	1	Right
 7407	233781	J. Valencia	Juan Manuel Valencia Aponzá	22	CM, CAM	67	61	55	70	71	56	65	3	3	2	172	42	Right
 7408	234258	S. Seddon	Steve Seddon	22	LB, LB	67	77	50	65	66	59	62	3	2	21	170	13	Left
 7409	234856	H. Mendes	Houboulang Mendes	22	RB	67	76	42	60	62	64	66	2	3	4	256	7	Right
@@ -9808,7 +9808,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7499	231442	M. Browne	Marcus Browne	22	LM, LW	67	84	60	61	69	27	66	4	3	21	344	13	Right
 7500	231815	I. Ochoa	Iván Fernando Ochoa Chávez	23	CDM, CM	67	62	47	66	65	64	67	3	3	16	152	33	Right
 7501	232250	L. Amos	Luke Amos	23	CDM, CM	67	58	51	65	66	62	62	3	4	21	386	13	Left
-7502	232413	A. Dijksteel	Anfernee Dijksteel	23	RB, RWB	67	73	34	57	65	64	75	2	2	21	344	9	Right
+7502	232413	A. Dijksteel	Anfernee Dijksteel	23	RB, RB	67	73	34	57	65	64	75	2	2	21	344	9	Right
 7504	232826	F. Mac Allister	Francis Manuel Mac Allister	24	CDM, CM	67	68	47	61	67	65	67	3	3	14	285	1	Right
 7505	233053	A. Hadžiahmetović	Amir Hadžiahmetović	23	LM, CAM, CDM	67	69	56	65	69	56	68	2	3	11	257	25	Right
 7507	235714	M. Domínguez	Josué Misael Domínguez González	20	CAM, LM	67	75	58	65	74	38	47	4	3	16	141	33	Left
@@ -9864,14 +9864,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7562	234892	Matheus Rossetto	Matheus Rossetto	24	CAM, CM	67	72	61	65	71	42	57	3	2	8	69	5	Right
 7563	234948	L. Amani	Jean Thierry Lazare Amani	22	CM, CDM	67	74	61	63	74	51	62	3	4	17	302	41	Right
 7564	235425	D. Jones	Derrick Jones	23	CDM	67	70	51	59	62	62	79	2	3	8	356	47	Left
-7565	236390	Pol Valentín	Pol Valentín Sancho	23	RB, RWB, RM	67	91	38	57	66	60	63	3	3	23	435	12	Right
+7565	236390	Pol Valentín	Pol Valentín Sancho	23	RB, RB, RM	67	91	38	57	66	60	63	3	3	23	435	12	Right
 7566	236508	Adrián Diéguez	Adrián Diéguez Grande	24	CB	67	61	30	48	51	68	66	2	3	23	435	12	Left
 7567	237310	D. Mitchell	Demetri Mitchell	23	LB	67	78	62	66	69	59	60	3	2	48	603	13	Left
 7568	237420	V. Janjičić	Vasilije Janjičić	21	CDM, CM	67	64	47	58	64	67	75	2	3	25	462	21	Right
 7569	237499	A. Sabiri	Abdelhamid Sabiri	23	CM, LM, CAM	67	65	67	66	75	52	66	3	4	35	389	8	Right
-7570	238820	Q. Maceiras	Quentin Maceiras Pralong	24	RB, RWB	67	81	57	60	66	62	70	3	3	25	140	21	Right
+7570	238820	Q. Maceiras	Quentin Maceiras Pralong	24	RB, RB	67	81	57	60	66	62	70	3	3	25	140	21	Right
 7571	241741	A. Ouahim	Anas Ouahim	22	RM, CAM, LM	67	74	56	61	74	36	53	4	3	35	272	24	Right
-7572	241867	Aitor Ruibal	Aitor Ruibal García	24	ST, RM, RWB	67	69	69	61	67	26	54	3	3	1	37	12	Right
+7572	241867	Aitor Ruibal	Aitor Ruibal García	24	ST, RM, RB	67	69	69	61	67	26	54	3	3	1	37	12	Right
 7574	244348	E. Gutiérrez	Edson Antonio Gutiérrez Moreno	24	RB	67	62	33	58	60	66	68	2	3	16	148	33	Right
 7575	244400	K. Ademi	Kemal Ademi	24	ST	67	52	66	45	59	29	79	2	3	25	197	21	Right
 7576	245156	F. Russo	Franco Matías Russo Panos	25	CB	67	59	30	48	47	69	67	2	3	23	209	1	Right
@@ -9903,7 +9903,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7609	228997	C. Goode	Charlie Goode	24	CB	67	55	32	48	55	66	77	2	2	21	158	13	Right
 7610	231354	M. Pantović	Miloš Pantović	23	RM, CAM, LM	67	72	57	62	68	39	62	3	3	35	290	22	Right
 7611	231726	A. Ivan	Andrei Virgil Ivan	23	ST, RW, LW	67	81	66	62	69	35	69	3	3	44	377	70	Right
-7612	232117	J. Dacosta	Julien Da Costa	24	RWB, RB, CB	67	78	32	57	63	60	73	2	3	21	475	7	Right
+7612	232117	J. Dacosta	Julien Da Costa	24	RB, RB, CB	67	78	32	57	63	60	73	2	3	21	475	7	Right
 7613	233379	N. Castro	Niklas Fernando Nygard Castro	24	RM, ST	67	75	64	63	69	41	61	4	3	37	604	39	Right
 7614	234158	A. Gory	Alimami Gory	23	ST, LW, RW	67	87	61	55	70	22	60	3	3	17	345	7	Right
 7615	234163	K. Staude	Keanu Staude	23	LM, CAM	67	77	59	59	75	44	54	3	3	35	504	8	Right
@@ -9920,7 +9920,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7626	238683	A. Sicker	Arne Sicker	23	LB	67	81	31	60	65	60	59	2	3	45	543	8	Left
 7627	239350	S. Dembele	Siriki Dembélé	23	LM, ST, RM	67	83	58	61	69	30	44	4	3	48	578	14	Right
 7628	239394	F. Flecker	Florian Flecker	24	RM, RW, LW	67	86	60	58	71	36	53	3	3	35	504	34	Right
-7629	239476	S. Ingolitsch	Sandro Ingolitsch	23	RWB, RM, RB	67	64	41	59	63	65	66	2	2	29	444	34	Right
+7629	239476	S. Ingolitsch	Sandro Ingolitsch	23	RB, RM, RB	67	64	41	59	63	65	66	2	2	29	444	34	Right
 7630	239485	J. Pius	Júnior Udeme Pius	24	CB	67	53	46	49	53	67	72	2	2	17	145	31	Right
 7632	239762	M. Sipľak	Michal Sipľak	24	LB	67	73	33	55	65	64	71	2	3	40	518	23	Left
 7633	239814	D. Batubinsika	Dylan Batubinsika	24	CB	67	66	28	51	54	66	74	2	3	17	145	7	Right
@@ -9941,7 +9941,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7649	213301	S. Horvath	Sascha Horvath	23	RM, CAM, ST	67	81	59	60	72	49	51	3	4	45	464	34	Right
 7650	214650	V. Vevatne	Viljar Helland Vevatne	25	CB	67	66	53	54	61	66	76	2	3	37	538	29	Left
 7651	215067	D. Rosero	Dany Alejandro Rosero Valencia	26	CB	67	62	38	48	51	68	77	2	2	34	198	42	Right
-7652	215700	L. O'Nien	Luke O'Nien	25	RWB	67	75	59	61	64	61	72	2	4	48	496	13	Right
+7652	215700	L. O'Nien	Luke O'Nien	25	RB	67	75	59	61	64	61	72	2	4	48	496	13	Right
 7653	216449	Tomás Podstawski	Tomás Martins Podstawski	25	CDM	67	58	53	59	64	65	73	3	4	40	490	2	Right
 7654	217998	C. Arango	Cristian Daniel Arango Duque	25	ST	67	70	66	53	70	32	69	3	3	34	360	42	Right
 7655	220028	S. Adekugbe	Sam Adekugbe	25	LB	67	81	41	59	65	60	74	3	2	37	468	46	Left
@@ -9959,7 +9959,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7669	229998	D. Schad	Dominik Schad	23	RB, RM	67	83	40	56	63	59	64	2	3	45	407	8	Right
 7670	230963	Rivaldinho	Rivaldo Vitor Mosca Ferreira Júnior	25	ST	67	70	68	59	63	33	68	3	3	40	518	5	Right
 7672	231222	F. Henríquez	Fabián Gastón Henríquez	25	CM, CDM	67	70	56	63	67	69	74	3	3	14	219	1	Left
-7673	232081	R. Laryea	Richie Laryea	25	RB, RM, RWB	67	77	56	60	68	61	61	2	3	8	131	46	Right
+7673	232081	R. Laryea	Richie Laryea	25	RB, RM, RB	67	77	56	60	68	61	61	2	3	8	131	46	Right
 7674	232870	N. Ueda	植田 直通	25	CB	67	53	30	45	44	69	68	2	2	17	345	72	Right
 7675	233564	A. Schetino	Edgardo Andrés Yubert Schetino Yancev	26	CDM, CM	67	39	49	57	63	60	75	2	3	31	596	16	Right
 7677	235782	Lucas Mineiro	Lucas da Silva Izidoro	24	CDM, CM	67	66	53	67	68	63	70	2	3	6	335	5	Right
@@ -9984,9 +9984,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7698	245022	N. Opoku	Nicholas Opoku	22	CB	67	66	37	43	48	68	73	2	4	27	167	32	Right
 7699	248112	I. Vînă	Ionuț Daniel Vînă	25	CM, CAM, RW	67	76	61	63	71	65	70	3	3	44	300	70	Left
 7700	250909	J. Marx	Jan Hendrik Marx	25	RB, RM	67	90	38	52	66	56	56	2	4	45	567	8	Right
-7701	251155	M. Halaïmia	Mohamed Réda Halaïmia	23	RB, RWB, LB	67	73	27	51	55	65	69	2	3	17	448	28	Right
+7701	251155	M. Halaïmia	Mohamed Réda Halaïmia	23	RB, RB, LB	67	73	27	51	55	65	69	2	3	17	448	28	Right
 7702	251630	E. Gallardo	Erickson Yirson Gallardo Toro	23	RM, RW	67	83	61	62	70	29	52	2	3	8	131	50	Right
-7703	251994	Tiago Esgaio	Tiago Alexandre de Sousa Esgaio	24	RWB, CDM	67	67	55	62	66	66	64	3	3	6	367	2	Right
+7703	251994	Tiago Esgaio	Tiago Alexandre de Sousa Esgaio	24	RB, CDM	67	67	55	62	66	66	64	3	3	6	367	2	Right
 7704	252962	M. Jacquet	Miguel Isaías Jacquet Duarte	25	CB	67	63	34	46	47	67	68	2	3	31	188	69	Right
 7705	253811	E. Páucar	Enmanuel Jesús Páucar Reyes	23	CDM	67	69	60	64	56	64	69	2	3	46	470	66	Right
 7706	254701	D. Santacruz	Juan Danilo Santacruz González	25	CAM	67	66	64	58	73	30	50	4	4	33	479	69	Right
@@ -9998,7 +9998,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7717	211982	N. Neidhart	Nico Neidhart	25	LB, RM	67	78	50	56	61	60	66	2	4	45	539	8	Right
 7718	212170	M. Desler	Mikkel Desler	25	RB	67	79	58	58	66	61	64	3	3	37	605	27	Right
 7719	213147	J. Allen	Jamie Allen	25	CM, RW	67	75	56	66	67	63	72	2	3	21	475	13	Right
-7720	213687	L. Grimshaw	Liam David Grimshaw	25	RB, RWB	67	73	42	58	59	64	73	2	3	26	522	13	Right
+7720	213687	L. Grimshaw	Liam David Grimshaw	25	RB, RB	67	73	42	58	59	64	73	2	3	26	522	13	Right
 7721	215570	G. Rea	Glen Rea	25	CDM, CB	67	63	32	54	60	68	74	2	3	21	505	52	Right
 7722	219680	C. Hountondji	Cédric Hountondji	26	CB	67	44	33	51	51	67	72	2	2	27	452	99	Right
 7723	221095	Dani Romera	Daniel Romera Andújar	24	ST	67	84	68	54	70	28	61	3	3	1	201	12	Right
@@ -10018,7 +10018,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7740	242559	T. Matsuda	松田 天馬	25	ST, CM	67	70	62	65	73	42	50	3	3	15	499	72	Right
 7741	246316	Y. Soma	相馬 勇紀	23	LM, RM	67	85	60	61	71	53	61	3	3	15	424	72	Right
 7742	246808	R. Hirose	広瀬 陸斗	24	RB, LB	67	76	38	59	63	62	65	2	3	15	429	72	Right
-7743	247027	Ruan	Ruan Gregório Teixeira	25	RB, RWB	67	89	31	57	68	59	65	2	3	8	97	5	Right
+7743	247027	Ruan	Ruan Gregório Teixeira	25	RB, RB	67	89	31	57	68	59	65	2	3	8	97	5	Right
 7744	247935	W. Togui	William Togui	23	ST	67	75	68	54	63	21	70	2	3	17	395	41	Right
 7745	251531	D. Kerkez	Dejan Kerkez	24	CB	67	54	27	41	42	69	69	2	2	6	291	22	Right
 7747	255505	D. Velkovski	Dimitar Valentinov Velkovski	25	LB	67	69	51	59	63	63	66	2	3	17	345	103	Left
@@ -10040,7 +10040,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7767	213482	N. Kacharava	Nika Kacharava	26	ST	67	60	62	46	66	29	76	3	3	40	400	81	Right
 7769	215328	G. Gil Romero	Gastón Ignacio Gil Romero	27	CDM, CM	67	68	53	59	62	65	71	2	3	14	331	1	Right
 7770	215373	S. Coopman	Sander Coopman	25	CAM, RM, CM	67	55	59	68	70	46	45	3	3	17	145	6	Right
-7771	216288	S. Mrowca	Sebastian Mrowca	26	CDM, CM, RWB	67	76	48	59	63	63	76	2	3	45	528	4	Right
+7771	216288	S. Mrowca	Sebastian Mrowca	26	CDM, CM, RB	67	76	48	59	63	63	76	2	3	45	528	4	Right
 7772	216346	A. Powell	Alvas Elvis Powell	25	RB	67	87	45	56	65	59	73	3	3	8	39	54	Right
 7773	219670	G. Piovi	Gonzalo Rubén Piovi	25	CB, LB	67	67	50	60	59	64	77	2	2	14	277	1	Left
 7774	219684	S. Nicholson	Sam Nicholson	25	RM	67	86	60	57	71	48	62	3	4	48	608	14	Left
@@ -10081,7 +10081,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7812	238945	M. Blažič	Miha Blažič	27	CB	67	58	34	38	40	69	70	2	3	19	85	3	Right
 7813	238986	F. Luckeneder	Felix Luckeneder	26	CB	67	51	25	38	39	70	68	2	3	29	556	34	Left
 7814	239331	G. Papunashvili	Giorgi Papunashvili	24	RM, CAM	67	71	65	64	69	34	59	3	2	23	213	81	Left
-7815	239357	C. Gebauer	Christian Gebauer	26	ST, RM, RWB	67	92	63	59	66	48	65	3	3	3	214	34	Right
+7815	239357	C. Gebauer	Christian Gebauer	26	ST, RM, RB	67	92	63	59	66	48	65	3	3	3	214	34	Right
 7816	239577	Y. Coulibaly	Yacouba Coulibaly	25	LB, RB	67	81	42	52	67	60	70	3	3	27	500	68	Left
 7817	239611	M. Eisa	Mohamed Eisa	25	ST	67	81	66	51	66	24	64	3	3	48	578	138	Right
 7818	239703	M. Biankadi	Merveille Biankadi	25	LM, LW, RM	67	79	58	60	70	54	76	3	4	35	357	8	Right
@@ -10226,7 +10226,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 7989	164568	W. Johnson	Will Johnson	33	CM	67	58	63	66	64	66	72	3	4	19	85	46	Right
 7990	164610	J. Larentowicz	Jeff Larentowicz	36	CDM, CM	67	39	60	60	59	67	70	2	3	8	69	47	Right
 7991	165190	J. Ledley	Joe Ledley	33	CDM	67	54	62	64	62	67	70	2	2	36	569	38	Left
-7992	166841	N. Adams	Nicky Adams	33	LB, RWB	67	68	57	66	64	56	67	3	3	48	613	38	Right
+7992	166841	N. Adams	Nicky Adams	33	LB, RB	67	68	57	66	64	56	67	3	3	48	613	38	Right
 7993	167841	C. Maguire	Chris Maguire	31	RW, CAM	67	72	68	65	68	40	71	3	4	48	496	14	Right
 7959	235301	P. Schmidt	Patrick Schmidt	26	ST	67	66	67	42	60	27	70	2	3	35	357	8	Right
 7995	169586	F. Campbell	Fraizer Campbell	32	ST	67	67	66	61	68	36	67	3	3	21	338	13	Right
@@ -10236,7 +10236,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8001	171831	M. Mancienne	Michael Ian Mancienne	32	CB	67	71	35	55	60	66	73	2	3	8	211	13	Right
 8002	172208	J. Troisi	James Troisi	31	CM, CDM	67	71	65	69	69	48	66	3	2	36	436	56	Left
 8003	172418	I. Parlak	İlhan Parlak	33	LM, RM	67	67	69	64	65	27	66	2	3	11	271	55	Right
-8005	173480	A. Lienhart	Andreas Lienhart	34	RB, RWB, RM	67	64	50	64	64	65	70	3	3	29	556	34	Right
+8005	173480	A. Lienhart	Andreas Lienhart	34	RB, RB, RM	67	64	50	64	64	65	70	3	3	29	556	34	Right
 8006	173518	T. Clarke	Tom Clarke	32	CB, RB	67	51	30	38	39	68	76	2	3	53	611	13	Right
 8008	173671	K. MSTadzean	Kyle John MSTadzean	33	CB	67	42	37	45	45	66	76	2	2	21	475	13	Right
 8009	173673	S. Quinn	Stephen Quinn	34	CDM	67	52	61	66	68	63	67	3	2	48	614	52	Left
@@ -10294,7 +10294,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8068	188234	Felipe	Felipe Trevizan Martins	33	CB	67	44	44	50	55	64	70	2	3	35	327	5	Left
 8070	188289	E. Rivière	Emmanuel Rivière	30	ST	67	76	67	57	64	31	59	2	3	2	355	7	Right
 8071	188336	A. Tuia	Alessandro Tuia	30	CB	67	60	34	47	44	67	74	2	3	2	273	15	Right
-8072	188587	A. Luna	Alfonso Luna Islas	30	RB, RWB, RM	67	71	46	60	64	64	61	2	2	16	397	33	Right
+8072	188587	A. Luna	Alfonso Luna Islas	30	RB, RB, RM	67	71	46	60	64	64	61	2	2	16	397	33	Right
 8073	188756	D. Tshimanga	Derrick Katuku Tshimanga	31	LB, CB	67	83	56	59	68	62	65	3	3	17	488	6	Left
 8074	188779	L. DeVere	Luke DeVere	30	CB	67	42	41	48	42	65	74	2	3	36	414	56	Right
 8076	188856	C. Klem	Christian Klem	29	LB, LM	67	77	45	62	65	61	54	2	2	29	556	34	Left
@@ -10324,7 +10324,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8104	191944	Kim Sung Joon	김성준 金圣埈	32	CM, CDM, CAM	67	68	61	68	66	57	69	3	3	39	250	20	Right
 8105	191980	Yun Suk Young	윤석영 尹硕扬	30	LB, CB, RB	67	76	59	61	66	65	71	3	3	39	593	20	Left
 8106	192067	Júnior Dutra	Sérgio Dutra Júnior	32	ST, CAM, LM	67	64	66	62	66	37	67	3	4	15	465	5	Right
-8107	192231	J. Edwards	Joe Edwards	29	RWB, CM	67	72	55	62	65	62	69	3	4	48	607	13	Right
+8107	192231	J. Edwards	Joe Edwards	29	RB, CM	67	72	55	62	65	62	69	3	4	48	607	13	Right
 8108	192328	P. Huspek	Philipp Huspek	29	RM, RW, ST	67	87	60	60	67	29	65	2	4	29	444	34	Right
 8109	192467	F. Bećiraj	Fatos Bećiraj	32	ST	67	66	69	53	66	31	71	3	3	40	263	49	Right
 8110	192561	L. Thy	Lennart Thy	28	ST	67	72	67	62	66	46	72	3	4	7	530	8	Right
@@ -10402,7 +10402,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8196	205388	E. Akichi	Ogou Edmond Akichi	30	CDM, CM	67	71	50	61	67	63	67	3	3	27	553	41	Right
 8197	205463	M. Thiede	Marco Thiede	28	RB	67	67	46	64	66	62	62	2	3	35	461	8	Right
 8198	205603	M. van Duinen	Mike van Duinen	28	ST, LW	67	75	65	61	65	48	75	3	4	7	494	9	Right
-8199	205752	G. Edwards	Gwion Edwards	27	RM, RWB	67	80	61	62	68	52	53	3	3	48	583	38	Right
+8199	205752	G. Edwards	Gwion Edwards	27	RM, RB	67	80	61	62	68	52	53	3	3	48	583	38	Right
 8200	205846	David Bruno	David Carneiro Dias Resende Bruno	28	RB	67	68	40	57	65	64	69	2	3	44	294	2	Right
 8201	205929	N. Thomsen	Nicolaj Thomsen	27	LM, RM	67	64	58	65	69	47	60	3	3	32	190	27	Right
 8202	205948	Y. Aguemon	Yannick Aguemon	28	LM, LB, RM	67	82	62	59	67	52	62	3	3	17	488	99	Right
@@ -10506,7 +10506,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8309	224821	S. Rouiller	Steve Rouiller	29	CB	67	56	27	44	46	68	76	2	3	25	376	21	Right
 8310	224965	C. Doidge	Christian Rhys Doidge	27	ST	67	65	66	51	63	29	74	2	3	26	555	38	Right
 8311	225073	J. Álvez	Jonatan Daniel Alvez Sagar	32	ST	67	76	64	50	63	27	75	2	4	42	474	16	Right
-8312	225664	M. Ibarra	Miguel Ángel Ibarra Andrade	30	RM, RWB, LM	67	73	63	63	68	54	64	3	3	8	147	47	Right
+8312	225664	M. Ibarra	Miguel Ángel Ibarra Andrade	30	RM, RB, LM	67	73	63	63	68	54	64	3	3	8	147	47	Right
 8313	225939	J. George	Jann-Christopher George	27	CAM, RM	67	79	66	57	73	29	69	3	4	35	506	8	Right
 8314	226646	F. Banguero	Felipe Banguero Millán	31	LB	67	72	30	58	60	62	70	2	3	34	360	42	Left
 8315	226928	B. Emir	Berkan Emir	32	LB	67	71	46	57	63	67	62	2	2	11	322	55	Left
@@ -10548,7 +10548,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8355	232382	T. Takagi	髙木 俊幸	29	LM, ST, ST	67	78	65	63	66	33	56	4	3	15	374	72	Right
 8356	232454	Y. Hiraoka	平岡 康裕	34	CB	67	38	24	39	40	69	67	2	3	15	537	72	Right
 8357	232465	S. Tomita	富田 晋伍	34	CDM, CM	67	37	35	61	62	64	60	2	3	15	537	72	Right
-8358	232489	Y. Komai	驹井 善成	28	ST, RM, RWB	67	72	67	66	69	58	51	3	2	15	396	72	Right
+8358	232489	Y. Komai	驹井 善成	28	ST, RM, RB	67	72	67	66	69	58	51	3	2	15	396	72	Right
 8359	232499	S. Piriz	Sebastián Gerardo Píriz Ribas	30	CDM, CM	67	60	47	59	58	60	84	2	3	31	544	16	Right
 8360	232597	H. Fujiharu	滕春 广輝	31	LM, LB	67	75	54	66	64	60	54	2	3	15	358	72	Left
 8361	232619	K. Shibasaki	柴崎 晃誠	35	ST, RM	67	60	65	69	68	44	58	3	4	15	441	72	Right
@@ -10767,7 +10767,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8593	240024	J. Serrano	Julien Serrano	22	LB	66	69	47	57	64	65	56	2	3	26	587	7	Left
 8594	240172	Edu Cortina	Eduardo Cortina García	23	CDM, CM	66	57	53	64	66	61	61	3	3	23	341	12	Right
 8595	240501	A. Katranis	Alexandros Katranis	22	LB	66	72	47	60	64	61	67	3	3	11	253	36	Left
-8596	240616	E. Bwomono	Elvis Bwomono	21	RB, RWB, CB	66	83	42	55	64	60	68	2	3	53	625	131	Right
+8596	240616	E. Bwomono	Elvis Bwomono	21	RB, RB, CB	66	83	42	55	64	60	68	2	3	53	625	131	Right
 8597	241140	Fran Manzanara	Francisco Jesús López de la Manzanara Delgado	23	CB, CDM, RB	66	64	50	57	64	67	62	2	3	1	48	12	Right
 8598	241462	R. Guerra	Ramiro Guerra Pereyra	23	CDM	66	52	55	57	64	63	62	2	3	1	24	16	Right
 8599	241927	J. Méndez	Juan Ignacio Méndez	23	CM	66	71	58	66	69	61	67	3	3	14	299	1	Right
@@ -10778,7 +10778,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8605	245770	D. Drăguș	Denis Mihai Drăguş	20	ST, LW	66	76	65	50	67	19	70	2	2	2	355	70	Right
 8606	245857	A. Issah	Abass Issah	21	ST, LW, RW	66	88	66	51	71	27	66	3	4	3	181	32	Right
 8607	246055	A. Preciado	Angelo Smit Preciado Quiñónez	22	RM, RB	66	84	54	56	67	43	63	3	3	42	286	61	Right
-8608	246974	Diogo Calila	Diogo dos Santos Cabral	21	RWB	66	76	47	56	69	60	67	3	3	6	367	2	Right
+8608	246974	Diogo Calila	Diogo dos Santos Cabral	21	RB	66	76	47	56	69	60	67	3	3	6	367	2	Right
 8609	247310	R. Mudražija	Robert Mudražija	23	CM	66	71	59	65	70	51	62	3	4	32	190	17	Right
 8610	248069	Javi Navarro	Javier Navarro Rodríguez	23	LM, LW	66	75	58	61	67	25	53	3	3	23	412	12	Right
 8611	248230	J. Carls	Jonas Carls	23	LB	66	85	56	56	66	57	59	2	3	6	121	8	Left
@@ -10796,7 +10796,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8629	231005	C. Ogbene	Chiedozie Ogbene	23	RM, LM	66	90	57	57	67	38	69	3	4	21	533	31	Right
 8630	231527	I. Diallo	Ismaël Chester Diallo	23	CB, LB	66	68	37	52	60	67	69	2	3	27	418	41	Left
 8631	231614	F. Reese	Fabian Reese	22	RM, LW, ST	66	82	60	58	66	40	66	3	4	35	333	8	Right
-8632	231951	R. Williams	Randell Williams	23	RWB	66	89	60	62	68	54	67	3	3	53	627	13	Left
+8632	231951	R. Williams	Randell Williams	23	RB	66	89	60	62	68	54	67	3	3	53	627	13	Left
 8633	231973	D. Acosta	Danilo Acosta	22	LB, LB	66	73	49	62	64	62	67	3	3	8	111	85	Left
 8634	232127	A. Keita	Aboubakar Keita	22	CDM, CM	66	63	48	57	64	62	72	3	2	17	488	41	Right
 8635	233378	J. Shipley	Jordan Shipley	22	CM, CAM, LW	66	65	62	68	65	56	66	3	2	21	475	52	Left
@@ -11030,7 +11030,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8888	236462	L. Faye	Lassana Faye	22	LB	66	71	35	50	61	63	73	2	2	7	422	9	Left
 8889	236939	A. Ordóñez	Anderson Rafael Ordóñez Valdéz	26	CB	66	68	34	38	48	66	70	2	3	42	368	61	Left
 8890	237524	S. Kaba	Sory Kaba	25	ST	66	66	65	54	64	37	74	3	3	32	193	48	Right
-8891	237913	Y. Koide	小井 手翔太	25	CB, RWB	66	49	19	42	40	67	68	2	3	15	489	72	Right
+8891	237913	Y. Koide	小井 手翔太	25	CB, RB	66	49	19	42	40	67	68	2	3	15	489	72	Right
 8893	240260	S. Sow	Sylla Sow	23	LW, RW	66	78	62	57	67	27	67	3	3	7	554	9	Right
 8894	241092	I. Alhassan	Abdullahi Ibrahim Alhassan	23	CDM, CM	66	65	50	61	66	62	74	2	3	6	401	31	Right
 8895	243944	N. Lozano	Neyder Yessy Lozano Rentería	26	CB	66	68	42	47	55	63	80	2	3	1	113	42	Left
@@ -11071,7 +11071,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8935	214661	G. Iñiguez	Gaspar Emmanuel Iñíguez	26	CM, CDM	66	66	53	64	68	62	71	3	3	28	455	1	Right
 8937	215430	T. Lumanza Lembi	Tortol Lumanza Lembi	26	CM, CDM	66	69	55	64	69	62	72	3	4	37	524	6	Right
 8938	215817	D. Islamović	Dino Islamović	26	ST	66	62	69	57	62	29	72	2	2	37	204	49	Left
-8947	221620	M. Hairston	Marlon Hairston	26	RB, RWB, RM	66	76	58	58	65	59	64	2	3	8	274	47	Right
+8947	221620	M. Hairston	Marlon Hairston	26	RB, RB, RM	66	76	58	58	65	59	64	2	3	8	274	47	Right
 8939	216270	G. Honeyman	George Honeyman	25	CAM, CM	66	72	61	64	71	61	66	3	3	48	446	13	Right
 8940	218047	P. Bijen	Peet Bijen	25	CB	66	52	39	48	58	65	74	2	2	7	422	9	Right
 8942	219177	J. Grant	Jorge Grant	25	LM	66	68	62	66	68	48	66	4	4	48	547	13	Right
@@ -11131,7 +11131,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9009	215822	X. Schenk	Xandro Schenk	27	CB, LB	66	58	45	60	58	64	77	2	2	7	387	9	Left
 9010	216227	K. Jackson	Kayden Jackson	26	ST	66	91	64	47	63	30	57	2	3	48	583	13	Right
 9011	216255	M. Stefaniak	Marvin Stefaniak	25	LM, LW	66	75	62	62	69	29	58	3	4	35	411	8	Right
-9012	216493	F. Menig	Fabian Menig	26	RB, RWB, RM	66	63	35	48	54	66	73	2	3	45	572	8	Right
+9012	216493	F. Menig	Fabian Menig	26	RB, RB, RM	66	63	35	48	54	66	73	2	3	45	572	8	Right
 9013	216736	Wang Shangyuan	王上源	27	CB, CDM, CM	66	72	60	61	68	64	80	3	3	9	268	58	Right
 9014	217841	M. Schultz	Michael Schultz	27	CB	66	51	26	42	51	66	74	2	2	35	477	8	Right
 9015	220965	A. Tahiri	Anas Tahiri	25	CAM, CM, LW	66	76	56	66	72	35	45	3	3	7	554	24	Right
@@ -11162,7 +11162,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9045	201446	G. Moncur	George Moncur	26	CAM, CM, LM	66	66	62	67	68	46	60	3	3	21	505	13	Right
 9046	201484	P. McEleney	Patrick McEleney	27	CAM	66	78	60	64	68	55	64	3	4	47	492	52	Right
 9047	201841	N. Dussenne	Noë Dussenne	28	CB	66	32	34	48	44	68	69	2	3	17	303	6	Right
-9048	202533	M. Harriman	Michael Harriman	27	RB, LB, RWB	66	78	53	58	64	61	69	2	3	48	613	52	Right
+9048	202533	M. Harriman	Michael Harriman	27	RB, LB, RB	66	78	53	58	64	61	69	2	3	48	613	52	Right
 9049	203329	T. Pietermaat	Tom Pietermaat	27	CDM, CM	66	67	31	57	56	65	69	2	3	17	448	6	Right
 9050	204033	N. Devlin	Nicky Devlin	26	RB	66	88	52	55	61	59	78	2	3	26	587	14	Right
 9051	204078	R. Wolski	Rafał Wolski	27	CAM, CM	66	66	62	68	69	34	53	4	3	40	597	4	Right
@@ -11173,7 +11173,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9056	207499	T. Boere	Tom Boere	27	ST	66	68	68	52	60	31	74	2	4	45	637	9	Right
 9057	208589	K. Pusch	Kolja Pusch	27	CAM, LM, CM	66	67	64	65	66	55	66	2	3	45	606	8	Left
 9059	211954	T. Schröck	Tobias Schröck	27	CB, CDM, CM	66	67	63	58	59	65	77	2	3	45	438	8	Right
-9060	212165	S. Ohlsson	Sebastian Ohlsson	27	RB, RWB, RW	66	66	62	62	66	63	68	3	3	35	443	37	Right
+9060	212165	S. Ohlsson	Sebastian Ohlsson	27	RB, RB, RW	66	66	62	62	66	63	68	3	3	35	443	37	Right
 9061	212778	Kwon Kyung Won	권경원 权敬源	28	CB, CDM	66	54	37	58	59	63	77	2	2	39	432	20	Left
 9062	212932	Y. Ono	小野 裕二	27	CAM, LM, CM	66	72	59	63	69	40	64	4	4	15	358	72	Right
 9064	213557	João Pedro	João Pedro Almeida Machado	27	CM, CDM	66	67	64	62	67	66	68	3	3	6	342	2	Right
@@ -11276,7 +11276,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9173	172561	M. Lumb	Michael Lumb	32	LB	66	65	56	63	64	63	73	2	3	32	609	27	Left
 9174	172756	T. Jodłowiec	Tomasz Jodłowiec	34	CDM, CM	66	39	49	62	56	65	71	2	3	40	426	4	Right
 9175	172872	M. Yıldırım	Murat Yıldırım	33	CDM, CM	66	58	50	63	66	62	66	2	3	11	319	55	Right
-9177	176368	Kim Chang Soo	김창수 金昌洙	34	RB, RWB	66	66	59	61	64	63	68	2	3	39	454	20	Right
+9177	176368	Kim Chang Soo	김창수 金昌洙	34	RB, RB	66	66	59	61	64	63	68	2	3	39	454	20	Right
 9178	176585	I. Pallas	José Ignacio Pallas Martínez	37	CB	66	36	45	48	50	65	72	2	2	31	596	16	Right
 9179	177294	D. Furman	Dean Furman	32	CM, CDM	66	65	63	64	66	63	77	3	3	53	641	89	Right
 9182	177885	K. Özer	Kenan Özer	32	RW, ST	66	77	58	62	69	35	57	3	4	11	381	55	Right
@@ -11326,7 +11326,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9235	187915	E. Kujović	Emir Kujović	32	ST	66	37	70	52	56	31	65	2	4	41	417	37	Right
 9236	187916	M. Olsson	Marcus Olsson	32	LB	66	72	48	59	64	63	56	2	2	41	405	37	Left
 9237	188071	T. Oar	Tommy Oar	28	LM, CAM	66	72	56	65	67	39	50	3	4	36	497	56	Left
-9238	188387	F. Duplus	Frédéric Duplus	30	RB, LB, RWB	66	69	34	56	57	66	67	2	4	17	488	7	Right
+9238	188387	F. Duplus	Frédéric Duplus	30	RB, LB, RB	66	69	34	56	57	66	67	2	4	17	488	7	Right
 9239	188424	D. Wuytens	Dries Wuytens	29	CB	66	42	26	51	50	66	71	2	3	17	573	6	Right
 9240	188602	W. Rémy	William Rémy	29	CB	66	62	39	60	55	61	72	2	3	40	361	7	Right
 9241	188917	J. Skjelvik	Jørgen Skjelvik	28	LB, CB	66	81	46	58	62	62	71	2	2	32	523	29	Left
@@ -11379,7 +11379,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9294	198017	M. Pereira	Michaël Pereira	32	LW, RW	66	90	61	60	68	49	75	3	4	44	369	7	Right
 9295	198147	M. van der Maarel	Mark van der Maarel	30	CB, LB, RB	66	62	37	58	59	67	68	2	3	7	189	9	Right
 9296	198178	A. Calisir	André Calisir	30	CB	66	59	35	55	59	66	71	2	3	41	408	59	Right
-9297	198330	I. Franjić	Ivan Franjić	32	RWB	66	67	58	61	63	61	69	3	2	36	497	56	Right
+9297	198330	I. Franjić	Ivan Franjić	32	RB	66	67	58	61	63	61	69	3	2	36	497	56	Right
 9298	198740	A. Acosta	Alberto Joshimar Acosta Alvarado	32	LB, RB, CM	66	51	58	67	68	63	64	3	4	16	328	33	Left
 9299	199105	G. Nazareno	Geovanny Enrique Nazareno Simisterra	32	LB, LM, LB	66	75	44	57	61	59	78	2	3	42	558	61	Left
 9300	199234	S. Stangl	Stefan Stangl	28	LB	66	72	53	61	63	65	62	3	3	45	637	34	Left
@@ -11613,7 +11613,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9553	254349	P. Cifuentes	Pablo Cesar Cifuentes Cortez	32	CB	66	66	42	56	56	63	80	2	3	42	423	61	Right
 9554	254435	J. Padilla	Jairo Santiago Padilla Folleco	29	RM, RW	66	73	56	66	63	50	69	3	3	42	423	61	Right
 9555	254450	L. Congo	Luis Gonzalo Congo Minda	31	ST	66	81	68	43	62	20	60	3	3	42	423	61	Left
-9556	254628	N. Rodríguez	Nicolás Alejandro Rodríguez Charquero	28	RB, RWB	66	67	39	56	59	63	61	2	2	31	544	16	Right
+9556	254628	N. Rodríguez	Nicolás Alejandro Rodríguez Charquero	28	RB, RB	66	67	39	56	59	63	61	2	2	31	544	16	Right
 9557	254633	A. Leites	Adrián Eloys Leites López	28	ST, CAM	66	69	61	50	68	25	67	2	3	31	544	16	Right
 9558	254889	N. Nomura	野村 直輝	29	CAM, LM	66	69	67	66	67	34	56	3	5	15	489	72	Right
 9559	254895	F. Chafaï	Farouk Chafaï	30	CB	66	41	33	43	42	66	75	2	3	10	427	28	Right
@@ -11632,7 +11632,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9572	244288	A. Idah	Adam Uche Idah	19	ST	65	74	65	42	59	22	64	2	3	21	154	52	Right
 9573	246785	Bryan Gil	Bryan Gil Salvatierra	19	LW, LM	65	68	62	59	71	26	35	3	3	1	29	12	Left
 9574	248874	N. Armini	Nicolò Armini	19	CB	65	60	38	49	53	67	62	2	3	2	16	15	Right
-9577	239800	S. Sessegnon	Zeze Steven Sessegnon	20	RB, CB, RWB	65	72	33	51	60	62	59	2	4	21	384	13	Right
+9577	239800	S. Sessegnon	Zeze Steven Sessegnon	20	RB, CB, RB	65	72	33	51	60	62	59	2	4	21	384	13	Right
 9578	242453	S. van den Berg	Sepp van den Berg	18	CB	65	64	30	55	63	65	64	2	3	5	7	9	Right
 9579	246416	L. Dajaku	Leon Dajaku	19	RM, ST, LM	65	77	64	54	70	22	57	3	4	45	623	8	Right
 9580	247209	D. Mbayo	Dylan Mbayo	18	RM	65	81	62	56	74	29	41	3	3	17	205	6	Left
@@ -11712,7 +11712,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9660	242393	B. Hussein	Bilal Hussein	20	CM, RM	65	63	56	64	68	54	61	3	3	41	364	37	Right
 9661	243080	Carlos Isaac	Carlos Isaac Muñoz Obejero	22	RB	65	62	28	48	56	64	62	2	3	23	412	12	Right
 9662	243185	P. Wiśniewski	Przemysław Wiśniewski	21	CB	65	80	25	42	43	65	72	2	3	40	495	4	Right
-9663	243574	Z. Brault-Guillard	Zachary Brault-Guillard	21	RWB, RB	65	84	38	55	65	61	68	2	2	8	210	46	Right
+9663	243574	Z. Brault-Guillard	Zachary Brault-Guillard	21	RB, RB	65	84	38	55	65	61	68	2	2	8	210	46	Right
 9664	243593	A. Laurienté	Armand Laurienté	21	RM, LM	65	68	57	61	71	33	39	3	3	4	256	7	Right
 9665	243631	M. Camara	Mahdi Camara	22	CM	65	63	54	64	69	59	65	3	3	4	75	7	Right
 9666	243642	W. Tchimbembé	Warren Tchimbembé	22	CM, LM	65	82	62	62	67	56	58	3	2	4	185	7	Left
@@ -11774,10 +11774,10 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9729	233424	J. Rojas	Joao Joshimar Rojas López	22	CM, LM	65	70	59	60	66	57	50	4	3	42	445	61	Right
 9731	235521	Carbonell	Alejandro Carbonell Vallés	22	CM, CDM	65	62	60	64	70	63	61	3	3	1	34	12	Right
 9732	235647	H. Sarpei	Hans Nunoo Sarpei	21	CDM	65	66	38	55	63	63	67	2	3	35	411	32	Right
-9733	235957	J. Gaspar	Jordy Gaspar	23	RB, RWB	65	80	43	54	68	59	57	2	3	27	501	7	Right
+9733	235957	J. Gaspar	Jordy Gaspar	23	RB, RB	65	80	43	54	68	59	57	2	3	27	501	7	Right
 9734	236038	K. Duncan	Kyle Duncan	22	RB, LB	65	89	30	54	63	60	64	2	2	8	245	47	Right
 9735	236244	T. Sibbick	Toby Peter Sibbick	21	RB, CM, CB	65	75	29	49	59	62	65	2	3	17	525	13	Right
-9736	236681	M. Thurnwald	Manuel Thurnwald	21	RB, RWB, RM	65	79	50	54	67	59	61	2	3	29	546	34	Right
+9736	236681	M. Thurnwald	Manuel Thurnwald	21	RB, RB, RM	65	79	50	54	67	59	61	2	3	29	546	34	Right
 9737	236757	P. Klimala	Patryk Klimala	21	ST	65	81	62	47	65	29	67	2	3	26	160	4	Right
 9738	237988	T. Hara	原 輝綺	21	RB, LB, CB	65	67	41	58	62	62	67	2	3	15	591	72	Right
 9739	238953	M. Wolfram	Maximilian Wolfram	23	RM, LM, ST	65	72	62	63	67	36	65	3	3	45	571	8	Right
@@ -11831,7 +11831,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9793	229707	J. Lewis	Jonathan Jeremy Lewis	23	LM, LW, RM	65	76	64	57	70	29	54	3	2	8	352	47	Right
 9795	230047	F. Ronstadt	Frank Ronstadt	22	RB, RM, LB	65	71	30	51	60	60	67	2	3	35	504	8	Right
 9798	232136	F. Mayembo	Fernand Mayembo	24	CB	65	52	38	44	43	63	80	2	3	27	500	86	Right
-9799	232252	A. Walkes	Anton Walkes	23	RB, CB, RWB	65	64	46	55	59	64	74	2	3	8	69	13	Right
+9799	232252	A. Walkes	Anton Walkes	23	RB, CB, RB	65	64	46	55	59	64	74	2	3	8	69	13	Right
 9800	234072	A. Ralston	Anthony Ralston	21	RB	65	70	42	57	63	63	73	2	3	26	160	14	Right
 9801	234350	Viti Rozada	Víctor Álvarez Rozada	22	RM	65	86	61	57	66	44	62	3	3	23	341	12	Right
 9802	234521	S. Skytte	Sammy Solitaire Siddharta Skytte	23	CM	65	59	61	61	65	63	79	3	4	37	524	27	Left
@@ -11865,7 +11865,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9837	257136	O. Traoré	Omar Haktab Traoré	22	RB, RM	65	86	40	59	64	58	66	2	3	45	606	8	Right
 9838	257502	G. Smal	Gijs Smal	22	LB	65	75	56	62	59	58	68	2	3	7	387	9	Left
 9839	210437	A. Belmonte	Anthony Belmonte	24	CDM, CM	65	58	45	64	66	58	69	3	3	27	501	7	Right
-9841	213127	A. McGowan	Aaron Joseph McGowan	23	RB, RWB	65	72	36	54	63	61	67	2	3	26	498	13	Right
+9841	213127	A. McGowan	Aaron Joseph McGowan	23	RB, RB	65	72	36	54	63	61	67	2	3	26	498	13	Right
 9842	213488	D. De Silva	Daniël De Silva	23	CAM	65	74	59	60	68	31	66	3	4	36	615	56	Right
 9843	220140	F. Kent	Frankie Kent	24	CB	65	64	30	48	56	65	72	2	3	48	578	13	Right
 9844	220663	M. Kallesøe	Mikkel Kallesøe	23	RM	65	80	61	56	65	52	67	3	3	32	536	27	Right
@@ -11985,7 +11985,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9966	211214	F. Olinga	Fabrice Olinga Essono	24	ST, LM, LW	65	74	66	58	73	21	47	3	3	17	236	30	Right
 9967	212237	D. Wein	Daniel Wein	26	CDM, CM, CB	65	61	48	63	55	61	72	2	3	45	592	8	Right
 9968	212821	D. Seys	Dylan Seys	23	RW, LW	65	77	60	61	68	33	61	3	3	17	236	6	Left
-9970	213686	D. Love	Donald Love	25	RWB, RB	65	73	37	56	61	60	65	2	3	48	635	14	Right
+9970	213686	D. Love	Donald Love	25	RB, RB	65	73	37	56	61	60	65	2	3	48	635	14	Right
 9972	215495	B. Ndoye	Birama Ndoye	26	CB, CDM	65	57	61	57	58	60	80	2	3	25	317	10	Right
 9973	216730	S. Gregersen	Stian Rode Gregersen	25	CB	65	68	44	46	41	64	75	2	2	37	259	29	Right
 9974	218922	G. Davies	George Kweku Davies	23	LB	65	83	52	58	67	57	53	2	3	29	576	106	Right
@@ -12008,7 +12008,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 9993	229733	C. Schoissengeyr	Christian Junior Schoissengeyr	25	CB	65	33	20	41	31	66	80	2	4	29	365	34	Right
 9994	229911	M. Kenlock	Myles Kenlock	23	LB, LB	65	74	32	57	64	62	69	3	3	48	583	13	Left
 9995	230125	A. Acosta	Alan Jesús Acosta Montañez	23	RM	65	77	56	61	64	43	70	3	3	16	288	33	Right
-9996	231039	P. Dorn	Pius Dorn	23	RWB, LB	65	79	55	54	63	56	61	2	4	25	649	8	Left
+9996	231039	P. Dorn	Pius Dorn	23	RB, LB	65	79	55	54	63	56	61	2	4	25	649	8	Left
 9998	232504	B. Böðvarsson	Böðvar Böðvarsson	25	LB	65	75	28	56	59	60	69	2	3	40	469	65	Left
 9999	232952	Y. Kobayashi	小林 祐介	25	CDM, CM	65	71	48	52	63	60	65	2	3	15	311	72	Right
 10000	233535	L. Hernández	Luis Donaldo Hernández González	22	CB, RB	65	60	40	58	58	66	66	2	3	16	328	33	Right
@@ -12049,7 +12049,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10047	215422	F. Holthaus	Fabian Holthaus	25	LB, LM, CB	65	74	47	63	65	57	74	3	2	45	459	8	Left
 10048	216485	A. Tshibola	Aaron Tshibola	25	CM, CDM	65	63	54	65	68	62	73	3	3	26	498	60	Right
 10049	217332	E. Monthe	Emmanuel Monthe	25	CB	65	58	40	47	50	64	80	2	3	53	643	30	Left
-10050	218591	S. Long	Sean Long	25	RWB, RB	65	68	39	54	62	60	70	2	3	53	648	52	Right
+10050	218591	S. Long	Sean Long	25	RB, RB	65	68	39	54	62	60	70	2	3	53	648	52	Right
 10052	219948	J. Cummings	Jason Cummings	24	ST	65	67	66	51	66	37	61	3	3	48	635	14	Left
 10053	219950	N. Sonko Sundberg	Noah Sonko Sundberg	24	CB	65	70	44	48	50	64	76	2	3	41	651	37	Right
 10054	220191	Marcelo Djaló	Marcelo Amado Djaló Taritolay	26	CB	65	55	31	37	49	64	77	2	3	23	457	87	Right
@@ -12094,11 +12094,11 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10101	212485	D. Bakker	Danny Bakker	25	CDM, CM	65	56	53	61	65	63	68	2	4	7	422	9	Left
 10103	213090	T. Al Absi	Talal Al Absi	27	CB	65	57	25	38	47	66	73	2	3	10	177	101	Right
 10104	213444	R. González	Fernando Rubén González Pineda	26	CM, CDM	65	60	47	63	65	65	71	3	3	16	122	33	Right
-10106	213835	J. Gammelby	Jens Martin Gammelby	25	RWB, RB	65	74	56	62	64	59	70	3	4	32	442	27	Right
+10106	213835	J. Gammelby	Jens Martin Gammelby	25	RB, RB	65	74	56	62	64	59	70	3	4	32	442	27	Right
 10107	213889	R. Haynes	Ryan Haynes	24	LB, LB	65	79	55	57	63	59	70	2	3	53	660	13	Left
 10108	214157	L. Mena	Luis Hernando Mena Sepúlveda	26	LB	65	84	48	50	62	56	59	2	3	34	379	42	Right
 10109	216154	J. Elsey	Jordan Elsey	26	CB	65	53	24	42	48	64	76	2	3	36	436	56	Right
-10110	216453	L. Shephard	Liam Shephard	25	RWB, RB	65	75	48	57	62	60	67	2	2	53	660	38	Right
+10110	216453	L. Shephard	Liam Shephard	25	RB, RB	65	75	48	57	62	60	67	2	2	53	660	38	Right
 10111	216526	A. Gogić	Alexandros Gogić	26	CDM, CM	65	37	45	52	54	63	83	2	3	26	555	97	Right
 10112	216535	J. Bandowski	Jannik Bandowski	26	LB, LM	65	87	57	57	62	58	65	2	3	45	519	8	Left
 10113	216823	V. Vermeij	Vincent Vermeij	25	ST	65	50	64	53	55	30	69	2	2	45	543	9	Right
@@ -12247,7 +12247,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10275	221853	Mi Haolun	糜昊伦	27	LB, LB	65	81	57	57	62	63	65	2	3	9	307	58	Left
 10276	222734	Kang Sang Woo	강상우 姜祥佑	26	LW, LM, LB	65	81	60	59	65	64	56	3	3	39	484	20	Right
 10277	224014	M. Szwoch	Mateusz Szwoch	27	CAM, CM	65	69	60	64	68	37	59	3	3	40	597	4	Right
-10278	224624	Fu Huan	傅欢	26	RB, RWB	65	73	35	57	61	63	61	3	3	9	45	58	Right
+10278	224624	Fu Huan	傅欢	26	RB, RB	65	73	35	57	61	63	61	3	3	9	45	58	Right
 10279	224774	H. Çinemre	Hakan Çinemre	26	CB	65	68	31	44	49	63	69	2	2	11	322	55	Right
 10280	226815	A. Dia	Amadou Dia	27	LB	65	76	38	54	63	61	64	2	2	8	266	47	Left
 10282	229515	Ángel García	Ángel García Cabezali	27	LB	65	73	58	60	64	59	73	2	3	40	597	12	Left
@@ -12258,7 +12258,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10287	232515	F. Cobos	Facundo Cobos	27	LB	65	59	39	54	66	63	70	3	3	33	515	1	Left
 10288	232687	H. Mitsumaru	三丸 拡	26	LB	65	77	29	57	57	59	63	2	3	15	311	72	Left
 10289	232922	S. Kobayashi	小林 誠吾	26	RM, ST, ST	65	80	61	57	65	42	63	2	3	15	489	72	Right
-10290	233366	V. Henry	Valentin Henry	26	RWB	65	75	61	62	70	59	58	3	3	27	540	7	Right
+10290	233366	V. Henry	Valentin Henry	26	RB	65	75	61	62	70	59	58	3	3	27	540	7	Right
 10291	234298	N. Alho	Nikolai Alho	27	RB, RW	65	80	57	61	66	56	66	3	3	49	467	40	Right
 10292	234464	V. Ramis	Victorio Gabriel Ramis	25	RM, ST, LM	65	70	63	57	68	39	66	3	3	14	219	1	Right
 10293	234489	F. Gytkjær	Frederik Lund Gytkjær	27	ST, CAM	65	70	63	57	67	33	60	3	4	32	548	27	Right
@@ -12292,7 +12292,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10322	256271	A. Crețu	Alexandru Crețu	28	CDM	65	59	43	56	56	64	69	2	3	19	85	70	Right
 10324	29552	S. Nakamura	中村 俊輔	42	CAM, ST, RW	65	30	69	74	67	36	51	3	3	15	602	72	Left
 10326	53655	J. Bothroyd	Jay Bothroyd	38	ST	65	30	67	61	60	28	70	3	2	15	396	13	Left
-10328	111590	L. Feeney	Liam Feeney	33	RWB, RM	65	77	57	63	67	53	65	3	3	53	643	13	Right
+10328	111590	L. Feeney	Liam Feeney	33	RB, RM	65	77	57	63	67	53	65	3	3	53	643	13	Right
 10329	125167	E. Gülüm	Ersan Adem Gülüm	33	CB	65	56	51	53	55	61	79	2	2	11	258	55	Left
 10331	129566	P. McShane	Paul McShane	34	CB	65	37	37	56	48	64	65	2	3	48	631	52	Right
 10332	134828	K. Broadfoot	Kirk Broadfoot	35	CB	65	33	27	50	50	65	66	2	3	26	498	14	Right
@@ -12319,7 +12319,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10359	169465	M. Derbyshire	Matt Derbyshire	34	ST	65	72	66	56	62	29	61	2	3	36	497	13	Right
 10360	169590	D. Gibson	Darron Gibson	32	CDM, CM	65	46	60	67	62	64	60	2	4	53	611	52	Right
 10361	169978	R. Beerens	Roy Johannes Hendricus Beerens	32	RM, LM, ST	65	63	58	66	65	26	47	3	4	7	313	9	Right
-10362	170078	M. Little	Mark Little	31	RB, RWB	65	73	35	55	60	60	69	2	3	48	608	13	Right
+10362	170078	M. Little	Mark Little	31	RB, RB	65	73	35	55	60	60	69	2	3	48	608	13	Right
 10363	172780	B. Pitman	Brett Pitman	32	ST, ST	65	46	69	60	60	29	65	2	4	48	639	13	Right
 10364	172823	N. Maynard	Nicky Maynard	33	ST	65	74	65	59	65	29	65	3	3	53	662	13	Right
 10365	173530	S. Aluko	Omatsone Folarin Aluko	31	RM, RW	65	75	61	63	72	40	47	3	2	21	306	31	Left
@@ -12354,7 +12354,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10403	185380	T. Teniste	Taijo Teniste	32	RB	65	73	48	59	64	61	66	2	3	37	487	98	Right
 10404	185438	N. Bärkroth	Nicklas Bärkroth	28	LW, RW	65	82	57	63	68	34	61	3	4	41	417	37	Right
 10405	186127	C. Evans	Ched Evans	31	ST	65	62	66	53	59	39	72	2	3	48	589	38	Right
-10406	186565	S. Wagstaff	Scott Wagstaff	30	RWB, CM, RM	65	74	55	59	65	58	63	2	4	53	632	13	Right
+10406	186565	S. Wagstaff	Scott Wagstaff	30	RB, CM, RM	65	74	55	59	65	58	63	2	4	53	632	13	Right
 10407	187069	E. Vera	Erik Vera Franco	28	LB	65	72	49	60	65	61	60	3	3	16	397	33	Left
 10409	187345	Cho Dong Gun	조동건 赵东建	34	ST	65	70	62	55	58	28	68	3	3	15	591	20	Right
 10410	187818	A. Borysiuk	Ariel Borysiuk	28	CDM, CM	65	66	56	61	63	59	70	2	3	40	469	4	Right
@@ -12387,12 +12387,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10440	193350	B. Başdaş	Barış Başdaş	30	CB	65	54	34	44	42	66	68	2	2	35	327	55	Right
 10441	193522	F. Lepore	Franco Lepore	34	RB, RM, RW	65	73	53	63	63	54	65	3	3	30	372	15	Right
 10442	193608	O. Clarke	Ollie Clarke	28	CM	65	62	62	61	66	64	79	3	5	53	662	13	Right
-10443	193875	J. Hingert	Jack David Hingert	29	RWB, RB	65	74	37	57	63	59	68	2	4	36	582	56	Right
+10443	193875	J. Hingert	Jack David Hingert	29	RB, RB	65	74	37	57	63	59	68	2	4	36	582	56	Right
 10444	193958	L. Brown	Lee Brown	29	LB	65	68	54	60	60	62	76	2	2	48	529	13	Left
 10445	194035	N. Miatke	Nils Miatke	30	LM, LB, CM	65	79	50	60	68	61	65	3	3	45	571	8	Left
 10446	194122	W. Grigg	Will Grigg	28	ST	65	69	67	48	64	32	66	3	3	48	496	57	Right
 10448	195124	D. Amoo	David Amoo	29	RM	65	85	58	56	66	38	67	3	3	53	642	13	Right
-10449	195480	C. McLaughlin	Conor McLaughlin	28	RB, RWB	65	69	47	61	63	62	65	3	3	48	496	57	Right
+10449	195480	C. McLaughlin	Conor McLaughlin	28	RB, RB	65	69	47	61	63	62	65	3	3	48	496	57	Right
 10451	195905	L. Gutiérrez	Luis Alberto Gutiérrez Herrera	35	CB, LB	65	50	40	49	58	66	69	2	3	51	511	122	Left
 10452	196339	M. Titsch Rivero	Marcel Titsch Rivero	30	CM, CDM	65	62	49	62	65	62	71	2	3	45	572	8	Left
 10453	196434	J. Ballón	Josepmir Aarón Ballón Villacorta	32	CM, CDM	65	70	60	64	66	62	74	3	3	46	514	66	Right
@@ -12462,7 +12462,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10526	205535	T. Kløve	Troels Kløve Hallstrom	29	CM	65	77	59	62	69	56	62	3	3	32	523	27	Right
 10527	205609	J. Omolo	Johanna Ochieng Omolo	30	CB, CDM, CM	65	61	47	55	61	63	68	2	3	17	345	84	Right
 10528	205701	S. Delev	Spas Borislavov Delev	30	RM	65	79	63	59	66	24	55	3	4	19	85	103	Right
-10529	205862	E. Dudouit	Emeric Dudouit	28	RB, RWB, CDM	65	64	30	57	52	63	70	2	3	27	618	7	Right
+10529	205862	E. Dudouit	Emeric Dudouit	28	RB, RB, CDM	65	64	30	57	52	63	70	2	3	27	618	7	Right
 10530	206584	J. Tveita	Jon-Helge Tveita	27	RB	65	68	56	57	60	63	70	2	3	37	487	29	Right
 10531	206631	K. Rowe	Kelyn Jaynes Rowe	28	CM, CAM, LB	65	61	62	67	67	57	62	3	4	8	211	47	Right
 10532	207496	J. Sánchez Sotelo	Juan Ignacio Sánchez Sotelo	32	ST	65	62	66	54	63	30	64	2	4	28	566	1	Left
@@ -12490,7 +12490,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10556	211516	Rubén Martínez	Rubén Martínez Granja	30	LM, RM	65	71	55	61	76	29	31	4	3	23	527	12	Left
 10557	211707	P. McGinn	Paul McGinn	29	RB, CB	65	72	51	58	63	61	71	2	3	26	555	14	Right
 10558	211881	Q. Moll	Quirin Moll	29	CDM, CM, CB	65	58	50	59	57	63	69	2	4	45	592	8	Right
-10559	211888	M. Willsch	Marius Willsch	29	RB, RM, RWB	65	78	49	56	59	56	70	2	3	45	592	8	Right
+10559	211888	M. Willsch	Marius Willsch	29	RB, RM, RB	65	78	49	56	59	56	70	2	3	45	592	8	Right
 10560	211893	M. Schwabl	Markus Schwabl	29	RB, CB, CDM	65	71	41	55	60	61	75	2	2	45	519	8	Right
 10561	211988	J. Kiesewetter	Jerome Kiesewetter	27	RM	65	80	60	58	67	34	57	3	3	8	39	47	Right
 10562	212075	A. Nabbout	Andrew Nabbout	27	RM, ST, LM	65	73	64	58	66	32	73	3	2	36	202	56	Right
@@ -12570,7 +12570,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10641	230511	Emílio Trevões	Emílio Dener Trevões Teixeira	32	ST, LW	65	90	64	52	72	23	52	3	4	12	178	5	Left
 10642	232166	F. Herbers	Fabian Herbers	26	RM, ST	65	67	64	61	65	48	64	3	3	8	287	8	Right
 10643	232291	S. Silva	Stefan Silva	30	ST, LM	65	73	64	61	69	35	60	3	4	41	364	37	Right
-10644	232372	T. Okamoto	岡本 拓也	28	CB, RWB, RM	65	75	48	59	63	63	72	2	2	15	499	72	Right
+10644	232372	T. Okamoto	岡本 拓也	28	CB, RB, RM	65	75	48	59	63	63	72	2	2	15	499	72	Right
 10645	232375	T. Umesaki	梅崎 司	33	ST, LM, RM	65	53	66	65	69	41	59	3	4	15	499	72	Right
 10648	232576	Y. Kobayashi	小林 祐希	31	CM	65	46	43	59	59	62	70	2	3	15	489	72	Right
 10649	232614	Y. Minagawa	皆川 佑介	28	ST	65	53	65	44	53	38	78	2	3	15	602	72	Right
@@ -12595,7 +12595,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10669	236166	Ever Rodeiro	Ever Jorge Rodeiro Selva	24	CAM, CM	65	59	61	63	69	46	60	3	3	12	224	5	Right
 10671	236198	Luis Marleiro	Luis Erick Marleiro Neves	28	ST	65	81	67	52	62	36	73	2	2	12	433	5	Left
 10672	236503	I. Fülöp	István Sándor Fülöp	30	CAM, CM	65	67	62	67	65	52	67	3	2	44	531	70	Left
-10673	237350	K. Larson	Karl Larson	28	RB, RWB	65	69	34	54	60	59	72	2	3	41	574	37	Right
+10673	237350	K. Larson	Karl Larson	28	RB, RB	65	69	34	54	60	59	72	2	3	41	574	37	Right
 10675	237494	O. Gnjatić	Ognjen Gnjatić	28	CDM, CM, CB	65	55	40	55	56	60	79	2	2	35	420	25	Right
 10676	237762	Y. Kawai	河井 陽介	30	CM, CAM, CDM	65	60	60	65	69	59	45	3	4	15	465	72	Right
 10677	238014	R. Janssen	Roel Janssen	30	CB, LB	65	52	41	56	60	64	70	2	3	7	502	9	Left
@@ -12846,7 +12846,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10943	240697	S. Baptiste	Shandon Baptiste	22	CM	64	66	52	61	66	63	63	3	3	21	158	142	Right
 10944	240773	R. Norrington-Davies	Rhys Norrington-Davies	21	LB	64	75	43	52	59	58	62	2	2	21	505	38	Left
 10945	241587	S. Farhan	Sultan Farhan	23	CDM	64	65	42	50	50	61	79	2	2	10	472	101	Right
-10946	243254	F. Hörberg	Felix Hörberg	21	RM, RWB	64	85	48	57	65	45	61	3	2	41	651	37	Right
+10946	243254	F. Hörberg	Felix Hörberg	21	RM, RB	64	85	48	57	65	45	61	3	2	41	651	37	Right
 10947	245039	Duan Liuyu	段刘愚	21	RM, ST, CAM	64	74	54	63	62	40	57	3	4	9	262	58	Right
 10948	245249	M. Insaurralde	Carlos Manuel Insaurralde Ochart	21	CM, CDM	64	73	51	63	68	51	63	2	2	42	521	1	Right
 10949	245390	G. Traoré	Gaoussou Boubacar Traoré	20	CDM, CM	64	57	39	58	63	62	61	3	2	27	167	7	Right
@@ -12874,7 +12874,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10974	233017	Park Han Bin	박한빈 朴限彬	22	CM, CDM	64	41	47	62	59	58	70	2	3	39	295	20	Right
 10975	233018	Kim Dae Won	김대원 金大元	23	ST, LW	64	80	60	59	66	25	63	3	4	39	295	20	Right
 10977	235329	J. Gibbons	James Gibbons	22	RB	64	73	35	56	62	60	67	2	3	53	642	13	Right
-10978	235618	K. Wilson	Kane Wilson	20	RB, RWB	64	79	39	54	63	58	67	3	3	53	632	13	Right
+10978	235618	K. Wilson	Kane Wilson	20	RB, RB	64	79	39	54	63	58	67	3	3	53	632	13	Right
 10979	236467	F. Götze	Felix Götze	22	CB, CDM	64	58	31	52	59	66	62	3	2	3	150	8	Right
 10980	236507	T. Conechny	Tomás José Conechny	22	ST, CAM, LM	64	79	62	56	67	24	48	3	3	8	126	1	Left
 10981	236587	M. Farfan	Marco Farfan	21	LB, CB, CDM	64	68	34	50	65	61	64	2	3	8	126	47	Right
@@ -12935,12 +12935,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11043	226084	R. Hardie	Ryan Hardie	23	ST	64	86	62	46	63	24	62	3	3	48	607	14	Right
 11045	226724	C. Senior	Courtney Senior	23	RM	64	90	55	53	69	34	51	4	3	53	644	13	Right
 11046	228638	B. Stevenson	Ben Edward Stevenson	23	CDM, CM	64	70	60	65	64	58	62	3	4	53	644	13	Right
-11047	228834	E. Wichne	Eirik Wichne	23	RB, RWB	64	77	42	60	60	58	67	2	3	37	584	29	Right
+11047	228834	E. Wichne	Eirik Wichne	23	RB, RB	64	77	42	60	60	58	67	2	3	37	584	29	Right
 11048	229269	Z. Westbrooke	Zain Westbrooke	23	CM	64	63	61	66	63	54	60	2	3	48	608	13	Right
 11049	229436	S. Gartenmann	Stefan Gartenmann	23	CB, LB, RB	64	60	33	54	54	63	73	2	3	32	491	27	Right
 11050	229742	H. Alpsoy	Harun Alpsoy	23	CDM, CAM, CM	64	71	50	60	61	62	65	2	3	11	258	55	Right
 11051	230136	J. Thompson	Jordan Thompson	23	CM, CAM	64	71	53	62	67	55	63	3	2	21	305	57	Left
-11054	232185	C. Brittain	Callum Brittain	22	RB, RWB	64	79	51	58	65	57	62	3	4	48	545	13	Right
+11054	232185	C. Brittain	Callum Brittain	22	RB, RB	64	79	51	58	65	57	62	3	4	48	545	13	Right
 11055	233568	Lee Sang Heon	이상헌 Sang Heon Lee	22	CAM, ST	64	72	60	57	67	45	60	3	3	39	250	20	Right
 11056	234991	M. Opondo	Moses Opondo	22	CM	64	74	58	58	67	55	70	3	3	32	523	131	Right
 11057	235771	T. Lowery	Tom Lowery	22	CM	64	69	56	62	68	52	60	2	3	48	601	13	Right
@@ -12999,7 +12999,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11120	233315	S. Clare	Sean Clare	23	RB, RM, CM	64	72	63	62	63	59	68	3	3	48	549	13	Right
 11121	235355	D. Duarte	Deroy Duarte	20	CM, CAM	64	73	62	62	70	56	69	3	3	7	530	9	Right
 11122	235398	Jean Carlos	Jean Carlos Silva Rocha	24	CM, CDM	64	74	56	66	67	45	61	3	3	40	263	5	Right
-11123	235573	M. Godinho	Marcus Godinho	23	RB, RWB, LB	64	76	28	55	67	59	63	2	3	45	571	46	Right
+11123	235573	M. Godinho	Marcus Godinho	23	RB, RB, LB	64	76	28	55	67	59	63	2	3	45	571	46	Right
 11125	237108	M. Soisalo	Mikael Soisalo	22	RM, RW, LM	64	75	61	56	68	29	47	3	3	17	402	40	Right
 11126	237116	K. Ford	Kortne Ford	24	CB, RB	64	64	27	35	44	62	78	2	2	8	352	47	Right
 11127	237218	J. Hayes	Jacori Hayes	25	CDM, CM	64	69	45	62	67	58	63	3	3	8	274	47	Right
@@ -13056,7 +13056,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11182	228454	M. Ofkir	Mohamed Ofkir	23	LM, RM	64	84	56	54	68	30	50	3	3	37	586	29	Right
 11183	228870	B. Straalman	Bart Straalman	23	CB	64	55	33	51	52	65	71	2	2	27	501	9	Right
 11184	229019	A. Engin	Ahmet Emin Engin	23	RM, LM	64	79	53	56	67	38	56	3	3	45	543	8	Right
-11185	229123	R. Broom	Ryan Broom	23	CAM, RWB, CM	64	82	59	61	66	55	61	3	4	48	578	38	Right
+11185	229123	R. Broom	Ryan Broom	23	CAM, RB, CM	64	82	59	61	66	55	61	3	4	48	578	38	Right
 11186	230064	Y. Schmid	Yannick Schmid	25	CB	64	53	33	46	45	64	72	2	3	25	649	21	Right
 11187	231145	J. Pritchard	Joe Cameron Pritchard	23	LM	64	73	60	63	64	55	55	3	3	48	647	13	Right
 11188	231535	C. Borthwick-Jackson	Cameron Borthwick-Jackson	23	LB	64	70	45	61	61	61	64	3	3	53	667	13	Left
@@ -13110,11 +13110,11 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11240	213695	S. Goss	Sean Goss	24	CM	64	60	53	66	64	58	67	2	3	48	635	13	Left
 11242	218633	F. Piasecki	Fabian Piasecki	25	ST, RM	64	76	63	54	61	35	73	3	3	40	509	4	Right
 11243	220579	Y. Kaabouni	Younès Kaabouni	25	CDM, CM	64	66	52	63	66	57	67	3	3	27	541	7	Right
-11244	223907	P. Johansson	Piotr Johansson	25	RWB, RM	64	81	52	53	62	54	74	3	2	41	585	37	Right
+11244	223907	P. Johansson	Piotr Johansson	25	RB, RM	64	81	52	53	62	54	74	3	2	41	585	37	Right
 11246	224094	J. Bachmann	Janik Bachmann	24	CDM, CM, CB	64	52	45	54	53	63	80	2	2	45	407	8	Right
 11247	224095	N. Mbemba	Nolan Mbemba	25	CM, CDM, RB	64	64	59	64	67	60	64	3	3	27	500	7	Right
 11248	224433	K. Burger	Korbinian Burger	25	CB, LB	64	59	27	52	54	64	70	2	3	45	634	8	Left
-11249	224447	G. Jones	Gethin Jones	24	RB, LB, RWB	64	73	45	55	59	58	68	2	2	53	645	38	Right
+11249	224447	G. Jones	Gethin Jones	24	RB, LB, RB	64	73	45	55	59	58	68	2	2	53	645	38	Right
 11250	225026	E. Björkander	Eric Björkander	24	CB	64	69	35	50	58	63	70	2	3	41	652	37	Right
 11251	225133	M. Maigaard	Mikkel Maigaard	24	CM, CAM	64	70	58	65	63	54	67	3	4	37	624	27	Right
 11252	225387	L. Page	Lewis Page	24	LB, LB	64	74	39	54	62	63	54	2	3	53	627	13	Left
@@ -13123,12 +13123,12 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11255	225735	D. Baumann	Dominic Baumann	25	ST, CAM	64	68	62	52	62	28	70	3	3	35	504	8	Right
 11257	225955	M. Kvasina	Marko Kvasina	23	ST	64	53	65	50	63	28	68	3	2	17	525	34	Right
 11258	225998	A. McEneff	Aaron McEneff	24	CM, CDM	64	69	60	62	64	56	67	2	3	47	439	57	Right
-11259	226139	J. Tamimi	Jonathan Tamimi	25	RWB, RM	64	74	43	54	64	56	66	2	3	41	652	146	Right
+11259	226139	J. Tamimi	Jonathan Tamimi	25	RB, RM	64	74	43	54	64	56	66	2	3	41	652	146	Right
 11260	226174	D. Payne	Desevio Ilan Payne	24	RB, LB	64	75	37	51	61	60	65	2	3	7	346	47	Right
 11261	226507	J. Yates	Jerry Yates	23	ST, LM	64	73	64	47	64	29	66	2	3	48	603	13	Right
 11262	227700	R. Gelmi	Roy Gelmi	25	CB, CDM	64	70	45	54	42	62	74	2	3	7	480	21	Right
 11263	228363	J. Kramer	Joris Kramer	23	CB	64	58	34	41	51	63	68	2	2	7	118	9	Left
-11264	228894	J. Ward	Joe Ward	24	RWB, RM	64	84	49	58	68	54	52	3	3	48	578	13	Right
+11264	228894	J. Ward	Joe Ward	24	RB, RM	64	84	49	58	68	54	52	3	3	48	578	13	Right
 11265	229508	S. Sprangler	Sven Sprangler	25	CDM, CM	64	67	45	56	59	62	73	2	3	29	362	34	Right
 11266	232955	K. Tezuka	手塚 康平	24	CDM, CM	64	72	49	63	63	56	62	2	3	15	602	72	Left
 11267	234749	Song Ju Hun	송주훈 宋株熏	26	CB	64	64	34	43	47	62	75	2	3	9	307	20	Left
@@ -13256,7 +13256,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11405	255645	J. Toledo	Jorge Jair Toledo Bravo	24	RB	64	70	27	48	54	61	59	2	3	46	508	66	Right
 11406	256131	H. González	Harold Jonathan González Guerrero	26	RB, RM	64	76	26	46	53	62	58	2	3	42	558	61	Right
 11407	258603	J. Navas	Julián Navas	26	RB	64	68	40	49	59	63	63	2	3	14	456	1	Right
-11409	191157	M. Dyrestam	Mikael Dyrestam	28	CB, RWB	64	69	37	57	62	62	71	2	4	37	586	48	Right
+11409	191157	M. Dyrestam	Mikael Dyrestam	28	CB, RB	64	69	37	57	62	62	71	2	4	37	586	48	Right
 11410	202795	K. Ntlhe	Kgosietsile Ntlhe	26	LB, CB	64	76	41	52	60	59	66	2	3	53	656	89	Left
 11411	203428	E. Hewitt	Elliott Hewitt	26	RB, CM	64	72	43	58	63	59	69	3	3	53	640	38	Right
 11413	204499	R. Inniss	Ryan Inniss	25	CB	64	45	33	42	38	61	75	2	3	5	49	13	Right
@@ -13265,7 +13265,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11416	209493	D. Daniels	Donervon Joseph Daniels	26	CB, RB	64	68	28	42	46	64	69	2	2	48	601	125	Right
 11417	209675	J. Donacien	Janoi Donacien	26	RB, LB	64	78	34	49	55	62	72	2	3	48	583	147	Right
 11419	211434	Y. Takahashi	髙橋 祐治	27	CB	64	57	33	48	42	65	72	2	3	15	311	72	Right
-11420	211512	L. Hendrie	Luke Hendrie	25	RB, RWB, LB	64	71	35	55	59	60	67	2	3	53	640	13	Right
+11420	211512	L. Hendrie	Luke Hendrie	25	RB, RB, LB	64	71	35	55	59	60	67	2	3	53	640	13	Right
 11421	212484	W. Burns	Wes Burns	25	RW, RM	64	91	58	57	63	41	59	3	3	48	589	38	Right
 11422	214341	J. Ávila	Jonathan Ávila Martínez	28	CB	64	30	40	50	41	64	74	2	3	46	470	42	Right
 11423	215562	R. Hunt	Rob Hunt	24	LB, RB	64	76	33	56	64	58	61	2	4	48	639	13	Right
@@ -13330,7 +13330,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11489	222337	Jo Sung Jin	조성진 给宋锦	29	CB	64	64	26	51	53	63	69	2	3	39	485	20	Right
 11490	223629	S. Al Jaman	Saleh Mohammed Al Jamaan	26	LM, CAM, RM	64	80	60	57	66	24	57	3	3	10	329	101	Right
 11491	224570	A. Jackson-Hamel	Anthony Jackson-Hamel	26	ST	64	75	63	41	54	21	66	3	3	8	210	46	Right
-11492	224667	Yang Kuo	杨阔	27	RWB	64	76	52	56	58	58	66	2	2	9	268	58	Right
+11492	224667	Yang Kuo	杨阔	27	RB	64	76	52	56	58	58	66	2	2	9	268	58	Right
 11493	225191	B. Richards-Everton	Ben Richards-Everton	28	CB	64	64	28	42	45	61	78	2	3	53	630	13	Left
 11494	226781	K. Shelton	Khiry Shelton	27	ST, RW	64	74	56	56	65	37	72	3	3	8	266	47	Right
 11495	227041	E. Nielsen	Lasse Emil Nielsen	26	LW, ST	64	85	61	52	65	27	62	2	3	32	548	27	Right
@@ -13433,7 +13433,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11614	188985	L. Kalludra	Liridon Kalludra	28	CM, CAM	64	76	57	63	70	51	65	3	3	37	483	37	Right
 11615	189041	M. Gardawski	Michael Gardawski	29	LB, RB	64	74	61	56	64	60	60	2	2	40	518	8	Right
 11616	189077	S. Sararer	Sercan Sararer-Osuna	30	LM, ST, RM	64	75	62	59	69	37	54	3	4	45	637	55	Right
-11618	189868	M. Marshall	Mark Marshall	33	RM, RWB, LM	64	82	59	59	67	46	62	3	5	48	613	54	Left
+11618	189868	M. Marshall	Mark Marshall	33	RM, RB, LM	64	82	59	59	67	46	62	3	5	48	613	54	Left
 11619	189910	C. Main	Curtis Main	28	ST	64	70	64	47	57	35	83	2	3	26	403	13	Right
 11620	190031	D. Massey	Dane Massey	32	LB	64	60	51	61	59	61	73	2	3	47	492	52	Left
 11621	190235	J. Clarke	Jordan Clarke	28	RB	64	67	37	54	59	63	66	2	3	53	668	13	Right
@@ -13447,7 +13447,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11629	191532	Yu Yang	于洋	30	CB	64	63	25	45	48	63	71	2	2	9	40	58	Right
 11630	191552	M. Inoha	伊野波 雅彦	34	CB, RB, CM	64	49	45	55	48	62	73	2	3	15	602	72	Right
 11632	192283	V. Lundberg	Viktor Lundberg	29	CAM, ST	64	57	64	63	65	36	74	3	3	41	510	37	Right
-11633	192572	S. Neville	Scott Neville	31	CB, RWB	64	64	48	58	57	63	70	2	3	36	582	56	Right
+11633	192572	S. Neville	Scott Neville	31	CB, RB	64	64	48	58	57	63	70	2	3	36	582	56	Right
 11634	192616	C. Tănase	Cristian Tănase	33	CAM, RM, LM	64	61	65	65	66	42	59	3	3	44	653	70	Right
 11635	192989	F. Përdedaj	Fanol Përdedaj	28	CDM, CM	64	72	47	59	63	59	75	2	3	45	650	62	Right
 11636	193073	L. Legge	Leon Legge	35	CB	64	39	26	39	37	62	82	2	3	53	642	13	Right
@@ -13480,7 +13480,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11665	199685	R. Pedriel	Ricardo Pedriel Suárez	33	ST, RW	64	71	64	59	64	43	70	3	3	51	560	122	Right
 11666	199754	C. Dikamona	Clévid Florian Dikamona	30	CB, RB	64	59	22	43	51	59	78	2	3	26	498	86	Right
 11667	200207	C. Martínez	Cristian Martínez Borja	32	ST	64	62	68	55	62	32	74	3	2	42	368	42	Right
-11668	200259	M. Schimpelsberger	Michael Schimpelsberger	29	RB, RWB	64	73	47	55	61	60	67	2	3	29	576	34	Right
+11668	200259	M. Schimpelsberger	Michael Schimpelsberger	29	RB, RB	64	73	47	55	61	60	67	2	3	29	576	34	Right
 11669	200265	B. Mohsni	Bilel Mohsni	32	CB	64	53	50	50	56	63	70	2	3	53	640	74	Right
 11670	200283	M. Sutter	Manuel Sutter	29	ST	64	76	63	57	64	40	62	2	3	25	649	34	Left
 11671	200844	J. Keohane	Jimmy Keohane	29	RB, LB	64	76	57	60	63	60	61	3	4	48	631	52	Right
@@ -13490,20 +13490,20 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11675	201522	S. Zellner	Steven Zellner	29	CB, CDM	64	82	51	59	58	62	71	2	4	45	650	8	Right
 11676	201983	Regalón	Francisco Regalón Cerezo	33	CB	64	63	36	51	53	63	72	2	3	23	551	12	Right
 11677	202033	S. McLaughlin	Stephen McLaughlin	30	RM, LM, LB	64	75	60	60	65	41	61	3	3	53	662	52	Left
-11678	202292	Kim Soo Beom	김수범 金秀范	29	LB, RWB	64	76	51	59	63	59	65	2	5	39	466	20	Right
+11678	202292	Kim Soo Beom	김수범 金秀范	29	LB, RB	64	76	51	59	63	59	65	2	5	39	466	20	Right
 11679	202456	J. Verhoek	John Verhoek	31	ST	64	59	64	50	60	24	74	2	3	45	539	9	Right
 11680	202893	R. Riski	Roope Riski	28	ST	64	83	63	52	66	41	59	3	4	49	467	40	Right
 11682	203224	C. Good	Curtis Good	27	CB	64	47	35	54	48	64	68	2	3	36	359	56	Left
 11683	203338	A. Morgan	Ashtone Morgan	29	LB, LB	64	77	39	56	61	60	64	2	2	8	244	46	Left
 11684	203930	O. Cissé	Ousseynou Cissé	29	CDM, CM	64	47	48	56	53	61	82	2	3	53	669	67	Left
 11685	204175	J. Al-Hazaimeh	Jeron Al-Hazaimeh	28	LB, LM	64	68	40	49	57	62	72	2	3	45	598	8	Left
-11681	233114	J. Riley	Joe Riley	28	RWB, RB	64	73	53	54	63	60	67	2	3	53	662	13	Right
+11681	233114	J. Riley	Joe Riley	28	RB, RB	64	73	53	54	63	60	67	2	3	53	662	13	Right
 11686	204217	C. Wyke	Charlie Wyke	27	ST	64	60	62	45	61	28	75	2	3	48	496	13	Right
 11688	204422	D. McGowan	Dylan McGowan	28	CB	64	43	47	51	55	62	75	2	2	36	323	56	Right
 11689	204637	J. Derstroff	Julian-Maurice Derstroff	28	LM, RM, ST	64	80	61	56	68	28	57	3	3	45	572	8	Left
 11690	204730	J. Schoop	Jacob Toppel Schoop	31	CDM, CM	64	69	56	61	63	61	68	2	2	32	579	27	Left
 11692	204853	J. White	Jordan Neil White	28	ST	64	65	65	48	58	28	68	2	3	26	522	14	Right
-11693	205019	J. Caprice	Jake Caprice	27	RB, RWB	64	80	50	57	62	58	64	2	4	53	627	13	Right
+11693	205019	J. Caprice	Jake Caprice	27	RB, RB	64	80	50	57	62	58	64	2	4	53	627	13	Right
 11694	205582	A. Forde	Anthony Forde	26	LM, RM	64	72	58	61	65	32	59	3	3	48	549	52	Right
 11695	206004	J. Ojala	Juhani Lauri Henrik Ojala	31	CB	64	48	26	46	48	64	75	2	2	32	579	40	Right
 11696	206489	E. Fryers	Ezekiel Fryers	27	CB, LB	64	74	40	58	63	63	70	2	2	48	639	13	Left
@@ -13540,7 +13540,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11732	215081	G. Hachen	Gabriel Alejandro Hachen	29	ST	64	79	61	53	71	26	44	2	3	14	242	1	Right
 11733	215196	M. Galmarini	Martín Sebastián Galmarini	38	RB, RM	64	53	53	59	58	65	59	3	3	50	493	1	Right
 11734	215660	J. Thorsen	Jonas Søndberg Thorsen	30	LM	64	67	50	61	62	59	72	2	3	32	609	27	Right
-11735	215684	K. Mensah	Kevin Niclas Mensah	29	RWB, LB	64	83	62	55	67	55	67	3	4	32	442	27	Right
+11735	215684	K. Mensah	Kevin Niclas Mensah	29	RB, LB	64	83	62	55	67	55	67	3	4	32	442	27	Right
 11736	215760	F. Martin	Florian Martin	30	CM, LM	64	61	68	68	67	50	60	3	2	27	279	7	Left
 11737	215940	O. Lund	Oliver Lund Poulsen	29	CB, LB, RB	64	67	40	57	60	61	74	2	4	32	523	27	Right
 11738	216387	S. Sané	Saliou Sané	27	ST	64	74	62	38	65	29	68	2	3	35	504	8	Right
@@ -13593,7 +13593,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11789	233869	A. Dandea	Alexandru Adrian Dandea	32	CB	64	38	44	50	45	62	76	2	3	44	294	70	Left
 11791	234235	I. Isa	Ismail Isa Mustafa	31	ST	64	65	63	45	58	27	67	3	3	19	85	103	Right
 11792	234465	A. Araujo	Aldo Andrés Araujo	28	RW, LW	64	77	57	56	68	30	40	3	3	14	299	1	Right
-11793	234484	L. Fosgaard	Lasse Fosgaard	33	RWB, RM	64	75	52	57	64	55	65	3	5	32	548	27	Right
+11793	234484	L. Fosgaard	Lasse Fosgaard	33	RB, RM	64	75	52	57	64	55	65	3	5	32	548	27	Right
 11794	234536	G. Heinry	Guillaume Heinry	30	CAM, ST, CM	64	58	56	66	63	53	62	3	3	27	562	7	Right
 11795	235322	P. Pîrvulescu	Paul Ovidiu Pîrvulescu	31	LB, LM	64	70	51	61	62	58	60	2	3	44	653	70	Left
 11796	235466	Quim Araujo	Joaquim Araújo Delgado	32	CM, CAM	64	52	67	66	61	48	64	3	4	23	406	12	Right
@@ -13627,7 +13627,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11828	248007	A. Patache	Andrei Alexandru Patache	32	RB	64	64	43	51	61	63	64	2	2	44	561	70	Right
 11829	248092	Erico	Erico Constantino da Silva	30	CB	64	62	24	51	57	63	69	2	3	44	620	5	Right
 11830	248702	J. Castro	Juan David Castro Ruiz	28	LM, CAM	64	75	46	60	65	62	53	2	3	16	283	33	Right
-11831	248758	A. Soubervie	Anthony Soubervie	36	RWB, RM	64	52	33	59	58	63	66	2	3	27	562	7	Right
+11831	248758	A. Soubervie	Anthony Soubervie	36	RB, RM	64	52	33	59	58	63	66	2	3	27	562	7	Right
 11832	250900	M. Albayrak	Mücahit Albayrak	28	LB	64	67	34	52	61	63	60	2	2	11	404	55	Left
 11833	251068	M. Dobrescu	Mihai Dobrescu	27	LB	64	71	33	53	60	61	65	2	3	44	653	70	Left
 11834	251173	J. Mullin	Josh Mullin	27	RM	64	77	62	61	64	27	60	3	3	26	659	14	Right
@@ -13697,7 +13697,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11905	236413	S. Kulenović	Sandro Kulenović	20	ST	63	82	58	44	64	22	71	2	3	20	90	17	Right
 11906	242334	J. Lindsey	Jaylin Lindsey	20	LB, RB	63	77	43	57	62	57	62	2	3	8	266	47	Right
 11907	243049	M. Viviani	Mattia Viviani	19	CDM, CM	63	69	55	64	62	59	59	2	3	30	249	15	Right
-11908	243702	D. Spence	Djed Spence	19	RB, RWB, RM	63	79	29	45	61	59	56	3	3	21	344	13	Right
+11908	243702	D. Spence	Djed Spence	19	RB, RB, RM	63	79	29	45	61	59	56	3	3	21	344	13	Right
 11909	243840	L. O'Connor	Lee O'Connor	19	LB, RB, CB	63	71	45	59	64	62	59	2	3	53	643	52	Right
 11910	244407	Pol Lozano	Pol Lozano Vizuete	20	CM	63	64	49	62	66	52	53	2	3	23	137	12	Right
 11911	245616	Pelayo Morilla	Pelayo Morilla Cabal	18	RM, LM	63	74	59	58	66	26	56	3	2	23	312	12	Left
@@ -13714,7 +13714,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11922	258949	Jofre Carreras	Jofre Carreras Pagès	19	RW, LW	63	73	63	54	68	33	47	2	3	23	137	12	Right
 11924	238336	J. Rankin-Costello	Joe Rankin-Costello	20	RW, RB, LB	63	75	56	58	66	53	59	3	3	21	309	13	Right
 11925	240277	M. Gabbia	Matteo Gabbia	20	CB	63	52	33	40	49	68	55	2	3	2	21	15	Right
-11928	242184	A. Amade	Alfons Amade	20	RB, RWB, CDM	63	79	33	44	65	59	48	2	3	3	62	8	Right
+11928	242184	A. Amade	Alfons Amade	20	RB, RB, CDM	63	79	33	44	65	59	48	2	3	3	62	8	Right
 11929	242604	T. Klupś	Tymoteusz Klupś	20	RM	63	92	52	56	61	31	55	3	3	40	400	4	Right
 11930	243284	F. Winther	Frederik Franck Winther	19	CB	63	60	27	48	56	63	66	2	3	32	548	27	Left
 11931	243520	A. McCann	Alistair McCann	20	CM	63	68	50	56	63	61	64	2	4	26	535	57	Right
@@ -13736,7 +13736,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11948	257878	P. Pokorný	Peter Pokorný	18	CDM	63	65	39	59	61	59	67	2	3	29	576	23	Right
 11949	258352	A. Gülay	Ahmet Gülay	17	LB	63	66	41	57	62	58	57	2	3	11	179	55	Left
 11951	233892	T. Sandoval	Tomás David Sandoval	21	ST	63	66	60	46	62	25	67	3	3	14	277	1	Right
-11952	237037	R. Sears	Ryan Sears	21	RB, RWB	63	75	41	52	58	59	72	2	3	48	635	38	Right
+11952	237037	R. Sears	Ryan Sears	21	RB, RB	63	75	41	52	58	59	72	2	3	48	635	38	Right
 11953	238509	E. Youan	Thody Élie Youan	21	ST	63	73	64	49	64	23	49	3	3	25	308	7	Right
 11954	240611	D. Yearwood	Dru Yearwood	20	CM	63	82	54	59	67	60	74	3	3	8	245	13	Right
 11955	240902	Sergio Benito	Sergio Benito Crujera	21	ST	63	66	64	51	68	26	59	3	3	23	321	12	Right
@@ -13803,7 +13803,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12026	243241	A. Buongiorno	Alessandro Buongiorno	21	LB, CB	63	59	43	52	54	62	66	2	3	2	30	15	Left
 12027	247014	A. Keita	Aboubacar Kobele Keita	20	CB	63	68	27	49	48	61	70	2	3	8	221	47	Left
 12028	247084	O. Fernandez	Omir Guadalupe Fernandez Mosso	21	LM, RM, CAM	63	75	52	59	65	44	59	3	3	8	245	47	Right
-12029	247420	S. Naruse	成瀬 竣平	19	RB, RWB, RM	63	70	39	50	66	59	57	2	2	15	424	72	Right
+12029	247420	S. Naruse	成瀬 竣平	19	RB, RB, RM	63	70	39	50	66	59	57	2	2	15	424	72	Right
 12030	247729	André Almeida	Domingos André Ribeiro Almeida	20	CM	63	61	56	60	68	53	57	3	3	6	121	2	Right
 12031	248148	Zubimendi	Martín Zubimendi Ibáñez	21	CM	63	61	54	62	60	51	57	2	3	1	18	12	Right
 12032	251686	D. Fernández	Damián Ariel Fernández	19	CB	63	70	30	44	53	62	71	2	3	14	174	1	Right
@@ -13927,7 +13927,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12166	233820	S. Sinyan	Sheriff Sinyan	23	CB, CDM	63	72	43	52	57	62	70	2	2	37	259	96	Right
 12167	235038	J. Vancamp	Jorn Vancamp	21	ST, CAM, ST	63	68	64	62	63	33	58	2	3	17	448	6	Right
 12168	235242	D. Heymans	Daan Heymans	21	CAM, ST	63	60	58	60	64	49	63	2	3	17	573	6	Right
-12169	235773	L. James-Wildin	Luther James-Wildin	22	RB, RWB	63	77	51	54	61	56	75	2	3	53	670	117	Right
+12169	235773	L. James-Wildin	Luther James-Wildin	22	RB, RB	63	77	51	54	61	56	75	2	3	53	670	117	Right
 12170	235988	Jacobo González	Jacobo González Rodrigáñez	23	RM, LM	63	67	64	64	66	33	40	3	3	23	392	12	Right
 12171	236001	Raí	Raí Nascimento de Oliveira	22	ST, LM, RM	63	74	64	52	69	27	56	3	3	23	213	5	Right
 12173	238055	A. Al Najjar	Ammar Siraj Y Al Najjar	23	RM, LM, CAM	63	78	55	60	64	44	54	3	3	10	486	101	Right
@@ -13973,7 +13973,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12221	231840	V. Müller	Valentino Müller	21	CM, CDM	63	70	49	62	65	58	60	2	3	29	240	34	Right
 12222	232271	M. Cotali	Matteo Cotali	23	LB	63	68	34	57	60	59	57	2	3	30	416	15	Left
 12223	232704	T. Ominami	大南 拓磨	22	CB	63	85	26	39	44	61	74	2	3	15	311	72	Right
-12225	233245	S. McLoughlin	Shane McLoughlin	23	RWB, CM	63	75	56	60	64	55	61	3	3	48	657	52	Right
+12225	233245	S. McLoughlin	Shane McLoughlin	23	RB, CM	63	75	56	60	64	55	61	3	3	48	657	52	Right
 12226	233880	G. Fechner	Gino Fechner	22	CDM, CM	63	65	41	56	58	61	67	2	3	45	606	8	Right
 12227	234222	Cho Young Wook	조영욱 Young Wook Cho	21	ST, LW, CM	63	78	61	58	65	28	62	2	3	39	278	20	Right
 12228	234645	N. McGinley	Nathan McGinley	23	CB	63	66	37	50	53	63	72	2	3	26	522	13	Left
@@ -14017,7 +14017,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12273	231941	D. Szymonowicz	Dawid Szymonowicz	24	CB	63	61	36	51	57	60	70	2	2	40	518	4	Right
 12274	232476	K. Shiihashi	椎橋 慧也	23	CDM, CB, CM	63	64	36	57	58	60	68	2	3	15	537	72	Right
 12275	232671	L. Putaro	Leandro Putaro	23	LM, RM	63	70	62	56	66	39	63	3	3	35	477	8	Left
-12276	232944	S. Fujitani	藤谷 壮	22	RB, RWB, RM	63	81	30	46	58	57	64	2	3	15	71	72	Right
+12276	232944	S. Fujitani	藤谷 壮	22	RB, RB, RM	63	81	30	46	58	57	64	2	3	15	71	72	Right
 12277	233056	D. Cleary	Daniel Cleary	24	CB	63	54	30	39	44	62	68	2	3	47	492	52	Right
 12278	233216	P. Tietz	Phillip Tietz	22	ST	63	57	61	49	62	32	69	2	3	45	528	8	Right
 12279	233546	Y. Karabelyov	Yanis Karabelyov	24	CM	63	61	51	60	60	54	57	2	3	19	85	103	Left
@@ -14032,7 +14032,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12288	237771	Lee Sang Min	이상민 李圣明	25	CDM	63	66	38	55	56	56	72	2	3	39	485	20	Right
 12289	238780	D. Volkmer	Dominic Volkmer	24	CB	63	53	36	48	44	62	72	2	3	45	543	8	Left
 12290	238786	O. Käuper	Ole Käuper	23	CM, CDM	63	58	57	61	64	57	66	2	3	3	59	8	Left
-12291	239951	G. Asís	Gonzalo Asís	24	RB, RWB	63	63	42	44	62	63	63	2	3	14	176	1	Right
+12291	239951	G. Asís	Gonzalo Asís	24	RB, RB	63	63	42	44	62	63	63	2	3	14	176	1	Right
 12292	241068	A. Dávila	Fabián Agustín Dávila Silva	21	ST, RW	63	64	62	48	61	36	52	3	3	31	512	16	Left
 12293	241275	D. Khalid	Driss Khalid	21	ST, CAM	63	64	63	56	68	19	53	3	4	27	167	24	Right
 12294	241993	O. Steurer	Oliver Steurer	25	CB, LB	63	62	34	49	46	61	71	2	3	35	357	8	Left
@@ -14080,7 +14080,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12341	227911	R. Leal	Randall Enrique Leal Arley	23	RM	63	67	55	64	68	35	41	3	3	8	356	19	Right
 12343	229105	D. Sula	Din Sula	22	ST	63	62	63	55	63	20	63	2	3	17	573	35	Right
 12344	229756	S. Nkansah	Steffen Nkansah	24	CB	63	60	30	43	47	65	64	2	3	45	571	8	Right
-12345	229930	K. Knoyle	Kyle Knoyle	23	RB, RWB	63	85	29	52	62	56	61	2	3	53	638	13	Right
+12345	229930	K. Knoyle	Kyle Knoyle	23	RB, RB	63	85	29	52	62	56	61	2	3	53	638	13	Right
 12346	230812	A. Pattison	Alexander Pattison	22	CM	63	71	53	60	65	59	62	2	3	21	550	13	Right
 12347	231264	T. Rodríguez	Thomas Rodríguez Trogsar	24	RM, RW	63	65	54	59	67	43	55	3	3	28	393	39	Right
 12348	231388	L. Algozino	Lucas Javier Algozino	24	RM	63	80	50	60	67	36	49	3	3	14	334	1	Right
@@ -14151,7 +14151,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12428	242707	G. Lillard	Grant Lillard	24	CB	63	49	27	42	37	64	72	2	4	8	221	47	Left
 12429	243939	A. Nouri	Amir Nouri	25	CDM, CM	63	73	46	57	62	60	68	2	3	27	507	7	Right
 12430	244416	João Mendes	João Sabino Mendes Neto Saraiva	25	CM, CAM	63	68	55	65	66	46	63	3	3	6	342	2	Right
-12431	244435	J. Heil	Jürgen Heil	23	RB, RWB, CM	63	67	54	56	63	61	65	3	3	29	556	34	Right
+12431	244435	J. Heil	Jürgen Heil	23	RB, RB, CM	63	67	54	56	63	61	65	3	3	29	556	34	Right
 12432	244755	M. Malec	Mariusz Malec	25	CB	63	55	31	38	36	62	73	2	2	40	490	4	Left
 12433	244800	Kim Moon Hwan	Moon Hwan Kim	24	RB, RM	63	85	48	56	64	56	57	3	3	39	593	20	Right
 12434	244945	M. Capasso	Manuel Vicente Capasso	24	CB	63	57	35	39	40	62	70	2	2	14	331	1	Right
@@ -14221,7 +14221,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12511	210684	J. Tchouatcha	Jovanie Tchouatcha	25	LB	63	76	26	49	58	58	67	2	2	27	618	30	Left
 12512	210898	A. Al Fahad	Abdullah Al Fahad	26	CB, RB	63	67	52	49	49	62	75	2	3	10	472	101	Right
 12513	212366	J. Sheehan	Josh Sheehan	25	CM, CAM, CDM	63	79	53	59	64	59	68	3	3	53	660	38	Right
-12514	212417	P. Gregor	Pascal Gregor	26	CB, RWB	63	64	38	50	57	62	67	2	3	32	548	27	Right
+12514	212417	P. Gregor	Pascal Gregor	26	CB, RB	63	64	38	50	57	62	67	2	3	32	548	27	Right
 12515	214308	A. Martínez	Ariel Elías Martínez Arce	26	CM, CAM	63	64	59	64	70	48	66	3	4	28	534	39	Right
 12516	215302	F. Marquet	François Marquet	25	CM, CDM, CAM	63	54	53	65	64	62	66	2	3	17	525	6	Right
 12519	217202	L. Rinaldi	Lautaro Rinaldi	26	ST	63	71	62	54	64	24	64	3	3	14	331	1	Right
@@ -14234,7 +14234,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12528	225332	E. Lanini	Eric Lanini	26	ST	63	66	65	49	64	22	59	3	3	2	143	15	Right
 12462	254496	C. Grant	Conor Grant	25	CM	63	60	60	64	65	59	66	3	3	48	607	13	Left
 12529	225734	C. Hamilton	CJ Hamilton	25	LM, LB, ST	63	92	60	54	61	55	65	3	3	48	603	13	Left
-12530	225759	B. Kamau	Bruce Kamau	25	RM, RWB	63	89	54	52	67	55	49	3	3	36	323	56	Right
+12530	225759	B. Kamau	Bruce Kamau	25	RM, RB	63	89	54	52	67	55	49	3	3	36	323	56	Right
 12531	227817	C. Rosel	Carlos Iván Rosel Bermont	24	RM, LM	63	80	48	59	66	55	58	2	3	16	328	33	Right
 12532	228757	M. Mathisen	Marcus Mathisen	24	CDM, CM	63	57	43	52	61	59	73	2	3	41	664	27	Right
 12535	230607	Y. Deichmann	Yannick Deichmann	25	CAM, CM	63	67	53	61	66	50	72	2	3	45	646	8	Right
@@ -14264,7 +14264,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12563	256545	A. Bajic	Ante Bajic	24	RM, LM, CM	63	67	59	62	61	58	64	2	3	29	575	34	Right
 12564	257198	M. Thiel	Marvin Thiel	25	LM	63	75	51	57	69	27	54	2	3	45	646	8	Left
 12565	192496	P. Downing	Paul Downing	28	CB	63	53	37	49	45	63	72	2	3	48	529	13	Right
-12566	198071	G. Williams	George Benjamin Williams	27	CB, RWB	63	72	27	56	64	62	69	2	3	48	545	13	Right
+12566	198071	G. Williams	George Benjamin Williams	27	CB, RB	63	72	27	56	64	62	69	2	3	48	545	13	Right
 12567	200693	D. Jarl	Daniel Jarl	28	CB	63	58	23	45	42	62	69	2	3	41	574	37	Left
 12568	200781	C. Thomas	Conor Thomas	26	CM	63	70	57	61	62	62	72	2	3	53	648	13	Right
 12569	201212	A. Thompson	Adam Thompson	27	CB	63	55	31	56	54	62	71	2	3	21	533	57	Right
@@ -14303,7 +14303,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12611	208304	Moon Chang Jin	문창진 文昶辰	26	CM, CAM, RM	63	70	60	65	69	41	52	3	4	39	432	20	Right
 12612	211095	N. Brock-Madsen	Nicolai Brock-Madsen	27	ST	63	60	60	48	57	36	75	2	3	32	609	27	Right
 12613	211463	C. Lavery	Caolan Lavery	27	ST	63	75	62	56	63	36	65	3	3	53	666	57	Right
-12614	211717	L. Fenton	Louis Ferenc Puskas Fenton	27	RB, RWB	63	69	51	60	62	57	64	2	2	36	414	71	Right
+12614	211717	L. Fenton	Louis Ferenc Puskas Fenton	27	RB, RB	63	69	51	60	62	57	64	2	2	36	414	71	Right
 12615	213369	K. Yeboah	Kwame Yeboah	26	LM, ST	63	82	61	52	65	33	64	3	3	36	323	56	Right
 12617	214893	S. Sobczak	Szymon Sobczak	27	ST	63	76	60	52	64	31	62	2	3	40	469	4	Right
 12618	218292	D. Djigla	David Djigla	24	LM, RM	63	91	64	56	64	32	55	3	3	27	478	99	Right
@@ -14391,7 +14391,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12720	188989	F. Riedel	Florian Riedel	30	RM, RB	63	76	44	64	62	56	64	2	4	45	646	8	Right
 12721	189217	P. Pawlett	Peter Ian Pawlett	29	CM	63	83	58	63	67	55	68	3	4	26	633	14	Right
 12722	189492	S. O'Keefe	Stuart O'Keefe	29	CM	63	58	57	59	64	61	68	2	3	48	628	13	Right
-12723	189900	L. O'Neill	Luke O'Neill	28	CB, RB, RWB	63	72	48	60	63	61	69	2	2	48	657	13	Right
+12723	189900	L. O'Neill	Luke O'Neill	28	CB, RB, RB	63	72	48	60	63	61	69	2	2	48	657	13	Right
 12724	190239	J. Bowery	Jordan Bowery	28	ST	63	78	60	50	62	33	71	2	3	53	662	13	Right
 12725	190637	I. Armaș	Igor Armaș	32	CB	63	34	39	49	38	62	78	2	3	44	559	92	Left
 12726	191657	Lim Sang Hyub	임상협 廉桑	31	RM, LM	63	68	63	58	64	42	62	3	3	39	485	20	Left
@@ -14434,7 +14434,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12774	202169	J. Gatt	Joshua Alexander Gatt	28	ST, LM, RM	63	91	58	54	68	41	60	4	3	47	492	47	Right
 12775	202263	J. Jørgensen	Joackim Jørgensen	31	CB	63	50	55	58	60	60	77	2	3	37	584	29	Right
 12776	202375	D. Offenbacher	Daniel Offenbacher	28	CM, CDM	63	70	61	64	67	57	66	3	3	29	575	34	Left
-12777	202482	A. Rodman	Alex Rodman	33	RM, RWB	63	68	58	59	64	52	61	3	3	48	608	13	Right
+12777	202482	A. Rodman	Alex Rodman	33	RM, RB	63	68	58	59	64	52	61	3	3	48	608	13	Right
 12778	202492	J. Lindner	Joakim Lindner	29	CB	63	62	42	57	54	63	69	2	3	41	665	37	Right
 12779	202551	P. Ulvestad	Pål Erik Ulvestad	29	CDM, CM	63	38	54	54	55	61	74	2	3	37	483	29	Right
 12780	202647	D. Petcoff	Damián Ezequiel Petcoff Kailer	30	CM, CDM	63	60	53	66	65	45	55	2	3	23	527	1	Right
@@ -14481,7 +14481,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12827	220979	T. Karlsson	Tobias Karlsson	31	CB	63	51	28	38	41	63	73	2	2	41	664	37	Right
 12828	221106	B. Gladwin	Ben Gladwin	28	CM, CAM	63	67	57	61	65	57	73	3	4	48	545	13	Right
 12829	221369	K. Al Kaabi	Khalid Hussain Al Kabi	28	RM, ST, LM	63	80	57	55	64	21	50	3	3	10	353	101	Right
-12830	221443	S. Mensiro	Samuel Mensiro	31	RWB, CDM	63	75	38	53	57	56	75	2	2	41	651	32	Right
+12830	221443	S. Mensiro	Samuel Mensiro	31	RB, CDM	63	75	38	53	57	56	75	2	2	41	651	32	Right
 12831	221477	Song Seung Min	송승민 宋晟敏	28	ST, RW, CAM	63	75	57	60	63	41	74	3	4	39	432	20	Right
 12832	221819	Song Boxuan	宋博轩	30	LM	63	70	45	61	63	44	60	3	3	9	268	58	Left
 12833	222574	T. Nishi	西 翼	30	CM	63	60	55	63	66	51	60	2	4	39	295	72	Right
@@ -14527,7 +14527,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12880	238594	A. Dej	André Dej	28	CM, CDM	63	65	61	66	64	56	61	2	4	45	459	4	Right
 12881	238598	P. Schikowski	Patrick Schikowski	28	LW	63	82	58	53	65	30	56	3	4	45	658	4	Left
 12882	239119	L. Leahy	Luke Leahy	27	LB, LB	63	68	55	60	59	56	68	2	2	48	608	13	Left
-12883	239134	N. Fofana	Nama Fofana	30	RB, RWB	63	69	27	51	55	62	66	2	3	27	507	7	Right
+12883	239134	N. Fofana	Nama Fofana	30	RB, RB	63	69	27	51	55	62	66	2	3	27	507	7	Right
 12885	240106	E. García	Epifanio Ariel García Duarte	27	ST	63	73	64	49	63	30	57	2	3	33	366	69	Right
 12886	240258	O. Sangante	Opa Sangante	29	CM, CB, CDM	63	58	48	59	62	63	78	2	3	27	507	10	Right
 12887	241311	Ke Zhao	柯钊	31	LB, LM	63	58	30	48	56	60	75	2	2	9	268	58	Left
@@ -14681,7 +14681,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13053	233728	M. Doucouré	Mamadou Doucouré	22	CB, CDM	62	63	31	48	54	62	59	2	3	3	19	7	Left
 13054	235288	S. Schreck	Sam Francis Schreck	21	CAM	62	66	47	60	69	35	40	3	4	7	96	8	Right
 13055	236706	P. Almqvist	Pontus Almqvist	20	RW, ST	62	78	50	55	68	38	49	4	4	41	339	37	Left
-13056	238157	M. Roerslev	Mads Roerslev Rasmussen	21	RB, RWB	62	76	39	56	60	54	62	3	3	21	158	27	Right
+13056	238157	M. Roerslev	Mads Roerslev Rasmussen	21	RB, RB	62	76	39	56	60	54	62	3	3	21	158	27	Right
 13058	239360	P. Struijk	Pascal Struijk	20	CB, CDM	62	55	34	52	54	61	65	2	3	5	63	9	Left
 13059	240175	Bruno Jordão	Bruno André Cavaco Jordão	21	CM	62	63	55	60	67	49	59	3	3	6	227	2	Right
 13061	243514	J. Meier	Jonathan Meier	20	LB	62	63	43	47	55	61	63	2	3	45	464	8	Left
@@ -14712,7 +14712,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13086	236319	T. O'Connor	Thomas O'Connor	21	LB, CM	62	66	46	59	58	57	69	2	3	5	107	52	Left
 13087	236885	B. Vazquez	Brandon Vázquez Toledo	21	ST	62	67	60	48	57	20	65	2	3	8	243	47	Right
 13088	237382	F. Melegoni	Filippo Melegoni	21	CM	62	56	53	65	63	55	53	2	2	2	55	15	Right
-13089	240248	R. Hutton	Remeao Hutton	21	RB, RWB	62	76	43	53	60	57	62	2	2	53	670	13	Right
+13089	240248	R. Hutton	Remeao Hutton	21	RB, RB	62	76	43	53	60	57	62	2	2	53	670	13	Right
 13090	240786	A. Koiki	Ali Koiki	20	LB	62	77	54	52	62	55	65	3	2	5	58	13	Left
 13091	241036	G. Marsh	George Marsh	21	CDM, RB	62	61	44	57	57	60	64	2	3	5	9	13	Right
 13092	241392	E. Daci	Erdon Daci	21	LM, ST	62	61	61	55	68	24	49	2	3	11	257	63	Left
@@ -14771,7 +14771,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13148	246415	N. Fadiga	Noah Fadiga	20	RB	62	76	49	55	63	54	69	3	5	7	354	6	Left
 13149	247268	S. Higashi	東 俊希	19	ST	62	67	58	61	65	44	63	2	2	15	441	72	Left
 13150	251009	Miguel Ángel	Miguel Ángel Gómez López	22	ST	62	62	62	48	57	26	61	2	3	23	412	12	Right
-13151	251230	J. Gölles	Julian Peter Gölles	20	RWB, RB	62	74	52	51	58	60	66	2	3	29	581	34	Right
+13151	251230	J. Gölles	Julian Peter Gölles	20	RB, RB	62	74	52	51	58	60	66	2	3	29	581	34	Right
 13152	251360	M. Spychała	Mateusz Spychała	22	RB	62	72	30	51	60	58	61	2	3	40	612	4	Right
 13153	252599	S. Sanna	Sam Sanna	21	CDM, CM	62	61	52	61	65	61	49	2	3	27	241	7	Right
 13154	252825	A. Fiordaliso	Alessandro Fiordaliso	21	RB, LB	62	75	32	44	61	58	61	2	2	2	30	15	Right
@@ -14855,7 +14855,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13241	229176	G. Sağlam	Görkem Sağlam	22	CAM, LW	62	72	54	63	64	52	55	3	3	7	315	8	Right
 13242	232053	T. Buhagiar	Trent Buhagiar	22	RW, CAM	62	93	54	50	63	23	61	3	4	36	325	56	Right
 13244	233851	J. Taylor	Jack Taylor	22	CM	62	73	56	60	64	54	61	3	4	48	578	52	Right
-13245	234242	C. O'Keeffe	Corey O'Keeffe	22	RWB, LB	62	74	52	57	58	57	67	2	4	53	662	52	Right
+13245	234242	C. O'Keeffe	Corey O'Keeffe	22	RB, LB	62	74	52	57	58	57	67	2	4	53	662	52	Right
 13246	234294	L. Lingman	Lucas Lingman	22	CM, CAM	62	67	55	63	67	46	56	2	3	49	467	40	Left
 13247	234902	K. Duah	Kwadwo Duah	23	ST, LW, RW	62	80	62	56	61	31	73	2	3	25	308	21	Right
 13248	236869	Y. Güveli	Yiğithan Güveli	22	CB	62	47	31	40	39	63	71	2	2	11	251	55	Right
@@ -14895,7 +14895,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13287	215425	F. Sachpekidis	Filip Sachpekidis	22	ST, ST	62	66	60	58	67	38	64	3	2	41	585	37	Right
 13290	221346	M. Samuelsen	Martin Samuelsen	23	ST, RM, CAM	62	74	58	57	70	30	51	4	4	48	446	29	Right
 13291	223305	P. Mystkowski	Przemysław Mystkowski	22	LM, CAM	62	73	57	56	63	29	56	3	2	40	469	4	Right
-13293	224307	T. Watson	Tennai Watson	23	RB, RWB	62	73	31	52	61	59	54	2	3	21	306	13	Right
+13293	224307	T. Watson	Tennai Watson	23	RB, RB	62	73	31	52	61	59	54	2	3	21	306	13	Right
 13294	224793	B. Wembangomo	Brice Wembangomo	23	RB	62	82	44	52	65	56	62	3	3	37	661	29	Right
 13295	225189	S. Bastoni	Simone Bastoni	23	LB	62	64	52	62	64	54	59	3	2	2	192	15	Left
 13296	225383	H. Charsley	Harry Charsley	23	CM, CAM	62	62	55	63	63	55	60	3	3	53	662	52	Right
@@ -14908,7 +14908,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13304	231582	N. D'Agostino	Nicholas D'Agostino	22	ST	62	82	56	55	62	36	66	2	4	36	202	56	Right
 13305	232085	M. Bringaker	Mathias Bringaker	23	ST, RM	62	77	60	48	66	33	62	3	2	37	584	29	Right
 13306	233831	J. Salas	John Michael Salas Torres	23	RB, LB	62	83	33	57	59	56	49	2	3	28	455	39	Left
-13308	235143	M. Welch-Hayes	Miles Welch-Hayes	23	RB, CB, RWB	62	82	36	51	58	57	69	2	2	53	644	13	Right
+13308	235143	M. Welch-Hayes	Miles Welch-Hayes	23	RB, CB, RB	62	82	36	51	58	57	69	2	2	53	644	13	Right
 13431	236487	D. Keillor-Dunn	Davis Keillor-Dunn	22	LM	62	78	53	55	63	26	53	3	3	53	667	13	Left
 13311	237497	D. Barbosa	Diego Armando Barbosa Zaragoza	23	RB	62	68	37	50	60	59	65	2	3	16	175	33	Left
 13312	238341	A. Dzabana	Alan Dzabana	23	ST, LM	62	82	62	53	70	17	50	3	3	27	500	7	Right
@@ -14955,7 +14955,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13358	224418	S. Friðjónsson	Samúel Kári Friðjónsson	24	CM, CDM, CAM	62	54	57	58	63	57	75	2	3	35	389	65	Right
 13359	224426	N. Bürgy	Nicolas Sandro Bürgy	24	CB	62	48	29	43	46	62	65	2	3	25	140	21	Right
 13360	224887	D. Telford	Dominic Telford	23	ST	62	82	61	47	62	24	61	2	3	48	607	13	Left
-13361	225279	C. McGrandles	Conor McGrandles	24	CM, RWB	62	69	54	60	65	51	69	2	3	48	547	14	Right
+13361	225279	C. McGrandles	Conor McGrandles	24	CM, RB	62	69	54	60	65	51	69	2	3	48	547	14	Right
 13363	225910	M. López Quintana	Mario Federico López Quintana	24	CB	62	59	26	34	35	64	68	2	3	14	331	69	Right
 13365	227288	J. Flores	Jordan Michael Flores	24	CAM, CDM, LM	62	64	55	63	63	48	57	3	3	47	492	13	Left
 13367	228356	J. Maguire-Drew	Jordan Maguire-Drew	22	RM	62	71	60	59	62	34	55	3	3	53	669	13	Left
@@ -15025,7 +15025,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13444	247286	S. Hostikka	Santeri Hostikka	22	LM, RM	62	77	50	58	64	24	55	3	3	40	490	40	Right
 13446	250759	E. Ramaj	Elsamed Ramaj	24	LM, CAM, ST	62	80	55	57	63	27	62	3	2	45	646	35	Left
 13447	251364	T. Huk	Tomáš Huk	25	CB	62	63	29	45	38	62	65	2	2	40	426	23	Right
-13448	252024	W. Britto	Dagou Willie Anderson Britto	23	RB, RWB	62	78	43	53	58	58	68	2	3	25	462	41	Right
+13448	252024	W. Britto	Dagou Willie Anderson Britto	23	RB, RB	62	78	43	53	58	58	68	2	3	25	462	41	Right
 13449	252077	B. Alceus	Bryan Alceus	24	CDM	62	58	44	57	61	59	58	2	3	44	542	130	Right
 13450	253249	J. Florentín	José Ignacio Florentín Bobadilla	23	ST	62	53	63	51	60	28	69	2	2	33	316	69	Right
 13451	253694	C. Makridis	Charalambos Makridis	23	CAM, ST	62	69	67	50	68	24	55	2	4	35	506	8	Right
@@ -15094,7 +15094,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13526	220779	M. Ridenton	Matthew Ridenton	24	CDM, CM	62	67	55	61	57	57	68	2	3	19	85	71	Right
 13527	223264	S. Hendrie	Stephen Hendrie	25	LB	62	74	35	46	57	59	68	2	3	53	672	14	Left
 13529	228210	L. Jackson	Lachlan Robert Tua Jackson	25	CB, LB	62	55	25	37	42	62	77	2	3	36	569	56	Left
-13530	229324	A. Baker	Ashley Baker	23	RWB, RB	62	71	28	51	58	59	63	2	2	53	660	38	Right
+13530	229324	A. Baker	Ashley Baker	23	RB, RB	62	71	28	51	58	59	63	2	2	53	660	38	Right
 13531	229561	J. Fleita	Jonathan Fleita	25	CB	62	57	32	33	40	63	67	2	2	14	334	1	Right
 13532	229730	B. Jaroch	Bartosz Jaroch	25	RB	62	71	43	56	55	60	66	2	2	40	671	4	Right
 13533	235054	I. Vujica	Ivan Vujica	23	LB	62	66	33	53	64	60	64	2	3	36	261	56	Left
@@ -15154,7 +15154,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13597	257802	O. Ursu	Octavian Andrei Ursu	25	LM	62	65	59	57	63	27	45	3	3	44	620	70	Right
 13599	202977	Lee Jong Sung	이종성 李忠成	27	CB, CDM	62	50	55	59	61	60	73	2	3	39	485	20	Right
 13600	203424	E. Whitehouse	Elliott Whitehouse	26	CM, CAM	62	68	59	56	63	55	76	2	3	53	632	13	Right
-13601	204762	T. Schilk	Tobias Schilk	28	CB, RWB, RB	62	73	38	52	54	61	71	2	4	45	572	8	Right
+13601	204762	T. Schilk	Tobias Schilk	28	CB, RB, RB	62	73	38	52	54	61	71	2	4	45	572	8	Right
 13602	211618	D. Starkl	Dominik Starkl	26	ST, LM, RM	62	76	60	58	67	36	60	2	4	29	626	34	Right
 13604	216235	S. Flochon	Sébastien Flochon	27	CDM, CM	62	55	48	57	60	57	63	2	2	27	562	7	Right
 13605	223263	Z. Gordon	Ziggy Gordon	27	CB, RB	62	74	33	46	61	60	75	2	4	36	615	14	Right
@@ -15208,7 +15208,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13663	257414	P. Ba	Pape Ibnou Bâ	27	ST	62	71	67	45	54	23	60	2	3	27	478	10	Right
 13664	257423	A. Escobar	Armando Escobar Díaz	26	LB	62	64	33	52	51	63	54	2	2	16	175	33	Left
 13665	257646	J. Kiełb	Jakub Kiełb	26	LB	62	67	42	54	56	55	60	2	3	40	612	4	Left
-13669	150995	B. Rotenberg	Boris Rotenberg	34	RB, RWB	62	68	38	52	50	63	62	2	1	13	108	40	Right
+13669	150995	B. Rotenberg	Boris Rotenberg	34	RB, RB	62	68	38	52	50	63	62	2	1	13	108	40	Right
 13670	152505	J. White	John White	33	CB	62	50	35	51	52	62	70	2	3	53	625	13	Right
 13671	153062	V. Figueroa	Víctor Alberto Figueroa	36	LM, CAM	62	63	61	57	63	49	47	3	3	42	516	1	Right
 13673	159578	C. Donaldson	Clayton Donaldson	36	ST	62	54	59	50	60	29	75	2	3	53	630	54	Right
@@ -15217,7 +15217,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13676	163858	C. Tremarco	Carl Tremarco	34	LB	62	60	31	54	56	60	66	2	3	26	659	13	Left
 13678	165787	J. Ortiz	Jorge Alberto Ortiz	36	CM, CDM	62	65	57	63	58	59	66	3	3	14	431	1	Right
 13679	165880	Yang Sang Min	양상민 梁相珉	36	CB, LB	62	47	52	57	62	62	64	2	3	39	485	20	Left
-13681	169912	B. Moore	Byron Moore	31	ST, RWB	62	77	61	59	65	52	64	2	3	48	607	13	Right
+13681	169912	B. Moore	Byron Moore	31	ST, RB	62	77	61	59	65	52	64	2	3	48	607	13	Right
 13682	170056	J. Grant	Joel Grant	32	ST	62	80	58	59	65	38	59	3	3	48	639	54	Right
 13683	170072	T. Robinson	Theo Robinson	31	ST	62	76	61	49	61	38	66	2	2	53	642	54	Right
 13684	171923	S. Foley	Sam Foley	33	CM	62	67	57	63	63	60	64	2	3	26	588	52	Right
@@ -15232,7 +15232,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13693	177285	R. Vincelot	Romain Vincelot	34	CDM, CM, CB	62	46	44	57	55	60	72	2	3	53	670	7	Right
 13694	177414	T. Pope	Tom Pope	34	ST	62	41	63	52	51	38	81	2	3	53	642	13	Right
 13695	179860	R. Reid	Reuben James Reid	31	ST	62	72	61	51	61	34	69	2	3	53	648	13	Right
-13696	180352	R. Finn	Ronan Michael Finn	32	RWB, CAM	62	61	58	60	63	55	71	3	3	47	439	52	Right
+13696	180352	R. Finn	Ronan Michael Finn	32	RB, CAM	62	61	58	60	63	55	71	3	3	47	439	52	Right
 13697	181477	N. Boogaard	Nigel Boogaard	33	CB	62	48	27	42	38	59	74	2	2	36	569	56	Right
 13699	183233	P. Malinowski	Piotr Malinowski	36	LM, LB, RM	62	74	54	58	61	35	57	3	3	40	398	4	Right
 13701	183784	M. Gajić	Milan Gajić	33	CM, CDM	62	52	62	62	62	54	67	2	4	25	649	22	Left
@@ -15252,7 +15252,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13717	189159	L. Waterfall	Luke Waterfall	29	CB	62	48	37	36	41	61	74	2	3	53	640	13	Right
 13718	189163	A. MacDonald	Alexander MacDonald	30	CM, RM	62	71	58	60	65	57	83	3	3	48	628	14	Right
 13719	189281	C. Clements	Christopher Clements	30	CM	62	58	53	62	63	58	64	3	4	53	648	13	Right
-13720	189307	L. Young	Lewis Jack Young	30	RB, RWB	62	78	47	52	65	54	47	2	2	53	663	13	Right
+13720	189307	L. Young	Lewis Jack Young	30	RB, RB	62	78	47	52	65	54	47	2	2	53	663	13	Right
 13721	189895	Enric Vallès	Enric Vallès Prat	30	CM, CDM	62	62	61	63	63	55	72	3	3	37	661	12	Left
 13722	190559	P. Quiñonez	Pedro Ángel Quiñónez Rodríguez	34	CDM, CM	62	60	46	49	50	61	63	2	4	42	423	61	Left
 13723	190732	K. Biliński	Kamil Biliński	32	ST	62	62	62	55	61	24	59	2	3	40	671	4	Right
@@ -15337,7 +15337,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13812	225973	E. Jiménez	Edgar Hernán Jiménez González	35	CDM, CM	62	53	59	61	61	61	66	3	3	52	617	50	Right
 13813	226189	Lü Haidong	吕海东	28	LB, LB, LM	62	65	47	56	55	59	62	2	3	9	307	58	Left
 13814	226855	D. Franco	Daniel Alejandro Franco	28	CB	62	44	30	33	38	62	73	2	2	51	520	1	Left
-13815	228610	O. Muzayil	Omar Al-Mazial	27	RB, RWB	62	76	37	52	60	57	66	2	2	10	425	101	Right
+13815	228610	O. Muzayil	Omar Al-Mazial	27	RB, RB	62	76	37	52	60	57	66	2	2	10	425	101	Right
 13816	229079	J. McNerney	Joe McNerney	30	CB	62	46	25	37	33	61	66	2	2	53	663	13	Right
 13818	230179	Marlon Barninho	Marlon Rômulo Barni Barros	32	GK, RB	62	62	60	58	63	46	61	1	3	12	222	5	Right
 13819	230270	Fabiem Jardim	Fabiem Kel Jardim Ramos	24	CAM	62	65	63	57	64	36	67	2	3	12	225	5	Right
@@ -15367,7 +15367,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 13845	242500	A. Benga	Alexandru Constantin Benga	31	CB	62	51	28	39	37	61	75	2	2	44	620	70	Right
 13846	242599	R. Frantsen	Rune Frantsen	28	ST, RB	62	78	56	56	65	56	64	2	3	32	609	27	Right
 13847	245521	M. Bakhit	Masood Bekheet	28	RB	62	73	36	50	56	58	67	2	3	10	430	101	Right
-13848	246433	K. Söderström	Kalle Söderström	34	RM, RWB	62	66	52	57	63	43	63	3	3	41	664	37	Right
+13848	246433	K. Söderström	Kalle Söderström	34	RM, RB	62	66	52	57	63	43	63	3	3	41	664	37	Right
 13850	247673	M. Ahmed	Mohammed Ahmed Ali Gharib Juma	31	CB, RB	62	71	41	49	58	62	67	2	4	38	218	109	Right
 13851	247985	L. Dumitriu	Lucian Mihai Dumitriu	27	CM, CAM	62	70	60	61	63	53	60	2	3	44	653	70	Right
 13852	250953	J. Holúbek	Jakub Holúbek	29	LB	62	70	25	48	59	57	63	2	2	40	426	23	Left
@@ -15593,7 +15593,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14096	240322	H. Brockbank	Harry Brockbank	21	RB	61	67	25	43	58	60	66	2	3	53	645	13	Right
 14097	240385	N. Zanellato	Niccolò Zanellato	22	CM	61	60	47	63	68	53	51	3	3	2	355	15	Right
 14098	240506	F. Arhin	Frank Arhin	21	CAM, ST	61	74	47	58	68	39	41	3	3	41	651	32	Left
-14099	240725	I. Aaneba	Ismaël Aaneba	21	RB, RWB	61	58	29	51	56	62	63	2	2	4	117	7	Right
+14099	240725	I. Aaneba	Ismaël Aaneba	21	RB, RB	61	58	29	51	56	62	63	2	2	4	117	7	Right
 14100	241051	A. Canbaz	Ahmet Canbaz	22	CAM, LM, CM	61	71	62	59	64	23	56	3	4	11	153	55	Right
 14101	241995	L. Dietz	Lars Dietz	23	CB, CDM	61	52	37	52	56	61	66	2	3	3	78	8	Right
 14103	244076	Y. Otto	Yari Otto	21	CAM, CM	61	70	59	49	65	37	54	2	3	35	477	8	Right
@@ -15611,7 +15611,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14116	246928	Iván Martín	Iván Martín Núñez	21	CAM, CM	61	56	55	61	64	40	44	3	3	23	385	12	Left
 14117	247741	A. Glennon	Anthony Driscoll-Glennon	20	LB, CB	61	70	47	51	58	57	61	2	3	5	58	13	Left
 14118	248602	J. Greaves	Jacob Greaves	19	CB	61	64	31	45	50	60	69	2	3	48	446	13	Left
-14119	248821	S. Delos	Shaquil Delos	21	RWB, LM	61	83	36	43	63	53	56	2	3	27	562	7	Left
+14119	248821	S. Delos	Shaquil Delos	21	RB, LM	61	83	36	43	63	53	56	2	3	27	562	7	Left
 14120	250913	B. De Keersmaecker	Brian De Keersmaecker	20	CAM	61	69	56	60	63	31	51	2	3	17	448	6	Right
 14121	251179	P. Grauschopf	Paul Grauschopf	21	LB, CB	61	62	27	46	49	60	63	2	3	45	519	8	Left
 14122	251632	N. Tarnat	Niklas Tarnat	22	CDM	61	64	57	59	60	57	60	2	3	35	327	8	Right
@@ -15668,7 +15668,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14180	228601	R. Rentería	Richard Stevens Rentería Moreno	24	CB	61	59	23	32	37	61	70	2	2	34	289	42	Right
 14181	229378	A. Edun	Adetayo Edun	22	CM, LM	61	71	45	58	63	60	68	2	3	48	547	13	Left
 14182	229878	C. Lattanzio	Carlo Lattanzio	22	LM, ST	61	69	64	56	65	33	52	3	3	14	123	1	Left
-14183	231615	K. Gordon	Kellan Gordon	22	RWB, RM, RB	61	82	51	54	59	55	61	2	2	53	662	13	Right
+14183	231615	K. Gordon	Kellan Gordon	22	RB, RM, RB	61	82	51	54	59	55	61	2	2	53	662	13	Right
 14185	233046	J. Grant	Joshua Grant	21	CDM, CB	61	72	38	54	59	61	69	2	3	48	608	13	Right
 14186	233707	S. Haugen	Sigurd Hauso Haugen	22	ST	61	79	60	41	60	26	59	2	3	37	604	29	Right
 14187	236297	M. Cortés	Mauricio Cortés Armero	23	RM, LM	61	77	54	54	63	35	59	2	3	34	379	42	Left
@@ -15683,7 +15683,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14196	242594	D. Kaneko	金子 大毅	21	CM, CDM	61	60	55	58	62	53	58	2	2	15	499	72	Right
 14197	242748	A. Herzog	Aaron Philipp Herzog	22	RW, CM	61	81	47	60	63	46	61	2	4	45	539	8	Right
 14199	244082	S. Karweina	Sinan Karweina	21	ST, LM, CAM	61	72	59	48	66	22	44	2	3	45	543	8	Right
-14200	245406	S. Bojang	Sulayman Bojang	22	RWB, RB	61	82	32	44	57	56	66	3	2	37	586	96	Right
+14200	245406	S. Bojang	Sulayman Bojang	22	RB, RB	61	82	32	44	57	56	66	3	2	37	586	96	Right
 14201	245510	A. Hassoun	Abdullah Hassoun Tarmin	23	RB	61	74	37	50	57	56	65	2	3	10	177	101	Right
 14202	247042	J. Löfgren	Jesper Löfgren	23	CB	61	57	29	42	52	59	71	2	2	41	652	37	Right
 14204	251022	C. Costin	Cristian Ionuț Costin	22	RW, RB	61	80	42	58	63	56	58	2	3	44	559	70	Right
@@ -15709,7 +15709,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14226	257899	K. Fujimoto	Kanya Fujimoto	21	RW, LW	61	74	54	57	65	30	49	3	4	6	335	72	Left
 14227	258744	Quindimil	Antón Quindimil Rodríguez	20	CB, CDM	61	63	34	32	38	64	67	2	2	23	457	12	Right
 14229	221349	J. Nuttall	Joseph Nuttall	23	ST	61	70	60	46	56	34	68	2	3	48	613	13	Right
-14230	228226	D. Bernard	Dominic Bernard	23	RWB, RB, CB	61	71	36	49	58	57	67	2	3	53	632	52	Right
+14230	228226	D. Bernard	Dominic Bernard	23	RB, RB, CB	61	71	36	49	58	57	67	2	3	53	632	52	Right
 14231	228928	S. Lavelle	Samuel Lavelle	23	CB	61	55	29	38	44	61	71	2	3	53	672	14	Right
 14232	229375	E. Adebayo	Elijah Adebayo	22	ST	61	72	58	49	60	38	76	3	3	53	666	13	Right
 14234	230846	R. Charles-Cook	Regan Evans Charles-Cook	23	CAM, CM	61	83	51	56	66	53	66	3	2	26	659	13	Right
@@ -15754,7 +15754,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14278	229185	F. Lach	Frederik Lach	23	CB, RB, CDM	61	54	24	42	52	61	66	2	5	45	658	8	Right
 14279	230014	E. Iandolo	Ellis Iandolo	22	LB	61	74	48	53	61	56	57	2	3	48	639	13	Right
 14280	232588	K. Miyazaki	宮崎 幾笑	22	LM, RM, CAM	61	76	41	56	65	45	50	2	3	15	375	72	Left
-14281	232850	T. Yanagi	柳貴 博	22	RB, RWB, LB	61	77	33	48	45	56	69	2	3	15	537	72	Right
+14281	232850	T. Yanagi	柳貴 博	22	RB, RB, LB	61	77	33	48	45	56	69	2	3	15	537	72	Right
 14282	239011	J. Homawoo	Josué Homawoo	22	CB	61	52	30	40	43	61	61	2	2	4	136	43	Left
 14283	239681	O. Bertel	Omar Andrés Bertel Vergara	23	LB	61	75	30	48	59	55	63	2	2	34	360	42	Left
 14284	239731	M. Ambrosiewicz	Maciej Ambrosiewicz	22	CM	61	54	48	58	63	61	65	2	3	40	597	4	Right
@@ -15862,7 +15862,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14402	258426	Yuri Matias	Jefferson Yuri de Sousa Matias	25	CB	61	59	28	36	48	59	69	2	2	44	542	5	Right
 14403	212812	K. Kinoshita	木下 康介	25	ST	61	62	60	48	61	24	71	3	3	37	524	72	Right
 14404	213855	M. Flis	Marcin Flis	26	CB	61	66	31	52	52	62	67	2	3	40	594	4	Left
-14405	215561	B. Barry	Bradley Barry	25	RWB, RB	61	74	34	50	57	56	69	3	2	53	656	13	Right
+14405	215561	B. Barry	Bradley Barry	25	RB, RB	61	74	34	50	57	56	69	3	2	53	656	13	Right
 14406	219392	A. Rufer	Alex Arthur Rufer	24	CM, CDM	61	67	56	60	63	58	72	3	3	36	414	71	Right
 14408	222040	E. Agüero	Emiliano Germán Agüero	25	CM	61	60	48	58	58	61	74	2	2	33	366	1	Right
 14409	222463	O. Khan	Otis Jan Mohammed Khan	23	CAM, LM	61	74	56	60	63	42	55	3	3	53	643	13	Right
@@ -15883,7 +15883,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14429	210244	L. Angol	Lee Angol	25	ST	61	81	60	55	61	30	67	3	3	53	669	13	Right
 14430	211598	M. Arteaga	Manuel Alejandro Arteaga Rubianes	26	ST	61	53	60	49	64	28	61	2	3	52	678	50	Right
 14431	211993	S. Mende	Sven Lars Marten Mende	26	CM, CDM	61	65	45	59	57	65	67	2	3	45	646	8	Right
-14432	213151	C. Norman	Cameron Norman	24	RB, RWB	61	69	50	54	56	58	69	2	3	53	666	13	Right
+14432	213151	C. Norman	Cameron Norman	24	RB, RB	61	69	50	54	56	58	69	2	3	53	666	13	Right
 14433	213667	D. Conroy	Dion Conroy	24	CB	61	54	27	47	56	59	69	2	3	48	639	13	Right
 14434	214679	H. Gjesdal	Henrik Solheim Gjesdal	26	CB	61	39	28	42	49	60	65	2	2	37	584	29	Left
 14435	214896	P. Mullin	Paul Mullin	25	ST	61	61	63	53	62	37	60	2	3	53	638	13	Right
@@ -15953,7 +15953,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14508	205704	F. Modelski	Filip Modelski	27	RB	61	74	32	50	52	56	66	2	3	40	671	4	Right
 14509	206409	T. Marsh	Tyrone Marsh	26	LM, ST	61	83	58	50	61	34	62	3	2	53	670	13	Right
 14511	212146	B. King	Billy King	26	LM, RM	61	78	52	54	62	25	57	3	5	47	677	14	Right
-14512	212296	J. Hare	Joshua Hare	25	RWB, RB	61	70	49	56	55	57	63	2	3	48	608	13	Right
+14512	212296	J. Hare	Joshua Hare	25	RB, RB	61	70	49	56	55	57	63	2	3	48	608	13	Right
 14513	220597	F. González	Fabián Andrés González Lasso	27	ST	61	70	58	51	57	39	73	2	3	34	235	42	Right
 14514	220819	R. Kitto	Ryan Kitto	25	LB, LW	61	76	55	59	62	53	61	2	3	36	436	56	Left
 14515	221518	T. Väyrynen	Tim Väyrynen	27	ST	61	53	61	47	52	32	67	2	3	49	467	40	Right
@@ -15974,7 +15974,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14533	251782	B. Yaméogo	Franck Alex Neeb-Noma Blaise Yaméogo	26	LM, RM	61	77	61	51	62	21	63	2	3	44	621	68	Right
 14534	253359	E. Carcelén	Edison Javier Carcelén Chalá	27	CB	61	66	30	47	51	58	75	2	2	42	516	61	Right
 14535	253798	H. Plazas	Henry Junior Plazas Mendoza	27	RB, CB	61	59	38	57	57	59	70	2	2	52	599	50	Right
-14536	254309	J. Nilsson	Joel Nilsson	25	RWB, RM	61	66	49	57	59	54	58	2	2	41	652	37	Right
+14536	254309	J. Nilsson	Joel Nilsson	25	RB, RM	61	66	49	57	59	54	58	2	2	41	652	37	Right
 14537	254360	M. Portillo	Milciades Portillo Castro	28	CB	61	52	27	51	55	60	70	2	3	33	515	69	Right
 14538	254403	A. Mercado	Alán Jorge Mercado Berthalet	26	LB, LM	61	75	32	52	52	55	53	2	2	51	520	122	Left
 14542	140200	D. Matsui	松井 大輔	39	CAM, LM	61	33	58	64	66	37	49	3	3	15	602	72	Right
@@ -15984,7 +15984,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14547	165110	A. Scarlatache	Adrian Manuel Scarlatache	33	CB	61	48	38	56	50	59	68	2	3	44	564	70	Right
 14548	166879	L. Grorud	Lars Grorud	36	CB	61	31	45	35	49	58	69	2	3	37	661	29	Right
 14549	169907	S. Miller	Shaun Miller	32	ST	61	78	60	44	66	30	64	2	3	53	645	13	Right
-14551	176839	E. Nouri	Emin Nouri	34	CB, RWB	61	62	43	52	57	58	70	2	4	41	585	136	Right
+14551	176839	E. Nouri	Emin Nouri	34	CB, RB	61	62	43	52	57	58	70	2	4	41	585	136	Right
 14553	177313	A. Williams	Andrew Williams	33	ST	61	54	64	52	58	27	67	2	3	53	648	13	Right
 14554	177971	J. McNulty	Jim McNulty	35	CB	61	41	38	54	55	60	59	2	2	48	631	14	Left
 14555	182012	Cao Xuan	Xuan Cao	34	CB	61	47	30	33	40	61	74	2	3	9	166	58	Right
@@ -16033,7 +16033,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14604	215971	A. Al Khaibari	Ali Nasser Al Khaibari	30	CB	61	56	40	38	40	59	74	2	3	10	329	101	Left
 14605	220352	Moyita	Sergio Dueñas Ruiz	27	RM, CAM	61	59	58	57	66	31	48	2	3	23	209	12	Right
 14606	221499	D. Gardner	Danny Gardner	30	CM	61	65	61	62	64	52	64	3	4	48	532	13	Right
-14607	221603	R. Mukiibi	Ronald Brian Ddungu Mukiibi	28	RWB, RB	61	45	46	60	65	57	72	3	3	41	651	131	Right
+14607	221603	R. Mukiibi	Ronald Brian Ddungu Mukiibi	28	RB, RB	61	45	46	60	65	57	72	3	3	41	651	131	Right
 14608	221758	Park Jun Hui	朴俊熙	29	CDM, CM	61	34	52	61	59	56	69	2	3	39	454	20	Right
 14609	222087	T. Golley	Timm Golley	29	RM, ST, LM	61	75	55	56	61	33	57	3	3	45	650	8	Right
 14610	222118	Zhang Chenglin	张成林	33	CB, LB	61	60	38	50	59	60	67	2	3	9	149	58	Right
@@ -16069,7 +16069,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14646	239750	J. Valoyes	Jimmy Valoyes Córdoba	33	CB	61	59	28	41	40	63	61	2	3	46	600	42	Right
 14647	240640	L. Morales	Leonardo Morales	29	RB	61	62	33	50	57	60	60	2	4	14	378	1	Right
 14648	240745	S. Quigley	Scott Quigley	27	ST	61	61	62	46	56	30	75	2	3	53	656	13	Right
-14649	241339	Zhang Cheng	张诚	31	RB, RWB, LB	61	66	30	50	55	58	68	2	2	9	101	58	Right
+14649	241339	Zhang Cheng	张诚	31	RB, RB, LB	61	66	30	50	55	58	68	2	2	9	101	58	Right
 14650	241349	Tian Yinong	田依浓	29	CM, CDM	61	75	31	55	62	58	74	2	3	9	101	58	Right
 14652	243159	A. Awad	Ahmed Awad	28	ST	61	65	60	55	66	25	54	3	3	41	651	143	Left
 14653	243622	M. Nottingham	Michael Nottingham	31	CB, RB	61	53	23	42	53	61	66	2	2	48	603	108	Right
@@ -16285,8 +16285,8 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14894	235661	D. Haspolat	Dogucan Haspolat	20	CM, CDM	60	61	49	61	66	52	57	3	3	11	399	9	Right
 14895	235807	A. Morley	Aaron Morley	20	CDM, CM	60	72	56	59	61	54	62	2	3	48	631	13	Right
 14896	235913	E. Embleton	Elliot Embleton	21	CAM, CM, RM	60	61	54	59	61	52	53	2	5	48	496	13	Right
-14897	237872	T. Howe	Teddy Howe	21	RB, RWB	60	79	38	47	58	52	58	2	2	48	603	13	Right
-14898	239443	D. McNamara	Danny McNamara	21	RB, RWB	60	75	29	49	57	56	63	2	2	26	535	52	Right
+14897	237872	T. Howe	Teddy Howe	21	RB, RB	60	79	38	47	58	52	58	2	2	48	603	13	Right
+14898	239443	D. McNamara	Danny McNamara	21	RB, RB	60	75	29	49	57	56	63	2	2	26	535	52	Right
 14900	242353	T. Gallacher	Tony Gallacher	20	LB	60	69	35	50	60	55	61	2	2	8	131	14	Left
 14901	242823	E. Cantú	Eric David Cantú Guerrero	21	CM, RM	60	68	43	59	64	61	59	2	3	16	148	33	Right
 14902	243234	R. Berişbek	Rahmetullah Berişbek	21	CAM, CM	60	69	52	59	62	48	58	2	3	11	319	55	Right
@@ -16305,7 +16305,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14917	253384	C. Ibañez	César Roman Ibáñez	20	LB	60	69	27	43	56	57	64	2	2	14	383	1	Left
 14918	253953	G. González	Gastón González	19	ST	60	59	59	45	58	26	64	2	3	14	334	1	Right
 14919	254140	L. Urapuca	Leonardo Urapuca Katuary	21	CB	60	54	39	42	51	61	65	2	2	51	565	122	Right
-14920	254280	K. Ayer	Keanin Ayer	20	RM, RWB	60	75	43	56	60	46	47	2	2	41	665	89	Right
+14920	254280	K. Ayer	Keanin Ayer	20	RM, RB	60	75	43	56	60	46	47	2	2	41	665	89	Right
 14921	254632	J. Neris	José Pablo Neris Figueredo	20	RM, ST	60	63	50	57	61	39	62	2	3	31	544	16	Right
 14922	254785	Álex Cruz	Alejandro Cruz Hernández	20	CM, CAM, CDM	60	76	48	62	60	56	52	2	3	23	392	12	Right
 15347	233021	Han Xuan	韩轩	29	CB	60	50	23	34	37	61	73	2	2	9	268	58	Right
@@ -16371,14 +16371,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14989	257994	Diego Batista	Diego Rafael Pereira Batista	20	CM	60	68	53	61	62	53	48	2	3	6	227	2	Right
 14991	258162	Raúl Martín	Raúl Martín Barba	20	RB	60	59	52	44	58	59	51	3	3	23	568	12	Right
 14992	258933	Unai	Unai Arietaleanizbeaskoa Bergara	21	ST	60	72	60	42	64	19	46	3	3	1	70	12	Left
-14993	229050	O. Rasmussen	Oskar Buur Rasmussen	22	RWB	60	68	35	55	62	53	54	3	3	5	31	27	Right
-14994	231199	H. Odoffin	Hakeem Ademola Odoffin	22	RB, CB, RWB	60	76	33	46	55	55	61	2	2	26	629	13	Right
+14993	229050	O. Rasmussen	Oskar Buur Rasmussen	22	RB	60	68	35	55	62	53	54	3	3	5	31	27	Right
+14994	231199	H. Odoffin	Hakeem Ademola Odoffin	22	RB, CB, RB	60	76	33	46	55	55	61	2	2	26	629	13	Right
 14995	231403	C. Kirby	Connor Kirby	21	CM	60	71	50	59	62	57	67	2	3	53	680	13	Right
 14996	232904	A. Al Dawsari	Abdulrahman Al Dawsari	22	CDM	60	61	37	54	58	54	64	2	3	10	103	101	Right
 14997	234960	D. Rojano	Daniel Rojano Gómez	23	CDM, CM	60	57	42	54	54	56	64	2	2	34	557	42	Right
 14998	235216	B. Fox	Ben Fox	22	CDM, RB, CM	60	67	49	54	58	58	60	2	3	48	614	13	Right
 14999	235800	M. Šverko	Marin Šverko	22	LB	60	65	29	51	57	57	65	2	3	45	650	17	Left
-15000	236027	J. Brown	James Brown	22	RB, RWB	60	70	30	47	57	55	67	2	3	21	254	13	Right
+15000	236027	J. Brown	James Brown	22	RB, RB	60	70	30	47	57	55	67	2	3	21	254	13	Right
 15001	236455	J. Morsay	Sahr Jonathan Morsay	22	LM, LW, RM	60	79	53	54	66	34	49	3	2	30	416	37	Right
 15002	236601	S. Tracey	Shilow Tracey	22	RM, ST, LM	60	75	54	54	62	42	56	2	2	48	635	13	Right
 15003	237926	J. Mahon	John Mahon	20	CB	60	58	30	46	51	57	70	2	3	47	675	52	Right
@@ -16462,7 +16462,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15095	226501	J. Robles	José Carlos Robles Mejía	23	CB, LB	60	70	33	49	60	65	47	2	2	16	397	33	Left
 15096	228779	B. Barclay	Ben Barclay	23	CB, CDM	60	62	35	44	54	58	69	2	2	48	647	13	Right
 15098	230593	S. van Looy	Sander van Looy	23	CB	60	61	29	44	42	59	60	2	3	41	664	9	Right
-15099	230815	O. Kakay	Osman Kakay	22	RB, RWB	60	73	26	40	59	58	55	2	3	21	386	106	Right
+15099	230815	O. Kakay	Osman Kakay	22	RB, RB	60	73	26	40	59	58	55	2	3	21	386	106	Right
 15100	231063	C. Lewis	Clayton Lewis	23	CAM, CM, LM	60	70	54	58	64	44	51	2	3	19	85	71	Left
 15101	232264	Che Shiwei	车世伟	23	RM, LM	60	72	50	57	60	45	66	2	3	9	171	58	Left
 15102	232675	M. Al Mufarrij	Muteb Abdullah Al Mufarrij	23	CB	60	58	26	38	43	62	62	2	3	10	98	101	Left
@@ -16596,7 +16596,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15256	255484	S. Reyes	Juan Sebastián Reyes Farrel	23	CB	60	53	27	42	41	62	62	2	2	51	560	122	Left
 15257	255489	A. Shuartzman	Ariel Shuartzman Cardona	22	CM	60	61	53	56	59	51	49	2	3	33	619	69	Right
 15258	255593	Y. Kusano	Yuki Kusano	23	ST, LW	60	70	61	55	64	18	54	2	3	15	602	72	Right
-15259	255737	A. Liljenbäck	Anton Liljenbäck	25	CB, RWB	60	55	28	51	54	60	64	2	2	41	665	37	Right
+15259	255737	A. Liljenbäck	Anton Liljenbäck	25	CB, RB	60	55	28	51	54	60	64	2	2	41	665	37	Right
 15260	256546	A. Ammerer	Arne Ammerer	23	CM, CDM	60	62	49	59	59	57	66	2	3	29	575	34	Right
 15261	257268	Cássio Scheid	Cássio Fernando Scheid	26	CB	60	63	27	34	38	61	68	2	3	6	394	5	Left
 15262	257875	Del Pozo	David Del Pozo Guillén	23	CM	60	62	43	63	62	56	61	2	3	23	412	12	Right
@@ -16687,9 +16687,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15373	180749	T. Elrich	Tarek Elrich	33	CB, LB, RB	60	71	53	57	60	59	68	2	4	36	202	56	Right
 15374	181879	S. Hird	Sam Hird	32	CB	60	51	37	43	48	59	69	2	2	53	656	13	Right
 15375	184042	J. Dayton	James Dayton	31	RM, LM, CAM	60	70	55	57	64	27	47	3	4	53	669	13	Left
-15376	184251	M. Maidana	Matías David Maidana	33	RWB, RB, RM	60	67	30	46	59	54	55	2	3	33	366	1	Right
+15376	184251	M. Maidana	Matías David Maidana	33	RB, RB, RM	60	67	30	46	59	54	55	2	3	33	366	1	Right
 15377	184714	M. Green	Matt Green	33	RW, ST	60	79	60	51	60	40	69	2	4	53	640	13	Right
-15378	184753	S. Madden	Simon Madden	32	RWB, RB	60	68	47	56	58	56	69	2	3	47	677	52	Right
+15378	184753	S. Madden	Simon Madden	32	RB, RB	60	68	47	56	58	56	69	2	3	47	677	52	Right
 15379	184980	I. Bermingham	Ian Bermingham	31	LB, LB	60	64	51	56	58	55	67	3	3	47	677	52	Left
 15380	186763	A. Maccoppi	Andrea Maccoppi	33	CDM, CM	60	46	37	51	55	58	67	2	3	25	376	15	Right
 15381	189282	A. Leitch-Smith	Ajay Leitch-Smith	30	ST, CAM	60	71	58	52	60	36	64	2	3	53	672	13	Right
@@ -16927,7 +16927,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15642	245856	M. Batmaz	Malik Batmaz	20	ST	59	66	61	35	63	23	51	2	3	35	461	55	Right
 15643	246254	A. Mironov	Aleksey Mironov	20	CM, CDM	59	61	49	60	57	59	54	2	3	13	108	45	Right
 15644	246956	D. Drysdale	Declan Drysdale	20	CB	59	68	26	41	45	58	69	2	3	21	475	13	Right
-15645	247073	U. Godwin-Malife	Udoka Godwin-Malife	20	CB, RWB	59	70	32	47	57	58	68	2	2	53	632	13	Right
+15645	247073	U. Godwin-Malife	Udoka Godwin-Malife	20	CB, RB	59	70	32	47	57	58	68	2	2	53	632	13	Right
 15646	247758	I. Gomis	Iron Gomis	20	CAM, LW	59	68	52	58	63	38	60	3	3	27	167	7	Right
 15647	248784	T. Nkada	Timothé Nkada	20	ST	59	70	60	49	62	22	49	3	3	32	194	7	Right
 15648	250929	P. Pyrdoł	Piotr Pyrdoł	21	LM	59	71	50	54	59	22	40	2	2	40	597	4	Right
@@ -16944,13 +16944,13 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15661	258273	J. Naschberger	Johannes Naschberger	20	CAM	59	79	50	55	63	31	49	2	3	29	581	34	Right
 15662	258395	W. Jarmouni	Walid Jarmouni	20	ST	59	62	58	49	58	26	64	2	3	27	541	7	Left
 15663	258684	Salinas	José Salinas Morán	19	LB	59	61	36	47	58	57	54	2	2	1	284	12	Left
-15664	258822	L. Sulzbacher	Lukas Sulzbacher	20	RB, RWB	59	75	34	46	53	54	66	2	2	29	347	34	Right
+15664	258822	L. Sulzbacher	Lukas Sulzbacher	20	RB, RB	59	75	34	46	53	54	66	2	2	29	347	34	Right
 15666	231267	J. Lokilo	Jason Eyenga-Lokilo	21	RM	59	77	53	55	65	27	51	2	3	48	476	60	Left
 15667	234185	J. Hector-Ingram	Jahmal Hector-Ingram	21	ST	59	67	60	41	58	21	61	2	3	21	161	13	Right
 15668	236550	M. Ndjoli	Mikael Ndjoli	21	ST, RM, LM	59	72	61	49	59	26	64	2	4	21	157	13	Right
 15628	242730	J. Evans	Jack Evans	22	CDM, CM	59	57	44	54	57	57	60	2	2	21	206	38	Right
 15671	241031	F. Garcés	Facundo Tomás Garcés	20	CB	59	50	34	36	42	58	67	2	2	14	277	1	Right
-15672	241269	A. Bruus	Andreas Bruus	21	RWB, ST	59	77	51	53	58	53	61	2	3	32	442	27	Right
+15672	241269	A. Bruus	Andreas Bruus	21	RB, ST	59	77	51	53	58	53	61	2	3	32	442	27	Right
 15673	241396	J. Morton	James Morton	21	CM	59	66	48	57	59	55	66	2	3	21	384	13	Right
 15674	245539	B. Waine	Ben Waine	19	ST, RW	59	79	58	50	65	20	53	2	3	36	414	71	Right
 15675	245611	D. Parkhouse	David Parkhouse	20	ST	59	68	61	46	54	34	59	2	2	5	110	57	Right
@@ -17012,7 +17012,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15742	236379	J. Lunney	Jonathan Lunney	22	CM, CDM	59	65	52	57	64	51	52	3	3	47	655	52	Left
 15743	236540	S. Adrian	Samuel Adrian	22	CM, CDM	59	53	47	63	59	53	68	2	3	41	267	37	Left
 15744	236622	M. Holzer	Marcel Holzer	21	ST	59	64	58	45	59	32	62	2	4	29	362	34	Right
-15745	237714	D. Ingham	Dane Ingham	21	RWB, RM	59	78	42	52	62	47	60	2	3	36	202	71	Right
+15745	237714	D. Ingham	Dane Ingham	21	RB, RM	59	78	42	52	62	47	60	2	3	36	202	71	Right
 15746	239132	C. Sánchez	Catriel Ignacio Sánchez	21	ST	59	58	61	44	58	21	61	2	3	14	299	1	Right
 15747	239947	R. Meraz	Roberto Ismael Meraz Bernal	20	CM	59	55	46	56	57	60	61	2	2	16	363	33	Right
 15748	239989	T. Vancooten	Terence Owen Vancooten	22	CB, RB	59	71	37	49	54	56	69	2	3	53	670	135	Right
@@ -17081,7 +17081,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15818	257940	Julen Menchaca	Julen Menchaca Soler	21	CM	59	62	55	56	60	58	53	3	3	23	385	12	Right
 15819	258158	Patxi Dávila	Patxi Dávila López	23	LB	59	59	35	41	56	59	56	3	3	23	527	12	Left
 15820	258331	A. Kalkan	Alihan Kalkan	21	LM, RM	59	64	56	55	60	28	51	3	2	11	264	55	Left
-15821	221234	S. Ling	Sam Ling	23	RB, RWB	59	73	34	48	57	55	59	2	3	53	669	13	Right
+15821	221234	S. Ling	Sam Ling	23	RB, RB	59	73	34	48	57	55	59	2	3	53	669	13	Right
 15822	225509	A. Collins	Aaron Collins	23	ST	59	79	58	42	60	28	64	2	3	53	632	38	Right
 15823	228152	E. Onariase	Emmanuel Onariase	23	CB	59	56	31	36	49	58	72	2	3	53	668	13	Right
 15825	235715	H. Paton	Harry Theodore Paton	22	CM	59	70	50	57	63	54	58	2	3	26	659	46	Right
@@ -17129,7 +17129,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 15873	243626	Kim Jung Ho	김정호 Jeung-Ho Kim	25	CB	59	57	49	26	46	58	72	2	3	39	517	20	Right
 15874	246955	W. Sell	William Sell	21	RB	59	65	31	45	52	58	57	2	3	37	595	29	Right
 15875	248718	J. Iredale	Jack Iredale	24	LB	59	65	27	42	56	55	60	2	3	53	638	56	Left
-15876	248779	A. Peyrelade	Alexis Peyrelade	23	RWB, LB	59	61	38	48	57	56	57	2	3	27	540	7	Right
+15876	248779	A. Peyrelade	Alexis Peyrelade	23	RB, LB	59	61	38	48	57	56	57	2	3	27	540	7	Right
 15877	250908	B. dos Santos	Benedict dos Santos	22	CDM, CM	59	65	32	48	54	56	63	2	3	45	567	8	Right
 15878	251033	A. Ouhafsa	Ayoub Ouhafsa	22	ST	59	66	62	45	61	20	52	3	2	27	540	7	Right
 15879	253076	R. Onea	Răzvan Philippe Onea	22	RB	59	70	44	53	58	52	64	2	2	44	610	70	Right
@@ -17246,9 +17246,9 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16021	204007	T. Nichols	Tom Nichols	26	ST	59	70	59	52	62	24	49	2	3	53	663	13	Right
 16022	204097	B. Kiernan	Brendan Kiernan	27	RM	59	82	49	48	62	28	49	3	3	53	680	13	Right
 16023	204620	Fábio Fortes	Fábio Fortes Moreira	28	ST	59	55	58	45	59	25	57	2	3	44	564	2	Right
-16024	207820	M. Özen	Mahmut Özen	31	RWB, RB	59	70	32	50	60	52	61	2	2	41	664	37	Right
+16024	207820	M. Özen	Mahmut Özen	31	RB, RB	59	70	32	50	60	52	61	2	2	41	664	37	Right
 16025	209188	J. Al Zoaed	Jehad Al Zoaed	31	CAM, LM	59	67	52	57	61	31	62	3	3	10	486	101	Left
-16026	209254	R. Willmott	Robbie Willmott	30	CM, RWB	59	81	56	58	63	55	64	2	4	53	660	13	Right
+16026	209254	R. Willmott	Robbie Willmott	30	CM, RB	59	81	56	58	63	55	64	2	4	53	660	13	Right
 16027	210854	F. Fallatah	Fawaz Fallatah	31	CB	59	55	26	35	43	57	77	2	3	10	472	101	Right
 16028	210922	B. Al Seliteen	Bader Mansoor Al Sulaiteen	29	CM, RM, CDM	59	50	47	62	63	47	66	2	3	10	616	101	Right
 16030	212037	M. Al Bassas	Mustafa Mahdi Al Bassas	27	RM, CAM	59	54	60	60	63	47	56	3	4	10	353	101	Right
@@ -17258,7 +17258,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16035	222181	Yang Boyu	杨博宇	31	CB	59	51	29	31	39	60	70	2	2	9	101	58	Right
 16036	222191	Sun Bo	孙铂	29	RM, RW	59	80	54	54	59	42	60	3	4	9	76	58	Right
 16037	222199	Zheng Kaimu	郑凯木	28	CM, CDM	59	64	48	52	54	60	75	2	3	9	171	58	Right
-16038	222277	Zhang Yuan	张远	30	RB, RWB, RM	59	76	39	50	60	55	64	2	3	9	307	58	Right
+16038	222277	Zhang Yuan	张远	30	RB, RB, RM	59	76	39	50	60	55	64	2	3	9	307	58	Right
 16039	223298	Li Yuanyi	李源一	26	RM	59	69	58	55	58	54	64	2	4	9	307	58	Right
 16040	226191	Wu Qing	吴庆	38	LB, LM	59	38	58	64	61	58	61	3	4	9	208	58	Left
 16041	226844	Jiang Jihong	姜积弘	30	CB	59	59	29	43	38	57	73	2	2	9	100	58	Right
@@ -17404,7 +17404,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16192	258103	M. Tanlongo	Mateo Tanlongo	16	RM	58	64	53	53	62	33	52	2	3	14	276	1	Right
 16193	258303	M. Sitek	Maksymilian Sitek	19	RM	58	74	47	55	59	24	43	2	2	40	671	4	Right
 16194	235808	J. Bedeau	Jacob Bedeau	20	CB	58	70	37	46	53	56	65	2	3	53	668	13	Left
-16195	237036	R. Barnett	Ryan Barnett	20	RM, RWB	58	78	46	52	60	41	54	2	3	48	635	13	Right
+16195	237036	R. Barnett	Ryan Barnett	20	RM, RB	58	78	46	52	60	41	54	2	3	48	635	13	Right
 16196	237871	J. Holsgrove	Jordan Holsgrove	20	CM, RM, LM	58	67	46	58	62	44	49	2	3	1	32	14	Left
 16197	240736	G. Borello	Giuseppe Borello	21	RW	58	57	53	57	67	25	37	2	4	2	355	15	Left
 16198	240747	A. Denny	Alex Denny	20	CDM, RB	58	53	44	56	52	55	58	2	3	53	611	13	Right
@@ -17419,7 +17419,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16207	246345	Jo Jin Woo	Jin Woo Jo	20	CB, ST	58	56	28	29	33	60	64	2	3	39	295	20	Right
 16208	246825	T. Nakamura	中村 拓海	19	RB	58	62	31	48	52	51	66	2	3	15	375	72	Right
 16209	247560	C. Blanco	Cristian Blanco Betancur	21	LB	58	67	34	48	58	52	58	2	2	34	235	42	Left
-16211	247782	K. Jørgensen	Kasper Poul Mølgaard Jørgensen	20	RWB	58	73	29	47	56	52	64	2	3	32	548	27	Right
+16211	247782	K. Jørgensen	Kasper Poul Mølgaard Jørgensen	20	RB	58	73	29	47	56	52	64	2	3	32	548	27	Right
 16212	247863	K. Takahata	高畑 奎汰	19	CB, LM	58	71	34	56	60	58	59	2	2	15	489	72	Left
 16213	248015	R. Andronic	Răzvan Andronic	20	ST, RM	58	68	54	52	62	26	47	3	2	44	653	70	Right
 16214	248706	S. Grubač	Sergej Grubač	20	ST	58	51	58	44	52	30	62	2	3	30	416	49	Right
@@ -17439,7 +17439,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16231	258899	C. Türkmen	Cem-Tuna Türkmen	18	CM, CDM, CAM	58	64	43	56	64	55	52	2	3	3	47	55	Right
 16232	234571	Mésaque Djú	Mésaque Geremias Djú	21	RM, LM	58	73	54	47	61	28	60	3	2	5	64	2	Right
 16233	236589	S. Pasquali	Sebastian Pasquali	20	CM, CDM	58	63	49	59	63	54	52	3	4	36	261	56	Right
-16235	242318	A. Elyounoussi	Anwar Elyounoussi	21	RM, RWB	58	78	48	49	62	48	54	3	3	37	586	29	Right
+16235	242318	A. Elyounoussi	Anwar Elyounoussi	21	RM, RB	58	78	48	49	62	48	54	3	3	37	586	29	Right
 16236	242961	S. Duke-McKenna	Stephen Winston Duke-McKenna	19	RM, LM, RB	58	70	46	55	62	39	38	2	3	21	386	135	Right
 16237	243178	B. Maguire	Barry Maguire	22	CB, CDM	58	54	26	31	32	60	67	2	3	26	522	14	Right
 16238	243943	Javi López	Javier López Vergara	19	CM, CDM	58	64	57	59	61	51	55	2	3	1	284	12	Right
@@ -17700,7 +17700,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16537	226467	G. Ricci	Giacomo Ricci	23	LB	58	63	29	37	54	57	59	2	3	2	143	15	Right
 16538	229607	G. Mells	George Mells	23	CM, CDM	58	62	41	59	60	53	58	2	3	36	582	56	Right
 16539	253642	J. Guidino	José Andre Guidino Otero	24	LB, CB	58	66	31	49	49	53	55	2	2	46	508	66	Left
-16540	254271	A. Eriksson Ibragic	Amer Eriksson Ibragic	25	RWB, LB	58	66	24	44	55	55	60	2	3	41	652	37	Right
+16540	254271	A. Eriksson Ibragic	Amer Eriksson Ibragic	25	RB, LB	58	66	24	44	55	55	60	2	3	41	652	37	Right
 16542	257839	A. Newby	Alex Newby	24	CAM, ST, LW	58	76	52	57	60	36	50	2	2	48	631	13	Right
 16543	258538	M. Popovic	Milislav Popovic	23	ST, LW	58	71	58	39	59	18	65	2	2	36	497	56	Left
 16544	258540	D. Ciobanu	Daniel Gabriel Ciobanu	26	CB	58	50	28	38	38	58	67	2	2	44	610	70	Right
@@ -17746,7 +17746,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16597	204222	M. Dolan	Matthew Dolan	27	CM	58	62	56	62	62	47	64	2	2	53	660	13	Left
 16598	204383	B. McNamee	Barry McNamee	28	CM, RM, CAM	58	62	53	58	60	46	57	3	4	47	682	52	Left
 16599	206200	D. Clarke	Dean Clarke	27	LM, RM, ST	58	81	51	51	58	44	60	2	3	47	677	52	Right
-16600	209548	C. Brown	Connor Brown	27	RWB, RB	58	74	30	47	57	53	62	2	3	53	656	13	Right
+16600	209548	C. Brown	Connor Brown	27	RB, RB	58	74	30	47	57	53	62	2	3	53	656	13	Right
 16601	210795	M. Al Burayh	Murtadha Al Burayh	29	CB	58	51	27	36	37	58	68	2	2	10	616	101	Right
 16602	211135	M. Attiyah	Mohammed Attiyah	28	CM, CAM	58	61	55	56	63	44	59	3	3	10	42	101	Right
 16603	215207	J. Vieyra	Juan Ignacio Vieyra	28	CAM	58	63	47	61	62	53	64	3	3	14	409	1	Right
@@ -17870,7 +17870,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16748	239906	S. Guidotti	Stefano Alessandro Guidotti	21	CM	57	47	46	53	58	51	61	2	3	25	473	21	Right
 16749	240696	M. Napa	Malachi Napa	21	RM	57	82	40	50	60	34	43	2	3	48	549	13	Right
 16750	240945	G. McGregor	Giovanni McGregor	21	CM	57	66	43	57	56	51	58	2	3	5	49	13	Right
-16751	241524	D. Titov	Deivids Titovs	20	RWB, RW	57	73	28	46	59	50	52	2	2	47	677	124	Right
+16751	241524	D. Titov	Deivids Titovs	20	RB, RW	57	73	28	46	59	50	52	2	2	47	677	124	Right
 16752	241567	A. Aguirre	Augusto Aguirre	20	CB, RB	57	53	31	33	38	59	62	2	3	14	84	1	Right
 16753	242109	T. Mourdoukoutas	Tass Mourdoukoutas	21	CB	57	58	32	42	40	56	63	2	3	36	323	56	Right
 16754	242156	M. Al Shanqeeti	Muhannad Mustafa Shanqeeti	21	RB	57	64	30	43	55	56	50	2	3	10	318	101	Right
@@ -17890,7 +17890,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16769	251662	A. Casar	Aljaž Casar	19	CM, CAM, CDM	57	61	45	56	60	49	66	2	3	29	546	3	Right
 16770	251816	F. Honda	本田 風智	19	CM, LM	57	60	45	58	61	44	53	2	3	15	591	72	Left
 16771	251879	M. Șerban	Marian Cristinel Șerban	19	CDM	57	64	39	48	50	55	59	2	3	44	653	70	Right
-16772	251935	C. Kameraj	Cendrim Kameraj	21	RWB	57	79	36	43	60	51	54	2	4	25	473	62	Right
+16772	251935	C. Kameraj	Cendrim Kameraj	21	RB	57	79	36	43	60	51	54	2	4	25	473	62	Right
 16773	252172	L. Coveliers	Lars Coveliers	19	CDM	57	60	31	49	47	57	61	2	3	17	395	6	Right
 16774	252592	A. Bakhat	Anas Bakhat	20	CM, CAM	57	67	45	59	63	41	49	2	4	45	407	8	Left
 16775	253010	A. Sher	Aimar Sher	17	CM	57	64	43	55	61	46	41	3	3	41	348	37	Right
@@ -17927,7 +17927,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16814	258754	S. Westra	Stefan Westra	19	RB	57	61	32	56	54	55	56	2	2	7	230	9	Right
 16816	258871	T. van Leeuwen	Thijs van Leeuwen	18	CM	57	67	51	59	65	43	44	2	3	7	387	9	Right
 16817	235742	S. Nombe	Sam Nombe	21	ST	57	72	54	49	58	26	67	2	3	48	545	13	Right
-16818	237705	D. Pierias	Dylan Pierias	20	RWB, RW	57	82	38	48	56	48	55	2	3	36	261	56	Right
+16818	237705	D. Pierias	Dylan Pierias	20	RB, RW	57	82	38	48	56	48	55	2	3	36	261	56	Right
 16819	237839	K. Sadiki	Kosovar Sadiki	21	CB	57	42	33	38	39	58	64	2	3	47	682	46	Right
 16820	240805	Dai Wai-Tsun	Wai-Tsun Dai	20	CM	57	69	49	57	62	49	57	2	4	9	307	159	Right
 16821	242241	P. Niyongabire	Pacifique Niyongabire	20	RW	57	86	44	45	64	29	50	2	3	36	436	118	Right
@@ -17959,7 +17959,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16851	247128	K. Ishii	石井 快征	20	ST	57	59	60	58	57	22	51	2	3	15	591	72	Right
 16852	247256	J. Congo	Yimmi Andrés Congo Caicedo	22	CDM	57	69	42	47	49	56	62	2	2	34	289	42	Right
 16853	248087	V. Danale	Vlad Andrei Danale	22	RM	57	74	51	51	57	22	49	3	2	44	610	70	Right
-16854	248662	A. Linguet	Allan Linguet	20	RB, CB, RWB	57	60	29	41	51	57	54	2	3	27	388	7	Right
+16854	248662	A. Linguet	Allan Linguet	20	RB, CB, RB	57	60	29	41	51	57	54	2	3	27	388	7	Right
 16856	254649	F. Vigo	Facundo Vigo González	21	CAM	57	59	53	51	61	30	60	2	4	31	544	16	Left
 16857	255845	L. Mosquera	Leomar David Mosquera Niño	19	CM	57	63	50	50	57	51	50	2	3	52	678	50	Right
 16858	255877	A. Gracés	Álvaro Daniel Gracés Viera	19	CB	57	58	31	44	50	57	59	2	3	31	512	16	Right
@@ -18042,7 +18042,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16957	252862	T. White	Tom White	23	CM, CDM	57	63	53	54	58	53	65	2	3	53	645	13	Right
 16959	253616	R. Cuellar	Ronald Cuéllar Ortiz	23	CDM	57	69	34	50	52	54	64	3	3	51	563	122	Left
 16960	253800	M. Trías	Manuel Augusto Trías Parada	21	CB	57	63	35	45	48	56	64	2	2	52	654	50	Right
-16961	254567	G. Coelho	Grégory Coelho	20	RWB	57	62	33	41	58	58	63	2	3	27	540	7	Right
+16961	254567	G. Coelho	Grégory Coelho	20	RB	57	62	33	41	58	58	63	2	3	27	540	7	Right
 16962	254986	J. Escobar	Joffre Andrés Escobar Moyano	23	ST, RW, LW	57	61	56	51	61	18	53	2	3	28	566	61	Right
 16963	255431	M. Cabral	Mauricio Cabral Rivero	19	ST	57	68	55	44	55	35	49	2	2	51	563	122	Right
 16964	255527	T. Takamine	高嶺 朋樹	22	CDM	57	59	41	52	53	55	58	2	3	15	396	72	Left
@@ -18078,7 +18078,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 16996	257960	N. Langras	Nigel Langras	19	RB	57	66	32	42	57	56	54	2	3	7	554	9	Right
 16997	258740	A. Padula	Andrea Padula	24	LB	57	63	30	40	56	55	58	2	3	25	197	15	Right
 16999	227082	D. Markey	Darragh Markey	23	CAM, CM	57	72	54	56	61	45	43	3	4	47	677	52	Right
-17000	228052	Du Changjie	杜长杰	22	ST, RWB	57	70	54	54	61	34	63	2	3	9	268	58	Right
+17000	228052	Du Changjie	杜长杰	22	ST, RB	57	70	54	54	61	34	63	2	3	9	268	58	Right
 17002	233948	Gao Huaze	高华泽	22	LM, RM, LW	57	70	56	49	59	42	62	2	3	9	106	58	Right
 17003	235923	R. Öktem	Rauf Öktem	23	CM, CDM	57	56	48	57	62	53	59	2	3	11	179	55	Left
 17004	237795	M. Nishimoto	西本 雅崇	24	CDM, CM	57	76	58	54	55	54	56	2	2	15	374	72	Right
@@ -18125,7 +18125,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17052	257864	J. Emmett	Jack Emmett	26	CM	57	74	46	55	57	52	60	2	3	53	680	13	Right
 17054	209330	M. Fredriksen	Mathias Fredriksen	26	RM, LM	57	57	45	47	71	27	38	3	2	37	595	29	Right
 17055	211884	U. Tosun	Ünal Tosun	27	CAM	57	67	46	53	61	31	54	2	3	45	637	8	Left
-17056	222192	Sun Guowen	孙国文	26	RM, RWB	57	75	44	52	57	46	60	2	3	9	76	58	Right
+17056	222192	Sun Guowen	孙国文	26	RM, RB	57	75	44	52	57	46	60	2	3	9	76	58	Right
 17057	224619	Ji Xiaoxuan	季骁宣	27	CAM	57	68	50	53	61	29	42	3	3	27	419	58	Right
 17058	228077	Wang Qiuming	王秋明	27	CM, CDM	57	73	53	57	59	46	65	2	3	9	106	58	Right
 17059	229800	R. Sharahili	Riyadh Sharahili	27	CM, CDM	57	37	44	54	56	56	70	2	3	10	486	101	Right
@@ -18137,7 +18137,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17065	256061	S. Čolović	Stefan Čolović	26	RM, CAM	57	74	49	52	59	25	50	3	3	47	492	22	Left
 17066	258844	N. Sansotre	Pedro Nicolás Sansotre	26	RB, LM	57	62	24	46	49	55	56	2	3	50	493	1	Right
 17068	186384	K. Moore	Karl Moore	30	RM, LM, LB	57	77	51	52	58	27	51	3	3	47	679	52	Left
-17069	190033	D. Webster	David Webster	30	CB, RWB	57	34	43	50	48	57	62	2	3	47	682	52	Right
+17069	190033	D. Webster	David Webster	30	CB, RB	57	34	43	50	48	57	62	2	3	47	682	52	Right
 17070	199015	C. Kilduff	Ciarán Kilduff	31	ST	57	54	57	43	54	28	63	2	3	47	679	52	Right
 17071	200484	R. Connolly	Ryan Michael Connolly	28	CM, CAM	57	63	51	59	58	50	63	2	3	47	682	52	Left
 17073	208995	S. Al Dosari	Saeed Mohammed Al Dosari	28	RM	57	71	44	53	60	44	60	2	2	10	421	101	Right
@@ -18385,7 +18385,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17351	242857	Yun Ji Hyeok	윤지혁 Ji Hyeok Yun	22	CB	56	57	25	35	32	53	71	2	3	39	326	20	Right
 17352	242906	E. Twumasi	Emmanuel Twumasi	23	LW	56	65	54	49	65	27	46	3	3	8	282	32	Right
 17353	243274	I. Karakaş	İlker Karakaş	21	ST	56	48	58	43	50	25	65	2	3	11	319	55	Right
-17354	246849	G. Dorsey	Griffin Dorsey	21	RM, RWB	56	72	49	50	59	43	57	2	3	8	131	47	Right
+17354	246849	G. Dorsey	Griffin Dorsey	21	RM, RB	56	72	49	50	59	43	57	2	3	8	131	47	Right
 17355	246865	F. Quinteros	Franco Agustín Quinteros	21	LB	56	61	31	36	53	57	52	2	2	14	336	1	Left
 17356	248189	H. Al Hajouj	Hussain Al Hajouj	23	LM, ST	56	72	49	50	59	30	46	2	4	10	472	101	Left
 17360	252771	K. Al Blooshi	Khalid Al Baloushi	21	CAM, RM	56	64	42	54	61	31	45	2	3	38	218	109	Right
@@ -18835,7 +18835,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17915	247491	M. Anbo	Magnus Anbo Clausen	19	RB	54	69	27	43	49	51	56	2	2	32	447	27	Right
 17916	248360	T. Klysner	Tobias Klysner	18	RM, LM	54	69	47	46	58	27	51	2	3	32	536	27	Right
 17919	251306	A. Randell	Adam Randell	19	CM	54	65	41	51	53	46	59	2	3	48	607	13	Right
-17920	251458	M. Elva-Fountaine	Marcel Elva-Fountaine	19	RB, RWB	54	64	29	44	56	50	48	2	3	5	58	13	Right
+17920	251458	M. Elva-Fountaine	Marcel Elva-Fountaine	19	RB, RB	54	64	29	44	56	50	48	2	3	5	58	13	Right
 17921	251978	Y. Marchand	Yannick Kevin Marchand	20	CM, CB	54	63	40	55	56	54	53	2	3	25	197	21	Right
 17923	254999	K. Dohi	土肥 航大	19	CM, CDM, CAM	54	63	43	53	58	48	58	2	3	15	441	72	Left
 17924	255350	P. Alcocer	Paolo Andrés Alcocer Rojas	19	CDM	54	60	35	52	52	49	60	2	3	51	511	122	Right
@@ -18858,7 +18858,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17951	248380	M. Hansen	Mads Hjalmer Hansen	19	CM	54	69	45	57	60	43	54	2	3	32	491	27	Right
 17952	252439	A. Hurst	Alex Hurst	20	LM	54	85	42	45	59	40	60	2	3	53	642	13	Left
 17954	253691	A. Mota	Aldo Mota	20	CB	54	68	32	45	52	55	49	2	2	16	72	33	Right
-17955	254316	B. Hughes	Ben Hughes	21	RW, RWB	54	56	57	41	59	16	48	2	4	21	370	13	Right
+17955	254316	B. Hughes	Ben Hughes	21	RW, RB	54	56	57	41	59	16	48	2	4	21	370	13	Right
 17956	255544	L. Ademi	Lorik Ademi	18	CDM	54	64	38	48	57	51	56	2	2	41	664	37	Right
 17957	255764	G. Johansson	Gabriel Johansson	19	CB	54	61	24	34	41	52	65	2	2	41	664	37	Right
 17958	256178	E. Rondón	Edgardo Favián Rondón Santiago	20	CM, CB	54	59	40	48	52	49	61	2	3	52	599	50	Right
@@ -18867,7 +18867,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17961	257249	J. Ajenjo Hyjek	Javier Ajenjo Hyjek	19	CM	54	68	47	54	60	38	52	2	3	40	426	4	Right
 17962	258119	I. Enríquez	Imanol Enríquez Martiarena	20	ST	54	58	51	47	54	33	67	2	3	31	481	1	Right
 17963	258715	B. Hollerbach	Benedict Hollerbach	19	ST, LW, RW	54	65	56	37	49	19	55	2	3	45	528	8	Right
-17964	238469	J. Hickman	Jak Hickman	21	RB, RWB	54	68	40	47	52	48	56	2	3	53	645	13	Right
+17964	238469	J. Hickman	Jak Hickman	21	RB, RB	54	68	40	47	52	48	56	2	3	53	645	13	Right
 17965	240503	T. Okou	Teddy Lia Okou	22	CAM	54	61	43	48	64	29	39	3	2	4	54	7	Left
 17966	243506	Zhou Xin	周鑫	22	RB, CB, CDM	54	67	30	42	52	50	58	2	3	9	307	58	Right
 17967	253078	A. Al Hassan	Abdullah Al Hassan	21	RB	54	62	39	47	51	47	50	2	3	10	353	101	Right
@@ -18888,7 +18888,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 17989	251832	H. Vergara	Hassan Leandro Vergara Ramos	21	ST	54	64	53	37	49	18	60	2	3	34	557	42	Right
 17990	253919	J. De Santis	Jeriel Nicolás De Santis Córdova	18	ST	54	62	52	42	54	31	63	2	3	52	622	50	Right
 17991	253963	Ren Wei	任威	23	ST, CAM	54	64	55	44	54	19	53	2	3	9	106	58	Right
-17993	255033	D. Nealis	Dylan Nealis	21	RB, RWB	54	58	35	45	46	50	56	2	3	8	39	47	Right
+17993	255033	D. Nealis	Dylan Nealis	21	RB, RB	54	58	35	45	46	50	56	2	3	8	39	47	Right
 17994	255260	N. Machado	Nicolás Teodoro Machado Mira	23	ST, RM	54	56	56	40	48	18	58	2	3	31	596	16	Left
 17995	255480	N. Grevink	Niels Grevink	22	ST	54	85	52	37	49	31	62	2	2	45	598	9	Right
 17996	255639	Y. Rivas	Yackson Stiven Rivas	18	ST	54	58	56	38	58	20	46	2	2	52	617	50	Right
@@ -18945,7 +18945,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18058	256598	S. Auklend	Sondre Auklend	17	CAM, CM	53	64	46	50	60	33	42	2	2	37	538	29	Right
 18060	242345	G. Fuentes	Gilbert Fuentes	18	CM	53	66	43	50	65	40	52	3	3	8	310	47	Right
 18061	251223	R. Pepi	Ricardo Pepi	17	ST	53	53	55	42	48	20	51	2	3	8	282	47	Right
-18062	253106	T. Rushesha	Tivonge Rushesha	17	RB, RWB	53	74	29	42	46	49	51	2	3	21	206	38	Right
+18062	253106	T. Rushesha	Tivonge Rushesha	17	RB, RB	53	74	29	42	46	49	51	2	3	21	206	38	Right
 18063	248679	N. Popescu	Nicolas Popescu	17	CAM	53	68	37	52	52	29	42	2	2	44	453	70	Right
 18064	250830	I. Samuels	Imari Narain Samuels	17	LB	53	60	27	38	54	48	52	2	2	21	306	13	Left
 18065	253054	H. Hackney	Hayden Hackney	18	CM, CAM	53	69	44	57	51	36	51	2	3	21	344	13	Right
@@ -18977,7 +18977,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18099	252596	A. Senior	Adam Senior	18	CB	53	64	23	36	40	54	56	2	2	53	645	13	Right
 18100	253227	E. Walker	Ethan Walker	17	ST	53	56	58	41	51	21	48	2	3	53	641	13	Right
 18101	255659	B. Mæland	Bjørn Mæland	19	CB	53	58	26	33	37	52	59	2	2	37	526	29	Left
-18102	256356	J. Cleal	Jarvis Cleal	18	RWB, CM	53	69	33	42	51	49	59	2	3	48	607	13	Right
+18102	256356	J. Cleal	Jarvis Cleal	18	RB, CM	53	69	33	42	51	49	59	2	3	48	607	13	Right
 18103	256672	R. Staunton	Reece Staunton	18	LB	53	70	26	39	49	49	58	2	2	53	630	52	Left
 18108	246268	D. Walker-Rice	Daniel Walker-Rice	19	RM	53	74	46	46	56	27	48	2	3	53	643	13	Right
 18109	246396	L. Sanchez	Luis Francisco Sánchez Mosquera	19	CAM	53	66	40	56	51	33	63	2	3	34	343	42	Right
@@ -19158,7 +19158,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18341	257950	A. Mbaraka	Amani Mbaraka	17	RW	52	66	47	44	59	24	42	2	3	45	637	8	Right
 18342	258277	A. Chilili	Alexandru Constantin Chilili	17	CB	52	62	27	39	42	53	55	2	2	44	559	70	Right
 18343	258380	J. Cozma	Andre Jose Cozma	17	ST	52	63	49	37	52	28	58	2	2	44	636	70	Left
-18344	246662	K. Lofthouse	Kyran Lofthouse	19	RW, RWB	52	76	48	41	57	28	38	2	3	48	549	13	Right
+18344	246662	K. Lofthouse	Kyran Lofthouse	19	RW, RB	52	76	48	41	57	28	38	2	3	48	549	13	Right
 18345	248875	N. Jeck	Niklas Jeck	18	CB	52	60	24	31	39	52	63	2	3	35	420	8	Right
 18346	251546	K. Gordon	Kyron Gordon	18	CB	52	62	30	32	35	51	56	2	2	5	110	13	Right
 18347	252555	M. Sorinola	Matthew Sorinola	19	LB, RB	52	67	32	43	51	47	56	2	4	48	545	13	Right
@@ -19204,7 +19204,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18395	254825	E. Kinali	Eren Kinali	20	RM, LW	52	66	36	49	51	42	50	3	3	53	625	13	Right
 18397	256179	J. Escate	Jeremi Aldair Escate Gallegos	18	RM	52	64	45	47	49	26	45	2	3	46	514	66	Right
 18398	256196	W. Pacho	William Joel Pacho Tenorio	18	CDM	52	60	32	44	52	47	64	2	2	42	286	61	Right
-18399	256364	D. Jovanović	David Jovanović	19	RWB, RM, LM	52	68	40	51	58	43	45	2	3	25	473	21	Right
+18399	256364	D. Jovanović	David Jovanović	19	RB, RM, LM	52	68	40	51	58	43	45	2	3	25	473	21	Right
 18400	256977	F. Saglam	Ferhat Saglam	18	RW, ST	52	66	47	44	54	21	46	2	3	25	649	148	Right
 18401	257275	C. Smith	Callum Smith	20	ST	52	70	54	38	51	19	45	2	3	26	629	14	Right
 18402	257326	N. Milanovic	Nicholas Milanovic	18	CAM	52	69	47	46	55	32	44	3	2	36	261	56	Left
@@ -19255,7 +19255,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18461	242215	D. Norman Jr.	David Norman Jr.	22	CM, CDM	52	60	40	51	54	46	61	2	3	8	39	46	Right
 18463	255453	J. Cruz	Juan Manuel Cruz	20	ST	52	59	52	37	49	27	58	2	3	14	336	1	Right
 18464	255622	S. Quinn	Sean Quinn	21	CM, RM	52	63	47	51	54	42	54	2	2	47	679	52	Right
-18465	255890	L. Donnellan	Leo Donnellan	21	RWB, CM	52	58	41	49	48	48	56	2	2	47	682	52	Right
+18465	255890	L. Donnellan	Leo Donnellan	21	RB, CM	52	58	41	49	48	48	56	2	2	47	682	52	Right
 18466	256180	K. Ferreyra	Kevin Josué Ferreyra Chonlón	21	CM	52	61	37	49	50	46	54	2	3	46	514	66	Right
 18468	257692	A. Ajdini	Alban Ajdini	20	RM	52	68	54	44	58	24	40	2	3	25	376	62	Right
 18469	234393	M. Ramkilde	Marco Harboe Ramkilde	22	ST	52	63	51	46	49	33	58	2	2	21	386	27	Right
@@ -19272,7 +19272,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18506	255807	M. Rennie	Martin Rennie	26	ST	52	60	54	39	48	20	57	2	2	47	677	14	Left
 18507	253744	Xu Wu	Wu Xu	27	CDM	52	57	31	47	47	45	62	2	3	9	208	58	Right
 18508	157190	J. Russell	John Russell	35	CM, CDM	52	36	48	55	52	51	46	3	3	47	675	52	Right
-18510	247775	Zhang Junzhe	张俊哲	29	RB, RWB	52	64	26	38	47	51	53	2	2	9	106	58	Right
+18510	247775	Zhang Junzhe	张俊哲	29	RB, RB	52	64	26	38	47	51	53	2	2	9	106	58	Right
 18512	247025	T. Gulliksen	Tobias Fjeld Gulliksen	16	CM	51	62	39	51	51	42	44	3	3	37	624	29	Right
 18513	247357	T. Freeman	Tyler Freeman	17	ST, RW	51	71	50	38	54	20	36	2	3	8	266	47	Right
 18514	253519	H. Rew	Harvey Rew	17	LB	51	62	32	44	46	45	58	2	3	48	529	38	Left
@@ -19346,7 +19346,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18587	257222	M. Steenberg	Mads Steenberg	19	RB, LB	51	55	26	35	47	49	65	2	3	32	491	27	Right
 18590	242696	Liu Guobo	刘国博	20	ST	51	68	46	45	50	40	58	2	2	9	40	58	Right
 18591	247707	B. Iskandar	伊斯坎达·布格拉汗	19	ST, RW, LW	51	70	50	38	55	29	45	2	3	9	44	58	Left
-18619	245755	J. Yabur	Jhohann Sebastián Yabur Perea	21	CM, RWB, CDM	51	60	33	49	53	49	61	2	3	34	235	42	Right
+18619	245755	J. Yabur	Jhohann Sebastián Yabur Perea	21	CM, RB, CDM	51	60	33	49	53	49	61	2	3	34	235	42	Right
 18592	251564	J. Tiensia	Junior Tiensia	19	LB, CB	51	59	26	34	51	47	51	2	3	21	254	13	Left
 18593	252758	D. Devoy	Dawson Devoy	18	CAM, CDM	51	56	47	50	54	45	47	2	3	47	655	52	Right
 18594	252844	I. Bakare	Ibrahim Bakare	18	CB	51	62	23	29	35	50	60	2	2	53	672	13	Right
@@ -19401,7 +19401,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18657	258440	N. Dosis	Nikolaos Dosis	19	CDM, CM	51	67	32	45	46	47	61	2	3	41	651	37	Right
 18658	258743	A. Liu	Aidan Liu	20	CB	51	56	33	28	35	51	61	2	3	32	579	47	Right
 18660	240392	Deng Yubiao	邓玉彪	23	CM	51	71	42	52	54	47	52	2	3	9	166	58	Right
-18661	241622	Qian Yumiao	钱玉淼	22	RB, RWB	51	65	22	37	47	51	60	2	2	9	171	58	Right
+18661	241622	Qian Yumiao	钱玉淼	22	RB, RB	51	65	22	37	47	51	60	2	2	9	171	58	Right
 18662	241627	Huang Chuang	Chuang Huang	23	CB	51	60	26	31	30	53	56	2	2	9	268	58	Right
 18663	243097	Yin Congyao	尹从尧	23	CAM, LM, ST	51	65	42	54	50	41	62	2	3	9	208	58	Right
 18666	245423	I. Al Otaibi	Ibrahim Al Otaibi	23	CM	51	66	42	55	60	33	42	3	3	10	281	101	Right
@@ -19463,7 +19463,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 18740	258219	S. Cavero	Sebastián José Cavero Nakahoro	18	LW	50	71	50	42	50	25	46	2	2	46	514	66	Left
 18742	246134	J. Baxter	Jack Baxter	19	CM, CDM	50	63	38	49	48	43	57	2	2	21	239	13	Right
 18743	251219	D. Burns	Darragh Burns	17	RM, LM	50	68	42	46	53	33	34	3	3	47	677	57	Right
-18744	252536	A. Doyle	Alex Doyle	19	CM, RWB	50	67	41	49	53	46	59	2	3	53	611	13	Right
+18744	252536	A. Doyle	Alex Doyle	19	CM, RB	50	67	41	49	53	46	59	2	3	53	611	13	Right
 18745	254154	C. Walls	Casey Walls	17	CB	50	39	25	40	35	51	57	2	2	8	310	47	Left
 18747	256177	J. Hidalgo	Johandry Jericoth Hidalgo Mora	19	CDM	50	61	35	43	51	47	57	2	3	52	599	50	Right
 18748	258462	K. Scales	Kian Scales	18	CM, RB	50	65	36	46	51	46	52	2	3	53	630	13	Right
@@ -19660,7 +19660,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 1154	217699	I. Slimani	Islam Slimani	32	ST	77	51	77	74	72	47	79	2	3	5	20	28	Right
 1162	230241	Enzo Chissano	Enzo Leandro Chissano Baia	28	LB, RB, CB	77	79	62	71	69	74	69	2	3	12	88	5	Left
 1215	224081	K. Phillips	Kalvin Phillips	24	CDM, CB	76	66	66	70	68	73	83	3	3	5	63	13	Right
-1276	210972	Manquillo	Javier Manquillo Gaitán	26	RWB, RB, LB	76	73	44	63	73	74	66	3	3	5	51	12	Right
+1276	210972	Manquillo	Javier Manquillo Gaitán	26	RB, RB, LB	76	73	44	63	73	74	66	3	3	5	51	12	Right
 1342	228236	S. Deli	Simon Désiré Sylvanus Deli	28	CB	76	73	46	53	67	77	80	2	3	17	77	41	Left
 1366	175895	V. Odjidja-Ofoe	Vadis Odjidja-Ofoe	31	CM, CDM, CAM	76	63	73	77	75	69	78	3	4	17	205	6	Right
 1405	189156	Daniel Carriço	Daniel Filipe Martins Carriço	31	CB	76	37	53	67	61	78	73	2	3	9	149	2	Right
@@ -19683,7 +19683,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 2218	199247	Álex Fernández	Alejandro Fernández Iglesias	27	CAM, CDM	74	60	71	76	72	66	64	3	4	1	201	12	Right
 2284	170320	L. De Silvestri	Lorenzo De Silvestri	32	RM, RB	74	70	67	73	73	74	73	4	3	2	172	15	Right
 2350	192612	M. Jajalo	Mato Jajalo	32	CM, CDM	74	63	64	74	76	72	77	3	3	2	93	25	Right
-2412	208052	A. Yiadom	Andy Yiadom	28	RB, RWB	74	83	53	62	73	70	75	3	3	21	306	32	Right
+2412	208052	A. Yiadom	Andy Yiadom	28	RB, RB	74	83	53	62	73	70	75	3	3	21	306	32	Right
 2469	230449	Diegildo Ramos	Diego Hugo Ramos Calado	28	ST, RM	74	30	79	67	67	28	70	2	3	12	89	5	Left
 2480	234935	João Talocha	João Carlos Araújo Fonseca Silva	30	LB	74	70	38	59	67	71	76	2	3	6	335	2	Left
 2529	231554	J. Justin	James Justin	22	RB, LB	73	76	47	66	70	69	67	3	4	5	20	13	Right
@@ -19706,7 +19706,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 3097	241187	L. Geertruida	Lutsharel Geertruida	19	RB, CB	72	78	43	64	68	69	73	2	3	7	82	9	Right
 3149	213017	B. Davies	Ben Davies	24	CB	72	73	39	57	62	74	74	2	3	21	239	13	Left
 3158	227732	A. Donis	Anastasios Donis	23	ST, RM	72	86	69	59	79	25	65	3	4	4	112	36	Right
-3171	236466	C. Michelin	Clément Jerome Michelin	23	RWB, RB	72	65	50	68	69	67	67	3	3	4	184	7	Right
+3171	236466	C. Michelin	Clément Jerome Michelin	23	RB, RB	72	65	50	68	69	67	67	3	3	4	184	7	Right
 3219	221219	G. Conti	Germán Andrés Conti	26	CB	72	62	38	53	47	72	75	2	2	16	175	1	Right
 3278	214226	R. Loaiza	Raúl Alberto Loaiza Morelos	26	CDM, CM, CB	72	61	46	65	66	69	78	3	3	14	242	42	Right
 3342	228171	C. Ikonomidis	Christopher Ikonomidis	25	RW, ST	72	81	68	66	75	51	66	3	4	36	202	56	Right
@@ -19748,7 +19748,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5296	223243	E. Aguilera	Víctor Emanuel Aguilera	31	CB	70	47	54	54	46	71	76	2	2	16	122	1	Right
 5298	223581	J. Iglesias	Jonathan Damián Iglesias Abreu	31	CDM, CAM	70	63	60	68	70	65	68	3	3	27	452	16	Right
 17337	258212	Y. Erdoğan	Yusuf Erdoğan	20	CDM	56	65	47	55	55	52	54	2	4	11	163	55	Left
-18637	250994	J. Lewis	Joe Lewis	20	CB, RWB	51	62	26	28	34	53	57	2	3	21	206	38	Right
+18637	250994	J. Lewis	Joe Lewis	20	CB, RB	51	62	26	28	34	53	57	2	3	21	206	38	Right
 18874	258299	L. Robles	Luis Robles	19	ST	49	57	50	36	47	19	41	2	2	28	393	39	Right
 5354	232860	K. Higashi	东庆 悟	29	LM, RM	70	71	64	67	67	60	72	3	4	15	375	72	Right
 5355	232884	S. Doi	土居 聖真	28	ST, ST, RM	70	73	69	67	72	46	53	3	4	15	429	72	Right
@@ -19756,7 +19756,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 5472	248053	S. Arzamendia	Santiago Arzamendia Duarte	22	LB	69	72	57	61	67	65	62	2	3	19	85	69	Left
 5530	237255	M. Robinson	Miles Robinson	23	CB	69	75	33	47	48	69	75	2	4	8	69	47	Right
 5594	222475	M. Thorsby	Morten Thorsby	24	CM, CAM	69	62	59	65	65	69	78	2	3	2	99	29	Right
-5653	222587	F. Escobar	Franco Nicolás Escobar	25	RB, CB, RWB	69	71	47	57	67	68	68	2	3	8	69	1	Right
+5653	222587	F. Escobar	Franco Nicolás Escobar	25	RB, CB, RB	69	71	47	57	67	68	68	2	3	8	69	1	Right
 5845	193143	Roderick Miranda	Roderick Jefferson Gonçalves Miranda	29	CB	69	41	44	52	51	69	77	2	2	5	31	2	Right
 5906	228245	M. Wanitzek	Marvin Wanitzek	27	CM	69	73	59	72	71	53	66	3	3	35	461	8	Right
 5971	173130	M. Scozzarella	Matteo Scozzarella	32	CM, CDM	69	78	61	72	72	55	60	3	3	2	143	15	Right
@@ -19819,7 +19819,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 8497	244853	K. Sowah	Kamal Sowah	20	RM, CAM, CM	66	81	62	60	69	43	61	3	3	17	488	32	Left
 8558	211166	J. Whatmough	Jack Whatmough	23	CB	66	67	26	47	49	66	74	2	3	48	529	13	Right
 8621	224875	B. Innocent	Bonke Innocent	24	CDM, CM	66	76	43	54	66	60	82	3	3	41	267	31	Right
-8681	223595	J. Strauß	John-Patrick Strauß	24	RWB, RM	66	75	52	62	67	57	62	2	3	35	420	105	Right
+8681	223595	J. Strauß	John-Patrick Strauß	24	RB, RM	66	75	52	62	67	57	62	2	3	35	420	105	Right
 8686	227557	M. Cassierra	Zander Mateo Cassierra Cabezas	23	ST	66	74	65	57	65	28	66	3	3	6	367	42	Right
 8741	215574	E. Rakip	Erdal Rakip	24	CM	66	69	58	64	71	53	73	3	2	41	267	37	Right
 8807	220878	M. Cacutalua	Malcolm Cacutalua	25	CB	66	72	41	47	48	68	71	2	3	35	420	8	Right
@@ -19851,7 +19851,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 10187	208752	R. Edwards	Ryan Edwards	26	CB	65	51	34	44	48	67	70	2	2	26	633	13	Right
 10220	246341	T. Shichi	Takaaki Shichi	26	LB, LM, RM	65	67	52	62	59	63	67	3	3	15	602	72	Left
 10286	231967	M. Ošs	Mārcis Ošs	28	CB	65	49	28	33	34	66	80	2	3	25	473	124	Right
-10354	165485	J. Demetriou	Jason Demetriou	32	RB, RWB, CM	65	69	57	61	62	61	69	2	3	53	625	97	Right
+10354	165485	J. Demetriou	Jason Demetriou	32	RB, RB, CM	65	69	57	61	62	61	69	2	3	53	625	97	Right
 10423	190425	M. Abdellaoue	Mustafa Abdellaoue	31	ST	65	64	65	49	66	31	64	3	3	37	586	29	Right
 10426	190694	M. Benítez	Milton Rodrigo Benítez Lirio	34	CM, RM, LW	65	72	63	59	69	49	63	2	2	46	600	69	Right
 10486	201078	C. Booth	Callum Booth	29	LB, LB	65	68	45	55	63	62	73	2	3	26	535	14	Left
@@ -19882,7 +19882,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 11687	204363	S. Kehli	Samy Kehli	29	CAM, LM, RM	64	66	54	60	67	37	62	3	3	17	488	7	Right
 11768	230236	Leonardo Freijão	Leonardo Miguel Freijão Jasper	24	CDM, CM, CAM	64	44	45	55	42	68	61	2	3	12	380	5	Right
 11809	240053	R. Aabid	Rayane Aabid	28	RM, CDM	64	75	55	57	69	58	55	3	3	11	253	7	Left
-11810	240872	M. Dube	Mthokozisi Evans Dube	27	RB, RWB, RM	64	71	34	54	64	61	56	2	3	43	332	89	Right
+11810	240872	M. Dube	Mthokozisi Evans Dube	27	RB, RB, RM	64	71	34	54	64	61	56	2	3	43	332	89	Right
 11871	246682	K. Dembélé	Karamoko Kader Dembélé	17	RM	63	86	57	56	70	16	32	4	3	26	160	13	Left
 11936	246047	A. Perea	Andrés Felipe Perea Castañeda	19	CDM, CM	63	69	44	53	59	61	65	2	3	8	97	42	Right
 11999	251913	A. Stahl	Albert Tivadar Stahl	21	RM, LW	63	78	55	58	64	40	61	3	3	44	294	70	Right
@@ -19891,10 +19891,10 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12193	247755	V. Gembalies	Vincent Gembalies	20	CB	63	64	27	38	46	62	76	2	2	45	543	8	Right
 12260	258186	Pedro Simões	Pedro Miguel Gonçalves Simões	21	CM	63	65	54	61	64	57	71	2	4	6	394	2	Right
 12321	257722	D. Șerbănică	Daniel Marius Şerbănică	24	LB, CB	63	66	36	50	42	62	65	2	3	44	636	70	Left
-12357	238846	T. Archibald	Theodore Archibald	22	RWB, RM, LB	63	75	62	57	64	55	65	3	4	48	547	14	Left
+12357	238846	T. Archibald	Theodore Archibald	22	RB, RM, LB	63	75	62	57	64	55	65	3	4	48	547	14	Left
 12393	216981	G. Kastaneer	Gervane Kastaneer	24	LW, RW, ST	63	72	62	54	68	32	70	3	3	21	475	93	Right
-12457	213894	H. White	Hayden White	25	RB, RWB, CB	63	90	42	51	58	58	65	3	3	53	666	13	Right
-12595	250785	S. Santin	Sebastian Santin	26	RWB, RM	63	69	54	57	62	56	66	3	2	25	649	34	Right
+12457	213894	H. White	Hayden White	25	RB, RB, CB	63	90	42	51	58	58	65	3	3	53	666	13	Right
+12595	250785	S. Santin	Sebastian Santin	26	RB, RM	63	69	54	57	62	56	66	3	2	25	649	34	Right
 12692	173734	J. Wilson	James Wilson	31	CB	63	62	38	48	53	63	70	2	3	48	583	38	Right
 12717	188417	A. Fernández	Álvaro Fernández Gay	34	CM, RM, LM	63	64	55	58	63	50	64	3	4	31	481	16	Right
 12743	193740	L. Ridehalgh	Liam Ridehalgh	29	LB, LB	63	70	50	56	58	58	66	2	3	53	643	13	Left
@@ -19904,14 +19904,14 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 12912	252979	G. Del Castillo	Galileo Antonio Del Castillo Carrasquel	29	CB	63	58	25	45	57	63	66	2	2	52	599	50	Right
 12933	255302	G. Firpo	Guillermo Pablo Firpo Marrone	31	CDM	63	54	34	54	55	59	66	2	3	31	512	16	Right
 12986	237139	T. Oakley-Boothe	Tashan Oakley-Boothe	20	CM, CAM, CDM	62	64	41	62	61	59	59	3	3	21	305	13	Right
-13060	242800	G. Tanner	George Tanner	20	RB, RWB, LB	62	72	41	49	60	59	58	2	2	53	641	13	Right
+13060	242800	G. Tanner	George Tanner	20	RB, RB, LB	62	72	41	49	60	59	58	2	2	53	641	13	Right
 13120	231663	J. Barrett	Josh Barrett	22	LM	62	71	57	59	64	47	51	3	2	48	608	52	Right
 13183	237470	D. Casey	Dan Casey	22	CB	62	52	35	40	46	60	72	2	3	47	655	52	Right
 13243	232520	D. Jaiyesimi	Diallang Jaiyesimi	22	CAM, LM, ST	62	84	57	57	65	29	63	4	3	48	639	13	Right
 13309	235690	A. Bifulco	Alfredo Bifulco	23	ST, CAM, LW	62	67	51	63	65	38	45	2	3	2	11	15	Right
 13375	232668	L. Gordon	Liam Craig Gordon	24	CB	62	40	29	33	40	64	66	2	3	26	535	14	Right
 13445	247872	R. Karjalainen	Rasmus Ilmari Karjalainen	24	ST, RM	62	70	60	57	61	32	59	3	4	41	577	40	Right
-13483	233114	J. Riley	Joe Riley	23	RB, RWB	62	72	40	56	60	59	60	3	3	53	641	13	Right
+13483	233114	J. Riley	Joe Riley	23	RB, RB	62	72	40	56	60	59	60	3	3	53	641	13	Right
 13509	254537	D. Ólafsson	Davíð Kristján Ólafsson	25	LB	62	73	49	57	60	56	66	2	3	37	604	65	Left
 13517	258178	M. van Beijnen	Mike Johannes Hendrikus Josephus van Beijnen	21	RB	62	68	51	55	62	58	64	2	3	7	502	9	Right
 13577	233279	Park Dong Jin	박동진 朴东景	25	ST, CB, RB	62	73	55	47	58	63	78	2	3	39	432	20	Right
@@ -19935,7 +19935,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14345	251081	C. Gliga	Ciprian Gheorghe Gliga	23	RM, RW	61	77	53	56	60	29	46	3	3	44	653	70	Right
 14415	253039	M. Konaté	Mory Konaté	26	CB	61	59	34	48	54	58	75	2	4	17	337	48	Right
 14416	253046	A. Páez	Ayrton Andrés Páez Yepez	25	CAM, CM, RM	61	56	58	55	63	34	59	3	3	52	599	50	Right
-14550	176803	T. Joza	Tibor Brink-Joza	33	CB, RWB	61	65	32	51	50	61	67	2	4	41	664	37	Right
+14550	176803	T. Joza	Tibor Brink-Joza	33	CB, RB	61	65	32	51	50	61	67	2	4	41	664	37	Right
 14615	224088	N. Atangana	Nigel Atangana	30	CM, CDM	61	59	50	57	58	62	75	2	3	53	627	7	Right
 14632	230409	Túlio Nevinha	Túlio Sebastião Carvalhal Neves	20	CB	61	61	38	45	36	63	71	2	3	12	380	5	Right
 14683	256279	A. Velagic	Azur Velagić	28	CB	61	56	24	35	42	61	68	2	3	45	637	8	Right
@@ -19943,7 +19943,7 @@ COPY public.player (id, sofifa_id, short_name, long_name, age, "position", overa
 14815	238368	J. McAtee	John McAtee	20	CAM, ST	60	69	57	56	62	30	54	2	3	53	668	13	Right
 14879	254996	T. Vargas	Thibaut Vargas	20	RB	60	68	31	47	52	59	56	2	3	4	130	7	Right
 14924	255649	B. Chahuaylla	Bryan Khristopher Chahuaylla Ccorimanya	19	RB, CM	60	69	29	47	52	57	52	2	3	46	508	66	Right
-14944	235836	Y. Rafael	York Rafael	21	LB, LM, RWB	60	77	46	50	64	51	68	3	3	41	585	37	Left
+14944	235836	Y. Rafael	York Rafael	21	LB, LM, RB	60	77	46	50	64	51	68	3	3	41	585	37	Left
 15005	238767	J. Altamirano	Javier Adolfo Altamirano Altamirano	20	CM, CAM	60	75	60	57	66	50	56	2	3	28	566	39	Left
 15011	243292	J. Clarke	James Clarke	20	RB, CB	60	73	36	49	53	55	67	2	2	53	662	52	Right
 15074	245796	N. Balongo	Nelson Felix Balongo Lissondja Vha	21	ST	60	81	59	46	63	23	52	2	3	17	337	60	Right

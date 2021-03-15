@@ -227,6 +227,7 @@ function initialize() {
     }
     else {
         isDraft = false;
+        fillInTeamSelector();
         setFormation("4-3-3");
         fillInPositionSelector();
         searchLeagues();
@@ -239,7 +240,11 @@ function initialize() {
 }
 
 function fillInTeamSelector() {
-    var url = getAPIBaseURL() + '/accountteams';
+    var mode = 'draft';
+    if (!isDraft){
+        mode = 'sandbox'
+    }
+    var url = getAPIBaseURL() + '/accountteams/' + mode;
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -273,7 +278,11 @@ function fillInPositionSelector(){
 
 function createNewTeam(){
     var formation = document.getElementById("formations").value;
-    var url = getAPIBaseURL() + '/createteam/' + formation;
+    var mode = 'draft';
+    if (!isDraft){
+        mode = 'sandbox';
+    }
+    var url = getAPIBaseURL() + '/createteam/' + mode + '/' + formation;
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -348,7 +357,11 @@ function changeTeamName(){
         if (!continueFunc) {
             setTimeout(function(){waitForIt()},100);
         }else {
-            var url = getAPIBaseURL() + '/changeteamname?teamid=' + getTeamId() + '&name=' + newName;
+            var mode = 'draft';
+            if (!isDraft){
+                mode = 'sandbox';
+            }
+            var url = getAPIBaseURL() + '/changeteamname/' + mode + '?teamid=' + getTeamId() + '&name=' + newName;
             console.log(url);
             fetch(url, {method: 'get'})
 
@@ -419,11 +432,19 @@ function addPlayerToTeam(playerId, playerLocation){
     var url;
     if (playerLocation == 17 || playerLocation == "17") {
         goalieId = playerId;
-        url = getAPIBaseURL() + '/addgoalie?goalieid=' + goalieId + '&teamid=' + getTeamId();
+        var mode = 'draft';
+        if (!isDraft){
+            mode = 'sandbox';
+        }
+        url = getAPIBaseURL() + '/addgoalie/' + mode + '?goalieid=' + goalieId + '&teamid=' + getTeamId();
 
     }
     else {
-        url = getAPIBaseURL() + '/addplayer?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
+        var mode = 'draft';
+        if (!isDraft){
+            mode = 'sandbox';
+        }
+        url = getAPIBaseURL() + '/addplayer/' + mode + '?playerid=' + playerId + '&teamid=' + getTeamId() + '&playerlocation=' + playerLocation;
     }
     console.log(url);
     fetch(url, {method: 'get'});
@@ -434,7 +455,11 @@ function displayTeam(){
     rating.innerHTML='';
     var playerField = document.getElementsByClassName("player-field")[0];
 
-    var url = getAPIBaseURL() + '/teamplayers?teamid=' + getTeamId();
+    var mode = 'draft';
+    if (!isDraft){
+        mode = 'sandbox';
+    }
+    var url = getAPIBaseURL() + '/teamplayers/' + mode + '?teamid=' + getTeamId();
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -449,6 +474,8 @@ function displayTeam(){
                 continue;
             }
             var query = '[positionindex="' + player["location"] + '"]'
+            console.log(playerField)
+            console.log(player["location"])
             var fieldLocation = playerField.querySelectorAll(query)[0];
             var position = fieldLocation.getAttribute("position");
 
@@ -525,8 +552,11 @@ function displayTeam(){
                 teamAverageRating.innerHTML = Math.round(sum/total);
             }
         }
-
-        var url = getAPIBaseURL() + '/teamgoalies?teamid=' + getTeamId();
+        var mode = 'draft';
+        if (!isDraft){
+            mode = 'sandbox';
+        }
+        var url = getAPIBaseURL() + '/teamgoalies/' + mode + '?teamid=' + getTeamId();
         console.log(url);
         fetch(url, {method: 'get'})
 
@@ -601,12 +631,14 @@ function displayTeam(){
                 }
             }
         })
-
-        var playerListElement = document.getElementById('draft-selections');
-        playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
-
+        if (isDraft){
+            var playerListElement = document.getElementById('draft-selections');
+            playerListElement.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div>";
+        }
         makeActiveNotClickable();
-        makeClickable();
+        if(isDraft){
+            makeClickable();
+        }
     })
 }
 
@@ -614,7 +646,11 @@ function deleteTeam(){
     var rating = document.getElementById('team-average-rating');
     rating.innerHTML='';
 
-    var url = getAPIBaseURL() + '/deleteteam?teamid=' + getTeamId();
+    var mode = 'draft';
+    if (!isDraft){
+        mode = 'sandbox';
+    }
+    var url = getAPIBaseURL() + '/deleteteam/' + mode + '?teamid=' + getTeamId();
     console.log(url);
     fetch(url, {method: 'get'})
 
@@ -622,7 +658,9 @@ function deleteTeam(){
 
     fillInTeamSelector();
     setFormation("4-3-3");
-    makeClickable()
+    if(isDraft){
+        makeClickable()
+    }
 }
 
 function makeClickable() {
@@ -1005,6 +1043,15 @@ function makeSelectionsClickable() {
     }
 }
 
+function makeSelectionsClickableSandbox() {
+    var playerListElement = document.getElementById('searched-players');
+    selections = playerListElement.children;
+    for (var selection of selections) {
+        selection.setAttribute("onclick", "onPlayerSelection(this)");
+    }
+}
+
+
 function onDraftSelection(obj){
     var playerId = obj.getAttribute("playerid");
     var positionIndex = obj.getAttribute("positionindex");
@@ -1026,7 +1073,32 @@ function onDraftSelection(obj){
     }
 }
 
+<<<<<<< HEAD
 //––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––
+=======
+function onPlayerSelection(obj){
+    var playerId = obj.getAttribute("playerid");
+    var positionIndex = obj.getAttribute("positionindex");
+
+    continueFunc = false;
+    if (!getTeamId()){
+        createNewTeam();
+    }else{
+        continueFunc = true;
+    }
+    waitForIt();
+    function waitForIt(){
+        if (!continueFunc) {
+            setTimeout(function(){waitForIt()},100);
+        }else {
+            addPlayerToTeam(playerId, positionIndex);
+            displayTeam();
+        }
+    }
+}
+
+//'''––––––––––––––––––––––––––– Search Functions –––––––––––––––––––––––––––'''
+>>>>>>> f5ee6f2bf66e697f4a88d56984cd7cab83baf7d7
 
 function playerSearch(event){
     event.preventDefault();
@@ -1136,6 +1208,7 @@ function playerSearch(event){
                     card.setAttribute("playerid", player["player_id"]);
                     card.setAttribute("id", "draft-selections");
                     //makeSelectionsClickable();
+                    makeSelectionsClickableSandbox()
                 }
             }
         })
@@ -1240,6 +1313,8 @@ function goalieSearch(event){
                 goalieImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
                 card.setAttribute("playerid", sofifa_id);
+
+                makeSelectionsClickableSandbox()
             }
         }
     })

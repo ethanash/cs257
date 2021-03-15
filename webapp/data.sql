@@ -64,7 +64,7 @@ CREATE TABLE public.account (
 );
 
 --
--- Name: account_team; Type: TABLE; Schema: public; Owner: -
+-- Name: account_team_draft; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_team_draft (
@@ -75,7 +75,7 @@ CREATE TABLE public.account_team_draft (
 );
 
 --
--- Name: account_player; Type: TABLE; Schema: public; Owner: -
+-- Name: account_player_draft; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_player_draft (
@@ -85,7 +85,7 @@ CREATE TABLE public.account_player_draft (
 );
 
 --
--- Name: account_player; Type: TABLE; Schema: public; Owner: -
+-- Name: account_goalie_draft; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_goalie_draft (
@@ -94,7 +94,7 @@ CREATE TABLE public.account_goalie_draft (
 );
 
 --
--- Name: account_team; Type: TABLE; Schema: public; Owner: -
+-- Name: account_team_sandbox; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_team_sandbox (
@@ -105,7 +105,7 @@ CREATE TABLE public.account_team_sandbox (
 );
 
 --
--- Name: account_player; Type: TABLE; Schema: public; Owner: -
+-- Name: account_player_sandbox; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_player_sandbox (
@@ -115,7 +115,7 @@ CREATE TABLE public.account_player_sandbox (
 );
 
 --
--- Name: account_player; Type: TABLE; Schema: public; Owner: -
+-- Name: account_goalie_sandbox; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.account_goalie_sandbox (

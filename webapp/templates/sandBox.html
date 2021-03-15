@@ -25,23 +25,31 @@
     <div class="site-contents">
         <div class="left-side">
             <div class="menu-bar">
-                <div class="team-name">Ethan's Team</div>
-                <div class="stats">
-                    <div class="team-stat">
-                        <div class="stat-name">Average Rating: </div>
-                        <div class="stat-value">82</div>
-                    </div>
-                    <div class="team-stat">
-                        <div class="stat-name">Chemistry: </div>
-                        <div class="stat-value">82</div>
-                    </div>
-                </div>
-                <label for="formations">Change the Formation:</label>
-                <select onchange="setFormation(this.value)" name="formations" id="formations">
+                <select onchange="changeTeam(this.value)" id="teamSelector" name="teamSelector">
+                </select>
+                <button onclick="createNewTeam()">Create New Team</button>
+                <label for="formations">Formation For New Team:</label>
+                <select name="formations" id="formations">
                     <option value="4-3-3">4-3-3</option>
                     <option value="4-4-2">4-4-2</option>
                     <option value="4-5-1">4-5-1</option>
                 </select>
+                <div>
+                    <input id="new-team-name" class="team-name" value="New Draft"></input>
+                    <input type="hidden" id=teamId value=""></input>
+                    <button onclick="changeTeamName()">Change Team Name</button>
+                    <button onclick="deleteTeam()">Delete Team</button>
+                </div>
+                <div class="stats">
+                    <div class="team-stat">
+                        <div class="stat-name">Average Rating: </div>
+                        <div id="team-average-rating" class="stat-value">0</div>
+                    </div>
+                    <!-- <div class="team-stat">
+                        <div class="stat-name">Chemistry: </div>
+                        <div class="stat-value">82</div>
+                    </div> -->
+                </div>
                 <a href="/draft">Switch To Draft Mode</a>
             </div>
 

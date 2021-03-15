@@ -76,10 +76,11 @@
                     <form onsubmit="playerSearch(event)">
                         <div class="required-param">You must enter a position</div>
                         <label for="position">Position:</label><br>
-                        <select id="positionSelector" name="position">
+                        <select onchange="changeFilters(this.value)" id="positionSelector" name="position">
                         </select><br>
-                        <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" placeholder="Enter player name..."=""><br>
+                        <label for="name">Player Name:</label><br>
+                        <input list="names" type="text" name="name" placeholder="Enter player name..."=""><br>
+                            <datalist id="names"></datalist>
                         <label for="league">League:</label><br>
                         <input list="leagues" name="league" type="text" placeholder="Enter league name..."><br>
                             <datalist id="leagues"></datalist>
@@ -92,35 +93,40 @@
                         <label for="preferredFood">Preferred Foot:</label><br>
                         <input list="feet" type="text" name="preferredFoot"><br>
                             <datalist id="feet"></datalist>
-                        <label for="Min Pace">Min Pace:</label>
-                        <input type=number name="paceLow" value=0><br>
-                        <label for="Max Pace">Max Pace:</label>
-                        <input type=number name="paceHigh" value=99><br>
+                        <label for="Min Rating">Min Rating:</label>
+                        <input class="stat-box" type=number name="ratingLow" value=0>
+                        <label for="Max Rating">Max Rating:</label>
+                        <input class="stat-box" type=number name="ratingHigh" value=99><br>
 
-                        <label for="Min Shooting">Min Shooting:</label>
-                        <input type=number name="shootingLow" value=0><br>
-                        <label for="Max Shooting">Max Shooting:</label>
-                        <input type=number name="shootingHigh" value=99><br>
+                        <label id="minPace" for="Min Pace">Min Pace:</label>
+                        <input class="stat-box" type=number name="firstLow" value=0>
+                        <label id="maxPace" for="Max Pace">Max Pace:</label>
+                        <input class="stat-box" type=number name="firstHigh" value=99><br>
 
-                        <label for="Min Passing">Min Passing:</label>
-                        <input type=number name="passingLow" value=0><br>
-                        <label for="Max Passing">Max Passing:</label>
-                        <input type=number name="passingHigh" value=99><br>
+                        <label id="minShooting" for="Min Shooting">Min Shooting:</label>
+                        <input class="stat-box" type=number name="secondLow" value=0>
+                        <label id="maxShooting" for="Max Shooting">Max Shooting:</label>
+                        <input class="stat-box" type=number name="secondHigh" value=99><br>
 
-                        <label for="Min Dribbling">Min Dribbling:</label>
-                        <input type=number name="dribblingLow" value=0><br>
-                        <label for="Max Dribbling">Max Dribbling:</label>
-                        <input type=number name="dribblingHigh" value=99><br>
+                        <label id="minPassing" for="Min Passing">Min Passing:</label>
+                        <input class="stat-box" type=number name="thirdLow" value=0>
+                        <label id="maxPassing" for="Max Passing">Max Passing:</label>
+                        <input class="stat-box" type=number name="thirdHigh" value=99><br>
 
-                        <label for="Min Defense">Min Defense:</label>
-                        <input type=number name="defenseLow" value=0><br>
-                        <label for="Max Defense">Max Defense:</label>
-                        <input type=number name="defenseHigh" value=99><br>
+                        <label id="minDribbling" for="Min Dribbling">Min Dribbling:</label>
+                        <input class="stat-box" type=number name="fourthLow" value=0>
+                        <label id="maxDribbling" for="Max Dribbling">Max Dribbling:</label>
+                        <input class="stat-box" type=number name="fourthHigh" value=99><br>
 
-                        <label for="Min Physicality">Min Physicality:</label>
-                        <input type=number name="physicalityLow" value=0><br>
-                        <label for="Max Physicality">Max Physicality:</label>
-                        <input type=number name="physicalityHigh" value=99><br>
+                        <label id="minDefense" for="Min Defense">Min Defense:</label>
+                        <input class="stat-box" type=number name="fifthLow" value=0>
+                        <label id="maxDefense" for="Max Defense">Max Defense:</label>
+                        <input class="stat-box" type=number name="fifthHigh" value=99><br>
+
+                        <label id="minPhysicality" for="Min Physicality">Min Physicality:</label>
+                        <input class="stat-box" type=number name="sixthLow" value=0>
+                        <label id="maxPhysicality" for="Max Physicality">Max Physicality:</label>
+                        <input class="stat-box" type=number name="sixthHigh" value=99><br>
                         <input type="submit" value="Search">
                     </form>
                 </div>

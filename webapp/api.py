@@ -30,13 +30,91 @@ def help():
     See readme.txt for more filters and examples.
     ''')
 
+@api.route('/leagues')
+def get_leagues():
+    league = flask.request.args.get('league', default = '')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT league.league
+               FROM league
+               WHERE UPPER(league.league) LIKE UPPER(%s)'''
+
+    try:
+        database_cursor.execute(query, ('%'+league+'%',))
+    except Exception as e:
+        print(e)
+        exit()
+
+    leagues = []
+    for row in database_cursor:
+        league = {}
+        league_name = row[0]
+        league['league'] = league_name
+        leagues.append(league)
+
+    return json.dumps(leagues)
+
+@api.route('/clubs')
+def get_clubs():
+    club = flask.request.args.get('club', default = '')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT club.club
+               FROM club
+               WHERE UPPER(club.club) LIKE UPPER(%s)'''
+
+    try:
+        database_cursor.execute(query, ('%'+club+'%',))
+    except Exception as e:
+        print(e)
+        exit()
+
+    clubs = []
+    for row in database_cursor:
+        club = {}
+        club_name = row[0]
+        club['club'] = club_name
+        clubs.append(club)
+
+    return json.dumps(clubs)
+
+@api.route('/nationalities')
+def get_nationalities():
+    nationality = flask.request.args.get('nationality', default = '')
+
+    database_connection = connect_to_database()
+    database_cursor = database_connection.cursor()
+
+    query = '''SELECT nationality.nationality
+               FROM nationality
+               WHERE UPPER(nationality.nationality) LIKE UPPER(%s)'''
+
+    try:
+        database_cursor.execute(query, ('%'+nationality+'%',))
+    except Exception as e:
+        print(e)
+        exit()
+
+    nationalities = []
+    for row in database_cursor:
+        nationality = {}
+        nationality_name = row[0]
+        nationality['nationality'] = nationality_name
+        nationalities.append(nationality)
+
+    return json.dumps(nationalities)
+
 @api.route('/goalies')
 def get_goalies():
     nationality = flask.request.args.get('nationality', default = '')
     club = flask.request.args.get('club', default = '')
     league = flask.request.args.get('league', default = '')
-    weakFootLow = flask.request.args.get('weakfootlow', default = 0)
-    weakFootHigh = flask.request.args.get('weakfoothigh', default = 5)
+    weakFootLow = flask.request.args.get('weakfootlow', default = -1)
+    weakFootHigh = flask.request.args.get('weakfoothigh', default = 6)
     preferredFoot = flask.request.args.get('preferredfoot', default = '')
     divingLow = flask.request.args.get('divingLow', default = 0)
     divingHigh = flask.request.args.get('divingHigh', default = 99)
@@ -56,14 +134,15 @@ def get_goalies():
     ageHigh = flask.request.args.get('ageHigh', default = 99)
     name = flask.request.args.get('name', default = '')
     sofifa_id = flask.request.args.get('sofifa_id', default = -1)
-    draftModeOn = flask.request.args.get('draftmodeon', default = True)
+    draftModeOn = flask.request.args.get('draftmodeon', default = '')
 
     database_connection = connect_to_database()
     database_cursor = database_connection.cursor()
 
     query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
+               goalie.age, goalie.weak_foot, goalie.preferred_foot
                FROM goalie, nationality, club, league
                WHERE goalie.nationality_id = nationality.id
                AND UPPER(nationality.nationality) LIKE UPPER(%s)
@@ -80,10 +159,16 @@ def get_goalies():
                AND goalie.age > %s AND goalie.age < %s
                AND goalie.overall_rating > %s AND goalie.overall_rating < %s
                AND (goalie.sofifa_id = %s OR %s < 0)
-               AND UPPER(goalie.long_name) LIKE UPPER(%s)'''
+               AND UPPER(goalie.long_name) LIKE UPPER(%s)
+               AND goalie.weak_foot > %s AND goalie.weak_foot < %s
+               AND UPPER(goalie.preferred_foot) LIKE UPPER(%s)'''
 
     try:
-        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'), divingLow, divingHigh, handlingLow, handlingHigh, reflexesLow, reflexesHigh, kickingLow, kickingHigh, speedLow, speedHigh, positioningLow, positioningHigh, ageLow, ageHigh, overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%')))
+        database_cursor.execute(query, (('%'+nationality+'%'), ('%'+league+'%'), ('%'+club+'%'),
+        divingLow, divingHigh, handlingLow, handlingHigh, reflexesLow, reflexesHigh, kickingLow,
+        kickingHigh, speedLow, speedHigh, positioningLow, positioningHigh, ageLow, ageHigh,
+        overallRatingLow, overallRatingHigh, sofifa_id, sofifa_id, ('%'+name+'%'),
+        weakFootLow, weakFootHigh, ('%'+preferredFoot+'%')))
     except Exception as e:
         print(e)
         exit()
@@ -104,8 +189,9 @@ def get_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
-        print("id")
-        print(goalie_id)
+        goalie_age = row[13]
+        goalie_weak_foot = row[14]
+        goalie_preferred_foot = row[15]
         goalie['position'] = 'GK'
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
@@ -120,9 +206,12 @@ def get_goalies():
         goalie['overall'] = goalie_overall
         goalie['sofifa_id'] = goalie_sofifa_id
         goalie['goalie_id'] = goalie_id
+        goalie['age'] = goalie_age
+        goalie['weak_foot'] = goalie_weak_foot
+        goalie['preferred_foot'] = goalie_preferred_foot
         goalies.append(goalie)
 
-    if draftModeOn:
+    if not draftModeOn:
         random.shuffle(goalies)
 
     return json.dumps(goalies)
@@ -242,7 +331,7 @@ def get_players():
         player['skill_moves'] = player_skill_moves
         players.append(player)
 
-    if draftModeOn:
+    if not draftModeOn:
         random.shuffle(players)
     #players = [{'name':'Leonel Messi', 'shooting':90, 'dribbling':85, 'pace':98, 'passing':'86', 'defense':74, 'nationality':'Argentina', 'club':'Barcelona'},
             #{'name':'Christiano Renaldo', 'shooting':92, 'dribbling':91, 'pace':96, 'passing':'89', 'defense':72, 'nationality':'Portugal', 'club':'Juventus'}]
@@ -355,7 +444,8 @@ def get_team_goalies():
 
     query = '''SELECT goalie.long_name, goalie.diving, goalie.handling, goalie.reflexes,
     		   goalie.kicking, goalie.speed, goalie.positioning, nationality.nationality,
-    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id
+    		   league.league, club.club, goalie.overall_rating, goalie.sofifa_id, goalie.id,
+               goalie.age, goalie.weak_foot, goalie.preferred_foot
                FROM goalie, nationality, club, league, account_goalie, account, account_team
                WHERE nationality.id = goalie.nationality_id
                AND club.id = goalie.club_id
@@ -390,6 +480,9 @@ def get_team_goalies():
         goalie_overall = row[10]
         goalie_sofifa_id = row[11]
         goalie_id = row[12]
+        goalie_age = row[13]
+        goalie_weak_foot = row[14]
+        goalie_preferred_foot = row[15]
         goalie['name'] = goalie_name
         goalie['diving'] = goalie_diving
         goalie['handling'] = goalie_handling
@@ -403,6 +496,9 @@ def get_team_goalies():
         goalie['overall'] = goalie_overall
         goalie['sofifa_id'] = goalie_sofifa_id
         goalie['goalie_id'] = goalie_id
+        goalie['age'] = goalie_age
+        goalie['weak_foot'] = goalie_weak_foot
+        goalie['preferred_foot'] = goalie_preferred_foot
         goalies.append(goalie)
 
     return json.dumps(goalies)

@@ -19,6 +19,96 @@ var continueFunc = true;
 //         card.setAttribute("onmouseover", displayGoalieStats(this));
 //     }
 // }
+// function league_list_creator(elements) {
+//     var list = document
+//     for (element in elements) {
+//
+//     }
+// }
+function searchPreferredFeet() {
+    var feet = ["Right", "Left"];
+
+    for (var foot in feet) {
+        var optionElement = document.createElement("option");
+        optionElement.value = feet[foot];
+        document.getElementById("feet").appendChild(optionElement);
+  }
+}
+
+function searchLeagues() {
+    var league_array = [];
+
+    var url = getAPIBaseURL() + '/leagues';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(leagues) {
+        for (var league of leagues) {
+            var league_name = league['league'];
+            league_array.push(league_name);
+        }
+        for (var league in league_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = league_array[league];
+            document.getElementById("leagues").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
+
+function searchClubs() {
+    var club_array = [];
+
+    var url = getAPIBaseURL() + '/clubs';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(clubs) {
+        for (var club of clubs) {
+            var club_name = club['club'];
+            club_array.push(club_name);
+        }
+        for (var club in club_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = club_array[club];
+            document.getElementById("clubs").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
+
+function searchNationalities() {
+    var nationality_array = [];
+
+    var url = getAPIBaseURL() + '/nationalities';
+    console.log(url);
+    fetch(url, {method: 'get'})
+
+    .then((response) => response.json())
+
+    .then(function(nationalities) {
+        for (var nationality of nationalities) {
+            var nationality_name = nationality['nationality'];
+            nationality_array.push(nationality_name);
+        }
+        for (var nationality in nationality_array) {
+            var optionElement = document.createElement("option");
+            optionElement.value = nationality_array[nationality];
+            document.getElementById("nationalities").appendChild(optionElement);
+        }
+    })
+    .catch(function(error) {
+    console.log(error);
+    });
+}
 
 function displayPlayerStats(card, player) {
     var displayPlayerStats = card.getElementById('displayPlayerStats')[0];
@@ -53,6 +143,10 @@ function initialize() {
         isDraft = false;
         setFormation("4-3-3");
         fillInPositionSelector();
+        searchLeagues();
+        searchClubs();
+        searchNationalities();
+        searchPreferredFeet();
     }
 
 }
@@ -210,7 +304,7 @@ function setTeam(newId, newName){
             team.selected = 'selected'
         }
     }
-    
+
 }
 
 function resetTeam(){
@@ -392,7 +486,7 @@ function displayTeam(){
 function deleteTeam(){
     var rating = document.getElementById('team-average-rating');
     rating.innerHTML='';
-    
+
     var url = getAPIBaseURL() + '/deleteteam?teamid=' + getTeamId();
     console.log(url);
     fetch(url, {method: 'get'})
@@ -758,6 +852,19 @@ function playerSearch(event){
     var league = event.target.elements.league.value;
     var club = event.target.elements.club.value;
     var nationality = event.target.elements.nationality.value;
+    var preferredFoot = event.target.elements.preferredFoot.value;
+    var paceLow = event.target.elements.paceLow.value;
+    var paceHigh = event.target.elements.paceHigh.value;
+    var shootingLow = event.target.elements.shootingLow.value;
+    var shootingHigh = event.target.elements.shootingHigh.value;
+    var passingLow = event.target.elements.passingLow.value;
+    var passingHigh = event.target.elements.passingHigh.value;
+    var dribblingLow = event.target.elements.dribblingLow.value;
+    var dribblingHigh = event.target.elements.dribblingHigh.value;
+    var defenseLow = event.target.elements.defenseLow.value;
+    var defenseHigh = event.target.elements.defenseHigh.value;
+    var physicalityLow = event.target.elements.physicalityLow.value;
+    var physicalityHigh = event.target.elements.physicalityHigh.value;
 
     if(position == 'GK'){
         goalieSearch(event);
@@ -766,8 +873,12 @@ function playerSearch(event){
     else {
         createSearchCards(position);
 
-        var url = getAPIBaseURL() + '/players?name=' + name + '&club=' + club + '&position=' + position
-        + '&league=' + league + '&nationality=' + nationality;
+        var url = getAPIBaseURL() + '/players?draftmodeon=False' + '&name=' + name + '&club=' + club + '&position=' + position
+        + '&league=' + league + '&nationality=' + nationality + '&preferredfoot=' + preferredFoot + '&pacelow=' + paceLow
+        + '&pacehigh=' + paceHigh + '&shootinglow=' + shootingLow + '&shootinghigh=' + shootingHigh + '&passinglow=' + passingLow
+        + '&passinghigh=' + passingHigh + '&dribblinglow=' + dribblingLow + '&dribblinghigh=' + dribblingHigh
+        + '&defenselow=' + defenseLow + '&defensehigh=' + defenseHigh + '&physicalitylow=' + physicalityLow
+        + '&physicalityhigh=' + physicalityHigh;
         console.log(url);
         fetch(url, {method: 'get'})
 
@@ -776,7 +887,7 @@ function playerSearch(event){
         .then(function(players) {
             var playerListElement = document.getElementById('searched-players');
             if(playerListElement){
-                for (var i = 0; i < players.length; i++) {
+                for (var i = 0; i < 6 & i < players.length; i++) {
                     var card = playerListElement.children[i];
                     card.setAttribute("class", "active-card");
                     var player = players[i];
@@ -822,6 +933,8 @@ function playerSearch(event){
                     playerImage.setAttribute("onerror", "this.src='https://cdn.sofifa.com/players/notfound_0_240.png';");
 
                     card.setAttribute("playerid", player["player_id"]);
+                    card.setAttribute("id", "draft-selections");
+                    //makeSelectionsClickable();
                 }
             }
         })
@@ -841,9 +954,10 @@ function goalieSearch(event){
     var nationality = event.target.elements.nationality.value;
     var league = event.target.elements.league.value;
 
+
     createSearchCards(position);
 
-    var url = getAPIBaseURL() + '/goalies?name=' + name + '&club=' + club + '&league=' + league
+    var url = getAPIBaseURL() + '/goalies?draftModeOn=False' + '&name=' + name + '&club=' + club + '&league=' + league
     + '&nationality=' + nationality;
     console.log(url);
     fetch(url, {method: 'get'})
@@ -853,7 +967,7 @@ function goalieSearch(event){
     .then(function(goalies) {
         var goalieListElement = document.getElementById('searched-players');
         if(goalieListElement){
-            for (var i = 0; i < goalies.length; i++) {
+            for (var i = 0; i < 6 & i < goalies.length; i++) {
                 var card = goalieListElement.children[i];
                 card.setAttribute("class", "active-goalie-card");
                 var goalie = goalies[i];

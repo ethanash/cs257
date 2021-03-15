@@ -79,13 +79,48 @@
                         <select id="positionSelector" name="position">
                         </select><br>
                         <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" value=""><br>
+                        <input type="text" id="name" name="name" placeholder="Enter player name..."=""><br>
                         <label for="league">League:</label><br>
-                        <input type="text" id="league" name="league" value=""><br>
+                        <input list="leagues" name="league" type="text" placeholder="Enter league name..."><br>
+                            <datalist id="leagues"></datalist>
                         <label for="club">Club:</label><br>
-                        <input type="text" id="club" name="club" value=""><br>
+                        <input list="clubs" type="text" name="club" placeholder="Enter club name..."><br>
+                            <datalist id="clubs"></datalist>
                         <label for="nationality">Nationality:</label><br>
-                        <input type="text" id="nationality" name="nationality" value=""><br>
+                        <input list="nationalities" type="text" name="nationality" placeholder="Enter nationality..."><br>
+                            <datalist id="nationalities"></datalist>
+                        <label for="preferredFood">Preferred Foot:</label><br>
+                        <input list="feet" type="text" name="preferredFoot"><br>
+                            <datalist id="feet"></datalist>
+                        <label for="Min Pace">Min Pace:</label>
+                        <input type=number name="paceLow" value=0><br>
+                        <label for="Max Pace">Max Pace:</label>
+                        <input type=number name="paceHigh" value=99><br>
+
+                        <label for="Min Shooting">Min Shooting:</label>
+                        <input type=number name="shootingLow" value=0><br>
+                        <label for="Max Shooting">Max Shooting:</label>
+                        <input type=number name="shootingHigh" value=99><br>
+
+                        <label for="Min Passing">Min Passing:</label>
+                        <input type=number name="passingLow" value=0><br>
+                        <label for="Max Passing">Max Passing:</label>
+                        <input type=number name="passingHigh" value=99><br>
+
+                        <label for="Min Dribbling">Min Dribbling:</label>
+                        <input type=number name="dribblingLow" value=0><br>
+                        <label for="Max Dribbling">Max Dribbling:</label>
+                        <input type=number name="dribblingHigh" value=99><br>
+
+                        <label for="Min Defense">Min Defense:</label>
+                        <input type=number name="defenseLow" value=0><br>
+                        <label for="Max Defense">Max Defense:</label>
+                        <input type=number name="defenseHigh" value=99><br>
+
+                        <label for="Min Physicality">Min Physicality:</label>
+                        <input type=number name="physicalityLow" value=0><br>
+                        <label for="Max Physicality">Max Physicality:</label>
+                        <input type=number name="physicalityHigh" value=99><br>
                         <input type="submit" value="Search">
                     </form>
                 </div>
